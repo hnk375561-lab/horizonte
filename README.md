@@ -1,6 +1,6 @@
 # Horizonte Automotores — sitio web
 
-Sitio estático (HTML + CSS, **sin JavaScript de terceros, sin dependencias, sin npm install**) de Horizonte Automotores, concesionario de Av. Argentina 2021, María Grande, Entre Ríos. Estado actual: **demo no indexable** construida con información pública.
+Sitio estático (HTML + CSS, **sin JavaScript de terceros, sin dependencias, sin npm install**) de Horizonte Automotores, concesionario de Av. Argentina 2021, María Grande, Entre Ríos. Estado actual: **demo no indexable** construida con información pública (incluye el sitio oficial de Grupo Almafuerte, del que forma parte).
 
 ## Cómo funciona
 Las páginas **se generan** desde los datos:
@@ -27,13 +27,18 @@ scripts/estilos.css   ─┘                    robots.txt, sitemap.xml*, site.w
 3. El workflow `.github/workflows/pages.yml` regenera, valida y publica en `https://USUARIO.github.io/REPO/`.
 
 ## Qué falta para producción
-Ver `data/pendientes.json` y `golive/PRODUCCION.md`. Lo bloqueante: teléfono/WhatsApp confirmados, fotos autorizadas, dominio y revisión legal.
+Ver `data/pendientes.json` y `golive/PRODUCCION.md`. Lo bloqueante: marca y relación con el grupo (P15), teléfono/WhatsApp confirmados, stock confirmado, fotos autorizadas, dominio y revisión legal.
 
 ## Cargar stock
-Copiar el formato de `docs/autos.ejemplo.json` a `data/autos.json` (solo unidades confirmadas, con enlace a su publicación), luego `npm run build && npm test`.
+Hoy `data/autos.json` tiene 5 fichas del catálogo de Grupo Almafuerte (relevadas el 12/10/2026). Para sumar o cambiar unidades, seguir el formato de `docs/autos.ejemplo.json` (enlace a su ficha pública y fecha de relevamiento), luego `npm run build && npm test`. Las fichas con contradicciones están en `data/autos-en-revision.json` y no se muestran.
+
+## Activar WhatsApp
+Cuando el dueño confirme el número: en `data/dealership.json` → `contact`, cargar `whatsApp` (`549…`), `phone`/`phoneTel` si corresponde y `confirmadoPorDueno: true`; después `npm run build && npm test`.
 
 ## Documentación
 - `CLAUDE.md`: reglas de mantenimiento.
 - `docs/VERIFICACION-2026-10-12.md`: qué se verificó de la investigación OSINT y qué no coincidió.
+- `docs/ACTUALIZACION-V2-2026-10-12.md`: qué cambió con el Archivo Maestro V2 y qué sigue pendiente.
+- `docs/ARCHIVO-MAESTRO-V2.txt`: la investigación V2 tal como se recibió (referencia; contiene datos sin confirmar).
 - `docs/INVESTIGACION-OSINT-ORIGINAL.md`: la investigación tal como se recibió (solo referencia; contiene datos no verificados).
 - `golive/`: afirmaciones a confirmar y pasos a producción.

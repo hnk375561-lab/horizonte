@@ -1,11 +1,78 @@
 {
   "consultadoEl": "2026-10-12",
   "fuentes": [
-    { "id": "bna", "url": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf", "aporta": "Dirección Avda Argentina 2021 y adhesión a Créditos Más Autos (listado del 16/07/2025; el nombre figura escrito «Horizonte Automores»).", "confianza": "alta" },
-    { "id": "facebook", "url": "https://www.facebook.com/horizonteautos/", "aporta": "Dirección, introducción de la página (autos y motos, financiación, diez años), teléfono +54 343 494-7176 y un correo personal. Sin calificar (0 reseñas). Aviso Hyundai Tucson 2WD 2.0 2018 'Nuevo ingreso', sin fecha.", "confianza": "alta (es la página de la propia agencia)" },
-    { "id": "instagram", "url": "https://www.instagram.com/horizonte_automotores/", "aporta": "Perfil propio que la investigación OSINT no incluía. Biografía: concesionario en María Grande del Grupo Automóviles Almafuerte.", "confianza": "alta" },
-    { "id": "infoisinfo", "url": "https://maria-grande.infoisinfo-ar.com/ficha/horizonte-automotores/261219", "aporta": "Av Argentina 2021, CP 3133; horarios (L-V 9:30-18:00, S 8:30-12:30); coordenadas -31.65775, -59.92451; texto comercial con permutas y financiación.", "confianza": "media (directorio)" },
-    { "id": "gtm", "url": "https://gtm.com.ar/concesionario/horizonte-automotores/", "aporta": "Dirección Av. Argentina 2021 y valoración 8.4 con 27 reseñas (origen no indicado).", "confianza": "media" }
+    {
+      "id": "bna",
+      "url": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf",
+      "aporta": "Dirección Avda Argentina 2021 y adhesión a Créditos Más Autos (listado del 16/07/2025; el nombre figura escrito «Horizonte Automores»).",
+      "confianza": "alta"
+    },
+    {
+      "id": "facebook",
+      "url": "https://www.facebook.com/horizonteautos/",
+      "aporta": "Dirección, introducción de la página (autos y motos, financiación, diez años), teléfono +54 343 494-7176 y un correo personal. Sin calificar (0 reseñas). Aviso Hyundai Tucson 2WD 2.0 2018 'Nuevo ingreso', sin fecha.",
+      "confianza": "alta (es la página de la propia agencia)"
+    },
+    {
+      "id": "instagram",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "aporta": "Perfil propio que la investigación OSINT no incluía. Biografía: concesionario en María Grande del Grupo Automóviles Almafuerte.",
+      "confianza": "alta"
+    },
+    {
+      "id": "infoisinfo",
+      "url": "https://maria-grande.infoisinfo-ar.com/ficha/horizonte-automotores/261219",
+      "aporta": "Av Argentina 2021, CP 3133; horarios (L-V 9:30-18:00, S 8:30-12:30); coordenadas -31.65775, -59.92451; texto comercial con permutas y financiación.",
+      "confianza": "media (directorio)"
+    },
+    {
+      "id": "gtm",
+      "url": "https://gtm.com.ar/concesionario/horizonte-automotores/",
+      "aporta": "Dirección Av. Argentina 2021 y valoración 8.4 con 27 reseñas (origen no indicado).",
+      "confianza": "media"
+    },
+    {
+      "id": "almafuerte-nosotros",
+      "url": "https://grupoalmafuerte.com/nosotros/",
+      "aporta": "Sitio oficial del grupo: lista Av. Argentina 2021 como «Usados multimarca», con teléfono +54 9 3434 61-8388, WhatsApp +54 9 3436 10-9949 y horario. La tarjeta de esa dirección lleva por error el título «Paraná - Usados».",
+      "confianza": "alta (sitio oficial del grupo)"
+    },
+    {
+      "id": "almafuerte-contacto",
+      "url": "https://grupoalmafuerte.com/contacto/",
+      "aporta": "Sucursal «Concesionario Usados María Grande» con teléfono +54 9 3434 62-2671 (distinto al de Nosotros), WhatsApp de usados +54 9 3436 10-9949, horario y preguntas frecuentes (permuta, tasación sin cargo, financiación, revisión técnica y garantía).",
+      "confianza": "alta (sitio oficial del grupo)"
+    },
+    {
+      "id": "almafuerte-catalogo",
+      "url": "https://grupoalmafuerte.com/autos-usados/",
+      "aporta": "Catálogo de usados enlazado desde el menú del grupo. No se pudo recorrer completo en la investigación.",
+      "confianza": "sin verificar"
+    },
+    {
+      "id": "almafuerte-fichas",
+      "url": "https://grupoalmafuerte.com/producto/",
+      "aporta": "Ocho fichas «Disponible en María Grande» relevadas el 12/10/2026 (ver data/autos.json y data/autos-en-revision.json). Son fichas indexadas, no garantía de stock.",
+      "confianza": "alta como atribución; disponibilidad y precio sin confirmar"
+    },
+    {
+      "id": "cca",
+      "url": "https://ccaentrerios.org/agencias/",
+      "aporta": "Listado de agencias: Horizonte Automotores, Av Argentina 2021, 343 4050787.",
+      "confianza": "media (no certifica por sí solo que el dato esté actualizado)"
+    },
+    {
+      "id": "cylex",
+      "url": "https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html",
+      "aporta": "Teléfono 0343 461-8388, horario L-V 9:30–18:00 y S 8:30–12:30 (actualizado el 13/09/2024), enlace a Facebook.",
+      "confianza": "media (directorio)"
+    },
+    {
+      "id": "yably",
+      "url": "https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021",
+      "aporta": "Puntaje agregado 4,20/5 con 17 reseñas de Google. Advierte que los horarios pueden estar desactualizados.",
+      "confianza": "media (agregador)"
+    }
   ],
   "contradiccionesConLaInvestigacionOriginal": [
     "El teléfono 343 461-8388, que la investigación da como confirmado en Facebook con confianza Alta, no figura en la ficha de Facebook consultada, que muestra +54 343 494-7176.",
@@ -14,6 +81,10 @@
     "La investigación no menciona el Instagram propio ni la pertenencia al Grupo Automóviles Almafuerte.",
     "Las unidades 2 y 3 de la investigación (Compass y Punto) comparten la misma URL de publicación y no se pudieron verificar; sus kilometrajes y equipamiento no tienen fuente.",
     "La valoración 4.1 a 4.5 sobre 5 no se pudo verificar; la única cifra hallada es 8.4 sobre 10 en GTM.",
-    "La investigación cita un listado del Banco Nación del 22/08/2025; el consultado hoy es del 16/07/2025 (ambos incluyen la dirección Av. Argentina 2021)."
+    "La investigación cita un listado del Banco Nación del 22/08/2025; el consultado hoy es del 16/07/2025 (ambos incluyen la dirección Av. Argentina 2021).",
+    "V2: el sitio oficial de Grupo Almafuerte publica dos teléfonos distintos para María Grande (+54 9 3434 61-8388 en Nosotros y +54 9 3434 62-2671 en Contacto) y un WhatsApp de usados (+54 9 3436 10-9949). No se elige ninguno por cuenta propia.",
+    "V2: el horario oficial del grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00) difiere del de los directorios; no se publica hasta que el operador lo confirme.",
+    "V2: la investigación no logró abrir Facebook ni Instagram, por eso no vio el teléfono 343 494-7176 de la ficha de Facebook ni la biografía de Instagram que ya estaban verificadas en este proyecto.",
+    "V2: el listado de la CCA trae el teléfono 343 405-0787, distinto de los demás."
   ]
 }

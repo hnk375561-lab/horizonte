@@ -16,6 +16,7 @@ const d = json('data/dealership.json');
 const a = json('data/autos.json');
 const pend = json('data/pendientes.json');
 json('data/sources.json');
+const rev = json('data/autos-en-revision.json');
 
 if (d && a) {
   const pages = ['index.html', 'privacidad.html', '404.html'];
@@ -79,14 +80,22 @@ if (d && a) {
   if (/@hotmail|@gmail|@yahoo/i.test(visible)) err('hay un correo personal publicado');
 
   // --- afirmaciones sin fuente ---
+  // Cada servicio solo puede aparecer si tiene su `clave` en services.published (con fuente citada).
+  const claves = new Set(d.services.published.map((x) => x.clave).filter(Boolean));
+  for (const x of d.services.published) if (!x.fuente) err(`services.published: «${x.texto}» no tiene fuente`);
   const vetadas = [
-    [/permut|consignaci|gestor[ií]a|taller|garant[ií]a|entrega inmediata|reserva online|\bcuotas?\b|\btasas?\b/i, 'servicio o condición sin fuente'],
-    [/\b0 ?km\b/i, '0 km sin fuente'],
-    [/rese[ñn]as?|estrellas|opiniones|\b\d[.,]\d\s?\/\s?(5|10)\b/i, 'valoración o reseñas sin verificar'],
-    [/\$\s?\d|US\$|\d{1,3}(\.\d{3})+ ?km/i, 'precio o kilometraje fuera de una tarjeta de unidad'],
-    [/c[aá]mara del comercio automotor|\bCCA\b/i, 'afiliación a la CCA no verificada'],
+    [/consignaci|gestor[ií]a|taller|entrega inmediata|reserva online|\bcuotas?\b|\btasas?\b/i, 'servicio o condición sin fuente', null],
+    [/permut|parte de pago|tom[aá]mos tu usado/i, 'permuta sin fuente', 'permuta'],
+    [/tasaci[oó]n/i, 'tasación sin fuente', 'tasacion'],
+    [/garant[ií]a/i, 'garantía sin fuente', 'garantia'],
+    [/\b0 ?km\b/i, '0 km sin fuente', null],
+    [/rese[ñn]as?|estrellas|opiniones|\b\d[.,]\d\s?\/\s?(5|10)\b/i, 'valoración o reseñas sin verificar', null],
+    [/\$\s?\d|US\$|\d{1,3}(\.\d{3})+ ?km/i, 'precio o kilometraje fuera de una tarjeta de unidad', null],
+    [/c[aá]mara del comercio automotor|\bCCA\b/i, 'afiliación a la CCA no verificada', null],
+    [/adquirid[ao]|absorbid[ao]|renombrad[ao]/i, 'relación con el grupo sin redacción autorizada (P15)', null],
   ];
-  for (const [re, why] of vetadas) if (re.test(visNoCars)) err(`Texto no permitido en el sitio (${why}): ${re}`);
+  for (const [re, why, clave] of vetadas) if ((!clave || !claves.has(clave)) && re.test(visNoCars)) err(`Texto no permitido en el sitio (${why}): ${re}`);
+  if (/test ?drive|haval|\btank\b|\bora 03\b|\bgwm\b/i.test(visible)) err('GWM / test drive: se atiende en Paraná y Santa Fe, no se muestra como oferta de María Grande');
   if (!d.hours.display && /horario|lunes a |\b\d{1,2}[:.]\d{2} ?(hs|a)\b/i.test(visible)) err('hay un horario publicado sin confirmar');
   if (/verificad[oa]|confirmad[oa]/i.test(visible)) err('texto "verificado/confirmado" no permitido');
   const publicados = d.services.published.map((s) => s.texto.toLowerCase());
@@ -100,12 +109,17 @@ if (d && a) {
     if (!v.id || ids.has(v.id)) err(`autos.json: id faltante o repetido (${v.id})`);
     ids.add(v.id);
     if (!v.titulo) err(`autos.json ${v.id}: falta titulo`);
-    if (!/^https:\/\/(www\.)?(facebook|instagram)\.com\//.test(v.url || '')) err(`autos.json ${v.id}: url debe ser una publicación de Facebook o Instagram`);
+    if (!/^https:\/\/((www\.)?(facebook|instagram)\.com\/|grupoalmafuerte\.com\/producto\/)/.test(v.url || '')) err(`autos.json ${v.id}: url debe ser una publicación de Facebook/Instagram o una ficha de grupoalmafuerte.com/producto/`);
     if (v.precio && (!['ARS', 'USD'].includes(v.precio.moneda) || typeof v.precio.monto !== 'number' || !v.precio.fecha)) err(`autos.json ${v.id}: precio incompleto (moneda, monto y fecha)`);
     if (v.km != null && typeof v.km !== 'number') err(`autos.json ${v.id}: km debe ser número`);
     if (!idx.includes(v.titulo.replace(/&/g, '&amp;'))) err(`index.html: falta la unidad ${v.id}`);
   }
   if (a.autos.length && !a.relevadoEl) err('autos.json: falta relevadoEl (fecha del relevamiento)');
+  for (const u of rev?.unidades ?? []) {
+    if (a.autos.some((v) => v.id === u.id || v.url === u.url)) err(`autos-en-revision.json: ${u.id} está también publicada en autos.json`);
+    if (idx.includes(u.titulo)) err(`index.html: se muestra ${u.id} (${u.titulo}), que está en revisión`);
+    if (!u.motivo) err(`autos-en-revision.json ${u.id}: falta el motivo`);
+  }
 
   // --- restos de otras agencias ---
   const legacy = /chita|zabala|clasionce|elonce|galarza|concepci[oó]n del uruguay|poerio|hnk375561/i;

@@ -1,18 +1,117 @@
 {
   "actualizado": "2026-10-12",
   "items": [
-    { "id": "P1", "tema": "Teléfono y WhatsApp oficiales", "bloqueante": true, "estado": "abierto", "como": "Pedir al dueño cuál es el teléfono fijo y cuál el WhatsApp. Cargar contact.phone, phoneTel (+54...), whatsApp (549...) y confirmadoPorDueno=true en data/dealership.json; npm run build." },
-    { "id": "P2", "tema": "Horario de atención", "bloqueante": false, "estado": "abierto", "como": "Confirmar horario y cargar hours.display." },
-    { "id": "P3", "tema": "Logotipo y paleta de marca", "bloqueante": false, "estado": "abierto", "como": "Pedir isologotipo SVG o PNG transparente. Hoy hay un isotipo tipográfico provisorio (favicon.svg)." },
-    { "id": "P4", "tema": "Fotos y autorización de uso", "bloqueante": true, "estado": "abierto", "como": "Que el dueño entregue o autorice por escrito las fotos. No se reutilizan imágenes de Facebook sin permiso." },
-    { "id": "P5", "tema": "Stock real", "bloqueante": false, "estado": "abierto", "como": "Cargar en data/autos.json las unidades vigentes con enlace a su publicación. Pista: Hyundai Tucson 2WD 2.0 2018 figura como Nuevo ingreso en Facebook (sin fecha). Etios XLS 2021, Compass Longitude 2021 y Punto HLX 2010 vienen de la investigación OSINT sin fuente verificable: no cargar sin confirmar." },
-    { "id": "P6", "tema": "Correo institucional", "bloqueante": false, "estado": "abierto", "como": "Definir un correo comercial. No usar la casilla hotmail de Facebook." },
-    { "id": "P7", "tema": "Mención al Grupo Automóviles Almafuerte", "bloqueante": false, "estado": "abierto", "como": "El dueño confirma que puede figurar y con qué texto." },
-    { "id": "P8", "tema": "Servicios sin confirmar", "bloqueante": false, "estado": "abierto", "como": "Permutas, 0 km, consignación, garantía, gestoría, reserva online: confirmar cuáles se ofrecen para sumarlos." },
-    { "id": "P9", "tema": "Diez años en el mercado", "bloqueante": false, "estado": "abierto", "como": "Confirmar el año de inicio para reemplazar la frase atribuida a Facebook por un dato firme." },
-    { "id": "P10", "tema": "Reseñas y valoración", "bloqueante": false, "estado": "abierto", "como": "Verificar en Google Maps el puntaje real y pedir permiso antes de publicar comentarios." },
-    { "id": "P11", "tema": "Dominio y siteUrl", "bloqueante": true, "estado": "abierto", "como": "Registrar dominio (por ejemplo .com.ar), completar publicacion.siteUrl y pasar publicIndexing y official a true." },
-    { "id": "P12", "tema": "Revisión legal de privacidad.html", "bloqueante": true, "estado": "abierto", "como": "Revisión profesional antes de producción." },
-    { "id": "P13", "tema": "Vigencia del listado del Banco Nación", "bloqueante": false, "estado": "abierto", "como": "El listado consultado es del 16/07/2025. Comprobar que siga vigente y actualizar la fecha en el sitio." }
+    {
+      "id": "P1",
+      "tema": "Teléfono y WhatsApp oficiales",
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Pedir al dueño cuál es el teléfono fijo y cuál el WhatsApp. Candidatos en data/dealership.json → contact.conflicto. El WhatsApp 3436 10-9949 es el que el sitio oficial de Grupo Almafuerte publica para usados (Nosotros y Contacto); la página Contacto da además el fijo 3434 62-2671 y Nosotros da 3434 61-8388. Cargar contact.phone, phoneTel (+54...), whatsApp (549...) y confirmadoPorDueno=true; npm run build."
+    },
+    {
+      "id": "P2",
+      "tema": "Horario de atención",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display."
+    },
+    {
+      "id": "P3",
+      "tema": "Logotipo y paleta de marca",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Pedir isologotipo SVG o PNG transparente. Hoy hay un isotipo tipográfico provisorio (favicon.svg)."
+    },
+    {
+      "id": "P4",
+      "tema": "Fotos y autorización de uso",
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Que el dueño entregue o autorice por escrito fotos y logotipo. No se reutilizan imágenes de Facebook ni del catálogo del grupo sin permiso."
+    },
+    {
+      "id": "P5",
+      "tema": "Stock real",
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Hay 5 fichas cargadas desde el catálogo de Grupo Almafuerte (relevadas el 12/10/2026). Antes de producción: confirmar con el vendedor disponibilidad, precio vigente, kilometraje y sucursal de cada una; recorrer https://grupoalmafuerte.com/autos-usados/ completo; aclarar las 3 fichas de data/autos-en-revision.json (Peugeot Feline: modelo; Camión VW: sucursal; Sandero 2024: 0 km/usado y motor 1.6/1.3); definir quién actualiza el stock. El Hyundai Tucson 2018 visto en Facebook y los modelos de la investigación V1 siguen sin confirmar."
+    },
+    {
+      "id": "P6",
+      "tema": "Correo institucional",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Definir un correo comercial. No usar la casilla hotmail de Facebook."
+    },
+    {
+      "id": "P7",
+      "tema": "Nombre y mención del Grupo Almafuerte",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "El sitio dice «forma parte del Grupo Almafuerte» (nombre de la web oficial). La biografía de Instagram dice «Grupo Automóviles Almafuerte». El dueño confirma cuál usar y con qué texto."
+    },
+    {
+      "id": "P8",
+      "tema": "Servicios sin confirmar",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Permuta, tasación y garantía ya figuran atribuidas a Grupo Almafuerte. Falta confirmar: motos (no hay en el catálogo), 0 km, consignación, gestoría, reserva online, y las condiciones concretas de garantía y financiación por unidad."
+    },
+    {
+      "id": "P9",
+      "tema": "Diez años en el mercado",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Confirmar el año de inicio para reemplazar la frase atribuida a Facebook por un dato firme."
+    },
+    {
+      "id": "P10",
+      "tema": "Reseñas y valoración",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios."
+    },
+    {
+      "id": "P11",
+      "tema": "Dominio y siteUrl",
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Registrar dominio (por ejemplo .com.ar), completar publicacion.siteUrl y pasar publicIndexing y official a true."
+    },
+    {
+      "id": "P12",
+      "tema": "Revisión legal de privacidad.html",
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Revisión profesional antes de producción."
+    },
+    {
+      "id": "P13",
+      "tema": "Vigencia del listado del Banco Nación",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "El listado consultado es del 16/07/2025. Comprobar que siga vigente y actualizar la fecha en el sitio."
+    },
+    {
+      "id": "P14",
+      "tema": "Afiliación a la CCA Entre Ríos",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Horizonte figura en https://ccaentrerios.org/agencias/ (con otro teléfono: 343 405-0787). Confirmar con el dueño que sigue afiliado y, si quiere, sumar el dato al sitio."
+    },
+    {
+      "id": "P15",
+      "tema": "Marca y relación con Grupo Almafuerte",
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Definir con el dueño qué marca representa el sitio (Horizonte Automotores o la sucursal «Concesionario Usados María Grande» del Grupo Almafuerte), el dominio y la redacción autorizada de la relación. Evitar «adquirida», «absorbida» o «renombrada» si no se confirman. Esto condiciona nombre, logotipo, dominio, reseñas y contacto."
+    },
+    {
+      "id": "P16",
+      "tema": "Enlace al catálogo y gama GWM del grupo",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "El sitio enlaza https://grupoalmafuerte.com/autos-usados/ (URL del menú del grupo; no se pudo abrir en la investigación: probarla). La gama GWM 0 km y el test drive se atienden en Paraná y Santa Fe: no mostrarlos como oferta de María Grande sin confirmación."
+    }
   ]
 }

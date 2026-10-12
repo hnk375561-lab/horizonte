@@ -1,0 +1,31 @@
+{
+  "_comentario": "Fichas del catálogo de Grupo Almafuerte localizadas para María Grande que NO se publican hasta que el vendedor aclare la contradicción. No las lee el build. Si se aclaran, pasarlas a data/autos.json.",
+  "relevadoEl": "2026-10-12",
+  "unidades": [
+    {
+      "id": "mg-03",
+      "titulo": "Peugeot 1.6 Feline",
+      "anio": 2017,
+      "km": 145000,
+      "precioPublicado": 17000000,
+      "url": "https://grupoalmafuerte.com/producto/peugeot-1-6-feline/",
+      "motivo": "El título no identifica el modelo completo; no completar con 308, 408 ni otro sin evidencia."
+    },
+    {
+      "id": "mg-07",
+      "titulo": "Volkswagen Cam. 17.220 E Cc Iii 48",
+      "anio": 2007,
+      "precioPublicado": 60000000,
+      "url": "https://grupoalmafuerte.com/producto/volkswagen-cam-17-220-e-cc-iii-48/",
+      "motivo": "La cabecera dice «Disponible en María Grande» pero la FAQ de la ficha dice que está en la sucursal de Paraná; campos técnicos vacíos."
+    },
+    {
+      "id": "mg-08",
+      "titulo": "Renault Sandero 1.6 16v Life",
+      "anio": 2024,
+      "precioPublicado": 26000000,
+      "url": "https://grupoalmafuerte.com/producto/renault-sandero-1-6-16v-life/",
+      "motivo": "Figura «0 km» y «Usado» a la vez; ficha técnica con motor 1.6 y descripción con motor 1.3."
+    }
+  ]
+}

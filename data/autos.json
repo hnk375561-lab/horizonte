@@ -1,5 +1,85 @@
 {
-  "fuente": "Publicaciones de Facebook e Instagram de la agencia",
-  "relevadoEl": null,
-  "autos": []
+  "fuente": "Catálogo público de Grupo Almafuerte (grupoalmafuerte.com), fichas que indican «Disponible en María Grande»",
+  "relevadoEl": "2026-10-12",
+  "autos": [
+    {
+      "id": "mg-01",
+      "titulo": "Chevrolet Cruze 1.4 LTZ 4P",
+      "anio": 2018,
+      "km": 157000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Blanco",
+      "precio": {
+        "moneda": "ARS",
+        "monto": 22000000,
+        "fecha": "2026-10-12"
+      },
+      "url": "https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/",
+      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+    },
+    {
+      "id": "mg-02",
+      "titulo": "Volkswagen Vento 1.4 TSI BM Tech Comfortline",
+      "anio": 2017,
+      "km": 182000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Negro",
+      "precio": {
+        "moneda": "ARS",
+        "monto": 26500000,
+        "fecha": "2026-10-12"
+      },
+      "url": "https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/",
+      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+    },
+    {
+      "id": "mg-04",
+      "titulo": "Citroën C3 1.6 VTI Shine",
+      "anio": 2016,
+      "km": 135000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Blanco",
+      "precio": {
+        "moneda": "ARS",
+        "monto": 15000000,
+        "fecha": "2026-10-12"
+      },
+      "url": "https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/",
+      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+    },
+    {
+      "id": "mg-05",
+      "titulo": "Peugeot 307 1.6 XS Ln 5P",
+      "anio": 2007,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Rojo",
+      "precio": {
+        "moneda": "ARS",
+        "monto": 9000000,
+        "fecha": "2026-10-12"
+      },
+      "url": "https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/",
+      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+    },
+    {
+      "id": "mg-06",
+      "titulo": "Renault Sandero Stepway 1.6 Dynamique",
+      "anio": 2017,
+      "km": 124000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Gris plata",
+      "precio": {
+        "moneda": "ARS",
+        "monto": 17500000,
+        "fecha": "2026-10-12"
+      },
+      "url": "https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/",
+      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+    }
+  ]
 }

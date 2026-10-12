@@ -19,6 +19,11 @@ const L = D.location;
 const C = D.contact;
 const FB = C.facebook;
 const IG = `https://www.instagram.com/${C.instagram}/`;
+const GNAME = D.identity.grupo;
+const GWEB = D.identity.grupoWeb;
+const GCAT = D.stock.catalogoUrl;
+const hasSvc = (k) => D.services.published.some((x) => x.clave === k);
+const fdate = (iso) => iso.split('-').reverse().join('/');
 const BNA = D.services.published.find((s) => s.fuente.includes('bna.com.ar')).fuente;
 const wa = (txt) => (C.whatsApp ? `https://wa.me/${C.whatsApp}?text=${encodeURIComponent(txt)}` : null);
 const WA = wa('Hola! Quiero consultar por las unidades disponibles.');
@@ -54,7 +59,7 @@ ${body}
 `;
 }
 
-const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025)</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
+const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025)</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
 
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
@@ -68,12 +73,12 @@ const fmt = (n) => n.toLocaleString('es-AR');
 const autos = A.autos;
 const card = (a) => {
   const meta = [a.anio, a.transmision, a.km != null ? `${fmt(a.km)} km` : '', a.combustible, a.color].filter((x) => x !== undefined && x !== '' && x !== null).join(' · ');
-  const pr = a.precio ? `<p class="pr">${a.precio.moneda === 'USD' ? 'US$ ' : '$ '}${fmt(a.precio.monto)}</p><p class="n">Precio publicado el ${esc(a.precio.fecha)}; puede haber cambiado.</p>` : '<p class="pr">Consultar precio</p>';
+  const pr = a.precio ? `<p class="pr">${a.precio.moneda === 'USD' ? 'US$ ' : '$ '}${fmt(a.precio.monto)}</p><p class="n">Precio publicado el ${esc(fdate(a.precio.fecha))}; puede haber cambiado.</p>` : '<p class="pr">Consultar precio</p>';
   const link = wa(`Hola! Quiero consultar por el ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`) || a.url;
   return `<li class="car"><h3>${esc(a.titulo)}</h3>${meta ? `<p class="m">${esc(meta)}</p>` : ''}${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<a class="btn sm" href="${esc(link)}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Consultar' : 'Ver publicación'}</a></li>`;
 };
 const unidades = autos.length
-  ? `<ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<p class="src">Datos tomados de las publicaciones de la agencia${A.relevadoEl ? ` el ${esc(A.relevadoEl)}` : ''}. Consultá disponibilidad antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
+  ? `<ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<p class="src">Fichas del catálogo público de ${esc(GNAME)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
 
 // ---- contacto ----
@@ -84,6 +89,7 @@ const dl = [
   C.whatsApp ? ['WhatsApp', `<a href="${WA}" ${EXT}>Escribinos</a>`] : null,
   D.hours.display ? ['Horario', esc(D.hours.display)] : null,
   ['Redes', `<a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram @${esc(C.instagram)}</a>`],
+  ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)}: Concesionario Usados ${esc(L.city)}</a>`],
 ].filter(Boolean);
 
 const ld = {
@@ -103,26 +109,27 @@ const index = page({
 <div class="hero"><div class="hx-copy">
 <p class="ey">${esc(L.city)} · ${esc(L.province)}</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
-<p class="lead">Concesionario de ${esc(L.city)} del ${esc(D.identity.grupo)}. Autos y motos con financiación: mirá las unidades en nuestras redes y visitanos en ${esc(L.address)}.</p>
+<p class="lead">Concesionario de ${esc(L.city)} del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago: mirá las unidades y visitanos en ${esc(L.address)}.</p>
 <div class="row"><a class="btn p" href="#unidades">Ver unidades</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
 <div class="hx-card"><p class="k">Visitanos</p><p class="v">${esc(L.address)}<br>${esc(L.city)}, ${esc(L.province)}</p><a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div>
 </div>
 
 <section id="unidades" aria-labelledby="unidades-t"><div class="w">
 <p class="ey">Unidades</p><h2 id="unidades-t">Nuestras <em>unidades</em></h2>
-<p class="sec-p">Autos y motos publicados por ${esc(NAME)}.</p>
+<p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
 ${unidades}
 </div></section>
 
 <section id="financiacion" aria-labelledby="fin-t"><div class="w">
-<p class="ey">Financiación</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
+<p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
-<div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado del 16 de julio de 2025). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div></div>
+<div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado del 16 de julio de 2025). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
+<p class="src">Servicios según lo informado por ${esc(GNAME)} en <a href="${GWEB}" ${EXT}>su sitio</a>.</p>
 </div></section>
 
 <section id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><h2 id="nos-t">Quiénes <em>somos</em></h2>
-<p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(D.identity.grupo)}. ${esc(D.presentacion.antiguedad)}</p>
+<p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}. ${esc(D.presentacion.antiguedad)}</p>
 </div></section>
 
 <section id="contacto" class="ct" aria-labelledby="contacto-t"><div class="w">
@@ -142,9 +149,9 @@ const privacidad = page({
 <main id="top"><section><div class="w doc">
 <p class="ey">Avisos</p><h1>Privacidad y <em>avisos</em></h1>
 <h2>Datos personales</h2>
-<p>Este sitio no tiene formularios, cuentas ni cookies propias y no guarda datos de quienes lo visitan. Los botones de contacto abren Facebook, Instagram${C.whatsApp ? ', WhatsApp' : ''} o Google Maps, que tienen sus propias políticas de privacidad.</p>
+<p>Este sitio no tiene formularios, cuentas ni cookies propias y no guarda datos de quienes lo visitan. Los botones de contacto abren Facebook, Instagram, el sitio de ${esc(GNAME)}${C.whatsApp ? ', WhatsApp' : ''} o Google Maps, que tienen sus propias políticas de privacidad.</p>
 <h2>Información de las unidades</h2>
-<p>Los datos de las unidades (año, kilometraje, precio, disponibilidad) provienen de las publicaciones de la agencia y pueden haber cambiado. Confirmá siempre con ${esc(NAME)} antes de decidir.</p>
+<p>Los datos de las unidades (año, kilometraje, precio, disponibilidad) provienen de las publicaciones de la agencia y del catálogo público de ${esc(GNAME)}, y pueden haber cambiado. Confirmá siempre con ${esc(NAME)} antes de decidir.</p>
 <h2>Documento preliminar</h2>
 <p>Este texto es preliminar y debe revisarse profesionalmente antes de la publicación definitiva.</p>
 <p><a class="btn sm" href="./">Volver al inicio</a></p>

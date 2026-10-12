@@ -10,11 +10,29 @@
     "tradeName": "Horizonte Automotores",
     "legalName": null,
     "cuit": null,
-    "variantesDeNombre": ["Horizonte Automotores - Maria Grande (Facebook)", "Horizonte Automotores Usados y 0 Km. (ficha antigua de directorio)"],
-    "grupo": "Grupo Automóviles Almafuerte",
-    "grupoFuente": "https://www.instagram.com/horizonte_automotores/ (biografía: concesionario en María Grande del Grupo Automóviles Almafuerte)",
-    "noVerificado": ["razón social y CUIT", "fecha de fundación", "socio de la Cámara del Comercio Automotor de Entre Ríos (la web de la CCA no se pudo consultar)", "sucursales"],
-    "descartados": ["Horizonte Automóviles (Rivera, Uruguay)", "Horizont Auto S.L. (Valencia, España)"]
+    "variantesDeNombre": [
+      "Horizonte Automotores - Maria Grande (Facebook)",
+      "Horizonte Automotores Usados y 0 Km. (ficha antigua de directorio)",
+      "Concesionario Usados María Grande (nombre de la sucursal en grupoalmafuerte.com/contacto)"
+    ],
+    "grupo": "Grupo Almafuerte",
+    "grupoFuente": "https://grupoalmafuerte.com/contacto/ (lista Av. Argentina 2021 como «Concesionario Usados María Grande»); biografía de https://www.instagram.com/horizonte_automotores/ («Grupo Automóviles Almafuerte»)",
+    "noVerificado": [
+      "razón social y CUIT",
+      "fecha de fundación",
+      "afiliación a la Cámara del Comercio Automotor de Entre Ríos (figura en su listado de agencias, falta confirmar vigencia: P14)",
+      "sucursales propias de Horizonte"
+    ],
+    "descartados": [
+      "Horizonte Automóviles (Rivera, Uruguay)",
+      "Horizont Auto S.L. (Valencia, España)"
+    ],
+    "grupoWeb": "https://grupoalmafuerte.com/contacto/",
+    "relacionConGrupo": {
+      "estado": "asociación confirmada por el responsable del proyecto (12/10/2026); naturaleza exacta sin definir",
+      "regla": "No escribir «adquirida», «absorbida» ni «renombrada». Solo «forma parte del Grupo Almafuerte» hasta tener una redacción autorizada (P15).",
+      "nombreExacto": "La web oficial dice «Grupo Almafuerte»; la biografía de Instagram dice «Grupo Automóviles Almafuerte». Confirmar cuál usar (P7)."
+    }
   },
   "location": {
     "address": "Avenida Argentina 2021",
@@ -26,7 +44,9 @@
     "fuentes": [
       "Listado oficial de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025): Avda Argentina 2021",
       "Ficha de Facebook de la agencia (consultada el 12/10/2026): Av Argentina 2021",
-      "Infoisinfo (ficha 261219) y GTM: Av. Argentina 2021"
+      "Infoisinfo (ficha 261219) y GTM: Av. Argentina 2021",
+      "Sitio oficial de Grupo Almafuerte, páginas Nosotros y Contacto (12/10/2026): Av. Argentina 2021, María Grande",
+      "Listado de agencias de la Cámara del Comercio Automotor de Entre Ríos: Av Argentina 2021"
     ],
     "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total): ficha antigua; Entre Ríos Total la ubica en Paraná. No se usa."
   },
@@ -39,28 +59,88 @@
     "email": null,
     "confirmadoPorDueno": false,
     "conflicto": {
-      "regla": "Las fuentes dan números distintos. No se publica ninguno hasta que el dueño confirme cuál es el teléfono y cuál el WhatsApp (pendiente P1).",
+      "regla": "Las fuentes dan números distintos. No se publica ninguno hasta que el dueño confirme cuál es el teléfono y cuál el WhatsApp (pendiente P1). Para activar el WhatsApp del sitio oficial del grupo: cargar whatsApp «5493436109949» y confirmadoPorDueno=true, y correr npm run build.",
       "candidatos": [
-        { "numero": "343 494-7176", "fuente": "Ficha de Facebook de la agencia (12/10/2026)" },
-        { "numero": "343 461-8388", "fuente": "Investigación OSINT previa / TodosNegocios (no figura en la ficha de Facebook consultada)" },
-        { "numero": "343 494-1092", "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536" },
-        { "numero": "341 210-2911", "fuente": "WhatsApp en un aviso de Facebook (Hyundai Tucson); la característica 341 corresponde a Rosario" }
+        {
+          "numero": "343 494-7176",
+          "fuente": "Ficha de Facebook de la agencia (12/10/2026)"
+        },
+        {
+          "numero": "343 461-8388",
+          "fuente": "Directorios (Cylex, TodosNegocios, Tellows, GTM) y página «Nosotros» de grupoalmafuerte.com (+54 9 3434 61-8388)"
+        },
+        {
+          "numero": "3434 62-2671",
+          "fuente": "Página «Contacto» de grupoalmafuerte.com, para la sucursal de María Grande"
+        },
+        {
+          "numero": "3436 10-9949",
+          "fuente": "WhatsApp de usados multimarca publicado en grupoalmafuerte.com (Nosotros y Contacto)"
+        },
+        {
+          "numero": "343 405-0787",
+          "fuente": "Listado de agencias de la CCA Entre Ríos"
+        },
+        {
+          "numero": "343 494-1092",
+          "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536"
+        },
+        {
+          "numero": "341 210-2911",
+          "fuente": "WhatsApp en un aviso de Facebook (Hyundai Tucson); la característica 341 corresponde a Rosario"
+        }
       ]
     },
-    "correo": "Un correo @hotmail figura en la ficha de Facebook; parece una casilla personal. No se publica ni se guarda aquí."
+    "correo": "Un correo @hotmail figura en la ficha de Facebook; parece una casilla personal. No se publica ni se guarda aquí.",
+    "grupoWeb": "https://grupoalmafuerte.com/contacto/"
   },
   "hours": {
     "display": null,
-    "conflicto": "Infoisinfo: lunes a viernes 9:30–18:00 y sábados 8:30–12:30. La investigación OSINT propone lunes a viernes 8–12 y 16–20 y sábados 8–12:30, pero lo marca como estimación sin fuente. No se publica horario."
+    "conflicto": "Dos versiones: (a) sitio oficial de Grupo Almafuerte (Nosotros y Contacto): lunes a viernes 8:30–12:30 y 15:30–19:30, sábados 8:30–13:00; (b) directorios (Cylex, TodosNegocios, Tellows, Infoisinfo; Cylex actualizado el 13/09/2024): lunes a viernes 9:30–18:00, sábados 8:30–12:30. La (a) es la más reciente y oficial, pero hasta que el operador la confirme no se publica ninguna (P2).",
+    "candidatoOficial": "Lunes a viernes 8:30–12:30 y 15:30–19:30; sábados 8:30–13:00 (grupoalmafuerte.com, 12/10/2026)"
   },
   "services": {
     "published": [
-      { "texto": "Autos y motos", "fuente": "Facebook (introducción de la página)" },
-      { "texto": "Financiación", "fuente": "Facebook (introducción de la página)" },
-      { "texto": "Figura en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (16/07/2025)", "fuente": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf" }
+      {
+        "clave": "autos-y-motos",
+        "texto": "Autos y motos",
+        "fuente": "Facebook (introducción de la página)"
+      },
+      {
+        "clave": "financiacion",
+        "texto": "Financiación",
+        "fuente": "Facebook (introducción de la página); grupoalmafuerte.com/contacto (alternativas propias y bancarias; condiciones según vehículo y momento)"
+      },
+      {
+        "clave": "bna",
+        "texto": "Figura en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (16/07/2025)",
+        "fuente": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf"
+      },
+      {
+        "clave": "permuta",
+        "texto": "Toma de usados como parte de pago",
+        "fuente": "https://grupoalmafuerte.com/contacto/ (preguntas frecuentes) y fichas de las unidades de María Grande («Tomamos tu usado»)"
+      },
+      {
+        "clave": "tasacion",
+        "texto": "Tasación sin cargo",
+        "fuente": "https://grupoalmafuerte.com/contacto/ (preguntas frecuentes: «en sus sucursales»)"
+      },
+      {
+        "clave": "garantia",
+        "texto": "Revisión técnica de los usados y entrega con garantía (condiciones según cada vehículo)",
+        "fuente": "https://grupoalmafuerte.com/contacto/ (preguntas frecuentes) y fichas de las unidades"
+      }
     ],
-    "sinConfirmar": ["Permutas", "Venta de 0 km", "Consignaciones", "Garantías", "Gestoría", "Entrega inmediata", "Reserva online"],
-    "nota": "Los servicios sin confirmar aparecen en directorios (Infoisinfo) pero no en una fuente propia verificada; no se publican."
+    "sinConfirmar": [
+      "Venta de 0 km (la gama GWM 0 km y el test drive se atienden en Paraná y Santa Fe según el grupo, no en María Grande)",
+      "Venta de motos (no hay unidades de moto en el catálogo del grupo)",
+      "Consignaciones",
+      "Gestoría",
+      "Entrega inmediata",
+      "Reserva online (solo una frase promocional en directorios)"
+    ],
+    "nota": "Permuta, tasación y garantía se publican atribuidas a Grupo Almafuerte (fuente pública citada). El resto aparece solo en directorios y no se publica."
   },
   "presentacion": {
     "antiguedad": "En su página de Facebook se presenta con diez años de respaldo en el mercado regional.",
@@ -69,12 +149,21 @@
   },
   "stock": {
     "detalle": "data/autos.json",
-    "politica": "El sitio solo muestra unidades cargadas en data/autos.json con enlace a su publicación. Hoy no hay ninguna: ver pendiente P5."
+    "politica": "El sitio muestra solo las unidades cargadas en data/autos.json, con enlace a su ficha pública. Hoy son 5 fichas del catálogo de Grupo Almafuerte relevadas el 12/10/2026 (precio y disponibilidad sin confirmar). Las fichas con contradicciones están apartadas en data/autos-en-revision.json y no se muestran (P5).",
+    "catalogoCompleto": "https://grupoalmafuerte.com/autos-usados/ (enlazado desde el menú del grupo; no se pudo recorrer completo en la investigación: abrirlo en navegador y revisar la paginación).",
+    "catalogoUrl": "https://grupoalmafuerte.com/autos-usados/"
   },
   "reviews": {
     "publicadas": false,
-    "nota": "GTM muestra 8.4 sobre 10 con 27 reseñas, sin indicar el origen; Infoisinfo y Facebook muestran 0 reseñas. No se publica puntaje ni comentarios."
+    "nota": "Yably: 4,20/5 con 17 reseñas de Google; GTM: 8.4 con 27 reseñas (origen sin indicar y un 4.2 en la misma página); Infoisinfo y Facebook: 0 reseñas. Las cifras no son comparables y la ficha de Google podría corresponder al nombre histórico. No se publica puntaje ni comentarios (P10)."
   },
-  "photos": { "provided": false, "authorized": false, "nota": "No hay fotos ni logotipo cargados. El sitio usa un isotipo tipográfico provisorio." },
-  "website": { "propio": null, "nota": "No se encontró un sitio propio en las fuentes consultadas (12/10/2026). No demuestra que no exista." }
+  "photos": {
+    "provided": false,
+    "authorized": false,
+    "nota": "No hay fotos ni logotipo cargados. El sitio usa un isotipo tipográfico provisorio."
+  },
+  "website": {
+    "propio": null,
+    "nota": "No se encontró un sitio propio en las fuentes consultadas (12/10/2026). No demuestra que no exista."
+  }
 }

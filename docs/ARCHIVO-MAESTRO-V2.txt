@@ -1,0 +1,1690 @@
+HORIZONTE AUTOMOTORES
+INVESTIGACIÓN ESTRATÉGICA INTEGRAL — ARCHIVO MAESTRO
+Versión: 1.0
+Fecha de investigación: 12 de octubre de 2026
+Ámbito: María Grande, Entre Ríos, Argentina
+Propósito: reconstrucción de presencia comercial pública y preparación de una demo web basada en evidencia.
+
+======================================================================
+0. ADVERTENCIA METODOLÓGICA Y CÓMO LEER ESTE ARCHIVO
+======================================================================
+
+Este archivo consolida la información pública localizada en una investigación web realizada el 12/10/2026 y organiza los hallazgos para que puedan utilizarse como base documental de un proyecto web comercial.
+
+No equivale a una auditoría presencial ni a una confirmación directa del negocio. Los directorios pueden contener información antigua, agregada automáticamente o duplicada. Una página que hoy muestra una dirección no demuestra por sí sola quién opera actualmente en ese inmueble. Del mismo modo, una publicación histórica de un vehículo no demuestra que siga disponible.
+
+Criterios de evidencia usados:
+- CONFIRMADO POR FUENTE PRIMARIA: el dato aparece en un canal que parece pertenecer directamente a la entidad citada, como el sitio oficial de Grupo Almafuerte. Aun así, la relación histórica entre entidades requiere confirmación si no se declara expresamente.
+- CORROBORADO POR VARIAS FUENTES: distintas fuentes públicas coinciden en el dato, sin que ello garantice actualidad absoluta.
+- PUBLICADO POR TERCERO: dato presente en directorios, agregadores o plataformas de reseñas; puede estar desactualizado.
+- INDICIO / HIPÓTESIS: interpretación plausible que debe verificarse.
+- NO VERIFICADO: no se encontró evidencia suficiente en las fuentes accesibles durante esta búsqueda.
+- NO CONCLUIR: categoría usada cuando sería incorrecto transformar ausencia de resultados en una afirmación definitiva.
+
+Importante:
+1. No se inventaron precios, kilometrajes, años, versiones ni disponibilidad de vehículos.
+2. No se presenta ningún vehículo individual como disponible actualmente porque no se pudo verificar una publicación individual vigente y atribuible con suficiente certeza durante esta sesión.
+3. La presencia de un catálogo de terceros no demuestra que sea inventario actualizado.
+4. Los nombres de marcas/modelos que aparecen en la descripción de GTM son referencias de esa página, no un inventario unitario verificado.
+5. No se debe reutilizar fotografía, logo, video, reseña o texto de terceros en una web comercial sin comprobar derechos y permisos.
+6. Los números telefónicos se incluyen porque son datos comerciales publicados en fuentes públicas. Antes de usarlos en una web nueva, confirmar cuál está vigente.
+7. Las URLs de fuentes se incluyen completas para permitir una revisión manual posterior. La accesibilidad y el contenido pueden cambiar.
+
+======================================================================
+1. RESUMEN EJECUTIVO
+======================================================================
+
+El nombre Horizonte Automotores está asociado en varios directorios públicos a una agencia de vehículos ubicada en Avenida Argentina 2021, María Grande, Entre Ríos. Las fuentes históricas y sectoriales muestran distintos teléfonos: 0343 461-8388, 0343 494-1092 y 343 405-0787. El primero aparece en Cylex, TodosNegocios y Tellows; el tercero aparece en el listado de agencias de la Cámara del Comercio Automotor de Entre Ríos (CCA). El segundo aparece en directorios con datos inconsistentes, incluida una dirección alternativa que no coincide con la principal.
+
+Hallazgo crítico:
+El sitio oficial de Grupo Almafuerte (grupoalmafuerte.com) lista actualmente Av. Argentina 2021, María Grande, como una ubicación de “Usados multimarca”, con el teléfono +54 9 3434 61-8388 y WhatsApp +54 9 3436 10-9949. El sitio presenta a Grupo Almafuerte como empresa familiar del sector automotor de Entre Ríos, concesionario oficial GWM y agencia de usados multimarca. La coincidencia exacta de dirección y del número 3434 61-8388 con la ficha histórica de Horizonte Automotores sugiere una posible continuidad, transformación comercial, administración actual por Grupo Almafuerte o actualización de identidad. Sin embargo, las fuentes consultadas no prueban explícitamente que “Horizonte Automotores” haya sido adquirida, absorbida o formalmente renombrada por Grupo Almafuerte. No afirmar ninguna de esas posibilidades como hecho sin confirmación.
+
+Consecuencia práctica para la demo:
+Antes de presentar una propuesta como “la web oficial de Horizonte Automotores”, es indispensable verificar con el operador actual del local si el nombre comercial sigue activo, si la ubicación ahora se gestiona bajo Grupo Almafuerte y qué marca debería representar la web. Un diseño construido con la identidad antigua podría ser incorrecto si la actividad actual ya está integrada en otra marca.
+
+Lo que sí puede documentarse:
+- Actividad vinculada a concesionaria/agencia de automotores.
+- Dirección histórica y actual coincidente: Av. Argentina 2021, María Grande.
+- Teléfono histórico 0343 461-8388 / formato internacional +54 9 3434 61-8388.
+- Registro de la agencia en el listado público de CCA Entre Ríos con teléfono alternativo 343 4050787.
+- Directorios describen ventas de vehículos 0 km y usados, autos y motos, permutas y financiación.
+- Cylex enlaza un perfil de Facebook con la URL https://www.facebook.com/horizonteautos/; la consulta directa fue limitada por la plataforma.
+- Una página de reseñas agregadas muestra 4,20/5 y 17 reseñas de Google al momento de la consulta; el agregador no reemplaza la inspección directa de cada reseña.
+- No se verificó durante esta investigación un sitio corporativo propio vigente de Horizonte Automotores como entidad separada. Sí se localizó un sitio oficial actual de Grupo Almafuerte con la dirección coincidente.
+
+Nivel general de confianza:
+- Dirección Av. Argentina 2021 asociada históricamente a Horizonte: ALTO.
+- Teléfono 0343 461-8388 asociado históricamente a Horizonte: ALTO.
+- Actividad actual en esa dirección vinculada a Grupo Almafuerte: ALTO, según su web oficial.
+- Relación jurídica/comercial exacta entre Horizonte Automotores y Grupo Almafuerte: NO RESUELTA.
+- Inventario actual de vehículos de Horizonte bajo ese nombre: NO VERIFICADO.
+- Perfil de Facebook potencialmente asociado: MEDIO-ALTO por enlace desde Cylex, pero sin inspección de contenido actual.
+- Horarios actuales exactos: MEDIO-BAJO por diferencias entre fuentes.
+
+======================================================================
+2. IDENTIDAD Y DESAMBIGUACIÓN
+======================================================================
+
+2.1 Identidad histórica localizada
+
+Nombre comercial registrado: Horizonte Automotores.
+Localidad: María Grande, Entre Ríos, Argentina.
+Dirección principal publicada: Avenida Argentina 2021, CP 3133 / E3133.
+Teléfono más consistentemente asociado: 0343 461-8388.
+Categoría: concesionario de automóviles / agencia de vehículos.
+Descripción comercial repetida en directorios: “RESERVAMOS TU AUTO ONLINE - AUTOMOTORES Y MOTOS 0 KM Y USADOS - VENTA - PERMUTAS - AMPLIA FINANCIACIÓN”.
+
+Fuentes:
+- Cylex: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+- TodosNegocios: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+- Tellows: https://ar.tellows.net/num/03434618388
+- CCA Entre Ríos: https://ccaentrerios.org/agencias/
+- GTM: https://gtm.com.ar/concesionario/horizonte-automotores/
+
+2.2 Registro sectorial de CCA
+
+El listado de agencias de la Cámara del Comercio Automotor de Entre Ríos muestra:
+MARÍA GRANDE | HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787
+
+Esta referencia es especialmente útil porque se trata de un listado sectorial, pero la página también indica que lista agencias asociadas y no certifica por sí sola que cada dato de contacto haya sido actualizado recientemente. El número 343 4050787 difiere del teléfono 0343 461-8388 que aparece en varios directorios. La diferencia debe mantenerse visible y resolverse mediante contacto directo.
+
+URL:
+https://ccaentrerios.org/agencias/
+
+2.3 Hallazgo de Grupo Almafuerte: conflicto de identidad prioritario
+
+Página oficial consultada:
+https://grupoalmafuerte.com/nosotros/
+
+El sitio declara:
+- Grupo Almafuerte es una empresa familiar del sector automotor de Entre Ríos.
+- Opera dos unidades de negocio: representación oficial GWM y agencia de vehículos usados multimarca.
+- Enumera una ubicación “USADOS MULTIMARCA” en Av. Argentina 2021, María Grande, Entre Ríos.
+- Publica para esa ubicación el teléfono +54 9 3434 61-8388.
+- Publica WhatsApp +54 9 3436 10-9949.
+- Publica horario de lunes a viernes de 8:30 a 12:30 y de 15:30 a 19:30, sábados de 8:30 a 13:00.
+- El sitio se identifica como “GWM Almafuerte” y muestra copyright 2026.
+
+La coincidencia entre la dirección de Horizonte Automotores y la dirección de Grupo Almafuerte es exacta. El número telefónico coincide en sus dígitos esenciales: 0343 461-8388 frente a +54 9 3434 61-8388. Esto no parece una coincidencia irrelevante y debe ser el centro de la siguiente fase de investigación.
+
+Interpretaciones posibles, ninguna confirmada:
+A. Horizonte Automotores dejó de operar bajo su nombre histórico y la sucursal fue incorporada a Grupo Almafuerte.
+B. El local o parte de la operación comercial fue transferido a otro operador.
+C. Horizonte Automotores fue una marca anterior, un nombre de fantasía o una etapa comercial de la misma operación.
+D. Grupo Almafuerte usa la ubicación y teléfono, pero existe alguna continuidad administrativa distinta que no queda explicada en la web.
+E. Los directorios de Horizonte no fueron actualizados luego de un cambio.
+
+No presentar A–E como hechos. La evidencia disponible permite registrar el conflicto, no resolver su causa.
+
+Fuente primaria:
+https://grupoalmafuerte.com/nosotros/
+
+2.4 Teléfono alternativo 0343 494-1092 y dirección Av. Argentina 536
+
+El número 0343 494-1092 aparece en:
+- TodosNegocios, en una ficha distinta: https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+- Entre Ríos Total: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+
+Estas páginas asocian el número con “Horizonte Automotores” y Av. Argentina 536, María Grande. Una de las fichas también muestra una clasificación geográfica absurda (“Argentina (Santiago del Estero)”) aunque la descripción del domicilio menciona María Grande, Entre Ríos. Esto sugiere datos mezclados, una ficha mal clasificada o un registro antiguo. No usar Av. Argentina 536 ni el número 0343 494-1092 como contacto vigente sin verificación directa.
+
+2.5 Ficha maestra de identidad
+
+Campo: Nombre histórico
+Valor: Horizonte Automotores
+Estado: corroborado por múltiples directorios
+Confianza: alta
+Fuentes: Cylex, TodosNegocios, CCA, Tellows
+Observación: no se confirmó si sigue siendo el nombre comercial vigente.
+
+Campo: Dirección histórica
+Valor: Av. Argentina 2021, María Grande, Entre Ríos, CP 3133
+Estado: corroborado por múltiples directorios y por sitio oficial de Grupo Almafuerte
+Confianza: alta
+Fuentes: Cylex, TodosNegocios, CCA, GTM, Grupo Almafuerte
+Observación: la operación comercial actual en la ubicación está presentada por Grupo Almafuerte bajo “Usados multimarca”.
+
+Campo: Teléfono principal histórico
+Valor: 0343 461-8388
+Estado: corroborado por varias fuentes
+Confianza: alta como número histórico asociado; vigencia bajo Horizonte no confirmada
+Fuentes: Cylex, TodosNegocios, Tellows, GTM
+Observación: coincide con el teléfono publicado por Grupo Almafuerte para la ubicación.
+
+Campo: Teléfono de CCA
+Valor: 343 4050787
+Estado: publicado por CCA
+Confianza: media como dato histórico
+Fuente: CCA Entre Ríos
+Observación: no coincide con el teléfono repetido en otros directorios.
+
+Campo: Teléfono alternativo
+Valor: 0343 494-1092
+Estado: publicado por directorios
+Confianza: baja-media
+Fuentes: TodosNegocios y Entre Ríos Total
+Observación: asociado a una dirección alternativa y a metadatos inconsistentes.
+
+Campo: WhatsApp publicado actualmente para sucursal
+Valor: +54 9 3436 10-9949
+Estado: publicado en sitio oficial de Grupo Almafuerte
+Confianza: alta como contacto publicado por Grupo Almafuerte
+Fuente: https://grupoalmafuerte.com/nosotros/
+Observación: no atribuirlo automáticamente al Horizonte histórico sin confirmar la relación.
+
+Campo: Sitio web propio de Horizonte
+Valor: no verificado
+Estado: no localizado como sitio independiente en esta búsqueda
+Confianza: limitada
+Observación: no equivale a demostrar que nunca haya existido.
+
+Campo: Perfil de Facebook
+URL potencial: https://www.facebook.com/horizonteautos/
+Estado: enlazado desde Cylex
+Confianza: media-alta como perfil históricamente relacionado
+Observación: la plataforma limitó el acceso automatizado; no se pudo inspeccionar exhaustivamente el contenido actual.
+
+======================================================================
+3. MAPA DE PRESENCIA DIGITAL
+======================================================================
+
+3.1 Perfil de Facebook
+
+URL:
+https://www.facebook.com/horizonteautos/
+
+Cómo se encontró:
+La ficha de Cylex de Horizonte Automotores incluye un enlace a Facebook con el texto “Contáctenos en Facebook”. El enlace dirige a la URL anterior.
+
+Fuente que respalda la asociación:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+
+Estado:
+- URL localizada.
+- Acceso directo al contenido limitado por bloqueo/throttling de Facebook durante esta investigación.
+- No se pudieron confirmar la biografía actual, número de seguidores, fecha de última publicación, publicaciones individuales, enlaces de WhatsApp ni disponibilidad actual de vehículos.
+- No afirmar que el perfil esté activo hoy ni que su contenido reciente se haya revisado.
+
+Acciones de siguiente fase:
+1. Abrir el perfil manualmente en un navegador con sesión iniciada si corresponde.
+2. Confirmar nombre, localidad, dirección, teléfonos y enlace de contacto.
+3. Capturar URLs individuales de publicaciones que incluyan vehículos.
+4. Registrar fecha de publicación y fecha de edición cuando sea visible.
+5. Separar publicaciones institucionales, publicaciones de unidades y contenido de terceros.
+6. Verificar si el perfil menciona Grupo Almafuerte, una nueva razón social o un cambio de nombre.
+7. Guardar una lista de enlaces de publicaciones y no solo capturas de pantalla.
+
+3.2 Sitio oficial de Grupo Almafuerte
+
+URL:
+https://grupoalmafuerte.com/nosotros/
+
+Señales relevantes:
+- Sitio propio con secciones de modelos, vehículos usados, nosotros, contacto y políticas legales.
+- Se presenta como concesionario oficial de GWM y agencia de usados multimarca.
+- Declara cuatro puntos de atención en Entre Ríos y Santa Fe.
+- Enumera la ubicación de María Grande en Av. Argentina 2021.
+- Publica teléfono +54 9 3434 61-8388 y WhatsApp +54 9 3436 10-9949.
+- Publica horarios de la sucursal: lunes a viernes 8:30–12:30 y 15:30–19:30; sábados 8:30–13:00.
+- La web incluye enlaces a catálogo de vehículos usados, contacto y modelos 0 km.
+
+Importancia:
+Esta es la fuente más relevante descubierta para comprender el estado actual de la ubicación física. Si la propuesta web pretende representar al negocio actual en ese domicilio, debe aclararse si el cliente objetivo es “Horizonte Automotores”, “Grupo Almafuerte” o una unidad comercial distinta.
+
+3.3 Directorios comerciales
+
+Cylex:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Datos: nombre, Av Argentina 2021, teléfono 0343 461-8388, horario, enlace de Facebook y acceso a reseñas agregadas. La ficha muestra actualización del 13/09/2024.
+
+TodosNegocios:
+https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+Datos: dirección, dos teléfonos (0343 461-8388 y 0343 494-1092), horarios, enlaces a Facebook/Google Maps/Foursquare y descripción de actividad. El horario de lunes a viernes se muestra como 9:30–18:00 y sábados 8:30–12:30.
+
+Tellows:
+https://ar.tellows.net/num/03434618388
+Datos: asocia el número 0343 461-8388 con Horizonte Automotores, Av Argentina 2021, María Grande. Muestra una descripción comercial y horario 9:30–18:00 de lunes a viernes, 8:30–12:30 los sábados.
+
+GTM:
+https://gtm.com.ar/concesionario/horizonte-automotores/
+Datos: nombre, dirección, una puntuación de 8.4 y un bloque que cita 27 reseñas; el contenido mezcla información descriptiva, interpretaciones del sitio y referencias a vehículos/servicios. La misma página contiene una discrepancia interna al mencionar una calificación promedio de 4.2 estrellas. No tratar las métricas como equivalentes sin conocer la escala y fuente de cada una.
+
+Entre Ríos Total:
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+Incluye una ficha de Horizonte Automotores, María Grande, Avda. Argentina 536, teléfono 0343 4941092. Esta referencia entra en conflicto con la dirección principal Av. Argentina 2021.
+
+CCA Entre Ríos:
+https://ccaentrerios.org/agencias/
+Incluye Horizonte Automotores en María Grande, Av Argentina 2021, teléfono 343 4050787.
+
+3.4 Google Maps
+
+Enlace de partida suministrado para esta investigación:
+https://www.google.com/maps/?cid=10635091665953296629
+
+No se pudo confirmar manualmente desde la página renderizada la situación actual de la ficha, la entidad administradora ni la totalidad de reseñas individuales. La ficha agregada de Yably remite a Google y muestra un promedio de 4.20/5 con 17 reseñas en el momento de la consulta. Esto debe revalidarse directamente en Google Maps antes de usarlo comercialmente.
+
+3.5 Instagram, YouTube y otros canales
+
+No se localizó un perfil de Instagram oficial con atribución suficiente durante las búsquedas realizadas. Tampoco se verificó un canal oficial de YouTube o TikTok atribuible inequívocamente a Horizonte Automotores de María Grande.
+
+Esto significa “no localizado en esta sesión”, no “no existe”.
+
+Búsquedas recomendadas:
+- “Horizonte Automotores” “María Grande”
+- “Horizonte Autos” “María Grande”
+- “horizonteautos”
+- “Av Argentina 2021” automotores
+- “0343 461-8388”
+- “0343 494-1092”
+- “343 4050787”
+- “+54 9 3434 61-8388”
+- “+54 9 3436 10-9949”
+- “Grupo Almafuerte” “María Grande”
+- Variantes de nombre con “autos usados”, “permuta”, “financiación” y marcas/modelos.
+
+======================================================================
+4. TABLA MAESTRA DE CONTACTOS Y HORARIOS
+======================================================================
+
+CONTACTO A — TELÉFONO PRINCIPAL HISTÓRICO
+Número local: 0343 461-8388
+Formato internacional publicado por Grupo Almafuerte: +54 9 3434 61-8388
+Dirección asociada: Av. Argentina 2021, María Grande
+Fuentes: Cylex, TodosNegocios, Tellows, GTM, Grupo Almafuerte
+Estado: número con alta corroboración histórica; confirmar el uso comercial actual y el nombre que responde.
+
+CONTACTO B — NÚMERO EN LISTADO CCA
+Número publicado: 343 4050787
+Dirección: Av. Argentina 2021
+Fuente: CCA Entre Ríos
+Estado: no corroborado por las otras fuentes consultadas. Preguntar si sigue activo, si es móvil, línea alternativa o dato antiguo.
+
+CONTACTO C — TELÉFONO ALTERNATIVO EN DIRECTORIOS
+Número: 0343 494-1092
+Dirección asociada en algunos registros: Av. Argentina 536
+Fuentes: TodosNegocios y Entre Ríos Total
+Estado: información conflictiva; no publicar como vigente sin confirmación.
+
+CONTACTO D — WHATSAPP ACTUAL DE GRUPO ALMAFUERTE
+Número: +54 9 3436 10-9949
+Fuente: enlace WhatsApp de la web oficial de Grupo Almafuerte
+URL de destino observada:
+https://api.whatsapp.com/send?phone=543436109949&text=Hola%20Grupo%20Almafuerte%20%F0%9F%9A%97,%20vengo%20desde%20la%20web.%20Quiero%20informaci%C3%B3n%20sobre%20sus%20productos.
+Estado: publicado por Grupo Almafuerte; no atribuirlo automáticamente a la marca histórica Horizonte.
+
+HORARIOS — FUENTES HISTÓRICAS
+Cylex, actualización indicada 13/09/2024:
+Lunes a viernes: 09:30–18:00
+Sábado: 08:30–12:30
+Domingo: cerrado
+URL: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+
+TodosNegocios:
+Lunes a viernes: 09:30–18:00
+Sábado: 08:30–12:30
+Domingo: cerrado
+URL: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+
+Tellows:
+Lunes a viernes: 09:30–18:00
+Sábado: 08:30–12:30
+Domingo: cerrado
+URL: https://ar.tellows.net/num/03434618388
+
+HORARIOS — FUENTE ACTUAL DE GRUPO ALMAFUERTE
+Lunes a viernes: 08:30–12:30 y 15:30–19:30
+Sábado: 08:30–13:00
+URL: https://grupoalmafuerte.com/nosotros/
+
+CONCLUSIÓN SOBRE HORARIOS:
+Hay una diferencia clara entre el horario histórico de los directorios y el horario publicado actualmente por Grupo Almafuerte. Para una web nueva debe usarse únicamente el horario confirmado por el operador actual. No copiar horarios antiguos de Horizonte hasta resolver la identidad del local.
+
+======================================================================
+5. SERVICIOS Y PROPUESTAS COMERCIALES DOCUMENTADAS
+======================================================================
+
+5.1 Texto comercial repetido en directorios
+
+La descripción publicada en Cylex, Tellows y otros registros dice:
+“RESERVAMOS TU AUTO ONLINE - AUTOMOTORES Y MOTOS 0 KM Y USADOS - VENTA - PERMUTAS - AMPLIA FINANCIACIÓN”.
+
+Fuente Cylex:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+
+Fuente Tellows:
+https://ar.tellows.net/num/03434618388
+
+Esto permite registrar como servicios históricamente anunciados:
+- Venta de automotores.
+- Vehículos 0 km y usados, según descripción de directorios.
+- Venta de motos 0 km y usadas, según descripción de directorios.
+- Permutas.
+- Financiación.
+- Una frase comercial “Reservamos tu auto online”.
+
+Límites:
+- No se verificaron condiciones concretas de financiación.
+- No se conocen entidades financieras, tasas, requisitos, montos mínimos, anticipo, plazos ni aprobación.
+- No se verificó si la venta de motos continúa vigente.
+- No se verificó si la reserva online era un sistema formal o una frase promocional.
+- No se debe prometer “financiación para todos”, “aprobación inmediata”, “entrega garantizada” ni condiciones específicas sin documentación actual.
+
+5.2 Servicios actuales declarados por Grupo Almafuerte
+
+En su web, Grupo Almafuerte se describe como:
+- Concesionario oficial GWM.
+- Agencia de vehículos usados multimarca.
+- Venta de vehículos de la gama GWM (Haval, Ora, Poer, Tank).
+- Garantía de fábrica en 0 km, según sus propias declaraciones.
+- Service oficial y repuestos originales asociados a GWM, según sus propias declaraciones.
+- Revisión técnica documentada de usados entregados, según sus propias declaraciones.
+- Atención directa y acompañamiento posventa, según sus propias declaraciones.
+- Coordinación de test drive, según el sitio.
+
+Fuente:
+https://grupoalmafuerte.com/nosotros/
+
+No atribuir automáticamente todas estas afirmaciones al Horizonte histórico. Deben tratarse como información de Grupo Almafuerte, la marca que actualmente presenta la ubicación de Av. Argentina 2021.
+
+======================================================================
+6. INVENTARIO DE VEHÍCULOS: QUÉ SE PUEDE Y QUÉ NO SE PUEDE AFIRMAR
+======================================================================
+
+6.1 Resultado de la búsqueda
+
+No se consiguió consolidar en esta sesión un catálogo de publicaciones individuales vigentes que permita afirmar con rigor que un vehículo específico está actualmente disponible bajo el nombre Horizonte Automotores. Facebook limitó el acceso directo al perfil y las páginas de directorios no ofrecen un inventario unitario con fecha, kilometraje, precio y URL original verificable.
+
+Por lo tanto, este archivo no inventa una tabla de unidades ni coloca vehículos históricos como stock activo.
+
+6.2 Modelos citados en GTM
+
+La página de GTM contiene una descripción que menciona, como ejemplos de vehículos que aparecerían en la actividad digital de la agencia:
+- Toyota Hilux.
+- Ford Ranger.
+- Volkswagen Amarok.
+- Volkswagen Gol.
+- Peugeot 208.
+- Ford Focus.
+
+Fuente:
+https://gtm.com.ar/concesionario/horizonte-automotores/
+
+Estado de estos nombres:
+- Son modelos mencionados en el texto de GTM.
+- No se verificaron publicaciones individuales, años, versiones, kilometrajes, precios, colores ni estado actual de disponibilidad.
+- No deben cargarse como unidades activas en una demo.
+- Se pueden usar como pistas de búsqueda para localizar publicaciones históricas, siempre que cada resultado se atribuya con evidencia.
+
+6.3 Plantilla de extracción para futuras unidades
+
+Para cada publicación individual encontrada, registrar:
+ID de investigación:
+URL original:
+Plataforma:
+Nombre de la cuenta que publica:
+Evidencia de vínculo con el negocio:
+Fecha visible de publicación:
+Fecha de última actualización:
+Marca:
+Modelo:
+Versión:
+Año:
+Kilometraje:
+Combustible:
+Transmisión:
+Color:
+Precio publicado:
+Texto original del anuncio:
+Equipamiento citado:
+Condición declarada:
+Financiación citada:
+Permuta citada:
+Teléfono o CTA del anuncio:
+Fotografías:
+Video:
+Señales de republicación:
+Coincidencias con otros anuncios:
+Estado de disponibilidad:
+- Confirmado disponible por fuente reciente
+- Publicación aparentemente activa, disponibilidad no confirmada
+- Histórico
+- Retirado/vendido con evidencia
+- Desconocido
+Nivel de confianza de atribución:
+Notas y contradicciones:
+Permiso para reutilizar imágenes:
+Fecha de última comprobación:
+
+6.4 Reglas para deduplicar unidades
+
+No contar automáticamente dos publicaciones como dos vehículos. Comparar:
+- Modelo, versión y año.
+- Color y detalles visibles.
+- Kilometraje.
+- Matrícula solo como señal interna de comparación y sin reproducirla innecesariamente.
+- Fondos, cartelería y entorno de las fotografías.
+- Texto repetido.
+- Fechas.
+- Cambios de precio.
+- Fotos de interior/exterior.
+- Identificadores o etiquetas de inventario si están publicados.
+
+Si no hay suficiente evidencia, clasificar como “posible duplicado”, no como duplicado definitivo.
+
+6.5 Regla de disponibilidad para la demo
+
+Ninguna unidad debe publicarse como “disponible” solo porque se encuentre una publicación antigua. Cada ficha debe llevar una comprobación reciente y un estado explícito. Si el inventario se usa solo para demostrar el diseño, utilizar unidades de ejemplo claramente rotuladas como demostrativas o solicitar al cliente el inventario actual; no simular stock real.
+
+======================================================================
+7. ARCHIVO FOTOGRÁFICO, VIDEOS Y ACTIVOS VISUALES
+======================================================================
+
+7.1 Recursos localizados
+
+- Cylex incluye imágenes asociadas a la ficha de Horizonte Automotores y un enlace a Facebook.
+- GTM muestra una imagen representativa y menciona fotografías de instalaciones en su descripción.
+- El sitio oficial de Grupo Almafuerte contiene imágenes de marca, secciones institucionales, modelos y sucursales.
+
+URLs:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+https://gtm.com.ar/concesionario/horizonte-automotores/
+https://grupoalmafuerte.com/nosotros/
+
+7.2 Qué no se pudo confirmar
+
+- No se descargó ni catalogó un archivo completo de fotografías de Horizonte.
+- No se verificaron álbumes individuales ni sus fechas.
+- No se confirmó un archivo de videos oficiales.
+- No se confirmó resolución original de las fotos.
+- No se verificó quién tiene derechos de uso de cada imagen.
+- No se localizó un archivo oficial de logo en alta resolución de Horizonte.
+- No se estableció si las imágenes históricas corresponden al mismo operador que figura actualmente en la dirección.
+
+7.3 Procedimiento recomendado para el archivo visual
+
+Para cada imagen/video:
+1. Guardar URL original y URL directa del recurso cuando sea accesible.
+2. Registrar plataforma, cuenta y fecha.
+3. Describir objetivamente lo visible.
+4. Relacionar la imagen con una unidad o con la marca.
+5. Registrar resolución, formato y calidad cuando se pueda medir.
+6. Registrar si contiene marca de agua.
+7. Identificar si el recurso parece publicado por el negocio o por un tercero.
+8. Anotar si hay datos personales o patentes visibles y evitar reproducirlos sin necesidad.
+9. Confirmar autorización antes de copiarlo a la demo comercial.
+10. Mantener una copia de referencia con fecha de consulta, si la normativa de la plataforma y los derechos lo permiten.
+
+7.4 Oportunidad de producción futura
+
+Si el operador actual autoriza una web, una sesión fotográfica propia puede resolver el principal déficit documental: fotografías consistentes, galería por vehículo, frente del local, espacio de exhibición, equipo comercial solo con autorización y clips breves de presentación. No presentar esta oportunidad como una carencia comprobada de calidad fotográfica; es una recomendación de producción para controlar derechos, coherencia y actualidad.
+
+======================================================================
+8. IDENTIDAD VISUAL Y COMUNICACIÓN COMERCIAL
+======================================================================
+
+8.1 Identidad de Horizonte
+
+No se obtuvo evidencia suficiente para reconstruir de manera fiable una guía visual oficial de Horizonte Automotores. No se deben inventar colores oficiales, tipografías, logo, eslogan visual o manual de marca.
+
+La frase comercial repetida en directorios —“RESERVAMOS TU AUTO ONLINE - AUTOMOTORES Y MOTOS 0 KM Y USADOS - VENTA - PERMUTAS - AMPLIA FINANCIACIÓN”— funciona como una pieza de comunicación comercial publicada, pero no demuestra que sea un eslogan institucional vigente.
+
+8.2 Identidad de Grupo Almafuerte
+
+La web actual de Grupo Almafuerte presenta una identidad propia asociada a GWM y a la venta multimarca de usados. Contiene:
+- Navegación por modelos.
+- Sección de vehículos usados.
+- Página institucional “Nosotros”.
+- Contacto.
+- Secciones de productos GWM: Haval, Ora, Poer y Tank.
+- Bloques de sucursales y horarios.
+- Políticas de privacidad, términos y cookies.
+
+Fuente:
+https://grupoalmafuerte.com/nosotros/
+
+Esta identidad solo debe aplicarse a la propuesta si el interlocutor confirma que el proyecto corresponde a Grupo Almafuerte o a su operación en María Grande.
+
+8.3 Patrones comerciales documentados
+
+De directorios históricos:
+- Venta de autos y motos 0 km/usados.
+- Permutas.
+- Financiación.
+- Reserva online, al menos como frase promocional.
+
+De Grupo Almafuerte:
+- Concesionario oficial GWM.
+- Usados multimarca.
+- Test drive.
+- Servicio oficial y repuestos originales vinculados a GWM.
+- Revisión técnica documentada de usados, según el sitio.
+- Atención directa y posventa, según el sitio.
+
+No mezclar ambos conjuntos sin validar el vínculo entre las marcas.
+
+======================================================================
+9. RESEÑAS, REPUTACIÓN Y SEÑALES DE CONFIANZA
+======================================================================
+
+9.1 Datos agregados
+
+Yably muestra una ficha de reseñas para Horizonte Automotores en María Grande:
+- Calificación: 4,20/5.
+- 17 reseñas de Google en el momento de la consulta.
+- Dirección: Av Argentina 2021, 3133 María Grande.
+- Teléfono: 0343 461-8388.
+- Advierte que los horarios pueden diferir y no se han actualizado recientemente.
+
+URL:
+https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+
+GTM muestra un bloque con “8.4 (27 reseñas)” y más abajo hace referencia a un promedio de 4.2 estrellas, lo que deja una inconsistencia de escala o agregación dentro de la propia página. No combinar los 27 registros de GTM con las 17 reseñas de Yably ni asumir que representan exactamente la misma muestra.
+
+URL:
+https://gtm.com.ar/concesionario/horizonte-automotores/
+
+9.2 Límites del análisis
+
+- No se leyó de forma exhaustiva el texto de cada reseña original.
+- No se verificó la fecha de todas las opiniones.
+- No se evaluó la autenticidad de cada reseña.
+- No se deben repetir citas o acusaciones sin abrir y verificar la fuente original.
+- Una calificación agregada no garantiza la experiencia futura.
+- Una crítica aislada no prueba un patrón de conducta.
+
+9.3 Uso correcto en la futura web
+
+Antes de publicar un módulo de reseñas:
+- Verificar la ficha actual de Google Maps.
+- Confirmar que la ficha corresponde al negocio actual y no a un nombre antiguo.
+- Mostrar la puntuación y cantidad de opiniones con fuente y fecha de consulta.
+- Enlazar a la ficha original.
+- No seleccionar únicamente opiniones favorables si el módulo se presenta como una representación global.
+- No copiar nombres, fotos o textos completos de reseñadores sin necesidad y respetando las reglas de la plataforma.
+- Si la ficha ya corresponde a Grupo Almafuerte, no seguir mostrando reseñas bajo Horizonte sin resolver la identidad.
+
+======================================================================
+10. HISTORIA Y CRONOLOGÍA DOCUMENTABLE
+======================================================================
+
+Cronología limitada a hitos verificables en las fuentes accesibles:
+
+13/09/2024 — Cylex indica que la información de horario de Horizonte Automotores fue actualizada en esa fecha.
+Fuente:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Qué permite concluir: una actualización de la ficha de directorio en esa fecha. No prueba fecha de fundación ni inicio de actividad.
+
+2025 — El listado público de la Cámara del Comercio Automotor de Entre Ríos consultado incluye Horizonte Automotores en María Grande, Av Argentina 2021, teléfono 343 4050787. La página conserva un copyright 2020–2025.
+Fuente:
+https://ccaentrerios.org/agencias/
+Qué permite concluir: la ficha estaba presente en el listado consultado; la fecha exacta de incorporación no se conoce.
+
+2026 — La página oficial de Grupo Almafuerte presenta Av. Argentina 2021, María Grande, como ubicación de usados multimarca y publica el teléfono +54 9 3434 61-8388 y WhatsApp +54 9 3436 10-9949.
+Fuente:
+https://grupoalmafuerte.com/nosotros/
+Qué permite concluir: el sitio oficial de Grupo Almafuerte atribuye esa dirección a su operación de usados multimarca al momento de la consulta. No prueba la fecha de transición desde Horizonte.
+
+2026 — Yably muestra una puntuación agregada de 4,20/5 y 17 reseñas de Google para la ficha de Horizonte.
+Fuente:
+https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+Qué permite concluir: el agregador presentaba esos datos al consultarse; no se conoce el momento exacto de actualización de cada reseña.
+
+No se localizó una fecha fiable de fundación, un fundador confirmado, una cronología de cambios de nombre, una adquisición documentada ni un anuncio institucional que explique la coincidencia con Grupo Almafuerte.
+
+======================================================================
+11. DOMINIOS Y SITIO WEB PROPIO
+======================================================================
+
+Resultado de la búsqueda:
+- No se localizó un dominio independiente atribuible inequívocamente a Horizonte Automotores en las búsquedas realizadas.
+- TodosNegocios indica que no hay sitio web y que puede encontrarse a la agencia en Facebook.
+- Cylex enlaza Facebook.
+- Se localizó un sitio oficial activo de Grupo Almafuerte que contiene la dirección coincidente de María Grande.
+
+Fuentes:
+https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+https://grupoalmafuerte.com/nosotros/
+
+Conclusión correcta:
+“No se verificó un sitio corporativo independiente y vigente de Horizonte Automotores durante esta investigación. Sí existe una presencia web oficial de Grupo Almafuerte que incluye la ubicación de Av. Argentina 2021 como sucursal de usados multimarca. La relación histórica entre ambas identidades requiere confirmación.”
+
+Conclusión incorrecta que debe evitarse:
+“Horizonte nunca tuvo web” o “Horizonte no tiene web actualmente” como afirmaciones definitivas, porque la búsqueda no cubre todos los dominios, archivos históricos o sitios desindexados.
+
+Siguiente paso técnico:
+- Buscar variantes de dominio con horizonte, horizonteautos, horizonteautomotores, María Grande y Entre Ríos.
+- Consultar Wayback Machine para dominios plausibles una vez identificados.
+- Revisar enlaces del perfil de Facebook.
+- Consultar NIC Argentina y RDAP/WHOIS para candidatos concretos, sin asumir que un dominio disponible o registrado corresponde al negocio.
+- No afirmar que se revisó DNS, certificados o registros de dominio si no se ejecutó la consulta correspondiente.
+
+======================================================================
+12. CONTEXTO COMPETITIVO Y OPORTUNIDADES DIGITALES
+======================================================================
+
+La investigación no pretende construir un ranking competitivo. El listado de CCA Entre Ríos incluye agencias de múltiples localidades y sirve como directorio sectorial, pero no constituye una medición de mercado.
+
+Fuente:
+https://ccaentrerios.org/agencias/
+
+La web oficial de Grupo Almafuerte sirve como referencia de la operación que actualmente lista la dirección de María Grande y presenta un sitio con catálogo de usados, productos GWM, sucursales, contacto y contenido institucional.
+Fuente:
+https://grupoalmafuerte.com/nosotros/
+
+Oportunidades digitales genéricas, sujetas a confirmar el negocio objetivo:
+1. Catálogo actualizado con estado de disponibilidad.
+2. Búsqueda por marca, modelo, año, precio, kilometraje, combustible y transmisión, solo si el operador entrega esos datos.
+3. Fichas individuales con información verificable, galería propia y CTA a WhatsApp.
+4. Módulo de permutas, con proceso y condiciones reales.
+5. Módulo de financiación con requisitos y aclaración de evaluación crediticia, solo si se documentan condiciones.
+6. Contacto, ubicación, horario vigente y cómo llegar.
+7. Integración con redes sociales y publicaciones.
+8. Gestión sencilla del stock para evitar anuncios vencidos.
+9. SEO local para el nombre comercial correcto y la localidad.
+10. Datos estructurados de negocio local solo con información validada.
+11. Avisos de privacidad y tratamiento de datos para formularios.
+12. Métricas de conversión y consultas por vehículo, si el cliente acepta instrumentarlas.
+
+Oportunidad más importante y específica:
+Resolver primero la identidad del operador actual de Av. Argentina 2021. No conviene construir un producto para una marca histórica sin confirmar si el nombre todavía se usa.
+
+======================================================================
+13. MATRIZ DE CONTENIDO PARA UNA FUTURA DEMO
+======================================================================
+
+ELEMENTO: Nombre y logotipo de marca
+Evidencia: directorios históricos usan Horizonte Automotores; sitio actual en la dirección usa Grupo Almafuerte.
+Confianza: alta en la existencia de ambos registros; baja en la relación exacta.
+Acción: preguntar al operador qué marca debe representar el sitio.
+Prioridad: CRÍTICA.
+Riesgo: representar una marca antigua o equivocada.
+
+ELEMENTO: Dirección
+Evidencia: Av. Argentina 2021, María Grande aparece en Cylex, TodosNegocios, CCA, GTM y Grupo Almafuerte.
+Confianza: alta.
+Acción: confirmar que la atención presencial continúa allí.
+Prioridad: alta.
+Riesgo: bajo, pero requiere confirmación antes de publicar.
+
+ELEMENTO: Teléfono
+Evidencia: 0343 461-8388 repetido en varios directorios y versión +54 9 3434 61-8388 en Grupo Almafuerte; 343 4050787 en CCA; 0343 494-1092 en fichas alternativas.
+Confianza: alta para el histórico; actual solo para el contacto que publique el operador.
+Acción: probar y confirmar todos los números.
+Prioridad: crítica.
+
+ELEMENTO: WhatsApp
+Evidencia: +54 9 3436 10-9949 publicado por Grupo Almafuerte.
+Confianza: alta para Grupo Almafuerte.
+Acción: confirmar si debe utilizarse en la web de la sucursal de María Grande.
+Prioridad: alta.
+
+ELEMENTO: Horarios
+Evidencia: directorios históricos indican 09:30–18:00 de lunes a viernes; web actual de Grupo Almafuerte indica 08:30–12:30 y 15:30–19:30.
+Confianza: conflictiva.
+Acción: confirmar horario vigente.
+Prioridad: alta.
+
+ELEMENTO: Catálogo de vehículos
+Evidencia: descripción de GTM menciona modelos como Hilux, Ranger, Amarok, Gol, 208 y Focus; no se verificó inventario unitario actual.
+Confianza: baja para disponibilidad; media como pista de investigación histórica.
+Acción: solicitar feed o planilla de stock actual.
+Prioridad: crítica.
+
+ELEMENTO: Autos y motos 0 km/usados
+Evidencia: texto comercial histórico de directorios.
+Confianza: media como oferta histórica.
+Acción: confirmar qué categorías vende hoy la marca correcta.
+Prioridad: alta.
+
+ELEMENTO: Permutas
+Evidencia: texto comercial repetido en directorios.
+Confianza: media como servicio histórico.
+Acción: obtener condiciones actuales y proceso.
+Prioridad: alta.
+
+ELEMENTO: Financiación
+Evidencia: texto comercial “amplia financiación”.
+Confianza: media como promoción histórica; ninguna condición concreta verificada.
+Acción: solicitar entidades, requisitos, plazos, anticipo y avisos legales.
+Prioridad: alta.
+Riesgo: promesas comerciales incorrectas.
+
+ELEMENTO: Reservas online
+Evidencia: frase “Reservamos tu auto online”.
+Confianza: media como claim publicitario, baja como funcionalidad técnica real.
+Acción: preguntar si se aceptan reservas y cómo funciona el proceso.
+Prioridad: media-alta.
+
+ELEMENTO: Reseñas
+Evidencia: Yably muestra 4,20/5 y 17 reseñas; GTM muestra 8.4 (27 reseñas) y una referencia interna a 4.2.
+Confianza: media como agregación, no como dato actual definitivo.
+Acción: revisar Google Maps y resolver la identidad de la ficha.
+Prioridad: media.
+Riesgo: mostrar opiniones de una entidad antigua.
+
+ELEMENTO: Fotos de vehículos
+Evidencia: directorios y redes enlazadas muestran material asociado, pero no se catalogó el archivo completo.
+Confianza: variable por recurso.
+Acción: solicitar fotos propias y permiso de uso.
+Prioridad: alta.
+
+ELEMENTO: Historia institucional
+Evidencia: no se confirmó fecha de fundación ni historia propia de Horizonte.
+Confianza: baja.
+Acción: entrevistar al dueño/operador.
+Prioridad: media.
+
+ELEMENTO: Dominio propio
+Evidencia: no localizado en esta búsqueda; sí hay web de Grupo Almafuerte.
+Confianza: limitada.
+Acción: preguntar si existe dominio o web previa y buscar archivos históricos.
+Prioridad: media.
+
+======================================================================
+14. CONTRADICCIONES Y DATOS PENDIENTES
+======================================================================
+
+CONFLICTO 1 — Nombre comercial actual
+- Directorios: Horizonte Automotores.
+- Sitio oficial actual: Grupo Almafuerte presenta Av. Argentina 2021 como “Paraná - Usados” dentro de su lista de sucursales, aunque la dirección está en María Grande.
+- Estado: no resuelto.
+- Riesgo: crítico para marca, diseño, SEO y titularidad del sitio.
+- Próxima acción: confirmación directa del operador del local.
+
+CONFLICTO 2 — Teléfono
+- Cylex/TodosNegocios/Tellows/GTM: 0343 461-8388.
+- CCA: 343 4050787.
+- Directorios alternativos: 0343 494-1092.
+- Grupo Almafuerte: +54 9 3434 61-8388 y WhatsApp +54 9 3436 10-9949.
+- Estado: parcialmente resuelto para el contacto publicado por Grupo Almafuerte, no para la marca histórica.
+- Próxima acción: llamar o consultar por WhatsApp, preguntando qué entidad responde y qué contacto debe publicarse.
+
+CONFLICTO 3 — Dirección alternativa
+- Fuentes principales: Av. Argentina 2021.
+- TodosNegocios/Entre Ríos Total: Av. Argentina 536 en una ficha asociada al teléfono 0343 494-1092.
+- Estado: no resuelto; probable ficha vieja, duplicada o incorrecta, pero no se puede confirmar.
+- Próxima acción: comprobar registros históricos y preguntar al negocio.
+
+CONFLICTO 4 — Horarios
+- Directorios: 09:30–18:00 de lunes a viernes, sábado 08:30–12:30.
+- Grupo Almafuerte: 08:30–12:30 y 15:30–19:30 de lunes a viernes, sábado 08:30–13:00.
+- Estado: conflicto compatible con actualización comercial.
+- Próxima acción: usar horario confirmado por el operador actual.
+
+CONFLICTO 5 — Métricas de reseñas
+- Yably: 4.20/5, 17 reseñas de Google.
+- GTM: 8.4 (27 reseñas) y referencia a 4.2 estrellas.
+- Estado: métricas no directamente comparables o inconsistentes.
+- Próxima acción: revisar ficha original de Google Maps y documentar fecha, número de opiniones y escala.
+
+CONFLICTO 6 — Inventario
+- GTM menciona modelos concretos en texto descriptivo, pero no se validaron anuncios individuales actuales.
+- Estado: sin catálogo verificable.
+- Próxima acción: búsqueda manual de publicaciones y confirmación del stock actual.
+
+======================================================================
+15. PREGUNTAS QUE SOLO EL NEGOCIO PUEDE RESOLVER
+======================================================================
+
+IDENTIDAD Y OPERACIÓN
+1. ¿Horizonte Automotores sigue funcionando como nombre comercial?
+2. ¿La sucursal de Av. Argentina 2021 es actualmente operada por Grupo Almafuerte?
+3. ¿Existe una relación comercial, societaria, histórica o de transferencia entre Horizonte Automotores y Grupo Almafuerte?
+4. ¿Qué nombre, razón social y marca deben aparecer en una web nueva?
+5. ¿Quién es el responsable autorizado para aprobar el contenido y la identidad visual?
+6. ¿La dirección Av. Argentina 2021 sigue siendo la ubicación de atención al público?
+7. ¿Av. Argentina 536 fue una dirección anterior, un error de directorio o una ubicación distinta?
+
+CONTACTO
+8. ¿Cuál es el teléfono principal vigente?
+9. ¿El 343 4050787 sigue activo?
+10. ¿El 0343 494-1092 sigue activo?
+11. ¿El WhatsApp +54 9 3436 10-9949 debe ser el CTA oficial para la sucursal?
+12. ¿Qué horario debe publicarse?
+13. ¿Qué correo comercial debe figurar?
+14. ¿Cuáles son los enlaces oficiales actuales de Facebook e Instagram?
+
+CATÁLOGO Y VENTAS
+15. ¿Qué categorías se venden actualmente: autos, camionetas, motos, 0 km, usados?
+16. ¿Existe una planilla, sistema de gestión o feed de stock?
+17. ¿Quién actualiza las unidades vendidas o reservadas?
+18. ¿Qué datos técnicos se pueden publicar por unidad?
+19. ¿Se aceptan permutas hoy? ¿Cuáles son las condiciones?
+20. ¿Se ofrece financiación? ¿Con qué entidades y requisitos?
+21. ¿Se aceptan reservas online? ¿Qué significa exactamente reservar y qué condiciones aplica?
+22. ¿Se realizan entregas fuera de María Grande?
+23. ¿Se ofrecen garantías o inspecciones? ¿Qué documentación lo demuestra?
+
+MARCA Y CONTENIDO
+24. ¿Existe un logo original en alta resolución?
+25. ¿Hay manual de marca, colores o tipografías oficiales?
+26. ¿La agencia conserva fotos y videos originales de unidades históricas?
+27. ¿Qué material tiene autorización para uso en la web?
+28. ¿Se pueden fotografiar instalaciones y vehículos actuales?
+29. ¿Hay historia de la empresa, año de inicio o hitos que puedan documentarse?
+30. ¿Hay testimonios de clientes autorizados para publicar?
+
+REPUTACIÓN Y LEGAL
+31. ¿Cuál es la ficha oficial de Google Maps que se debe enlazar?
+32. ¿Hay políticas de privacidad, términos o condiciones comerciales que deban publicarse?
+33. ¿Qué entidad legal factura las operaciones?
+34. ¿Qué aclaraciones legales deben acompañar precios, financiación y reservas?
+35. ¿Existe un dominio propio anterior que deba recuperarse o redirigirse?
+
+======================================================================
+16. PLAN DE INVESTIGACIÓN SIGUIENTE — MÁXIMO RENDIMIENTO
+======================================================================
+
+FASE 1 — RESOLVER IDENTIDAD (PRIORIDAD MÁXIMA)
+- Contactar el número publicado actualmente por Grupo Almafuerte para Av. Argentina 2021.
+- Preguntar si la ubicación operó anteriormente como Horizonte Automotores.
+- Registrar nombre de quien responde solo si es necesario y con respeto a la privacidad; no publicar datos personales.
+- Obtener confirmación de nombre comercial, teléfono, WhatsApp, horario y operador actual.
+- Guardar fecha y método de confirmación.
+
+FASE 2 — RECUPERAR PUBLICACIONES DE FACEBOOK
+- Abrir https://www.facebook.com/horizonteautos/
+- Revisar publicaciones cronológicamente, empezando por las más recientes y luego por las antiguas.
+- Guardar enlaces directos a cada publicación de vehículo.
+- Buscar términos de financiación, permuta, reserva y entrega.
+- Detectar publicaciones que redirijan a otra marca o número de contacto.
+- Registrar limitaciones de acceso y no fingir que se revisó contenido bloqueado.
+
+FASE 3 — INVENTARIO HISTÓRICO
+- Construir una fila por publicación individual.
+- Deduplicar unidades con evidencia.
+- Conservar texto original del anuncio.
+- Separar histórico de disponibilidad vigente.
+- Nunca rellenar huecos de kilometraje, precio, año o versión con estimaciones.
+
+FASE 4 — ARCHIVO VISUAL
+- Catalogar fotografías, videos, logos y cartelería.
+- Vincular cada recurso a su fuente original.
+- Solicitar autorización para uso comercial.
+- Priorizar fotos propias actuales para la demo.
+
+FASE 5 — PRESENCIA DIGITAL Y DOMINIOS
+- Revisar los enlaces de Facebook.
+- Buscar perfiles de Instagram y otras redes con el teléfono, nombre y dirección.
+- Investigar dominios plausibles y Wayback Machine cuando existan candidatos concretos.
+- Distinguir entre una búsqueda sin resultados y una ausencia probada.
+
+FASE 6 — RESEÑAS Y CONFIANZA
+- Abrir la ficha original de Google Maps.
+- Confirmar si el nombre de la ficha cambió.
+- Verificar cantidad y puntuación actuales.
+- Leer reseñas relevantes con contexto, sin convertir opiniones en hechos.
+- No usar reseñas históricas de una marca anterior sin aclarar el contexto.
+
+FASE 7 — ESPECIFICACIÓN DE LA DEMO
+- Solo después de confirmar identidad, crear una demo con el nombre correcto.
+- Incluir inventario autorizado y actualizado.
+- Añadir CTAs funcionales al teléfono/WhatsApp verificados.
+- Añadir horarios y ubicación confirmados.
+- Crear fichas de vehículos con campos completos solo cuando haya datos.
+- No presentar funciones no aprobadas como servicios reales.
+
+======================================================================
+17. FUENTES CONSULTADAS — URLS COMPLETAS
+======================================================================
+
+1. Grupo Almafuerte — página institucional y sucursales:
+https://grupoalmafuerte.com/nosotros/
+Importancia: fuente primaria actual que lista Av. Argentina 2021, María Grande, como sucursal de usados multimarca; publica teléfono, WhatsApp y horario.
+
+2. Cámara del Comercio Automotor de Entre Ríos — agencias:
+https://ccaentrerios.org/agencias/
+Importancia: registro sectorial de Horizonte Automotores en María Grande, Av Argentina 2021, teléfono 343 4050787.
+
+3. Cylex — Horizonte Automotores, María Grande:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Importancia: nombre, dirección, teléfono 0343 461-8388, horario con actualización indicada 13/09/2024, enlace a Facebook y acceso a reseñas agregadas.
+
+4. TodosNegocios — Horizonte Automotores, teléfono 0343 461-8388:
+https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+Importancia: dirección Av. Argentina 2021, teléfonos 0343 461-8388 y 0343 494-1092, horario, Facebook/Maps/Foursquare y descripción de actividad.
+
+5. Tellows — número 0343 461-8388:
+https://ar.tellows.net/num/03434618388
+Importancia: asocia el número con Horizonte Automotores y Av. Argentina 2021; contiene descripción comercial y horario.
+
+6. GTM — Horizonte Automotores:
+https://gtm.com.ar/concesionario/horizonte-automotores/
+Importancia: dirección, agregación de reseñas y referencias a modelos de vehículos y servicios. Debe tratarse como fuente terciaria y revisarse críticamente por inconsistencias internas.
+
+7. Yably — reseñas de Horizonte Automotores:
+https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+Importancia: muestra 4,20/5 y 17 reseñas de Google al momento de consulta; advierte que horarios pueden estar desactualizados.
+
+8. Entre Ríos Total — directorio sectorial:
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+Importancia: incluye una ficha alternativa de Horizonte Automotores, Avda. Argentina 536, teléfono 0343 4941092. Datos conflictivos frente a la dirección principal.
+
+9. Google Maps — enlace inicial proporcionado:
+https://www.google.com/maps/?cid=10635091665953296629
+Importancia: punto de partida para verificar ficha original, dirección y reseñas.
+
+10. Facebook — perfil enlazado desde Cylex:
+https://www.facebook.com/horizonteautos/
+Importancia: posible perfil histórico oficial; acceso directo limitado durante esta investigación.
+
+======================================================================
+18. REGISTRO DE COBERTURA Y LIMITACIONES
+======================================================================
+
+Fuentes efectivamente consultadas o abiertas:
+- Sitio oficial de Grupo Almafuerte, página Nosotros.
+- Listado de agencias de CCA Entre Ríos.
+- Ficha Cylex de Horizonte Automotores.
+- Ficha de TodosNegocios.
+- Ficha de Tellows.
+- Página de GTM.
+- Página de reseñas Yably.
+- Directorio Entre Ríos Total.
+- Enlace de Facebook localizado, pero acceso al contenido bloqueado/throttled.
+- Enlace de WhatsApp de Grupo Almafuerte localizado; no se inspeccionó conversación ni se contactó al negocio.
+
+Limitaciones:
+- No se realizó contacto telefónico o por WhatsApp.
+- No se verificó la identidad con el dueño u operador actual.
+- No se descargó un archivo histórico completo de Facebook.
+- No se extrajo un catálogo completo de vehículos.
+- No se confirmaron anuncios individuales activos.
+- No se verificó Instagram oficial.
+- No se verificaron dominios históricos mediante una consulta exhaustiva de WHOIS/RDAP/Wayback.
+- No se realizó inspección presencial.
+- No se comprobó autorización para usar fotos, logos o reseñas.
+- Las métricas de reseñas provienen de agregadores y pueden variar.
+- Los horarios de directorios difieren del horario publicado por Grupo Almafuerte.
+- La relación entre Horizonte Automotores y Grupo Almafuerte sigue sin resolverse.
+
+La investigación no debe describirse como exhaustiva en el sentido de haber recuperado “todas” las publicaciones del negocio. Sí es una base documental inicial con un hallazgo de identidad prioritario, fuentes trazables y un plan concreto para completar el trabajo.
+
+======================================================================
+19. CONCLUSIÓN OPERATIVA
+======================================================================
+
+La mayor oportunidad no consiste todavía en diseñar una web, sino en resolver con evidencia qué entidad comercial debe representarse. Los registros históricos identifican Horizonte Automotores en Av. Argentina 2021, mientras que el sitio oficial de Grupo Almafuerte presenta actualmente esa misma dirección como una sucursal de usados multimarca y publica el mismo teléfono base.
+
+La prioridad inmediata es confirmar si Horizonte continúa como marca, si hubo un cambio de operador o si la sucursal está integrada en Grupo Almafuerte. Esa respuesta determina el nombre del proyecto, la identidad visual, el dominio, el catálogo, los contactos, las reseñas y el contenido institucional.
+
+Una vez resuelta la identidad, el mayor activo para una demo será un catálogo real y actualizado con fichas individuales, imágenes autorizadas, contacto verificado y estado de disponibilidad. No cargar unidades antiguas como stock activo ni prometer financiación, permutas o reservas sin validar condiciones actuales.
+
+FIN DEL ARCHIVO MAESTRO
+
+######################################################################
+ANEXO MAESTRO V2 — AMPLIACIÓN CON INVESTIGACIÓN DE GRUPO ALMAFUERTE
+Fecha de actualización: 12/10/2026
+######################################################################
+
+IMPORTANTE: ESTE ANEXO AMPLÍA Y ACTUALIZA EL DOCUMENTO ANTERIOR.
+Cuando un dato de este anexo contradiga una referencia preliminar del cuerpo anterior, conservar la contradicción documentada y dar prioridad a la información más específica y reciente aquí descrita. La actualización no elimina la necesidad de confirmar inventario y contactos directamente.
+
+======================================================================
+20. CAMBIO DE ENFOQUE TRAS LA CONFIRMACIÓN DE LA ASOCIACIÓN
+======================================================================
+
+El usuario confirmó que Horizonte Automotores está asociado con Grupo Almafuerte. Desde este punto, la relación ya no se trata como una mera coincidencia hipotética dentro del flujo de trabajo. Aun así, la naturaleza exacta de la relación (misma razón social, marca anterior, transferencia de operación, integración, sucursal histórica u otro arreglo) no queda definida por la sola confirmación de asociación.
+
+La investigación debe conservar dos capas documentales:
+A. Horizonte Automotores: huella histórica, nombre que aparece en directorios, teléfonos alternativos, reseñas agregadas y publicaciones históricas por recuperar.
+B. Grupo Almafuerte: marca y operación web pública actual, catálogo de usados, contactos, sucursales, servicios y contenidos institucionales.
+
+La conexión permite seguir una ruta de investigación mucho más productiva: usar el sitio oficial de Grupo Almafuerte para recuperar datos comerciales actuales relacionados con Av. Argentina 2021, sin reescribir la historia de Horizonte ni atribuir automáticamente cada contenido del grupo a la antigua marca.
+
+Fuentes principales:
+- Grupo Almafuerte — Nosotros: https://grupoalmafuerte.com/nosotros/
+- Grupo Almafuerte — Contacto: https://grupoalmafuerte.com/contacto/
+- Grupo Almafuerte — Autos usados: https://grupoalmafuerte.com/autos-usados/
+- CCA Entre Ríos — Agencias: https://ccaentrerios.org/agencias/
+
+======================================================================
+21. HALLAZGOS ACTUALES MÁS IMPORTANTES DE GRUPO ALMAFUERTE
+======================================================================
+
+21.1 Identidad institucional declarada
+
+La página “Nosotros” presenta a Grupo Almafuerte como una empresa familiar del sector automotor de Entre Ríos, con varias generaciones vinculadas al negocio. La página utiliza expresiones como “más de 40 años” y también “más de seis décadas” / “sesenta años”, y afirma que opera dos unidades de negocio:
+- Representación oficial de GWM.
+- Agencia de vehículos usados multimarca.
+
+La misma página afirma que Grupo Almafuerte es concesionario oficial de Great Wall Motors desde hace 10 años y que comercializa las gamas Haval, Ora, Poer y Tank. Estas son afirmaciones institucionales de la propia empresa, no verificaciones independientes sobre su antigüedad.
+
+URL:
+https://grupoalmafuerte.com/nosotros/
+
+21.2 Inconsistencias de texto institucional que conviene registrar
+
+La página presenta varios contadores que en el texto extraído aparecen como “+ 0 años”, “0 años”, “0 sucursales” y “+ 0 vehículos disponibles en stock permanente”. Podrían ser contadores dinámicos que no se renderizaron correctamente durante la extracción o un problema de contenido en la web. No se deben transcribir esos ceros como datos reales del negocio.
+
+La misma página habla de “más de 40 años”, “más de seis décadas” y “sesenta años”. Son formulaciones aproximadas que no encajan de manera exacta entre sí. Para una futura ficha institucional, solicitar a la empresa el año de inicio y la formulación autorizada. No elegir una cifra sin aclaración.
+
+21.3 La sucursal de María Grande
+
+El sitio oficial de Grupo Almafuerte incluye:
+- Dirección: Av. Argentina 2021, María Grande, Entre Ríos.
+- Clasificación: “USADOS MULTIMARCA”.
+- Nombre de sucursal en la página de contacto: “Concesionario Usados María Grande”.
+- Teléfono que figura en la página de contacto: +54 9 3434 62-2671.
+- WhatsApp de usados publicado: +54 9 3436 10-9949.
+- Horario: lunes a viernes de 8:30 a 12:30 y de 15:30 a 19:30; sábados de 8:30 a 13:00.
+
+Fuentes:
+https://grupoalmafuerte.com/contacto/
+https://grupoalmafuerte.com/nosotros/
+
+ATENCIÓN: existe una discrepancia entre las páginas del propio sitio:
+- La página “Nosotros” muestra para María Grande el teléfono +54 9 3434 61-8388.
+- La página “Contacto” muestra +54 9 3434 62-2671.
+Ambas páginas muestran el WhatsApp +54 9 3436 10-9949 y la misma dirección.
+Por lo tanto, no se debe escoger uno de los teléfonos como “el definitivo” sin confirmación. El teléfono 0343 461-8388 de directorios históricos coincide con el número publicado en “Nosotros”, mientras que “Contacto” presenta otro teléfono para la sucursal.
+
+21.4 Etiqueta de sucursal incorrecta o confusa
+
+En la página “Nosotros”, la tarjeta de la dirección de María Grande parece llevar el título “Paraná - Usados”, pese a que la dirección escrita es Av. Argentina 2021, María Grande. En la página “Contacto”, la misma dirección sí aparece como “Concesionario Usados María Grande”.
+
+Esto es una inconsistencia visible del sitio. Para la futura demo, usar el nombre geográfico “María Grande” solo después de confirmación, y registrar este problema como una oportunidad de mejora del sitio actual.
+
+21.5 Servicios que Grupo Almafuerte declara en su página de contacto
+
+La sección de preguntas frecuentes de https://grupoalmafuerte.com/contacto/ afirma:
+- Se puede coordinar un test drive de modelos GWM en sucursales de Paraná y Santa Fe.
+- Reciben vehículos usados como parte de pago para 0 km y para otros usados.
+- Realizan tasación sin cargo en sus sucursales.
+- Ofrecen alternativas de financiación propias, bancarias y planes de la marca; las condiciones varían según vehículo y momento.
+- Sus usados pasan por revisión técnica antes de publicarse y se entregan con garantía, con condiciones específicas dependientes de cada vehículo.
+- Como concesionario oficial GWM, ofrecen service autorizado, técnicos capacitados por la marca y repuestos originales para la gama GWM.
+
+No presentar test drives de GWM como un servicio disponible necesariamente en María Grande: la FAQ especifica sucursales de Paraná y Santa Fe. La sucursal de María Grande se presenta como usados multimarca.
+
+======================================================================
+22. INVENTARIO WEB RELACIONADO CON MARÍA GRANDE — PUBLICACIONES LOCALIZADAS
+======================================================================
+
+Método y limitaciones:
+Las fichas siguientes son páginas individuales del sitio de Grupo Almafuerte que muestran “Disponible en María Grande” y la dirección Av. Argentina 2021. Son una fotografía del catálogo público indexado, no una garantía de stock vigente el 12/10/2026. Las fechas de rastreo que aparecen en buscadores son diferentes (desde “hoy” hasta semanas o meses antes). Antes de publicar como stock actual, consultar al negocio.
+
+Se incluyen los precios publicados en las páginas consultadas como valores observados, sin afirmar que sigan vigentes. Los precios en pesos argentinos pueden cambiar rápidamente. No calcular cuotas ni financiación sin condiciones documentadas.
+
+UNIDAD MG-01
+Título publicado: Chevrolet Cruze 1.4 LTZ 4P 2018
+URL:
+https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/
+
+Datos que muestra la ficha:
+- Marca: Chevrolet.
+- Modelo: Cruze.
+- Versión: LTZ 4P.
+- Año: 2018.
+- Precio publicado: $22.000.000.
+- Kilometraje: 157.000 km.
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: blanco.
+- Motor: 1.4.
+- Puertas: 4.
+- Estado indicado: usado.
+- Ubicación anunciada: “Disponible en María Grande”.
+- Dirección publicada: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: “Financiación disponible” y “Tomamos tu usado”.
+- La ficha afirma que la unidad pasa por revisión técnica y se entrega con garantía, pero las condiciones específicas deben consultarse.
+
+Equipamiento que la ficha enumera:
+Confort: aire acondicionado, dirección asistida, levantavidrios eléctricos delanteros, cierre centralizado, computadora de a bordo y volante regulable.
+Seguridad: doble airbag frontal, ABS, anclajes Isofix, cinturones inerciales, tercera luz de stop y barras de protección lateral.
+Tecnología: radio AM/FM, entrada auxiliar, preinstalación de audio, toma de 12V, computadora de a bordo y Bluetooth “según versión”.
+
+Estado de validación:
+- Atribución al catálogo del sitio: alta.
+- Ubicación publicada: alta.
+- Disponibilidad actual: no confirmada.
+- Precio actual: no confirmado.
+- La descripción comercial usa expresiones de estado general (“muy buen estado”) que son afirmaciones del vendedor y no una inspección independiente.
+
+UNIDAD MG-02
+Título publicado: Volkswagen Vento 1.4 TSI BM Tech Comfortline 2017
+URL:
+https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/
+
+Datos que muestra la ficha:
+- Marca: Volkswagen.
+- Modelo: Vento.
+- Versión: 1.4 TSI BM Tech Comfortline.
+- Año: 2017.
+- Precio publicado: $26.500.000.
+- Kilometraje: 182.000 km.
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: negro.
+- Motor: 1.4.
+- Puertas: 4.
+- Estado indicado: usado.
+- Ubicación anunciada: “Disponible en María Grande”.
+- Dirección publicada: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+Equipamiento enumerado:
+Confort: climatizador automático, tapizado de tela, levantavidrios eléctricos, sensores de estacionamiento delanteros y traseros, tres apoyacabezas traseros y espejos eléctricos.
+Seguridad: airbags frontales y laterales con cortina, ESP/ASR, bloqueo electrónico de diferencial (EDL), asistente de arranque en pendiente, ABS e Isofix.
+Tecnología: pantalla multimedia táctil, App Connect (Apple CarPlay/Android Auto), Bluetooth y USB, comandos al volante, computadora de a bordo y sistema de audio.
+
+Estado de validación:
+- Atribución al catálogo del sitio: alta.
+- Ubicación publicada: alta.
+- Disponibilidad actual y precio: no confirmados.
+
+UNIDAD MG-03
+Título publicado: Peugeot 1.6 Feline
+URL:
+https://grupoalmafuerte.com/producto/peugeot-1-6-feline/
+
+Datos que muestra la ficha:
+- Marca: Peugeot.
+- Título/modelo publicado: “Peugeot 1.6 Feline”.
+- La ficha identifica “Feline” como modelo/versión en sus campos, pero no permite establecer con seguridad en el título cuál es el modelo comercial completo. No completar “308”, “408” u otro modelo sin evidencia.
+- Año: 2017.
+- Precio publicado: $17.000.000.
+- Kilometraje: 145.000 km.
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: uva.
+- Motor: 1.6.
+- Puertas: 5.
+- Estado indicado: usado.
+- Ubicación anunciada: “Disponible en María Grande” (en una parte del texto aparece el error tipográfico “Maria Garande”).
+- Dirección: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+Equipamiento enumerado:
+Confort: climatizador bizona, tapizado de cuero, sensor de lluvia, encendido automático de luces, sensor de estacionamiento y espejos eléctricos.
+Seguridad: seis airbags, ESP, asistente de arranque en pendiente, ABS con EBD, faros antiniebla y alarma.
+Tecnología: pantalla táctil con navegación, Bluetooth y USB, cámara de retroceso, comandos al volante, sistema de audio y entrada auxiliar.
+
+Estado de validación:
+- Página atribuida al catálogo del sitio: alta.
+- Modelo exacto: incompleto/ambiguo en el título.
+- Ubicación, precio y stock actual: requieren confirmación.
+
+UNIDAD MG-04
+Título publicado: Citroen C3 1.6 VTI Shine
+URL:
+https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/
+
+Datos que muestra la ficha:
+- Marca: Citroën (en la URL/título del sitio aparece escrito “Citroen”).
+- Modelo: C3.
+- Versión: 1.6 VTI Shine.
+- Año: 2016.
+- Precio publicado: $15.000.000.
+- Kilometraje: 135.000 km.
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: blanco.
+- Motor: 1.6.
+- Ubicación anunciada: “Disponible en Maria Garande”, aparente error tipográfico de María Grande.
+- Dirección publicada: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+La descripción comercial lo presenta como un vehículo compacto de uso urbano. La ficha afirma que registra 135.000 km y que está en excelentes condiciones para su año; esto es la descripción del vendedor, no una pericia independiente.
+
+Estado de validación:
+- Atribución al catálogo: alta.
+- Errores tipográficos de ubicación: presentes.
+- Disponibilidad y precio actual: no confirmados.
+- Especificaciones de equipamiento no se transcriben aquí en detalle porque la ficha puede cambiar; revisar el original antes de reutilizar los datos.
+
+UNIDAD MG-05
+Título publicado: Peugeot 307 1.6 XS Ln 5P 2007
+URL:
+https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/
+
+Datos que muestra la ficha:
+- Marca: Peugeot.
+- Modelo: 307.
+- Versión: 1.6 XS Ln 5P.
+- Año: 2007.
+- Precio publicado: $9.000.000.
+- Motor: 1.6.
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: rojo.
+- Puertas: 5.
+- Estado indicado: usado.
+- Ubicación anunciada: “Disponible en María Grande”.
+- Dirección publicada: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+Equipamiento enumerado:
+Confort: aire acondicionado, dirección asistida, levantavidrios eléctricos, cierre centralizado, volante regulable en altura y asiento trasero rebatible.
+Seguridad: airbag del conductor, frenos con servofreno (ABS según versión), Isofix, apoyacabezas regulables, cinturones inerciales y tercera luz de stop.
+Tecnología: audio con Bluetooth, USB y entrada auxiliar, comandos de audio al volante, preinstalación de audio, computadora de a bordo y toma de 12V.
+
+Observación: el campo de kilometraje aparece sin valor en el contenido indexado consultado. No inventarlo.
+
+Estado de validación:
+- Atribución al catálogo: alta.
+- Precio y ubicación publicados: sí.
+- Kilometraje: no publicado en la extracción consultada.
+- Disponibilidad actual: no confirmada.
+
+UNIDAD MG-06
+Título publicado: Renault Sandero Stepway 1.6 Dynamique 2017
+URL:
+https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/
+
+Datos que muestra la ficha:
+- Marca: Renault.
+- Modelo: Sandero Stepway.
+- Versión: 1.6 Dynamique.
+- Año: 2017.
+- Precio publicado: $17.500.000.
+- Kilometraje: 124.000 km (en el título del campo aparece como 124.000).
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: gris plata.
+- Motor: 1.6.
+- Puertas: 5.
+- Estado indicado: usado.
+- Ubicación anunciada: “Disponible en María Grande”.
+- Dirección: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+Equipamiento enumerado:
+Confort: aire acondicionado, dirección asistida, levantavidrios eléctricos, computadora de a bordo, mayor despeje al suelo y barras de techo.
+Seguridad: doble airbag frontal, ABS con EBD, faros antiniebla delanteros, luces diurnas DRL, apoyacabezas regulables y cinturones inerciales.
+Tecnología: sistema Media Nav, Bluetooth y USB, navegación (la ficha añade “versión Privilege”, lo cual podría no corresponder exactamente a la versión Dynamique), comandos satelitales de audio, entrada auxiliar y sistema de audio.
+
+Estado de validación:
+- Atribución al catálogo: alta.
+- Disponibilidad y precio actual: no confirmados.
+- Nota: verificar la consistencia entre versión Dynamique y la referencia a “versión Privilege” dentro de equipamiento.
+
+UNIDAD MG-07
+Título publicado: Volkswagen Cam. 17.220 E Cc Iii 48 2007
+URL:
+https://grupoalmafuerte.com/producto/volkswagen-cam-17-220-e-cc-iii-48/
+
+Datos que muestra la ficha:
+- Marca/título: Volkswagen Cam. 17.220 E Cc Iii 48.
+- Año: 2007.
+- Precio publicado: $60.000.000.
+- Color: blanco.
+- Estado indicado: usado.
+- Ubicación anunciada en la parte superior: “Disponible en María Grande”.
+- Dirección mostrada: Av. Argentina 2021, María Grande, Entre Ríos.
+- La ficha no presenta valores claros en los campos extraídos para kilometraje, combustible, transmisión, motor y tracción.
+- La descripción lo caracteriza como vehículo de trabajo pesado y afirma que está listo para transferir.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+Equipamiento que enumera la ficha:
+Confort: aire acondicionado, dirección asistida, asiento del conductor regulable, amplia capacidad de carga, cabina espaciosa y computadora de a bordo.
+Seguridad: frenos con sistema neumático, cinturones, espejos amplios, luces de gálibo, barra antiempotramiento y traba de seguridad.
+Tecnología: radio AM/FM, USB, toma de 12V/24V, tacógrafo, preinstalación de audio y computadora de a bordo.
+
+CONTRADICCIÓN IMPORTANTE:
+La ficha muestra “Disponible en María Grande” y dirección Av. Argentina 2021, pero en su FAQ dice que “el vehículo está disponible en nuestra sucursal de Paraná”. No asumir que la unidad se encuentra físicamente en María Grande. Contactar al vendedor para confirmar la ubicación real antes de incorporarla a un catálogo por sucursal.
+
+UNIDAD MG-08
+Título publicado: Renault Sandero 1.6 16v Life 2024
+URL:
+https://grupoalmafuerte.com/producto/renault-sandero-1-6-16v-life/
+
+Datos que muestra la ficha:
+- Marca: Renault.
+- Modelo: Sandero.
+- Versión: 1.6 16v Life.
+- Año: 2024.
+- Precio publicado: $26.000.000.
+- Kilometraje: “0 km”.
+- Combustible: nafta.
+- Transmisión: manual.
+- Color: gris plata.
+- Motor: en la ficha técnica aparece 1.6, pero la descripción comercial contiene una frase que menciona “motor 1.3 nafta”. Esta es una contradicción interna y no debe resolverse por suposición.
+- Puertas: 5.
+- Estado indicado en el campo: “Usado”, aunque el anuncio indica 0 km y 2024.
+- Ubicación anunciada: “Disponible en María Grande”.
+- Dirección publicada: Av. Argentina 2021, María Grande, Entre Ríos.
+- Mensajes comerciales: financiación disponible y toma de usado.
+
+Equipamiento enumerado:
+Confort: aire acondicionado, dirección asistida, levantavidrios eléctricos, computadora de a bordo, volante regulable y cierre centralizado.
+Seguridad: doble airbag frontal, ABS con EBD, Isofix, apoyacabezas regulables, cinturones inerciales y tercera luz de stop.
+Tecnología: radio con Bluetooth, USB y entrada auxiliar, comandos satelitales de audio, preinstalación de audio, computadora de a bordo y toma de 12V.
+
+CONTRADICCIONES IMPORTANTES:
+- “0 km” y “Estado: Usado”.
+- Motor 1.6 en ficha técnica frente a motor 1.3 en la descripción.
+- El anuncio está indexado como disponible en María Grande, pero debe confirmarse la unidad física y su estado real.
+
+No publicar esta ficha sin aclaración del vendedor.
+
+UNIDAD MG-09
+Título publicado: Volkswagen Cam. 17.220 E Cc Iii 48 2007 y referencias relacionadas
+URL:
+https://grupoalmafuerte.com/producto/volkswagen-cam-17-220-e-cc-iii-48/
+
+Esta unidad se registra como una única ficha. No contarla por separado cada vez que aparece en resultados de búsqueda o en páginas duplicadas del buscador.
+
+======================================================================
+23. MATRIZ CONSOLIDADA DEL CATÁLOGO WEB LOCALIZADO
+======================================================================
+
+ID | Vehículo | Año | Precio publicado | Km publicados | Ubicación publicada | Observación crítica | URL
+
+MG-01 | Chevrolet Cruze 1.4 LTZ 4P | 2018 | $22.000.000 | 157.000 | María Grande | Disponibilidad no confirmada | https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/
+MG-02 | Volkswagen Vento 1.4 TSI BM Tech Comfortline | 2017 | $26.500.000 | 182.000 | María Grande | Disponibilidad no confirmada | https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/
+MG-03 | Peugeot 1.6 Feline | 2017 | $17.000.000 | 145.000 | María Grande | Modelo completo ambiguo en el título | https://grupoalmafuerte.com/producto/peugeot-1-6-feline/
+MG-04 | Citroën C3 1.6 VTI Shine | 2016 | $15.000.000 | 135.000 | María Grande | Error tipográfico “Maria Garande” | https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/
+MG-05 | Peugeot 307 1.6 XS Ln 5P | 2007 | $9.000.000 | No visible en extracción | María Grande | No inventar kilometraje | https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/
+MG-06 | Renault Sandero Stepway 1.6 Dynamique | 2017 | $17.500.000 | 124.000 | María Grande | Equipamiento menciona “versión Privilege”; verificar | https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/
+MG-07 | Volkswagen Cam. 17.220 E Cc Iii 48 | 2007 | $60.000.000 | No visible en extracción | María Grande en cabecera | FAQ contradice: dice disponible en Paraná | https://grupoalmafuerte.com/producto/volkswagen-cam-17-220-e-cc-iii-48/
+MG-08 | Renault Sandero 1.6 16v Life | 2024 | $26.000.000 | “0 km” | María Grande | Contradicciones de estado y motor | https://grupoalmafuerte.com/producto/renault-sandero-1-6-16v-life/
+
+NOTA SOBRE EL CONTEO:
+Se identificaron ocho fichas de vehículos distintas en la búsqueda realizada. La ficha del Volkswagen Camión se repite en distintas páginas de resultados, pero debe contarse una sola vez. Este conteo representa fichas localizadas, no necesariamente ocho unidades que continúen en stock el 12/10/2026.
+
+======================================================================
+24. AUDITORÍA DE CALIDAD DE CONTENIDO DEL CATÁLOGO
+======================================================================
+
+24.1 Datos ausentes o incompletos
+- Peugeot 307: kilometraje no visible en el texto indexado consultado.
+- Volkswagen Camión: varios campos técnicos vacíos en la extracción consultada.
+- Peugeot 1.6 Feline: el título no identifica claramente el modelo completo.
+- Algunas fichas no tienen información suficiente para completar todas las especificaciones técnicas.
+- No todas las fichas presentan el mismo nivel de consistencia entre título, campos técnicos y descripción.
+
+24.2 Contradicciones concretas
+- Volkswagen Camión: ubicación de cabecera en María Grande frente a FAQ que dice Paraná.
+- Renault Sandero 2024: “0 km” frente a estado “Usado”.
+- Renault Sandero 2024: ficha técnica con motor 1.6 frente a descripción que menciona motor 1.3.
+- Renault Sandero Stepway Dynamique: equipamiento menciona “versión Privilege”, que podría ser una referencia genérica o una mezcla de datos.
+- Peugeot Feline: título y campos no aclaran el modelo completo.
+- Citroën C3: error de escritura “Maria Garande”.
+- Página institucional: contadores dinámicos extraídos como cero y duración empresarial expresada de distintas formas.
+- Página “Nosotros”: etiqueta “Paraná - Usados” junto a dirección de María Grande.
+- Teléfonos de la sucursal: número distinto entre “Nosotros” y “Contacto”.
+
+24.3 Riesgo comercial
+Una web de concesionaria que publica datos incorrectos puede generar:
+- Consultas por vehículos ya vendidos.
+- Pérdida de confianza por diferencias de precio o kilometraje.
+- Visitas a una sucursal incorrecta.
+- Errores en la ficha técnica.
+- Reclamos por condiciones de garantía o financiación.
+- Confusión entre stock propio, stock compartido y vehículos en otra sucursal.
+
+24.4 Recomendación operativa
+Crear un proceso de aprobación de inventario antes de publicar:
+1. Confirmar stock por unidad.
+2. Confirmar sucursal física.
+3. Confirmar precio y fecha de vigencia.
+4. Confirmar kilometraje y año.
+5. Confirmar motor, versión y transmisión.
+6. Confirmar color y equipamiento.
+7. Confirmar condición, garantía y documentación.
+8. Revisar todas las imágenes.
+9. Confirmar autorización de publicación.
+10. Registrar fecha de última revisión y responsable que la aprobó.
+
+======================================================================
+25. CATÁLOGO 0 KM / GAMA GWM PUBLICADA
+======================================================================
+
+La página oficial de modelos de Grupo Almafuerte enumera la siguiente gama 0 km:
+- Haval Jolion.
+- Haval Jolion HEV.
+- Haval Jolion Pro HEV.
+- Haval H6.
+- Haval H6 GT.
+- Haval H6 Pro HEV.
+- Ora 03.
+- Poer Super Luxury.
+- Poer Elite.
+- Tank 300.
+
+Fuente:
+https://grupoalmafuerte.com/modelo/
+
+El sitio institucional describe a Grupo Almafuerte como representante oficial de GWM, con showrooms en Paraná y Santa Fe. No atribuir automáticamente la venta o test drive de estos 0 km a la sucursal de María Grande: la FAQ de contacto especifica que el test drive se coordina en las sucursales de Paraná y Santa Fe, mientras que María Grande está etiquetada como usados multimarca.
+
+Para una demo de la sucursal de María Grande:
+- Se puede incluir un enlace institucional a la gama GWM si el cliente lo aprueba.
+- No presentar todos los modelos como inventario local disponible.
+- No prometer test drive local sin confirmación.
+- No usar precios o equipamiento de una versión sin verificar la ficha oficial vigente.
+- Mantener diferenciados “usados multimarca” y “0 km GWM”.
+
+======================================================================
+26. CONTACTOS ACTUALIZADOS — TABLA DE DISCREPANCIAS
+======================================================================
+
+TELÉFONO 1 — HISTÓRICO / WEB “NOSOTROS”
++54 9 3434 61-8388
+Se muestra en:
+https://grupoalmafuerte.com/nosotros/
+Coincide con el número histórico asociado a Horizonte en directorios (0343 461-8388).
+Estado: publicado en la página Nosotros; la página Contacto muestra otro número para María Grande. Requiere confirmación.
+
+TELÉFONO 2 — WEB “CONTACTO”
++54 9 3434 62-2671
+Se muestra para la sucursal de María Grande en:
+https://grupoalmafuerte.com/contacto/
+También se publica para las dos sucursales de usados de Paraná.
+Estado: publicado por la web de contacto; discrepante con la página Nosotros.
+
+WHATSAPP DE USADOS
++54 9 3436 10-9949
+Enlace publicado por las páginas del sitio:
+https://grupoalmafuerte.com/contacto/
+Estado: aparece de manera consistente como WhatsApp para usados multimarca.
+
+CONTACTO GENERAL GWM
+Teléfono publicado en contacto: +54 9 3434 61-8385.
+WhatsApp general publicado: +54 9 3424 45-7595.
+No confundir estos contactos generales de GWM con los contactos de la sucursal de usados de María Grande.
+
+HORARIO MARÍA GRANDE PUBLICADO POR GRUPO ALMAFUERTE
+Lunes a viernes: 08:30–12:30 y 15:30–19:30.
+Sábados: 08:30–13:00.
+Fuente: https://grupoalmafuerte.com/contacto/
+Estado: fuente oficial actual del grupo; confirmar antes de publicar si se requiere precisión absoluta.
+
+======================================================================
+27. AUDITORÍA DEL SITIO OFICIAL ACTUAL: OPORTUNIDADES DETECTADAS
+======================================================================
+
+Las siguientes observaciones son oportunidades de mejora de contenido/consistencia, no una auditoría técnica exhaustiva del código fuente.
+
+27.1 Datos de sucursales
+- La página “Nosotros” presenta una etiqueta “Paraná - Usados” para una dirección de María Grande.
+- Los teléfonos de María Grande difieren entre las páginas Nosotros y Contacto.
+- La página Contacto llama correctamente “Concesionario Usados María Grande” a la ubicación.
+Recomendación: unificar nombre de sucursal, teléfono, WhatsApp, horario y ubicación en una única fuente de datos del sitio.
+
+27.2 Fichas de producto
+- Algunos títulos no aclaran totalmente el modelo.
+- Hay errores de escritura en la localidad.
+- Existen contradicciones entre ficha técnica y descripción comercial.
+- Hay campos técnicos vacíos en fichas concretas.
+- El estado “0 km” y el estado “Usado” aparecen simultáneamente en una ficha.
+- Algunas descripciones parecen usar textos de marketing genéricos; hay que verificar que cada atributo corresponda al vehículo exacto.
+Recomendación: implementar un checklist editorial previo a publicar una ficha y no permitir publicar una unidad si faltan campos críticos o existen contradicciones.
+
+27.3 Stock y ubicación
+- Las fichas pueden indicar una sucursal en la cabecera y otra en la FAQ.
+Recomendación: el campo “sucursal” debe ser único, estructurado y reutilizado en todas las secciones; evitar texto manual duplicado.
+
+27.4 Historia institucional
+- La web mezcla “más de 40 años” con “más de seis décadas / sesenta años”.
+- Los contadores extraídos aparecen como cero.
+Recomendación: validar año de fundación y contadores con el negocio; comprobar si el fallo de cero es solo de extracción o también visible al usuario.
+
+27.5 Proceso de contacto
+- La web ofrece un formulario general y WhatsApp.
+- La página de contacto explica permuta, financiación y garantía.
+Recomendación: vincular consultas de cada vehículo al modelo específico y a la sucursal correcta, y registrar el origen de la consulta.
+
+27.6 SEO local
+- Asegurar que María Grande no quede etiquetada como Paraná en el nombre de la sucursal.
+- Usar datos NAP consistentes (Name, Address, Phone) en todas las páginas y directorios.
+- Diferenciar páginas de Paraná, Santa Fe y María Grande.
+- Corregir errores de escritura de la localidad.
+- Revisar títulos y descripciones de cada vehículo para evitar que varias páginas compartan texto genérico.
+- No crear páginas de SEO con información no comprobada.
+- Mantener precios y disponibilidad actualizados para no indexar datos vencidos.
+
+======================================================================
+28. MATRIZ DE INFORMACIÓN: QUÉ SE PUEDE REUTILIZAR EN LA DEMO
+======================================================================
+
+REUTILIZABLE CON ATRIBUCIÓN Y VALIDACIÓN DE VIGENCIA
+- Dirección Av. Argentina 2021.
+- Clasificación de la sucursal como usados multimarca.
+- Horario publicado por el sitio oficial.
+- WhatsApp publicado por Grupo Almafuerte.
+- Descripción institucional de servicios del grupo, si la demo es para Grupo Almafuerte.
+- Enlaces al catálogo público de vehículos.
+- Datos técnicos publicados en fichas, luego de confirmarlos con el vendedor.
+- Imágenes del catálogo solo si se cuenta con autorización para reutilizarlas.
+
+NO REUTILIZAR SIN ACLARACIÓN
+- Teléfono único como definitivo: existen dos números distintos en páginas oficiales.
+- Stock como disponible: confirmar por unidad.
+- Precio como vigente: confirmar con fecha.
+- Peugeot Feline como un modelo completo específico: el título no lo aclara.
+- Volkswagen Camión como físicamente presente en María Grande: la ficha contradice su propia FAQ.
+- Renault Sandero 2024 como 0 km o usado sin confirmar.
+- Motor del Renault Sandero 2024: contradicción 1.6/1.3.
+- Reseñas de Horizonte como reseñas de Grupo Almafuerte o viceversa.
+- Historia de Horizonte como historia del Grupo Almafuerte sin autorización y documentación.
+
+======================================================================
+29. NUEVAS PREGUNTAS PRIORITARIAS PARA EL OPERADOR
+======================================================================
+
+1. ¿Horizonte Automotores fue una marca anterior, una unidad comercial o una empresa asociada a Grupo Almafuerte?
+2. ¿Qué marca debe utilizarse para una web nueva que represente la sucursal de Av. Argentina 2021?
+3. ¿Cuál de estos teléfonos es el vigente para María Grande: +54 9 3434 61-8388 o +54 9 3434 62-2671?
+4. ¿El WhatsApp +54 9 3436 10-9949 es el canal correcto para consultas por stock de María Grande?
+5. ¿Cuáles de las ocho fichas listadas siguen disponibles hoy?
+6. ¿El Volkswagen Camión está en María Grande o en Paraná?
+7. ¿Cuál es el modelo completo del Peugeot 1.6 Feline?
+8. ¿Cuál es el kilometraje real del Peugeot 307?
+9. ¿El Renault Sandero 2024 es efectivamente 0 km? ¿Por qué figura “Usado”?
+10. ¿El motor del Renault Sandero 2024 es 1.6 o 1.3?
+11. ¿El Sandero Stepway Dynamique tiene realmente el equipamiento atribuido a “Privilege”?
+12. ¿Los precios visibles incluyen gastos de transferencia u otros cargos? No se debe asumir.
+13. ¿Qué condiciones concretas de garantía aplican a cada usado?
+14. ¿Qué alternativas de financiación existen para cada vehículo y qué requisitos se aplican?
+15. ¿Qué stock se comparte entre sucursales y cuál está físicamente en María Grande?
+16. ¿Qué imágenes y fichas están autorizadas para reutilizar en una demo?
+17. ¿La historia institucional debe mencionar Horizonte y Grupo Almafuerte juntos? ¿Qué redacción está autorizada?
+18. ¿Cuál es el año de fundación que puede comunicarse oficialmente?
+19. ¿El test drive de GWM puede coordinarse desde María Grande o solo en Paraná/Santa Fe?
+20. ¿Existe una persona responsable de actualizar el inventario web?
+
+======================================================================
+30. PLAN DE TRABAJO ACTUALIZADO PARA UNA SEGUNDA INVESTIGACIÓN
+======================================================================
+
+PASO 1 — VALIDACIÓN DE IDENTIDAD
+Confirmar con el grupo qué relación se puede declarar públicamente entre Horizonte Automotores y Grupo Almafuerte. Obtener una redacción autorizada y evitar términos como “adquirida”, “absorbida” o “renombrada” si no se confirman.
+
+PASO 2 — VALIDACIÓN DE CONTACTOS
+Resolver la diferencia entre +54 9 3434 61-8388 y +54 9 3434 62-2671. Confirmar WhatsApp, horario y dirección.
+
+PASO 3 — AUDITORÍA DEL CATÁLOGO
+Abrir cada URL de producto; anotar fecha/hora de consulta; comprobar si la unidad está disponible; pedir confirmación de sucursal; contrastar precio, kilometraje, año, motor, transmisión y equipamiento. Marcar como vendido o retirado solo con evidencia.
+
+PASO 4 — RECUPERACIÓN DEL CATÁLOGO COMPLETO
+Investigar el listado general de usados del sitio. La página https://grupoalmafuerte.com/autos-usados/ está enlazada desde el menú, aunque no pudo ser recuperada íntegramente por la herramienta de búsqueda durante esta consulta. Abrir manualmente en navegador y recorrer todas las páginas de resultados, filtros y paginación. Registrar cada URL de producto única y no asumir que el buscador indexó todo el catálogo.
+
+PASO 5 — HISTORIA DE HORIZONTE
+Revisar el perfil https://www.facebook.com/horizonteautos/ y localizar publicaciones antiguas que permitan fechar el uso del nombre, reconstruir inventario histórico y determinar si hubo transición pública a Grupo Almafuerte. No asumir que la fecha de una página equivale a la fecha de inicio del negocio.
+
+PASO 6 — ACTIVOS VISUALES
+Catalogar fotos y videos por unidad. Solicitar autorización para reutilización en una demo comercial. No descargar ni republicar material protegido sin permiso.
+
+PASO 7 — PREPARACIÓN DE DEMO
+Definir si el cliente objetivo es Grupo Almafuerte como grupo o la sucursal de María Grande. Crear una demo con marca correcta, contenido aprobado, inventario real, ubicación correcta, contacto vigente y CTA funcional.
+
+PASO 8 — CONTROL EDITORIAL
+Antes de entregar, verificar que no queden errores de ubicación, campos vacíos críticos, fichas duplicadas, precios vencidos o promesas comerciales no aprobadas.
+
+======================================================================
+31. REGISTRO DE FUENTES NUEVAS INCORPORADAS EN V2
+======================================================================
+
+A. Página institucional Grupo Almafuerte
+https://grupoalmafuerte.com/nosotros/
+Consultada en esta investigación. Contiene historia declarada, unidad GWM, unidad de usados, sucursales, teléfonos y horarios. También contiene inconsistencias de contadores y etiqueta de sucursal.
+
+B. Página de contacto Grupo Almafuerte
+https://grupoalmafuerte.com/contacto/
+Consultada en esta investigación. Contiene datos específicos de las cuatro ubicaciones, teléfonos, WhatsApp, horarios y preguntas frecuentes sobre permuta, financiación, garantía y servicio oficial. Es la fuente más clara para identificar el nombre “Concesionario Usados María Grande”, aunque el teléfono no coincide con el publicado en la página Nosotros.
+
+C. Catálogo de usados — acceso desde navegación
+https://grupoalmafuerte.com/autos-usados/
+URL enlazada por la web, pero la herramienta de búsqueda no pudo extraer la página general durante esta sesión por un timeout. No se afirma que la página no funcione; debe revisarse en navegador.
+
+D. Chevrolet Cruze 1.4 LTZ 4P 2018
+https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/
+Fuente de los datos de la unidad MG-01.
+
+E. Volkswagen Vento 1.4 TSI BM Tech Comfortline 2017
+https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/
+Fuente de los datos de la unidad MG-02.
+
+F. Peugeot 1.6 Feline
+https://grupoalmafuerte.com/producto/peugeot-1-6-feline/
+Fuente de los datos de la unidad MG-03.
+
+G. Citroën C3 1.6 VTI Shine
+https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/
+Fuente de los datos de la unidad MG-04.
+
+H. Peugeot 307 1.6 XS Ln 5P 2007
+https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/
+Fuente de los datos de la unidad MG-05.
+
+I. Renault Sandero Stepway 1.6 Dynamique 2017
+https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/
+Fuente de los datos de la unidad MG-06.
+
+J. Volkswagen Cam. 17.220 E Cc Iii 48 2007
+https://grupoalmafuerte.com/producto/volkswagen-cam-17-220-e-cc-iii-48/
+Fuente de los datos de la unidad MG-07.
+
+K. Renault Sandero 1.6 16v Life 2024
+https://grupoalmafuerte.com/producto/renault-sandero-1-6-16v-life/
+Fuente de los datos de la unidad MG-08.
+
+L. Modelos GWM
+https://grupoalmafuerte.com/modelo/
+Fuente de la gama de modelos 0 km presentada en el sitio.
+
+M. CCA Entre Ríos
+https://ccaentrerios.org/agencias/
+Fuente del registro histórico de Horizonte Automotores en Av. Argentina 2021 con teléfono 343 4050787.
+
+======================================================================
+32. CONCLUSIÓN V2 — ESTADO DEL CONOCIMIENTO
+======================================================================
+
+La asociación confirmada por el usuario permite ampliar la investigación con fuentes oficiales de Grupo Almafuerte. La web actual identifica Av. Argentina 2021 como la sucursal de usados multimarca de María Grande y presenta contactos, horarios, catálogo de productos y servicios comerciales. El catálogo indexado ofrece al menos ocho fichas de vehículos asociadas en su texto a María Grande, pero existen contradicciones y el stock no puede considerarse vigente sin confirmación.
+
+Hallazgos más útiles:
+- La sucursal aparece como “Concesionario Usados María Grande” en la página Contacto.
+- La dirección es Av. Argentina 2021.
+- El WhatsApp publicado para usados es +54 9 3436 10-9949.
+- El teléfono de la sucursal no es consistente entre las páginas Nosotros y Contacto.
+- Se localizaron ocho fichas de vehículos con precios publicados; cada una necesita comprobación de disponibilidad.
+- Hay errores editoriales concretos en fichas y metadatos que pueden inspirar una propuesta profesional de mejora de catálogo.
+- Horizonte sigue apareciendo en el listado de CCA con el nombre histórico y un teléfono diferente, por lo que la huella antigua debe conservarse.
+- No se debe atribuir la historia institucional, reseñas o todos los servicios del grupo a Horizonte sin una declaración autorizada.
+
+La siguiente acción de máximo rendimiento es abrir manualmente el catálogo general de usados, recorrer la paginación completa y validar cada ficha con el operador. La demo comercial debe construirse solo después de acordar la marca correcta, el stock real, los contactos y las condiciones de venta.
+
+FIN DEL ANEXO MAESTRO V2
