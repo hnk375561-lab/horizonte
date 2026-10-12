@@ -1,0 +1,15 @@
+{
+  "name": "horizonte-automotores-web",
+  "version": "1.0.0",
+  "description": "Sitio estático de Horizonte Automotores (María Grande, Entre Ríos). Sin dependencias.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/validate.mjs",
+    "test:prod": "node scripts/validate.mjs --prod",
+    "site": "node scripts/build-site.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

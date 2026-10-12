@@ -1,0 +1,18 @@
+{
+  "actualizado": "2026-10-12",
+  "items": [
+    { "id": "P1", "tema": "Teléfono y WhatsApp oficiales", "bloqueante": true, "estado": "abierto", "como": "Pedir al dueño cuál es el teléfono fijo y cuál el WhatsApp. Cargar contact.phone, phoneTel (+54...), whatsApp (549...) y confirmadoPorDueno=true en data/dealership.json; npm run build." },
+    { "id": "P2", "tema": "Horario de atención", "bloqueante": false, "estado": "abierto", "como": "Confirmar horario y cargar hours.display." },
+    { "id": "P3", "tema": "Logotipo y paleta de marca", "bloqueante": false, "estado": "abierto", "como": "Pedir isologotipo SVG o PNG transparente. Hoy hay un isotipo tipográfico provisorio (favicon.svg)." },
+    { "id": "P4", "tema": "Fotos y autorización de uso", "bloqueante": true, "estado": "abierto", "como": "Que el dueño entregue o autorice por escrito las fotos. No se reutilizan imágenes de Facebook sin permiso." },
+    { "id": "P5", "tema": "Stock real", "bloqueante": false, "estado": "abierto", "como": "Cargar en data/autos.json las unidades vigentes con enlace a su publicación. Pista: Hyundai Tucson 2WD 2.0 2018 figura como Nuevo ingreso en Facebook (sin fecha). Etios XLS 2021, Compass Longitude 2021 y Punto HLX 2010 vienen de la investigación OSINT sin fuente verificable: no cargar sin confirmar." },
+    { "id": "P6", "tema": "Correo institucional", "bloqueante": false, "estado": "abierto", "como": "Definir un correo comercial. No usar la casilla hotmail de Facebook." },
+    { "id": "P7", "tema": "Mención al Grupo Automóviles Almafuerte", "bloqueante": false, "estado": "abierto", "como": "El dueño confirma que puede figurar y con qué texto." },
+    { "id": "P8", "tema": "Servicios sin confirmar", "bloqueante": false, "estado": "abierto", "como": "Permutas, 0 km, consignación, garantía, gestoría, reserva online: confirmar cuáles se ofrecen para sumarlos." },
+    { "id": "P9", "tema": "Diez años en el mercado", "bloqueante": false, "estado": "abierto", "como": "Confirmar el año de inicio para reemplazar la frase atribuida a Facebook por un dato firme." },
+    { "id": "P10", "tema": "Reseñas y valoración", "bloqueante": false, "estado": "abierto", "como": "Verificar en Google Maps el puntaje real y pedir permiso antes de publicar comentarios." },
+    { "id": "P11", "tema": "Dominio y siteUrl", "bloqueante": true, "estado": "abierto", "como": "Registrar dominio (por ejemplo .com.ar), completar publicacion.siteUrl y pasar publicIndexing y official a true." },
+    { "id": "P12", "tema": "Revisión legal de privacidad.html", "bloqueante": true, "estado": "abierto", "como": "Revisión profesional antes de producción." },
+    { "id": "P13", "tema": "Vigencia del listado del Banco Nación", "bloqueante": false, "estado": "abierto", "como": "El listado consultado es del 16/07/2025. Comprobar que siga vigente y actualizar la fecha en el sitio." }
+  ]
+}

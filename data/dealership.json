@@ -1,0 +1,80 @@
+{
+  "publicacion": {
+    "status": "demo",
+    "official": false,
+    "publicIndexing": false,
+    "siteUrl": null,
+    "nota": "Mientras publicIndexing sea false, las 3 páginas llevan noindex y robots.txt lleva Disallow: /. Al pasar a true se completa siteUrl (dominio final) y se vuelve a generar con npm run build."
+  },
+  "identity": {
+    "tradeName": "Horizonte Automotores",
+    "legalName": null,
+    "cuit": null,
+    "variantesDeNombre": ["Horizonte Automotores - Maria Grande (Facebook)", "Horizonte Automotores Usados y 0 Km. (ficha antigua de directorio)"],
+    "grupo": "Grupo Automóviles Almafuerte",
+    "grupoFuente": "https://www.instagram.com/horizonte_automotores/ (biografía: concesionario en María Grande del Grupo Automóviles Almafuerte)",
+    "noVerificado": ["razón social y CUIT", "fecha de fundación", "socio de la Cámara del Comercio Automotor de Entre Ríos (la web de la CCA no se pudo consultar)", "sucursales"],
+    "descartados": ["Horizonte Automóviles (Rivera, Uruguay)", "Horizont Auto S.L. (Valencia, España)"]
+  },
+  "location": {
+    "address": "Avenida Argentina 2021",
+    "postalCode": "3133",
+    "city": "María Grande",
+    "province": "Entre Ríos",
+    "country": "Argentina",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Avenida+Argentina+2021%2C+Mar%C3%ADa+Grande%2C+Entre+R%C3%ADos",
+    "fuentes": [
+      "Listado oficial de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025): Avda Argentina 2021",
+      "Ficha de Facebook de la agencia (consultada el 12/10/2026): Av Argentina 2021",
+      "Infoisinfo (ficha 261219) y GTM: Av. Argentina 2021"
+    ],
+    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total): ficha antigua; Entre Ríos Total la ubica en Paraná. No se usa."
+  },
+  "contact": {
+    "facebook": "https://www.facebook.com/horizonteautos/",
+    "instagram": "horizonte_automotores",
+    "phone": null,
+    "phoneTel": null,
+    "whatsApp": null,
+    "email": null,
+    "confirmadoPorDueno": false,
+    "conflicto": {
+      "regla": "Las fuentes dan números distintos. No se publica ninguno hasta que el dueño confirme cuál es el teléfono y cuál el WhatsApp (pendiente P1).",
+      "candidatos": [
+        { "numero": "343 494-7176", "fuente": "Ficha de Facebook de la agencia (12/10/2026)" },
+        { "numero": "343 461-8388", "fuente": "Investigación OSINT previa / TodosNegocios (no figura en la ficha de Facebook consultada)" },
+        { "numero": "343 494-1092", "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536" },
+        { "numero": "341 210-2911", "fuente": "WhatsApp en un aviso de Facebook (Hyundai Tucson); la característica 341 corresponde a Rosario" }
+      ]
+    },
+    "correo": "Un correo @hotmail figura en la ficha de Facebook; parece una casilla personal. No se publica ni se guarda aquí."
+  },
+  "hours": {
+    "display": null,
+    "conflicto": "Infoisinfo: lunes a viernes 9:30–18:00 y sábados 8:30–12:30. La investigación OSINT propone lunes a viernes 8–12 y 16–20 y sábados 8–12:30, pero lo marca como estimación sin fuente. No se publica horario."
+  },
+  "services": {
+    "published": [
+      { "texto": "Autos y motos", "fuente": "Facebook (introducción de la página)" },
+      { "texto": "Financiación", "fuente": "Facebook (introducción de la página)" },
+      { "texto": "Figura en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (16/07/2025)", "fuente": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf" }
+    ],
+    "sinConfirmar": ["Permutas", "Venta de 0 km", "Consignaciones", "Garantías", "Gestoría", "Entrega inmediata", "Reserva online"],
+    "nota": "Los servicios sin confirmar aparecen en directorios (Infoisinfo) pero no en una fuente propia verificada; no se publican."
+  },
+  "presentacion": {
+    "antiguedad": "En su página de Facebook se presenta con diez años de respaldo en el mercado regional.",
+    "fuente": "https://www.facebook.com/horizonteautos/ (introducción, 12/10/2026)",
+    "nota": "Es una frase de la propia agencia, no una fecha de fundación verificada."
+  },
+  "stock": {
+    "detalle": "data/autos.json",
+    "politica": "El sitio solo muestra unidades cargadas en data/autos.json con enlace a su publicación. Hoy no hay ninguna: ver pendiente P5."
+  },
+  "reviews": {
+    "publicadas": false,
+    "nota": "GTM muestra 8.4 sobre 10 con 27 reseñas, sin indicar el origen; Infoisinfo y Facebook muestran 0 reseñas. No se publica puntaje ni comentarios."
+  },
+  "photos": { "provided": false, "authorized": false, "nota": "No hay fotos ni logotipo cargados. El sitio usa un isotipo tipográfico provisorio." },
+  "website": { "propio": null, "nota": "No se encontró un sitio propio en las fuentes consultadas (12/10/2026). No demuestra que no exista." }
+}

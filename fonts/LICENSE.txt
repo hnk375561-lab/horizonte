@@ -1,0 +1,10 @@
+Tipografías autoalojadas (subconjunto latino, .woff2), ambas bajo SIL Open Font License 1.1
+(https://openfontlicense.org):
+
+- Bricolage Grotesque — © The Bricolage Grotesque Project Authors
+  https://github.com/ateliertriay/bricolage
+- Instrument Sans — © The Instrument Sans Project Authors
+  https://github.com/Instrument/instrument-sans
+
+Se pueden usar, estudiar, modificar y redistribuir libremente, siempre que se conserve este aviso
+y no se vendan por separado. El texto completo de la licencia está en el enlace de arriba.
