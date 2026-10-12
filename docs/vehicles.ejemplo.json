@@ -1,0 +1,19 @@
+{
+  "_comentario": "Ejemplo de formato para data/vehicles.json. NO son datos reales: copiar la estructura, cargar solo unidades confirmadas y correr npm run build && npm test. Los campos que no tienen dato se omiten.",
+  "fuente": "Publicaciones de Facebook e Instagram de la agencia",
+  "relevadoEl": "AAAA-MM-DD",
+  "autos": [
+    {
+      "id": "unidad-001",
+      "titulo": "Marca Modelo Versión",
+      "anio": 2020,
+      "km": 50000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Gris",
+      "precio": { "moneda": "ARS", "monto": 15000000, "fecha": "AAAA-MM-DD" },
+      "url": "https://www.facebook.com/horizonteautos/posts/XXXXXXXX",
+      "nota": "Texto libre opcional"
+    }
+  ]
+}

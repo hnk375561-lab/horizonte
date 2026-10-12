@@ -5,7 +5,7 @@ Fuente: `docs/ARCHIVO-MAESTRO-V2.txt` (copia del archivo recibido). Complementa 
 ## Qué cambió en el sitio
 - **Grupo Almafuerte:** el sitio oficial del grupo lista Av. Argentina 2021 como «Concesionario Usados María Grande». Pasa a ser fuente pública citada: el sitio dice «Grupo Almafuerte» (antes «Grupo Automóviles Almafuerte», que sigue en la biografía de Instagram; ver P7) y enlaza al grupo.
 - **Servicios atribuidos al grupo:** toma de usados como parte de pago, tasación sin cargo, revisión técnica y garantía (condiciones según vehículo). Cada uno tiene `clave` y `fuente` en `services.published`.
-- **Stock:** 5 de las 8 fichas «Disponible en María Grande» pasan a `data/autos.json` con fecha de relevamiento. Tres quedan apartadas en `data/autos-en-revision.json`:
+- **Stock:** 5 de las 8 fichas «Disponible en María Grande» pasan a `data/vehicles.json` con fecha de relevamiento. Tres quedan apartadas en `data/autos-en-revision.json`:
   - Peugeot 1.6 Feline: el título no dice el modelo completo.
   - Volkswagen Camión 17.220: la cabecera dice María Grande, la FAQ dice Paraná.
   - Renault Sandero 2024: «0 km» y «Usado» a la vez; motor 1.6 frente a 1.3.

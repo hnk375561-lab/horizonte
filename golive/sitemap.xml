@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PREPARADO para el dominio definitivo. En producción, scripts/build-index.mjs genera el sitemap.xml de la raíz desde publicacion.siteUrl. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://DOMINIO-FINAL/</loc></url>
+  <url><loc>https://DOMINIO-FINAL/reserva.html</loc></url>
+  <url><loc>https://DOMINIO-FINAL/privacidad.html</loc></url>
+</urlset>

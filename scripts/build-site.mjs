@@ -5,9 +5,10 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, '_site');
-const files = ['index.html', 'privacidad.html', '404.html', 'robots.txt', 'site.webmanifest', 'favicon.svg', '.nojekyll'];
+const files = ['index.html', 'reserva.html', 'privacidad.html', '404.html', 'robots.txt', 'site.webmanifest', 'favicon.svg', '.nojekyll'];
 const optional = ['sitemap.xml'];
 const dirs = ['fonts', 'images'];
+const whole = ['css', 'js'];   // se copian completas
 
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
@@ -23,4 +24,5 @@ for (const d of dirs) {
   fs.mkdirSync(path.join(out, d), { recursive: true });
   for (const f of fs.readdirSync(src)) if (/\.(woff2|webp|png|jpe?g|svg|avif)$/i.test(f)) { fs.copyFileSync(path.join(src, f), path.join(out, d, f)); n++; }
 }
+for (const d of whole) { const src = path.join(root, d); if (fs.existsSync(src)) { fs.cpSync(src, path.join(out, d), { recursive: true }); n += fs.readdirSync(src, { recursive: true }).length; } }
 console.log(`_site/ listo: ${n} archivos`);

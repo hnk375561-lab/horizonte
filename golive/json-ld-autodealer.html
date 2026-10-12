@@ -1,0 +1,29 @@
+<!--
+  PREPARADO, SIN ACTIVAR. No pegar en index.html mientras el sitio sea demo (CLAUDE.md, regla 7).
+  Al salir a producción (ver golive/PRODUCCION.md):
+    1. Reemplazar DOMINIO-FINAL por el dominio real.
+    2. Pegar el bloque <script> de abajo dentro de <head> en index.html.
+    3. Comprobar que cada dato coincide con data/dealership.json (npm test).
+  Solo lleva datos con fuente: nombre, dirección y redes. A propósito NO incluye teléfono, horarios, coordenadas,
+  imagen, rango de precios ni puntuación: siguen sin confirmar (P1, P2, P4) o no tienen fuente.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "Horizonte Automotores",
+  "url": "https://DOMINIO-FINAL/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida Argentina 2021",
+    "postalCode": "3133",
+    "addressLocality": "María Grande",
+    "addressRegion": "Entre Ríos",
+    "addressCountry": "AR"
+  },
+  "sameAs": [
+    "https://www.facebook.com/horizonteautos/",
+    "https://www.instagram.com/horizonte_automotores/"
+  ]
+}
+</script>

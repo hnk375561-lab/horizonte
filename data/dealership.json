@@ -148,8 +148,8 @@
     "nota": "Es una frase de la propia agencia, no una fecha de fundación verificada."
   },
   "stock": {
-    "detalle": "data/autos.json",
-    "politica": "El sitio muestra solo las unidades cargadas en data/autos.json, con enlace a su ficha pública. Hoy son 5 fichas del catálogo de Grupo Almafuerte relevadas el 12/10/2026 (precio y disponibilidad sin confirmar). Las fichas con contradicciones están apartadas en data/autos-en-revision.json y no se muestran (P5).",
+    "detalle": "data/vehicles.json",
+    "politica": "El sitio muestra solo las unidades cargadas en data/vehicles.json, con enlace a su ficha pública. Hoy son 5 fichas del catálogo de Grupo Almafuerte relevadas el 12/10/2026 (precio y disponibilidad sin confirmar). Las fichas con contradicciones están apartadas en data/autos-en-revision.json y no se muestran (P5).",
     "catalogoCompleto": "https://grupoalmafuerte.com/autos-usados/ (enlazado desde el menú del grupo; no se pudo recorrer completo en la investigación: abrirlo en navegador y revisar la paginación).",
     "catalogoUrl": "https://grupoalmafuerte.com/autos-usados/"
   },

@@ -52,7 +52,7 @@
     {
       "id": "almafuerte-fichas",
       "url": "https://grupoalmafuerte.com/producto/",
-      "aporta": "Ocho fichas «Disponible en María Grande» relevadas el 12/10/2026 (ver data/autos.json y data/autos-en-revision.json). Son fichas indexadas, no garantía de stock.",
+      "aporta": "Ocho fichas «Disponible en María Grande» relevadas el 12/10/2026 (ver data/vehicles.json y data/autos-en-revision.json). Son fichas indexadas, no garantía de stock.",
       "confianza": "alta como atribución; disponibilidad y precio sin confirmar"
     },
     {
