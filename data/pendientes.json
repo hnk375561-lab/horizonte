@@ -13,7 +13,7 @@
       "tema": "Horario de atención",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display."
+      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display. V2 suma GTM: L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30."
     },
     {
       "id": "P3",
@@ -69,7 +69,7 @@
       "tema": "Reseñas y valoración",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios."
+      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman."
     },
     {
       "id": "P11",
@@ -90,7 +90,7 @@
       "tema": "Vigencia del listado del Banco Nación",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "El listado consultado es del 16/07/2025. Comprobar que siga vigente y actualizar la fecha en el sitio."
+      "como": "El sitio cita el listado del 16/07/2025. El expediente OSINT textual V2 (12/10/2026) reporta la misma fila en listados de agosto y septiembre de 2025 y en el del 19/05/2026 (https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf), y en notas de prensa del 17/07/2025 y 09/07/2026. Abrir ese PDF; si la fila está, actualizar la fecha y el enlace en scripts/build-index.mjs (hoy fijos a 16/07/2025). No publicar tasas ni plazos del programa como oferta de la agencia."
     },
     {
       "id": "P14",
@@ -112,6 +112,13 @@
       "bloqueante": false,
       "estado": "abierto",
       "como": "El sitio enlaza https://grupoalmafuerte.com/autos-usados/ (URL del menú del grupo; no se pudo abrir en la investigación: probarla). La gama GWM 0 km y el test drive se atienden en Paraná y Santa Fe: no mostrarlos como oferta de María Grande sin confirmación."
+    },
+    {
+      "id": "P17",
+      "tema": "Domicilio alternativo Av. Argentina 536",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021."
     }
   ]
 }

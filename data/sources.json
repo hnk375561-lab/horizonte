@@ -28,7 +28,7 @@
     {
       "id": "gtm",
       "url": "https://gtm.com.ar/concesionario/horizonte-automotores/",
-      "aporta": "Dirección Av. Argentina 2021 y valoración 8.4 con 27 reseñas (origen no indicado).",
+      "aporta": "Dirección Av. Argentina 2021 y valoración 8.4 con 27 reseñas (origen no indicado). Expediente V2: horario L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30; menciona Hilux, Ranger, Amarok, Gol, 208 y Focus como ejemplos genéricos (no son stock).",
       "confianza": "media"
     },
     {
@@ -64,7 +64,7 @@
     {
       "id": "cylex",
       "url": "https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html",
-      "aporta": "Teléfono 0343 461-8388, horario L-V 9:30–18:00 y S 8:30–12:30 (actualizado el 13/09/2024), enlace a Facebook.",
+      "aporta": "Teléfono 0343 461-8388, horario L-V 9:30–18:00 y S 8:30–12:30 (actualizado el 13/09/2024), enlace a Facebook. Expediente V2: 4,1/5 con 15 opiniones y texto «Reservamos tu auto online — automotores y motos 0 km y usados — venta — permutas — amplia financiación».",
       "confianza": "media (directorio)"
     },
     {
@@ -72,6 +72,48 @@
       "url": "https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021",
       "aporta": "Puntaje agregado 4,20/5 con 17 reseñas de Google. Advierte que los horarios pueden estar desactualizados.",
       "confianza": "media (agregador)"
+    },
+    {
+      "id": "bna-2026",
+      "url": "https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf",
+      "aporta": "Expediente V2: el listado fechado 19/05/2026 repite la fila «Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021». También hay copias de agosto y septiembre de 2025. Son versiones de un mismo listado, no verificaciones independientes. No se recontrastó en vivo.",
+      "confianza": "alta como documento oficial; pendiente de recontraste (P13)"
+    },
+    {
+      "id": "quesabes",
+      "url": "https://quesabesdigital.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/",
+      "aporta": "Expediente V2: nota del 09/07/2026 que incluye «Horizonte Automotores — Av. Argentina 2021» entre las concesionarias adheridas de María Grande. Las tasas y plazos de la nota son del programa en general: no se publican como oferta de la agencia.",
+      "confianza": "media (prensa regional; no recontrastada)"
+    },
+    {
+      "id": "apfdigital",
+      "url": "https://www.apfdigital.com.ar/noticias/2025/07/17/435696-el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios",
+      "aporta": "Expediente V2: nota del 17/07/2025 con Horizonte Automotores entre las 19 concesionarias adheridas de Entre Ríos. CNDigital la reproduce (no cuenta como fuente aparte).",
+      "confianza": "media (prensa regional; no recontrastada)"
+    },
+    {
+      "id": "todosnegocios",
+      "url": "https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388",
+      "aporta": "Expediente V2: Av. Argentina 2021, teléfonos 0343 461-8388 y 0343 494-1092, L-V 9:30–18:00 y S 8:30–12:30. Dice que no hay web propia y lo clasifica como concesionario de coches nuevos. Hay otra ficha con el 536 (…/horizonte-automotores-0343-494-1092).",
+      "confianza": "baja a media (directorio; puede heredar datos)"
+    },
+    {
+      "id": "entreriostotal",
+      "url": "https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130",
+      "aporta": "Expediente V2: «Horizonte Automotores, María Grande — Avda. Argentina 536 — 0343 4941092». Contradice la verificación previa que la ubicaba en Paraná.",
+      "confianza": "baja (ficha antigua o duplicada; discrepancia abierta)"
+    },
+    {
+      "id": "guia-clarin",
+      "url": "https://entre-rios.guia.clarin.com/agencias-de-automotores-con-telefono-en-/",
+      "aporta": "Expediente V2: «Horizonte Automotores Usados Y 0 Km.», Av Argentina 536, María Grande. Visto solo en el fragmento del buscador (la página no abrió).",
+      "confianza": "baja (evidencia de buscador)"
+    },
+    {
+      "id": "tellows-worldorgs",
+      "url": "https://ar.tellows.net/num/03434618388",
+      "aporta": "Expediente V2: Tellows asocia 0343 461-8388 con el nombre y lo marca como comercial, sin denuncias recuperadas. WorldOrgs repite Av. Argentina 2021 (E3133). Datos de directorio.",
+      "confianza": "baja"
     }
   ],
   "contradiccionesConLaInvestigacionOriginal": [
@@ -85,6 +127,10 @@
     "V2: el sitio oficial de Grupo Almafuerte publica dos teléfonos distintos para María Grande (+54 9 3434 61-8388 en Nosotros y +54 9 3434 62-2671 en Contacto) y un WhatsApp de usados (+54 9 3436 10-9949). No se elige ninguno por cuenta propia.",
     "V2: el horario oficial del grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00) difiere del de los directorios; no se publica hasta que el operador lo confirme.",
     "V2: la investigación no logró abrir Facebook ni Instagram, por eso no vio el teléfono 343 494-7176 de la ficha de Facebook ni la biografía de Instagram que ya estaban verificadas en este proyecto.",
-    "V2: el listado de la CCA trae el teléfono 343 405-0787, distinto de los demás."
+    "V2: el listado de la CCA trae el teléfono 343 405-0787, distinto de los demás.",
+    "Expediente OSINT textual V2: la dirección Av. Argentina 536 aparece también en la Guía de Empresas de Clarín y Entre Ríos Total la lista como «María Grande», no Paraná. La verificación previa decía Paraná. Se mantiene 2021 y se deja la discrepancia abierta.",
+    "Expediente OSINT textual V2: GTM publica un tercer horario (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30), distinto del de directorios y del del grupo.",
+    "Expediente OSINT textual V2: no menciona a Grupo Almafuerte, Instagram ni el teléfono 343 494-7176 de Facebook (no pudo abrir Facebook). No contradice lo ya verificado; es una laguna de ese expediente.",
+    "Expediente OSINT textual V2: el listado del Banco Nación persiste en versiones de agosto y septiembre de 2025 y del 19/05/2026, y en prensa del 17/07/2025 y 09/07/2026. El sitio sigue citando el del 16/07/2025 hasta recontrastar (P13)."
   ]
 }

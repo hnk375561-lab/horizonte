@@ -12,8 +12,9 @@
     "cuit": null,
     "variantesDeNombre": [
       "Horizonte Automotores - Maria Grande (Facebook)",
-      "Horizonte Automotores Usados y 0 Km. (ficha antigua de directorio)",
-      "Concesionario Usados María Grande (nombre de la sucursal en grupoalmafuerte.com/contacto)"
+      "Horizonte Automotores Usados y 0 Km. (ficha antigua de directorio; también en la Guía de Empresas de Clarín con Av. Argentina 536)",
+      "Concesionario Usados María Grande (nombre de la sucursal en grupoalmafuerte.com/contacto)",
+      "Horizonte Automores (grafía que usan los listados del Banco Nación; probable errata, no es razón social)"
     ],
     "grupo": "Grupo Almafuerte",
     "grupoFuente": "https://grupoalmafuerte.com/contacto/ (lista Av. Argentina 2021 como «Concesionario Usados María Grande»); biografía de https://www.instagram.com/horizonte_automotores/ («Grupo Automóviles Almafuerte»)",
@@ -48,7 +49,7 @@
       "Sitio oficial de Grupo Almafuerte, páginas Nosotros y Contacto (12/10/2026): Av. Argentina 2021, María Grande",
       "Listado de agencias de la Cámara del Comercio Automotor de Entre Ríos: Av Argentina 2021"
     ],
-    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total): ficha antigua; Entre Ríos Total la ubica en Paraná. No se usa."
+    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios): ficha antigua. No se usa. Discrepancia entre verificaciones del 12/10/2026: la verificación previa leyó que Entre Ríos Total la ubica en Paraná; el expediente OSINT textual V2 la lee como María Grande, Avda. Argentina 536, tel. 0343 4941092. Sin resolver; la ficha de TodosNegocios del 536 tiene además un encabezado de Santiago del Estero. No hay prueba de mudanza."
   },
   "contact": {
     "facebook": "https://www.facebook.com/horizonteautos/",
@@ -67,7 +68,7 @@
         },
         {
           "numero": "343 461-8388",
-          "fuente": "Directorios (Cylex, TodosNegocios, Tellows, GTM) y página «Nosotros» de grupoalmafuerte.com (+54 9 3434 61-8388)"
+          "fuente": "Directorios (Cylex, TodosNegocios, Tellows, GTM) y página «Nosotros» de grupoalmafuerte.com (+54 9 3434 61-8388); Yably y Tellows (posible dato replicado entre directorios, no verificaciones independientes)"
         },
         {
           "numero": "3434 62-2671",
@@ -83,7 +84,7 @@
         },
         {
           "numero": "343 494-1092",
-          "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536"
+          "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536 (Entre Ríos Total, TodosNegocios); la ficha principal de TodosNegocios lo muestra junto a Av. Argentina 2021 (expediente V2)"
         },
         {
           "numero": "341 210-2911",
@@ -96,7 +97,7 @@
   },
   "hours": {
     "display": null,
-    "conflicto": "Dos versiones: (a) sitio oficial de Grupo Almafuerte (Nosotros y Contacto): lunes a viernes 8:30–12:30 y 15:30–19:30, sábados 8:30–13:00; (b) directorios (Cylex, TodosNegocios, Tellows, Infoisinfo; Cylex actualizado el 13/09/2024): lunes a viernes 9:30–18:00, sábados 8:30–12:30. La (a) es la más reciente y oficial, pero hasta que el operador la confirme no se publica ninguna (P2).",
+    "conflicto": "Dos versiones: (a) sitio oficial de Grupo Almafuerte (Nosotros y Contacto): lunes a viernes 8:30–12:30 y 15:30–19:30, sábados 8:30–13:00; (b) directorios (Cylex, TodosNegocios, Tellows, Infoisinfo; Cylex actualizado el 13/09/2024): lunes a viernes 9:30–18:00, sábados 8:30–12:30. La (a) es la más reciente y oficial, pero hasta que el operador la confirme no se publica ninguna (P2). Versión (c), expediente OSINT textual V2: GTM publica lunes a viernes 8:30–12:30 y 16:00–20:00, sábados 8:30–12:30 (otra contradicción en días hábiles). Cylex, TodosNegocios y Tellows repiten la (b).",
     "candidatoOficial": "Lunes a viernes 8:30–12:30 y 15:30–19:30; sábados 8:30–13:00 (grupoalmafuerte.com, 12/10/2026)"
   },
   "services": {
@@ -155,7 +156,7 @@
   },
   "reviews": {
     "publicadas": false,
-    "nota": "Yably: 4,20/5 con 17 reseñas de Google; GTM: 8.4 con 27 reseñas (origen sin indicar y un 4.2 en la misma página); Infoisinfo y Facebook: 0 reseñas. Las cifras no son comparables y la ficha de Google podría corresponder al nombre histórico. No se publica puntaje ni comentarios (P10)."
+    "nota": "Yably: 4,20/5 con 17 reseñas de Google; GTM: 8.4 con 27 reseñas (origen sin indicar y un 4.2 en la misma página); Infoisinfo y Facebook: 0 reseñas. Las cifras no son comparables y la ficha de Google podría corresponder al nombre histórico. No se publica puntaje ni comentarios (P10). Cylex (V2): 4,1/5 con 15 opiniones («1 fuente»), registro del 13/09/2024; Cylex y Yably parecen compartir fuente, por eso no se suman. No se calcula un puntaje único."
   },
   "photos": {
     "provided": false,
