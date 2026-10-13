@@ -6,21 +6,21 @@
       "tema": "Teléfono y WhatsApp oficiales",
       "bloqueante": true,
       "estado": "abierto",
-      "como": "Pedir al dueño cuál es el teléfono fijo y cuál el WhatsApp. Candidatos en data/dealership.json → contact.conflicto. El WhatsApp 3436 10-9949 es el que el sitio oficial de Grupo Almafuerte publica para usados (Nosotros y Contacto); la página Contacto da además el fijo 3434 62-2671 y Nosotros da 3434 61-8388. Cargar contact.phone, phoneTel (+54...), whatsApp (549...) y confirmadoPorDueno=true; npm run build."
+      "como": "Pedir al dueño cuál es el teléfono fijo y cuál el WhatsApp. Candidatos en data/dealership.json → contact.conflicto. El WhatsApp 3436 10-9949 es el que el sitio oficial de Grupo Almafuerte publica para usados (Nosotros y Contacto); la página Contacto da además el fijo 3434 62-2671 y Nosotros da 3434 61-8388. Cargar contact.phone, phoneTel (+54...), whatsApp (549...) y confirmadoPorDueno=true; npm run build. V4 no suma números: repite 0343 461-8388, 0343 494-1092 y 343 405-0787 como publicados, sin verificar funcionamiento."
     },
     {
       "id": "P2",
       "tema": "Horario de atención",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display. V2 suma GTM: L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30."
+      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display. V2 suma GTM: L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30. V4 repite las dos versiones de directorios (L-V 9:30–18:00 frente al horario partido de GTM); sigue sin fuente primaria."
     },
     {
       "id": "P3",
       "tema": "Logotipo y paleta de marca",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Pedir isologotipo SVG o PNG transparente. Hoy hay un isotipo tipográfico provisorio (favicon.svg)."
+      "como": "Paleta y estilo ya aplicados desde el logotipo entregado (ver docs/IDENTIDAD.md). Falta el archivo del logo (SVG o PNG transparente) con autorización escrita para usarlo como imagen (P4); hoy el isotipo es un sol y un nombre armados con CSS y favicon.svg."
     },
     {
       "id": "P4",
@@ -69,7 +69,7 @@
       "tema": "Reseñas y valoración",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman."
+      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman. V4: las 15 opiniones de Cylex se declaran de una sola fuente; no promediar con Yably ni GTM sin revisar las reseñas originales."
     },
     {
       "id": "P11",
@@ -118,7 +118,7 @@
       "tema": "Domicilio alternativo Av. Argentina 536",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021. La V3 confirma que el 536 aparece en Entre Ríos Total (dos categorías del mismo sitio), TodosNegocios y Guía Clarín, y que la ficha de TodosNegocios del 536 trae un encabezado de Santiago del Estero. Sigue sin cronología."
+      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021. La V3 confirma que el 536 aparece en Entre Ríos Total (dos categorías del mismo sitio), TodosNegocios y Guía Clarín, y que la ficha de TodosNegocios del 536 trae un encabezado de Santiago del Estero. Sigue sin cronología. V4: no encontró cronología. No escribir «se mudó» ni «tiene dos sucursales»; WorldOrgs y el encabezado de Santiago del Estero de TodosNegocios no sirven para ubicarlo."
     },
     {
       "id": "P18",

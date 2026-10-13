@@ -45,7 +45,7 @@ function page({ title, desc, body, file, withFonts = true, extraHead = '' }) {
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ${robotsMeta}<title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
-<meta name="theme-color" content="#0d0d0d">
+<meta name="theme-color" content="#0a1012">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
@@ -66,7 +66,7 @@ const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>$
 const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
-<header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio">Horizonte<small>Automotores</small></a>
+<header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><span class="sun" aria-hidden="true"></span><span class="mk"><b>Horizonte</b><small>Automotores</small></span></a>
 <nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a>${autos.length > 1 ? `<a href="${pre}#comparador">Comparar</a>` : ''}<a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;
@@ -276,7 +276,7 @@ const reserva = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ${robotsMeta}<title>Coordiná tu visita · ${esc(NAME)}</title>
 <meta name="description" content="Elegí un día y una franja y armá la consulta para ir a ver un auto. Es una consulta, no un turno.">
-<meta name="theme-color" content="#0d0d0d">
+<meta name="theme-color" content="#0a1012">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Coordiná tu visita · ${esc(NAME)}">
 <meta property="og:locale" content="es_AR">
@@ -340,7 +340,7 @@ write('robots.txt', demo ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllo
 const smPath = path.join(root, 'sitemap.xml');
 if (!demo && siteUrl) write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${siteUrl}</loc></url>\n  <url><loc>${siteUrl}reserva.html</loc></url>\n  <url><loc>${siteUrl}privacidad.html</loc></url>\n</urlset>\n`);
 else if (fs.existsSync(smPath)) fs.rmSync(smPath);
-write('site.webmanifest', JSON.stringify({ name: NAME, short_name: 'Horizonte', description: `Autos y motos en ${L.city}, ${L.province}.`, lang: 'es-AR', start_url: './', scope: './', display: 'standalone', background_color: '#0d0d0d', theme_color: '#0d0d0d', icons: [{ src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }] }, null, 2) + '\n');
-write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f8f8f"/><stop offset=".5" stop-color="#f6f6f4"/><stop offset="1" stop-color="#9b9b9b"/></linearGradient></defs><rect width="64" height="64" rx="10" fill="#0d0d0d"/><path d="M18 14v30M46 14v30M18 29h28" stroke="url(#g)" stroke-width="7" fill="none"/><path d="M10 52h44" stroke="url(#g)" stroke-width="3" fill="none"/></svg>\n');
+write('site.webmanifest', JSON.stringify({ name: NAME, short_name: 'Horizonte', description: `Autos y motos en ${L.city}, ${L.province}.`, lang: 'es-AR', start_url: './', scope: './', display: 'standalone', background_color: '#0a1012', theme_color: '#0a1012', icons: [{ src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }] }, null, 2) + '\n');
+write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#0a1012"/><path d="M9 44a23 23 0 0 1 46 0z" fill="#f2d21b"/><path d="M25 28v14M39 28v14M25 35h14" stroke="#0a1012" stroke-width="4.5" fill="none"/><path d="M6 50h52" stroke="#fff" stroke-width="4" fill="none"/></svg>\n');
 
 console.log(`Generado: index.html (${(index.length / 1024).toFixed(1)} KB), privacidad.html, reserva.html, 404.html · ${autos.length} unidades · modo ${demo ? 'demo (noindex)' : 'producción'}`);

@@ -21,7 +21,7 @@
       view.hidden = false;
       var m = L.map(view, { scrollWheelZoom: false }).setView([lat, lng], 17);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>' }).addTo(m);
-      L.circleMarker([lat, lng], { radius: 10, color: '#f4f4f2', weight: 3, fillColor: '#0d0d0d', fillOpacity: 1 }).addTo(m);
+      L.circleMarker([lat, lng], { radius: 10, color: '#0a1012', weight: 3, fillColor: '#f2d21b', fillOpacity: 1 }).addTo(m);
       btn.hidden = true; if (msg) msg.textContent = '';
       m.invalidateSize();
     } catch (e) { view.hidden = true; falla(); }
