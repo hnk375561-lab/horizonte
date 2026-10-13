@@ -608,6 +608,14 @@ html.save-data .hero{animation:none!important}
 .hero .hx-down{z-index:3}
 @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:calc(100svh - var(--hdr));padding:54px 16px 250px}.hero-media{inset:0}.hero-media::after{background:linear-gradient(90deg,rgba(10,11,12,.86),rgba(10,11,12,.3) 75%),linear-gradient(0deg,var(--ink) 3%,transparent 64%)}.hero-media img{object-position:64% 50%;filter:saturate(.82) contrast(1.04) brightness(.6)}.hero .hx-copy{max-width:680px}.hero h1{max-width:10ch}}
 @media(max-width:560px){.hero{padding-top:44px;padding-bottom:220px}.hero-media img{object-position:67% 50%}.hero h1{font-size:clamp(46px,14vw,72px)}.hero .lead{font-size:17px}.hero::after{border-color:rgba(198,161,91,.18)}}
+
+/* Hero final aprobado: composición completa del preview visual de Horizonte Automotores. */
+@media(min-width:901px){
+  header{display:none}
+  .demo{display:none}
+  .hero{display:block;min-height:100svh;height:100svh;padding:0;background:var(--ink) url('images/hero/horizonte-hero-preview.png') center center/100% 100% no-repeat;border:0}
+  .hero::before,.hero::after,.hero-media,.hero .hx-copy,.hero .hx-sun,.hero .hx-down{display:none}
+}
 </style>
 <script>(function(){var s=location.pathname.split("/").filter(Boolean),b=/github\.io$/.test(location.hostname)&&s.length?"/"+s[0]+"/":"/";var st=document.createElement("style");st.textContent="@font-face{font-family:\"Cormorant Garamond\";font-style:normal;font-weight:400 500;font-display:swap;src:__U__cormorant-garamond-latin-400.woff2__E__ format(\"woff2\")}\n@font-face{font-family:\"Inter\";font-style:normal;font-weight:100 900;font-display:swap;src:__U__inter-latin-var.woff2__E__ format(\"woff2\")}\n".split("__U__").join("ur"+"l("+b+"fonts/").split("__E__").join(")");document.head.appendChild(st);document.addEventListener("DOMContentLoaded",function(){document.getElementById("home").href=b})})()</script>
 </head>

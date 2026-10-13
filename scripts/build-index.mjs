@@ -261,10 +261,10 @@ const index = page({
 <div class="hero">
 <div class="hero-media" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="images/hero/horizonte-hero-audi-mobile.webp"><img src="images/hero/horizonte-hero-audi.webp" width="960" height="720" alt="" fetchpriority="high" decoding="async"></picture></div>
 <div class="hx-copy">
-<p class="ey">Tu próximo vehículo te espera</p>
+<p class="ey">Horizonte Automotores</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
 <p class="lead">Concesionario del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago.</p>
-<div class="row"><a class="btn p" href="#unidades">Ver unidades disponibles</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Consultar con un asesor</a>` : ''}<a class="btn lnk" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
+<div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn lnk" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
 <div class="hx-sun" aria-hidden="true"><span class="orb"></span></div>
 <a class="hx-down" href="#unidades">Ver más</a>
 </div>
