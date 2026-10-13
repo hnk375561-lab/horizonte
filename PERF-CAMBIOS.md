@@ -11,3 +11,4 @@ Al sumar fotos o scripts, medir y anotar acá antes y después.
 - `index.html` carga `js/secciones.js` y `js/mapa.js` con `defer` (sin dependencias). El comparador lee un JSON embebido (`#cmp-data`) generado desde `data/vehicles.json`.
 - El mapa no pide Leaflet ni mosaicos hasta que la persona toca «Ver mapa» (`js/mapa.js`); el marcador es vectorial, sin imágenes.
 - Medir y anotar acá el peso de `index.html` antes y después cuando haya fotos (P4).
+- Catálogo: buscador, orden y contador en #unidades (js/secciones.js, sin dependencias). El estado va en la URL (?q=…&orden=…). Sin JavaScript se ven las 5 fichas completas. Probado con jsdom (búsqueda, 4 órdenes, sin resultados, limpiar); no se midió rendimiento ni se probó en navegador real.

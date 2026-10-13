@@ -51,7 +51,7 @@ if (d && a) {
 
   const idx = html['index.html'];
   const visible = pages.map((p) => html[p]).join('\n').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '');
-  const visNoCars = visible.replace(/<li class="car">[\s\S]*?<\/li>/g, '');
+  const visNoCars = visible.replace(/<li class="car"[^>]*>[\s\S]*?<\/li>/g, '');
 
   // --- datos del negocio ---
   const L = d.location;
@@ -108,7 +108,7 @@ if (d && a) {
   if (!publicados.some((t) => t.includes('financiaci'))) err('services.published no incluye la financiación que muestra el sitio');
 
   // --- stock ---
-  const nCards = (idx.match(/<li class="car">/g) || []).length;
+  const nCards = (idx.match(/<li class="car"[^>]*>/g) || []).length;
   if (nCards !== a.autos.length) err(`index.html tiene ${nCards} tarjetas y data/vehicles.json tiene ${a.autos.length} unidades (correr npm run build)`);
   const ids = new Set();
   for (const v of a.autos) {

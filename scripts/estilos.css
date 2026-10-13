@@ -202,3 +202,5 @@ details.dd p{margin:0;padding:14px 18px 18px;color:var(--s2)}
   footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 }
 @media(max-width:900px){.bar ul{grid-template-columns:1fr 1fr}.bar li{border-left:0;padding-left:0;border-top:3px solid var(--ink)}.bar li:nth-child(-n+2){border-top:0}.qa,.ft{grid-template-columns:1fr}}
+
+.tools{display:flex;flex-wrap:wrap;gap:16px;align-items:end;margin:0 0 22px;padding:14px 0;border-top:2px solid var(--s2);border-bottom:1px solid var(--g3)}.tools[hidden],#sinres[hidden]{display:none}.tools .f{flex:1 1 220px}.tools .cmp-st{flex:1 0 100%;margin:0}

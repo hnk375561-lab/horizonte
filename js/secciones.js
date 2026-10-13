@@ -90,6 +90,49 @@
     var ns = $('#cmp-ns'); if (ns) ns.hidden = true;
   }
 
+
+  /* ---------- 1b) buscar y ordenar unidades (el estado vive en la URL: ?q=...&orden=...) ---------- */
+  (function () {
+    var tools = $('#tools'), ul = $('#cars');
+    if (!tools || !ul) return;
+    var q = $('#q'), ord = $('#orden'), lim = $('#limpiar'), cuenta = $('#cuenta'), sin = $('#sinres');
+    var items = $$('li.car', ul), total = items.length;
+    var norm = function (t) { return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); };
+    var num = function (li, k) { var v = li.getAttribute('data-' + k); return v === '' || v == null ? null : +v; };
+    function aplicar(escribirUrl) {
+      var palabras = norm(q.value).split(/\s+/).filter(Boolean), n = 0;
+      items.forEach(function (li) {
+        var t = li.getAttribute('data-t'), ok = palabras.every(function (w) { return t.indexOf(w) > -1; });
+        li.hidden = !ok; if (ok) n++;
+      });
+      var o = ord.value.split('-'), k = o[0], dir = o[1] === 'desc' ? -1 : 1;
+      var orden = items.slice().sort(function (a, b) {
+        if (!k) return num(a, 'i') - num(b, 'i');
+        var x = num(a, k), y = num(b, k);
+        if (x == null && y == null) return num(a, 'i') - num(b, 'i');
+        if (x == null) return 1; if (y == null) return -1;   /* sin dato: siempre al final */
+        return (x - y) * dir || num(a, 'i') - num(b, 'i');
+      });
+      orden.forEach(function (li) { ul.appendChild(li); });
+      sin.hidden = n > 0; ul.hidden = n === 0;
+      lim.hidden = !(q.value || ord.value);
+      cuenta.textContent = (n === total ? 'Mostrando las ' + total + ' unidades' : 'Mostrando ' + n + ' de ' + total + ' unidades') + '.';
+      if (escribirUrl) {
+        var u = new URL(location.href);
+        q.value ? u.searchParams.set('q', q.value) : u.searchParams.delete('q');
+        ord.value ? u.searchParams.set('orden', ord.value) : u.searchParams.delete('orden');
+        history.replaceState(null, '', u.pathname + u.search + u.hash);
+      }
+    }
+    var ps = new URLSearchParams(location.search);
+    q.value = (ps.get('q') || '').slice(0, 60);
+    var ov = ps.get('orden') || ''; if ($$('option', ord).some(function (op) { return op.value === ov; })) ord.value = ov;
+    q.addEventListener('input', function () { aplicar(true); });
+    ord.addEventListener('change', function () { aplicar(true); });
+    lim.addEventListener('click', function () { q.value = ''; ord.value = ''; aplicar(true); q.focus(); });
+    tools.hidden = false; aplicar(false);
+  })();
+
   /* ---------- 2) formularios que arman un mensaje ---------- */
   $$('form[data-msg]').forEach(function (f) {
     var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f);
