@@ -880,7 +880,7 @@ html,body{background:#0a1012;color:#f8f8f8}
 @media(max-width:700px){.inventory-section .filter-bar{width:100%;margin-bottom:22px;padding:12px;border-radius:14px}.inventory-section .filter-bar .fx-top{display:flex}.inventory-section .filter-bar .fx-top>.fx-quick{flex:1 1 100%}.inventory-section .filter-bar .fx-body,.inventory-section .filter-bar.is-open .fx-body{position:static!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;max-height:none!important;padding:15px 0 4px}.inventory-section .filter-bar.is-open .fx-view{position:static!important;inset:auto!important;z-index:auto!important;display:inline-flex;margin-left:auto}.inventory-section .filter-bar.is-open .fx-act{padding-bottom:10px}}
 
 /* Financiación: fondo cinematográfico con una unidad del repo aún no usada en la página. */
-.finance-section{isolation:isolate;background-color:#0a1012;background-image:linear-gradient(90deg,rgba(10,16,18,.97) 0%,rgba(10,16,18,.92) 40%,rgba(10,16,18,.76) 72%,rgba(10,16,18,.68) 100%),url("images/hero/horizonte-hero-audi.webp");background-size:cover;background-position:center,62% 54%;background-repeat:no-repeat;border-block-color:rgba(242,210,27,.36)}
+.finance-section{isolation:isolate;background-color:#0a1012;background-image:linear-gradient(90deg,rgba(10,16,18,.97) 0%,rgba(10,16,18,.92) 40%,rgba(10,16,18,.76) 72%,rgba(10,16,18,.68) 100%),url("images/hero/horizonte-financiacion.webp");background-size:cover;background-position:center,62% 54%;background-repeat:no-repeat;border-block-color:rgba(242,210,27,.36)}
 .finance-section::before{opacity:.08;mask-image:linear-gradient(115deg,#000,transparent 78%)}
 .finance-section .finance-aside{border-color:rgba(242,210,27,.58)}
 .finance-section .finance-card{border:1px solid rgba(248,248,248,.2);border-left:2px solid rgba(242,210,27,.72);background:linear-gradient(145deg,rgba(10,16,18,.9),rgba(10,16,18,.74));backdrop-filter:blur(8px)}
@@ -924,7 +924,7 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 .conversion--search .conversion-form .acts .btn.p{border-color:#f2d21b;background:#f2d21b;color:#0a1012}
 .conversion--search .conversion-form .acts .btn.p:hover{background:#ffe14d;border-color:#ffe14d;color:#0a1012}
 .conversion-photo{display:none!important}
-@media(max-width:700px){.finance-section{background-image:linear-gradient(180deg,rgba(10,16,18,.94) 0%,rgba(10,16,18,.91) 42%,rgba(10,16,18,.84) 100%),url("images/hero/horizonte-hero-audi-mobile.webp");background-position:center,58% 52%}}
+@media(max-width:700px){.finance-section{background-image:linear-gradient(180deg,rgba(10,16,18,.94) 0%,rgba(10,16,18,.91) 42%,rgba(10,16,18,.84) 100%),url("images/hero/horizonte-financiacion-mobile.webp");background-position:center,58% 52%}}
 .finance-section h2,.conversion h2{font-family:var(--hero-title);font-weight:800;letter-spacing:-.04em}
 .finance-section h2{max-width:none;line-height:.96}
 .finance-section h2 em{display:block;margin-top:.08em}
@@ -942,7 +942,7 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 .finance-aside p{color:#e2e2e2}
 .inventory-meta>span:last-of-type{color:#d4d4d4}
 .finance-section,section.conversion{filter:none}
-.finance-section{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.58) 42%,rgba(10,16,18,.22) 100%),url("images/hero/horizonte-hero-audi.webp");background-position:center,62% 54%}
+.finance-section{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.58) 42%,rgba(10,16,18,.22) 100%),url("images/hero/horizonte-financiacion.webp");background-position:center,62% 54%}
 section.conversion::before{filter:none;opacity:1}
 section.conversion--trade::before{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.52) 45%,rgba(10,16,18,.10) 100%),url("images/conversion/tu-usado.webp");background-position:center,58% 56%}
 section.conversion--search::before{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.52) 45%,rgba(10,16,18,.10) 100%),url("images/conversion/busqueda.webp");background-position:center,55% 52%}
@@ -1088,3 +1088,96 @@ section.conversion::before,.finance-section{image-rendering:auto}
 #unidades .cars .car .car-f .btn{flex:1 1 0;width:auto!important;min-width:0;min-height:34px!important;margin:0!important;padding:0 8px;font-size:9.5px!important;letter-spacing:.08em!important;white-space:nowrap}
 #unidades .cars .car .car-f .btn[hidden]{display:none}
 @media(max-width:600px){#unidades .cars .car h3{font-size:22px!important}#unidades .cars .car .car-f .btn{min-height:42px!important;font-size:11px!important}}
+
+/* ===== Financiación: foto de fondo nítida ===== */
+.finance-section{background-image:linear-gradient(90deg,rgba(10,16,18,.86) 0%,rgba(10,16,18,.64) 44%,rgba(10,16,18,.28) 100%),url("images/hero/horizonte-financiacion.webp")!important;background-position:center,50% 74%!important;background-size:cover!important}
+@media(max-width:700px){.finance-section{background-image:linear-gradient(180deg,rgba(10,16,18,.9) 0%,rgba(10,16,18,.78) 55%,rgba(10,16,18,.6) 100%),url("images/hero/horizonte-financiacion-mobile.webp")!important;background-position:center,50% 80%!important}}
+
+/* ===== Guía: acordeón claro y estable ===== */
+#guia .guia-bar{display:flex;justify-content:flex-end;margin:0 0 14px}
+#guia .guia{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:start}
+#guia .gd{position:relative;margin:0;padding:0;background:linear-gradient(160deg,#10181a,#0b1214);border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--y);transition:border-color .25s,background .25s;overflow:hidden;interpolate-size:allow-keywords}
+#guia .gd:hover,#guia .gd[open]{border-color:rgba(242,210,27,.55)}
+#guia .gd>summary{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 14px;min-height:64px;padding:14px 16px 14px 18px;margin:0!important;cursor:pointer;list-style:none;user-select:none}
+#guia .gd>summary::-webkit-details-marker{display:none}
+#guia .gd>summary:focus-visible{outline:3px solid var(--y);outline-offset:-3px}
+#guia .gd-n{font:400 26px/1 var(--h);color:var(--y);opacity:.85}
+#guia .gd>summary h3{margin:0;font:400 clamp(20px,1.9vw,25px)/1.1 var(--h);color:#f8f8f8;text-transform:none}
+#guia .gd-c{grid-column:2;grid-row:2;font:700 11px/1 var(--b);letter-spacing:.14em;text-transform:uppercase;color:#9c9e9f}
+#guia .gd>summary::after{content:"+";grid-column:3;grid-row:1/3;display:grid;place-items:center;width:34px;height:34px;background:var(--y);color:var(--ink);font:800 24px/1 var(--b);transition:transform .3s ease,background .2s}
+#guia .gd[open]>summary::after{content:"\2212";transform:rotate(180deg)}
+#guia .gd>summary:hover::after{background:var(--y2)}
+#guia .gd-b{padding:0 18px 18px 18px;border-top:1px solid rgba(255,255,255,.1)}
+#guia .gd-b ul{list-style:none;margin:0;padding:12px 0 0;display:grid;gap:2px}
+#guia .gd-b li{position:relative;padding:9px 0 9px 28px;color:#e6e6e6;font-size:15.5px;line-height:1.5;border-bottom:1px solid rgba(255,255,255,.06)}
+#guia .gd-b li:last-child{border-bottom:0}
+#guia .gd-b li::before{content:"";position:absolute;left:2px;top:15px;width:11px;height:6px;border-left:2.5px solid var(--y);border-bottom:2.5px solid var(--y);transform:rotate(-45deg)}
+#guia .gd::details-content{block-size:0;overflow:hidden;opacity:0;transition:block-size .35s ease,opacity .3s ease,content-visibility .35s allow-discrete}
+#guia .gd[open]::details-content{block-size:auto;opacity:1}
+@media(max-width:700px){#guia .guia{grid-template-columns:1fr}#guia .gd>summary{min-height:60px}}
+
+/* ===== Visita: centrada ===== */
+#visita.visita-s{padding-block:clamp(64px,8vw,110px)}
+#visita .vis-w{display:flex;flex-direction:column;align-items:center;text-align:center}
+#visita .vis-w h2::after{margin-inline:auto}
+#visita .vis-w .sec-p{margin:16px auto 30px;max-width:44em}
+#visita .visit-card{width:100%;max-width:760px;margin:0 auto;padding:clamp(26px,4vw,44px);display:flex;flex-direction:column;align-items:center;text-align:center;background:linear-gradient(160deg,rgba(16,24,26,.96),rgba(10,16,18,.96))!important;border:1px solid rgba(242,210,27,.35)!important;border-top:3px solid var(--y)!important;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+#visita .visit-card h3{font-size:clamp(26px,3.4vw,40px);margin:0 0 20px;color:#f8f8f8}
+#visita .visit-card p:not(.visit-card-kicker){margin:0 auto 22px;max-width:46ch;color:#d0d0d0}
+#visita .vis-steps{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;width:100%}
+#visita .vis-steps li{display:flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);font:700 14px var(--b);color:#f0f0f0}
+#visita .vis-steps b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--y);color:var(--ink);font:800 13px var(--b)}
+#visita .visit-card .row{justify-content:center;gap:12px}
+#visita .vis-hrs{width:100%;margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+#visita .vis-hrs .src,#visita .vis-hrs .estado{margin:4px 0 0;color:#cfcfcf;font-size:13.5px}
+@media(max-width:700px){#visita .vis-steps{flex-direction:column;align-items:stretch}#visita .visit-card .btn{width:100%}}
+
+/* ===== Contacto: todo legible ===== */
+#contacto .ct-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+#contacto dl{margin:0}
+#contacto dt{margin:18px 0 4px;font:800 12px/1.2 var(--b);letter-spacing:.18em;text-transform:uppercase;color:var(--y)}
+#contacto dt:first-child{margin-top:0}
+#contacto dd{margin:0;color:#f4f4f4;font-size:17px;line-height:1.5}
+#contacto dd a{color:#fff}
+#contacto dd small,#contacto .ant{display:block;margin-top:4px;color:#d9d9d9;font-size:13.5px}
+#contacto .hrs{width:100%;max-width:480px;border-collapse:collapse}
+#contacto .hrs th,#contacto .hrs td{padding:10px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,.16);color:#f4f4f4;font-size:15.5px}
+#contacto .hrs th{font:800 12.5px var(--b);letter-spacing:.1em;text-transform:uppercase;color:var(--y)}
+#contacto .ct-c{padding:clamp(24px,3vw,38px)!important;background:linear-gradient(160deg,#141c1e,#0d1517)!important;border:1px solid rgba(242,210,27,.4)!important;border-top:3px solid var(--y)!important;color:#f4f4f4;text-shadow:none}
+#contacto .ct-c .ct-t{margin:0 0 12px;font:400 clamp(26px,3vw,36px)/1.1 var(--h);color:#fff}
+#contacto .ct-c p:not(.ct-t){margin:0 0 22px;color:#e2e2e2;font-size:16.5px;line-height:1.55}
+#contacto .ct-c .row{display:flex;flex-wrap:wrap;gap:12px}
+#contacto .ct-c .btn{min-height:50px;color:#fff;border:1px solid rgba(255,255,255,.6);background:transparent;opacity:1}
+#contacto .ct-c .btn:hover{background:#fff;color:var(--ink);border-color:#fff}
+#contacto .ct-c .btn.p{background:var(--y)!important;color:var(--ink)!important;border-color:var(--y)!important;font-weight:800}
+#contacto .ct-c .btn.p:hover{background:var(--y2)!important}
+#contacto .src,#contacto small{color:#d6d6d6}
+#contacto .map-p,#contacto .card{color:#f0f0f0}
+#contacto .map-p p,#contacto .card p{color:#e2e2e2}
+@media(max-width:900px){#contacto .ct-g{grid-template-columns:1fr}}
+
+/* ===== Filtros: panel que realmente abre y cierra ===== */
+#unidades .fx:not(.is-open) .fx-body{display:none!important}
+#unidades .fx.is-open .fx-body{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))!important;gap:22px 28px!important}
+#unidades .fx .fx-body>.fg,#unidades .fx .fx-body>.fg.s2,#unidades .fx .fx-body>.fg.s3,#unidades .fx .fx-body>.fg.s4,#unidades .fx .fx-body>.fg.s5{grid-column:auto!important}
+#unidades .fx .fx-body>.fg.s5{grid-column:1/-1!important}
+#unidades .fx .fx-body fieldset{padding:14px!important;border:1px solid rgba(255,255,255,.1)!important;background:rgba(255,255,255,.02)}
+#unidades .fx .fx-body legend{color:var(--y)!important;font-size:11px!important}
+#unidades .fx .fx-body .chip span{min-height:34px;padding:0 10px;font-size:13.5px;border-width:1px;border-radius:999px}
+#unidades .fx .fx-body .chip b{opacity:.75}
+#unidades .fx .fx-tg{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;font-weight:800;border:1px solid var(--y)!important;color:var(--y)}
+#unidades .fx .fx-tg::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s}
+#unidades .fx .fx-tg.is-on::after{transform:rotate(-135deg) translateY(-2px)}
+#unidades .fx .fx-tg.is-on,#unidades .fx .fx-tg:hover{background:var(--y);color:var(--ink)}
+#unidades .fx:not(.is-open) .fx-act{display:flex!important}
+@media(max-width:700px){#unidades .fx.is-open .fx-body{grid-template-columns:1fr!important}}
+#unidades .fx .fx-body fieldset{display:block!important}
+#unidades .fx .fx-body legend{display:block!important;float:none;width:100%;margin-bottom:10px}
+#unidades .fx .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+#unidades .fx .chip{display:inline-block}
+#unidades .fx .chip input{appearance:none;-webkit-appearance:none;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:999px!important;outline-offset:2px}
+#unidades .fx .fx-body fieldset select{flex:none!important;display:block;width:100%!important;min-height:44px!important;height:auto!important}
+#unidades .fx .rng{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+#unidades .fx .fx-tg{white-space:nowrap;padding-inline:14px}
+#unidades .fx.is-open .fx-body{align-items:start!important}
+.finance-section{background-position:center,50% 60%!important}

@@ -13,7 +13,7 @@
       "km": 99100,
       "transmision": "Manual",
       "combustible": "Nafta",
-      "color": "Blanca",
+      "color": "Blanco",
       "url": "https://www.instagram.com/horizonte_automotores/",
       "fotos": [
         {
@@ -24,7 +24,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 05/10/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 05/10/2026. Consultá disponibilidad.",
+      "carroceria": "Pick-up",
+      "publicadoEl": "2026-10-05"
     },
     {
       "id": "hz-02",
@@ -47,7 +49,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 01/10/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 01/10/2026. Consultá disponibilidad.",
+      "carroceria": "Sedán",
+      "publicadoEl": "2026-10-01"
     },
     {
       "id": "hz-03",
@@ -70,7 +74,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 30/09/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 30/09/2026. Consultá disponibilidad.",
+      "carroceria": "Hatchback",
+      "publicadoEl": "2026-09-30"
     },
     {
       "id": "hz-04",
@@ -94,7 +100,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 28/09/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 28/09/2026. Consultá disponibilidad.",
+      "carroceria": "Hatchback",
+      "publicadoEl": "2026-09-28"
     },
     {
       "id": "hz-05",
@@ -117,7 +125,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 22/09/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 22/09/2026. Consultá disponibilidad.",
+      "carroceria": "Sedán",
+      "publicadoEl": "2026-09-22"
     },
     {
       "id": "hz-06",
@@ -140,7 +150,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 14/09/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 14/09/2026. Consultá disponibilidad.",
+      "carroceria": "Sedán",
+      "publicadoEl": "2026-09-14"
     },
     {
       "id": "hz-07",
@@ -164,7 +176,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 09/09/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 09/09/2026. Consultá disponibilidad.",
+      "carroceria": "Monovolumen",
+      "publicadoEl": "2026-09-09"
     },
     {
       "id": "hz-08",
@@ -188,7 +202,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 13/10/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 13/10/2026. Consultá disponibilidad.",
+      "carroceria": "Hatchback",
+      "publicadoEl": "2026-10-13"
     },
     {
       "id": "hz-09",
@@ -211,7 +227,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 09/10/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 09/10/2026. Consultá disponibilidad.",
+      "carroceria": "Hatchback",
+      "publicadoEl": "2026-10-09"
     },
     {
       "id": "hz-10",
@@ -233,7 +251,9 @@
           "height": 1080
         }
       ],
-      "nota": "Publicada en Instagram (@horizonte_automotores) el 07/10/2026. Consultá disponibilidad."
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 07/10/2026. Consultá disponibilidad.",
+      "carroceria": "Pick-up",
+      "publicadoEl": "2026-10-07"
     }
   ]
 }

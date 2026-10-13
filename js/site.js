@@ -23,10 +23,17 @@
       }, { passive: true });
     }
   }
-  /* Guía: en celulares arranca plegada (salvo la primera tarjeta) para acortar el recorrido; en desktop, abierta. */
-  if (window.matchMedia && window.matchMedia('(max-width: 699px)').matches) {
-    Array.prototype.slice.call(document.querySelectorAll('details.gd')).forEach(function (d, i) { if (i > 0) d.removeAttribute('open'); });
-  }
+  /* Guía: acordeones. En celulares arranca plegada (salvo la primera tarjeta); botón para expandir o plegar todo. */
+  (function () {
+    var gds = Array.prototype.slice.call(document.querySelectorAll('details.gd')), all = document.querySelector('[data-guia-all]');
+    if (!gds.length) return;
+    if (window.matchMedia && window.matchMedia('(max-width: 699px)').matches) gds.forEach(function (d, i) { if (i > 0) d.removeAttribute('open'); });
+    if (!all) return;
+    var sync = function () { all.textContent = gds.some(function (d) { return d.open; }) ? 'Plegar todo' : 'Expandir todo'; };
+    all.hidden = false; sync();
+    all.addEventListener('click', function () { var abrir = !gds.some(function (d) { return d.open; }); gds.forEach(function (d) { d.open = abrir; }); sync(); });
+    gds.forEach(function (d) { d.addEventListener('toggle', sync); });
+  })();
   var toggle = document.querySelector('[data-menu-toggle]');
   var nav = document.querySelector('.site-nav');
   if (!toggle || !nav) return;

@@ -43,6 +43,7 @@
       a.t = items[a.i] ? items[a.i].getAttribute('data-t') : norm(a.titulo);
       a.ant = a.anio != null ? anioHoy - a.anio : null;
       a.monto = a.precio && a.precio.moneda === 'ARS' ? a.precio.monto : null;
+      a.pub = a.publicado ? Math.floor((Date.now() - new Date(a.publicado + 'T12:00:00').getTime()) / 864e5) : null;
       a.modeloTxt = a.titulo.indexOf(a.marca + ' ') === 0 ? a.titulo.slice(a.marca.length + 1) : a.titulo;
     });
 
@@ -79,11 +80,23 @@
     }
     var GR = [];
     GR.push(porValor('marca', 'chips', 'Marca', 5, function (a) { return a.marca; }));
+    GR.push(porValor('carr', 'chips', 'Tipo de carrocería', 4, function (a) { return a.carroceria; }));
     GR.push(porValor('modelo', 'select', 'Modelo', 3, function (a) { return a.modelo; }, null, { todos: 'Todos los modelos' }));
     GR.push(porValor('version', 'select', 'Versión', 4, function (a) { return a.version; }, null, { todos: 'Todas las versiones' }));
     GR.push(rango('anio', 'Año', 3, function (a) { return a.anio; }, function (d) { return uniq(function (a) { return a.anio; }).sort(function (x, y) { return x - y; }); }, function (n) { return String(n); }));
     GR.push(rango('km', 'Kilómetros', 3, function (a) { return a.km; }, function (d) { return pasos(d, 10000); }, function (n) { return fmt(n) + ' km'; }, 'Las unidades sin kilometraje publicado no entran en este filtro.'));
     GR.push(rango('precio', 'Precio publicado', 3, function (a) { return a.monto; }, function (d) { return pasos(d, 2500000); }, function (n) { return '$ ' + fmt(n); }));
+    GR.push({ k: 'pub', tipo: 'chips', t: 'Publicación', s: 3, ops: [
+      { id: '7', label: 'Últimos 7 días', test: function (a) { return a.pub != null && a.pub <= 7; } },
+      { id: '15', label: 'Últimos 15 días', test: function (a) { return a.pub != null && a.pub <= 15; } },
+      { id: '30', label: 'Últimos 30 días', test: function (a) { return a.pub != null && a.pub <= 30; } },
+      { id: 'm', label: 'Más de 30 días', test: function (a) { return a.pub != null && a.pub > 30; } }
+    ].filter(function (o) { return list.some(o.test); }) });
+    GR.push({ k: 'kmq', tipo: 'chips', t: 'Kilometraje', s: 3, ops: [
+      { id: 'a', label: 'Hasta 100.000 km', test: function (a) { return a.km != null && a.km <= 100000; } },
+      { id: 'b', label: '100.000 a 140.000 km', test: function (a) { return a.km != null && a.km > 100000 && a.km <= 140000; } },
+      { id: 'c', label: 'Más de 140.000 km', test: function (a) { return a.km != null && a.km > 140000; } }
+    ].filter(function (o) { return list.some(o.test); }) });
     var buckets = [
       { id: 'a', label: 'Hasta 9 años', test: function (a) { return a.ant != null && a.ant <= 9; } },
       { id: 'b', label: '10 a 15 años', test: function (a) { return a.ant != null && a.ant >= 10 && a.ant <= 15; } },
@@ -101,7 +114,9 @@
     GR = GR.filter(function (g) { return g.tipo === 'chips' ? g.ops.length > 0 : g.tipo === 'select' ? g.ops.length > 1 : g.vals.length > 1; });
 
     var ORDEN = [['', 'Orden de publicación'], ['p-asc', 'Precio: menor a mayor'], ['p-desc', 'Precio: mayor a menor'], ['a-desc', 'Año: más nuevo primero'], ['a-asc', 'Año: más antiguo primero'], ['k-asc', 'Kilometraje: menor primero'], ['k-desc', 'Kilometraje: mayor primero'], ['m-asc', 'Marca: de la A a la Z']];
-    var KEY = { p: function (a) { return a.monto; }, a: function (a) { return a.anio; }, k: function (a) { return a.km; }, m: function (a) { return a.marca; } };
+    if (!list.some(function (a) { return a.monto != null; })) ORDEN = ORDEN.filter(function (o) { return o[0].charAt(0) !== 'p'; });
+    ORDEN.splice(1, 0, ['f-desc', 'Publicación: más reciente primero'], ['f-asc', 'Publicación: más antigua primero']);
+    var KEY = { f: function (a) { return a.publicado; }, p: function (a) { return a.monto; }, a: function (a) { return a.anio; }, k: function (a) { return a.km; }, m: function (a) { return a.marca; } };
 
     /* ----- estado ----- */
     var st = { q: '', orden: '' };
@@ -307,9 +322,9 @@
       aplicar(true); q.focus();
     });
     var nAct = 0;
-    function etiquetaTg() { tg.textContent = (body.hidden ? 'Mostrar filtros' : 'Ocultar filtros') + (nAct ? ' (' + nAct + ')' : ''); }
-    function abrirPanel(si) { body.hidden = !si; tg.setAttribute('aria-expanded', si ? 'true' : 'false'); etiquetaTg(); }
-    tg.addEventListener('click', function () { abrirPanel(body.hidden); });
+    function etiquetaTg() { tg.textContent = (body.hidden ? 'Mostrar filtros' : 'Ocultar filtros') + (nAct ? ' (' + nAct + ')' : ''); tg.classList.toggle('is-on', !body.hidden); }
+    function abrirPanel(si) { body.hidden = !si; tools.classList.toggle('is-open', !!si); tg.setAttribute('aria-expanded', si ? 'true' : 'false'); etiquetaTg(); }
+    tg.addEventListener('click', function () { abrirPanel(body.hidden); if (!body.hidden) { try { body.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {} } });
 
     /* ----- comparador: hasta 4 unidades, desde un botón en cada ficha ----- */
     var MAX = 4, cmp = [], tray = null, dlg = null;
@@ -427,6 +442,7 @@
 
     deUrl();
     abrirPanel(window.matchMedia ? window.matchMedia('(min-width: 900px)').matches : true);
+    tg.setAttribute('aria-controls', 'fx-body');
     tools.hidden = false;
     aplicar(false);
   })();

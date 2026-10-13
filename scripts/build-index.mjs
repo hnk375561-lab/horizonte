@@ -108,7 +108,7 @@ ${mediaTag(a, i)}
 <div class="car-f">${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<button class="btn sm ficha-trigger" type="button" data-ficha="${i}" aria-label="Ver la ficha completa de ${esc(a.titulo)}">Ver la ficha completa</button><button class="btn sm gallery-trigger" type="button" data-gallery="${i}" hidden>Ver galería</button><a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Reservar esta unidad' : 'Consultar por Facebook'}</a></div>
 </li>`;
 };
-const catData = autos.map((a, i) => ({ i, titulo: a.titulo, media: mediaDe(a), marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
+const catData = autos.map((a, i) => ({ i, titulo: a.titulo, media: mediaDe(a), marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, carroceria: a.carroceria || null, publicado: a.publicadoEl || null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
 const unidades = autos.length
   ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<p class="src">Unidades publicadas en el Instagram de @${esc(C.instagram)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
@@ -234,19 +234,25 @@ const secGuia = `
 <section id="guia" aria-labelledby="guia-t"><div class="w">
 <p class="ey">Guía</p><h2 id="guia-t">Antes de comprar un <em>usado</em></h2>
 <p class="sec-p">Información general para cualquier compra de un usado, de octubre de 2026. No es una condición ni una promesa de ${esc(NAME)}.</p>
+<div class="guia-bar"><button class="btn sm" type="button" data-guia-all hidden>Plegar todo</button></div>
 <div class="guia">
-<details class="card gd" open><summary><h3>Qué mirar en el auto</h3></summary><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></details>
-<details class="card gd" open><summary><h3>Papeles que conviene pedir</h3></summary><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></details>
+<details class="gd" open><summary><span class="gd-n" aria-hidden="true">01</span><h3>Qué mirar en el auto</h3><span class="gd-c">6 puntos</span></summary><div class="gd-b"><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></div></details>
+<details class="gd" open><summary><span class="gd-n" aria-hidden="true">02</span><h3>Papeles que conviene pedir</h3><span class="gd-c">5 puntos</span></summary><div class="gd-b"><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></div></details>
+<details class="gd" open><summary><span class="gd-n" aria-hidden="true">03</span><h3>Qué preguntarle a quien vende</h3><span class="gd-c">6 puntos</span></summary><div class="gd-b"><ul><li>¿Cuántos dueños tuvo y desde cuándo está a nombre de quien lo vende?</li><li>¿Hay facturas o registro de los services y reparaciones?</li><li>¿Tuvo choques o reparaciones importantes?</li><li>¿Pesa alguna prenda, embargo o restricción sobre el dominio?</li><li>¿Podés hacerlo revisar por un mecánico de tu confianza antes de decidir?</li><li>Dejá por escrito lo acordado: precio, forma de pago y fecha de entrega.</li></ul></div></details>
 </div>
 <p class="src">Los requisitos y costos de la transferencia cambian: consultalos en el Registro del Automotor o con un gestor o escribano antes de pagar.</p>
 </div></section>`;
 
 const secVisita = `
-<section id="visita" aria-labelledby="vis-t"><div class="w">
+<section id="visita" class="visita-s" aria-labelledby="vis-t"><div class="w vis-w">
 <p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
 <p class="sec-p">En la página de reserva elegís un día y una franja y se arma la consulta para enviarla a la agencia. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
-${H.display ? `<p class="estado" data-estado hidden></p><p class="src">Horario: ${esc(H.display)}.</p>` : ''}
-<div class="visit-card glass reveal"><p class="visit-card-kicker">Consulta personalizada</p><h3>Agendá una visita y prueba de manejo</h3><p>Elegí un día y una franja para armar tu consulta. No es un turno: el día y la hora se acuerdan con la agencia.</p><div class="row"><a class="btn p" href="reserva.html">Agendar visita y prueba de manejo</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
+<div class="visit-card glass reveal"><p class="visit-card-kicker">Consulta personalizada</p><h3>Agendá una visita y prueba de manejo</h3>
+<ol class="vis-steps"><li><b>1</b><span>Elegí un día</span></li><li><b>2</b><span>Elegí una franja</span></li><li><b>3</b><span>Enviá la consulta</span></li></ol>
+<p>Se arma el mensaje con tu elección. No es un turno: el día y la hora se acuerdan con la agencia.</p>
+<div class="row"><a class="btn p" href="reserva.html">Agendar visita y prueba de manejo</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div>
+${H.display ? `<div class="vis-hrs"><p class="estado" data-estado hidden></p><p class="src">Horario: ${esc(H.display)}.</p></div>` : ''}
+</div>
 </div></section>`;
 
 const mapa = COORD ? `
