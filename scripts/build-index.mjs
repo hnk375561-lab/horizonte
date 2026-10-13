@@ -260,9 +260,10 @@ const index = page({
 <div class="hero"><div class="hx-copy">
 <p class="ey">${esc(L.city)} · ${esc(L.province)}</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
-<p class="lead">Concesionario de ${esc(L.city)} del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago: mirá las unidades y visitanos en ${esc(L.address)}.</p>
-<div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
-<div class="hx-card"><img class="lg-card" src="images/logo-sm.png" width="360" height="144" alt=""><p class="k">Visitanos</p><p class="v">${esc(L.address)}<br>${esc(L.city)}, ${esc(L.province)}</p>${L.direccionAnterior ? `<p class="ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}<a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div>
+<p class="lead">Concesionario del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago.</p>
+<div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn lnk" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
+<div class="hx-sun" aria-hidden="true"><span class="orb"></span><img class="lg-hero" src="images/logo.png" width="900" height="360" alt=""></div>
+</div>
 </div>
 ${bar}
 
