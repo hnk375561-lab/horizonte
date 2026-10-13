@@ -1074,6 +1074,41 @@ section.conversion::before,.finance-section{image-rendering:auto}
 .inventory-section .car::before{position:absolute!important;display:block;top:14px;right:22px;left:auto;width:58px;height:23px}
 #unidades .car{padding-top:50px!important}
 #unidades .fx fieldset select{flex:1 1 calc(50% - 8px)!important;width:auto!important;min-width:0}
+
+/* ===== Fichas de unidades: la foto manda (v final) ===== */
+#unidades .cars{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important}
+@media(max-width:1000px){#unidades .cars{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}}
+@media(max-width:600px){#unidades .cars{grid-template-columns:1fr!important}}
+#unidades .cars .car{display:flex!important;flex-direction:column!important;grid-row:auto!important;grid-template-rows:none!important;gap:0!important;min-height:0!important;padding:0 0 14px!important;border-left:0!important;overflow:hidden;clip-path:none!important;align-content:normal}
+#unidades .cars .car::before{top:10px!important;right:10px!important;width:54px!important;height:21px!important;z-index:2}
+#unidades .cars .car::after{display:none!important}
+#unidades .cars .car .car-ph{order:0;margin:0!important;height:auto!important;aspect-ratio:1/1!important;border-bottom:1px solid rgba(255,255,255,.12)!important;width:100%}
+#unidades .cars .car .car-ph img{width:100%!important;height:100%!important;object-fit:cover;filter:none!important}
+#unidades .cars .car:hover{transform:none}
+#unidades .cars .car:hover .car-ph img{transform:scale(1.03);filter:none!important}
+#unidades .cars .car>:not(.car-ph){margin-left:14px;margin-right:14px;max-width:calc(100% - 28px)}
+#unidades .cars .car .car-h{order:1;min-height:0!important;margin-top:12px;padding:0!important;flex-wrap:nowrap!important;gap:8px}
+#unidades .cars .car .car-b{font-size:10px!important;letter-spacing:.18em}
+#unidades .cars .car .car-c{min-height:28px!important;padding:0 8px!important;gap:5px;font-size:9.5px!important;border-width:1px!important}
+#unidades .cars .car .car-c input{width:13px;height:13px}
+#unidades .cars .car h3{order:2;max-width:none!important;min-height:0!important;margin:6px 14px 10px!important;font-size:clamp(17px,1.5vw,21px)!important;line-height:1.1!important;letter-spacing:0!important;overflow-wrap:normal!important;hyphens:none!important}
+#unidades .cars .car .car-s{order:3;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+#unidades .cars .car .car-s p{padding:8px 8px 7px 0!important}
+#unidades .cars .car .car-s p+p{padding-left:12px!important}
+#unidades .cars .car .car-s b{font-size:17px!important;line-height:1.1}
+#unidades .cars .car .car-s b.nd{font-size:12px!important;padding-top:3px;font-weight:600}
+#unidades .cars .car .car-s small{font-size:8.5px!important;margin-top:3px;letter-spacing:.14em}
+#unidades .cars .car .sp{order:4;display:flex;flex-wrap:wrap;gap:6px;margin-top:10px!important;margin-bottom:0}
+#unidades .cars .car .sp div{display:inline-flex;padding:3px 8px!important;border:1px solid rgba(255,255,255,.16)!important;border-radius:999px}
+#unidades .cars .car .sp dt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#unidades .cars .car .sp dd{font-size:11.5px!important;gap:5px}
+#unidades .cars .car .sw{width:10px;height:10px;border-width:1px}
+#unidades .cars .car .car-f{order:5;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 8px!important;margin-top:12px}
+#unidades .cars .car .car-f .pr{flex:1 0 100%;margin:0!important;font-size:16px!important;line-height:1.2}
+#unidades .cars .car .car-f .n{flex:1 0 100%;order:9;font-size:10px!important;line-height:1.3;margin-top:2px}
+#unidades .cars .car .car-f .btn{flex:1 1 0;width:auto!important;min-width:0;min-height:34px!important;margin:0!important;padding:0 8px;font-size:9.5px!important;letter-spacing:.08em!important;white-space:nowrap}
+#unidades .cars .car .car-f .btn[hidden]{display:none}
+@media(max-width:600px){#unidades .cars .car h3{font-size:22px!important}#unidades .cars .car .car-f .btn{min-height:42px!important;font-size:11px!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
