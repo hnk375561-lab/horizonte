@@ -535,6 +535,17 @@
     aplicar(false);
   })();
 
+  /* ---------- 1b) «Cómo comprar»: el sol sale al llegar a la sección (sin JavaScript queda ya salido) ---------- */
+  (function () {
+    var r = $('.ruta');
+    if (!r || !('IntersectionObserver' in window) || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    r.classList.add('js');
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { r.classList.add('on'); io.disconnect(); }
+    }, { threshold: 0.35 });
+    io.observe(r);
+  })();
+
   /* ---------- 2) formularios que arman un mensaje ---------- */
   $$('form[data-msg]').forEach(function (f) {
     var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f), wa = $('[data-wa-msg]', f);

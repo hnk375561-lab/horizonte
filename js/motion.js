@@ -532,7 +532,7 @@ function initBanner({ desktop }) {
    ════════════════════════════════════════════════════════════════════════════════════════ */
 /* FONDOS ÚNICOS · un plano fotográfico por sección, sin repetir imágenes. */
 function initSectionBackdrops({ desktop }) {
-  /* Secciones en color sólido (sin foto): unidades, modelos, trayectoria, contacto (lo cubre el mapa), local, operaciones, equipo, preguntas.
+  /* Secciones en color sólido (sin foto): unidades, modelos, trayectoria, contacto (lo cubre el mapa), local, como-comprar, operaciones, equipo, preguntas.
      El resto lleva una foto de interior; con 6 fotos y 9 secciones se reutilizan, nunca en secciones contiguas. */
   const sources = { versus:"images/bg/stock-1.webp", entregas:"images/bg/stock-2.webp", nosotros:"images/bg/stock-3.webp", opiniones:"images/bg/stock-5.webp", bd:"images/bg/stock-6.webp", financiacion:"images/bg/stock-1.webp", guia:"images/bg/stock-4.webp", visita:"images/bg/stock-3.webp" };
   const dark = new Set(["versus","entregas","contacto","bd","financiacion","guia","visita"]);
@@ -593,7 +593,7 @@ function initSeams({ desktop }) {
        Se omiten Unidades (portón), el banner, Modelos (panel sticky) y la última antes del pie. */
     const k2 = desktop ? 1 : 0.5;
     qsa("main > section").forEach((section) => {
-      if (["unidades", "bd", "modelos", "preguntas", "contacto", "entregas"].includes(section.id) || section.classList.contains("bd")) return;
+      if (["unidades", "bd", "modelos", "preguntas", "contacto", "como-comprar", "entregas"].includes(section.id) || section.classList.contains("bd")) return;
       const inner = qs(":scope > .w", section);
       if (!inner) return;
       gsap.fromTo(inner,
@@ -832,8 +832,8 @@ function initParallax({ desktop }) {
       gsap.fromTo(line, { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, ease: EASE.linear, immediateRender: true, scrollTrigger: scrub(line, "top 94%", "top 62%") });
     });
 
-    /* Los pasos operativos se «encienden» de a uno, con lectura guiada. */
-    qsa("#operaciones .stp li").forEach((step) => {
+    /* Cómo comprar: los pasos se «encienden» de a uno, con lectura guiada. */
+    qsa("#como-comprar .stp li, #operaciones .stp li").forEach((step) => {
       gsap.fromTo(step, { opacity: 0.2, x: desktop ? -40 : -14 }, { opacity: 1, x: 0, ease: EASE.linear, immediateRender: true, scrollTrigger: scrub(step, "top 92%", "top 58%") });
     });
   });
