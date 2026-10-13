@@ -71,7 +71,8 @@ const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
-<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
+<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span>Menú</span></button>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;
 
@@ -241,6 +242,14 @@ ${H.display ? `<p class="estado" data-estado hidden></p><p class="src">Horario: 
 <div class="row"><a class="btn p" href="reserva.html">Coordiná tu visita</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div>
 </div></section>`;
 
+const secQuick = `
+<section class="quick-proof" id="resumen" aria-labelledby="resumen-t"><div class="w">
+<div class="quick-intro"><p class="ey">En pocas palabras</p><h2 id="resumen-t">Comprar mejor empieza por <em>mirar claro</em></h2><p>Un catálogo acotado, información visible y contacto directo para decidir sin vueltas.</p></div>
+<div class="quick-grid">
+<a class="quick-card" href="#unidades"><span class="quick-number">0${autos.length}</span><span><b>unidades publicadas</b><small>Con año, kilometraje y precio relevado.</small></span><i aria-hidden="true">↗</i></a>
+<a class="quick-card" href="#como-comprar"><span class="quick-number">04</span><span><b>pasos simples</b><small>Elegí, consultá, visitá y financiá.</small></span><i aria-hidden="true">↗</i></a>
+<a class="quick-card" href="#contacto"><span class="quick-number">01</span><span><b>contacto directo</b><small>WhatsApp, teléfono y ubicación a mano.</small></span><i aria-hidden="true">↗</i></a>
+</div></div></section>`;
 const mapa = COORD ? `
 <div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
@@ -260,7 +269,8 @@ const index = page({
   title: `${NAME} · Autos y motos en ${L.city}, ${L.province}`,
   desc: `${NAME} en ${L.city}, ${L.province}: autos y motos con financiación. Visitanos en ${L.address} o mirá las unidades en Facebook e Instagram.`,
   file: 'index.html',
-  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n<script defer src="js/horarios.js"></script>\n`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n<script defer src="js/horarios.js"></script>
+<script defer src="js/site.js"></script>\n`,
   body: `${header()}
 <main id="top">
 <div class="hero"><div class="hx-copy">
@@ -273,7 +283,7 @@ const index = page({
 </div>
 </div>
 ${bar}
-
+${secQuick}
 <section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
 <p class="ey">Unidades</p><h2 id="unidades-t">Nuestras <em>unidades</em></h2>
 <p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
