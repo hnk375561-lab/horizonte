@@ -440,8 +440,142 @@
       x.focus();
     }
 
+    /* ----- ficha completa (diálogo), compartir y aviso breve ----- */
+    var ctx = {};
+    try { ctx = JSON.parse(($('#cat-ctx') || {}).textContent || '{}'); } catch (e) {}
+    var fdlg = null, fOrigen = null, toast = null, toastT = 0;
+    function aviso(msg) {
+      if (!toast) { toast = el('div', null, 'toast'); toast.setAttribute('role', 'status'); toast.setAttribute('aria-live', 'polite'); document.body.appendChild(toast); }
+      toast.textContent = msg; toast.classList.add('on');
+      clearTimeout(toastT); toastT = setTimeout(function () { toast.classList.remove('on'); }, 2400);
+    }
+    function urlUnidad() { return /^https?:/.test(location.protocol) ? location.href.split('#')[0].split('?')[0] + '#unidades' : null; }
+    function compartir(a) {
+      var url = urlUnidad() || a.url, datos = { title: a.titulo, text: a.titulo + ' · ' + (ctx.nombre || ''), url: url };
+      if (navigator.share) { navigator.share(datos).catch(function () {}); return; }
+      copiar(datos.text + ' ' + url, function (ok) { aviso(ok ? 'Enlace copiado' : 'No se pudo copiar el enlace'); });
+    }
+    function enlace(txt, href, cls, ext) {
+      var x = el('a', txt, cls || 'btn sm'); x.href = href;
+      if (ext) { x.target = '_blank'; x.rel = 'noopener noreferrer'; }
+      return x;
+    }
+    function boton(txt, cls, fn) { var b = el('button', txt, cls || 'btn sm'); b.type = 'button'; b.addEventListener('click', fn); return b; }
+    function abrirFicha(i, origen) {
+      var a = list[i]; if (!a) return;
+      fOrigen = origen || null;
+      if (!fdlg) {
+        fdlg = el('dialog', null, 'ficha'); fdlg.setAttribute('aria-labelledby', 'fi-ttl');
+        fdlg.addEventListener('click', function (e) { if (e.target === fdlg) fdlg.close(); });
+        fdlg.addEventListener('close', function () { document.documentElement.classList.remove('has-dlg'); if (fOrigen && fOrigen.focus) { try { fOrigen.focus({ preventScroll: true }); } catch (e) {} } });
+        document.body.appendChild(fdlg);
+      }
+      fdlg.textContent = '';
+      var x = boton('Cerrar', 'btn sm fi-x', function () { fdlg.close(); }); x.setAttribute('aria-label', 'Cerrar la ficha');
+      var g = el('div', null, 'fi-g' + (a.media && a.media.length ? '' : ' sin-foto'));
+
+      /* galería: todas las fotos publicadas de la unidad */
+      if (a.media && a.media.length) {
+        var gal = el('div', null, 'fi-m'), tr = el('div', null, 'fi-t'), th = null, tbs = [];
+        tr.tabIndex = 0; tr.setAttribute('role', 'group'); tr.setAttribute('aria-label', 'Fotos de ' + a.titulo);
+        a.media.forEach(function (m, k) {
+          var im = el('img'); im.src = m.src; if (m.srcset) im.srcset = m.srcset;
+          im.sizes = '(max-width: 800px) 100vw, 520px'; im.alt = m.alt || a.titulo; im.decoding = 'async'; if (k) im.loading = 'lazy';
+          tr.appendChild(im);
+        });
+        gal.appendChild(tr);
+        if (a.media.length > 1) {
+          var ir = function (k) { k = Math.max(0, Math.min(a.media.length - 1, k)); tr.scrollTo({ left: k * tr.clientWidth, behavior: 'smooth' }); };
+          var act = function () { return Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth)); };
+          var pv = boton('‹', 'fi-a fi-prev', function () { ir(act() - 1); }), nx = boton('›', 'fi-a fi-next', function () { ir(act() + 1); });
+          pv.setAttribute('aria-label', 'Foto anterior'); nx.setAttribute('aria-label', 'Foto siguiente');
+          gal.appendChild(pv); gal.appendChild(nx);
+          th = el('div', null, 'fi-th');
+          a.media.forEach(function (m, k) {
+            var b = el('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ver foto ' + (k + 1) + ' de ' + a.media.length);
+            var im = el('img'); im.src = m.src; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; b.appendChild(im);
+            b.addEventListener('click', function () { ir(k); }); th.appendChild(b); tbs.push(b);
+          });
+          var tk = 0;
+          tr.addEventListener('scroll', function () {
+            if (tk) return; tk = requestAnimationFrame(function () { tk = 0; var c = act(); tbs.forEach(function (b, k) { b.classList.toggle('on', k === c); }); });
+          }, { passive: true });
+          tbs[0].classList.add('on');
+          tr.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { ir(act() + 1); e.preventDefault(); } if (e.key === 'ArrowLeft') { ir(act() - 1); e.preventDefault(); } });
+          gal.appendChild(th);
+        }
+        g.appendChild(gal);
+      }
+
+      /* datos */
+      var info = el('div', null, 'fi-i');
+      info.appendChild(el('p', a.marca, 'fi-b'));
+      var h = el('h2', a.modeloTxt); h.id = 'fi-ttl'; info.appendChild(h);
+      info.appendChild(el('p', a.precio ? peso(a) : 'Consultar precio', 'fi-pr'));
+      if (a.precio && a.precio.fecha) info.appendChild(el('p', 'Precio publicado el ' + fecha(a.precio.fecha) + '; puede haber cambiado.', 'fi-n'));
+      var dl = el('dl', null, 'fi-d');
+      function dato(k, v, sw) {
+        if (v == null || v === '') return;
+        var d = el('div'), dd = el('dd');
+        if (sw) { var p = el('i', null, 'sw'); p.style.setProperty('--sw', sw); dd.appendChild(p); }
+        dd.appendChild(document.createTextNode(String(v)));
+        d.appendChild(el('dt', k)); d.appendChild(dd); dl.appendChild(d);
+      }
+      dato('Año', a.anio); dato('Kilómetros', a.km != null ? fmt(a.km) + ' km' : 'No publicado'); dato('Caja', a.transmision); dato('Combustible', a.combustible);
+      dato('Color', a.color, a.sw); dato('Cilindrada', a.cilindrada); dato('Versión', a.version); dato('Carrocería', a.carroceria);
+      if (a.publicado) dato('Publicada', fecha(a.publicado));
+      info.appendChild(dl);
+      if (a.nota) info.appendChild(el('p', a.nota, 'fi-n'));
+
+      /* acciones */
+      var ac = el('div', null, 'fi-ac');
+      ac.appendChild(enlace(ctx.wa ? 'Consultar por WhatsApp' : 'Consultar por Facebook', a.href, 'btn p sm', true));
+      ac.appendChild(enlace('Agendar visita y prueba de manejo', 'reserva.html', 'btn sm', false));
+      info.appendChild(ac);
+      var ac2 = el('div', null, 'fi-ac2');
+      if (a.hrefFin) ac2.appendChild(enlace('Consultar financiación', a.hrefFin, 'btn sm', true));
+      if (a.mail) ac2.appendChild(enlace('Enviar correo', a.mail, 'btn sm', false));
+      if (ctx.tel) ac2.appendChild(enlace('Llamar' + (ctx.telTxt ? ' · ' + ctx.telTxt : ''), 'tel:' + ctx.tel, 'btn sm', false));
+      var tas = enlace('Tasar mi usado', '#tu-usado', 'btn sm', false); tas.addEventListener('click', function () { fdlg.close(); });
+      if ($('#tu-usado')) ac2.appendChild(tas);
+      ac2.appendChild(boton('Compartir', 'btn sm', function () { compartir(a); }));
+      ac2.appendChild(boton('Copiar enlace', 'btn sm', function () { copiar((urlUnidad() || a.url), function (ok) { aviso(ok ? 'Enlace copiado' : 'No se pudo copiar el enlace'); }); }));
+      var cb = cbs.filter(function (c) { return +c.value === a.i; })[0];
+      if (cb) {
+        var cm = boton(cb.checked ? 'Quitar de la comparación' : 'Agregar a comparar', 'btn sm', function () {
+          if (!cb.checked && cb.disabled) { aviso('Ya hay 4 unidades para comparar'); return; }
+          cb.checked = !cb.checked; cb.dispatchEvent(new Event('change', { bubbles: true }));
+          cm.textContent = cb.checked ? 'Quitar de la comparación' : 'Agregar a comparar';
+        });
+        ac2.appendChild(cm);
+      }
+      if (a.url) ac2.appendChild(enlace('Ver en Instagram', a.url, 'btn sm', true));
+      if (ctx.maps) ac2.appendChild(enlace('Cómo llegar', ctx.maps, 'btn sm', true));
+      info.appendChild(ac2);
+
+      var es = $('#visita [data-estado]'), est = es && es.textContent.trim() ? es.textContent.trim() : (ctx.horario || '');
+      var pie = el('div', null, 'fi-p');
+      if (est) pie.appendChild(el('p', est, 'fi-e'));
+      if (ctx.dir) pie.appendChild(el('p', ctx.nombre + ' · ' + ctx.dir, 'fi-n'));
+      pie.appendChild(el('p', 'Precio, kilometraje y disponibilidad pueden haber cambiado: consultalos antes de ir.', 'fi-n'));
+      info.appendChild(pie);
+      g.appendChild(info);
+      fdlg.appendChild(x); fdlg.appendChild(g);
+      document.documentElement.classList.add('has-dlg');
+      if (typeof fdlg.showModal === 'function') fdlg.showModal(); else fdlg.setAttribute('open', '');
+      x.focus({ preventScroll: true });
+    }
+    $$('[data-share]', ul).forEach(function (b) { b.hidden = false; });
+    ul.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-ficha],[data-share],.car-ph') : null;
+      if (!b || !ul.contains(b)) return;
+      if (b.hasAttribute('data-ficha')) { abrirFicha(+b.getAttribute('data-ficha'), b); return; }
+      if (b.hasAttribute('data-share')) { compartir(list[+b.getAttribute('data-share')]); return; }
+      var li = b.closest('li.car'); if (li) abrirFicha(+li.getAttribute('data-i'), b.querySelector('img') ? li.querySelector('[data-ficha]') : null);
+    });
+
     deUrl();
-    abrirPanel(window.matchMedia ? window.matchMedia('(min-width: 900px)').matches : true);
+    abrirPanel(false);   /* los filtros arrancan cerrados: se abren solo al tocar «Mostrar filtros» */
     tg.setAttribute('aria-controls', 'fx-body');
     tools.hidden = false;
     aplicar(false);

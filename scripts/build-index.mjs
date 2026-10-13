@@ -92,6 +92,23 @@ const consultaHref = (a) => wa(`Hola! Me interesa el ${a.titulo}${a.anio ? ' ' +
 // Fotos opcionales: no se inventan ni se toman de terceros; solo se publican si data/ las autoriza.
 const mediaDe = (a) => (Array.isArray(a.fotos) ? a.fotos : Array.isArray(a.imagenes) ? a.imagenes : Array.isArray(a.galeria) ? a.galeria : []).map((x) => typeof x === 'string' ? { src: x, alt: a.titulo } : x).filter((x) => x && (x.src || x.url)).map((x) => ({ src: x.src || x.url, srcset: x.srcset || '', alt: x.alt || a.titulo, tipo: x.tipo || '' }));
 const mediaTag = (a, i) => { const m = mediaDe(a)[0]; return m ? `<figure class="car-ph"><img src="${esc(m.src)}"${m.srcset ? ` srcset="${esc(m.srcset)}"` : ''} sizes="(max-width: 700px) 100vw, 320px" width="${m.width || 900}" height="${m.height || 600}" loading="${i === 0 ? 'eager' : 'lazy'}"${i === 0 ? ' fetchpriority="high"' : ''} decoding="async" alt="${esc(m.alt)}"></figure>` : ''; };
+const IC = {
+  wa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M4 7l8 6 8-6"/></svg>',
+  tel: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>',
+  share: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.6M8.2 13.2l7.6 4.6"/></svg>',
+};
+const mailHref = (a) => C.email ? `mailto:${C.email}?subject=${encodeURIComponent('Consulta por ' + a.titulo + (a.anio ? ' ' + a.anio : ''))}&body=${encodeURIComponent('Hola! Me interesa el ' + a.titulo + (a.anio ? ' ' + a.anio : '') + '. ¿Me pasan disponibilidad, precio y formas de pago? Gracias.')}` : null;
+const quick = (a, i) => {
+  const t = esc(a.titulo);
+  const items = [
+    C.whatsApp ? `<a href="${esc(consultaHref(a))}" ${EXT} aria-label="WhatsApp: ${t}" title="WhatsApp">${IC.wa}<span>WhatsApp</span></a>` : '',
+    C.email ? `<a href="${esc(mailHref(a))}" aria-label="Correo: ${t}" title="Correo">${IC.mail}<span>Correo</span></a>` : '',
+    C.phoneTel ? `<a href="tel:${C.phoneTel}" aria-label="Llamar por ${t}" title="Llamar">${IC.tel}<span>Llamar</span></a>` : '',
+    `<button type="button" data-share="${i}" aria-label="Compartir ${t}" title="Compartir" hidden>${IC.share}<span>Compartir</span></button>`,
+  ].filter(Boolean).join('');
+  return `<div class="car-q" role="group" aria-label="Contacto rápido">${items}</div>`;
+};
 const card = (a) => {
   const i = autos.indexOf(a);
   const marca = marcaDe(a);
@@ -105,12 +122,12 @@ ${mediaTag(a, i)}
 <h3>${esc(sinMarca(a))}</h3>
 <div class="car-s"><p><b${a.anio == null ? ' class="nd"' : ''}>${a.anio != null ? a.anio : 'Sin dato'}</b><small>Año</small></p><p><b${a.km == null ? ' class="nd"' : ''}>${a.km != null ? fmt(a.km) : 'No publicado'}</b><small>Kilómetros</small></p></div>
 <dl class="sp">${fila('Caja', a.transmision ? esc(a.transmision) : '')}${fila('Combustible', a.combustible ? esc(a.combustible) : '')}${fila('Color', a.color ? `${sw ? `<i class="sw" style="--sw:${sw}"></i>` : ''}${esc(a.color)}` : '')}</dl>
-<div class="car-f">${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<button class="btn sm ficha-trigger" type="button" data-ficha="${i}" aria-label="Ver la ficha completa de ${esc(a.titulo)}">Ver la ficha completa</button><button class="btn sm gallery-trigger" type="button" data-gallery="${i}" hidden>Ver galería</button><a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Reservar esta unidad' : 'Consultar por Facebook'}</a></div>
+<div class="car-f">${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<button class="btn sm ficha-trigger" type="button" data-ficha="${i}" aria-label="Ver la ficha completa de ${esc(a.titulo)}">Ver la ficha completa</button><button class="btn sm gallery-trigger" type="button" data-gallery="${i}" hidden>Ver galería</button><a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Reservar esta unidad' : 'Consultar por Facebook'}</a>${quick(a, i)}</div>
 </li>`;
 };
-const catData = autos.map((a, i) => ({ i, titulo: a.titulo, media: mediaDe(a), marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, carroceria: a.carroceria || null, publicado: a.publicadoEl || null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
+const catData = autos.map((a, i) => ({ i, titulo: a.titulo, media: mediaDe(a), marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, carroceria: a.carroceria || null, id: a.id || null, nota: a.nota || null, publicado: a.publicadoEl || null, hrefFin: wa(`Hola! Quiero consultar financiación para el ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`), hrefVisita: wa(`Hola! Quiero coordinar una visita y prueba de manejo del ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`), mail: mailHref(a), transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
 const unidades = autos.length
-  ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<p class="src">Unidades publicadas en el Instagram de @${esc(C.instagram)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
+  ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<script type="application/json" id="cat-ctx">${jsonSafe({ nombre: NAME, tel: C.phoneTel || null, telTxt: C.phone || null, wa: C.whatsApp ? WA : null, waTxt: C.whatsAppDisplay || null, email: C.email || null, maps: L.mapsUrl || null, dir: `${L.address}, ${L.city}, ${L.province}`, horario: D.hours.corto || null, ig: IG, fb: FB })}</script>\n<p class="src">Unidades publicadas en el Instagram de @${esc(C.instagram)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
 
 // ---- contacto ----
@@ -171,8 +188,9 @@ const glos = [
 const secPreguntas = `
 <section class="lt" id="preguntas" aria-labelledby="preg-t"><div class="w">
 <p class="ey">Preguntas</p><h2 id="preg-t">Lo que <em>conviene saber</em></h2>
-<p class="sec-p">Respuestas cortas sobre cómo trabajamos y un glosario con las palabras que aparecen al comprar un usado. Información general de octubre de 2026: no es una condición ni una promesa de ${esc(NAME)}.</p>
-<div class="qa"><div><h3>Preguntas frecuentes</h3>${faq}</div><div><h3>Glosario del comprador</h3>${glos}</div></div>
+<p class="sec-p">Respuestas cortas y un glosario del comprador. Información general de octubre de 2026: no es una condición ni una promesa de ${esc(NAME)}.</p>
+<div class="qa" data-qa><div class="qa-tabs" role="tablist" aria-label="Preguntas y glosario" hidden><button type="button" role="tab" id="qa-t1" aria-controls="qa-p1" aria-selected="true">Preguntas frecuentes</button><button type="button" role="tab" id="qa-t2" aria-controls="qa-p2" aria-selected="false" tabindex="-1">Glosario del comprador</button></div>
+<div class="qa-p" id="qa-p1" role="tabpanel" aria-labelledby="qa-t1"><h3>Preguntas frecuentes</h3>${faq}</div><div class="qa-p" id="qa-p2" role="tabpanel" aria-labelledby="qa-t2"><h3>Glosario del comprador</h3>${glos}</div></div>
 </div></section>`;
 const semana = H.semana || [];
 const closedDays = [0, 1, 2, 3, 4, 5, 6].filter((d) => !semana.some((g) => g.dias.includes(d)));
@@ -236,9 +254,9 @@ const secGuia = `
 <p class="sec-p">Información general para cualquier compra de un usado, de octubre de 2026. No es una condición ni una promesa de ${esc(NAME)}.</p>
 <div class="guia-bar"><button class="btn sm" type="button" data-guia-all hidden>Plegar todo</button></div>
 <div class="guia">
-<details class="gd" open><summary><span class="gd-n" aria-hidden="true">01</span><h3>Qué mirar en el auto</h3><span class="gd-c">6 puntos</span></summary><div class="gd-b"><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></div></details>
-<details class="gd" open><summary><span class="gd-n" aria-hidden="true">02</span><h3>Papeles que conviene pedir</h3><span class="gd-c">5 puntos</span></summary><div class="gd-b"><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></div></details>
-<details class="gd" open><summary><span class="gd-n" aria-hidden="true">03</span><h3>Qué preguntarle a quien vende</h3><span class="gd-c">6 puntos</span></summary><div class="gd-b"><ul><li>¿Cuántos dueños tuvo y desde cuándo está a nombre de quien lo vende?</li><li>¿Hay facturas o registro de los services y reparaciones?</li><li>¿Tuvo choques o reparaciones importantes?</li><li>¿Pesa alguna prenda, embargo o restricción sobre el dominio?</li><li>¿Podés hacerlo revisar por un mecánico de tu confianza antes de decidir?</li><li>Dejá por escrito lo acordado: precio, forma de pago y fecha de entrega.</li></ul></div></details>
+<details class="gd"><summary><h3>Qué mirar en el auto</h3><span class="gd-c">6 puntos</span></summary><div class="gd-b"><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></div></details>
+<details class="gd"><summary><h3>Papeles que conviene pedir</h3><span class="gd-c">5 puntos</span></summary><div class="gd-b"><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></div></details>
+<details class="gd"><summary><h3>Qué preguntarle a quien vende</h3><span class="gd-c">6 puntos</span></summary><div class="gd-b"><ul><li>¿Cuántos dueños tuvo y desde cuándo está a nombre de quien lo vende?</li><li>¿Hay facturas o registro de los services y reparaciones?</li><li>¿Tuvo choques o reparaciones importantes?</li><li>¿Pesa alguna prenda, embargo o restricción sobre el dominio?</li><li>¿Podés hacerlo revisar por un mecánico de tu confianza antes de decidir?</li><li>Dejá por escrito lo acordado: precio, forma de pago y fecha de entrega.</li></ul></div></details>
 </div>
 <p class="src">Los requisitos y costos de la transferencia cambian: consultalos en el Registro del Automotor o con un gestor o escribano antes de pagar.</p>
 </div></section>`;
@@ -246,12 +264,11 @@ const secGuia = `
 const secVisita = `
 <section id="visita" class="visita-s" aria-labelledby="vis-t"><div class="w vis-w">
 <p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
-<p class="sec-p">En la página de reserva elegís un día y una franja y se arma la consulta para enviarla a la agencia. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
-<div class="visit-card glass reveal"><p class="visit-card-kicker">Consulta personalizada</p><h3>Agendá una visita y prueba de manejo</h3>
-<ol class="vis-steps"><li><b>1</b><span>Elegí un día</span></li><li><b>2</b><span>Elegí una franja</span></li><li><b>3</b><span>Enviá la consulta</span></li></ol>
-<p>Se arma el mensaje con tu elección. No es un turno: el día y la hora se acuerdan con la agencia.</p>
-<div class="row"><a class="btn p" href="reserva.html">Agendar visita y prueba de manejo</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div>
-${H.display ? `<div class="vis-hrs"><p class="estado" data-estado hidden></p><p class="src">Horario: ${esc(H.display)}.</p></div>` : ''}
+<div class="visit-card">
+<div class="visit-main"><h3>Agendá una visita y prueba de manejo</h3>
+<p>Elegí día y franja en la página de reserva y se arma la consulta para la agencia. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
+<div class="row"><a class="btn p" href="reserva.html">Agendar visita</a>${C.whatsApp ? `<a class="btn" href="${wa('Hola! Quiero coordinar una visita y prueba de manejo.')}" ${EXT}>WhatsApp</a>` : ''}<a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a>${C.phoneTel ? `<a class="btn" href="tel:${C.phoneTel}">Llamar</a>` : ''}</div></div>
+${H.display ? `<div class="vis-hrs"><p class="vis-k">Horario de atención</p><p class="estado" data-estado hidden></p><table class="hrs hrs--v"><caption class="sr">Horario de atención</caption><tbody>${hrsRows}</tbody></table></div>` : ''}
 </div>
 </div></section>`;
 
