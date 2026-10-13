@@ -179,3 +179,14 @@ button.day-cell{min-height:32px}
 .primary,.secondary,.next-step{transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease}.primary:hover,.secondary:hover,.next-step:not(:disabled):hover{transform:translateY(-2px)}
 .confirm-actions{gap:14px}.disclaimer{max-width:68ch}
 @media(max-width:860px){.calendar-shell{box-shadow:8px 8px 0 rgba(242,210,27,.2)}.booking-nav::after{height:3px;bottom:-3px}.scene{padding-inline:16px}.primary,.secondary{min-height:54px}}
+
+
+/* RESERVA · capa editorial alineada al sistema luxury del sitio */
+:root{--gold:#C6A15B;--gold-hi:#E3C887;--carbon:#15171A;--graphite:#22262B;--ivory:#F2EEE6;--ease:cubic-bezier(.2,.7,.2,1)}
+body{font-family:"Instrument Sans",system-ui,sans-serif}.booking-nav{background:rgba(10,11,12,.88);border-bottom:1px solid rgba(198,161,91,.35);backdrop-filter:blur(18px) saturate(140%);box-shadow:0 12px 40px rgba(0,0,0,.28)}
+.booking-nav::after{background:linear-gradient(90deg,var(--gold),var(--gold-hi));height:2px;bottom:-2px}
+.kicker{background:var(--gold);color:var(--ink);clip-path:none;border-radius:999px}.month-copy h1 em,.day-copy h2 em,.time-copy h2 em,.confirm-copy h2 em{background:linear-gradient(135deg,var(--gold),var(--gold-hi));color:var(--ink);clip-path:none}
+.calendar-shell{box-shadow:0 24px 70px rgba(0,0,0,.28);clip-path:none;border:1px solid rgba(198,161,91,.24)}.day-cell[aria-current=true]{background:var(--gold);box-shadow:inset 0 0 0 2px var(--ink)}
+.next-step,.primary,.secondary{clip-path:none;border-radius:999px;box-shadow:none;transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease)}.primary{background:linear-gradient(135deg,var(--gold),var(--gold-hi));color:var(--ink)}.primary:hover,.primary:focus-visible{background:var(--gold-hi);color:var(--ink);transform:translateY(-2px)}.secondary{box-shadow:inset 0 0 0 1px rgba(242,238,230,.45)}
+.scene--confirm{background:var(--ink)}.send-state{border-left:2px solid var(--gold);background:rgba(198,161,91,.08)}
+@media(prefers-reduced-motion:reduce){.primary,.secondary,.next-step{transform:none!important;transition:none!important}}
