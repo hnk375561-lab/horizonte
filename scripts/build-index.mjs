@@ -183,10 +183,22 @@ const openSpec = semana.flatMap((g) => g.rangos.map((r) => ({ '@type': 'OpeningH
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
 const COORD = L.coordenadas;
 const secUsado = hasSvc('permuta') ? `
-<section id="tu-usado" aria-labelledby="usado-t"><div class="w">
-<p class="ey">Tu usado</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
+<section class="conversion conversion--trade" id="tu-usado" aria-labelledby="usado-t"><div class="w">
+<div class="conversion-layout">
+<div class="conversion-story">
+<div class="conversion-index"><span>HORIZONTE / PERMUTA</span><span>01 — 02</span></div>
+<p class="ey">Tu próximo paso</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
 <p class="sec-p">${hasSvc('tasacion') ? 'Recibimos vehículos usados como parte de pago y la tasación es sin cargo, según informa ' + esc(GNAME) + '. ' : 'Recibimos vehículos usados como parte de pago, según informa ' + esc(GNAME) + '. '}Contanos cuál es y armá el mensaje para enviárselo a la agencia.</p>
-<form class="fm" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
+<ol class="conversion-steps" aria-label="Cómo funciona la consulta">
+<li><b>01</b><span>Contanos marca, modelo y año.</span></li>
+<li><b>02</b><span>Revisá el mensaje que se arma.</span></li>
+<li><b>03</b><span>Elegí el canal para enviarlo vos.</span></li>
+</ol>
+<div class="conversion-art conversion-art--car" aria-hidden="true"><span class="conversion-art-number">01</span><span class="conversion-sun"></span><svg viewBox="0 0 380 210" fill="none"><path d="M42 137h27l31-48c9-14 22-22 39-22h90c18 0 31 7 42 21l38 49h25c12 0 21 9 21 21v20H22v-20c0-12 8-21 20-21Z"/><path d="m111 88-24 49h79V67h-27c-12 0-21 6-28 21Zm70-21v70h111l-34-43c-8-11-17-16-31-16h-46Z"/><path d="M44 159h292M82 179a24 24 0 1 0 48 0m120 0a24 24 0 1 0 48 0"/><circle cx="106" cy="179" r="10"/><circle cx="274" cy="179" r="10"/></svg><span class="conversion-art-caption">LO QUE MANEJÁS<br>ABRE OTRA POSIBILIDAD</span></div>
+</div>
+<div class="conversion-panel">
+<form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
+<div class="conversion-form-head"><div><p class="ey">Empezá por acá</p><h3>Datos de tu usado</h3></div><span class="conversion-form-tag">TU VEHÍCULO</span></div>
 <div class="f"><label for="u-mm">Marca y modelo</label><input id="u-mm" data-lbl="Marca y modelo" autocomplete="off" required></div>
 <div class="f"><label for="u-an">Año</label><input id="u-an" data-lbl="Año" inputmode="numeric" autocomplete="off"></div>
 <div class="f"><label for="u-km">Kilometraje</label><input id="u-km" data-lbl="Kilometraje" inputmode="numeric" autocomplete="off"></div>
@@ -196,14 +208,23 @@ const secUsado = hasSvc('permuta') ? `
 <div class="acts">${WAFORM}${CPBTN}<a class="btn" href="${FB}" ${EXT}>Ir a Facebook</a><a class="btn" href="${IG}" ${EXT}>Ir a Instagram</a></div>
 <p class="msg-s" role="status" aria-live="polite"></p>
 </form>
-<p class="src">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. La tasación y las condiciones se acuerdan con la agencia.</p>
+<p class="src conversion-note">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. La tasación y las condiciones se acuerdan con la agencia.</p>
+</div>
+</div>
 </div></section>` : '';
 
 const secBusqueda = `
-<section class="lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
-<p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
+<section class="conversion conversion--search lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
+<div class="conversion-layout">
+<div class="conversion-story">
+<div class="conversion-index"><span>HORIZONTE / BÚSQUEDA</span><span>02 — 02</span></div>
+<p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
-<form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
+<div class="conversion-art conversion-art--focus" aria-hidden="true"><span class="conversion-art-number">02</span><span class="conversion-focus-ring conversion-focus-ring--outer"></span><span class="conversion-focus-ring conversion-focus-ring--inner"></span><svg viewBox="0 0 380 210" fill="none"><path d="M42 137h27l31-48c9-14 22-22 39-22h90c18 0 31 7 42 21l38 49h25c12 0 21 9 21 21v20H22v-20c0-12 8-21 20-21Z"/><path d="m111 88-24 49h79V67h-27c-12 0-21 6-28 21Zm70-21v70h111l-34-43c-8-11-17-16-31-16h-46Z"/><path d="M44 159h292M82 179a24 24 0 1 0 48 0m120 0a24 24 0 1 0 48 0"/><circle cx="106" cy="179" r="10"/><circle cx="274" cy="179" r="10"/></svg><span class="conversion-art-caption">MARCA · AÑO · PRESUPUESTO<br>UNA IDEA MÁS CLARA PARA EMPEZAR</span></div>
+</div>
+<div class="conversion-panel">
+<form class="fm conversion-form" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
+<div class="conversion-form-head"><div><p class="ey">Armá tu consulta</p><h3>El auto que tenés en mente</h3></div><span class="conversion-form-tag">TU BÚSQUEDA</span></div>
 <div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" required></div>
 <div class="f"><label for="b-an">Año mínimo</label><input id="b-an" data-lbl="Año mínimo" inputmode="numeric" autocomplete="off"></div>
 <div class="f"><label for="b-tr">Transmisión</label><select id="b-tr" data-lbl="Transmisión"><option value="">Indistinto</option><option>Manual</option><option>Automática</option></select></div>
@@ -213,7 +234,9 @@ const secBusqueda = `
 <div class="acts">${WAFORM}${CPBTN}<a class="btn" href="${FB}" ${EXT}>Ir a Facebook</a><a class="btn" href="${IG}" ${EXT}>Ir a Instagram</a></div>
 <p class="msg-s" role="status" aria-live="polite"></p>
 </form>
-<p class="src">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. No confirma disponibilidad ni precios.</p>
+<p class="src conversion-note">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. No confirma disponibilidad ni precios.</p>
+</div>
+</div>
 </div></section>`;
 
 const secGuia = `
