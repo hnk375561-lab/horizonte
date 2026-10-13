@@ -981,15 +981,9 @@ section.conversion:not(.ct) .conversion-form-head .ey{background:none;padding:0 
 /* ===== Hero: texto al borde izquierdo, transición marcada, imágenes nítidas ===== */
 .hero::before{content:""!important;display:block!important;position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(10,16,18,.78) 0%,rgba(10,16,18,.5) 32%,rgba(10,16,18,.12) 62%,rgba(10,16,18,0) 100%),linear-gradient(0deg,rgba(10,16,18,.38),transparent 34%)!important}
 .hero .hx-copy{width:100%;max-width:820px;margin:0;padding-left:clamp(18px,2.4vw,40px);align-items:flex-start;text-align:left}
-.hero-slide{opacity:1;visibility:hidden;z-index:0;transition:none;clip-path:inset(0 0 0 0)}
-.hero-slide.is-prev{visibility:visible;z-index:1}
-.hero-slide.is-active{visibility:visible;z-index:2;animation:heroWipe 1.25s cubic-bezier(.76,0,.18,1) both}
-.hero-slide img{filter:none;image-rendering:auto;transform:scale(1.08);transition:none}
-.hero-slide.is-active img{animation:heroZoom 7s ease-out both}
-.hero-slide.is-prev img{transform:scale(1.14)}
-@keyframes heroWipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
-@keyframes heroZoom{from{transform:scale(1.2)}to{transform:scale(1.06)}}
-@media(prefers-reduced-motion:reduce){.hero-slide.is-active,.hero-slide.is-active img{animation:none!important}}
+.hero-slide{transition:opacity .6s ease,visibility .6s ease}
+.hero-slide img{filter:none;image-rendering:auto;transform:scale(1.01);transition:transform 3.5s ease}
+.hero-slide.is-active img{transform:scale(1.045)}
 @media(max-width:700px){.hero .hx-copy{padding-left:18px}}
 
 /* ===== Barra de datos: misma barra, contenido más grande ===== */
@@ -1004,7 +998,8 @@ section.conversion:not(.ct) .conversion-form-head .ey{background:none;padding:0 
 @media(max-width:900px){.bar li,.bar li:first-child{padding:12px 10px 12px 66px}.bar li svg{width:38px;height:38px;left:12px}.bar b,.bar a,.bar b[data-estado]{font-size:21px}}
 
 /* ===== Tarjetas de unidades: logotipo en lugar de numeración ===== */
-.inventory-section .car::before{content:""!important;counter-increment:none;top:14px;right:16px;width:84px;height:34px;padding:3px;box-sizing:border-box;background:#fefefe url("images/logo-sm.png") center/contain no-repeat;border:1px solid rgba(10,16,18,.25)}
+.inventory-section .car::before{content:""!important;counter-increment:none;z-index:0;top:12px;right:28px;width:60px;height:24px;padding:2px;box-sizing:border-box;background:#fefefe url("images/logo-sm.png") center/contain no-repeat;border:0;opacity:.95}
+.inventory-section .fx,.inventory-section .filter-bar{z-index:30;background-color:rgba(10,16,18,.97)}
 
 /* ===== Fondos de sección: imágenes a plena nitidez ===== */
 section.conversion::before,.finance-section{image-rendering:auto}
