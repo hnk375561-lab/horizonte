@@ -15,3 +15,19 @@ section.lt:not(.ct) .fm{background:#fff;border-color:#cdd5d6;box-shadow:0 16px 4
 .btn,.next-step,.primary,.secondary{cursor:pointer}.btn:active,.next-step:active,.primary:active,.secondary:active{transform:translateY(1px)}
 @media(max-width:700px){.hero::after{display:none}.hero{min-height:620px}.hero .row{gap:10px}.hero .btn{min-height:52px}.w{width:min(100% - 28px,1120px)}section{padding-block:58px}.fm{padding:22px 18px;margin-top:24px}.fm::before{padding-bottom:10px}.fm .acts{display:grid;grid-template-columns:1fr}.fm .acts .btn{width:100%}.cards{margin-top:24px}.card{padding:24px 20px}.car{padding:21px}.bar li{padding-left:54px!important}.ct-c{padding:24px 20px}.ct-c .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.card,.car,.btn,.mark .lg-img{transition:none!important}.card:hover,.car:hover{transform:none;box-shadow:none}}
+
+/* HORIZONTE v101 · composición full-width en todas las pantallas */
+:root{--hz-gutter:clamp(16px,4vw,72px)}
+.w,.w.wide{width:100%;max-width:none;margin-inline:0;padding-inline:var(--hz-gutter)}
+header .w,footer .w{width:100%;max-width:none;padding-inline:var(--hz-gutter)}
+.hero{padding-left:var(--hz-gutter);padding-right:var(--hz-gutter)}
+.bar .w{padding-block:0}.bar ul{width:100%}
+section>.w,.ct>.w{width:100%;max-width:none}
+.cards,.cars,.guia,.qa,.ct-g,.grp-l{width:100%}
+.fm{width:100%;max-width:none}
+.fx{width:100%}
+section{border-top:1px solid rgba(255,255,255,.06)}section.lt:not(.ct){border-top-color:rgba(10,16,18,.1)}
+section>.w>h2{letter-spacing:-.018em}section>.w>.sec-p{font-size:clamp(17px,1.35vw,20px);line-height:1.5}
+.src{max-width:76ch;line-height:1.5}
+footer{box-shadow:inset 0 1px rgba(255,255,255,.08)}
+@media(max-width:700px){:root{--hz-gutter:16px}.w,.w.wide,header .w,footer .w{padding-inline:var(--hz-gutter)}.hero{padding-left:var(--hz-gutter);padding-right:var(--hz-gutter)}section>.w>h2{max-width:15ch}.fm{width:100%}}
