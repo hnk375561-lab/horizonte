@@ -19,8 +19,8 @@
       "id": "P3",
       "tema": "Logotipo y paleta de marca",
       "bloqueante": false,
-      "estado": "abierto",
-      "como": "Paleta y estilo ya aplicados desde el logotipo entregado (ver docs/IDENTIDAD.md). Falta el archivo del logo (SVG o PNG transparente) con autorización escrita para usarlo como imagen (P4); hoy el isotipo es un sol y un nombre armados con CSS y favicon.svg."
+      "estado": "resuelto",
+      "como": "Resuelto el 12/10/2026: el responsable del proyecto entregó el logotipo (PNG) y pidió usarlo en todo el sitio. Está en images/ y se usa en encabezado, portada, Nosotros, pie, reserva, 404 e íconos. Falta, antes de producción, que el dueño ratifique el uso (P15)."
     },
     {
       "id": "P4",

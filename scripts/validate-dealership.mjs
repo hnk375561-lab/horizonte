@@ -43,7 +43,7 @@ if (d && a) {
     for (const m of h.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) if (!/noopener/.test(m[0])) err(`${p}: enlace externo sin noopener`);
     for (const m of h.matchAll(/(?:src|href)="([^"]+)"/g)) {
       const u = m[1];
-      if (/^(https?:|mailto:|tel:|#|\.\/?#?)/.test(u) || u === './') continue;
+      if (/^(https?:|mailto:|tel:|data:|#|\.\/?#?)/.test(u) || u === './') continue;
       if (!fs.existsSync(path.join(root, u.split(/[?#]/)[0]))) err(`${p}: referencia a archivo inexistente ${u}`);
     }
     for (const m of h.matchAll(/url\(([^)]+)\)/g)) if (!m[1].startsWith('data:') && !fs.existsSync(path.join(root, m[1].replace(/["']/g, '')))) err(`${p}: css url() a archivo inexistente ${m[1]}`);

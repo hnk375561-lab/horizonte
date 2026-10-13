@@ -162,3 +162,5 @@ button.day-cell{min-height:32px}
 @media(max-width:899px){.back{min-height:44px;display:inline-flex;align-items:center}}
 
 @media(max-width:899px){.booking-nav .brand{min-height:44px;display:inline-flex;align-items:center}}
+
+.brand:has(.lg-bk)::before{display:none}.brand .lg-bk{display:block;height:36px;width:auto;background:#fefefe;padding:3px 8px}
