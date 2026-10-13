@@ -71,7 +71,7 @@ const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
-<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
+<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a><details class="nav-more"><summary>Más</summary><div class="nav-more-links"><a href="${pre}#tu-usado">Tu usado</a><a href="${pre}#busqueda">Tu búsqueda</a><a href="${pre}#visita">Visita</a></div></details></nav>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span>Menú</span></button>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;

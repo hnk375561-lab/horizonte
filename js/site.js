@@ -27,4 +27,21 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 980) close();
   }, { passive: true });
+
+  var fab = document.querySelector('.fab');
+  var setFab = function (visible) {
+    if (!fab) return;
+    document.body.classList.toggle('fab-visible', visible);
+    fab.tabIndex = visible ? 0 : -1;
+  };
+  var hero = document.querySelector('.hero');
+  if (fab && hero && 'IntersectionObserver' in window) {
+    setFab(false);
+    var observer = new IntersectionObserver(function (entries) {
+      setFab(!entries[0].isIntersecting);
+    }, { threshold: 0.05 });
+    observer.observe(hero);
+  } else if (fab) {
+    setFab(true);
+  }
 })();
