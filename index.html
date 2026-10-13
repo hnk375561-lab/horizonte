@@ -82,7 +82,7 @@ footer p{margin:4px 0}footer a{color:var(--s3)}
 .doc{max-width:46em}.doc h2{font-size:clamp(26px,3vw,36px);margin:34px 0 8px}.doc p,.doc li{color:var(--s2)}
 .nf{min-height:100vh;display:grid;place-items:center;padding:32px 20px;text-align:center}.nf h1{font-size:clamp(34px,6vw,56px)}.nf p{margin:16px 0 26px}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding:20px 16px 36px}.ct-g{grid-template-columns:1fr}}
-@media(max-width:700px){header nav{display:none}.btn{width:100%}.row .btn{flex:1 1 100%}header .hc .btn{width:auto}}
+@media(max-width:700px){:root{--hdr:100px}header .w{flex-wrap:wrap;min-height:0;padding-top:8px;row-gap:0}header nav{order:3;flex:0 0 100%;gap:20px;overflow-x:auto;white-space:nowrap;padding:4px 0 8px;scrollbar-width:none}header nav::-webkit-scrollbar{display:none}header nav a{flex:none;padding:8px 0}.btn{width:100%}.row .btn{flex:1 1 100%}header .hc .btn{width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 [hidden]{display:none!important}
 .cmp-pick fieldset{margin:0;padding:18px;border:1px solid var(--g1);background:var(--k3)}
@@ -197,7 +197,7 @@ footer p{margin:4px 0}footer a{color:var(--s3)}
 </div></section>
 
 <section id="busqueda" aria-labelledby="bus-t"><div class="w">
-<p class="ey">Preguntas</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
+<p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 <form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
 <div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" required></div>
@@ -235,7 +235,7 @@ footer p{margin:4px 0}footer a{color:var(--s3)}
 
 <section id="contacto" class="ct" aria-labelledby="contacto-t"><div class="w">
 <p class="ey">Contacto</p><h2 id="contacto-t">Dónde <em>encontrarnos</em></h2>
-<div class="ct-g"><dl><dt>Dirección</dt><dd>Avenida Argentina 2021, María Grande, Entre Ríos</dd><dt>Cómo llegar</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Argentina+2021%2C+Mar%C3%ADa+Grande%2C+Entre+R%C3%ADos" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a></dd><dt>Redes</dt><dd><a href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Instagram @horizonte_automotores</a></dd><dt>Grupo</dt><dd><a href="https://grupoalmafuerte.com/contacto/" target="_blank" rel="noopener noreferrer">Grupo Almafuerte: Concesionario Usados María Grande</a></dd></dl>
+<div class="ct-g"><dl><dt>Dirección</dt><dd>Avenida Argentina 2021, María Grande, Entre Ríos</dd><dt>Cómo llegar</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Argentina+2021%2C+Mar%C3%ADa+Grande%2C+Entre+R%C3%ADos" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a></dd><dt>Redes</dt><dd><a href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Instagram @horizonte_automotores</a></dd><dt>Grupo</dt><dd><a href="https://grupoalmafuerte.com/contacto/" target="_blank" rel="noopener noreferrer">Grupo Almafuerte · Concesionario Usados María Grande</a></dd></dl>
 <div class="ct-c"><p class="ct-t">¿Buscás un auto o una moto?</p><p>Escribinos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p><div class="row"><a class="btn p" href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Escribir por Facebook</a><a class="btn" href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Instagram</a></div></div></div>
 
 <div class="map" id="mapa" data-lat="-31.65775" data-lng="-59.92451" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">

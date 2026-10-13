@@ -57,6 +57,7 @@ Cuando el dueño confirme el número: en `data/dealership.json` → `contact`, c
 
 ## Documentación
 - `CLAUDE.md`: reglas de mantenimiento.
+- `docs/ACTUALIZACION-OSINT-V3-2026-10-12.md`: última investigación incorporada (con las anteriores en `docs/`).
 - `plan.md`: estado actual. `PERF-CAMBIOS.md`: decisiones de rendimiento.
 - `docs/RESERVA.md`, `docs/MOTION.md`, `docs/CONTENIDO.md`, `docs/REUTILIZAR.md`: cómo funcionan y se cargan las partes del sitio.
 - `docs/VERIFICACION-2026-10-12.md`: qué se verificó de la investigación OSINT y qué no coincidió.

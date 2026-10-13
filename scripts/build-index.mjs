@@ -91,7 +91,7 @@ const dl = [
   C.whatsApp ? ['WhatsApp', `<a href="${WA}" ${EXT}>Escribinos</a>`] : null,
   D.hours.display ? ['Horario', esc(D.hours.display)] : null,
   ['Redes', `<a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram @${esc(C.instagram)}</a>`],
-  ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)}: Concesionario Usados ${esc(L.city)}</a>`],
+  ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)} · Concesionario Usados ${esc(L.city)}</a>`],
 ].filter(Boolean);
 
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
@@ -139,7 +139,7 @@ const secUsado = hasSvc('permuta') ? `
 
 const secBusqueda = `
 <section id="busqueda" aria-labelledby="bus-t"><div class="w">
-<p class="ey">Preguntas</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
+<p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 <form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
 <div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" required></div>

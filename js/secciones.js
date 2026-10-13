@@ -20,7 +20,6 @@
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(texto).then(function () { ok(true); }, viejo);
     else viejo();
   }
-  window.hzCopiar = copiar;
 
   /* ---------- 1) comparador ---------- */
   var box = $('#cmp'), dataEl = $('#cmp-data');
