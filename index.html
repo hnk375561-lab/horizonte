@@ -598,31 +598,37 @@ section.lt:not(.ct) .visit-card p:not(.visit-card-kicker){color:#514b44}
 html.save-data .btn.p::after,html.save-data .btn-gold::after{display:none}
 html.save-data .reveal{opacity:1;transform:none;transition:none}
 html.save-data .hero{animation:none!important}
-/* Hero premium con fotografía real: la paleta continúa gobernada por las variables originales. */
-.hero{grid-template-columns:minmax(0,.82fr) minmax(360px,1.18fr);align-items:center;min-height:min(100svh,920px);padding:clamp(54px,7vw,110px) max(20px,calc((100vw - 1120px)/2)) clamp(82px,9vw,120px);background:var(--ink);isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--ink) 0%,rgba(10,11,12,.94) 25%,rgba(10,11,12,.68) 47%,rgba(10,11,12,.12) 78%,transparent 100%),linear-gradient(0deg,var(--ink),transparent 42%);pointer-events:none}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;border:1px solid rgba(198,161,91,.24);pointer-events:none}
-.hero-media{position:absolute;inset:0 0 0 35%;z-index:0;overflow:hidden;background:var(--ink)}
-.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,transparent 42%),linear-gradient(0deg,rgba(10,11,12,.74),transparent 34%);pointer-events:none}
-.hero-media picture,.hero-media img{display:block;width:100%;height:100%}
-.hero-media img{object-fit:cover;object-position:58% 50%;filter:saturate(.86) contrast(1.06) brightness(.78);transform:scale(1.035)}
-.hero .hx-copy{z-index:2;max-width:650px}
-.hero .hx-copy .ey{color:var(--gold);text-shadow:0 1px 18px rgba(0,0,0,.4)}
-.hero h1{max-width:9ch;font-size:clamp(48px,6.5vw,96px);letter-spacing:-.045em;text-shadow:0 8px 34px rgba(0,0,0,.26)}
-.hero h1 em{color:var(--gold)}
+/* Hero editorial · fotografía original, navegación real y carrusel accesible. */
+.hero{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);grid-template-rows:1fr;align-items:stretch;min-height:min(920px,max(650px,calc(100svh - var(--hdr))));padding:0;background:var(--ink);border-bottom:2px solid var(--gold)}
+.hero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,rgba(10,11,12,.28),transparent 32%);pointer-events:none}
+.hero::after{content:"";position:absolute;z-index:5;inset:auto 0 0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--gold) 15%,var(--gold) 85%,transparent 100%);pointer-events:none}
+.hero-media{position:relative;grid-column:2;grid-row:1;z-index:1;min-width:0;min-height:inherit;overflow:hidden;background:#070b0d}
+.hero-media::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--ink) 0%,rgba(10,16,18,.72) 15%,rgba(10,16,18,.14) 52%,rgba(10,16,18,.12) 100%),linear-gradient(0deg,rgba(10,16,18,.54),transparent 34%);pointer-events:none}
+.hero-slide{position:absolute;inset:0;margin:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .85s ease,visibility .85s ease}
+.hero-slide.is-active{opacity:1;visibility:visible}
+.hero-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 68%;filter:saturate(.9) contrast(1.04) brightness(.88);transform:scale(1.025);transition:transform 3s ease}
+.hero-slide.is-active img{transform:scale(1.06)}
+.hero-slide--02 img{object-position:50% 67%}.hero-slide--03 img{object-position:50% 76%}.hero-slide--04 img{object-position:50% 70%}
+.hero .hx-copy{position:relative;z-index:3;grid-column:1;grid-row:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;width:100%;max-width:700px;margin:0;padding:clamp(52px,7vw,104px) clamp(24px,4vw,64px) clamp(72px,8vw,104px) max(24px,calc((100vw - 1200px)/2))}
+.hero .hx-copy .ey{color:var(--gold-hi);text-shadow:0 1px 18px rgba(0,0,0,.4)}
+.hero h1{max-width:9ch;font-size:clamp(48px,6.2vw,92px);letter-spacing:-.045em;text-shadow:0 8px 34px rgba(0,0,0,.26)}
+.hero h1 em{color:var(--gold-hi)}
 .hero .lead{max-width:31em;color:var(--ivory);font-size:clamp(17px,1.5vw,20px)}
+.hero .row{gap:11px}
+.hero .row .btn{min-height:54px}
 .hero .hx-sun{display:none}
-.hero .hx-down{z-index:3}
-@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:calc(100svh - var(--hdr));padding:54px 16px 250px}.hero-media{inset:0}.hero-media::after{background:linear-gradient(90deg,rgba(10,11,12,.86),rgba(10,11,12,.3) 75%),linear-gradient(0deg,var(--ink) 3%,transparent 64%)}.hero-media img{object-position:64% 50%;filter:saturate(.82) contrast(1.04) brightness(.6)}.hero .hx-copy{max-width:680px}.hero h1{max-width:10ch}}
-@media(max-width:560px){.hero{padding-top:44px;padding-bottom:220px}.hero-media img{object-position:67% 50%}.hero h1{font-size:clamp(46px,14vw,72px)}.hero .lead{font-size:17px}.hero::after{border-color:rgba(198,161,91,.18)}}
-
-/* Hero final aprobado: composición completa del preview visual de Horizonte Automotores. */
-@media(min-width:901px){
-  header{display:none}
-  .demo{display:none}
-  .hero{display:block;min-height:100svh;height:100svh;padding:0;background:var(--ink) url('images/hero/horizonte-hero-preview.png') center center/100% 100% no-repeat;border:0}
-  .hero::before,.hero::after,.hero-media,.hero .hx-copy,.hero .hx-sun,.hero .hx-down{display:none}
-}
+.hero .hx-down{position:absolute;z-index:4;left:max(24px,calc((100vw - 1200px)/2));bottom:20px;color:#e8e2d7;font:500 10px/1 var(--b);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding:0 0 8px}
+.hero-carousel-controls{position:absolute;z-index:4;right:clamp(14px,3vw,34px);bottom:clamp(16px,3vw,30px);display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid rgba(248,248,248,.25);background:rgba(7,11,13,.76);backdrop-filter:blur(14px);color:#fff}
+.hero-carousel-count{min-width:56px;color:var(--gold-hi);font:700 10px/1 var(--b);letter-spacing:.16em;text-align:center;white-space:nowrap}
+.hero-carousel-btn,.hero-carousel-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border:1px solid rgba(248,248,248,.32);background:transparent;color:#fff;font:500 13px/1 var(--b);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.hero-carousel-btn{font:400 26px/1 var(--h)}
+.hero-carousel-btn:hover,.hero-carousel-toggle:hover{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.hero-carousel-toggle{min-width:68px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.hero-carousel-controls :focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+@media(min-width:901px){header{display:block}.demo{display:none}}
+@media(max-width:900px){.hero{grid-template-columns:minmax(0,1fr);grid-template-rows:clamp(320px,46svh,480px) auto auto;min-height:0}.hero-media{grid-column:1;grid-row:1;min-height:0}.hero-media::after{background:linear-gradient(0deg,var(--ink) 0%,rgba(10,16,18,.1) 28%,transparent 62%),linear-gradient(180deg,rgba(10,16,18,.16),transparent 28%)}.hero .hx-copy{grid-column:1;grid-row:2;width:min(100%,820px);max-width:820px;margin:0 auto;padding:26px 24px 10px}.hero h1{max-width:11ch;font-size:clamp(52px,10vw,76px)}.hero .lead{max-width:39em}.hero .hx-down{position:static;grid-column:1;grid-row:3;display:inline-flex;width:max-content;margin:0 24px 24px;padding:4px 0 8px}.hero-carousel-controls{right:12px;bottom:12px}}
+@media(max-width:700px){.hero{grid-template-rows:clamp(300px,47svh,440px) auto auto}.hero .hx-copy{padding:22px 18px 9px}.hero h1{font-size:clamp(45px,12.5vw,66px)}.hero .lead{margin:17px 0 22px;font-size:16px}.hero .row{display:grid;grid-template-columns:1fr;gap:9px;width:100%}.hero .row .btn{width:100%;min-height:50px}.hero .hx-down{margin-left:18px}.hero-carousel-controls{left:12px;right:auto;bottom:12px;gap:7px;padding:7px 8px}.hero-carousel-count{min-width:52px}.hero-carousel-btn,.hero-carousel-toggle{height:36px}.hero-carousel-btn{min-width:36px}.hero-carousel-toggle{min-width:64px}}
+@media(prefers-reduced-motion:reduce){.hero-slide,.hero-slide img{transition:none!important;transform:none!important}}
 
 /* Rediseño editorial de Unidades · misma firma visual del hero */
 .inventory-section{position:relative;overflow:hidden;padding-block:clamp(82px,9vw,132px);background:radial-gradient(circle at 88% 8%,rgba(242,210,27,.075),transparent 22%),linear-gradient(145deg,#080d0f 0%,#0d1519 54%,#0a1012 100%);border-top:1px solid rgba(242,210,27,.2)}
@@ -807,12 +813,32 @@ section.conversion--search.lt .ey{border-left-color:#8a6a3b;background:var(--ink
   .hero-cta-whatsapp{left:20.5%;top:51.5%;width:21%;height:8.2%}
   .hero-cta-maps{left:4.7%;top:62.6%;width:12.8%;height:6.5%}
 }
+
+
+/* Fotografías originales en los recorridos de conversión: una toma exclusiva por sección. */
+.conversion-photo{position:relative;isolation:isolate;display:block;width:min(100%,460px);aspect-ratio:4/5;margin:32px 0 0;overflow:hidden;border:1px solid rgba(198,161,91,.24);border-left:4px solid var(--gold);background:#10171a;box-shadow:0 22px 58px rgba(0,0,0,.2)}
+.conversion-photo img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 75%;filter:saturate(.92) contrast(1.03);transition:transform .8s var(--ease)}
+.conversion-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(7,11,13,.94) 0%,rgba(7,11,13,.42) 32%,transparent 72%),linear-gradient(90deg,rgba(7,11,13,.16),transparent 58%);pointer-events:none}
+.conversion-photo figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:7px;padding:26px 22px 21px;color:#fff}
+.conversion-photo-kicker{color:var(--gold-hi);font:700 9px/1.2 var(--b);letter-spacing:.2em;text-transform:uppercase}
+.conversion-photo-caption{max-width:25ch;color:#fff;font:400 clamp(21px,2.8vw,31px)/1.02 var(--h);letter-spacing:-.015em}
+.conversion-photo--trade img{object-position:50% 72%}
+.conversion-photo--search{border-left-color:#8a6a3b;border-color:rgba(138,106,59,.28)}
+.conversion-photo--search img{object-position:50% 76%}
+.conversion-photo--search .conversion-photo-kicker{color:#f2d21b}
+@media(max-width:960px){.conversion-photo{width:min(100%,520px);aspect-ratio:5/4}}
+@media(max-width:700px){.conversion-photo{width:100%;aspect-ratio:4/5;margin-top:25px}.conversion-photo figcaption{padding:22px 18px 18px}.conversion-photo-caption{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.conversion-photo img{transition:none!important}}
+
+.hero-carousel-controls{display:none}
+.hero.hero-carousel-ready .hero-carousel-controls{display:flex}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
 <script defer src="js/mapa.js"></script>
 <script defer src="js/horarios.js"></script>
 <script defer src="js/site.js"></script>
+<script defer src="js/hero-rail.js"></script>
 </head>
 <body>
 <a class="skip" href="#unidades">Saltar al contenido</a>
@@ -822,16 +848,20 @@ section.conversion--search.lt .ey{border-left-color:#8a6a3b;background:var(--ink
 <div class="hc"><a class="btn p sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></header>
 <p class="demo"><span>Demo ilustrativa · No es el sitio oficial</span></p>
 <main id="top">
-<div class="hero">
-<div class="hero-media" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="images/hero/horizonte-hero-audi-mobile.webp"><img src="images/hero/horizonte-hero-audi.webp" width="960" height="720" alt="" fetchpriority="high" decoding="async"></picture></div>
-<nav class="hero-hotspots" aria-label="Accesos rápidos del hero"><a class="hero-hotspot hero-home" href="./" aria-label="Inicio"></a><a class="hero-hotspot hero-nav-unidades" href="#unidades" aria-label="Unidades"></a><a class="hero-hotspot hero-nav-financiacion" href="#financiacion" aria-label="Financiación"></a><a class="hero-hotspot hero-nav-guia" href="#guia" aria-label="Guía"></a><a class="hero-hotspot hero-nav-preguntas" href="#preguntas" aria-label="Preguntas"></a><a class="hero-hotspot hero-nav-nosotros" href="#nosotros" aria-label="Nosotros"></a><a class="hero-hotspot hero-nav-contacto" href="#contacto" aria-label="Contacto"></a><a class="hero-hotspot hero-cta-unidades" href="#unidades" aria-label="Ver unidades"></a><a class="hero-hotspot hero-cta-whatsapp" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp"></a><a class="hero-hotspot hero-cta-maps" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer" aria-label="Cómo llegar"></a></nav>
+<div class="hero" data-hero-carousel role="region" aria-roledescription="carrusel" aria-label="Fotografías de vehículos">
+<div class="hero-media" role="group" aria-label="Imágenes del carrusel">
+<figure class="hero-slide hero-slide--01 is-active" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="1 de 4" aria-hidden="false"><img src="images/hero/horizonte-slide-01.webp" width="1440" height="1920" alt="" fetchpriority="high" loading="eager" decoding="async"></figure>
+<figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
+<div class="hero-carousel-controls" role="group" aria-label="Controles del carrusel"><span class="hero-carousel-count" data-hero-count aria-hidden="true">01 / 04</span><button class="hero-carousel-btn" type="button" data-hero-prev aria-label="Foto anterior">‹</button><button class="hero-carousel-toggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pausar carrusel"><span data-hero-toggle-text>Pausar</span></button><button class="hero-carousel-btn" type="button" data-hero-next aria-label="Foto siguiente">›</button></div>
+</div>
 <div class="hx-copy">
 <p class="ey">Horizonte Automotores</p>
 <h1><span class="sr">Horizonte Automotores: </span>Autos y motos <em>en María Grande</em></h1>
 <p class="lead">Concesionario del Grupo Almafuerte. Usados multimarca, financiación y tu usado como parte de pago.</p>
 <div class="row"><a class="btn p" href="#unidades">Ver unidades</a><a class="btn" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="btn lnk" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Cómo llegar</a></div></div>
-<div class="hx-sun" aria-hidden="true"><span class="orb"></span></div>
-<a class="hx-down" href="#unidades">Ver más</a>
+<a class="hx-down" href="#unidades">Explorá las unidades</a>
 </div>
 </div>
 <div class="bar" role="region" aria-label="Datos rápidos"><div class="w"><ul>
@@ -914,7 +944,7 @@ section.conversion--search.lt .ey{border-left-color:#8a6a3b;background:var(--ink
 <li><b>02</b><span>Revisá el mensaje que se arma.</span></li>
 <li><b>03</b><span>Elegí el canal para enviarlo vos.</span></li>
 </ol>
-<div class="conversion-art conversion-art--car" aria-hidden="true"><span class="conversion-art-number">01</span><span class="conversion-sun"></span><svg viewBox="0 0 380 210" fill="none"><path d="M42 137h27l31-48c9-14 22-22 39-22h90c18 0 31 7 42 21l38 49h25c12 0 21 9 21 21v20H22v-20c0-12 8-21 20-21Z"/><path d="m111 88-24 49h79V67h-27c-12 0-21 6-28 21Zm70-21v70h111l-34-43c-8-11-17-16-31-16h-46Z"/><path d="M44 159h292M82 179a24 24 0 1 0 48 0m120 0a24 24 0 1 0 48 0"/><circle cx="106" cy="179" r="10"/><circle cx="274" cy="179" r="10"/></svg><span class="conversion-art-caption">LO QUE MANEJÁS<br>ABRE OTRA POSIBILIDAD</span></div>
+<figure class="conversion-photo conversion-photo--trade" aria-hidden="true"><img src="images/conversion/tu-usado.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"><figcaption><span class="conversion-photo-kicker">HORIZONTE / TU USADO</span><span class="conversion-photo-caption">Lo que ya manejás puede abrir el próximo camino.</span></figcaption></figure>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
@@ -939,7 +969,7 @@ section.conversion--search.lt .ey{border-left-color:#8a6a3b;background:var(--ink
 <div class="conversion-index"><span>HORIZONTE / BÚSQUEDA</span><span>02 — 02</span></div>
 <p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
-<div class="conversion-art conversion-art--focus" aria-hidden="true"><span class="conversion-art-number">02</span><span class="conversion-focus-ring conversion-focus-ring--outer"></span><span class="conversion-focus-ring conversion-focus-ring--inner"></span><svg viewBox="0 0 380 210" fill="none"><path d="M42 137h27l31-48c9-14 22-22 39-22h90c18 0 31 7 42 21l38 49h25c12 0 21 9 21 21v20H22v-20c0-12 8-21 20-21Z"/><path d="m111 88-24 49h79V67h-27c-12 0-21 6-28 21Zm70-21v70h111l-34-43c-8-11-17-16-31-16h-46Z"/><path d="M44 159h292M82 179a24 24 0 1 0 48 0m120 0a24 24 0 1 0 48 0"/><circle cx="106" cy="179" r="10"/><circle cx="274" cy="179" r="10"/></svg><span class="conversion-art-caption">MARCA · AÑO · PRESUPUESTO<br>UNA IDEA MÁS CLARA PARA EMPEZAR</span></div>
+<figure class="conversion-photo conversion-photo--search" aria-hidden="true"><img src="images/conversion/busqueda.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"><figcaption><span class="conversion-photo-kicker">HORIZONTE / TU BÚSQUEDA</span><span class="conversion-photo-caption">El próximo capítulo empieza con una idea clara.</span></figcaption></figure>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">

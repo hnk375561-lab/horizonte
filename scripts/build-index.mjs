@@ -194,7 +194,7 @@ const secUsado = hasSvc('permuta') ? `
 <li><b>02</b><span>Revisá el mensaje que se arma.</span></li>
 <li><b>03</b><span>Elegí el canal para enviarlo vos.</span></li>
 </ol>
-<div class="conversion-art conversion-art--car" aria-hidden="true"><span class="conversion-art-number">01</span><span class="conversion-sun"></span><svg viewBox="0 0 380 210" fill="none"><path d="M42 137h27l31-48c9-14 22-22 39-22h90c18 0 31 7 42 21l38 49h25c12 0 21 9 21 21v20H22v-20c0-12 8-21 20-21Z"/><path d="m111 88-24 49h79V67h-27c-12 0-21 6-28 21Zm70-21v70h111l-34-43c-8-11-17-16-31-16h-46Z"/><path d="M44 159h292M82 179a24 24 0 1 0 48 0m120 0a24 24 0 1 0 48 0"/><circle cx="106" cy="179" r="10"/><circle cx="274" cy="179" r="10"/></svg><span class="conversion-art-caption">LO QUE MANEJÁS<br>ABRE OTRA POSIBILIDAD</span></div>
+<figure class="conversion-photo conversion-photo--trade" aria-hidden="true"><img src="images/conversion/tu-usado.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"><figcaption><span class="conversion-photo-kicker">HORIZONTE / TU USADO</span><span class="conversion-photo-caption">Lo que ya manejás puede abrir el próximo camino.</span></figcaption></figure>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
@@ -220,7 +220,7 @@ const secBusqueda = `
 <div class="conversion-index"><span>HORIZONTE / BÚSQUEDA</span><span>02 — 02</span></div>
 <p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
-<div class="conversion-art conversion-art--focus" aria-hidden="true"><span class="conversion-art-number">02</span><span class="conversion-focus-ring conversion-focus-ring--outer"></span><span class="conversion-focus-ring conversion-focus-ring--inner"></span><svg viewBox="0 0 380 210" fill="none"><path d="M42 137h27l31-48c9-14 22-22 39-22h90c18 0 31 7 42 21l38 49h25c12 0 21 9 21 21v20H22v-20c0-12 8-21 20-21Z"/><path d="m111 88-24 49h79V67h-27c-12 0-21 6-28 21Zm70-21v70h111l-34-43c-8-11-17-16-31-16h-46Z"/><path d="M44 159h292M82 179a24 24 0 1 0 48 0m120 0a24 24 0 1 0 48 0"/><circle cx="106" cy="179" r="10"/><circle cx="274" cy="179" r="10"/></svg><span class="conversion-art-caption">MARCA · AÑO · PRESUPUESTO<br>UNA IDEA MÁS CLARA PARA EMPEZAR</span></div>
+<figure class="conversion-photo conversion-photo--search" aria-hidden="true"><img src="images/conversion/busqueda.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"><figcaption><span class="conversion-photo-kicker">HORIZONTE / TU BÚSQUEDA</span><span class="conversion-photo-caption">El próximo capítulo empieza con una idea clara.</span></figcaption></figure>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
@@ -278,19 +278,23 @@ const index = page({
   desc: `${NAME} en ${L.city}, ${L.province}: autos y motos con financiación. Visitanos en ${L.address} o mirá las unidades en Facebook e Instagram.`,
   file: 'index.html',
   extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n<script defer src="js/horarios.js"></script>
-<script defer src="js/site.js"></script>\n`,
+<script defer src="js/site.js"></script>\n<script defer src="js/hero-rail.js"></script>\n`,
   body: `${header()}
 <main id="top">
-<div class="hero">
-<div class="hero-media" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="images/hero/horizonte-hero-audi-mobile.webp"><img src="images/hero/horizonte-hero-audi.webp" width="960" height="720" alt="" fetchpriority="high" decoding="async"></picture></div>
-<nav class="hero-hotspots" aria-label="Accesos rápidos del hero"><a class="hero-hotspot hero-home" href="./" aria-label="Inicio"></a><a class="hero-hotspot hero-nav-unidades" href="#unidades" aria-label="Unidades"></a><a class="hero-hotspot hero-nav-financiacion" href="#financiacion" aria-label="Financiación"></a><a class="hero-hotspot hero-nav-guia" href="#guia" aria-label="Guía"></a><a class="hero-hotspot hero-nav-preguntas" href="#preguntas" aria-label="Preguntas"></a><a class="hero-hotspot hero-nav-nosotros" href="#nosotros" aria-label="Nosotros"></a><a class="hero-hotspot hero-nav-contacto" href="#contacto" aria-label="Contacto"></a><a class="hero-hotspot hero-cta-unidades" href="#unidades" aria-label="Ver unidades"></a><a class="hero-hotspot hero-cta-whatsapp" href="${WA || FB}" ${EXT} aria-label="Escribir por WhatsApp"></a><a class="hero-hotspot hero-cta-maps" href="${L.mapsUrl}" ${EXT} aria-label="Cómo llegar"></a></nav>
+<div class="hero" data-hero-carousel role="region" aria-roledescription="carrusel" aria-label="Fotografías de vehículos">
+<div class="hero-media" role="group" aria-label="Imágenes del carrusel">
+<figure class="hero-slide hero-slide--01 is-active" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="1 de 4" aria-hidden="false"><img src="images/hero/horizonte-slide-01.webp" width="1440" height="1920" alt="" fetchpriority="high" loading="eager" decoding="async"></figure>
+<figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
+<div class="hero-carousel-controls" role="group" aria-label="Controles del carrusel"><span class="hero-carousel-count" data-hero-count aria-hidden="true">01 / 04</span><button class="hero-carousel-btn" type="button" data-hero-prev aria-label="Foto anterior">‹</button><button class="hero-carousel-toggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pausar carrusel"><span data-hero-toggle-text>Pausar</span></button><button class="hero-carousel-btn" type="button" data-hero-next aria-label="Foto siguiente">›</button></div>
+</div>
 <div class="hx-copy">
 <p class="ey">Horizonte Automotores</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
 <p class="lead">Concesionario del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago.</p>
 <div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn lnk" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
-<div class="hx-sun" aria-hidden="true"><span class="orb"></span></div>
-<a class="hx-down" href="#unidades">Ver más</a>
+<a class="hx-down" href="#unidades">Explorá las unidades</a>
 </div>
 </div>
 ${bar}
