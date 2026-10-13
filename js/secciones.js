@@ -140,12 +140,12 @@
     ord.id = 'orden'; lo.htmlFor = 'orden';
     ORDEN.forEach(function (o) { var op = el('option', o[1]); op.value = o[0]; ord.appendChild(op); });
     fo.appendChild(lo); fo.appendChild(ord);
-    var tg = el('button', 'Ocultar filtros', 'btn sm fx-tg'); tg.type = 'button'; tg.setAttribute('aria-controls', 'fx-body');
+    var tg = el('button', 'Más filtros', 'btn sm fx-tg'); tg.type = 'button'; tg.setAttribute('aria-controls', 'fx-body');
     top.appendChild(fq); top.appendChild(fo); top.appendChild(tg);
 
     var refs = {};   /* k -> { g, inputs:[{o,input,n}], select, note, d, h } */
     GR.forEach(function (g) {
-      var fs = el('fieldset', null, 'fg s' + g.s), lg = el('legend', g.t), r = refs[g.k] = { g: g };
+      var fs = el('fieldset', null, 'fg s' + g.s), lg = el('legend', g.t), r = refs[g.k] = { g: g, fieldset: fs };
       fs.appendChild(lg);
       if (g.tipo === 'chips') {
         var cw = el('div', null, 'chips'); r.inputs = [];
@@ -189,11 +189,17 @@
       }
       body.appendChild(fs);
     });
+    /* Tres controles de decisión rápida quedan visibles en la píldora; el resto vive en el drawer. */
+    ['marca', 'precio', 'anio'].forEach(function (key) {
+      if (refs[key] && refs[key].fieldset) { refs[key].fieldset.classList.add('fx-quick'); top.appendChild(refs[key].fieldset); }
+    });
 
-    var cuenta = el('p', null, 'fx-n'), tags = el('div', null, 'fx-tags'), lim = el('button', 'Limpiar filtros', 'btn sm');
+    var cuenta = el('p', null, 'fx-n'), tags = el('div', null, 'fx-tags'), lim = el('button', 'Limpiar filtros', 'btn sm'), mostrar = el('button', 'Ver unidades', 'btn p sm');
     cuenta.id = 'cuenta'; cuenta.setAttribute('role', 'status'); cuenta.setAttribute('aria-live', 'polite');
     lim.type = 'button'; lim.id = 'limpiar'; lim.hidden = true;
-    act.appendChild(cuenta); act.appendChild(tags); act.appendChild(lim);
+    mostrar.type = 'button'; mostrar.className += ' fx-view';
+    mostrar.addEventListener('click', function () { if (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) { abrirPanel(false); tg.focus(); } });
+    act.appendChild(cuenta); act.appendChild(tags); act.appendChild(lim); act.appendChild(mostrar);
     tools.appendChild(top); tools.appendChild(body); tools.appendChild(act);
 
     /* ----- aplicar ----- */
@@ -262,6 +268,7 @@
       });
       lim.hidden = !(act2.length || st.orden);
       cuenta.textContent = (n === list.length ? 'Mostrando las ' + list.length + ' unidades' : 'Mostrando ' + n + ' de ' + list.length + ' unidades') + '.';
+      mostrar.textContent = 'Ver ' + n + (n === 1 ? ' unidad' : ' unidades');
       nAct = act2.length; etiquetaTg();
       if (escribirUrl) aUrl();
     }
@@ -307,18 +314,29 @@
       aplicar(true); q.focus();
     });
     var nAct = 0;
-    function etiquetaTg() { tg.textContent = (body.hidden ? 'Mostrar filtros' : 'Ocultar filtros') + (nAct ? ' (' + nAct + ')' : ''); }
+    function etiquetaTg() { tg.textContent = (body.hidden ? 'Más filtros' : 'Cerrar filtros') + (nAct ? ' (' + nAct + ')' : ''); }
     function abrirPanel(si) {
       body.hidden = !si;
       body.setAttribute('role', 'region');
-      body.setAttribute('aria-label', 'Filtros del catálogo');
+      body.setAttribute('aria-label', 'Más filtros del catálogo');
+      body.setAttribute('aria-modal', si ? 'true' : 'false');
       tg.setAttribute('aria-expanded', si ? 'true' : 'false');
+      tools.classList.add('filter-bar');
       tools.classList.toggle('is-open', si);
+      document.querySelectorAll('header, body > footer, main > section:not(#unidades)').forEach(function (node) { node.inert = !!si; });
       etiquetaTg();
+      if (si) { var first = body.querySelector('input,select,button'); if (first) setTimeout(function () { first.focus(); }, 0); }
     }
     tg.addEventListener('click', function () { abrirPanel(body.hidden); });
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && !body.hidden) { abrirPanel(false); tg.focus(); }
+      if (body.hidden) return;
+      if (event.key === 'Escape') { event.preventDefault(); abrirPanel(false); tg.focus(); return; }
+      if (event.key !== 'Tab') return;
+      var focusables = [].slice.call(body.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled])')).filter(function (node) { return !node.hidden; });
+      if (!focusables.length) return;
+      var first = focusables[0], last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     });
 
     /* ----- comparador: hasta 4 unidades, desde un botón en cada ficha ----- */

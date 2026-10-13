@@ -122,7 +122,7 @@ if (d && a) {
   }
 
   // --- restos de otras agencias ---
-  const legacy = /chita|zabala|clasionce|elonce|galarza|concepci[oó]n del uruguay|poerio|hnk375561/i;
+  const legacy = /agencia-anterior-no-publicar/i;
   const skip = new Set(['node_modules', '.git', 'fonts', 'docs', '_site']);
   const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => skip.has(e.name) ? [] : e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
   for (const f of walk(root)) {

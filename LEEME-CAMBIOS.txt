@@ -14,7 +14,7 @@ BORRAR del repo (no se pueden incluir en un zip):
 (opcional: borrar también ARCHIVOS-A-BORRAR.txt, ya cumplido)
 
 Qué se hizo
-  H-05  Borrados los restos de Chita. npm test queda en verde.
+  H-05  Eliminados los restos de agencias anteriores. npm test queda en verde.
   H-11  Formularios "Tu usado" y "Tu búsqueda": botón "Enviar por WhatsApp"
         (usa el número de data/dealership.json; el texto se actualiza mientras se escribe;
         con campos obligatorios vacíos no abre WhatsApp y muestra la validación).

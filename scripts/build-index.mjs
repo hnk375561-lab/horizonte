@@ -34,7 +34,7 @@ const WAFORM = C.whatsApp ? `<a class="btn p" data-wa-msg data-wa="${C.whatsApp}
 const CPBTN = `<button class="btn${C.whatsApp ? '' : ' p'}" type="submit" data-copiar-msg hidden>Copiar mensaje</button>`;
 const LEYENDA_CORTA = 'Demo ilustrativa · No es el sitio oficial';
 const LEYENDA = `Demo ilustrativa construida a partir de información pública. Datos y disponibilidad sujetos a confirmación por ${NAME}. No es el sitio oficial.`;
-const FONTS = '@font-face{font-family:"DM Serif Display";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-serif-display-latin.woff2) format("woff2")}\n@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2")}\n';
+const FONTS = '@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400 500;font-display:swap;src:url(fonts/cormorant-garamond-latin-400.woff2) format("woff2")}\n@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-var.woff2) format("woff2")}\n';
 const CSS = read('scripts/estilos.css').trim();
 
 const robotsMeta = demo ? '<meta name="robots" content="noindex, nofollow">\n' : '';
@@ -53,7 +53,7 @@ ${robotsMeta}<title>${esc(title)}</title>
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:locale" content="es_AR">
-${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/dm-serif-display-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
+${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/cormorant-garamond-latin-400.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
 ${withFonts ? FONTS : ''}${CSS}
 </style>
 ${extraHead}</head>
@@ -105,7 +105,7 @@ ${mediaTag(a, i)}
 <h3>${esc(sinMarca(a))}</h3>
 <div class="car-s"><p><b${a.anio == null ? ' class="nd"' : ''}>${a.anio != null ? a.anio : 'Sin dato'}</b><small>Año</small></p><p><b${a.km == null ? ' class="nd"' : ''}>${a.km != null ? fmt(a.km) : 'No publicado'}</b><small>Kilómetros</small></p></div>
 <dl class="sp">${fila('Caja', a.transmision ? esc(a.transmision) : '')}${fila('Combustible', a.combustible ? esc(a.combustible) : '')}${fila('Color', a.color ? `${sw ? `<i class="sw" style="--sw:${sw}"></i>` : ''}${esc(a.color)}` : '')}</dl>
-<div class="car-f">${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<button class="btn sm ficha-trigger" type="button" data-ficha="${i}" aria-label="Ver la ficha completa de ${esc(a.titulo)}">Ver la ficha completa</button><button class="btn sm gallery-trigger" type="button" data-gallery="${i}" hidden>Ver galería</button><a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Consultar con un asesor' : 'Ver publicación'}</a></div>
+<div class="car-f">${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<button class="btn sm ficha-trigger" type="button" data-ficha="${i}" aria-label="Ver la ficha completa de ${esc(a.titulo)}">Ver la ficha completa</button><button class="btn sm gallery-trigger" type="button" data-gallery="${i}" hidden>Ver galería</button><a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Reservar esta unidad' : 'Consultar por Facebook'}</a></div>
 </li>`;
 };
 const catData = autos.map((a, i) => ({ i, titulo: a.titulo, media: mediaDe(a), marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
@@ -128,7 +128,7 @@ const dl = [
   C.whatsApp ? ['WhatsApp', `<a href="${WA}" ${EXT}>${esc(C.whatsAppDisplay)} · Escribinos</a>`] : null,
   C.email ? ['Correo', `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>`] : null,
   H.display ? ['Horario', hrsTable] : null,
-  D.reviews.googleUrl ? ['Reseñas', `<a href="${D.reviews.googleUrl}" ${EXT}>Ver reseñas en Google</a>`] : null,
+  D.reviews.googleUrl ? ['Ficha de Google', `<a href="${D.reviews.googleUrl}" ${EXT}>Abrir ficha en Google</a>`] : null,
   ['Redes', `<a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram @${esc(C.instagram)}</a>`],
   ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)} · Concesionario Usados ${esc(L.city)}</a>`],
 ].filter(Boolean);
@@ -174,7 +174,6 @@ const secPreguntas = `
 <p class="sec-p">Respuestas cortas sobre cómo trabajamos y un glosario con las palabras que aparecen al comprar un usado. Información general de octubre de 2026: no es una condición ni una promesa de ${esc(NAME)}.</p>
 <div class="qa"><div><h3>Preguntas frecuentes</h3>${faq}</div><div><h3>Glosario del comprador</h3>${glos}</div></div>
 </div></section>`;
-const fab = C.whatsApp ? `<a class="fab" href="${WA}" ${EXT} aria-label="Escribir por WhatsApp"><span aria-hidden="true"></span>WhatsApp</a>` : '';
 const semana = H.semana || [];
 const closedDays = [0, 1, 2, 3, 4, 5, 6].filter((d) => !semana.some((g) => g.dias.includes(d)));
 const morningOnly = semana.filter((g) => g.rangos.length === 1).flatMap((g) => g.dias);
@@ -191,7 +190,7 @@ const secComo = `
 <ol class="ruta">
 <li style="--ph:.3"><i class="sol" aria-hidden="true"><s></s></i><h3>Elegí</h3><p>Filtrá las unidades publicadas y mirá año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a cuatro con el botón Comparar de cada ficha.' : ''}</p></li>
 <li style="--ph:.55"><i class="sol" aria-hidden="true"><s></s></i><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
-<li style="--ph:.8"><i class="sol" aria-hidden="true"><s></s></i><h3>Visitá</h3><p>Coordiná una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Agendar visita y prueba de manejo</a></li>
+<li style="--ph:.8"><i class="sol" aria-hidden="true"><s></s></i><h3>Visitá</h3><p>Agendá una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Agendar visita y prueba de manejo</a></li>
 <li style="--ph:1"><i class="sol" aria-hidden="true"><s></s></i><h3>Financiá</h3><p>${pasoFin}</p></li>
 </ol>
 </div></section>`;
@@ -301,7 +300,7 @@ ${secComo}
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
 <div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de ${esc(BNAFECHA)}). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
-<div class="row fin-cta"><a class="btn p" href="${wa('Hola! Quiero consultar por financiación.') || FB}" ${EXT}>${C.whatsApp ? 'Consultar financiación' : 'Consultar por Facebook'}</a><a class="btn" href="#tu-usado">Cotizá tu usado</a></div>
+<div class="row fin-cta"><a class="btn p" href="${wa('Hola! Quiero consultar un plan a medida.') || FB}" ${EXT}>${C.whatsApp ? 'Consultar un plan a medida' : 'Consultar por Facebook'}</a><a class="btn" href="#tu-usado">Solicitar tasación personalizada</a></div>
 <p class="src">Servicios según lo informado por ${esc(GNAME)} en <a href="${GWEB}" ${EXT}>su sitio</a>.</p>
 </div></section>
 
@@ -327,8 +326,8 @@ ${grupo}
 </div></section>
 </main>
 ${footer(true)}
-${C.whatsApp ? `<nav class="cta-bar" aria-label="Acciones rápidas"><a href="${WA}" ${EXT}>Consultar</a><a href="reserva.html">Agendar visita</a></nav>` : `<nav class="cta-bar" aria-label="Acciones rápidas"><a href="${FB}" ${EXT}>Consultar</a><a href="reserva.html">Agendar visita</a></nav>`}`}
-${fab}`,
+${C.whatsApp ? `<nav class="cta-bar" aria-label="Acciones rápidas"><a href="${WA}" ${EXT}>Consultar</a><a href="reserva.html">Agendar visita</a></nav>` : `<nav class="cta-bar" aria-label="Acciones rápidas"><a href="${FB}" ${EXT}>Consultar</a><a href="reserva.html">Agendar visita</a></nav>`}
+`,
 });
 
 const privacidad = page({
@@ -350,7 +349,7 @@ ${footer(false)}`,
 });
 
 const home404 = siteUrl || './';
-const logo404 = 'data:image/png;base64,' + fs.readFileSync(path.join(root, 'images', 'logo-sm.png')).toString('base64');
+const logo404 = 'images/logo-sm.png';
 const FONTS_404 = FONTS.replace(/url\(fonts\/([^)]+)\)/g, '__U__$1__E__');
 const nf404Head = siteUrl
   ? `<style>${FONTS.replace(/url\(fonts\//g, `url(${siteUrl}fonts/`)}</style>\n`

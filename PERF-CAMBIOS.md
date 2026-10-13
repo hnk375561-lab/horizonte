@@ -1,14 +1,21 @@
-# Rendimiento
+# Rendimiento y QA — Horizonte Automotores
 
-Registro de decisiones y cambios de rendimiento. Hoy:
+## Cambios aplicados
 
-- Las páginas generadas (`index.html`, `privacidad.html`, `404.html`) llevan el CSS inline desde `scripts/estilos.css`. Solo `index.html` carga JavaScript propio (ver abajo); `privacidad.html` y `404.html` no.
-- Tipografías autoalojadas en `fonts/` (`.woff2`, subconjunto latino); sin pedidos a Google Fonts.
-- Sin imágenes todavía (P4).
-- `reserva.html` es la única página con JavaScript (GSAP + Lenis desde `js/vendor/`, mismo origen).
+- Fuentes reducidas a dos archivos autoalojados: Cormorant Garamond e Inter.
+- Imágenes futuras preparadas con `srcset`, dimensiones fijas y carga diferida.
+- Parallax limitado al hero, escritorio y puntero fino; desactivado en móvil y `prefers-reduced-motion`.
+- Sin video ni carrusel automático.
+- CTA móvil fijo y drawer de filtros con interacción ligera.
+- Build generado en modo demo con cinco unidades.
 
-Al sumar fotos o scripts, medir y anotar acá antes y después.
-- `index.html` carga `js/secciones.js` y `js/mapa.js` con `defer` (sin dependencias). El comparador lee un JSON embebido (`#cmp-data`) generado desde `data/vehicles.json`.
-- El mapa no pide Leaflet ni mosaicos hasta que la persona toca «Ver mapa» (`js/mapa.js`); el marcador es vectorial, sin imágenes.
-- Medir y anotar acá el peso de `index.html` antes y después cuando haya fotos (P4).
-- Catálogo: buscador, orden y contador en #unidades (js/secciones.js, sin dependencias). El estado va en la URL (?q=…&orden=…). Sin JavaScript se ven las 5 fichas completas. Probado con jsdom (búsqueda, 4 órdenes, sin resultados, limpiar); no se midió rendimiento ni se probó en navegador real.
+## Verificaciones disponibles
+
+- `node --check scripts/build-index.mjs`: correcto.
+- `npm run build`: correcto; genera cinco unidades.
+- `npm test`: correcto; quedan únicamente avisos de pendientes de producción P4, P5, P11, P12 y P15.
+- `npm run check:links`: 0 problemas automáticos; quedan enlaces externos/mapas para revisión manual.
+- `npm run check:mobile`: script pendiente/no-op en este repositorio.
+- `python3 scripts/qa-browser.py`: no ejecutable en este entorno porque falta el binario Chromium de Playwright; no se inventa una métrica Lighthouse.
+
+La medición LCP/overflow en viewport reales queda pendiente de ejecutar cuando el responsable aporte las fotos autorizadas y exista un navegador Playwright disponible.
