@@ -19,13 +19,13 @@ main>section>.w,main>section>.ops,main>section>.fm,main>section>.bqp,main>.hero>
 
 /* Secciones en color sólido (sin foto de fondo). El resto de las secciones lleva foto desde js/motion.js. */
 #unidades,#trayectoria,#como-comprar,#operaciones,#equipo,#preguntas{background:#f8f8f8!important;background-image:none!important;color:var(--ink)}
-#local{background:#070b0d!important;background-image:none!important;color:#fff}
+#local{background:#0a1012!important;background-image:none!important;color:#fff}
 
 /* ═════════════ v11 · hero, tarjetas, modelos, comparador y «Quiénes somos» ═════════════
    Va al final a propósito: corrige capas anteriores sin tocar el resto. */
 
 /* — HERO: ambiente con la foto de la unidad, foto SIEMPRE entera y datos en celdas — */
-main>.hero.hx>.hx-bg{position:absolute!important;inset:0;z-index:0!important;overflow:hidden;background:#070b0d;pointer-events:none}
+main>.hero.hx>.hx-bg{position:absolute!important;inset:0;z-index:0!important;overflow:hidden;background:#0a1012;pointer-events:none}
 .hx-bg i{position:absolute;inset:-70px;background-size:cover;background-position:50% 50%;filter:blur(48px) saturate(1.2) brightness(.5);opacity:0;transition:opacity .9s ease}
 .hx-bg i.on{opacity:1}
 .hx-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,16,18,.9),rgba(10,16,18,.5) 48%,rgba(10,16,18,.3)),linear-gradient(0deg,rgba(10,16,18,.75),rgba(10,16,18,0) 38%)}
@@ -38,7 +38,7 @@ main>.hero.hx>.hx-bg{position:absolute!important;inset:0;z-index:0!important;ove
 .hx .hx-spec div{padding:14px 16px;background:rgba(10,16,18,.66);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .hx .hx-spec dt{font-size:13px;color:#f2d21b;letter-spacing:.06em!important}
 .hx .hx-spec dd{margin:6px 0 0;font-size:clamp(18px,1.55vw,24px);line-height:1.05;color:#fff;white-space:nowrap}
-.hx .hx-foot{margin:auto 0 0;padding-top:26px;max-width:38ch;font-size:14.5px;line-height:1.5;color:#9aa7ad}
+.hx .hx-foot{margin:auto 0 0;padding-top:26px;max-width:38ch;font-size:14.5px;line-height:1.5;color:#9c9e9f}
 .hx .hx-t{width:64px;height:80px}
 .hx .hx-act{margin-top:24px}
 

@@ -319,11 +319,10 @@
       body.hidden = !si;
       body.setAttribute('role', 'region');
       body.setAttribute('aria-label', 'Más filtros del catálogo');
-      body.setAttribute('aria-modal', si ? 'true' : 'false');
+      body.removeAttribute('aria-modal');
       tg.setAttribute('aria-expanded', si ? 'true' : 'false');
       tools.classList.add('filter-bar');
       tools.classList.toggle('is-open', si);
-      document.querySelectorAll('header, body > footer, main > section:not(#unidades)').forEach(function (node) { node.inert = !!si; });
       etiquetaTg();
       if (si) { var first = body.querySelector('input,select,button'); if (first) setTimeout(function () { first.focus(); }, 0); }
     }
@@ -331,12 +330,6 @@
     document.addEventListener('keydown', function (event) {
       if (body.hidden) return;
       if (event.key === 'Escape') { event.preventDefault(); abrirPanel(false); tg.focus(); return; }
-      if (event.key !== 'Tab') return;
-      var focusables = [].slice.call(body.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled])')).filter(function (node) { return !node.hidden; });
-      if (!focusables.length) return;
-      var first = focusables[0], last = focusables[focusables.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     });
 
     /* ----- comparador: hasta 4 unidades, desde un botón en cada ficha ----- */

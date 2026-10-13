@@ -194,7 +194,6 @@ const secUsado = hasSvc('permuta') ? `
 <li><b>02</b><span>Revisá el mensaje que se arma.</span></li>
 <li><b>03</b><span>Elegí el canal para enviarlo vos.</span></li>
 </ol>
-<figure class="conversion-photo conversion-photo--trade" aria-hidden="true"><img src="images/conversion/tu-usado.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"><figcaption><span class="conversion-photo-kicker">HORIZONTE / TU USADO</span><span class="conversion-photo-caption">Lo que ya manejás puede abrir el próximo camino.</span></figcaption></figure>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
@@ -220,7 +219,6 @@ const secBusqueda = `
 <div class="conversion-index"><span>HORIZONTE / BÚSQUEDA</span><span>02 — 02</span></div>
 <p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
-<figure class="conversion-photo conversion-photo--search" aria-hidden="true"><img src="images/conversion/busqueda.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"><figcaption><span class="conversion-photo-kicker">HORIZONTE / TU BÚSQUEDA</span><span class="conversion-photo-caption">El próximo capítulo empieza con una idea clara.</span></figcaption></figure>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
