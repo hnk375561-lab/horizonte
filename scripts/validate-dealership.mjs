@@ -43,7 +43,7 @@ if (d && a) {
     for (const m of h.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) if (!/noopener/.test(m[0])) err(`${p}: enlace externo sin noopener`);
     for (const m of h.matchAll(/(?:src|href)="([^"]+)"/g)) {
       const u = m[1];
-      if (/^(https?:|mailto:|tel:|#|\.\/?#?)/.test(u) || u === './') continue;
+      if (/^(https?:|mailto:|tel:|data:|#|\.\/?#?)/.test(u) || u === './') continue;
       if (!fs.existsSync(path.join(root, u.split(/[?#]/)[0]))) err(`${p}: referencia a archivo inexistente ${u}`);
     }
     for (const m of h.matchAll(/url\(([^)]+)\)/g)) if (!m[1].startsWith('data:') && !fs.existsSync(path.join(root, m[1].replace(/["']/g, '')))) err(`${p}: css url() a archivo inexistente ${m[1]}`);
@@ -51,7 +51,7 @@ if (d && a) {
 
   const idx = html['index.html'];
   const visible = pages.map((p) => html[p]).join('\n').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '');
-  const visNoCars = visible.replace(/<li class="car">[\s\S]*?<\/li>/g, '');
+  const visNoCars = visible.replace(/<li class="car"[^>]*>[\s\S]*?<\/li>/g, '');
 
   // --- datos del negocio ---
   const L = d.location;
@@ -108,7 +108,7 @@ if (d && a) {
   if (!publicados.some((t) => t.includes('financiaci'))) err('services.published no incluye la financiación que muestra el sitio');
 
   // --- stock ---
-  const nCards = (idx.match(/<li class="car">/g) || []).length;
+  const nCards = (idx.match(/<li class="car"[ >]/g) || []).length;
   if (nCards !== a.autos.length) err(`index.html tiene ${nCards} tarjetas y data/vehicles.json tiene ${a.autos.length} unidades (correr npm run build)`);
   const ids = new Set();
   for (const v of a.autos) {

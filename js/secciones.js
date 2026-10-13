@@ -98,7 +98,7 @@
     GR.push(porValor('color', 'chips', 'Color', 3, function (a) { return a.color; }, null, { sw: true }));
     GR.push({ k: 'ant', tipo: 'chips', t: 'Antigüedad del modelo', s: 3, ops: buckets });
     /* los filtros que no separan nada (un solo valor distinto en select o rango) no se muestran */
-    GR = GR.filter(function (g) { return g.tipo === 'chips' ? g.ops.length > 0 : g.tipo === 'select' ? g.ops.length > 1 : g.vals.length > 1; });
+    GR = GR.filter(function (g) { return g.tipo === 'chips' ? g.ops.length > 1 : g.tipo === 'select' ? g.ops.length > 1 : g.vals.length > 1; });
 
     var ORDEN = [['', 'Orden de publicación'], ['p-asc', 'Precio: menor a mayor'], ['p-desc', 'Precio: mayor a menor'], ['a-desc', 'Año: más nuevo primero'], ['a-asc', 'Año: más antiguo primero'], ['k-asc', 'Kilometraje: menor primero'], ['k-desc', 'Kilometraje: mayor primero'], ['m-asc', 'Marca: de la A a la Z']];
     var KEY = { p: function (a) { return a.monto; }, a: function (a) { return a.anio; }, k: function (a) { return a.km; }, m: function (a) { return a.marca; } };
@@ -323,6 +323,7 @@
       if (!tray) {
         tray = el('div', null, 'tray'); tray.setAttribute('role', 'region'); tray.setAttribute('aria-label', 'Unidades para comparar');
         document.body.appendChild(tray);
+        if (window.ResizeObserver) new ResizeObserver(function () { document.documentElement.style.setProperty('--tray-h', tray.offsetHeight + 'px'); }).observe(tray);
       }
       tray.hidden = false; tray.textContent = '';
       var w = el('div', null, 'w'), lst = el('ul', null, 'tray-l');
@@ -371,7 +372,7 @@
       var minK = mejor(sel, function (a) { return a.km; }, -1), maxK = Math.max.apply(null, sel.map(function (a) { return a.km || 0; }));
       var base = Math.min.apply(null, sel.map(function (a) { return a.monto; }).filter(function (v) { return v != null; }));
 
-      var t = el('table', null, 'cmpt'), cap = el('caption', 'Comparación de unidades'); cap.className = 'sr'; t.appendChild(cap);
+      var t = el('table', null, 'cmpt'), cap = el('caption', 'Comparación de unidades'); cap.className = 'sr'; t.appendChild(cap); t.style.setProperty('--n', sel.length);
       var hr = el('tr'), c0 = el('th'); c0.scope = 'col'; c0.appendChild(el('span', 'Dato', 'sr')); hr.appendChild(c0);
       sel.forEach(function (a) {
         var th = el('th'); th.scope = 'col';
@@ -423,6 +424,11 @@
       document.documentElement.classList.add('has-dlg');
       if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
       x.focus();
+      /* pista de scroll lateral: la tabla se desvanece en el borde derecho mientras haya más columnas */
+      var marca = function () { sc.classList.toggle('mas', sc.scrollLeft + sc.clientWidth < sc.scrollWidth - 2); };
+      sc.addEventListener('scroll', marca, { passive: true });
+      if (window.ResizeObserver) new ResizeObserver(marca).observe(sc);
+      marca();
     }
 
     deUrl();
