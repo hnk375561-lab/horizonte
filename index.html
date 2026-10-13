@@ -377,6 +377,7 @@ dialog.cmp .btn.p:hover{background:#0a1012;color:var(--y)}
   .ruta.js.on li:nth-child(4) .sol s{transition-delay:.75s}
 }
 </style>
+<link rel="stylesheet" href="css/identidad.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","email":"snicolas540@hotmail.com","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
 <script defer src="js/mapa.js"></script>
@@ -474,11 +475,11 @@ dialog.cmp .btn.p:hover{background:#0a1012;color:var(--y)}
 <p class="ey">Tu usado</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
 <p class="sec-p">Recibimos vehículos usados como parte de pago y la tasación es sin cargo, según informa Grupo Almafuerte. Contanos cuál es y armá el mensaje para enviárselo a la agencia.</p>
 <form class="fm" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
-<div class="f"><label for="u-mm">Marca y modelo</label><input id="u-mm" data-lbl="Marca y modelo" autocomplete="off" required></div>
-<div class="f"><label for="u-an">Año</label><input id="u-an" data-lbl="Año" inputmode="numeric" autocomplete="off"></div>
-<div class="f"><label for="u-km">Kilometraje</label><input id="u-km" data-lbl="Kilometraje" inputmode="numeric" autocomplete="off"></div>
+<div class="f"><label for="u-mm">Marca y modelo</label><input id="u-mm" data-lbl="Marca y modelo" autocomplete="off" placeholder="Ej.: Toyota Corolla XEI" required></div>
+<div class="f"><label for="u-an">Año</label><input id="u-an" data-lbl="Año" inputmode="numeric" autocomplete="off" placeholder="Ej.: 2018" maxlength="4"></div>
+<div class="f"><label for="u-km">Kilometraje</label><input id="u-km" data-lbl="Kilometraje" inputmode="numeric" autocomplete="off" placeholder="Ej.: 85000"></div>
 <div class="f"><label for="u-co">Combustible</label><select id="u-co" data-lbl="Combustible"><option value="">Sin indicar</option><option>Nafta</option><option>Diésel</option><option>GNC</option><option>Otro</option></select></div>
-<div class="f full"><label for="u-no">Algo más que quieras contar</label><textarea id="u-no" data-lbl="Comentarios"></textarea></div>
+<div class="f full"><label for="u-no">Algo más que quieras contar</label><textarea id="u-no" data-lbl="Comentarios" placeholder="Estado general, versión, extras o cualquier dato útil."></textarea></div>
 <textarea class="msg-v" readonly hidden aria-label="Mensaje armado"></textarea>
 <div class="acts"><button class="btn p" type="submit" data-copiar-msg hidden>Copiar mensaje</button><a class="btn" href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Ir a Facebook</a><a class="btn" href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Ir a Instagram</a></div>
 <p class="msg-s" role="status" aria-live="polite"></p>
@@ -490,11 +491,11 @@ dialog.cmp .btn.p:hover{background:#0a1012;color:var(--y)}
 <p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 <form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
-<div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" required></div>
-<div class="f"><label for="b-an">Año mínimo</label><input id="b-an" data-lbl="Año mínimo" inputmode="numeric" autocomplete="off"></div>
+<div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" placeholder="Ej.: SUV compacta o Volkswagen T-Cross" required></div>
+<div class="f"><label for="b-an">Año mínimo</label><input id="b-an" data-lbl="Año mínimo" inputmode="numeric" autocomplete="off" placeholder="Ej.: 2020" maxlength="4"></div>
 <div class="f"><label for="b-tr">Transmisión</label><select id="b-tr" data-lbl="Transmisión"><option value="">Indistinto</option><option>Manual</option><option>Automática</option></select></div>
-<div class="f"><label for="b-pr">Presupuesto aproximado</label><input id="b-pr" data-lbl="Presupuesto" autocomplete="off"></div>
-<div class="f full"><label for="b-no">Algo más que quieras contar</label><textarea id="b-no" data-lbl="Comentarios"></textarea></div>
+<div class="f"><label for="b-pr">Presupuesto aproximado</label><input id="b-pr" data-lbl="Presupuesto" autocomplete="off" inputmode="decimal" placeholder="Ej.: $ 25.000.000"></div>
+<div class="f full"><label for="b-no">Algo más que quieras contar</label><textarea id="b-no" data-lbl="Comentarios" placeholder="Contanos uso, carrocería, combustible o preferencias."></textarea></div>
 <textarea class="msg-v" readonly hidden aria-label="Mensaje armado"></textarea>
 <div class="acts"><button class="btn p" type="submit" data-copiar-msg hidden>Copiar mensaje</button><a class="btn" href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Ir a Facebook</a><a class="btn" href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Ir a Instagram</a></div>
 <p class="msg-s" role="status" aria-live="polite"></p>
