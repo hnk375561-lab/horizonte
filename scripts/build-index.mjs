@@ -34,7 +34,7 @@ const WAFORM = C.whatsApp ? `<a class="btn p" data-wa-msg data-wa="${C.whatsApp}
 const CPBTN = `<button class="btn${C.whatsApp ? '' : ' p'}" type="submit" data-copiar-msg hidden>Copiar mensaje</button>`;
 const LEYENDA_CORTA = 'Demo ilustrativa · No es el sitio oficial';
 const LEYENDA = `Demo ilustrativa construida a partir de información pública. Datos y disponibilidad sujetos a confirmación por ${NAME}. No es el sitio oficial.`;
-const FONTS = '@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400 500;font-display:swap;src:url(fonts/cormorant-garamond-latin-400.woff2) format("woff2")}\n@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-var.woff2) format("woff2")}\n';
+const FONTS = '@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/bricolage-grotesque-latin.woff2) format("woff2")}\n@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2")}\n';
 const CSS = read('scripts/estilos.css').trim();
 
 const robotsMeta = demo ? '<meta name="robots" content="noindex, nofollow">\n' : '';
@@ -53,7 +53,7 @@ ${robotsMeta}<title>${esc(title)}</title>
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:locale" content="es_AR">
-${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/cormorant-garamond-latin-400.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
+${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
 ${withFonts ? FONTS : ''}${CSS}
 </style>
 ${extraHead}</head>
@@ -73,7 +73,7 @@ const footer = (fuentes) => `<footer><div class="w">
 const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
-<header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
+<header class="site-header${pre ? ' site-header--inner' : ' site-header--home'}"><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
 <nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a><a href="${pre}#tu-usado">Tu usado</a><a href="${pre}#busqueda">Tu búsqueda</a><a href="${pre}#visita">Visita</a></nav>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span>Menú</span></button>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
@@ -287,7 +287,6 @@ const index = page({
 <figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
 <figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
 <figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
-<div class="hero-carousel-controls" role="group" aria-label="Controles del carrusel"><span class="hero-carousel-count" data-hero-count aria-hidden="true">01 / 04</span><button class="hero-carousel-btn" type="button" data-hero-prev aria-label="Foto anterior">‹</button><button class="hero-carousel-toggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pausar carrusel"><span data-hero-toggle-text>Pausar</span></button><button class="hero-carousel-btn" type="button" data-hero-next aria-label="Foto siguiente">›</button></div>
 </div>
 <div class="hx-copy">
 <p class="ey">Horizonte Automotores</p>

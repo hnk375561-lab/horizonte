@@ -794,3 +794,69 @@ section.conversion--search.lt .ey{border-left-color:#8a6a3b;background:var(--ink
 .hero.hero-carousel-ready .hero-carousel-controls{display:flex}
 
 @media(max-width:700px){.hero-in-view .cta-bar{display:none}}
+
+/* Hero/home de referencia: fotografía a sangre completa, navegación superpuesta y firma negro/amarillo. */
+:root{--hero-title:"Bricolage Grotesque",system-ui,sans-serif;--hero-copy:"Instrument Sans",system-ui,sans-serif}
+header.site-header--home{position:absolute!important;inset:0 0 auto;z-index:20;background:linear-gradient(180deg,rgba(7,11,13,.78),rgba(7,11,13,.18));backdrop-filter:none;border-bottom:0}
+.site-header--home .w{width:min(1440px,calc(100% - clamp(40px,10vw,160px)));min-height:112px;flex-wrap:nowrap;gap:clamp(16px,2vw,34px);padding:0}
+.site-header--home .mark{flex:none}
+.site-header--home .mark .lg-img{height:76px;width:auto;padding:3px 10px;background:#fefefe;box-shadow:none}
+.site-header--home .site-nav{flex:1;justify-content:center;gap:clamp(10px,1.55vw,25px);overflow:visible;white-space:nowrap}
+.site-header--home .site-nav a{color:#fff;font:700 12px/1 var(--hero-copy);letter-spacing:.13em}
+.site-header--home .site-nav a:hover{color:#f2d21b}
+.site-header--home .hc{flex:none}
+.site-header--home .hc .btn{min-height:46px;padding-inline:18px}
+header.site-header--home+.demo{display:none}
+.hero{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;width:100%;min-height:max(680px,100svh);padding:0;border:0;background:#0a1012}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;opacity:1;mask:none;background:linear-gradient(90deg,rgba(3,7,8,.91) 0%,rgba(3,7,8,.79) 34%,rgba(3,7,8,.35) 60%,rgba(3,7,8,.08) 100%),linear-gradient(0deg,rgba(3,7,8,.42),transparent 38%);pointer-events:none}
+.hero::after{content:"";position:absolute;z-index:4;inset:auto 0 0;height:3px;background:#f2d21b;pointer-events:none}
+.hero-media{position:absolute;inset:0;z-index:0;width:100%;height:100%;min-width:0;min-height:100%;overflow:hidden;background:#0a1012}
+.hero-media::after{content:none}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;margin:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s ease}
+.hero-slide.is-active{opacity:1;visibility:visible}
+.hero-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.96) contrast(1.04) brightness(.9);transform:scale(1.01);transition:transform 5s ease}
+.hero-slide.is-active img{transform:scale(1.045)}
+.hero-slide--02 img{object-position:50% 62%}.hero-slide--03 img{object-position:50% 68%}.hero-slide--04 img{object-position:50% 58%}
+.hero .hx-copy{position:relative;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;width:min(100%,1440px);max-width:1440px;margin:0 auto;padding:142px clamp(24px,5vw,80px) 92px}
+.hero .hx-copy .ey{margin:0 0 17px;padding:0;background:none;color:#fff;font:700 12px/1.4 var(--hero-copy);letter-spacing:.34em;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.hero h1{max-width:12ch;color:#fff;font:800 clamp(48px,5.2vw,82px)/.94 var(--hero-title);letter-spacing:-.035em;text-shadow:0 3px 22px rgba(0,0,0,.32);text-transform:uppercase}
+.hero h1 em{display:block;color:#f2d21b;font-style:normal}
+.hero .lead{max-width:28em;margin:20px 0 28px;color:#fff;font:400 clamp(18px,1.7vw,23px)/1.36 var(--hero-copy);text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.hero .row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;max-width:700px}
+.hero .row .btn{min-height:54px;padding-inline:25px;font:800 14px/1.1 var(--hero-copy);letter-spacing:.14em}
+.hero .row .btn:not(.p):not(.lnk){border-color:#fff;background:rgba(7,11,13,.18);color:#fff}
+.hero .row .btn:not(.p):not(.lnk):hover{background:#fff;color:#0a1012}
+.hero .row .btn.p{background:#f2d21b;border-color:#f2d21b;color:#0a1012}
+.hero .row .btn.p:hover{background:#ffe14d;border-color:#ffe14d;color:#0a1012}
+.hero .row .btn.lnk{min-height:44px;color:#fff;border:0;background:none;text-decoration:underline;text-decoration-color:#f2d21b;text-underline-offset:8px}
+.hero .row .btn.lnk:hover{color:#f2d21b;background:none}
+.hero .hx-down{display:none}
+.hero-carousel-controls{display:none!important}
+@media(max-width:980px){
+  header.site-header--home{position:absolute!important}
+  .site-header--home .w{width:100%;min-height:76px;padding:8px 18px;gap:12px}
+  .site-header--home .mark .lg-img{height:52px;padding:2px 7px}
+  .site-header--home .menu-toggle{display:inline-flex;margin-left:auto}
+  .site-header--home .hc{display:none}
+  .site-header--home .site-nav{top:100%;left:12px;right:12px;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:8px 16px;background:rgba(7,11,13,.97);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(16px)}
+  .site-header--home .site-nav a{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .site-header--home .site-nav a:last-child{border-bottom:0}
+  .hero{min-height:max(680px,100svh)}
+  .hero .hx-copy{padding:138px 28px 74px}
+  .hero h1{font-size:clamp(48px,8.2vw,74px)}
+  .hero .lead{max-width:32em}
+}
+@media(max-width:700px){
+  .site-header--home .w{padding-inline:14px}
+  .site-header--home .mark .lg-img{height:46px;padding:2px 6px}
+  .hero{min-height:max(720px,100svh)}
+  .hero::before{background:linear-gradient(90deg,rgba(3,7,8,.8),rgba(3,7,8,.42)),linear-gradient(0deg,rgba(3,7,8,.84) 0%,rgba(3,7,8,.34) 56%,rgba(3,7,8,.26) 100%)}
+  .hero .hx-copy{padding:132px 20px 48px}
+  .hero .hx-copy .ey{font-size:10px;letter-spacing:.26em}
+  .hero h1{max-width:11ch;font-size:clamp(44px,12vw,66px)}
+  .hero .lead{max-width:28em;margin:18px 0 24px;font-size:17px}
+  .hero .row{display:grid;grid-template-columns:1fr;gap:10px;width:100%}
+  .hero .row .btn{width:100%;min-height:52px}
+  .hero .row .btn.lnk{justify-content:flex-start;width:max-content}
+}
+@media(prefers-reduced-motion:reduce){.hero-slide,.hero-slide img{transition:none!important;transform:none!important}}
