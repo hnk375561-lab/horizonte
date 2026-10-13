@@ -30,8 +30,6 @@ function renderCalendar() {
 function animateScene(show) {
   const current = $(".scene:not([hidden])"), next = $(`.scene--${show}`); if (!next || current === next) return;
   state.step = show; $("#booking").dataset.step = show; $("#back").hidden = show === "month"; next.hidden = false;
-  const focusTarget = next.querySelector("h2, button:not(:disabled), input, select");
-  if (focusTarget) { focusTarget.tabIndex = focusTarget.matches("h2") ? -1 : focusTarget.tabIndex; requestAnimationFrame(() => focusTarget.focus({ preventScroll: true })); }
   if (reduceMotion.matches) { if (current) current.hidden = true; return; }
   state.control?.kill();
   const tl = gsap.timeline();

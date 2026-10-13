@@ -372,7 +372,7 @@ dialog.cmp .btn.p:hover{background:#0a1012;color:var(--y)}
 
 /* REDISEÑO 2026 · capa editorial / mobile-first */
 :root{--paper:#f4f1e9;--paper-2:#ebe7dc;--line:rgba(255,255,255,.14);--yellow:#f4d11f;--orange:#f39a28;--radius:3px}
-body{background:var(--k0);letter-spacing:-.01em}
+body{background:var(--k0);letter-spacing:0}h2,h3,h4{letter-spacing:-.01em}
 header{backdrop-filter:blur(18px);background:rgba(7,11,13,.9);border-bottom:1px solid rgba(242,210,27,.35)}
 header .w{min-height:76px}.mark .lg-img{height:48px;padding:3px 12px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
 .site-nav a{position:relative;padding-block:12px}.site-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:2px;background:var(--y);transition:right .25s ease}.site-nav a:hover::after,.site-nav a[aria-current="true"]::after{right:0}.nav-more{position:relative;margin-left:2px}.nav-more summary{padding:12px 0;cursor:pointer;list-style:none;font:800 12px var(--b);letter-spacing:.08em;text-transform:uppercase;color:var(--s3)}.nav-more summary::-webkit-details-marker{display:none}.nav-more summary::after{content:"+";margin-left:5px;color:var(--y);font-size:16px}.nav-more[open] summary::after{content:"–"}.nav-more-links{position:absolute;right:0;top:calc(100% + 14px);z-index:10;display:grid;min-width:164px;padding:8px;background:rgba(7,11,13,.98);border:1px solid var(--g1);box-shadow:0 18px 40px rgba(0,0,0,.35)}.nav-more-links a{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08)}.nav-more-links a:last-child{border-bottom:0}
@@ -390,6 +390,27 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
 @media(max-width:700px){.w{width:min(100% - 32px,1120px)}.hero{padding:46px 16px 270px}.hero h1{font-size:clamp(48px,15vw,74px)}.hero .row{align-items:stretch}.hero .row .btn{width:100%}.hero::after{right:-36vw;bottom:-35vw;width:115vw}.bar li{min-height:0}.quick-proof{padding:52px 0}.quick-intro h2{font-size:44px}.car{min-height:0}.car:hover{transform:none}.ct-c{padding:24px}.ft{gap:20px}.stat{border-right:0;border-bottom:1px solid #273238}.stat:first-child{padding-left:22px}}
 @media(max-width:360px){.hero{padding:34px 16px 210px}.hero h1{font-size:clamp(43px,14vw,58px);line-height:.9}.hero .ey{font-size:11px;letter-spacing:.22em;margin-bottom:14px}.hero .lead{font-size:18px;margin:18px 0 22px}.hero .btn{min-height:52px}.hx-sun{width:90vw}}
 @media(prefers-reduced-motion:reduce){.site-nav,.card,.car,.quick-card,.fab{transition:none}.hero::after{display:none}.fab{transform:none}}
+
+/* ── UX · áreas táctiles (≥44px) en pantallas táctiles o estrechas; desktop conserva su densidad ── */
+@media(pointer:coarse),(max-width:980px){
+  .menu-toggle,.btn.sm,.fx-tg{min-height:44px}
+  .car-c{min-height:44px;display:inline-flex;align-items:center}
+  dd a,li>a:not(.btn),.ct-c li a{display:inline-flex;align-items:center;min-height:44px}
+  .ft p a,footer p a{display:inline-flex;align-items:center;min-height:44px;padding-inline:2px}
+  .nav-more-links a,.site-nav a{min-height:44px;display:flex;align-items:center}
+}
+/* Cuerpo de texto: los enlaces dentro de párrafos conservan su flujo, con más aire para el dedo */
+@media(pointer:coarse){p a:not(.btn){padding-block:6px}}
+
+/* ── UX · legibilidad y header en pantallas muy angostas ── */
+.demo{font-size:13px;line-height:1.45;word-spacing:.08em}
+@media(max-width:380px){
+  header .w{flex-wrap:nowrap;gap:10px;padding-top:0}
+  header .hc{display:none} /* WhatsApp sigue en el hero, en el menú y en el botón flotante */
+  .mark .lg-img{height:40px}
+  .menu-toggle{margin-left:auto}
+}
+@media(max-width:380px){#contacto h2{font-size:clamp(28px,9.4vw,40px)}} /* evita partir «ENCONTRARNOS» a mitad de palabra */
 </style>
 <script>(function(){var s=location.pathname.split("/").filter(Boolean),b=/github\.io$/.test(location.hostname)&&s.length?"/"+s[0]+"/":"/";document.addEventListener("DOMContentLoaded",function(){document.getElementById("home").href=b})})()</script>
 </head>

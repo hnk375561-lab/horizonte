@@ -19,7 +19,8 @@
     "debug:anchors": "node scripts/debug-anchors.mjs",
     "check:safari": "node scripts/check-all.mjs --webkit",
     "check:devices": "node scripts/check-all.mjs --all-devices",
-    "golive": "node scripts/golive.mjs"
+    "golive": "node scripts/golive.mjs",
+    "check:browser": "python3 scripts/qa-browser.py"
   },
   "devDependencies": {
     "sharp": "^0.33.5"

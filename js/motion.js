@@ -14,16 +14,14 @@
      3 · ODÓMETRO     Los números del sitio (reseñas, grupos, año del registro) giran como un
                       tablero de kilometraje y se asientan en su valor real.
      4 · VENTANA      Mapa e itinerario del local se abren como iris/ventana con el avance.
-     5 · INERCIA      La velocidad y la dirección del scroll inclinan títulos y fotos de las
-                      tarjetas y esconden/muestran el header.
+     5 · INERCIA      (retirada) El scroll ya no inclina ni desplaza textos; el header sí se
+                      esconde/muestra según la dirección.
      6 · CURSOR       Anillo con estados (ver, arrastrar, mover…), estiramiento direccional y
                       botones magnéticos.
-     7 · RESORTE      La inercia del scroll es un resorte subamortiguado: al frenar, títulos y
-                      fotos se pasan un poco y se asientan (banda elástica), en vez de frenar en seco.
+     7 · RESORTE      (retirado junto con la inercia).
      8 · FOTO FIEL    Las fotos del hero nunca se escalan, giran ni se atenúan: se ven al 100 %
                       de su calidad en la entrada, en el cambio de unidad y al hacer scroll.
-     9 · COLUMNAS     En la grilla de unidades cada columna reacciona distinto a la velocidad
-                      (la izquierda se atrasa, la derecha se adelanta) y se reacomoda al filtrar.
+     9 · COLUMNAS     (retirado) La grilla de unidades ya no desfasa columnas con el scroll.
     10 · RECESIÓN     La sección que se va retrocede (escala, opacidad, ascenso) mientras la siguiente
                       la cubre; el pie sube por capas y se asienta justo al llegar al final.
     11 · HAZ          En Trayectoria el hito que se lee en el centro es el que brilla; los leídos se atenúan.
@@ -130,49 +128,15 @@ function split(element, { chars = false, skip = null } = {}) {
 }
 
 /* ════════════════════════════════════════════════════════════════════════════════════════
-   INERCIA (firma 5) · velocidad y dirección del scroll compartidas
-   Un solo bucle: lee el scroll una vez por frame, suaviza la velocidad y la reparte a los
-   elementos visibles con quickSetter (sin tweens, sin lecturas de layout).
+   INERCIA · RETIRADA (decisión de UX)
+   Los textos, títulos y tarjetas ya no se inclinan ni se desplazan con la velocidad del scroll:
+   mejora la lectura, evita mareo (vestibular) y ahorra trabajo por frame. Se conserva la misma
+   interfaz (add / remove / refresh / step / destroy) como no-op para no tocar a los llamadores;
+   si algún día se reactiva, hacerlo midiendo FPS y respetando prefers-reduced-motion.
    ════════════════════════════════════════════════════════════════════════════════════════ */
 function createInertia() {
-  /* v = velocidad suavizada (cursor, lecturas). s/sv = resorte subamortiguado que persigue a v:
-     al frenar el scroll, los elementos se pasan un poco y vuelven (efecto «banda elástica»). */
-  const state = { v: 0, s: 0, sv: 0, dir: 1 };
-  const items = new Map();
-  let rest = true;
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => { const item = items.get(entry.target); if (item) item.vis = entry.isIntersecting; });
-  }, { rootMargin: "15% 0px" });
-  const drop = (el) => { io.unobserve(el); items.delete(el); };
-  return {
-    state,
-    /* gain puede ser una función: se reevalúa en cada refresh (p. ej. columnas de una grilla responsive). */
-    add(el, prop, gain, unit = "", max = Infinity) {
-      return; /* sin efectos de inercia: los textos y tarjetas no se mueven al scrollear */
-      if (!el || items.has(el)) return;
-      const fn = typeof gain === "function" ? gain : null;
-      items.set(el, { set: gsap.quickSetter(el, prop, unit), gain: fn ? fn() : gain, fn, max, vis: false });
-      io.observe(el);
-    },
-    remove(el) { if (items.has(el)) drop(el); },
-    refresh() {
-      items.forEach((item, el) => { if (!el.isConnected) drop(el); else if (item.fn) item.gain = item.fn(); });
-    },
-    step(instant, dt = 1) {
-      state.v += (instant - state.v) * (1 - Math.pow(0.84, dt));
-      if (Math.abs(state.v) < 0.03) state.v = 0;
-      if (instant !== 0) state.dir = instant > 0 ? 1 : -1;
-      state.sv += (state.v - state.s) * 0.09 * dt;
-      state.sv *= Math.pow(0.8, dt);
-      state.s += state.sv * dt;
-      const settled = state.v === 0 && Math.abs(state.s) < 0.02 && Math.abs(state.sv) < 0.02;
-      if (settled) { state.s = 0; state.sv = 0; }
-      if (settled && rest) return;
-      rest = settled;
-      items.forEach((item) => { if (item.vis || rest) item.set(clamp(state.s * item.gain, -item.max, item.max)); });
-    },
-    destroy() { io.disconnect(); items.forEach((item) => item.set(0)); items.clear(); }
-  };
+  const noop = () => {};
+  return { state: { v: 0, s: 0, sv: 0, dir: 1 }, add: noop, remove: noop, refresh: noop, step: noop, destroy: noop };
 }
 
 /* ════════════════════════════════════════════════════════════════════════════════════════

@@ -50,7 +50,7 @@ ${robotsMeta}<title>${esc(title)}</title>
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:locale" content="es_AR">
-${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
+${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/svg+xml" href="favicon.svg">\n<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
 ${withFonts ? FONTS : ''}${CSS}
 </style>
 ${extraHead}</head>
@@ -62,7 +62,7 @@ ${body}
 }
 
 const footer = (fuentes) => `<footer><div class="w">
-<div class="ft"><div class="ft-m"><img class="lg-ft" src="images/logo-sm.png" width="360" height="144" alt=""><p class="ft-b">${esc(NAME)}</p><p>${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}</p><p class="ft-a">Antes: ${esc(L.direccionAnterior)}</p></div>
+<div class="ft"><div class="ft-m"><span class="sun" aria-hidden="true"></span><p class="ft-b">${esc(NAME)}</p><p>${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}</p><p class="ft-a">Antes: ${esc(L.direccionAnterior)}</p></div>
 <div><p class="ft-k">Contacto</p>${C.phoneTel ? `<p><a href="tel:${C.phoneTel}">${esc(C.phone)}</a></p>` : ''}${C.whatsApp ? `<p><a href="${WA}" ${EXT}>WhatsApp ${esc(C.whatsAppDisplay)}</a></p>` : ''}${C.email ? `<p><a href="mailto:${esc(C.email)}">${esc(C.email)}</a></p>` : ''}</div>
 <div><p class="ft-k">Redes</p><p><a href="${FB}" ${EXT}>Facebook</a></p><p><a href="${IG}" ${EXT}>Instagram</a></p><p><a href="${GWEB}" ${EXT}>${esc(GNAME)}</a></p></div></div>
 <p class="ft-c">© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, ${esc(BNAFECHA)})</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
@@ -70,40 +70,21 @@ const footer = (fuentes) => `<footer><div class="w">
 const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
-<header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
-<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a><details class="nav-more"><summary>Más</summary><div class="nav-more-links"><a href="${pre}#tu-usado">Tu usado</a><a href="${pre}#busqueda">Tu búsqueda</a><a href="${pre}#visita">Visita</a></div></details></nav>
-<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span>Menú</span></button>
+<header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><span class="sun" aria-hidden="true"></span><span class="mk"><b>Horizonte</b><small>Automotores</small></span></a>
+<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a>${autos.length > 1 ? `<a href="${pre}#comparador">Comparar</a>` : ''}<a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;
 
 // ---- unidades ----
 const fmt = (n) => n.toLocaleString('es-AR');
-const norm = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-const jsonSafe = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
-// Muestra de color solo para dibujar el punto junto al nombre del color publicado; no es un dato de la ficha.
-const SW = { blanco: '#f1f1ee', negro: '#161b1d', rojo: '#c21f1f', 'gris plata': '#b4bbbe', plata: '#b4bbbe', gris: '#8a9296', azul: '#1e4a8c', verde: '#2f6b45', bordo: '#6d1a2a', beige: '#cdbb98', dorado: '#b99a45', naranja: '#d9742a', amarillo: '#e5c717', marron: '#6b4a32' };
-const swatch = (c) => SW[norm(c || '')] || null;
-const marcaDe = (a) => a.marca || a.titulo.split(' ')[0];
-const sinMarca = (a) => { const m = marcaDe(a); return a.titulo.startsWith(m + ' ') ? a.titulo.slice(m.length + 1) : a.titulo; };
-const consultaHref = (a) => wa(`Hola! Quiero consultar por el ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`) || a.url;
 const card = (a) => {
-  const i = autos.indexOf(a);
-  const marca = marcaDe(a);
-  const sw = swatch(a.color);
-  const fila = (k, v) => (v ? `<div><dt>${k}</dt><dd>${v}</dd></div>` : '');
+  const meta = [a.anio, a.transmision, a.km != null ? `${fmt(a.km)} km` : '', a.combustible, a.color].filter((x) => x !== undefined && x !== '' && x !== null).join(' · ');
   const pr = a.precio ? `<p class="pr">${a.precio.moneda === 'USD' ? 'US$ ' : '$ '}${fmt(a.precio.monto)}</p><p class="n">Precio publicado el ${esc(fdate(a.precio.fecha))}; puede haber cambiado.</p>` : '<p class="pr">Consultar precio</p>';
-  const busca = norm([a.titulo, marca, a.modelo, a.version, a.cilindrada, a.color, a.anio].filter((x) => x !== undefined && x !== null && x !== '').join(' '));
-  return `<li class="car" data-t="${esc(busca)}" data-i="${i}">
-<div class="car-h"><span class="car-b">${esc(marca)}</span><label class="car-c" hidden><input type="checkbox" value="${i}" aria-label="Comparar ${esc(a.titulo)}"><span>Comparar</span></label></div>
-<h3>${esc(sinMarca(a))}</h3>
-<div class="car-s"><p><b${a.anio == null ? ' class="nd"' : ''}>${a.anio != null ? a.anio : 'Sin dato'}</b><small>Año</small></p><p><b${a.km == null ? ' class="nd"' : ''}>${a.km != null ? fmt(a.km) : 'No publicado'}</b><small>Kilómetros</small></p></div>
-<dl class="sp">${fila('Caja', a.transmision ? esc(a.transmision) : '')}${fila('Combustible', a.combustible ? esc(a.combustible) : '')}${fila('Color', a.color ? `${sw ? `<i class="sw" style="--sw:${sw}"></i>` : ''}${esc(a.color)}` : '')}</dl>
-${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Consultar' : 'Ver publicación'}</a>
-</li>`;
+  const link = wa(`Hola! Quiero consultar por el ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`) || a.url;
+  return `<li class="car"><h3>${esc(a.titulo)}</h3>${meta ? `<p class="m">${esc(meta)}</p>` : ''}${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<a class="btn sm" href="${esc(link)}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Consultar' : 'Ver publicación'}</a></li>`;
 };
-const catData = autos.map((a, i) => ({ i, titulo: a.titulo, marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
 const unidades = autos.length
-  ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<p class="src">Fichas del catálogo público de ${esc(GNAME)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
+  ? `<ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<p class="src">Fichas del catálogo público de ${esc(GNAME)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
 
 // ---- contacto ----
@@ -128,10 +109,10 @@ const dl = [
 
 // ---- barra de datos, sucursales del grupo, preguntas ----
 const bar = `<div class="bar" role="region" aria-label="Datos rápidos"><div class="w"><ul>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="k">Dirección</span><b>${esc(L.address.replace('Avenida', 'Av.'))}</b><small>${esc(L.city)}${L.direccionAnterior ? ` · antes ${esc(L.direccionAnterior)}` : ''}</small></li>
-${C.phoneTel ? `<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span class="k">Teléfono</span><a href="tel:${C.phoneTel}">${esc(C.phone)}</a><small>Llamanos</small></li>` : ''}
-${C.whatsApp ? `<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg><span class="k">WhatsApp</span><a href="${WA}" ${EXT}>${esc(C.whatsAppDisplay)}</a><small>Escribinos</small></li>` : ''}
-${H.display ? `<li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg><span class="k">Horario</span><b data-estado>${esc(H.corto)}</b><small>${estadoP ? 'Hora de Argentina' : ''}</small></li>` : ''}
+<li><span class="k">Dirección</span><b>${esc(L.address.replace('Avenida', 'Av.'))}</b><small>${esc(L.city)}${L.direccionAnterior ? ` · antes ${esc(L.direccionAnterior)}` : ''}</small></li>
+${C.phoneTel ? `<li><span class="k">Teléfono</span><a href="tel:${C.phoneTel}">${esc(C.phone)}</a><small>Llamanos</small></li>` : ''}
+${C.whatsApp ? `<li><span class="k">WhatsApp</span><a href="${WA}" ${EXT}>${esc(C.whatsAppDisplay)}</a><small>Escribinos</small></li>` : ''}
+${H.display ? `<li><span class="k">Horario</span><b data-estado>${esc(H.corto)}</b><small>${estadoP ? 'Hora de Argentina' : ''}</small></li>` : ''}
 </ul></div></div>`;
 
 const suc = (D.identity.grupoSucursales || []).filter((x) => !x.esta);
@@ -162,7 +143,7 @@ const glos = [
   ['Parte de pago', 'Entregar tu usado como parte del precio de otra unidad.'],
 ].map(([t, d]) => qa(t, d)).join('\n');
 const secPreguntas = `
-<section class="lt" id="preguntas" aria-labelledby="preg-t"><div class="w">
+<section id="preguntas" aria-labelledby="preg-t"><div class="w">
 <p class="ey">Preguntas</p><h2 id="preg-t">Lo que <em>conviene saber</em></h2>
 <p class="sec-p">Respuestas cortas sobre cómo trabajamos y un glosario con las palabras que aparecen al comprar un usado. Información general de octubre de 2026: no es una condición ni una promesa de ${esc(NAME)}.</p>
 <div class="qa"><div><h3>Preguntas frecuentes</h3>${faq}</div><div><h3>Glosario del comprador</h3>${glos}</div></div>
@@ -176,16 +157,27 @@ const openSpec = semana.flatMap((g) => g.rangos.map((r) => ({ '@type': 'OpeningH
 
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
 const COORD = L.coordenadas;
+const jsonSafe = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
+const cmpData = autos.map((a) => ({ titulo: a.titulo, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, precio: a.precio || null, url: a.url }));
+const secComparador = autos.length > 1 ? `
+<section id="comparador" aria-labelledby="cmp-t"><div class="w">
+<p class="ey">Comparador</p><h2 id="cmp-t">Compará <em>unidades</em></h2>
+<p class="sec-p">Elegí hasta tres y mirá año, kilometraje y precio publicado lado a lado. Los datos son los de cada ficha pública.</p>
+<noscript><p id="cmp-ns" class="src">El comparador necesita JavaScript. Los datos de cada unidad están en la sección Unidades.</p></noscript>
+<div id="cmp" hidden><div class="cmp-pick"></div><p class="cmp-st" role="status" aria-live="polite"></p><div class="cmp-out"></div></div>
+<script type="application/json" id="cmp-data">${jsonSafe(cmpData)}</script>
+</div></section>` : '';
+
 const pasoFin = hasSvc('permuta') ? 'Consultá la financiación para la unidad que elijas y, si querés, entregá tu usado como parte de pago.' : 'Consultá la financiación para la unidad que elijas.';
 const secComo = `
 <section id="como-comprar" aria-labelledby="como-t"><div class="w">
 <p class="ey">Cómo comprar</p><h2 id="como-t">Del primer mensaje a tu <em>visita</em></h2>
 <p class="sec-p">Un camino simple para llegar a la unidad que te interesa.</p>
-<ol class="ruta">
-<li style="--ph:.3"><i class="sol" aria-hidden="true"><s></s></i><h3>Elegí</h3><p>Filtrá las unidades publicadas y mirá año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a cuatro con el botón Comparar de cada ficha.' : ''}</p></li>
-<li style="--ph:.55"><i class="sol" aria-hidden="true"><s></s></i><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
-<li style="--ph:.8"><i class="sol" aria-hidden="true"><s></s></i><h3>Visitá</h3><p>Coordiná una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
-<li style="--ph:1"><i class="sol" aria-hidden="true"><s></s></i><h3>Financiá</h3><p>${pasoFin}</p></li>
+<ol class="steps">
+<li><h3>Elegí</h3><p>Mirá las unidades publicadas con año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a tres.' : ''}</p></li>
+<li><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
+<li><h3>Visitá</h3><p>Coordiná una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
+<li><h3>Financiá</h3><p>${pasoFin}</p></li>
 </ol>
 </div></section>`;
 
@@ -207,7 +199,7 @@ const secUsado = hasSvc('permuta') ? `
 </div></section>` : '';
 
 const secBusqueda = `
-<section class="lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
+<section id="busqueda" aria-labelledby="bus-t"><div class="w">
 <p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 <form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
@@ -242,14 +234,6 @@ ${H.display ? `<p class="estado" data-estado hidden></p><p class="src">Horario: 
 <div class="row"><a class="btn p" href="reserva.html">Coordiná tu visita</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div>
 </div></section>`;
 
-const secQuick = `
-<section class="quick-proof" id="resumen" aria-labelledby="resumen-t"><div class="w">
-<div class="quick-intro"><p class="ey">En pocas palabras</p><h2 id="resumen-t">Comprar mejor empieza por <em>mirar claro</em></h2><p>Un catálogo acotado, información visible y contacto directo para decidir sin vueltas.</p></div>
-<div class="quick-grid">
-<a class="quick-card" href="#unidades"><span class="quick-number">0${autos.length}</span><span><b>unidades publicadas</b><small>Con año, kilometraje y precio relevado.</small></span><i aria-hidden="true">↗</i></a>
-<a class="quick-card" href="#como-comprar"><span class="quick-number">04</span><span><b>pasos simples</b><small>Elegí, consultá, visitá y financiá.</small></span><i aria-hidden="true">↗</i></a>
-<a class="quick-card" href="#contacto"><span class="quick-number">01</span><span><b>contacto directo</b><small>WhatsApp, teléfono y ubicación a mano.</small></span><i aria-hidden="true">↗</i></a>
-</div></div></section>`;
 const mapa = COORD ? `
 <div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
@@ -269,29 +253,27 @@ const index = page({
   title: `${NAME} · Autos y motos en ${L.city}, ${L.province}`,
   desc: `${NAME} en ${L.city}, ${L.province}: autos y motos con financiación. Visitanos en ${L.address} o mirá las unidades en Facebook e Instagram.`,
   file: 'index.html',
-  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n<script defer src="js/horarios.js"></script>
-<script defer src="js/site.js"></script>\n`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n<script defer src="js/horarios.js"></script>\n`,
   body: `${header()}
 <main id="top">
 <div class="hero"><div class="hx-copy">
-<p class="ey">Tu próximo vehículo te espera</p>
+<p class="ey">${esc(L.city)} · ${esc(L.province)}</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
-<p class="lead">Concesionario del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago.</p>
-<div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn lnk" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
-<div class="hx-sun" aria-hidden="true"><span class="orb"></span></div>
-<a class="hx-down" href="#unidades">Ver más</a>
-</div>
+<p class="lead">Concesionario de ${esc(L.city)} del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago: mirá las unidades y visitanos en ${esc(L.address)}.</p>
+<div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
+<div class="hx-card"><p class="k">Visitanos</p><p class="v">${esc(L.address)}<br>${esc(L.city)}, ${esc(L.province)}</p>${L.direccionAnterior ? `<p class="ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}<a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div>
 </div>
 ${bar}
-${secQuick}
-<section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
+
+<section id="unidades" aria-labelledby="unidades-t"><div class="w">
 <p class="ey">Unidades</p><h2 id="unidades-t">Nuestras <em>unidades</em></h2>
 <p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
 ${unidades}
 </div></section>
+${secComparador}
 ${secComo}
 
-<section class="lt" id="financiacion" aria-labelledby="fin-t"><div class="w">
+<section id="financiacion" aria-labelledby="fin-t"><div class="w">
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
 <div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de ${esc(BNAFECHA)}). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
@@ -304,8 +286,8 @@ ${secGuia}
 ${secPreguntas}
 ${secVisita}
 
-<section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
-<p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
+<section id="nosotros" aria-labelledby="nos-t"><div class="w">
+<p class="ey">Nosotros</p><h2 id="nos-t">Quiénes <em>somos</em></h2>
 <p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}. ${esc(D.presentacion.antiguedad)}</p>
 <div class="stats"><div class="stat"><b>10</b><span>años de respaldo en el mercado regional, según su página de Facebook</span></div>${autos.length ? `<div class="stat"><b>${autos.length}</b><span>unidades publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></div>` : ''}<div class="stat"><b>${suc.length + 1}</b><span>puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></div></div>
 <div class="cards"><div class="card"><h3>Autos y motos</h3><p>Usados publicados para ${esc(L.city)} y financiación para llevarlos.</p></div>${hasSvc('permuta') ? `<div class="card"><h3>Tu usado cuenta</h3><p>Se reciben usados como parte de pago${hasSvc('tasacion') ? ' y la tasación es sin cargo' : ''}, según informa ${esc(GNAME)}.</p></div>` : ''}<div class="card"><h3>Respaldo del grupo</h3><p>Forma parte del ${esc(GNAME)}, con sucursales en Paraná y Santa Fe.</p></div></div>
@@ -342,13 +324,12 @@ ${footer(false)}`,
 });
 
 const home404 = siteUrl || './';
-const logo404 = 'data:image/png;base64,' + fs.readFileSync(path.join(root, 'images', 'logo-sm.png')).toString('base64');
 const nf = page({
   title: `Página no encontrada · ${NAME}`,
   desc: `La página que buscás no existe. Volvé al inicio de ${NAME}.`,
   file: '404.html', withFonts: false,
   extraHead: siteUrl ? '' : '<script>(function(){var s=location.pathname.split("/").filter(Boolean),b=/github\\.io$/.test(location.hostname)&&s.length?"/"+s[0]+"/":"/";document.addEventListener("DOMContentLoaded",function(){document.getElementById("home").href=b})})()</script>\n',
-  body: `<main class="nf"><div><img class="lg-404" src="${logo404}" width="360" height="144" alt="${esc(NAME)}"><p class="ey">Error 404</p><h1>No encontramos <em>esa página</em></h1><p>Puede que el enlace esté mal escrito o que la página ya no exista.</p><a id="home" class="btn p" href="${home404}">Volver al inicio</a></div></main>`,
+  body: `<main class="nf"><div><p class="ey">Error 404</p><h1>No encontramos <em>esa página</em></h1><p>Puede que el enlace esté mal escrito o que la página ya no exista.</p><a id="home" class="btn p" href="${home404}">Volver al inicio</a></div></main>`,
 });
 
 
@@ -368,14 +349,13 @@ ${robotsMeta}<title>Coordiná tu visita · ${esc(NAME)}</title>
 <meta property="og:title" content="Coordiná tu visita · ${esc(NAME)}">
 <meta property="og:locale" content="es_AR">
 ${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
-<link rel="apple-touch-icon" href="images/icon-180.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="css/reserva.css"><link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
 <main id="booking" data-step="month" data-closed="${closedDays.join(',')}" data-morning-only="${morningOnly.join(',')}">
   <header class="booking-nav">
-    <a class="brand" href="index.html" aria-label="Volver a ${esc(NAME)}"><img class="lg-bk" src="images/logo-sm.png" width="360" height="144" alt="${esc(NAME)}"></a>
+    <a class="brand" href="index.html" aria-label="Volver a ${esc(NAME)}">${esc(NAME)}</a>
     <p class="eyebrow">Coordiná tu visita <span aria-hidden="true">/</span> consulta</p>
     <button class="back" id="back" type="button" aria-label="Volver un paso" hidden>← Atrás</button>
   </header>
@@ -428,7 +408,7 @@ write('robots.txt', demo ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllo
 const smPath = path.join(root, 'sitemap.xml');
 if (!demo && siteUrl) write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${siteUrl}</loc></url>\n  <url><loc>${siteUrl}reserva.html</loc></url>\n  <url><loc>${siteUrl}privacidad.html</loc></url>\n</urlset>\n`);
 else if (fs.existsSync(smPath)) fs.rmSync(smPath);
-write('site.webmanifest', JSON.stringify({ name: NAME, short_name: 'Horizonte', description: `Autos y motos en ${L.city}, ${L.province}.`, lang: 'es-AR', start_url: './', scope: './', display: 'standalone', background_color: '#0a1012', theme_color: '#0a1012', icons: [{ src: 'images/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' }, { src: 'images/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' }] }, null, 2) + '\n');
+write('site.webmanifest', JSON.stringify({ name: NAME, short_name: 'Horizonte', description: `Autos y motos en ${L.city}, ${L.province}.`, lang: 'es-AR', start_url: './', scope: './', display: 'standalone', background_color: '#0a1012', theme_color: '#0a1012', icons: [{ src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }] }, null, 2) + '\n');
 write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#0a1012"/><path d="M9 44a23 23 0 0 1 46 0z" fill="#f2d21b"/><path d="M25 28v14M39 28v14M25 35h14" stroke="#0a1012" stroke-width="4.5" fill="none"/><path d="M6 50h52" stroke="#fff" stroke-width="4" fill="none"/></svg>\n');
 
 console.log(`Generado: index.html (${(index.length / 1024).toFixed(1)} KB), privacidad.html, reserva.html, 404.html · ${autos.length} unidades · modo ${demo ? 'demo (noindex)' : 'producción'}`);

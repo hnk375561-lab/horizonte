@@ -1,0 +1,4 @@
+Borrá estos archivos del proyecto (ya no se usan):
+js/app.js
+js/lugar.js
+css/lugar.css
