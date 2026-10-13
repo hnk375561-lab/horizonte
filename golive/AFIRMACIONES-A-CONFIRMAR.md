@@ -9,7 +9,7 @@ Estado al 12/10/2026 (incluye la investigación V2 y el expediente OSINT textual
 | Autos y motos | Introducción de la página de Facebook | Dicho por la propia agencia; las motos no figuran en el catálogo del grupo (P8) |
 | Usados multimarca | grupoalmafuerte.com (Nosotros y Contacto: «Usados multimarca») | Fuente oficial del grupo |
 | Financiación (condiciones según unidad y solicitante) | Facebook; grupoalmafuerte.com/contacto (alternativas propias y bancarias) | Dicho por la agencia y el grupo; condiciones no publicadas |
-| Figura en el listado de Créditos Más Autos (Banco Nación, 16/07/2025) | PDF del Banco Nación | Verificado; el expediente textual V2 reporta la misma fila en listados hasta el 19/05/2026 y prensa del 09/07/2026, sin recontrastar; falta abrir el PDF de 2026 y actualizar fecha y enlace (P13) |
+| Figura en el listado de Créditos Más Autos (Banco Nación, mayo de 2026) | PDF del Banco Nación fechado 19/05/2026 (además de versiones de 2025 y nota de Vorterix del 07/09/2026) | Verificado en el texto indexado del PDF el 12/10/2026; antes de producción, buscar si hay una versión más nueva (P13, resuelto) |
 | Recibimos usados como parte de pago; tasación sin cargo | grupoalmafuerte.com/contacto (FAQ) y fichas de las unidades («Tomamos tu usado») | Atribuido al grupo; confirmar para María Grande (P8) |
 | Revisión técnica de los usados y entrega con garantía (condiciones según vehículo) | grupoalmafuerte.com/contacto (FAQ) y fichas | Atribuido al grupo; condiciones concretas sin documentar (P8) |
 | Forma parte del Grupo Almafuerte | Sitio oficial del grupo (sucursal «Concesionario Usados María Grande»); Instagram; confirmación del responsable del proyecto | Naturaleza de la relación sin definir (P15, P7) |

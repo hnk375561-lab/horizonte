@@ -24,7 +24,9 @@ const GWEB = D.identity.grupoWeb;
 const GCAT = D.stock.catalogoUrl;
 const hasSvc = (k) => D.services.published.some((x) => x.clave === k);
 const fdate = (iso) => iso.split('-').reverse().join('/');
-const BNA = D.services.published.find((s) => s.fuente.includes('bna.com.ar')).fuente;
+const BNASVC = D.services.published.find((s) => s.fuente.includes('bna.com.ar'));
+const BNA = BNASVC.fuente;
+const BNAFECHA = BNASVC.periodo;
 const wa = (txt) => (C.whatsApp ? `https://wa.me/${C.whatsApp}?text=${encodeURIComponent(txt)}` : null);
 const WA = wa('Hola! Quiero consultar por las unidades disponibles.');
 const EXT = 'target="_blank" rel="noopener noreferrer"';
@@ -59,7 +61,7 @@ ${body}
 `;
 }
 
-const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025)</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
+const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, ${esc(BNAFECHA)})</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
 
 const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
@@ -211,7 +213,7 @@ ${secComo}
 <section id="financiacion" aria-labelledby="fin-t"><div class="w">
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
-<div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado del 16 de julio de 2025). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
+<div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de ${esc(BNAFECHA)}). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
 <p class="src">Servicios según lo informado por ${esc(GNAME)} en <a href="${GWEB}" ${EXT}>su sitio</a>.</p>
 </div></section>
 

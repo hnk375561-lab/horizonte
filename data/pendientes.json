@@ -48,7 +48,7 @@
       "tema": "Nombre y mención del Grupo Almafuerte",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "El sitio dice «forma parte del Grupo Almafuerte» (nombre de la web oficial). La biografía de Instagram dice «Grupo Automóviles Almafuerte». El dueño confirma cuál usar y con qué texto."
+      "como": "El sitio dice «forma parte del Grupo Almafuerte» (nombre de la web oficial). La biografía de Instagram dice «Grupo Automóviles Almafuerte». El dueño confirma cuál usar y con qué texto. Dato nuevo: los listados del Banco Nación incluyen «Automóviles Almafuerte» (Paraná, Av. Almafuerte 960); no resuelve el nombre del grupo."
     },
     {
       "id": "P8",
@@ -89,15 +89,15 @@
       "id": "P13",
       "tema": "Vigencia del listado del Banco Nación",
       "bloqueante": false,
-      "estado": "abierto",
-      "como": "El sitio cita el listado del 16/07/2025. El expediente OSINT textual V2 (12/10/2026) reporta la misma fila en listados de agosto y septiembre de 2025 y en el del 19/05/2026 (https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf), y en notas de prensa del 17/07/2025 y 09/07/2026. Abrir ese PDF; si la fila está, actualizar la fecha y el enlace en scripts/build-index.mjs (hoy fijos a 16/07/2025). No publicar tasas ni plazos del programa como oferta de la agencia."
+      "estado": "resuelto",
+      "como": "Resuelto el 12/10/2026: el sitio cita el listado del 19/05/2026 (https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf), que contiene la fila de Horizonte (verificado en el texto indexado del PDF). La V3 suma una nota de Vorterix del 07/09/2026 y un PDF sin fecha. Antes de producción, reabrir el listado vigente en bna.com.ar/home/masautos y actualizar `periodo` en services.published (clave bna) si hay una versión más nueva. No publicar tasas ni plazos del programa como oferta de la agencia."
     },
     {
       "id": "P14",
       "tema": "Afiliación a la CCA Entre Ríos",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Horizonte figura en https://ccaentrerios.org/agencias/ (con otro teléfono: 343 405-0787). Confirmar con el dueño que sigue afiliado y, si quiere, sumar el dato al sitio."
+      "como": "Horizonte figura en https://ccaentrerios.org/agencias/ (con otro teléfono: 343 405-0787). Confirmar con el dueño que sigue afiliado y, si quiere, sumar el dato al sitio. La V3 reporta que la página de la CCA dice mostrar a «algunos» de sus socios: apoya la afiliación, pero no la prueba."
     },
     {
       "id": "P15",
@@ -118,7 +118,7 @@
       "tema": "Domicilio alternativo Av. Argentina 536",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021."
+      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021. La V3 confirma que el 536 aparece en Entre Ríos Total (dos categorías del mismo sitio), TodosNegocios y Guía Clarín, y que la ficha de TodosNegocios del 536 trae un encabezado de Santiago del Estero. Sigue sin cronología."
     },
     {
       "id": "P18",

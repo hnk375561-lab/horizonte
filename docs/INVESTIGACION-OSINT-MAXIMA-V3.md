@@ -1,0 +1,1505 @@
+# HORIZONTE AUTOMOTORES — EXPEDIENTE MADRE OSINT TEXTUAL
+**Reconstrucción documental multifuente de información comercial pública**
+
+Fecha de consulta y cierre de esta versión: 12/10/2026
+Ámbito: Horizonte Automotores, presuntamente en María Grande, Entre Ríos, Argentina
+Formato: Markdown documental
+Versión: 3.0 — expediente ampliado con auditoría de fuentes y actualización de octubre de 2026
+
+## 0. ALCANCE, REGLAS Y LÍMITES
+
+OBJETIVO
+Documentar información textual pública sobre el comercio identificado como Horizonte Automotores en María Grande, Entre Ríos, distinguir las referencias atribuibles de los datos contradictorios y dejar trazabilidad de las fuentes consultadas.
+
+REGLAS APLICADAS
+- No se contactó al comercio ni a personas relacionadas.
+- No se inició sesión en cuentas sociales ni se eludieron restricciones técnicas.
+- No se usaron fotografías ni videos como evidencia para completar datos textuales.
+- No se asignó una razón social o CUIT sin prueba pública suficiente.
+- No se trató la aparición en un directorio como prueba de vigencia actual.
+- No se contaron directorios que parecen copiar el mismo registro como corroboraciones independientes.
+- Las fechas indicadas son las fechas visibles de publicación/actualización o la fecha de consulta. Cuando una fuente no ofrece fecha precisa, se declara.
+- “No localizado” significa que no apareció en las búsquedas realizadas o no pudo verificarse; no demuestra inexistencia.
+
+LIMITACIONES GENERALES
+La investigación se realizó mediante búsquedas web y apertura de páginas públicas accesibles en esta sesión. Algunas redes sociales limitan la lectura automatizada; la ficha de Facebook enlazada por Cylex devolvió “Online fetch throttled”. No se pudo extraer de manera fiable un historial completo de publicaciones sociales ni un catálogo histórico de vehículos con todos sus campos. No se afirma que se haya consultado exhaustivamente cada página indexada de Internet.
+
+## 1. RESUMEN DE HALLAZGOS VERIFICABLES
+
+1. Hay varias fuentes que asocian el nombre Horizonte Automotores con María Grande, Entre Ríos, y con Avenida Argentina 2021: TodosNegocios, Cylex/Yably, GTM, WorldOrgs y el listado de agencias de CCA Entre Ríos.
+2. El teléfono 0343 461-8388 aparece en TodosNegocios, Cylex, Yably y Tellows. Estas fuentes pueden reutilizar datos de directorios comunes, por lo que la repetición no equivale necesariamente a cuatro verificaciones independientes.
+3. CCA Entre Ríos publica “HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787”. Es una referencia sectorial distinta y relevante, pero no aclara si el teléfono nuevo reemplaza a los anteriores.
+4. Existe una contradicción importante: EntreRíosTotal registra “Horizonte Automotores, María Grande — Avda. Argentina 536 — 0343 4941092”, mientras que otras fuentes enlazan el mismo nombre con Av. Argentina 2021. Podría ser un dato antiguo, una ficha duplicada o una asociación incorrecta; no hay prueba suficiente para resolverlo.
+5. TodosNegocios combina la dirección 2021 con los teléfonos 0343 461-8388 y 0343 494-1092. Esto sugiere que al menos ese directorio considera ambos números vinculados al registro de 2021, aunque no prueba que ambos sigan activos.
+6. Cylex declara que su registro fue actualizado el 13/09/2024. Publica horario de lunes a viernes 09:30–18:00, sábados 08:30–12:30 y domingos cerrado.
+7. GTM publica otro horario: lunes a viernes 08:30–12:30 y 16:00–20:00; sábados 08:30–12:30; domingos cerrado. La diferencia de horario de días laborables es una contradicción no resuelta.
+8. Cylex muestra una descripción textual: “RESERVAMOS TU AUTO ONLINE - AUTOMOTORES Y MOTOS 0 KM Y USADOS - VENTA - PERMUTAS - AMPLIA FINANCIACIÓN”. Es una afirmación comercial publicada por el directorio, no una confirmación independiente de que todos los servicios sigan vigentes.
+9. CCA Entre Ríos incluye la agencia en su directorio de agencias. Esto demuestra que el nombre aparece en esa lista pública; no permite determinar por sí solo la vigencia actual de una afiliación individual.
+10. Listados públicos de Banco Nación para la línea “+Autos con BNA” incluyen la fila “Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021”. Se localizó en un documento PDF del 16/07/2025 y en copias/versiones posteriores, y también en el listado de mayo de 2026. La grafía “Automores” parece una errata del listado. La inclusión es evidencia documental de listado/adherencia en el contexto de ese programa, no prueba de que las condiciones estén disponibles hoy.
+11. Cylex muestra una puntuación de 4,1/5 y 15 opiniones, atribuidas a una fuente de reseñas. Yably muestra 4,20/5 y 17 reseñas. GTM muestra 8,4/10 y 27 reseñas, pero su texto incluye valoraciones generales y descripciones que no deben tratarse como citas directas de clientes. Las cantidades y puntuaciones difieren según plataforma y fecha.
+12. La ficha de Facebook enlazada por Cylex apunta a https://www.facebook.com/horizonteautos/ pero no pudo leerse por limitación técnica. El nombre de usuario es una pista útil, no prueba de actividad actual ni de que todo el contenido sea accesible.
+13. No se localizó un sitio web corporativo propio inequívoco. TodosNegocios afirma que no hay web propia y que el comercio está en Facebook; esa afirmación refleja la información del directorio, no una búsqueda técnica exhaustiva de dominios.
+14. No se localizó una razón social ni CUIT atribuible con confianza al nombre comercial.
+15. No se recuperó un inventario histórico de vehículos con suficiente evidencia textual individual como para completar una tabla fiable de modelos, versiones, años, kilometrajes y precios. No se inventan vehículos.
+
+## 2. IDENTIDAD COMERCIAL Y DESAMBIGUACIÓN
+
+Nombre principal observado:
+- Horizonte Automotores.
+
+Variantes observadas:
+- HORIZONTE AUTOMOTORES (CCA Entre Ríos).
+- Horizonte Automotores (TodosNegocios, Cylex, Yably, Tellows, GTM, WorldOrgs, EntreRíosTotal).
+- Horizonte Automores (errata aparente en listados de Banco Nación).
+
+Actividad atribuida por fuentes:
+- Concesionario/agencia de automóviles.
+- Venta de vehículos automotores.
+- El texto comercial de Cylex menciona autos y motos, 0 km y usados, ventas, permutas y financiación amplia.
+
+Localidad más consistentemente asociada:
+- María Grande, Entre Ríos, Argentina.
+- Código postal visible en varios directorios: 3133; GTM y WorldOrgs también usan E3133.
+
+Dirección más consistentemente asociada:
+- Avenida Argentina 2021 / Av Argentina 2021 / Av. Argentina 2021.
+
+Dirección contradictoria:
+- Avda. Argentina 536, en EntreRíosTotal y una ficha separada de TodosNegocios centrada en el teléfono 0343 494-1092.
+
+Criterio de atribución:
+La coincidencia del nombre, localidad, teléfono 0343 494-1092 y rubro en EntreRíosTotal hace plausible que esa ficha se refiera al mismo negocio o a un registro histórico, pero la dirección 536 no se debe combinar sin advertencia con la dirección 2021. La dirección 2021 tiene más corroboración textual en las fuentes consultadas. No se puede establecer una cronología de mudanza.
+
+Identidad legal:
+- Razón social: DESCONOCIDA.
+- CUIT: DESCONOCIDO.
+- Fecha de fundación: DESCONOCIDA.
+- Titularidad/propietarios: no determinados.
+No se atribuyen nombres de personas ni registros societarios por similitud nominal.
+
+## 3. MATRIZ DE CONTACTO, DOMICILIOS Y TELÉFONOS
+
+DATO C-01 — Teléfono 0343 461-8388
+Estado: CORROBORADO COMO TELÉFONO PUBLICADO; vigencia actual no confirmada.
+Fuentes:
+- TodosNegocios: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+- Cylex: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+- Yably: https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+- Tellows: https://ar.tellows.net/num/03434618388
+Formatos vistos:
+- 0343 461-8388
+- 03434618388
+- +543434618388 (Tellows)
+Observación: varias páginas pueden derivar de una ficha de directorio común. No se hizo llamada de prueba.
+
+DATO C-02 — Teléfono 0343 494-1092
+Estado: PUBLICADO EN DIRECTORIOS; asociación histórica/actual no resuelta.
+Fuentes:
+- TodosNegocios, registro que también muestra Av. Argentina 2021: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+- TodosNegocios, registro centrado en 0343 494-1092 y dirección Av Argentina 536: https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+- EntreRíosTotal: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+Observación: no asumir que es una segunda línea activa ni que la dirección 536 sea actual.
+
+DATO C-03 — Teléfono 343 405-0787
+Estado: PUBLICADO POR CCA ENTRE RÍOS; vigencia y relación con los otros números no confirmadas.
+Fuente:
+- https://ccaentrerios.org/agencias/
+Texto de la fila: “MARÍA GRANDE | HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787”.
+Variantes normalizadas:
+- 343 4050787
+- 3434050787
+- +54 343 405-0787 (normalización orientativa del formato nacional, no comprobación de WhatsApp).
+No se realizó llamada ni se verificó WhatsApp.
+
+DATO D-01 — Avenida Argentina 2021
+Estado: CORROBORADO COMO DOMICILIO PUBLICADO.
+Fuentes:
+- TodosNegocios: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+- Cylex: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+- Yably: https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+- GTM: https://gtm.com.ar/concesionario/horizonte-automotores/
+- CCA Entre Ríos: https://ccaentrerios.org/agencias/
+- WorldOrgs: https://ar.worldorgs.com/catalogar/mar%C3%ADa-grande/agencia-de-colocaci%C3%B3n
+- Banco Nación, listado de concesionarias adheridas: ver fuentes BNA en sección 11.
+
+DATO D-02 — Avda. Argentina 536
+Estado: CONTRADICTORIO / POSIBLE REGISTRO HISTÓRICO O DUPLICADO.
+Fuentes:
+- EntreRíosTotal: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+- TodosNegocios, ficha centrada en 0343 494-1092: https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+Observación: no se encontró una fecha de vigencia ni prueba de mudanza entre 536 y 2021. No utilizar 536 como domicilio actual sin corroboración adicional.
+
+DATO D-03 — Código postal
+Estado: PUBLICADO EN DIRECTORIOS.
+- 3133 aparece en Cylex y Yably.
+- E3133 aparece en TodosNegocios, GTM y WorldOrgs.
+No se consultó una fuente postal oficial para verificar el formato.
+
+Correo electrónico:
+- Cylex muestra un enlace de correo como “[email protected]” en la página renderizada, pero la dirección concreta no quedó recuperada en texto legible. No se inventa una dirección de correo.
+- EntreRíosTotal muestra un botón/enlace de correo para la ficha, sin exponer en el texto recuperado una dirección verificable.
+Estado: DIRECCIÓN DE EMAIL EXACTA DESCONOCIDA.
+
+## 4. HORARIOS PUBLICADOS Y CONTRADICCIONES
+
+FUENTE H-01 — TodosNegocios
+URL: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+Horario publicado:
+- Lunes a viernes: 09:30–18:00.
+- Sábado: 08:30–12:30.
+- Domingo: cerrado.
+Consulta: 12/10/2026; página rastreada por buscador aproximadamente cuatro meses antes de la consulta actual, con datos potencialmente heredados.
+
+FUENTE H-02 — Cylex
+URL: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Horario publicado:
+- Lunes a viernes: 09:30–18:00.
+- Sábado: 08:30–12:30.
+- Domingo: cerrado.
+La página indica “actualizado el 13/9/2024”.
+
+FUENTE H-03 — Tellows
+URL: https://ar.tellows.net/num/03434618388
+Horario publicado:
+- Lunes a viernes: 09:30–18:00.
+- Sábado: 08:30–12:30.
+- Domingo: cerrado.
+No se identificó una fecha de actualización del horario en el texto leído.
+
+FUENTE H-04 — GTM
+URL: https://gtm.com.ar/concesionario/horizonte-automotores/
+Horario publicado:
+- Lunes a viernes: 08:30–12:30 y 16:00–20:00.
+- Sábado: 08:30–12:30.
+- Domingo: cerrado.
+Página rastreada aproximadamente tres meses antes de la consulta actual.
+
+ANÁLISIS
+Las fuentes coinciden en apertura los sábados por la mañana y cierre los domingos, pero divergen en los horarios de lunes a viernes. TodosNegocios, Cylex y Tellows repiten 09:30–18:00; GTM indica horario partido 08:30–12:30 y 16:00–20:00. No se puede resolver cuál está vigente. La coincidencia entre directorios puede reflejar copias del mismo dato, por lo que no debe asumirse mayoría independiente.
+
+## 5. SERVICIOS Y AFIRMACIONES COMERCIALES PUBLICADAS
+
+TEXTO COMERCIAL REPRODUCIDO POR CYLEX Y TELLOWS:
+“RESERVAMOS TU AUTO ONLINE - AUTOMOTORES Y MOTOS 0 KM Y USADOS - VENTA - PERMUTAS - AMPLIA FINANCIACIÓN”
+Fuentes:
+- Cylex: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+- Tellows: https://ar.tellows.net/num/03434618388
+
+Servicios mencionados en el texto:
+- Reserva online de vehículo (“Reservamos tu auto online”).
+- Automotores 0 km y usados.
+- Motos 0 km y usadas.
+- Venta.
+- Permutas.
+- Financiación descrita como “amplia”.
+
+Estado probatorio:
+- Confirmado que el texto aparece publicado en directorios.
+- No confirmado que todos esos servicios estén vigentes a octubre de 2026.
+- No se recuperaron términos, tasas, requisitos, montos, entidades financieras, anticipo, plazos, garantías, políticas de reserva o condiciones contractuales.
+- No se recuperó un catálogo textual individual de vehículos atribuible con fecha suficiente.
+
+## 6. REDES SOCIALES Y PRESENCIA WEB
+
+FACEBOOK
+URL enlazada desde Cylex: https://www.facebook.com/horizonteautos/
+Estado: enlace referenciado por un directorio; contenido no inspeccionado por limitación “Online fetch throttled”.
+Nombre de usuario sugerido por URL: horizonteautos.
+No se afirma que la cuenta esté activa, sea administrada actualmente por el comercio o contenga publicaciones accesibles.
+
+SITIO WEB PROPIO
+No se localizó un sitio corporativo propio inequívoco en las búsquedas ejecutadas.
+TodosNegocios indica expresamente: “No hay ningún sitio web de Horizonte Automotores, pero puede encontrar a Horizonte Automotores en Facebook.”
+URL de la ficha: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+Interpretación: dato del directorio, no prueba técnica de que no exista ningún dominio.
+
+DOMINIOS / WHOIS / DNS / WAYBACK
+No se identificó un dominio propio atribuible de manera inequívoca. No se recuperó un registro WHOIS/RDAP, DNS, certificado TLS o captura de Wayback atribuible al negocio. No se afirma que esas fuentes técnicas hayan arrojado resultado negativo concluyente; en esta sesión no se obtuvo evidencia suficiente para un dominio candidato.
+
+OTRAS REDES
+No se localizó de manera inequívoca una cuenta oficial de Instagram, TikTok o YouTube mediante las búsquedas realizadas. La falta de resultado no prueba inexistencia.
+
+## 7. RESEÑAS Y REPUTACIÓN: DATOS POR PLATAFORMA
+
+R-01 — Cylex
+URL: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Datos publicados:
+- 4,1 de 5.
+- 15 opiniones.
+- “Revise 15 opiniones de 1 fuentes confiables.”
+- Registro marcado como actualizado el 13/09/2024.
+No se transcriben reseñas individuales porque la página consultada muestra el agregado, no el contenido íntegro de cada opinión en la lectura recuperada.
+
+R-02 — Yably
+URL: https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+Datos publicados en consulta actual:
+- 4,20/5.
+- 17 reseñas de una fuente adicional.
+- Dirección: Av Argentina 2021, 3133 María Grande, Entre Ríos.
+- Teléfono: 0343 461-8388.
+No se recuperó el texto de cada reseña en la apertura consultada.
+
+R-03 — GTM
+URL: https://gtm.com.ar/concesionario/horizonte-automotores/
+Datos publicados:
+- 8,4/10.
+- 27 reseñas.
+La página menciona expresiones como “cálida atención”, “excelente atención”, “múltiples opciones” y una valoración negativa descrita como “mala experiencia”. Sin embargo, el artículo mezcla comentarios resumidos y redacción editorial; no debe presentarse como transcripción directa de reseñas verificadas. No se recuperaron enlaces individuales a cada reseña en el texto abierto.
+
+R-04 — Tellows
+URL: https://ar.tellows.net/num/03434618388
+La página etiqueta el número como comercial y asocia el nombre Horizonte Automotores. El formulario explica que el tellows score depende de valoraciones de usuarios; en el contenido consultado no se recuperó una serie de denuncias o comentarios que permita inferir riesgo o reputación del negocio.
+
+INTERPRETACIÓN
+Las puntuaciones no son directamente comparables: plataformas, escalas y bases de opiniones difieren. Cylex/Yably parecen tener una relación de sindicación o fuente compartida (“1 fuente confiable”/“1 otra fuente”), por lo que no se deben contar como universos totalmente independientes. El conteo de 27 reseñas de GTM podría provenir de otra integración, pero la fuente original de cada opinión no quedó identificada. No es válido concluir una puntuación única consolidada.
+
+## 8. HISTORIAL TEXTUAL DE VEHÍCULOS ANUNCIADOS
+
+RESULTADO DE LA BÚSQUEDA
+No se recuperaron anuncios individuales con suficiente texto verificable, URL individual y fecha para elaborar un inventario histórico fiable. Los directorios describen genéricamente que la agencia vende automóviles y motos, 0 km y usados, pero eso no equivale a probar la publicación de una unidad específica.
+
+MENCIONES DE MODELOS EN GTM
+GTM nombra como ejemplos de vehículos asociados a la oferta del negocio:
+- Toyota Hilux.
+- Ford Ranger.
+- Volkswagen Amarok.
+- Volkswagen Gol.
+- Peugeot 208.
+- Ford Focus.
+URL: https://gtm.com.ar/concesionario/horizonte-automotores/
+Estado: referencias descriptivas generales dentro de un artículo de directorio; no son anuncios individuales fechados, no confirman disponibilidad ni permiten atribuir año, versión, kilometraje o precio. No incluir como inventario actual.
+
+CAMPOS SIN EVIDENCIA INDIVIDUAL
+Marca/modelo/versión/año/km/combustible/transmisión/precio/moneda/financiación/permuta/fecha de publicación/fecha de actualización/URL individual/estado del anuncio: DESCONOCIDOS para anuncios concretos.
+
+No se fabrican registros de vehículos para completar una tabla.
+
+## 9. DIRECTORIOS COMERCIALES Y SECTORIALES
+
+S-01 — CCA Entre Ríos, agencias
+URL: https://ccaentrerios.org/agencias/
+Fila publicada:
+“MARÍA GRANDE | HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787”
+Valor: fuente sectorial con coincidencia de nombre, localidad y dirección.
+Límite: la página indica que lista agencias/socios que forman parte de CCA, pero la fila visible no muestra fecha de alta o vigencia individual. No inferir afiliación vigente con certeza más allá de la inclusión actual visible en el directorio consultado.
+
+S-02 — Cylex
+URL: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Datos: Av Argentina 2021, 3133 María Grande; 0343 461-8388; horario; descripción de servicios; puntuación 4,1/5 y 15 opiniones; actualización visible 13/09/2024.
+
+S-03 — TodosNegocios, ficha principal
+URL: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+Datos: Avenida Argentina 2021, E3133; teléfonos 0343 461-8388 y 0343 494-1092; horario 09:30–18:00 de lunes a viernes, sábado 08:30–12:30, domingo cerrado; enlaces a Facebook, Google Maps y Foursquare; actividad/categoría automotriz; código ISIC 4510.
+Observación: la clasificación “concesionarios de coches nuevos” es una categoría del directorio, no evidencia de que la empresa venda exclusivamente vehículos nuevos.
+
+S-04 — TodosNegocios, ficha centrada en teléfono alternativo
+URL: https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+Datos: nombre Horizonte Automotores, Av Argentina 536 María Grande, teléfono 0343 494-1092. El encabezado de ubicación contiene una inconsistencia geográfica (“Argentina (Santiago del Estero)”) mientras el texto de dirección menciona María Grande, Entre Ríos. Esto reduce la confianza en la precisión geográfica de esa ficha.
+
+S-05 — GTM
+URL: https://gtm.com.ar/concesionario/horizonte-automotores/
+Datos: Avenida Argentina 2021, E3133; 8,4/10, 27 reseñas; horario partido; texto descriptivo de servicios, variedad y opiniones.
+Precaución: contiene redacción editorial/promocional, generalizaciones y referencias a reseñas que no fueron verificadas individualmente. Usar solo como fuente de lo que esa página afirma.
+
+S-06 — Yably
+URL: https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+Datos: 4,20/5, 17 reseñas, dirección 2021 y teléfono 0343 461-8388.
+
+S-07 — Tellows
+URL: https://ar.tellows.net/num/03434618388
+Datos: número 0343 461-8388 / +543434618388; asociación con Horizonte Automotores, Av Argentina 2021, horario 09:30–18:00 de lunes a viernes, sábado 08:30–12:30, domingo cerrado; descripción comercial de autos y motos, 0 km y usados, ventas, permutas y financiación.
+
+S-08 — EntreRíosTotal, categoría concesionarios
+URL: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+Datos: Horizonte Automotores, María Grande, Avda. Argentina 536, 0343 4941092; rubros “Agencias de Autos Usados, Concesionarios Oficiales de A...” y enlaces de WhatsApp/email sin datos legibles en el texto recuperado.
+
+S-09 — EntreRíosTotal, categoría autos usados
+URL: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=122etetet20
+Datos: vuelve a mostrar Horizonte Automotores, María Grande, Avda. Argentina 536, 0343 4941092, en la categoría de agencias de autos usados. Como está en el mismo dominio y comparte la misma ficha, no es corroboración independiente de S-08.
+
+S-10 — WorldOrgs
+URL: https://ar.worldorgs.com/catalogar/mar%C3%ADa-grande/agencia-de-colocaci%C3%B3n
+Datos: aparece una organización “Horizonte Automotores” en Avenida Argentina 2021, E3133 María Grande. La página abierta es una categoría genérica (“Agencia de colocación”), no un registro especializado; el dato de dirección es útil como referencia, pero la categoría parece inadecuada.
+
+S-11 — Google Maps CID enlazado por el usuario
+URL: https://www.google.com/maps/?cid=10635091665953296629
+La página fue abierta, pero el contenido textual disponible no permitió verificar una ficha completa, horario, teléfono ni puntuación. El CID es una pista de búsqueda, no se usa como evidencia de campos que no se pudieron leer.
+
+S-12 — Cylex, listado regional de concesionarios
+URL: https://www.cylex.com.ar/crespo/concesionario%2Bde%2Bautos.html
+La lista regional vuelve a mostrar Horizonte Automotores, Av Argentina 2021, 3133 María Grande, teléfono 0343 461-8388 y la descripción de venta/permutas/financiación. Es el mismo dominio que S-02; no cuenta como fuente independiente.
+
+## 10. BANCO NACIÓN / PROGRAMA +AUTOS CON BNA
+
+HALLAZGO BNA-01 — Listado fechado 16/07/2025
+URL:
+https://bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf
+El documento se titula “¡Tu auto, más cerca que nunca! Nueva línea de créditos personales +Autos con BNA” y contiene un listado de concesionarias adheridas. En la fila de Entre Ríos figura:
+“Maria Grande | Horizonte Automores | Avda Argentina 2021”.
+La grafía “Automores” aparece así en el documento.
+
+HALLAZGO BNA-02 — Copia/listado de agosto de 2025
+URL:
+https://bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250822_2.xlsx%20-%20Hoja1%20%2813%29.pdf
+Fila localizada en la sección de Entre Ríos:
+“María Grande | Horizonte Automores | Av. Argentina 2021”.
+
+HALLAZGO BNA-03 — Copia/listado de septiembre de 2025
+URL:
+https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250904_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+Fila localizada:
+“María Grande | Horizonte Automores | Av. Argentina 2021”.
+
+HALLAZGO BNA-04 — Listado/copia de septiembre de 2025
+URL:
+https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250915_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+Fila localizada:
+“María Grande | Horizonte Automores | Av. Argentina 2021”.
+
+HALLAZGO BNA-05 — Listado fechado 19/05/2026
+URL:
+https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf
+El PDF contiene la fila:
+“Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021”.
+El documento fue publicado/identificado como listado de mayo de 2026 y estaba indexado pocos días antes de la consulta del 12/10/2026.
+
+INTERPRETACIÓN Y LÍMITES
+- Es una secuencia de documentos oficiales del banco que lista el nombre comercial con la dirección 2021 en el contexto de concesionarias adheridas a la línea +Autos con BNA.
+- Las versiones pueden ser copias o revisiones de un mismo listado, por lo que no equivalen a cinco validaciones independientes de la identidad.
+- La repetición entre 2025 y mayo de 2026 fortalece la evidencia de que el registro permaneció en listados durante ese periodo.
+- No se recuperaron condiciones particulares asignadas a Horizonte Automores, ni tasas, plazos, límites, requisitos, operaciones concretadas o prueba de que la agencia ofrezca actualmente ese programa.
+- No se corrigió silenciosamente “Automores” a “Automotores”; la posible errata se conserva como observación.
+
+## 11. MEDIOS, PUBLICACIONES INSTITUCIONALES Y DOCUMENTOS
+
+BANCO NACIÓN
+Los listados descritos en la sección 10 son la mención institucional más concreta recuperada. No se encontró una noticia periodística dedicada a Horizonte Automotores en APFDigital o Vorterix Litoral mediante las consultas ejecutadas.
+
+CCA ENTRE RÍOS
+El directorio de agencias es una referencia sectorial directa y contiene nombre, localidad, dirección y teléfono 343 4050787.
+URL: https://ccaentrerios.org/agencias/
+
+APFDigital
+URL consultada como pista: https://www.apfdigital.com.ar/
+Búsquedas ejecutadas: “Horizonte Automotores”, “Horizonte Automores” y combinaciones con María Grande/Entre Ríos.
+Resultado: no se recuperó una mención pertinente e inequívoca en los resultados de búsqueda de esta sesión. No se afirma que el archivo completo del medio no contenga menciones.
+
+Vorterix Litoral
+URL consultada como pista: https://vorterixlitoral.com/
+Búsquedas ejecutadas: “Horizonte Automotores”, “Horizonte Automores” y combinaciones con María Grande.
+Resultado: no se recuperó una mención pertinente e inequívoca en los resultados de búsqueda de esta sesión.
+
+OTROS DOCUMENTOS PÚBLICOS
+No se recuperó una noticia, boletín oficial, documento judicial, registro municipal o publicación de cámara adicional con una vinculación suficientemente clara a este negocio. No se realizaron búsquedas de personas privadas ni se atribuyeron expedientes por homonimia.
+
+## 12. DOMINIOS, ARCHIVOS WEB Y REGISTROS TÉCNICOS
+
+Sitio corporativo propio: no localizado inequívocamente.
+Perfil de Facebook referenciado: https://www.facebook.com/horizonteautos/ (no accesible en el lector por throttling).
+Dominio registrado: no identificado.
+WHOIS/RDAP: no se obtuvo un dominio candidato al que aplicar una consulta verificable.
+DNS: no se obtuvo un dominio candidato para consulta.
+Certificados TLS: no se obtuvo un dominio candidato para consulta.
+Wayback Machine: no se recuperó una captura atribuible a un dominio propio. Esto no demuestra que nunca haya existido una web.
+
+No se afirma haber consultado exhaustivamente todos los registros técnicos. El resultado actual es “dominio propio no identificado en las búsquedas realizadas”.
+
+## 13. CRONOLOGÍA DOCUMENTAL PARCIAL
+
+13/09/2024 — Cylex indica que su registro fue actualizado en esa fecha. Publica dirección Av Argentina 2021, teléfono 0343 461-8388, horario 09:30–18:00 en días hábiles y 08:30–12:30 sábado, además de descripción de servicios y puntuación de reseñas.
+Fuente: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Certeza: ALTA para la fecha que Cylex atribuye a la actualización de su propio registro; no implica que todos los datos hayan sido revisados ese día por el negocio.
+
+16/07/2025 — Banco Nación publica un listado +Autos con BNA con la fila “Maria Grande | Horizonte Automores | Avda Argentina 2021”.
+Fuente: https://bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf
+Certeza: ALTA para la presencia textual en ese documento.
+
+22/08/2025 — Copia de listado de concesionarias adheridas contiene “María Grande | Horizonte Automores | Av. Argentina 2021”.
+Fuente: https://bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250822_2.xlsx%20-%20Hoja1%20%2813%29.pdf
+Certeza: ALTA para la presencia textual.
+
+04/09/2025 — Copia/listado del banco vuelve a contener la misma fila.
+Fuente: https://bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250904_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+Certeza: ALTA para la presencia textual.
+
+15/09/2025 — Otra copia/listado vuelve a contener la misma fila.
+Fuente: https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250915_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+Certeza: ALTA para la presencia textual.
+
+19/05/2026 — Listado del Banco Nación fechado en el nombre del archivo vuelve a incluir “Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021”.
+Fuente: https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf
+Certeza: ALTA para la presencia textual en el listado.
+
+12/10/2026 — Consulta de este expediente. Los directorios públicos consultados continúan mostrando referencias a Horizonte Automotores; los contadores de reseñas difieren por plataforma. La actualidad operativa de teléfonos, dirección y horarios no fue verificada por contacto directo.
+
+PRIMERA APARICIÓN PÚBLICA:
+DESCONOCIDA. La fecha de actualización de Cylex no equivale a la fecha de fundación ni a la primera aparición del negocio.
+
+CAMBIOS DE DOMICILIO:
+No se pudo construir una cronología confirmada. La dirección 536 aparece en EntreRíosTotal y en la ficha alternativa de TodosNegocios; la dirección 2021 aparece en más fuentes y en listados BNA. No hay evidencia suficiente para afirmar mudanza, sucursal o cierre de la dirección 536.
+
+## 14. TABLA DE CONTRADICCIONES Y DISCREPANCIAS
+
+X-01 — Dirección
+- Dato A: Av. Argentina 2021.
+- Fuentes: TodosNegocios principal, Cylex, Yably, GTM, WorldOrgs, CCA, listados BNA 2025 y 2026.
+- Dato B: Avda. Argentina 536.
+- Fuentes: EntreRíosTotal y ficha TodosNegocios centrada en 0343 494-1092.
+- Estado: CONTRADICTORIO; 2021 mejor corroborada en las fuentes consultadas, pero no se prueba que 536 sea falsa o antigua.
+
+X-02 — Teléfono
+- Dato A: 0343 461-8388.
+- Fuentes: TodosNegocios, Cylex, Yably, Tellows.
+- Dato B: 0343 494-1092.
+- Fuentes: TodosNegocios y EntreRíosTotal.
+- Dato C: 343 4050787.
+- Fuente: CCA Entre Ríos.
+- Estado: varios teléfonos publicados; no se sabe cuáles siguen activos ni si son líneas simultáneas, antiguas o de contacto alternativo.
+
+X-03 — Horario de lunes a viernes
+- 09:30–18:00: TodosNegocios, Cylex, Tellows.
+- 08:30–12:30 y 16:00–20:00: GTM.
+- Sábado 08:30–12:30 y domingo cerrado: coincidencia general.
+- Estado: CONTRADICTORIO para días hábiles.
+
+X-04 — Reputación agregada
+- Cylex: 4,1/5, 15 opiniones.
+- Yably: 4,20/5, 17 reseñas.
+- GTM: 8,4/10, 27 reseñas.
+- Estado: métricas no equivalentes por plataforma y conteo; posible sindicación de reseñas. No consolidar en una sola nota.
+
+X-05 — Nombre en listados BNA
+- “Horizonte Automores” en varios PDFs de Banco Nación.
+- “Horizonte Automotores” en directorios comerciales y CCA.
+- Estado: probable errata de escritura en BNA, pero se conserva la forma original para trazabilidad.
+
+X-06 — Categoría de negocio
+- TodosNegocios lo clasifica como concesionario de coches nuevos.
+- Otros directorios lo presentan como agencia de usados y el texto de Cylex menciona 0 km y usados, autos y motos.
+- Estado: diferencias de taxonomía; no prueba que venda exclusivamente vehículos nuevos.
+
+X-07 — Estado de actividad actual
+- Las fichas continúan visibles e indexadas.
+- No se realizó contacto ni comprobación física.
+- Estado: presencia documental actual; operación y horarios efectivos sin confirmación directa.
+
+## 15. MATRIZ MAESTRA DE DATOS Y EVIDENCIAS
+
+ID | CATEGORÍA | DATO | FUENTE(S) | FECHA DEL DATO | ESTADO | CONFIANZA | OBSERVACIONES
+
+M-001 | Identidad | Horizonte Automotores | TodosNegocios, Cylex, GTM, Yably, CCA, WorldOrgs | Variable/no indicada | Corroborado | Alta | Nombre comercial repetido en varias fuentes.
+M-002 | Localidad | María Grande, Entre Ríos | TodosNegocios, Cylex, GTM, Yably, CCA, WorldOrgs, BNA | Variable | Corroborado | Alta | La asociación territorial es consistente.
+M-003 | Dirección | Avenida Argentina 2021 | TodosNegocios, Cylex, Yably, GTM, CCA, WorldOrgs, BNA | 2024–2026 en parte de las fuentes | Corroborado como publicada | Alta | No verificada físicamente.
+M-004 | Dirección alternativa | Avda. Argentina 536 | EntreRíosTotal, TodosNegocios alternativo | No indicada | Contradictorio | Media-baja | Posible registro histórico, duplicado o error.
+M-005 | Teléfono | 0343 461-8388 | TodosNegocios, Cylex, Yably, Tellows | Variable; Cylex actualizado 13/09/2024 | Publicado | Alta | Actividad actual no probada.
+M-006 | Teléfono | 0343 494-1092 | TodosNegocios, EntreRíosTotal | No indicada | Publicado, vigencia desconocida | Media | Se asocia a dirección 536 en algunas fuentes.
+M-007 | Teléfono | 343 4050787 | CCA Entre Ríos | Consulta 12/10/2026 | Publicado en directorio sectorial | Alta para la fila | No probado como línea activa.
+M-008 | Código postal | 3133 / E3133 | Cylex, Yably, TodosNegocios, GTM, WorldOrgs | Variable | Publicado | Media-alta | No verificado con fuente postal oficial.
+M-009 | Horario hábil | 09:30–18:00 | TodosNegocios, Cylex, Tellows | Cylex actualizado 13/09/2024 | Publicado | Media-alta | Fuentes podrían copiarse entre sí.
+M-010 | Horario hábil alternativo | 08:30–12:30 y 16:00–20:00 | GTM | Consulta/crawl aprox. 3 meses antes | Contradictorio | Media | No se resolvió cuál está vigente.
+M-011 | Horario sábado | 08:30–12:30 | TodosNegocios, Cylex, Tellows, GTM | Variable | Corroborado como publicado | Media-alta | Actividad real no verificada.
+M-012 | Horario domingo | Cerrado | TodosNegocios, Cylex, Tellows, GTM | Variable | Corroborado como publicado | Media-alta | No confirmado directamente.
+M-013 | Facebook | https://www.facebook.com/horizonteautos/ | Enlace desde Cylex | Fecha desconocida | Enlace referenciado | Media | Contenido bloqueado por throttling.
+M-014 | Web propia | No localizada | Búsquedas web y declaración de TodosNegocios | 12/10/2026 | Desconocido | Media | No equivale a prueba de inexistencia.
+M-015 | Servicios | Autos y motos 0 km/usados, venta, permutas, financiación amplia | Cylex, Tellows | Cylex actualizado 13/09/2024 | Afirmación comercial publicada | Media-alta | Vigencia actual no probada.
+M-016 | Reserva | “Reservamos tu auto online” | Cylex, Tellows | No indicada | Afirmación publicada | Media | No se recuperó el proceso ni las condiciones.
+M-017 | Reputación | 4,1/5; 15 opiniones | Cylex | Actualizado 13/09/2024 | Publicado | Media | Fuente de reseñas declarada como una fuente confiable.
+M-018 | Reputación | 4,20/5; 17 reseñas | Yably | Consulta 12/10/2026 | Publicado | Media | Posible fuente compartida con Cylex.
+M-019 | Reputación | 8,4/10; 27 reseñas | GTM | Consulta 12/10/2026; página rastreada meses antes | Publicado | Media-baja | No se verificaron reseñas individuales.
+M-020 | Directorio sectorial | Figura en CCA Entre Ríos | CCA | Consulta 12/10/2026 | Confirmado como listado | Alta | No prueba por sí sola afiliación individual vigente.
+M-021 | Programa BNA | Figura como “Horizonte Automores”, Av. Argentina 2021 | PDFs BNA 16/07/2025, 22/08/2025, 04/09/2025, 15/09/2025 y 19/05/2026 | 2025–2026 | Confirmado en documentos | Alta | Listado de concesionarias adheridas a +Autos con BNA; no confirma condiciones actuales particulares.
+M-022 | Razón social | No identificada | Búsquedas web de nombre y ciudad | 12/10/2026 | Desconocido | Baja | No atribuir entidad por homonimia.
+M-023 | CUIT | No identificado | Búsquedas web de nombre y ciudad | 12/10/2026 | Desconocido | Baja | No se obtuvo registro oficial inequívoco.
+M-024 | Fundación | No identificada | Búsquedas históricas y directorios | 12/10/2026 | Desconocido | Baja | Actualización de directorio no es fecha de fundación.
+M-025 | Inventario individual | No recuperado con evidencia suficiente | Búsquedas web y directorios | 12/10/2026 | Desconocido/parcial | Baja | Modelos nombrados por GTM no son anuncios individuales.
+M-026 | Reseñas textuales | No recuperadas íntegramente | Cylex/Yably/GTM | 12/10/2026 | Parcial | Baja-media | Se registraron agregados, no se inventan citas.
+
+## 16. REGISTRO DE BÚSQUEDAS REALIZADAS
+
+Fecha de ejecución: 12/10/2026. La herramienta no expuso una hora precisa por cada consulta; por tanto, no se inventa una hora.
+
+Ronda A — Nombre exacto y localidad:
+- "Horizonte Automotores" "María Grande" Entre Ríos
+- "Horizonte Automotores" "María Grande" Facebook
+- "Horizonte Automores" "María Grande" "Banco Nación"
+- "Horizonte Automotores" "María Grande" "facebook.com"
+Objetivo: confirmar nombre, ubicación, perfiles y documentos.
+Resultados principales: TodosNegocios, GTM, Cylex, CCA, WorldOrgs, Yably, listados BNA.
+
+Ronda B — Teléfono principal:
+- "0343 461-8388" OR "03434618388" "Horizonte Automotores"
+- "0343 461-8388" -todosnegocios -cylex
+- site:ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+- site:tellows.net/num/03434618388
+Objetivo: encontrar menciones independientes y variantes del número.
+Resultado: directorios repetidos; no se recuperó una fuente adicional que confirme actividad actual.
+
+Ronda C — Teléfono alternativo:
+- "0343 494-1092" OR "03434941092" automotores
+- "Avda. Argentina 536" "Horizonte Automotores"
+Objetivo: verificar asociación del número y buscar direcciones alternativas.
+Resultado: ficha alternativa de TodosNegocios y EntreRíosTotal con Avda. Argentina 536; discrepancia no resuelta.
+
+Ronda D — Teléfono sectorial:
+- "343 405-0787" OR "3434050787" automotores
+- "Horizonte Automotores" "343 4050787" OR "343 405-0787"
+Objetivo: localizar el número del listado de CCA.
+Resultado: fila de CCA Entre Ríos; no se halló otra confirmación independiente.
+
+Ronda E — Directorios:
+- site:cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+- site:gtm.com.ar/concesionario/horizonte-automotores
+- site:ccaentrerios.org/agencias/ "Horizonte Automotores"
+- site:entreriostotal.com.ar "Horizonte Automotores" María Grande
+- site:ar.worldorgs.com/catalogar/mar%C3%ADa-grande "Horizonte Automotores"
+Objetivo: identificar directorios y contrastar datos.
+Resultado: discrepancia de dirección y teléfonos; ficha sectorial CCA.
+
+Ronda F — Servicios y texto comercial:
+- "Horizonte Automotores" "financiación" OR "permuta" "María Grande"
+- "Horizonte Automotores" "RESERVAMOS TU AUTO ONLINE"
+Objetivo: recuperar afirmaciones textuales sobre servicios.
+Resultado: frase de Cylex y Tellows; no se recuperaron términos contractuales.
+
+Ronda G — Medios:
+- site:apfdigital.com.ar "Horizonte Automotores" OR "María Grande" automotores
+- site:vorterixlitoral.com "Horizonte Automotores" OR "Horizonte Automores"
+Objetivo: hallar noticias o menciones editoriales.
+Resultado: no se recuperó mención pertinente e inequívoca en esta sesión.
+
+Ronda H — Banco Nación:
+- site:bna.com.ar/Downloads "Horizonte Automores" "Av. Argentina 2021"
+- Búsqueda y apertura de PDFs de listados de concesionarias adheridas +Autos con BNA.
+Objetivo: verificar mención institucional y cronología.
+Resultado: fila localizada en documentos de julio, agosto y septiembre de 2025 y mayo de 2026.
+
+Ronda I — Reputación:
+- "Horizonte Automotores" "4,1" "15 opiniones" María Grande
+- "Horizonte Automotores" "mala experiencia" María Grande
+Objetivo: recuperar agregados y menciones de reseñas.
+Resultado: Cylex, Yably y GTM con métricas distintas; reseñas individuales no verificadas.
+
+Ronda J — Sitio web y redes:
+- búsquedas por nombre, localidad y Facebook/Instagram/TikTok/YouTube
+- apertura de https://www.facebook.com/horizonteautos/
+Resultado: Facebook enlazado, pero lectura bloqueada por throttling. No se identificó otro perfil inequívoco ni un dominio propio.
+
+NOTA SOBRE EXHAUSTIVIDAD
+Las búsquedas fueron iterativas y se siguieron las pistas principales (teléfonos, dirección, redes, directorios, programa BNA y reseñas). No se puede afirmar cobertura absoluta de Internet ni de bases cerradas/no indexadas. No se accedió a registros de pago, cuentas privadas ni sistemas restringidos.
+
+## 17. FUENTES INICIALES: RESULTADO DE REVISIÓN
+
+1. TodosNegocios — ficha principal
+https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+Resultado: abierta; contiene dirección 2021, teléfonos 461-8388 y 494-1092, horario, enlaces sociales/mapa y descripción del rubro.
+
+2. CCA Entre Ríos — agencias
+https://ccaentrerios.org/agencias/
+Resultado: abierta/consultada; contiene fila Horizonte Automotores, Av Argentina 2021, teléfono 343 4050787.
+
+3. Cylex
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Resultado: abierta; contiene dirección 2021, teléfono 461-8388, horario, texto de servicios, puntuación 4,1/5 y 15 opiniones; fecha de actualización 13/09/2024.
+
+## 4. GTM
+https://gtm.com.ar/concesionario/horizonte-automotores/
+Resultado: abierta; dirección 2021, 8,4/10 y 27 reseñas, horario partido y texto editorial de servicios/experiencias.
+Precaución: las afirmaciones narrativas no son necesariamente testimonios directos.
+
+5. Tellows
+https://ar.tellows.net/num/03434618388
+Resultado: abierta; teléfono, dirección 2021, horario y descripción comercial repetida.
+
+6. EntreRíosTotal
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+Resultado: abierta; registra Avda. Argentina 536 y 0343 4941092, contradiciendo la dirección más corroborada.
+
+7. WorldOrgs
+https://ar.worldorgs.com/catalogar/mar%C3%ADa-grande/agencia-de-colocaci%C3%B3n
+Resultado: abierta; incluye Horizonte Automotores en Avenida Argentina 2021, E3133. Categoría del directorio aparentemente genérica/incorrecta.
+
+8. Google Maps CID
+https://www.google.com/maps/?cid=10635091665953296629
+Resultado: apertura sin suficiente texto legible para confirmar campos de la ficha.
+
+9. Banco Nación
+https://bna.com.ar/
+Resultado: se localizaron documentos PDF del listado +Autos con BNA, detallados en la sección 10.
+
+10. APFDigital
+https://www.apfdigital.com.ar/
+Resultado: búsqueda por nombre no devolvió una mención pertinente inequívoca en esta sesión.
+
+11. Vorterix Litoral
+https://vorterixlitoral.com/
+Resultado: búsqueda por nombre no devolvió una mención pertinente inequívoca en esta sesión.
+
+## 18. PREGUNTAS ABIERTAS Y DATOS DESCONOCIDOS
+
+- ¿Cuál es el domicilio operativo actual: Av. Argentina 2021 o Avda. Argentina 536? No resuelto.
+- ¿El teléfono 0343 461-8388 continúa activo?
+- ¿El teléfono 0343 494-1092 es antiguo, alternativo o pertenece a una ficha duplicada?
+- ¿El teléfono 343 405-0787 reemplazó a los anteriores o corresponde a otra línea?
+- ¿Qué horarios están vigentes hoy?
+- ¿Cuál es el correo electrónico exacto publicado por el negocio?
+- ¿Facebook continúa activo y quién es el perfil oficial actual? La URL referenciada es horizonteautos, pero el contenido no fue leído.
+- ¿Existen perfiles oficiales de Instagram, TikTok o YouTube que no aparecieron indexados?
+- ¿Hubo un sitio web propio, un dominio vencido o una web archivada?
+- ¿Cuál es la razón social y el CUIT? No identificados.
+- ¿Cuál es la fecha de fundación o primera actividad comercial? No identificada.
+- ¿Qué vehículos fueron anunciados históricamente y en qué fechas? No se recuperó un inventario individual confiable.
+- ¿Qué precios, kilometrajes, versiones y condiciones se publicaron por unidad? Desconocidos en el corpus recuperado.
+- ¿Qué términos de financiación se aplican y si siguen vinculados al programa +Autos con BNA?
+- ¿Qué condiciones se aplican a permutas, reservas, garantías y entrega? No recuperadas.
+- ¿Qué reseñas individuales componen los agregados de Cylex/Yably/GTM? No verificadas.
+- ¿Existe una afiliación actual individual a CCA? La lista pública es evidencia de inclusión, pero no se encontró fecha de alta/estado individual.
+- ¿Hay menciones periodísticas, judiciales o institucionales fuera de los resultados indexados? No se localizaron en esta sesión.
+
+## 19. CONCLUSIÓN DOCUMENTAL
+
+La información pública consultada respalda con confianza razonable la existencia de un registro comercial llamado Horizonte Automotores asociado a María Grande, Entre Ríos, y a Avenida Argentina 2021. Esa dirección aparece en directorios comerciales, en la lista sectorial de CCA Entre Ríos y en documentos de Banco Nación de 2025 y 2026. El teléfono 0343 461-8388 es el número más repetido en los directorios; el teléfono 343 405-0787 aparece en CCA y 0343 494-1092 aparece en directorios que también presentan una dirección alternativa, Avda. Argentina 536.
+
+La discrepancia de domicilio y teléfonos no se puede resolver con la evidencia recuperada. Tampoco se puede confirmar el horario actual, la actividad de las líneas, una razón social/CUIT, la existencia o inexistencia definitiva de un dominio propio ni el inventario histórico individual. Los servicios de venta de autos y motos 0 km/usados, permutas, financiación y reserva online aparecen como afirmaciones textuales en directorios, pero no se recuperaron condiciones comerciales detalladas ni prueba de vigencia actual.
+
+La mención en listados de concesionarias adheridas a +Autos con BNA aparece en documentos que abarcan 2025 y mayo de 2026; esto es un hallazgo institucional significativo, pero no prueba condiciones particulares vigentes en octubre de 2026. Las métricas de reseñas difieren entre plataformas y podrían compartir fuentes. No corresponde sintetizarlas como una sola puntuación.
+
+Este expediente es amplio respecto de las fuentes públicas localizadas en esta sesión, pero no debe denominarse exhaustivo en sentido absoluto. Las principales limitaciones son el acceso restringido a Facebook, la falta de publicaciones individuales de vehículos recuperables, la ausencia de una identidad fiscal inequívoca y la imposibilidad de verificar el estado actual sin contacto o evidencia adicional.
+
+## 20. ÍNDICE FINAL DE FUENTES CON URL COMPLETA
+
+F-01 TodosNegocios, ficha principal:
+https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+
+F-02 TodosNegocios, ficha centrada en teléfono alternativo:
+https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+
+F-03 CCA Entre Ríos, agencias:
+https://ccaentrerios.org/agencias/
+
+F-04 Cylex, Horizonte Automotores María Grande:
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+
+F-05 GTM, Horizonte Automotores:
+https://gtm.com.ar/concesionario/horizonte-automotores/
+
+F-06 Tellows, número 0343 461-8388:
+https://ar.tellows.net/num/03434618388
+
+F-07 EntreRíosTotal, concesionarios oficiales:
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+
+F-08 EntreRíosTotal, agencias de autos usados:
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=122etetet20
+
+F-09 WorldOrgs, categoría María Grande:
+https://ar.worldorgs.com/catalogar/mar%C3%ADa-grande/agencia-de-colocaci%C3%B3n
+
+F-10 Google Maps CID proporcionado como pista:
+https://www.google.com/maps/?cid=10635091665953296629
+
+F-11 Yably, reseñas Horizonte Automotores:
+https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+
+F-12 Facebook enlazado desde Cylex:
+https://www.facebook.com/horizonteautos/
+
+F-13 Banco Nación, listado +Autos con BNA 16/07/2025:
+https://bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf
+
+F-14 Banco Nación, listado/copia 22/08/2025:
+https://bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250822_2.xlsx%20-%20Hoja1%20%2813%29.pdf
+
+F-15 Banco Nación, listado/copia 04/09/2025:
+https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250904_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+
+F-16 Banco Nación, listado/copia 15/09/2025:
+https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250915_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+
+F-17 Banco Nación, listado +Autos con BNA 19/05/2026:
+https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf
+
+F-18 Cylex, listado regional de concesionarios:
+https://www.cylex.com.ar/crespo/concesionario%2Bde%2Bautos.html
+
+F-19 Banco Nación, portal principal:
+https://bna.com.ar/
+
+F-20 APFDigital, portal consultado como pista:
+https://www.apfdigital.com.ar/
+
+F-21 Vorterix Litoral, portal consultado como pista:
+https://vorterixlitoral.com/
+
+CIERRE DE LA VERSIÓN 1.0 — SE INCORPORA A CONTINUACIÓN UNA AMPLIACIÓN DOCUMENTAL
+
+
+
+####################################################################
+AMPLIACIÓN EXTREMA — VERSIÓN 2.0
+Fecha de ampliación: 12/10/2026
+####################################################################
+
+NOTA DE INTEGRIDAD
+Esta versión conserva íntegro el expediente 1.0 y agrega una ampliación basada en nuevas consultas y en la relectura crítica de las fuentes. No se eliminan contradicciones ni se corrigen silenciosamente errores de los directorios. La ampliación distingue entre fecha de publicación, fecha de rastreo de buscadores y fecha en que se consultó la página. La indexación reciente de una página vieja no demuestra que su contenido se haya actualizado recientemente.
+
+## 21. NUEVO HALLAZGO DE MAYOR VALOR: INCLUSIÓN EN LA RED +AUTOS CON BNA DURANTE 2026
+
+21.1. Hallazgo periodístico del 9 de julio de 2026
+Fuente: ¿Qué Sabes? Digital, “Créditos para comprar autos las 45 concesionarias adheridas en Entre Ríos”.
+URL: https://quesabesdigital.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/
+Fecha publicada que muestra la página: 09/07/2026.
+La nota incluye explícitamente “Horizonte Automotores — Av. Argentina 2021” dentro de la lista de concesionarias adheridas de María Grande. Es una referencia posterior a los listados de 2025 y constituye un nuevo punto temporal de evidencia documental.
+
+La misma nota describe una ampliación del programa +Autos con BNA con alternativas de crédito en pesos a tasa fija y crédito ajustado por UVA. Es importante no confundir el contexto general del programa con una oferta particular garantizada por Horizonte Automotores. La nota acredita que el nombre del comercio fue incluido en el listado publicado por ese medio; no acredita que el comercio haya ofrecido cada variante crediticia a todo cliente, que el banco aprobara solicitudes, ni que todas las condiciones sigan vigentes a la fecha de este expediente.
+
+21.2. Detalles del programa descritos por la nota
+La página informa, como condiciones generales de la iniciativa vigente en el momento de publicación:
+- Alternativa UVA para quienes cobran haberes o jubilaciones en BNA: UVA + 19% TNA.
+- Alternativa UVA para el resto: UVA + 25% TNA.
+- Préstamo en pesos a tasa fija para quienes cobran haberes o jubilaciones en BNA: 36% TNA.
+- Préstamo en pesos a tasa fija para el resto: 46% TNA.
+- La alternativa UVA se describe con plazo de 12 a 60 meses; la opción tradicional en pesos, hasta 72 meses.
+- La nota menciona financiación de hasta $100 millones, sujeta a evaluación crediticia y condiciones del programa.
+- Se indica que las unidades usadas admitidas podían tener hasta diez años de antigüedad.
+- El artículo advierte que el capital y las cuotas de la alternativa UVA se ajustan según la evolución de la unidad correspondiente.
+
+Estas cifras son históricas y contextuales, fechadas por la publicación de julio de 2026. No se deben presentar como cotización actual de Horizonte ni como promesa de crédito aprobable. Antes de utilizarlas comercialmente habría que verificar la página oficial vigente del Banco Nación, las condiciones a la fecha de la consulta y la adhesión activa del comercio.
+
+21.3. Por qué este hallazgo importa
+La aparición en una nota de 2026, sumada a las listas del Banco Nación de 2025 y mayo de 2026, reduce la posibilidad de que la dirección 2021 sea un dato aislado o una simple invención de un directorio. No resuelve por sí sola la dirección alternativa 536, ni demuestra que el listado bancario se haya mantenido actualizado diariamente. Sí permite afirmar que el nombre comercial y la dirección 2021 siguieron siendo reproducidos en información sobre la red de concesionarias al menos hasta julio de 2026.
+
+21.4. Corroboración periodística secundaria del anuncio de 2025
+APFDigital publicó el 17/07/2025 una nota sobre la línea inicial de créditos para autos 0 km y usados e incluyó a Horizonte Automotores entre las 19 concesionarias de Entre Ríos. URL:
+https://www.apfdigital.com.ar/noticias/2025/07/17/435696-el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios
+CNDigital reprodujo una lista semejante, atribuyendo la información a APFDigital. URL:
+https://www.cndigital.com.ar/noticias/68673_el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios.html
+Dado que CNDigital parece replicar la misma noticia/listado, no debe contarse automáticamente como una fuente independiente. La evidencia primaria más importante continúa siendo el documento/listado del propio Banco Nación; las notas sirven como contexto periodístico y como prueba de que el dato fue difundido públicamente.
+
+## 22. NUEVA EVIDENCIA SOBRE EL DOMICILIO ALTERNATIVO: AVENIDA ARGENTINA 536
+
+La búsqueda ampliada encontró una referencia adicional al domicilio 536 en la Guía de Empresas de Clarín, además de EntreRíosTotal y la ficha alternativa de TodosNegocios.
+
+22.1. Guía Clarín — “Horizonte Automotores Usados y 0 Km.”
+URL: https://entre-rios.guia.clarin.com/agencias-de-automotores-con-telefono-en-/
+La página indexada muestra el nombre “Horizonte Automotores Usados Y 0 Km.” y la dirección “Av Argentina 536, Maria Grande, Entre Rios”. En el fragmento accesible no se obtuvo un teléfono directamente asociado a esa entrada. La página no se pudo abrir de forma fiable en esta consulta por un error/tiempo de espera, por lo que se conserva como evidencia de buscador, no como lectura integral del registro.
+
+22.2. EntreRíosTotal
+URL: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+La página lista “Horizonte Automotores Maria Grande - Avda. Argentina 536” y el teléfono 0343 4941092. La misma ficha o sus datos también aparecen en otro listado de rubro de ese mismo dominio. La repetición dentro de un mismo sitio no equivale a dos corroboraciones independientes: probablemente se trata de una base de empresas compartida.
+
+22.3. TodosNegocios — registro vinculado al teléfono 0343 494-1092
+URL: https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+El registro asocia el número 0343 494-1092 con “Av Argentina 536 María Grande, Entre Ríos”, pero en la misma página aparece un encabezado geográfico incorrecto que sitúa la ficha en Santiago del Estero. Ese error interno reduce la confiabilidad de la ficha para resolver la localización exacta.
+
+22.4. Lectura conjunta de las tres referencias
+La dirección 536 no es una mención aislada: aparece en al menos tres ecosistemas de directorios/guías (Clarín, EntreRíosTotal y TodosNegocios). Sin embargo, esas páginas pueden haber heredado un registro antiguo común o replicado entre bases. La evidencia disponible no permite decidir entre estas hipótesis:
+A. el comercio funcionó antes en el número 536 y luego pasó al 2021;
+B. el 536 fue un domicilio anterior de un teléfono que se trasladó con el negocio;
+C. se duplicó una ficha o se mezclaron datos de un registro viejo con otro nuevo;
+D. existe una relación distinta entre el registro del número 536 y el comercio asociado al 2021;
+E. alguna de las direcciones se cargó erróneamente desde el origen.
+
+No hay prueba documental directa de una mudanza, una sucursal, una segunda sede ni de que el domicilio 536 sea actual. En consecuencia, la conclusión responsable es: dirección 2021 fuertemente respaldada por fuentes sectoriales/institucionales y directorios recientes; dirección 536 presente en fuentes de directorio, con vigencia y relación histórica no resueltas.
+
+## 23. NUEVA EVIDENCIA SECTORIAL: CCA ENTRE RÍOS
+
+Fuente: Cámara del Comercio Automotor de Entre Ríos (CCA), página “Agencias”.
+URL: https://ccaentrerios.org/agencias/
+El listado, consultado durante esta ampliación, continúa mostrando:
+“MARÍA GRANDE | HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787”.
+
+23.1. Datos que permite sostener
+- El comercio se presenta en ese listado con el nombre Horizonte Automotores.
+- La dirección publicada por CCA es Av. Argentina 2021.
+- El teléfono que publica CCA es 343 4050787, distinto en su formato y numeración de 0343 461-8388 y 0343 494-1092.
+- La página general parece ser un listado de agencias del sector y no una ficha detallada con representante legal, CUIT, fecha de alta o historial de cambios.
+
+23.2. Qué no permite sostener
+- No prueba por sí sola que el comercio esté actualmente afiliado como socio activo en términos administrativos; sólo prueba que figura en la página pública consultada.
+- No demuestra que el número 343 4050787 responda, esté asignado hoy al comercio o sea WhatsApp.
+- No demuestra que los otros dos teléfonos estén dados de baja.
+- No identifica una persona física titular ni una razón social.
+
+23.3. Interpretación de la diferencia telefónica
+El 343 4050787 puede ser una línea móvil o un contacto actualizado, pero eso es una hipótesis, no un dato confirmado. El formato 343 sin prefijo interurbano 0343 es común en la escritura de números móviles o contactos provinciales, pero no debe deducirse el tipo de línea exclusivamente por el formato. Es necesario probar el número por una vía legítima y actual si el objetivo exige contacto operativo.
+
+## 24. MAPA DE FUENTES Y POSIBLE DEPENDENCIA ENTRE REGISTROS
+
+Una de las principales mejoras de esta versión es no confundir cantidad de resultados con independencia probatoria. Los registros encontrados se pueden agrupar provisionalmente en familias:
+
+FAMILIA A — Directorios de empresas con datos comerciales estandarizados
+- TodosNegocios.
+- Cylex.
+- Yably, que muestra reseñas y datos enlazados a registros de directorio.
+- Tellows, que asocia el teléfono con el nombre y domicilio.
+- GTM, que presenta una ficha de negocio y texto descriptivo.
+- WorldOrgs.
+
+Estas páginas podrían obtener datos de Google Maps, proveedores de datos empresariales, contribuciones de usuarios o bases replicadas. No se ha localizado documentación suficiente para demostrar la genealogía exacta de los datos. Por eso se consideran fuentes secundarias y potencialmente dependientes, salvo cuando ofrecen contenido propio identificable.
+
+FAMILIA B — Directorios regionales
+- EntreRíosTotal.
+- Guía Clarín.
+
+Ambos publican la dirección 536. La coincidencia hace más relevante la existencia de ese registro alternativo, pero no demuestra que las dos bases se hayan originado por separado. El registro puede ser antiguo o derivado de una base común.
+
+FAMILIA C — Fuente sectorial
+- CCA Entre Ríos.
+
+Publica el nombre, domicilio 2021 y teléfono 343 4050787. Es una clase de fuente distinta de un directorio comercial general, aunque no se conoce públicamente la fecha de alta ni el proceso de mantenimiento del listado.
+
+FAMILIA D — Fuente institucional financiera
+- Listados oficiales de Banco Nación de julio, agosto, septiembre y noviembre de 2025 según versiones localizadas, además del listado fechado 19/05/2026.
+
+La presencia repetida en PDF/hojas de cálculo descargables del banco tiene mayor valor que una repetición en directorios comerciales, pero las distintas versiones pueden derivar de la misma base administrativa. Deben contarse como evidencia de persistencia en varias versiones del listado, no como tantos registros independientes.
+
+FAMILIA E — Prensa regional
+- APFDigital, 17/07/2025.
+- CNDigital, que publica un texto/listado semejante y atribuye la información a APFDigital.
+- ¿Qué Sabes? Digital, 09/07/2026, con el listado de 45 concesionarias.
+
+APFDigital y CNDigital no deben contarse como dos corroboraciones totalmente independientes si el segundo replica el primero. La nota de julio de 2026 sí constituye una aparición temporal posterior y utiliza una lista adaptada al contexto del programa de ese momento.
+
+FAMILIA F — Plataformas de reseñas
+- Yably.
+- Cylex, que anuncia un número de opiniones atribuido a fuentes de reseñas.
+- GTM, que exhibe una valoración y reseñas con contenido editorializado.
+
+No se debe sumar la cantidad de reseñas de estas plataformas: pueden mostrar el mismo conjunto de reseñas, cifras de fechas diferentes o métricas calculadas de forma distinta.
+
+## 25. MATRIZ DE HALLAZGOS AMPLIADA Y NIVEL DE CONFIANZA
+
+H-01 — Identidad comercial “Horizonte Automotores” en María Grande.
+Confianza: ALTA.
+Base: CCA Entre Ríos, listados de Banco Nación, directorios y notas de prensa. El conjunto es coherente en nombre y localidad.
+Reserva: no se ha identificado una razón social ni un CUIT de forma inequívoca.
+
+H-02 — Domicilio Avenida Argentina 2021.
+Confianza: ALTA para la dirección que figura en las fuentes públicas; MEDIA-ALTA para considerarla domicilio operativo actual al 12/10/2026.
+Base: CCA, varias versiones de listas de BNA, nota periodística de julio de 2025 y nota de julio de 2026, TodosNegocios, Cylex, GTM y otras fichas.
+Reserva: no se verificó físicamente ni mediante contacto actual. Las listas pueden tener retrasos de actualización.
+
+H-03 — Existencia de un registro alternativo en Avenida Argentina 536.
+Confianza: ALTA respecto de que el dato aparece publicado; BAJA respecto de que sea domicilio actual.
+Base: Guía Clarín, EntreRíosTotal, TodosNegocios alternativo.
+Reserva: origen, fecha, vigencia y relación con el registro 2021 desconocidos.
+
+H-04 — Teléfono 0343 461-8388.
+Confianza: ALTA como teléfono histórico/público asociado al comercio; MEDIA respecto de que continúe activo.
+Base: TodosNegocios, Cylex, Tellows, GTM/otros agregadores y ficha de negocio estructurada consultada.
+Reserva: las páginas pueden copiar datos y no se realizó llamada de verificación.
+
+H-05 — Teléfono 0343 494-1092.
+Confianza: ALTA como número publicado en asociación con el comercio; BAJA-MEDIA respecto de su actividad actual y de la sede correspondiente.
+Base: TodosNegocios, EntreRíosTotal y Guía Clarín no aportó número en el fragmento recuperado.
+Reserva: aparece vinculado al domicilio 536 en algunas fichas y al 2021 en otra ficha, lo que requiere aclaración.
+
+H-06 — Teléfono 343 405-0787.
+Confianza: ALTA como contacto que publica CCA; MEDIA-BAJA respecto de su uso actual.
+Base: página sectorial CCA Entre Ríos.
+Reserva: no se halló evidencia de que sustituya a los demás números ni de que esté activo.
+
+H-07 — Actividad comercial automotor.
+Confianza: ALTA.
+Base: nombre, categorías, descripción comercial, registros sectoriales y listados de concesionarias.
+Reserva: la categoría “concesionario de autos nuevos” de algunos directorios no prueba que venda exclusivamente vehículos nuevos; el texto comercial habla de 0 km y usados.
+
+H-08 — Venta de autos y motos 0 km/usados.
+Confianza: MEDIA-ALTA como servicio anunciado históricamente.
+Base: descripción publicada en Cylex y reproducida por otros agregadores.
+Reserva: no se confirmó la oferta actual ni se recuperó inventario propio verificable.
+
+H-09 — Permutas.
+Confianza: MEDIA como servicio anunciado históricamente.
+Base: frase comercial en Cylex y directorios que parecen repetirla.
+Reserva: no hay condiciones actuales ni ejemplos de operaciones verificadas.
+
+H-10 — Financiación amplia.
+Confianza: MEDIA como mensaje promocional histórico; MEDIA-ALTA para la inclusión en red +Autos con BNA durante 2025-2026.
+Base: texto de Cylex y listados de BNA/notas periodísticas.
+Reserva: no confundir inclusión en red con aprobación de créditos o condiciones particulares garantizadas.
+
+H-11 — Reserva online.
+Confianza: MEDIA como afirmación textual histórica.
+Base: tagline “RESERVAMOS TU AUTO ONLINE” en Cylex y páginas que repiten el texto.
+Reserva: no se identificó formulario, plataforma o procedimiento actual para reservar.
+
+H-12 — Horarios de apertura.
+Confianza: MEDIA-BAJA.
+Base: dos grupos de fuentes presentan horarios diferentes. Cylex/TodosNegocios/Tellows: 09:30–18:00 de lunes a viernes; GTM/ficha estructurada: 08:30–12:30 y 16:00–20:00. Sábado 08:30–12:30 y domingo cerrado son coincidentes.
+Reserva: ninguna fuente garantiza el horario real de hoy.
+
+H-13 — Reputación en plataformas.
+Confianza: MEDIA para afirmar que existen valoraciones públicas; BAJA para estimar satisfacción agregada.
+Base: valores visibles en GTM, Yably/Cylex y ficha de negocio.
+Reserva: métricas distintas, posibles fuentes compartidas y ausencia de análisis íntegro de cada reseña.
+
+H-14 — Sitio web propio.
+Confianza: BAJA para afirmar que no existe; MEDIA para decir que no se localizó un sitio propio inequívoco en las consultas realizadas.
+Base: TodosNegocios dice que no hay sitio y remite a Facebook; no se identificó dominio propio en resultados consultados.
+Reserva: un sitio no indexado, nuevo o con otro nombre podría no haber aparecido.
+
+H-15 — Presencia en Facebook.
+Confianza: MEDIA-ALTA para la existencia de una URL social asociada; BAJA para actividad y titularidad actuales.
+Base: Cylex enlaza https://www.facebook.com/horizonteautos/.
+Reserva: no se pudo leer el contenido directamente porque la consulta fue limitada por la plataforma.
+
+H-16 — Razón social, CUIT y titular.
+Confianza: NO DETERMINADA / NO LOCALIZADO.
+Base: las fuentes encontradas utilizan marca comercial, no identificadores fiscales fiables.
+Reserva: no afirmar que el comercio carece de razón social o CUIT; sólo que no se halló una asociación inequívoca.
+
+H-17 — Modelos específicos de vehículos.
+Confianza: BAJA como inventario real.
+Base: una página de contenido editorial menciona modelos de ejemplo, entre ellos Hilux, Ranger, Amarok, Gol, 208 y Focus.
+Reserva: no se localizaron publicaciones individuales con fecha, precio, kilometraje y datos verificables. Los modelos citados no deben tratarse como stock del comercio.
+
+H-18 — Presencia en +Autos con BNA a lo largo del tiempo.
+Confianza: ALTA para la inclusión documental en listas de 2025 y 2026; MEDIA para la continuidad operativa a la fecha de cierre.
+Base: listados de BNA y notas de 2025/2026.
+Reserva: el estado actual de adhesión debe consultarse en el canal oficial.
+
+## 26. RECONSTRUCCIÓN CRONOLÓGICA REFINADA
+
+La cronología debe leerse como una secuencia de publicaciones que documentan el nombre, no como la historia completa de la empresa.
+
+13/09/2024 — Cylex indica que su ficha fue actualizada en esa fecha. Publica Avenida Argentina 2021, teléfono 0343 461-8388, horario de lunes a viernes 09:30–18:00, sábado 08:30–12:30 y el mensaje comercial sobre autos y motos 0 km/usados, venta, permutas y financiación.
+
+16/07/2025 — Una versión del listado de concesionarias adheridas a +Autos con BNA incluye Horizonte Automores en María Grande, dirección Avda. Argentina 2021.
+
+17/07/2025 — APFDigital publica la lista de 19 concesionarias adheridas en Entre Ríos e incluye Horizonte Automotores en María Grande.
+
+22/08/2025 — Una versión de la lista de BNA vuelve a mostrar Horizonte Automores, Av. Argentina 2021.
+
+04/09/2025 — Otra versión de BNA repite la misma entrada.
+
+15/09/2025 — Otra versión de BNA vuelve a mostrar el nombre con la grafía “Automores” y dirección 2021.
+
+19/05/2026 — Un listado de BNA con fecha visible 19/05/2026 vuelve a incluir el registro. Esta fecha es una referencia de actualización documental importante, aunque no demuestra que cada campo se haya revalidado con el comercio ese día.
+
+09/07/2026 — ¿Qué Sabes? Digital publica una lista de 45 concesionarias adheridas a la versión ampliada de +Autos con BNA; Horizonte Automotores aparece con Av. Argentina 2021.
+
+12/10/2026 — Fecha de cierre de esta ampliación. Las consultas realizadas siguen mostrando las dos direcciones en distintas familias de fuentes, los tres números y dos conjuntos de horarios. No se logró resolverlos documentalmente.
+
+No se recuperó una fuente fiable que permita fijar el año de fundación, primera operación, mudanza, cambio de titular, cambio de razón social, alta fiscal o apertura de una sucursal. La ausencia de hitos anteriores en esta cronología es una limitación de las fuentes localizadas, no prueba de que el comercio sea reciente.
+
+## 27. REPUTACIÓN Y RESEÑAS: QUÉ SE PUEDE DECIR Y QUÉ NO
+
+27.1. Métricas localizadas
+- GTM presenta 8,4/10 y 27 reseñas.
+- Yably presenta 4,20/5 y 17 reseñas.
+- Cylex informa 15 opiniones de una fuente confiable, y su ficha se relaciona con Yably.
+- La ficha de negocio consultada en resultados estructurados mostró 4,3/5 y 18 reseñas.
+
+27.2. Por qué no deben sumarse
+Las puntuaciones usan escalas diferentes (10 puntos y 5 puntos); la cantidad de opiniones cambia por plataforma y fecha. Algunas páginas pueden importar valoraciones de Google u otra plataforma. La coincidencia de dirección y teléfono no demuestra que todas las reseñas sean distintas. Por ello, no se debe afirmar “77 reseñas independientes” ni calcular una media global sumando esos conteos.
+
+27.3. Calidad del texto editorial
+GTM contiene párrafos que parecen redactados como presentación general de la empresa, con afirmaciones sobre atención, variedad, financiación, permutas y experiencia de compra. No todos los párrafos se pueden atribuir a un cliente específico. Por lo tanto, el lenguaje positivo de esa página no equivale a 27 testimonios individuales comprobados.
+
+27.4. Qué queda pendiente para una auditoría de reputación real
+Se necesitaría acceder a la fuente original de cada reseña, obtener su fecha, texto, puntuación, respuesta del comercio y posible duplicación en agregadores. La consulta actual no permitió extraer un corpus completo y verificable. No se atribuyen quejas, acusaciones, estafas ni conductas ilícitas al comercio, ya que no se localizó evidencia primaria suficiente para afirmarlas.
+
+## 28. INVENTARIO, PUBLICACIONES DE VENTA Y VEHÍCULOS
+
+La búsqueda ampliada no produjo un inventario actual verificable con campos individuales completos. En consecuencia, este expediente no asigna al comercio stock actual de marcas, modelos, años, kilometraje, precios, dominio registral ni estado de cada unidad.
+
+28.1. Referencias a modelos
+Una página editorial de GTM menciona Toyota Hilux, Ford Ranger, Volkswagen Amarok, Volkswagen Gol, Peugeot 208 y Ford Focus como ejemplos de modelos o categorías. La redacción no ofrece para cada uno una ficha de vehículo, precio, fecha de publicación ni disponibilidad. Deben conservarse como modelos mencionados en contenido descriptivo, no como prueba de unidades vendidas o disponibles.
+
+28.2. Término “reservamos tu auto online”
+La frase aparece en el texto comercial de Cylex y en registros que reproducen el mismo eslogan. No se identificó una plataforma propia de reserva, términos y condiciones, formulario activo o una URL inequívoca de inventario. No se puede asegurar si la reserva se hacía por mensaje, formulario, redes sociales o una plataforma de terceros.
+
+28.3. Para completar el inventario histórico
+Las vías legítimas más prometedoras serían publicaciones públicas de la cuenta social asociada, publicaciones de marketplaces que indiquen el comercio como vendedor, anuncios regionales con fecha y teléfono, o un archivo web de páginas propias. Ninguna de esas rutas se completó con evidencia individual suficiente en esta fase. No se deben inferir ventas históricas a partir de los modelos genéricos de la página editorial.
+
+## 29. IDENTIDAD LEGAL Y FISCAL: VACÍOS CRÍTICOS
+
+En las fuentes revisadas, “Horizonte Automotores” funciona como nombre comercial. No se ha localizado una fuente pública fiable que conecte de forma inequívoca ese nombre con:
+- una razón social completa;
+- un CUIT verificable;
+- una forma jurídica (persona humana, SAS, SRL, SA u otra);
+- un titular o representante legal;
+- una fecha de constitución;
+- un domicilio fiscal;
+- un número de inscripción registral;
+- una licencia o habilitación municipal específica;
+- un certificado de comerciante habitualista individualmente consultable.
+
+No debe confundirse la exigencia que un programa financiero pueda imponer a concesionarias adheridas con una prueba de que se ha identificado públicamente el certificado concreto de este comercio. La nota de APFDigital explica requisitos generales para concesionarios interesados en adherir, pero no publica el certificado ni el CUIT de Horizonte.
+
+La ausencia de una coincidencia inequívoca en las búsquedas no significa que estos datos no existan en registros oficiales o documentos no indexados. Para avanzar con rigor se requeriría una consulta directa en registros habilitados, con una pista de identificación adicional que permita evitar homónimos, o documentación emitida por el propio comercio.
+
+## 30. PRESENCIA DIGITAL Y HUELLA WEB
+
+30.1. Facebook
+URL asociada desde la ficha Cylex: https://www.facebook.com/horizonteautos/
+Cylex y TodosNegocios enlazan a Facebook como presencia digital. El acceso directo a la página no fue legible de forma confiable en esta sesión por limitaciones de consulta. Por lo tanto, no se incorporan al expediente publicaciones, fechas, vehículos ni comentarios que no pudieron leerse directamente.
+
+30.2. Sitio web propio
+TodosNegocios afirma que no hay un sitio web propio y dirige al usuario a Facebook. La búsqueda no localizó un dominio inequívoco vinculado al nombre comercial. Esto sólo autoriza la frase “no se localizó un sitio propio verificable en las consultas realizadas”; no permite afirmar categóricamente que nunca haya existido uno.
+
+30.3. Perfiles de Instagram y marketplaces
+No se localizó una cuenta de Instagram que pudiera atribuirse con seguridad al comercio. Tampoco se recuperó un perfil inequívoco en Mercado Libre, DeAutos, Autocosmos u otro marketplace con inventario verificable. Esto no prueba que el comercio no use esas plataformas: puede anunciar desde perfiles personales, publicaciones no indexadas, nombres distintos o cuentas con acceso restringido.
+
+30.4. Dominios, correos y canales de contacto
+Cylex muestra un correo en formato protegido/oculto en el contenido indexado; no fue posible extraer la dirección completa de manera confiable. EntreRíosTotal presenta iconos/enlaces para WhatsApp y email, pero el texto accesible no reveló el destino exacto. No se publica aquí ninguna dirección de correo deducida o reconstruida.
+
+30.5. Geolocalización
+Las fichas de directorio y la ficha estructurada de negocio coinciden en Avenida Argentina 2021, María Grande. El identificador de Google Maps suministrado como pista fue abierto, pero la página no ofreció texto legible suficiente para certificar por sí sola los datos. La ficha estructurada consultada en resultados comerciales mostró ese domicilio, el teléfono 0343 461-8388 y horario partido, pero la fuente y su fecha de actualización no deben equipararse a una verificación presencial.
+
+31. ANÁLISIS DE LA NOMENCLATURA “AUTOMOTORES” / “AUTOMORES”
+
+La forma más consistente del nombre comercial es “Horizonte Automotores”. En los documentos de BNA aparece repetidamente “Horizonte Automores”, sin la sílaba “to” final de “Automotores”.
+
+La repetición del error en varias versiones del listado puede indicar que el nombre fue cargado así en la base que alimentó esas publicaciones, pero no prueba que el comercio haya elegido “Automores” como nombre legal o marca. La nota periodística de 2025 y la lista periodística de 2026 usan “Horizonte Automotores”, mientras que el registro sectorial CCA también utiliza “Horizonte Automotores”.
+
+Normalización recomendada para este expediente:
+- Nombre de referencia: Horizonte Automotores.
+- Variante exacta de fuente institucional: Horizonte Automores (error aparente en listados BNA).
+- Variante descriptiva: Horizonte Automotores Usados y 0 Km. (Guía Clarín).
+- No afirmar que cualquiera de esas variantes sea razón social legal.
+
+Las búsquedas deben cubrir todas las variantes, ya que una búsqueda sólo por la forma correcta puede omitir documentos oficiales que reproduzcan el error tipográfico.
+
+## 32. ENTORNO COMERCIAL LOCAL: CONTEXTO LIMITADO, NO PERFIL COMPETITIVO
+
+La consulta de negocios de María Grande devolvió otros resultados de rubro automotor, entre ellos Litcom en Avenida Argentina 932 y otros comercios de reparación o motocicletas. Estos resultados sirven únicamente como contexto geográfico de que hay otros negocios vinculados a vehículos en la localidad. No constituyen un análisis competitivo completo, no prueban relación comercial con Horizonte y no deben usarse para inferir participación de mercado.
+
+El objetivo principal de este expediente es la identidad y huella pública de Horizonte Automotores, no medir su facturación, volumen de ventas, posicionamiento, cuota de mercado, relación con marcas o nivel de competencia. No se encontraron datos públicos suficientemente sólidos para estimar esos indicadores.
+
+Si se requiere una fase competitiva, debería construirse como proyecto separado: concesionarias de María Grande y localidades de influencia; inventario publicado y fechas; marcas atendidas; condiciones de financiación; reputación; canales digitales; ubicación; y evidencia de actividad reciente. Los resultados de búsqueda no deben convertirse en afirmaciones de mercado sin una metodología comparable.
+
+## 33. REGISTRO AMPLIADO DE CONSULTAS Y RESULTADOS NUEVOS
+
+Consultas adicionales realizadas en esta ampliación (12/10/2026):
+1. “Horizonte Automotores” “María Grande” Entre Ríos.
+2. “Horizonte Automotores” con los tres teléfonos conocidos.
+3. Búsquedas combinando Horizonte Automotores, Facebook, Instagram y autos usados.
+4. “Horizonte Automores” para detectar la variante de nombre que aparece en los documentos BNA.
+5. “Avenida Argentina 2021” “María Grande” automotores.
+6. “Horizonte Automotores” financiación, permuta, reservas online y opiniones.
+7. Búsqueda por menciones de CUIT, razón social, titular, dueño, historia, fundación, sucursal, mudanza, reclamos, empleo y noticias.
+8. Búsqueda restringida a dominios oficiales/provinciales, incluidos sitios gubernamentales y boletines oficiales.
+9. Búsqueda de “Horizonte Automotores Usados y 0 Km.”.
+10. Búsqueda de la dirección alternativa “Av Argentina 536” con María Grande.
+11. Búsqueda de publicaciones periodísticas de Banco Nación de 2025 y 2026.
+12. Búsqueda del teléfono 343 4050787 y la dirección 2021 en la página de CCA Entre Ríos.
+13. Búsqueda en directorios de automotores regionales, incluyendo Cylex y Guía Clarín.
+14. Consulta de la página de negocios de María Grande para contextualizar la localización y detectar homónimos.
+
+Resultados nuevos relevantes:
+- Guía Clarín lista “Horizonte Automotores Usados y 0 Km.” en Av Argentina 536.
+- ¿Qué Sabes? Digital, el 09/07/2026, lista Horizonte Automotores en Av. Argentina 2021 dentro de las 45 concesionarias adheridas al programa actualizado.
+- APFDigital, el 17/07/2025, había publicado la inclusión en el programa inicial de 19 concesionarias entrerrianas.
+- CNDigital muestra una lista similar, pero el contenido parece derivar de APFDigital y no se trata como confirmación independiente plena.
+- CCA sigue publicando Av Argentina 2021 y el teléfono 343 4050787.
+- La lista de BNA fechada 19/05/2026 vuelve a publicar el nombre con la variante “Automores”.
+
+Resultados que no se obtuvieron pese a las consultas:
+- CUIT/razón social/titular inequívocos.
+- Página web propia confirmada.
+- Instagram inequívoco.
+- Inventario actual de vehículos con precios y fechas.
+- Fecha de fundación.
+- Prueba directa de mudanza entre 536 y 2021.
+- Confirmación de que los tres teléfonos estén activos.
+- Confirmación de horarios vigentes.
+- Historial íntegro de publicaciones de Facebook.
+- Evidencia primaria suficiente de denuncias o litigios atribuibles al comercio.
+
+Estos resultados negativos son límites de la búsqueda, no declaraciones de inexistencia.
+
+## 34. PREGUNTAS ABIERTAS PRIORIZADAS POR VALOR INVESTIGATIVO
+
+PRIORIDAD 1 — ¿Cuál es el domicilio operativo actual?
+Es la contradicción principal. La dirección 2021 tiene apoyo de CCA y listados BNA de 2025-2026; la dirección 536 aparece en guías comerciales. Hace falta una fuente primaria actual, como el canal oficial del comercio o una ficha actualizada directamente por sus responsables.
+
+PRIORIDAD 2 — ¿Qué teléfono es el principal y cuáles siguen activos?
+Números publicados: 0343 461-8388, 0343 494-1092 y 343 405-0787. No hay evidencia suficiente para etiquetar alguno como inactivo o sustituto.
+
+PRIORIDAD 3 — ¿Qué relación existe entre el registro de 536 y el de 2021?
+Posibles explicaciones: domicilio anterior, ficha duplicada, cambio de sede, error de directorio o datos mezclados. Ninguna está confirmada.
+
+PRIORIDAD 4 — ¿Cuál es la razón social y el CUIT del operador comercial?
+Es indispensable para una diligencia empresarial formal. El nombre comercial no basta para identificar legalmente al titular.
+
+PRIORIDAD 5 — ¿Está actualmente adherido a +Autos con BNA?
+La evidencia documental llega hasta una lista de mayo de 2026 y una nota de julio de 2026. Para afirmar estado actual debe consultarse el listado oficial más reciente o el canal oficial del banco.
+
+PRIORIDAD 6 — ¿Cuál es el horario real?
+Hay dos horarios de lunes a viernes. El horario partido aparece en GTM y ficha estructurada; 09:30–18:00 aparece en Cylex, TodosNegocios y Tellows. La repetición puede ser dependiente y no resuelve el conflicto.
+
+PRIORIDAD 7 — ¿Existe inventario público y cuál es su historial?
+Faltan anuncios individuales con fecha, precio, kilometraje, año, marca, versión y disponibilidad.
+
+PRIORIDAD 8 — ¿Qué canal social administra realmente el comercio?
+Facebook está enlazado por directorios, pero no se leyó su contenido actual. Instagram no fue identificado con suficiente confianza.
+
+PRIORIDAD 9 — ¿Qué significa “reservamos tu auto online” en la práctica?
+No se encontró el sistema o procedimiento al que se refiere el eslogan.
+
+PRIORIDAD 10 — ¿Cuál es el origen de las métricas de reseñas?
+Es necesario revisar fuente original, fecha y duplicaciones antes de construir una valoración agregada.
+
+## 35. PROTOCOLO RECOMENDADO PARA UNA SIGUIENTE FASE DE INVESTIGACIÓN
+
+Si se busca llegar a un nivel todavía más alto, el siguiente paso no consiste sólo en repetir consultas de buscador. Se recomienda:
+
+A. Capturar la página actual de CCA y cada lista oficial de BNA con fecha de descarga, nombre del archivo y fragmento donde aparece el comercio.
+B. Consultar el listado oficial vigente del programa +Autos con BNA y guardar su versión fechada.
+C. Verificar el número de teléfono por contacto comercial ordinario, sin hacerse pasar por otra persona ni obtener información privada.
+D. Solicitar al comercio, si existe una finalidad legítima, el nombre fiscal/factura o razón social que utiliza en operaciones comerciales; no inferirla a partir del nombre de fantasía.
+E. Acceder a Facebook sólo a través de páginas y funciones públicas disponibles, registrando fechas de publicaciones, enlaces, textos de anuncios y vehículos publicados; no intentar eludir controles de acceso.
+F. Buscar cada teléfono con variantes normalizadas: 0343 4618388, 3434618388, +54 343 461-8388; 0343 4941092, +54 343 494-1092; 3434050787, +54 343 405-0787. Los resultados de teléfonos deben registrarse con fecha y fuente, no atribuirse automáticamente a la misma entidad.
+G. Investigar el domicilio 536 con fecha histórica, mapas y directorios archivados, sin declarar mudanza hasta hallar una secuencia documental.
+H. Revisar Wayback Machine y archivos web para posibles páginas o fichas antiguas. Un resultado sin captura no permite afirmar que no existió sitio.
+I. Para reputación, recuperar reseñas originales con fecha y evitar replicados. No publicar acusaciones ni datos personales de autores de reseñas.
+J. Para vehículos, construir una tabla por anuncio individual: URL, fecha visible, marca, modelo, año, versión, kilometraje, precio, vendedor, contacto y estado de disponibilidad. Un anuncio vencido debe conservarse como histórico, no como stock actual.
+K. Para registros legales, usar sólo fuentes oficiales autorizadas y una identificación fiscal inequívoca; no asignar CUIT por coincidencia de nombre.
+L. Mantener una bitácora de consultas con resultado exacto, fecha, URL y limitación de acceso, incluyendo búsquedas sin resultados.
+
+## 36. CONCLUSIÓN GENERAL ACTUALIZADA
+
+La identidad comercial de Horizonte Automotores en María Grande queda respaldada con confianza alta por una combinación de fuentes de naturaleza distinta. El domicilio Avenida Argentina 2021 es el dato geográfico mejor corroborado: aparece en la página sectorial de CCA Entre Ríos, en varias versiones de listados del Banco Nación de 2025 y mayo de 2026, en una nota de julio de 2025, en una nota de julio de 2026 y en varios directorios comerciales. La evidencia temporal permite afirmar que ese domicilio siguió apareciendo en documentos públicos hasta julio de 2026.
+
+La ampliación también fortaleció el hallazgo de la dirección alternativa Avenida Argentina 536: aparece en EntreRíosTotal, TodosNegocios y Guía Clarín, bajo el nombre “Horizonte Automotores Usados y 0 Km.” en una de las fuentes. Eso hace necesario conservar la discrepancia en lugar de descartar el número 536 como un error aislado. Sin embargo, no se halló una prueba de mudanza, sucursal, cambio de titularidad o vigencia actual de esa dirección.
+
+Se identifican tres teléfonos públicos asociados al nombre: 0343 461-8388, 0343 494-1092 y 343 405-0787. El primero es el más repetido en directorios; el tercero figura en CCA; el segundo aparece asociado al domicilio 536 en algunas fuentes. No se realizó una verificación de llamada y no puede afirmarse cuál es el principal actual.
+
+La evidencia permite describir al comercio como un negocio automotor que ha anunciado venta de autos y motos 0 km/usados, permutas, financiación y reserva online. Estas frases son mensajes comerciales reproducidos en directorios; no se recuperó inventario actual verificable ni un sistema de reservas identificado. La inclusión en +Autos con BNA durante 2025 y su mención en listados de 2026 constituyen evidencia importante de presencia documental en la red, pero no garantizan condiciones de financiación vigentes ni aprobación de solicitudes a clientes.
+
+La reputación digital presenta puntuaciones y cantidades distintas entre plataformas. Como hay riesgo de que algunas fuentes repliquen las mismas reseñas, no se calcula una puntuación consolidada. Tampoco se localizaron datos suficientes para identificar una razón social, CUIT, titular, fecha de fundación, historial completo de vehículos, dominio propio inequívoco o actividad actual de cada canal digital.
+
+La conclusión más fuerte que permite la evidencia es concreta, pero acotada: **Horizonte Automotores es una identidad comercial de automotores vinculada públicamente a María Grande; Avenida Argentina 2021 es la dirección más sólidamente corroborada y aparece en documentos públicos hasta julio de 2026; existe una segunda dirección publicada, Avenida Argentina 536, cuya relación histórica y vigencia no están resueltas.** Todo lo que exceda esa conclusión debe tratarse como hipótesis o asunto pendiente hasta obtener evidencia primaria adicional.
+
+## 37. ÍNDICE DE NUEVAS FUENTES AGREGADAS EN LA VERSIÓN 2.0
+
+F-22 ¿Qué Sabes? Digital — “Créditos para comprar autos las 45 concesionarias adheridas en Entre Ríos”, 09/07/2026:
+https://quesabesdigital.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/
+Utilidad: inclusión de Horizonte Automotores, Av. Argentina 2021, en una lista de concesionarias del programa actualizado en 2026; contexto general de las modalidades de crédito descritas por el medio.
+
+F-23 APFDigital — “El Banco Nación lanza créditos para comprar autos 0 KM y usados: hay 19 concesionarias adheridas en Entre Ríos”, 17/07/2025:
+https://www.apfdigital.com.ar/noticias/2025/07/17/435696-el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios
+Utilidad: inclusión del comercio en la lista de concesionarias de Entre Ríos en julio de 2025; contexto del programa en su lanzamiento.
+
+F-24 CNDigital — nota sobre los créditos BNA y las 19 concesionarias de Entre Ríos:
+https://www.cndigital.com.ar/noticias/68673_el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios.html
+Utilidad: copia/distribución secundaria de la lista; no contada como corroboración independiente plena.
+
+F-25 Guía Clarín — “Agencias de Automotores con Teléfono en Entre Ríos”:
+https://entre-rios.guia.clarin.com/agencias-de-automotores-con-telefono-en-/
+Utilidad: entrada indexada “Horizonte Automotores Usados y 0 Km.”, Av Argentina 536, María Grande. La página no se pudo abrir de forma fiable; se utiliza sólo la información del resultado indexado.
+
+F-26 Cylex — listado regional de concesionarios en Crespo:
+https://www.cylex.com.ar/crespo/concesionario%2Bde%2Bautos.html
+Utilidad: repite el registro de Horizonte Automotores en Av Argentina 2021 y el teléfono 0343 461-8388; se considera parte de la familia de directorios, no una corroboración plenamente independiente.
+
+F-27 Cylex — búsqueda general de agencias de automotores:
+https://www.cylex.com.ar/automotores%2Bagencias-2.html
+Utilidad: otra aparición indexada del mismo registro; posible duplicación de la ficha maestra de Cylex.
+
+F-28 CCA Entre Ríos — página de agencias consultada en esta ampliación:
+https://ccaentrerios.org/agencias/
+Utilidad: confirma que la página actualmente consultada muestra Horizonte Automotores, Av Argentina 2021, 343 4050787.
+
+F-29 Banco Nación — listado +Autos con BNA fechado 19/05/2026:
+https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf
+Utilidad: persistencia del nombre con variante “Horizonte Automores” y dirección Av. Argentina 2021 en una versión documental de 2026.
+
+F-30 TodosNegocios — ficha con teléfono 0343 494-1092 y dirección alternativa:
+https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+Utilidad: vincula ese número con Av Argentina 536, aunque la página contiene una contradicción geográfica interna.
+
+F-31 EntreRíosTotal — listado de concesionarios:
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+Utilidad: registro de Avda. Argentina 536 y teléfono 0343 4941092.
+
+F-32 Ficha de negocio estructurada consultada para María Grande:
+Referencia de resultados de negocio de la consulta del 12/10/2026; muestra Horizonte Automotores, Avenida Argentina 2021, teléfono +54 343 461-8388, valoración 4,3/5 y 18 reseñas, además de horario partido.
+Nota: los valores de reseñas y horarios pueden cambiar y no se interpretan como datos garantizados ni necesariamente independientes de otras plataformas.
+
+## 38. DECLARACIÓN FINAL DE ALCANCE
+
+Este documento es una investigación ampliada de fuentes públicas accesibles y búsquedas indexadas, no una auditoría legal, fiscal, presencial ni de bases de datos privadas. No se contactó al comercio, no se eludieron restricciones técnicas y no se utilizaron datos privados. Las conclusiones sobre identidad, dirección, teléfonos, servicios y reputación se limitan a lo publicado por las fuentes citadas. Las consultas que no produjeron resultados se registran como no localizadas, no como prueba de inexistencia.
+
+FIN DE LA VERSIÓN BASE 2.0 — continúan las actualizaciones de la versión 3.0
+
+---
+
+# ACTUALIZACIÓN 3.0 — HALLAZGOS NUEVOS Y AUDITORÍA DE OCTUBRE DE 2026
+
+**Fecha de actualización:** 12/10/2026  
+**Propósito:** incorporar resultados obtenidos en una nueva ronda de búsqueda, distinguir fuentes primarias de cobertura periodística y registrar las contradicciones que siguen sin resolverse.  
+**Regla de lectura:** la información de las secciones anteriores se conserva como parte del historial de investigación. Esta actualización no borra datos anteriores; los reevalúa cuando aparece evidencia más reciente.
+
+## 39. Hallazgo nuevo de alto valor: lista publicada el 7 de septiembre de 2026
+
+### 39.1 Vorterix Litoral — 45 concesionarias adheridas en Entre Ríos
+
+- **Fuente:** Vorterix Litoral.
+- **Título:** “CRÉDITOS PARA COMPRAR AUTOS: LAS 45 CONCESIONARIAS ADHERIDAS EN ENTRE RÍOS”.
+- **Fecha visible:** 7 de septiembre de 2026.
+- **URL:** https://vorterixlitoral.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/
+- **Fragmento relevante:** “MARÍA GRANDE — 1 CONCESIONARIA” y “Horizonte Automotores — Av. Argentina 2021”.
+- **Qué demuestra:** un medio regional publicó en septiembre de 2026 una lista en la que Horizonte Automotores figura como la única concesionaria de María Grande incluida en la nómina provincial que presenta.
+- **Qué no demuestra por sí solo:** no es un documento emitido por Banco Nación; tampoco demuestra que cada solicitud de crédito vaya a aprobarse, que todos los vehículos estén habilitados o que las condiciones publicadas sigan vigentes al momento de una operación concreta.
+- **Valor probatorio:** alto para la existencia de una referencia pública reciente al nombre y a la dirección 2021; medio para confirmar adhesión vigente, porque la fuente es periodística y no el banco.
+- **Importancia temporal:** reduce la posibilidad de que Avenida Argentina 2021 sea solamente un domicilio antiguo reproducido por directorios. La dirección vuelve a aparecer en una publicación de septiembre de 2026.
+
+### 39.2 Contexto del programa descrito por Vorterix
+
+La nota indica que el programa +Autos con BNA incorporó una modalidad UVA y que el listado provincial sumaba 45 concesionarias en 12 localidades. Para esta investigación, esos datos se registran como **contexto publicado por el medio**, no como condiciones contractuales verificadas directamente para Horizonte.
+
+La nota publica, entre otros, los siguientes valores generales del programa:
+- Créditos UVA para quienes cobran haberes o jubilaciones en Banco Nación: UVA + 19% TNA.
+- Créditos UVA para otros solicitantes: UVA + 25% TNA.
+- Préstamos tradicionales en pesos a tasa fija: 36% TNA para clientes que cobran haberes/jubilaciones en el banco y 46% TNA para el resto.
+- Plazos anunciados de 12 a 60 meses para UVA y hasta 72 meses para el préstamo tradicional.
+- La cuota inicial y la aprobación dependen de las condiciones aplicables y de la evaluación crediticia.
+
+**Precaución:** no se debe convertir esta descripción periodística en una oferta propia de Horizonte Automotores. La entidad financiera determina las condiciones de su programa; la concesionaria sería, en todo caso, un punto adherido según la lista informada.
+
+## 40. Revisión del PDF descargable de Banco Nación disponible en la búsqueda actual
+
+### 40.1 Documento localizado
+
+- **Título visible:** “¡Tu auto, más cerca que nunca! Nueva línea de créditos personales +Autos con BNA — Listado de concesionarias adheridas”.
+- **URL:** https://www.bna.com.ar/Downloads/Home_MasAutos_concesionarias.pdf
+- **Acceso/consulta en esta ronda:** 12/10/2026.
+- **Paginación del PDF:** 9 páginas según la vista del documento.
+- **Fragmento relevante de la página 5:** “Horizonte Automores Avda Argentina 2021 Maria Grande Entre Ríos”.
+- **Grafía:** el documento usa “Horizonte Automores”, sin la segunda “t” de “Automotores”.
+- **Interpretación:** el archivo descargable alojado en el dominio de Banco Nación contiene el nombre y la dirección 2021 dentro de la lista de concesionarias. Es una fuente institucional primaria respecto del contenido del listado.
+- **Limitación temporal:** en el contenido extraído no se observó una fecha de emisión inequívoca en la portada. La fecha de consulta del archivo no debe confundirse con la fecha de actualización oficial del listado. Por eso se registra como “versión descargable consultada el 12/10/2026, fecha de publicación no visible en el texto extraído”.
+
+### 40.2 Cómo se relaciona con los listados fechados de 2025 y mayo de 2026
+
+En versiones anteriores del expediente se habían localizado PDFs fechados o identificados por su nombre de archivo como listas de julio, agosto y septiembre de 2025, y una versión de mayo de 2026. En ellas aparece la misma combinación:
+- Provincia: Entre Ríos.
+- Localidad: María Grande.
+- Agencia: “Horizonte Automores” o “Horizonte Automotores”.
+- Dirección: Av. Argentina 2021 / Avda Argentina 2021.
+
+El archivo descargable revisado en esta ronda vuelve a contener la entrada. La secuencia documental queda así:
+
+| Fecha/periodo | Fuente | Nombre mostrado | Dirección | Estado |
+|---|---|---|---|---|
+| 16/07/2025 | Listado BNA identificado por fecha | Horizonte Automores | Avda Argentina 2021 | Verificado en texto indexado del PDF |
+| 22/08/2025 | Copia/listado BNA | Horizonte Automores | Av. Argentina 2021 | Verificado en el PDF |
+| Septiembre de 2025 | Varias copias/listados BNA | Horizonte Automores | Av. Argentina 2021 | Verificado en resultados de los documentos |
+| 19/05/2026 | Listado BNA | Horizonte Automores | Av. Argentina 2021 | Verificado en texto indexado del PDF |
+| 07/09/2026 | Vorterix Litoral | Horizonte Automotores | Av. Argentina 2021 | Nota periodística regional |
+| Archivo consultado 12/10/2026 | PDF alojado en Banco Nación | Horizonte Automores | Avda Argentina 2021 | Presencia verificada; fecha de emisión del PDF no visible |
+
+**Conclusión temporal prudente:** la dirección 2021 cuenta con evidencia documental que abarca desde julio de 2025 hasta una publicación periodística de septiembre de 2026, además de figurar en un PDF de Banco Nación accesible en octubre de 2026. Esto respalda con fuerza que el domicilio fue asociado públicamente con el comercio durante ese intervalo. No constituye prueba presencial de ocupación efectiva del local en la fecha exacta de consulta.
+
+## 41. Nota periodística de APFDigital del 17 de julio de 2025
+
+- **Fuente:** APFDigital.
+- **Título:** “El Banco Nación lanza créditos para comprar autos 0 KM y usados: hay 19 concesionarias adheridas en Entre Ríos”.
+- **Fecha visible:** jueves 17 de julio de 2025, 10:14.
+- **URL:** https://www.apfdigital.com.ar/noticias/2025/07/17/435696-el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios
+- **Fragmento de la lista:** “Horizonte Automotores - María Grande - Entre Ríos”.
+- **Valor:** confirma que el nombre comercial fue incluido en la cobertura periodística del lanzamiento del programa en julio de 2025.
+- **Limitación:** la nota no identifica razón social, CUIT, titular, teléfono ni dirección particular de Horizonte en el fragmento de la lista. No se debe atribuir al comercio cada condición general del crédito como si fuera un contrato propio.
+- **Relación con otras fuentes:** la nota de CNDigital reproduce una lista equivalente y cita APFDigital como fuente. Por ello, ambas no deben contarse como dos corroboraciones plenamente independientes.
+
+### 41.1 Condiciones históricas del programa en la nota de 2025
+
+APFDigital describió en julio de 2025 una línea de crédito personal no prendario, de hasta $100 millones, con plazo de hasta 72 meses y una TNA fija del 38% según el artículo. También explicó que los concesionarios debían cumplir requisitos de adhesión, entre ellos documentación comercial y un convenio con el banco.
+
+Esos valores pertenecen al contexto de la nota de julio de 2025. No deben combinarse con los parámetros UVA/tasa fija informados en septiembre de 2026 como si fueran simultáneos. El expediente conserva ambas versiones precisamente porque las condiciones del programa cambiaron.
+
+## 42. Auditoría de independencia de fuentes: mapa de familias documentales
+
+Un objetivo central de esta actualización es evitar inflar artificialmente el número de confirmaciones.
+
+### Familia A — Registro de directorio general replicado
+
+Páginas relacionadas:
+- TodosNegocios: https://ar.todosnegocios.com/horizonte-automotores_17-0343-461-8388
+- Cylex: https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+- Cylex, listado regional: https://www.cylex.com.ar/crespo/concesionario%2Bde%2Bautos.html
+- Tellows: https://ar.tellows.net/num/03434618388
+- Yably: https://yably.com.ar/rese%C3%B1as/maria-grande/horizonte-automotores-av-argentina-2021
+
+**Riesgo de dependencia:** varias páginas repiten la misma dirección 2021, el teléfono 0343 461-8388 y una frase comercial idéntica. Cylex dice que reúne 15 opiniones de una fuente; Yably presenta 17 reseñas y puede compartir datos o fuentes. Tellows está centrado en el número telefónico y repite la frase comercial. La coincidencia de texto y campos sugiere sindicación o reutilización de una ficha de origen, pero no se ha demostrado la cadena exacta de copiado.
+
+**Tratamiento:** contar la familia como evidencia de circulación del registro en varios servicios, no como cinco verificaciones primarias independientes.
+
+### Familia B — Registros con domicilio 536
+
+Páginas:
+- EntreRíosTotal, concesionarios: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130
+- EntreRíosTotal, autos usados: https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=122etetet20
+- TodosNegocios, ficha centrada en 0343 494-1092: https://ar.todosnegocios.com/horizonte-automotores-0343-494-1092
+- Resultado indexado de Guía Clarín: https://entre-rios.guia.clarin.com/agencias-de-automotores-con-telefono-en-/
+
+**Riesgo de dependencia:** las dos páginas de EntreRíosTotal se encuentran en el mismo dominio y muestran los mismos datos; por lo tanto, no son independientes. La ficha de TodosNegocios comparte nombre y teléfono alternativo, pero su encabezado geográfico incluye una inconsistencia (“Argentina (Santiago del Estero)”) pese a mencionar María Grande, Entre Ríos. La entrada indexada de Guía Clarín debe tratarse con cautela si no se puede abrir el detalle completo.
+
+**Tratamiento:** la dirección 536 es una discrepancia real en el corpus de fuentes, pero la evidencia disponible no basta para establecer si fue una dirección anterior, un registro duplicado, una sede adicional o un error.
+
+### Familia C — Documentos de Banco Nación
+
+Páginas/archivos:
+- https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf
+- https://bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250822_2.xlsx%20-%20Hoja1%20%2813%29.pdf
+- https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250904_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+- https://www.bna.com.ar/Downloads/Home_MasAutos_Copia%20de%20Listado%20concesionarias%2020250915_2.xlsx%20-%20Hoja1%20%2814%29.pdf
+- https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf
+- https://www.bna.com.ar/Downloads/Home_MasAutos_concesionarias.pdf
+
+**Valor:** son documentos alojados en el dominio institucional del banco y la entrada aparece en distintas versiones. Constituyen la evidencia más fuerte de inclusión documental en el programa.
+
+**Límite:** varias versiones podrían ser copias sucesivas de una misma lista maestra. La repetición aumenta la evidencia de persistencia temporal, pero no debe interpretarse como múltiples adhesiones distintas. La grafía “Automores” se conserva en transcripción cuando así aparece; la normalización a “Automotores” se presenta sólo como variante probable del nombre comercial.
+
+### Familia D — CCA Entre Ríos
+
+- URL: https://ccaentrerios.org/agencias/
+- Texto de presentación: la página explica que muestra páginas de “algunos” de sus socios y ofrece un correo de contacto para solicitar que una agencia figure en el listado.
+- Entrada: “MARÍA GRANDE | HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787”.
+
+**Valor:** fuente sectorial distinta de los directorios comerciales generalistas y de los listados BNA. Añade el teléfono 343 4050787.
+
+**Límite:** no expone fecha de alta, nombre fiscal ni vigencia individual de afiliación. La página de CCA puede ser administrada por la propia entidad, pero no es un registro público societario ni prueba de titularidad.
+
+### Familia E — Cobertura periodística de +Autos con BNA
+
+- APFDigital, 17/07/2025: https://www.apfdigital.com.ar/noticias/2025/07/17/435696-el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios
+- CNDigital: https://www.cndigital.com.ar/noticias/68673_el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios.html
+- Vorterix Litoral, 07/09/2026: https://vorterixlitoral.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/
+- ¿Qué Sabes? Digital, referencia histórica ya listada en la versión 2.0: https://quesabesdigital.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/
+
+**Valor:** permiten reconstruir cómo se informó públicamente el programa en 2025 y 2026.
+**Límite:** cuando una nota reproduce un listado de otra agencia o del banco, la nota no es una nueva confirmación institucional. Vorterix es una publicación posterior con una lista provincial actualizada según su propio texto; el PDF del banco es la referencia institucional más directa.
+
+## 43. Matriz de afirmaciones actualizada
+
+| ID | Afirmación | Evidencia principal | Confianza | Reserva |
+|---|---|---|---|---|
+| A-01 | Existe una identidad comercial pública “Horizonte Automotores” vinculada a María Grande | CCA, BNA, Vorterix, directorios | Alta | No identifica operador legal |
+| A-02 | Avenida Argentina 2021 es la dirección más respaldada | BNA, CCA, Vorterix, Cylex, TodosNegocios, GTM | Alta | No es comprobación presencial |
+| A-03 | El nombre aparece en un listado de concesionarias de Banco Nación | PDF alojado en BNA y listas fechadas | Alta | La fecha de la versión descargable actual no se ve en el texto |
+| A-04 | El comercio fue mencionado en una lista periodística de septiembre de 2026 | Vorterix Litoral | Alta | Fuente periodística, no emisor del programa |
+| A-05 | 0343 461-8388 es un teléfono publicado para el negocio | Cylex, TodosNegocios, Tellows | Alta como dato publicado | Vigencia y titularidad actual no probadas |
+| A-06 | 0343 494-1092 está asociado al nombre en directorios | TodosNegocios y EntreRíosTotal | Media-alta como asociación publicada | Posible ficha histórica o duplicada |
+| A-07 | 343 405-0787 figura en CCA junto a la dirección 2021 | CCA Entre Ríos | Alta como dato de la página | Vigencia no probada |
+| A-08 | Avenida Argentina 536 fue asociada al nombre | EntreRíosTotal, TodosNegocios y resultado indexado de Guía Clarín | Media como discrepancia documental | Relación temporal no resuelta |
+| A-09 | Se anuncian venta de autos/motos 0 km y usados, permutas y financiación | Texto comercial reproducido por Cylex/Tellows | Alta como texto publicado | Servicios actuales no verificados |
+| A-10 | Se ofrece o se ofreció reserva online | Frase “Reservamos tu auto online” | Media | No se identificó la herramienta ni el procedimiento |
+| A-11 | El horario actual es 09:30–18:00 | TodosNegocios/Cylex/Tellows | Media-baja | GTM publica horario partido y las fuentes podrían depender entre sí |
+| A-12 | El horario actual es partido, 08:30–12:30 y 16:00–20:00 | GTM | Media-baja | Contradice el otro horario |
+| A-13 | La reputación global es 4,1/5, 4,2/5 o 8,4/10 | Cylex/Yably/GTM | Baja como puntuación consolidada | Plataformas, muestras y fuentes diferentes |
+| A-14 | Se conoce la razón social o CUIT | Ninguna fuente inequívoca localizada | No establecido | No inferir |
+| A-15 | Se conoce el inventario actual de vehículos | No se recuperaron anuncios individuales verificables | No establecido | No inventar unidades |
+
+## 44. Nueva bitácora de búsquedas y resultados
+
+**Fecha de consulta de esta ronda: 12/10/2026.** Las búsquedas son exploratorias y el listado siguiente resume consultas que produjeron resultados útiles; no es una afirmación de que se hayan agotado todos los índices disponibles.
+
+| Consulta o estrategia | Resultado útil | Limitación |
+|---|---|---|
+| `"Horizonte Automotores" "María Grande" Entre Ríos` | Directorios, CCA, listados BNA y notas periodísticas | Muchos resultados repiten datos conocidos |
+| `"0343 461-8388"` y variantes sin puntuación | Tellows y directorios con 2021 | No se realizó llamada |
+| `"0343 494-1092"` | Ficha de TodosNegocios con dirección 536 y entrada de EntreRíosTotal | No resuelve si la línea sigue activa |
+| `"343 4050787"` | Entrada de CCA | No se verificó WhatsApp ni respuesta |
+| `"Avenida Argentina 2021" "María Grande"` | Coincidencias en directorios y listados BNA | Una misma ficha puede replicarse |
+| `"Avenida Argentina 536" "María Grande"` | EntreRíosTotal, TodosNegocios y resultado indexado de Guía Clarín | Sin cronología de ocupación |
+| `"Horizonte Automotores" filetype:pdf` / listados BNA | PDF institucional y copias fechadas | Versiones de una lista pueden derivar del mismo archivo maestro |
+| `site:bna.com.ar/Downloads "Horizonte Automores"` | Listas de 2025 y 2026 | Error ortográfico probable en el campo de agencia |
+| `"Horizonte Automotores" "créditos para comprar autos" 2026` | Nota de Vorterix del 07/09/2026 | La nota es fuente periodística |
+| `site:facebook.com/horizonteautos` | URL pública enlazada desde Cylex | La plataforma limitó el acceso al contenido |
+| `site:entreriostotal.com.ar/empresas/ "Horizonte Automotores"` | Dos categorías del mismo sitio | No son dos fuentes independientes |
+| Búsqueda en listados sectoriales | CCA muestra nombre, domicilio 2021 y teléfono 343 4050787 | Sin fecha individual de alta |
+| Búsqueda de reseñas y puntuaciones | Cylex/Yably y GTM presentan métricas diferentes | No se recuperó un conjunto original completo de reseñas |
+
+## 45. Asuntos que continúan sin resolver y por qué
+
+### 45.1 Identidad legal
+
+No se obtuvo una fuente primaria que vincule inequívocamente el nombre comercial con una razón social o CUIT. La aparición en listados de concesionarias no permite deducir el CUIT ni el titular. Para resolverlo sería necesaria una factura o documentación comercial legítimamente publicada/entregada, o una coincidencia oficial inequívoca en registros públicos.
+
+### 45.2 Dirección alternativa 536
+
+La dirección 536 sigue siendo el principal conflicto. No se recuperó una fecha antigua suficientemente fiable que demuestre que fue la sede anterior, ni evidencia de una sucursal. No se debe escribir “se mudó de 536 a 2021” sin un documento que muestre esa secuencia.
+
+### 45.3 Teléfonos
+
+No hay prueba de que alguno de los tres números haya sido desconectado, transferido o sustituido. Tampoco se verificó que todos correspondan hoy al mismo operador. El 461-8388 es el más repetido en directorios; el 405-0787 está en CCA junto a 2021; el 494-1092 aparece en fichas que asocian el nombre con 536 y también en una ficha de TodosNegocios que publica 2021. Esa distribución sugiere un posible historial de datos mezclados, pero no lo demuestra.
+
+### 45.4 Inventario y operaciones
+
+No se obtuvo un conjunto de anuncios originales con fecha, precio, versión, kilometraje y URL individual suficiente para reconstruir el stock. Las referencias generales a Hilux, Ranger, Amarok, Gol, 208 y Focus en una página de directorio no son inventario. Tampoco se encontraron pruebas documentales suficientes de ventas concluidas, reservas, entregas o permutas particulares.
+
+### 45.5 Presencia digital
+
+La URL https://www.facebook.com/horizonteautos/ está enlazada desde Cylex, pero no se inspeccionó el contenido por limitaciones técnicas. No se identificó una cuenta oficial de Instagram con atribución inequívoca. No se recuperó un dominio propio comprobable. Estas ausencias significan “no localizado/verificado en esta ronda”, no “inexistente”.
+
+### 45.6 Horarios
+
+La ficha de Cylex dice que fue actualizada el 13/09/2024 y publica 09:30–18:00 entre semana. GTM publica 08:30–12:30 y 16:00–20:00. La nota de Vorterix de septiembre de 2026 no resuelve horarios. Sin una fuente primaria actual, el horario operativo permanece indeterminado.
+
+### 45.7 Reseñas
+
+Las cantidades y escalas de Cylex/Yably/GTM no deben promediarse. Antes de hacer una evaluación de reputación sería necesario recuperar cada reseña original, su fecha, plataforma de origen y posibles duplicados. No se deben reproducir acusaciones o atribuir opiniones a personas sin evidencia.
+
+## 46. Índice de fuentes nuevas o reexaminadas en la actualización 3.0
+
+**F-33 — Vorterix Litoral, 07/09/2026**
+https://vorterixlitoral.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/
+Uso: lista de 45 concesionarias adheridas que menciona a Horizonte Automotores, Av. Argentina 2021.
+
+**F-34 — Banco Nación, PDF descargable de concesionarias**
+https://www.bna.com.ar/Downloads/Home_MasAutos_concesionarias.pdf
+Uso: documento alojado en dominio institucional; en página 5 figura “Horizonte Automores Avda Argentina 2021 Maria Grande Entre Ríos”. Fecha de publicación no visible en el texto extraído; consultado el 12/10/2026.
+
+**F-35 — APFDigital, 17/07/2025**
+https://www.apfdigital.com.ar/noticias/2025/07/17/435696-el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios
+Uso: lista de concesionarias adheridas en Entre Ríos en el lanzamiento de +Autos con BNA, incluye Horizonte Automotores en María Grande.
+
+**F-36 — CNDigital**
+https://www.cndigital.com.ar/noticias/68673_el-banco-nacion-lanza-creditos-para-comprar-autos-0-km-y-usados-hay-19-concesionarias-adheridas-en-entre-rios.html
+Uso: reproducción periodística de la lista de julio de 2025; se considera fuente derivada respecto de APFDigital.
+
+**F-37 — CCA Entre Ríos, relectura de la ficha sectorial**
+https://ccaentrerios.org/agencias/
+Uso: fila “MARÍA GRANDE | HORIZONTE AUTOMOTORES | AV ARGENTINA 2021 | 343 4050787”; la página explica que muestra páginas de algunos socios.
+
+**F-38 — Cylex, ficha del negocio, relectura de fecha y redes**
+https://www.cylex.com.ar/maria-grande/horizonte-automotores-11343049.html
+Uso: fecha de actualización 13/09/2024; teléfono, dirección, horario, frase comercial y enlace de Facebook.
+
+**F-39 — Cylex, categoría regional**
+https://www.cylex.com.ar/crespo/concesionario%2Bde%2Bautos.html
+Uso: repetición del registro de 2021 y 0343 461-8388 dentro del mismo dominio.
+
+**F-40 — EntreRíosTotal, ficha en categorías de concesionarios**
+https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130etet
+Uso: registro de Avda. Argentina 536 y 0343 4941092; mismo dominio que otros listados del sitio.
+
+**F-41 — Banco Nación, lista de mayo de 2026**
+https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf
+Uso: versión fechada donde figura “Horizonte Automores”, María Grande, Av. Argentina 2021.
+
+## 47. Conclusión final consolidada — versión 3.0
+
+La evidencia pública disponible permite afirmar con **confianza alta** que existe una identidad comercial denominada Horizonte Automotores asociada a María Grande, Entre Ríos, y que Avenida Argentina 2021 es el domicilio publicado con mayor respaldo. La dirección figura en fuentes de distinta naturaleza: la página sectorial de CCA Entre Ríos, listados de concesionarias alojados en el dominio del Banco Nación, directorios comerciales y notas periodísticas. La mención de Vorterix Litoral del 7 de septiembre de 2026 y el PDF descargable del banco consultado en octubre de 2026 amplían la continuidad temporal del dato.
+
+El listado de Banco Nación es la evidencia institucional más importante encontrada: la fila aparece con la grafía “Horizonte Automores” y la dirección “Avda Argentina 2021”. El medio Vorterix vuelve a publicar el nombre normalizado “Horizonte Automotores” y la misma dirección en la lista provincial de septiembre de 2026. La combinación respalda la asociación pública del comercio con el programa +Autos con BNA, aunque no garantiza que las condiciones de crédito sean las mismas en todas las fechas ni que una operación individual sea aprobada.
+
+La dirección alternativa Avenida Argentina 536 continúa sin resolverse. Está documentada en guías comerciales, junto con el teléfono 0343 494-1092, pero no se encontró una secuencia histórica que permita afirmar que fue una sede anterior, una sucursal o una dirección vigente. Debe mantenerse como discrepancia documental abierta.
+
+Los tres teléfonos publicados son 0343 461-8388, 0343 494-1092 y 343 405-0787. El primero es el más repetido por directorios; el tercero figura en la página de CCA junto a la dirección 2021; el segundo aparece en registros asociados tanto a 2021 como a 536. La vigencia y el uso actual de cada número no fueron comprobados por llamada.
+
+La descripción comercial publicada menciona autos y motos 0 km y usados, venta, permutas, financiación y reserva online. Es evidencia de los servicios que se anunciaron en la ficha de directorio, no confirmación de sus términos actuales. No se recuperó un inventario de vehículos con anuncios individuales verificables, ni se pudo identificar la razón social, CUIT, titular, fecha de fundación, un correo exacto o un sitio corporativo propio.
+
+Las puntuaciones de reputación permanecen incompatibles entre plataformas y potencialmente dependientes de fuentes compartidas. No corresponde construir una nota promedio ni extraer conclusiones sobre la calidad del comercio a partir de los agregados sin revisar las reseñas originales.
+
+**Conclusión máxima sustentada:** Horizonte Automotores es una identidad comercial automotriz públicamente asociada a María Grande; Avenida Argentina 2021 es su dirección mejor corroborada y aparece en documentación de 2025 y 2026; el negocio figura en listados vinculados a +Autos con BNA; existe una dirección alternativa publicada (Avenida Argentina 536) y tres teléfonos asociados que requieren verificación directa. La razón social, CUIT, titularidad, inventario histórico, estado actual de los canales digitales y vigencia de cada contacto continúan desconocidos.
+
+## 48. Declaración de alcance y límites de esta actualización
+
+Esta investigación utilizó resultados de búsqueda web, páginas públicas y documentos accesibles en la sesión del 12/10/2026. No se contactó al comercio, no se realizaron llamadas, no se inició sesión en redes sociales, no se eludieron restricciones técnicas, no se utilizaron imágenes ni videos como evidencia y no se consultaron datos privados. Las fuentes periodísticas se distinguen de los documentos institucionales; los directorios repetidos no se cuentan automáticamente como confirmaciones independientes. “No localizado” no significa que un dato no exista.
+
+**FIN DEL EXPEDIENTE MADRE OSINT TEXTUAL — VERSIÓN 3.0**

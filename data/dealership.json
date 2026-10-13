@@ -47,7 +47,8 @@
       "Ficha de Facebook de la agencia (consultada el 12/10/2026): Av Argentina 2021",
       "Infoisinfo (ficha 261219) y GTM: Av. Argentina 2021",
       "Sitio oficial de Grupo Almafuerte, páginas Nosotros y Contacto (12/10/2026): Av. Argentina 2021, María Grande",
-      "Listado de agencias de la Cámara del Comercio Automotor de Entre Ríos: Av Argentina 2021"
+      "Listado de agencias de la Cámara del Comercio Automotor de Entre Ríos: Av Argentina 2021",
+      "Listados del Banco Nación (+Autos con BNA): la fila «Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021» figura en versiones de julio, agosto y septiembre de 2025 y en la del 19/05/2026 (verificado en el texto indexado del PDF el 12/10/2026)"
     ],
     "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios): ficha antigua. No se usa. Discrepancia entre verificaciones del 12/10/2026: la verificación previa leyó que Entre Ríos Total la ubica en Paraná; el expediente OSINT textual V2 la lee como María Grande, Avda. Argentina 536, tel. 0343 4941092. Sin resolver; la ficha de TodosNegocios del 536 tiene además un encabezado de Santiago del Estero. No hay prueba de mudanza.",
     "coordenadas": {
@@ -119,8 +120,9 @@
       },
       {
         "clave": "bna",
-        "texto": "Figura en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (16/07/2025)",
-        "fuente": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf"
+        "texto": "Figura en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (mayo de 2026)",
+        "fuente": "https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf",
+        "periodo": "mayo de 2026"
       },
       {
         "clave": "permuta",
