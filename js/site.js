@@ -1,8 +1,10 @@
 /* Horizonte Automotores · navegación de sitio y comportamiento mobile-first. */
 (function () {
   'use strict';
+  var saveData = !!(navigator.connection && navigator.connection.saveData);
+  document.documentElement.classList.toggle('save-data', saveData);
   /* Entrada editorial: reveal progresivo sin bloquear el contenido. */
-  if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+  if ('IntersectionObserver' in window && !saveData && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var revealObserver = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.15 });
     document.querySelectorAll('section h2, .car, .card, .quick-card, .ct-c, .visit-card, .reveal').forEach(function (node, index) {
       node.classList.add('reveal');
@@ -11,7 +13,7 @@
     });
   }
   /* Parallax contenido: solo hero, solo puntero fino y nunca en móvil/reduced motion. */
-  if (window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine) and (min-width: 701px)').matches && !(window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+  if (!saveData && window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine) and (min-width: 701px)').matches && !(window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var parallaxHero = document.querySelector('.hero');
     if (parallaxHero) {
       var parallaxTick = false;
@@ -52,33 +54,4 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 980) close();
   }, { passive: true });
-
-  /* FAB de WhatsApp: aparece solo cuando suma. Se oculta (a) sobre el hero, (b) donde la página ya
-     muestra un CTA de contacto a la vista (catálogo, formularios, visita, contacto, barra del comparador)
-     y (c) mientras se escribe en un campo, para no tapar controles ni el teclado en mobile. */
-  var fab = document.querySelector('.fab');
-  if (!fab) return;
-  var hidden = { hero: false, zone: 0, typing: false };
-  var render = function () {
-    var visible = !hidden.hero && hidden.zone === 0 && !hidden.typing;
-    document.body.classList.toggle('fab-visible', visible);
-    fab.tabIndex = visible ? 0 : -1;
-    fab.setAttribute('aria-hidden', visible ? 'false' : 'true');
-  };
-  var isField = function (el) { return !!el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) && el.type !== 'checkbox' && el.type !== 'radio'; };
-  document.addEventListener('focusin', function (e) { hidden.typing = isField(e.target); render(); });
-  document.addEventListener('focusout', function () { hidden.typing = false; render(); });
-  if (!('IntersectionObserver' in window)) { hidden.hero = false; render(); return; }
-  var hero = document.querySelector('.hero');
-  hidden.hero = !!hero;
-  render();
-  if (hero) new IntersectionObserver(function (entries) {
-    hidden.hero = entries[0].isIntersecting; render();
-  }, { threshold: 0.05 }).observe(hero);
-  var inside = new Set();
-  var zones = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) { en.isIntersecting ? inside.add(en.target) : inside.delete(en.target); });
-    hidden.zone = inside.size; render();
-  }, { rootMargin: '-20% 0px -20% 0px' });
-  document.querySelectorAll('#unidades, #como-comprar, #financiacion, #guia, #preguntas, #tu-usado, #busqueda, #visita, #contacto, .tray').forEach(function (el) { zones.observe(el); });
 })();
