@@ -1003,3 +1003,53 @@ section.conversion:not(.ct) .conversion-form-head .ey{background:none;padding:0 
 
 /* ===== Fondos de sección: imágenes a plena nitidez ===== */
 section.conversion::before,.finance-section{image-rendering:auto}
+
+/* ===== Filtros del inventario: panel fijo en el flujo, siempre igual (abierto o cerrado) ===== */
+#unidades .fx,#unidades .fx.filter-bar,#unidades .fx.is-open{position:static!important;inset:auto!important;z-index:1!important;display:block!important;width:100%!important;max-width:none!important;margin:0 0 28px!important;padding:18px 20px!important;border:1px solid rgba(242,210,27,.4)!important;border-radius:10px!important;background:#0c1315!important;backdrop-filter:none!important;box-shadow:none!important;transform:none!important}
+#unidades .fx::before,#unidades .fx.is-open::before{position:static!important;inset:auto!important;z-index:auto!important;display:block!important;margin:0 0 12px!important;background:none!important;color:#f2d21b}
+#unidades .fx .fx-top{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(200px,280px) auto;gap:12px;align-items:center;padding:0!important}
+#unidades .fx .fx-top>.f label{display:block;margin-bottom:6px}
+#unidades .fx .fx-top>.fx-quick{grid-column:1/-1;flex:none;min-width:0;max-width:none}
+#unidades .fx .fx-top>.fx-quick .chips{flex-wrap:wrap;overflow:visible;max-width:none}
+#unidades .fx input,#unidades .fx select,#unidades .fx button,#unidades .fx .btn{border-radius:8px!important}
+#unidades .fx input[type=search],#unidades .fx select{min-height:44px;padding:8px 12px;background:#111b1e;color:#f4f4f4;border:1px solid rgba(255,255,255,.3);font-size:15px}
+#unidades .fx fieldset{display:flex;flex-wrap:wrap;gap:8px;min-width:0;margin:0;padding:0;border:0}
+#unidades .fx legend{flex:0 0 100%;display:block;padding:0 0 4px;font:800 11px/1.3 var(--b);letter-spacing:.14em;text-transform:uppercase;color:#d0d0d0}
+#unidades .fx .fx-top legend{display:none}
+#unidades .fx fieldset select{flex:1 1 110px;width:auto;min-width:0}
+#unidades .fx .fx-body{position:static!important;inset:auto!important;z-index:auto!important;width:100%!important;max-width:none!important;max-height:none!important;overflow:visible!important;transform:none!important;margin:16px 0 0!important;padding:18px 0 0!important;border:0!important;border-top:1px solid rgba(255,255,255,.16)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 24px}
+#unidades .fx:not(.is-open) .fx-body,#unidades .fx .fx-body[hidden]{display:none!important}
+#unidades .fx.is-open .fx-body{display:grid!important}
+#unidades .fx .fx-body .fx-quick{display:flex!important}
+#unidades .fx .fx-body>.f,#unidades .fx .fx-body>fieldset{min-width:0}
+#unidades .fx .fx-act{position:static!important;inset:auto!important;transform:none!important;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;width:100%;margin:14px 0 0;padding:14px 0 0;border:0;border-top:1px solid rgba(255,255,255,.14);background:transparent}
+#unidades .fx .fx-view{display:none!important}
+#unidades .fx:not(.is-open) .fx-act{display:none}
+@media(max-width:1100px){#unidades .fx .fx-body{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){#unidades .fx,#unidades .fx.is-open{padding:14px!important}#unidades .fx .fx-top{grid-template-columns:minmax(0,1fr) auto}#unidades .fx .fx-top>.f{grid-column:1/-1}#unidades .fx .fx-top>.fx-quick:nth-of-type(n+4){display:flex}#unidades .fx .fx-body{grid-template-columns:minmax(0,1fr)}}
+#unidades .fx .fx-top{grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:14px 24px!important;align-items:end!important}
+#unidades .fx .fx-top>.f:nth-child(1){grid-column:span 7}
+#unidades .fx .fx-top>.f:nth-child(2){grid-column:span 3}
+#unidades .fx .fx-top>.fx-tg{grid-column:span 2;width:100%}
+#unidades .fx .fx-top>.fx-quick{grid-column:span 3}
+#unidades .fx .fx-top>.fx-quick.s5{grid-column:span 6}
+#unidades .fx .fx-top>.fx-quick legend{display:block}
+#unidades .fx:not(.is-open) .fx-top>.fx-quick{display:none!important}
+#unidades .fx .fx-body{grid-template-columns:repeat(12,minmax(0,1fr))!important;margin-top:14px!important;padding-top:16px!important}
+#unidades .fx .fx-body>.fg{grid-column:span 3}
+#unidades .fx .fx-body>.fg.s2{grid-column:span 2}
+#unidades .fx .fx-body>.fg.s4{grid-column:span 4}
+#unidades .fx .fx-body .fx-quick{display:none!important}
+@media(max-width:1100px){#unidades .fx .fx-top>.f:nth-child(1){grid-column:span 12}#unidades .fx .fx-top>.f:nth-child(2){grid-column:span 8}#unidades .fx .fx-top>.fx-tg{grid-column:span 4}#unidades .fx .fx-top>.fx-quick,#unidades .fx .fx-top>.fx-quick.s5{grid-column:span 12}#unidades .fx .fx-body>.fg,#unidades .fx .fx-body>.fg.s2,#unidades .fx .fx-body>.fg.s4{grid-column:span 6}}
+@media(max-width:700px){#unidades .fx .fx-top>.f:nth-child(2){grid-column:span 12}#unidades .fx .fx-top>.fx-tg{grid-column:span 12}#unidades .fx .fx-body>.fg,#unidades .fx .fx-body>.fg.s2,#unidades .fx .fx-body>.fg.s4{grid-column:span 12}}
+
+/* ===== Fichas: nada se corta (la columna se ajusta al ancho de la tarjeta) ===== */
+#unidades .car{grid-template-columns:minmax(0,1fr)!important;min-width:0!important;overflow:hidden}
+#unidades .car>*{min-width:0;max-width:100%}
+#unidades .car .car-h{padding-right:0!important;flex-wrap:wrap;gap:8px 10px}
+#unidades .car h3{overflow-wrap:anywhere;hyphens:auto}
+#unidades .car .car-s>*,#unidades .car dl>*{min-width:0}
+#unidades .car b,#unidades .car small,#unidades .car dd,#unidades .car dt{overflow-wrap:anywhere}
+.inventory-section .car::before{position:absolute!important;display:block;top:14px;right:22px;left:auto;width:58px;height:23px}
+#unidades .car{padding-top:50px!important}
+#unidades .fx fieldset select{flex:1 1 calc(50% - 8px)!important;width:auto!important;min-width:0}
