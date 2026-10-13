@@ -1321,19 +1321,168 @@ dialog.ficha::backdrop{background:rgba(5,9,10,.82)}
 .map.is-open .map-p{padding:0;margin:0 0 8px;background:none;border:0}
 .map.is-open .map-p>p:first-child{display:none}
 .map-p .map-m:empty{display:none}
+
+/* ===== Filtros: las fichas ocultas se ocultan de verdad + avisos ===== */
+#unidades .cars .car[hidden],#unidades .cars[hidden],#unidades .vacio[hidden]{display:none!important}
+#unidades .fx .fx-ajuste{flex:1 1 100%;margin:0;padding:8px 12px;border-left:3px solid var(--y);background:rgba(242,210,27,.08);color:#f4f4f4;font-size:13.5px;line-height:1.4}
+#unidades .fx select option:disabled{color:#7b8386}
+#sinres .btn{margin-left:12px;vertical-align:middle}
+
+/* ===== Horarios y ubicación (debajo del hero) ===== */
+.hz-hr{padding-block:clamp(44px,6vw,84px);background:#0b1214;border-top:1px solid rgba(242,210,27,.35);border-bottom:1px solid rgba(255,255,255,.08)}
+.hz-hr .w{width:min(1240px,100% - 40px)}
+.hz-hr-head h2{margin-bottom:0}
+.hz-hr-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(18px,3vw,36px);align-items:stretch;margin-top:28px}
+.hz-hr-info{display:flex;flex-direction:column;gap:18px;padding:clamp(18px,2.4vw,28px);background:#10181a;border:1px solid rgba(255,255,255,.12);border-top:3px solid var(--y);min-width:0}
+.hz-live{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#182124;color:#fff}
+.hz-live[data-abierto="1"]{background:var(--y);color:var(--ink)}
+.hz-live p{margin:0}
+.hz-live-t{font:800 clamp(20px,2.2vw,26px)/1.1 var(--b)}
+.hz-live-d{margin-top:3px;font:600 14.5px/1.35 var(--b);opacity:.85}
+.hz-dot{flex:none;width:14px;height:14px;border-radius:50%;background:#7b8386}
+.hz-live[data-abierto="1"] .hz-dot{background:var(--ink);box-shadow:0 0 0 0 rgba(10,16,18,.45);animation:hzPulse 2.2s ease-out infinite}
+@keyframes hzPulse{0%{box-shadow:0 0 0 0 rgba(10,16,18,.45)}70%,100%{box-shadow:0 0 0 12px rgba(10,16,18,0)}}
+.hz-tl{min-height:0}
+.hz-tl-c{margin:0 0 8px;color:#cfd3d4;font:600 13.5px/1.2 var(--b)}
+.hz-tl-p{position:relative;height:30px;background:rgba(255,255,255,.08)}
+.hz-tl-s{position:absolute;top:0;bottom:0;background:var(--y);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hz-tl-h{padding:0 6px;color:var(--ink);font:800 11.5px/1 var(--b);white-space:nowrap}
+.hz-tl-x{position:absolute;inset:0;display:grid;place-items:center;color:#cfd3d4;font:600 12.5px var(--b)}
+.hz-tl-n{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 2px var(--ink)}
+.hz-tl-e{position:relative;height:18px;margin-top:6px}
+.hz-tl-t{position:absolute;top:0;transform:translateX(-50%);color:#aeb4b6;font:600 11.5px/1 var(--b)}
+.hz-tl-t:first-child{transform:none}.hz-tl-t:last-child{transform:translateX(-100%)}
+.hz-tbl{width:100%;border-collapse:collapse}
+.hz-tbl th,.hz-tbl td{padding:12px 0;text-align:left;border-bottom:1px solid rgba(255,255,255,.12);vertical-align:middle}
+.hz-tbl th{width:44%;padding-right:10px;color:#fff;font:700 16px/1.2 var(--b)}
+.hz-tbl td{display:flex;flex-wrap:wrap;gap:8px;border-bottom:0}
+.hz-tbl tr{display:flex;align-items:center;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12)}
+.hz-tbl tr th,.hz-tbl tr td{border-bottom:0}
+.hz-rg{display:inline-block;padding:5px 11px;border:1px solid rgba(255,255,255,.28);color:#f4f4f4;font:600 15px/1.2 var(--b)}
+.hz-rg--x{border-style:dashed;color:#aeb4b6}
+.hz-tbl tr.hoy{position:relative;margin-inline:-12px;padding-inline:12px;background:rgba(242,210,27,.1);box-shadow:inset 3px 0 0 var(--y)}
+.hz-tbl tr.hoy th{color:var(--y)}
+.hz-tbl tr.hoy th::after{content:"Hoy";margin-left:10px;padding:2px 7px;background:var(--y);color:var(--ink);font:800 11px/1.3 var(--b)}
+.hz-tz{margin:-8px 0 0;color:#aeb4b6;font-size:13px}
+.hz-addr{margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+.hz-k{margin:0 0 6px;color:var(--y);font:700 13px/1.2 var(--b)}
+.hz-a{margin:0;color:#fff;font:600 18px/1.35 var(--b)}
+.hz-ant{margin:4px 0 0;color:#aeb4b6;font-size:13.5px}
+.hz-addr .row{margin-top:14px;gap:8px}
+.hz-addr .btn{flex:1 1 auto}
+.hz-src{margin-top:16px;color:#aeb4b6}
+
+/* mapa */
+.hz-map{position:relative;min-height:clamp(380px,48vw,600px);background:#e9e6dc;border:1px solid rgba(242,210,27,.5);overflow:hidden}
+.hz-map-v{position:absolute;inset:0;z-index:1;font-family:var(--b)}
+.hz-map-v .leaflet-tile-pane{filter:saturate(.8) contrast(1.03)}
+.hz-map-f{display:block;width:100%;height:100%;border:0}
+.hz-map-ph{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;color:#f4f4f4;background:#0f171a;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px}
+.hz-map-ph[hidden]{display:none}
+.hz-map-ph p{margin:0;font:600 16px/1.3 var(--b)}
+.hz-map-ph .row{justify-content:center}
+.hz-map-ic{display:grid;place-items:center;width:54px;height:54px;border:2px solid var(--y);border-radius:50%}
+.hz-map-ic svg{width:26px;height:26px;stroke:var(--y);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hz-map-ph .map-m:empty{display:none}
+.hz-pin{background:none;border:0}
+.hz-pin-b{display:grid;place-items:center;width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--y);border:3px solid var(--ink);box-shadow:0 8px 16px rgba(0,0,0,.35)}
+.hz-pin-b svg{width:24px;height:24px;transform:rotate(45deg);stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hz-map-v .leaflet-popup-content-wrapper{border-radius:0;background:#0e1416;color:#fff;border-top:3px solid var(--y);box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.hz-map-v .leaflet-popup-tip{background:#0e1416}
+.hz-map-v .leaflet-popup-content{margin:12px 14px}
+.hz-pop-t{margin:0 0 4px;font:800 16px/1.2 var(--b);color:#fff}
+.hz-pop-a{margin:0 0 10px;font:400 13.5px/1.4 var(--b);color:#d6d6d6}
+.hz-map-v .hz-pop-l{display:inline-block;padding:7px 12px;background:var(--y);color:var(--ink);font:800 12.5px/1 var(--b);text-decoration:none}
+.hz-map-v .leaflet-bar a{width:36px;height:36px;line-height:36px;color:var(--ink)}
+.hz-map-v .leaflet-bar{border:2px solid var(--ink);border-radius:0;box-shadow:none}
+.hz-ctr{padding:9px 12px;border:2px solid var(--ink);background:#fff;color:var(--ink);font:800 12.5px/1 var(--b);cursor:pointer}
+.hz-ctr:hover{background:var(--y)}
+.hz-map-v .leaflet-control-attribution{background:rgba(255,255,255,.85);color:#333;font-size:11px}
+.hz-map-v .leaflet-control-attribution a{color:#0a4a8c}
+.hz-lock{position:absolute;left:12px;right:12px;bottom:12px;z-index:5;min-height:44px;border:0;background:rgba(10,16,18,.9);color:#fff;font:700 14px var(--b);cursor:pointer}
+
+/* ===== Contacto ===== */
+.hz-ct{padding-block:clamp(52px,7vw,96px)}
+.hz-ct .w{width:min(1240px,100% - 40px)}
+.hz-ct-head .sec-p{margin:14px 0 0;color:#d6d6d6;max-width:40em}
+.hz-ct-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(18px,3vw,36px);margin-top:30px;align-items:stretch}
+.hz-ch{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.hz-chn{display:flex;align-items:center;gap:16px;height:100%;min-height:104px;padding:18px 20px;background:#10181a;border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;transition:border-color .2s,background-color .2s}
+.hz-chn:hover{border-color:var(--y);background:#142024}
+.hz-chn-i{flex:none;display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(242,210,27,.5)}
+.hz-chn-i svg{width:24px;height:24px;stroke:var(--y);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hz-chn-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.hz-chn-k{color:#bfc4c6;font:600 13.5px/1.2 var(--b)}
+.hz-chn-v{color:#fff;font:800 clamp(17px,1.7vw,21px)/1.2 var(--b);overflow-wrap:anywhere}
+.hz-chn-s{color:#aeb4b6;font:400 13.5px/1.3 var(--b)}
+.hz-chn--p{background:var(--y);border-color:var(--y);color:var(--ink)}
+.hz-chn--p:hover{background:var(--y2);border-color:var(--y2)}
+.hz-chn--p .hz-chn-i{border-color:var(--ink)}
+.hz-chn--p .hz-chn-i svg{stroke:var(--ink)}
+.hz-chn--p .hz-chn-k,.hz-chn--p .hz-chn-s{color:#2b2500}
+.hz-chn--p .hz-chn-v{color:var(--ink)}
+.hz-ct-side{display:flex;flex-direction:column;padding:clamp(22px,2.6vw,34px);background:linear-gradient(160deg,#141c1e,#0d1517);border:1px solid rgba(242,210,27,.35);border-top:3px solid var(--y)}
+.hz-ct-t{margin:0 0 10px;color:#fff;font:400 clamp(26px,3vw,36px)/1.1 var(--h)}
+.hz-ct-side p:not(.hz-ct-t):not(.hz-k){margin:0 0 20px;color:#e2e2e2;font-size:16.5px;line-height:1.55}
+.hz-ct-side .row{gap:10px}
+.hz-soc{margin-top:auto;padding-top:20px}
+.hz-soc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.hz-soc a{display:inline-block;padding:8px 13px;border:1px solid rgba(255,255,255,.3);color:#fff;font:600 14px/1.2 var(--b);text-decoration:none}
+.hz-soc a:hover{border-color:var(--y);color:var(--y)}
+
+/* sucursales con mapa */
+.hz-grp{margin-top:clamp(40px,5vw,64px);padding-top:clamp(26px,3vw,38px);border-top:1px solid rgba(242,210,27,.35)}
+.hz-grp-head h3{color:#fff;font:400 clamp(28px,3.4vw,42px)/1.05 var(--h)}
+.hz-grp-head .sec-p{margin:10px 0 0;color:#d6d6d6;font-size:16.5px;max-width:44em}
+.hz-br-l{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.hz-br{display:flex;flex-direction:column;min-width:0;background:#10181a;border:1px solid rgba(255,255,255,.12)}
+.hz-br-map{aspect-ratio:16/9;background:#1a2326;border-bottom:1px solid rgba(242,210,27,.4)}
+.hz-br-map iframe{display:block;width:100%;height:100%;border:0}
+.hz-br-b{display:flex;flex-direction:column;gap:6px;flex:1;padding:18px 20px 20px}
+.hz-br-b h4{margin:0;color:#fff;font:400 clamp(22px,2.2vw,28px)/1.1 var(--h)}
+.hz-br-a{margin:0 0 8px;color:#d6d6d6;font-size:15.5px}
+.hz-br-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.hz-br-act .btn{flex:1 1 auto}
+.hz-grp .src{margin-top:16px;color:#aeb4b6}
+
+/* visita: columna lateral sin tabla de horarios */
+#visita .vis-t{margin:0 0 14px;color:#d0d0d0;font-size:15px;line-height:1.45}
+
+/* ===== Ficha: columna izquierda con foto + panel de marca ===== */
+.fi-l{display:flex;flex-direction:column;min-width:0;background:#050808}
+.fi-l .fi-m{flex:none}
+.fi-s{flex:1 1 auto;display:flex;flex-direction:column;gap:14px;padding:clamp(18px,2.4vw,28px);background:linear-gradient(180deg,#0e1618,#0a1012);border-top:1px solid rgba(242,210,27,.4)}
+.fi-lg{align-self:flex-start;padding:10px 16px;background:#fefefe}
+.fi-lg img{display:block;width:150px;max-width:100%;height:auto}
+.fi-s-t{margin:0;color:#fff;font:400 clamp(20px,2vw,25px)/1.2 var(--h)}
+.fi-s-k{margin:0 0 6px;color:var(--y);font:700 13px/1.2 var(--b)}
+.fi-sv{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fi-sv li{position:relative;padding-left:22px;color:#e8e8e8;font-size:15px;line-height:1.4}
+.fi-sv li::before{content:"";position:absolute;left:2px;top:.45em;width:11px;height:6px;border-left:2px solid var(--y);border-bottom:2px solid var(--y);transform:rotate(-45deg)}
+.fi-vs{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.14)}
+.fi-s-a{margin:0 0 8px;color:#d6d6d6;font-size:14.5px;line-height:1.4}
+.fi-vs .fi-e{margin:0 0 12px;font:700 13.5px/1.3 var(--b);letter-spacing:0;text-transform:none;color:#cfd3d4}
+.fi-vs .fi-e[data-abierto="1"]{color:var(--y)}
+.fi-vs .btn{width:100%}
+@media(max-width:800px){.fi-l{display:contents}.fi-l .fi-m{order:1}.fi-i{order:2}.fi-s{order:3;border-top:1px solid rgba(242,210,27,.4)}}
+
+/* ===== Responsive de las secciones nuevas ===== */
+@media(max-width:1000px){.hz-hr-grid,.hz-ct-grid{grid-template-columns:minmax(0,1fr)}.hz-map{min-height:clamp(340px,70vw,460px)}}
+@media(max-width:700px){.hz-ch,.hz-br-l{grid-template-columns:minmax(0,1fr)}.hz-tbl th{width:100%}.hz-tbl tr.hoy{margin-inline:-10px;padding-inline:10px}.hz-addr .btn,.hz-br-act .btn{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.hz-live[data-abierto="1"] .hz-dot{animation:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#top">Saltar al contenido</a>
 <header class="site-header site-header--inner"><div class="w"><a class="mark" href="./" aria-label="Horizonte Automotores, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="Horizonte Automotores"></a>
-<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="./#unidades">Unidades</a><a href="./#financiacion">Financiación</a><a href="./#guia">Guía</a><a href="./#preguntas">Preguntas</a><a href="./#nosotros">Nosotros</a><a href="./#contacto">Contacto</a><a href="./#tu-usado">Tu usado</a><a href="./#busqueda">Tu búsqueda</a><a href="./#visita">Visita</a></nav>
+<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="./#horarios">Horarios</a><a href="./#unidades">Unidades</a><a href="./#financiacion">Financiación</a><a href="./#guia">Guía</a><a href="./#preguntas">Preguntas</a><a href="./#nosotros">Nosotros</a><a href="./#contacto">Contacto</a><a href="./#tu-usado">Tu usado</a><a href="./#busqueda">Tu búsqueda</a><a href="./#visita">Visita</a></nav>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span>Menú</span></button>
 <div class="hc"><a class="btn p sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></header>
 <p class="demo"><span>Demo ilustrativa · No es el sitio oficial</span></p>
 <main id="top"><section><div class="w doc">
 <p class="ey">Avisos</p><h1>Privacidad y <em>avisos</em></h1>
 <h2>Datos personales</h2>
-<p>Este sitio no tiene cuentas ni cookies propias y no guarda datos de quienes lo visitan. Los formularios «Tu usado» y «Contanos qué auto buscás» solo arman un mensaje en tu navegador, que podés copiar y enviar vos: no se transmite nada a este sitio. El mapa de Contacto se carga solo si lo pedís y trae mosaicos de OpenStreetMap, que recibe tu dirección IP como cualquier sitio que se visita. Los botones de contacto abren Facebook, Instagram, el sitio de Grupo Almafuerte, WhatsApp o Google Maps, que tienen sus propias políticas de privacidad.</p>
+<p>Este sitio no tiene cuentas ni cookies propias y no guarda datos de quienes lo visitan. Los formularios «Tu usado» y «Contanos qué auto buscás» solo arman un mensaje en tu navegador, que podés copiar y enviar vos: no se transmite nada a este sitio. El mapa de «Horarios y ubicación» trae mosaicos de OpenStreetMap y los mapas de las sucursales del grupo se cargan desde Google Maps al llegar a esa parte de la página; ambos reciben tu dirección IP como cualquier sitio que se visita. Los botones de contacto abren Facebook, Instagram, el sitio de Grupo Almafuerte, WhatsApp o Google Maps, que tienen sus propias políticas de privacidad.</p>
 <h2>Información de las unidades</h2>
 <p>Los datos de las unidades (año, kilometraje, precio, disponibilidad) provienen de las publicaciones de la agencia y del catálogo público de Grupo Almafuerte, y pueden haber cambiado. Confirmá siempre con Horizonte Automotores antes de decidir.</p>
 <h2>Documento preliminar</h2>

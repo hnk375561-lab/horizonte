@@ -41,6 +41,7 @@
     $$('li.car', ul).forEach(function (li) { items[li.getAttribute('data-i')] = li; });
     list.forEach(function (a) {
       a.t = items[a.i] ? items[a.i].getAttribute('data-t') : norm(a.titulo);
+      a.t = norm(a.t + ' ' + [a.carroceria, a.transmision, a.combustible].filter(Boolean).join(' '));
       a.ant = a.anio != null ? anioHoy - a.anio : null;
       a.monto = a.precio && a.precio.moneda === 'ARS' ? a.precio.monto : null;
       a.pub = a.publicado ? Math.floor((Date.now() - new Date(a.publicado + 'T12:00:00').getTime()) / 864e5) : null;
@@ -86,7 +87,7 @@
     GR.push(rango('anio', 'Año', 3, function (a) { return a.anio; }, function (d) { return uniq(function (a) { return a.anio; }).sort(function (x, y) { return x - y; }); }, function (n) { return String(n); }));
     GR.push(rango('km', 'Kilómetros', 3, function (a) { return a.km; }, function (d) { return pasos(d, 10000); }, function (n) { return fmt(n) + ' km'; }, 'Las unidades sin kilometraje publicado no entran en este filtro.'));
     GR.push(rango('precio', 'Precio publicado', 3, function (a) { return a.monto; }, function (d) { return pasos(d, 2500000); }, function (n) { return '$ ' + fmt(n); }));
-    GR.push({ k: 'pub', tipo: 'chips', t: 'Publicación', s: 3, ops: [
+    GR.push({ k: 'pub', tipo: 'chips', uno: true, t: 'Publicación', s: 3, ops: [
       { id: '7', label: 'Últimos 7 días', test: function (a) { return a.pub != null && a.pub <= 7; } },
       { id: '15', label: 'Últimos 15 días', test: function (a) { return a.pub != null && a.pub <= 15; } },
       { id: '30', label: 'Últimos 30 días', test: function (a) { return a.pub != null && a.pub <= 30; } },
@@ -139,12 +140,47 @@
       if (x == null) return false;
       return (d === '' || x >= +d) && (h === '' || x <= +h);
     }
-    function coincide(a, salto) {
-      var ws = norm(st.q).split(/\s+/).filter(Boolean);
-      if (!ws.every(function (w) { return a.t.indexOf(w) > -1; })) return false;
+    function coincide(a, salto, sinQ) {
+      if (!sinQ) {
+        var ws = norm(st.q).split(/\s+/).filter(Boolean);
+        if (!ws.every(function (w) { return a.t.indexOf(w) > -1; })) return false;
+      }
       return GR.every(function (g) { return g.k === salto || pasa(a, g); });
     }
-    function contar(g, o) { return list.filter(function (a) { return coincide(a, g.k) && o.test(a); }).length; }
+    /* cantidad de unidades que quedarían si se eligiera esa opción, dado todo lo demás que ya está elegido */
+    function contar(g, o, sinQ) { return list.filter(function (a) { return coincide(a, g.k, sinQ) && o.test(a); }).length; }
+    function contarRango(g, d, h, sinQ) {
+      return list.filter(function (a) {
+        if (!coincide(a, g.k, sinQ)) return false;
+        var x = g.get(a);
+        return x != null && (d === '' || x >= +d) && (h === '' || x <= +h);
+      }).length;
+    }
+    function textoRango(g, d, h) { return d !== '' && h !== '' ? g.f(+d) + ' a ' + g.f(+h) : d !== '' ? 'desde ' + g.f(+d) : 'hasta ' + g.f(+h); }
+    /* Quita las elecciones que quedaron sin ninguna unidad por un cambio en otro filtro (la búsqueda por texto no cuenta). */
+    function podar() {
+      var quitados = [], cambio = true, vueltas = 0;
+      while (cambio && vueltas++ < 20) {
+        cambio = false;
+        GR.forEach(function (g) {
+          if (g.tipo === 'chips') {
+            st[g.k].slice().forEach(function (id) {
+              var o = g.ops.filter(function (x) { return x.id === id; })[0];
+              if (o && contar(g, o, true) === 0) { st[g.k].splice(st[g.k].indexOf(id), 1); quitados.push(g.t + ': ' + o.label); cambio = true; }
+            });
+          } else if (g.tipo === 'select') {
+            var o2 = st[g.k] ? g.ops.filter(function (x) { return x.id === st[g.k]; })[0] : null;
+            if (o2 && contar(g, o2, true) === 0) { st[g.k] = ''; quitados.push(g.t + ': ' + o2.label); cambio = true; }
+          } else {
+            var d = st[g.k + 'D'], h = st[g.k + 'H'];
+            if ((d !== '' || h !== '') && contarRango(g, d, h, true) === 0) {
+              st[g.k + 'D'] = ''; st[g.k + 'H'] = ''; quitados.push(g.t + ': ' + textoRango(g, d, h)); cambio = true;
+            }
+          }
+        });
+      }
+      return quitados;
+    }
 
     /* ----- panel ----- */
     var top = el('div', null, 'fx-top'), body = el('div', null, 'fx-body'), act = el('div', null, 'fx-act');
@@ -173,8 +209,11 @@
           r.inputs.push({ o: o, input: inp, n: n });
           inp.addEventListener('change', function () {
             var v = st[g.k], k = v.indexOf(o.id);
-            if (inp.checked && k < 0) v.push(o.id);
-            if (!inp.checked && k > -1) v.splice(k, 1);
+            if (inp.checked && g.uno) { v.length = 0; v.push(o.id); }
+            else {
+              if (inp.checked && k < 0) v.push(o.id);
+              if (!inp.checked && k > -1) v.splice(k, 1);
+            }
             aplicar(true);
           });
         });
@@ -194,8 +233,6 @@
           r[z.toLowerCase()] = sl; rw.appendChild(sl);
           sl.addEventListener('change', function () {
             st[g.k + z] = sl.value;
-            var d = st[g.k + 'D'], h = st[g.k + 'H'];
-            if (d !== '' && h !== '' && +d > +h) { if (z === 'D') { st[g.k + 'H'] = d; } else { st[g.k + 'D'] = h; } }
             aplicar(true);
           });
         });
@@ -205,10 +242,15 @@
       body.appendChild(fs);
     });
 
-    var cuenta = el('p', null, 'fx-n'), tags = el('div', null, 'fx-tags'), lim = el('button', 'Limpiar filtros', 'btn sm');
+    var cuenta = el('p', null, 'fx-n'), tags = el('div', null, 'fx-tags'), lim = el('button', 'Limpiar filtros', 'btn sm'), ajuste = el('p', null, 'fx-ajuste');
     cuenta.id = 'cuenta'; cuenta.setAttribute('role', 'status'); cuenta.setAttribute('aria-live', 'polite');
+    ajuste.setAttribute('role', 'status'); ajuste.setAttribute('aria-live', 'polite'); ajuste.hidden = true;
     lim.type = 'button'; lim.id = 'limpiar'; lim.hidden = true;
-    act.appendChild(cuenta); act.appendChild(tags); act.appendChild(lim);
+    act.appendChild(cuenta); act.appendChild(tags); act.appendChild(lim); act.appendChild(ajuste);
+    if (sinres && !sinres.querySelector('button')) {
+      var limSin = el('button', 'Limpiar filtros', 'btn sm'); limSin.type = 'button'; limSin.addEventListener('click', function () { lim.click(); });
+      sinres.appendChild(document.createTextNode(' ')); sinres.appendChild(limSin);
+    }
     tools.appendChild(top); tools.appendChild(body); tools.appendChild(act);
 
     /* ----- aplicar ----- */
@@ -226,7 +268,7 @@
         } else {
           var d = st[g.k + 'D'], h = st[g.k + 'H'];
           if (d === '' && h === '') return;
-          var txt = d !== '' && h !== '' ? g.f(+d) + ' a ' + g.f(+h) : d !== '' ? 'desde ' + g.f(+d) : 'hasta ' + g.f(+h);
+          var txt = textoRango(g, d, h);
           out.push({ t: g.t + ': ' + txt, quitar: function () { st[g.k + 'D'] = ''; st[g.k + 'H'] = ''; } });
         }
       });
@@ -243,8 +285,16 @@
       return c * dir || a.i - b.i;
     }
     function aplicar(escribirUrl) {
-      var n = 0;
-      list.forEach(function (a) { var ok = coincide(a, null); items[a.i].hidden = !ok; if (ok) n++; });
+      var n = 0, quitados = podar();
+      if (quitados.length) {
+        ajuste.textContent = 'Se quitó ' + quitados.map(function (t) { return '«' + t + '»'; }).join(', ') + ' porque ninguna unidad coincide con esa combinación.';
+        ajuste.hidden = false;
+      } else { ajuste.textContent = ''; ajuste.hidden = true; }
+      list.forEach(function (a) {
+        var ok = coincide(a, null), li = items[a.i];
+        li.hidden = !ok;
+        if (ok) { li.style.removeProperty('display'); n++; } else li.style.setProperty('display', 'none', 'important');
+      });
       list.slice().sort(ordenar).forEach(function (a) { ul.appendChild(items[a.i]); });
       ul.hidden = n === 0; if (sinres) sinres.hidden = n > 0;
       /* opciones y cantidades según lo que ya está elegido en los demás filtros */
@@ -258,12 +308,23 @@
         } else if (g.tipo === 'select') {
           [].slice.call(r.select.options).forEach(function (op, k) {
             if (k === 0) return;
-            var o = g.ops[k - 1], c = contar(g, o);
-            op.textContent = o.label + ' (' + c + ')'; op.disabled = c === 0 && st[g.k] !== o.id;
+            var o = g.ops[k - 1], c = contar(g, o), ver = c > 0 || st[g.k] === o.id;
+            op.textContent = o.label + ' (' + c + ')'; op.disabled = !ver; op.hidden = !ver;
           });
           r.select.value = st[g.k];
         } else {
-          r.d.value = st[g.k + 'D']; r.h.value = st[g.k + 'H'];
+          var D = st[g.k + 'D'], Hh = st[g.k + 'H'];
+          [].slice.call(r.d.options).forEach(function (op, k) {
+            if (k === 0) return;
+            var v = g.vals[k - 1], ok = (Hh === '' || v <= +Hh) && contarRango(g, String(v), Hh) > 0;
+            op.disabled = !ok && String(v) !== D;
+          });
+          [].slice.call(r.h.options).forEach(function (op, k) {
+            if (k === 0) return;
+            var v = g.vals[k - 1], ok = (D === '' || v >= +D) && contarRango(g, D, String(v)) > 0;
+            op.disabled = !ok && String(v) !== Hh;
+          });
+          r.d.value = D; r.h.value = Hh;
           if (r.note) r.note.hidden = st[g.k + 'D'] === '' && st[g.k + 'H'] === '';
         }
       });
@@ -276,7 +337,7 @@
         tags.appendChild(b);
       });
       lim.hidden = !(act2.length || st.orden);
-      cuenta.textContent = (n === list.length ? 'Mostrando las ' + list.length + ' unidades' : 'Mostrando ' + n + ' de ' + list.length + ' unidades') + '.';
+      cuenta.textContent = n === 0 ? 'Ninguna unidad coincide con lo elegido.' : (n === list.length ? 'Mostrando las ' + list.length + ' unidades' : 'Mostrando ' + n + ' de ' + list.length + ' unidades') + '.';
       nAct = act2.length; etiquetaTg();
       if (escribirUrl) aUrl();
     }
@@ -299,7 +360,8 @@
       var ov = P.get('orden') || ''; if (ORDEN.some(function (o) { return o[0] === ov; })) st.orden = ov;
       GR.forEach(function (g) {
         if (g.tipo === 'chips') {
-          st[g.k] = (P.get(g.k) || '').split(',').filter(function (id) { return g.ops.some(function (o) { return o.id === id; }); });
+          st[g.k] = (P.get(g.k) || '').split(',').filter(function (id, k, arr) { return arr.indexOf(id) === k && g.ops.some(function (o) { return o.id === id; }); });
+          if (g.uno && st[g.k].length > 1) st[g.k] = st[g.k].slice(0, 1);
         } else if (g.tipo === 'select') {
           var v = P.get(g.k) || ''; st[g.k] = g.ops.some(function (o) { return o.id === v; }) ? v : '';
         } else {
@@ -307,12 +369,14 @@
             var v = P.get(g.k + '_' + z.toLowerCase()) || '';
             st[g.k + z] = g.vals.some(function (x) { return String(x) === v; }) ? v : '';
           });
+          if (st[g.k + 'D'] !== '' && st[g.k + 'H'] !== '' && +st[g.k + 'D'] > +st[g.k + 'H']) { var tmp = st[g.k + 'D']; st[g.k + 'D'] = st[g.k + 'H']; st[g.k + 'H'] = tmp; }
         }
       });
       q.value = st.q;
     }
 
     q.addEventListener('input', function () { st.q = q.value; aplicar(true); });
+    q.addEventListener('search', function () { st.q = q.value; aplicar(true); });
     ord.addEventListener('change', function () { st.orden = ord.value; aplicar(true); });
     lim.addEventListener('click', function () {
       st.q = ''; q.value = ''; st.orden = '';
@@ -472,7 +536,8 @@
       }
       fdlg.textContent = '';
       var x = boton('Cerrar', 'btn sm fi-x', function () { fdlg.close(); }); x.setAttribute('aria-label', 'Cerrar la ficha');
-      var g = el('div', null, 'fi-g' + (a.media && a.media.length ? '' : ' sin-foto'));
+      var g = el('div', null, 'fi-g'), left = el('div', null, 'fi-l');
+      g.appendChild(left);
 
       /* galería: todas las fotos publicadas de la unidad */
       if (a.media && a.media.length) {
@@ -504,7 +569,7 @@
           tr.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { ir(act() + 1); e.preventDefault(); } if (e.key === 'ArrowLeft') { ir(act() - 1); e.preventDefault(); } });
           gal.appendChild(th);
         }
-        g.appendChild(gal);
+        left.appendChild(gal);
       }
 
       /* datos */
@@ -553,12 +618,32 @@
       if (ctx.maps) ac2.appendChild(enlace('Cómo llegar', ctx.maps, 'btn sm', true));
       info.appendChild(ac2);
 
-      var es = $('#visita [data-estado]'), est = es && es.textContent.trim() ? es.textContent.trim() : (ctx.horario || '');
       var pie = el('div', null, 'fi-p');
-      if (est) pie.appendChild(el('p', est, 'fi-e'));
-      if (ctx.dir) pie.appendChild(el('p', ctx.nombre + ' · ' + ctx.dir, 'fi-n'));
       pie.appendChild(el('p', 'Precio, kilometraje y disponibilidad pueden haber cambiado: consultalos antes de ir.', 'fi-n'));
       info.appendChild(pie);
+
+      /* panel de marca bajo la foto: logotipo, qué ofrece la agencia y cómo visitarla (no repite lo de la derecha) */
+      var pn = el('aside', null, 'fi-s'); pn.setAttribute('aria-label', 'Sobre ' + (ctx.nombre || 'la agencia'));
+      var plate = el('div', null, 'fi-lg'), lg = el('img'); lg.src = 'images/logo-sm.png'; lg.width = 360; lg.height = 144; lg.alt = ctx.nombre || ''; lg.decoding = 'async';
+      plate.appendChild(lg); pn.appendChild(plate);
+      if (ctx.grupo) pn.appendChild(el('p', 'Concesionario del ' + ctx.grupo + (ctx.ciudad ? ' en ' + ctx.ciudad : ''), 'fi-s-t'));
+      if (ctx.servicios && ctx.servicios.length) {
+        pn.appendChild(el('p', 'Qué ofrece la agencia', 'fi-s-k'));
+        var sv = el('ul', null, 'fi-sv');
+        ctx.servicios.forEach(function (t) { sv.appendChild(el('li', t)); });
+        pn.appendChild(sv);
+      }
+      var vis = el('div', null, 'fi-vs');
+      vis.appendChild(el('p', 'Visitanos', 'fi-s-k'));
+      if (ctx.dir) vis.appendChild(el('p', ctx.dir, 'fi-s-a'));
+      var ev = window.hzEstado ? window.hzEstado() : null, est = ev ? ev.txt : (ctx.horario || '');
+      if (est) { var le = el('p', est, 'fi-e'); if (ev) le.setAttribute('data-abierto', ev.abierto ? '1' : '0'); vis.appendChild(le); }
+      if ($('#horarios')) {
+        var hl = enlace('Ver horarios y mapa', '#horarios', 'btn sm', false); hl.addEventListener('click', function () { fdlg.close(); });
+        vis.appendChild(hl);
+      }
+      pn.appendChild(vis);
+      left.appendChild(pn);
       g.appendChild(info);
       fdlg.appendChild(x); fdlg.appendChild(g);
       document.documentElement.classList.add('has-dlg');
