@@ -49,7 +49,12 @@
       "Sitio oficial de Grupo Almafuerte, páginas Nosotros y Contacto (12/10/2026): Av. Argentina 2021, María Grande",
       "Listado de agencias de la Cámara del Comercio Automotor de Entre Ríos: Av Argentina 2021"
     ],
-    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios): ficha antigua. No se usa. Discrepancia entre verificaciones del 12/10/2026: la verificación previa leyó que Entre Ríos Total la ubica en Paraná; el expediente OSINT textual V2 la lee como María Grande, Avda. Argentina 536, tel. 0343 4941092. Sin resolver; la ficha de TodosNegocios del 536 tiene además un encabezado de Santiago del Estero. No hay prueba de mudanza."
+    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios): ficha antigua. No se usa. Discrepancia entre verificaciones del 12/10/2026: la verificación previa leyó que Entre Ríos Total la ubica en Paraná; el expediente OSINT textual V2 la lee como María Grande, Avda. Argentina 536, tel. 0343 4941092. Sin resolver; la ficha de TodosNegocios del 536 tiene además un encabezado de Santiago del Estero. No hay prueba de mudanza.",
+    "coordenadas": {
+      "lat": -31.65775,
+      "lng": -59.92451,
+      "fuente": "Infoisinfo (ficha 261219), directorio; ubicación aproximada, sin confirmar con el dueño (P19)"
+    }
   },
   "contact": {
     "facebook": "https://www.facebook.com/horizonteautos/",

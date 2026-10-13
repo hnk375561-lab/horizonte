@@ -3,7 +3,7 @@
 Sitio estático generado desde `data/` (ver `README.md`): `index.html`, `reserva.html`, `privacidad.html` y `404.html`. Es una **demo no indexable** de Horizonte Automotores (María Grande, Entre Ríos), armada con información pública (`noindex`, ver `CLAUDE.md` regla 7).
 
 ## Estructura de index.html
-Unidades · Financiación · Nosotros · Contacto (ids: `unidades`, `financiacion`, `nosotros`, `contacto`).
+Hero · Unidades · Comparador · Cómo comprar · Financiación · Tu usado · Contanos qué auto buscás · Guía · Visita · Nosotros · Contacto (con mapa). Ids: `unidades`, `comparador`, `como-comprar`, `financiacion`, `tu-usado`, `busqueda`, `guia`, `visita`, `nosotros`, `contacto`. `#tu-usado` solo existe si `services.published` tiene `permuta`; `#comparador` solo con 2 o más unidades.
 
 ## Reglas
 Ver `CLAUDE.md`. Datos en `data/dealership.json` y `data/vehicles.json`; verificar con `npm test`.

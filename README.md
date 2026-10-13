@@ -1,6 +1,6 @@
 # Horizonte Automotores — sitio web
 
-Sitio estático (HTML + CSS; **sin JavaScript de terceros y sin dependencias para publicar**; `reserva.html` es la única página con JS propio, GSAP servido desde `js/vendor/`) de Horizonte Automotores, concesionario de Av. Argentina 2021, María Grande, Entre Ríos. Estado actual: **demo no indexable** construida con información pública (incluye el sitio oficial de Grupo Almafuerte, del que forma parte).
+Sitio estático (HTML + CSS; **sin JavaScript de terceros y sin dependencias para publicar**; JS propio en `index.html` (`js/secciones.js` y `js/mapa.js`) y en `reserva.html` (GSAP servido desde `js/vendor/`)) de Horizonte Automotores, concesionario de Av. Argentina 2021, María Grande, Entre Ríos. Estado actual: **demo no indexable** construida con información pública (incluye el sitio oficial de Grupo Almafuerte, del que forma parte).
 
 ## Cómo funciona
 Las páginas **se generan** desde los datos:
@@ -21,7 +21,7 @@ data/                dealership.json · vehicles.json · autos-en-revision.json 
 docs/                notas de trabajo e investigación (no se publica) · docs/archivo/
 fonts/               tipografías autoalojadas + LICENSES.txt
 golive/              pendientes y pasos a producción (no se publica)
-js/                  reserva.js, motion.js, motion/ y vendor/ (GSAP, Leaflet); el resto está reservado y vacío
+js/                  secciones.js, mapa.js, reserva.js, motion.js, motion/ y vendor/ (GSAP, Leaflet); el resto está reservado y vacío
 scripts/             build-index.mjs · validate-dealership.mjs · build-site.mjs · serve.mjs · estilos.css y utilitarios
 raíz                 index.html, reserva.html, privacidad.html, 404.html (generados) · robots.txt · site.webmanifest
                      favicon.svg · CLAUDE.md · plan.md · PERF-CAMBIOS.md · LICENSE · package.json · _config.yml · netlify.toml

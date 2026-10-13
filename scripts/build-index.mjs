@@ -61,16 +61,16 @@ ${body}
 
 const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025)</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
 
+const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio">Horizonte<small>Automotores</small></a>
-<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
+<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a>${autos.length > 1 ? `<a href="${pre}#comparador">Comparar</a>` : ''}<a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;
 
 // ---- unidades ----
 const fmt = (n) => n.toLocaleString('es-AR');
-const autos = A.autos;
 const card = (a) => {
   const meta = [a.anio, a.transmision, a.km != null ? `${fmt(a.km)} km` : '', a.combustible, a.color].filter((x) => x !== undefined && x !== '' && x !== null).join(' · ');
   const pr = a.precio ? `<p class="pr">${a.precio.moneda === 'USD' ? 'US$ ' : '$ '}${fmt(a.precio.monto)}</p><p class="n">Precio publicado el ${esc(fdate(a.precio.fecha))}; puede haber cambiado.</p>` : '<p class="pr">Consultar precio</p>';
@@ -92,6 +92,92 @@ const dl = [
   ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)}: Concesionario Usados ${esc(L.city)}</a>`],
 ].filter(Boolean);
 
+// ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
+const COORD = L.coordenadas;
+const jsonSafe = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
+const cmpData = autos.map((a) => ({ titulo: a.titulo, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, precio: a.precio || null, url: a.url }));
+const secComparador = autos.length > 1 ? `
+<section id="comparador" aria-labelledby="cmp-t"><div class="w">
+<p class="ey">Comparador</p><h2 id="cmp-t">Compará <em>unidades</em></h2>
+<p class="sec-p">Elegí hasta tres y mirá año, kilometraje y precio publicado lado a lado. Los datos son los de cada ficha pública.</p>
+<noscript><p id="cmp-ns" class="src">El comparador necesita JavaScript. Los datos de cada unidad están en la sección Unidades.</p></noscript>
+<div id="cmp" hidden><div class="cmp-pick"></div><p class="cmp-st" role="status" aria-live="polite"></p><div class="cmp-out"></div></div>
+<script type="application/json" id="cmp-data">${jsonSafe(cmpData)}</script>
+</div></section>` : '';
+
+const pasoFin = hasSvc('permuta') ? 'Consultá la financiación para la unidad que elijas y, si querés, entregá tu usado como parte de pago.' : 'Consultá la financiación para la unidad que elijas.';
+const secComo = `
+<section id="como-comprar" aria-labelledby="como-t"><div class="w">
+<p class="ey">Cómo comprar</p><h2 id="como-t">Del primer mensaje a tu <em>visita</em></h2>
+<p class="sec-p">Un camino simple para llegar a la unidad que te interesa.</p>
+<ol class="steps">
+<li><h3>Elegí</h3><p>Mirá las unidades publicadas con año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a tres.' : ''}</p></li>
+<li><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
+<li><h3>Visitá</h3><p>Coordiná una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
+<li><h3>Financiá</h3><p>${pasoFin}</p></li>
+</ol>
+</div></section>`;
+
+const secUsado = hasSvc('permuta') ? `
+<section id="tu-usado" aria-labelledby="usado-t"><div class="w">
+<p class="ey">Tu usado</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
+<p class="sec-p">${hasSvc('tasacion') ? 'Recibimos vehículos usados como parte de pago y la tasación es sin cargo, según informa ' + esc(GNAME) + '. ' : 'Recibimos vehículos usados como parte de pago, según informa ' + esc(GNAME) + '. '}Contanos cuál es y armá el mensaje para enviárselo a la agencia.</p>
+<form class="fm" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
+<div class="f"><label for="u-mm">Marca y modelo</label><input id="u-mm" data-lbl="Marca y modelo" autocomplete="off" required></div>
+<div class="f"><label for="u-an">Año</label><input id="u-an" data-lbl="Año" inputmode="numeric" autocomplete="off"></div>
+<div class="f"><label for="u-km">Kilometraje</label><input id="u-km" data-lbl="Kilometraje" inputmode="numeric" autocomplete="off"></div>
+<div class="f"><label for="u-co">Combustible</label><select id="u-co" data-lbl="Combustible"><option value="">Sin indicar</option><option>Nafta</option><option>Diésel</option><option>GNC</option><option>Otro</option></select></div>
+<div class="f full"><label for="u-no">Algo más que quieras contar</label><textarea id="u-no" data-lbl="Comentarios"></textarea></div>
+<textarea class="msg-v" readonly hidden aria-label="Mensaje armado"></textarea>
+<div class="acts"><button class="btn p" type="submit" data-copiar-msg hidden>Copiar mensaje</button><a class="btn" href="${FB}" ${EXT}>Ir a Facebook</a><a class="btn" href="${IG}" ${EXT}>Ir a Instagram</a></div>
+<p class="msg-s" role="status" aria-live="polite"></p>
+</form>
+<p class="src">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. La tasación y las condiciones se acuerdan con la agencia.</p>
+</div></section>` : '';
+
+const secBusqueda = `
+<section id="busqueda" aria-labelledby="bus-t"><div class="w">
+<p class="ey">Preguntas</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
+<p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
+<form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
+<div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" required></div>
+<div class="f"><label for="b-an">Año mínimo</label><input id="b-an" data-lbl="Año mínimo" inputmode="numeric" autocomplete="off"></div>
+<div class="f"><label for="b-tr">Transmisión</label><select id="b-tr" data-lbl="Transmisión"><option value="">Indistinto</option><option>Manual</option><option>Automática</option></select></div>
+<div class="f"><label for="b-pr">Presupuesto aproximado</label><input id="b-pr" data-lbl="Presupuesto" autocomplete="off"></div>
+<div class="f full"><label for="b-no">Algo más que quieras contar</label><textarea id="b-no" data-lbl="Comentarios"></textarea></div>
+<textarea class="msg-v" readonly hidden aria-label="Mensaje armado"></textarea>
+<div class="acts"><button class="btn p" type="submit" data-copiar-msg hidden>Copiar mensaje</button><a class="btn" href="${FB}" ${EXT}>Ir a Facebook</a><a class="btn" href="${IG}" ${EXT}>Ir a Instagram</a></div>
+<p class="msg-s" role="status" aria-live="polite"></p>
+</form>
+<p class="src">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. No confirma disponibilidad ni precios.</p>
+</div></section>`;
+
+const secGuia = `
+<section id="guia" aria-labelledby="guia-t"><div class="w">
+<p class="ey">Guía</p><h2 id="guia-t">Antes de comprar un <em>usado</em></h2>
+<p class="sec-p">Información general para cualquier compra de un usado, de octubre de 2026. No es una condición ni una promesa de ${esc(NAME)}.</p>
+<div class="guia">
+<div class="card"><h3>Qué mirar en el auto</h3><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></div>
+<div class="card"><h3>Papeles que conviene pedir</h3><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></div>
+</div>
+<p class="src">Los requisitos y costos de la transferencia cambian: consultalos en el Registro del Automotor o con un gestor o escribano antes de pagar.</p>
+</div></section>`;
+
+const secVisita = `
+<section id="visita" aria-labelledby="vis-t"><div class="w">
+<p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
+<p class="sec-p">Elegí un día y una franja y armá la consulta. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
+<div class="row"><a class="btn p" href="reserva.html">Coordiná tu visita</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div>
+</div></section>`;
+
+const mapa = COORD ? `
+<div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
+<div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
+<div class="map-v" role="region" aria-label="Mapa con la ubicación" hidden></div>
+<div class="row"><a class="btn" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a><a class="btn" href="https://waze.com/ul?ll=${COORD.lat},${COORD.lng}&amp;navigate=yes" ${EXT}>Abrir en Waze</a><button class="btn" type="button" data-copiar="${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}" hidden>Copiar dirección</button></div>
+<p class="src">Ubicación aproximada según un directorio (Infoisinfo). La dirección es ${esc(L.address)}, ${esc(L.city)}.</p>
+</div>` : '';
+
 const ld = {
   '@context': 'https://schema.org', '@type': 'AutoDealer', name: NAME,
   address: { '@type': 'PostalAddress', streetAddress: L.address, postalCode: L.postalCode, addressLocality: L.city, addressRegion: L.province, addressCountry: 'AR' },
@@ -103,7 +189,7 @@ const index = page({
   title: `${NAME} · Autos y motos en ${L.city}, ${L.province}`,
   desc: `${NAME} en ${L.city}, ${L.province}: autos y motos con financiación. Visitanos en ${L.address} o mirá las unidades en Facebook e Instagram.`,
   file: 'index.html',
-  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n`,
   body: `${header()}
 <main id="top">
 <div class="hero"><div class="hx-copy">
@@ -119,6 +205,8 @@ const index = page({
 <p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
 ${unidades}
 </div></section>
+${secComparador}
+${secComo}
 
 <section id="financiacion" aria-labelledby="fin-t"><div class="w">
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
@@ -126,6 +214,11 @@ ${unidades}
 <div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado del 16 de julio de 2025). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
 <p class="src">Servicios según lo informado por ${esc(GNAME)} en <a href="${GWEB}" ${EXT}>su sitio</a>.</p>
 </div></section>
+
+${secUsado}
+${secBusqueda}
+${secGuia}
+${secVisita}
 
 <section id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><h2 id="nos-t">Quiénes <em>somos</em></h2>
@@ -136,6 +229,7 @@ ${unidades}
 <p class="ey">Contacto</p><h2 id="contacto-t">Dónde <em>encontrarnos</em></h2>
 <div class="ct-g"><dl>${dl.map(([t, v]) => `<dt>${t}</dt><dd>${v}</dd>`).join('')}</dl>
 <div class="ct-c"><p class="ct-t">¿Buscás un auto o una moto?</p><p>Escribinos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p><div class="row"><a class="btn p" href="${ctaHead.href}" ${EXT}>${WA ? 'Escribir por WhatsApp' : 'Escribir por Facebook'}</a><a class="btn" href="${IG}" ${EXT}>Instagram</a></div></div></div>
+${mapa}
 </div></section>
 </main>
 ${footer(true)}`,
@@ -149,7 +243,7 @@ const privacidad = page({
 <main id="top"><section><div class="w doc">
 <p class="ey">Avisos</p><h1>Privacidad y <em>avisos</em></h1>
 <h2>Datos personales</h2>
-<p>Este sitio no tiene formularios, cuentas ni cookies propias y no guarda datos de quienes lo visitan. Los botones de contacto abren Facebook, Instagram, el sitio de ${esc(GNAME)}${C.whatsApp ? ', WhatsApp' : ''} o Google Maps, que tienen sus propias políticas de privacidad.</p>
+<p>Este sitio no tiene cuentas ni cookies propias y no guarda datos de quienes lo visitan. Los formularios «Tu usado» y «Contanos qué auto buscás» solo arman un mensaje en tu navegador, que podés copiar y enviar vos: no se transmite nada a este sitio. El mapa de Contacto se carga solo si lo pedís y trae mosaicos de OpenStreetMap, que recibe tu dirección IP como cualquier sitio que se visita. Los botones de contacto abren Facebook, Instagram, el sitio de ${esc(GNAME)}${C.whatsApp ? ', WhatsApp' : ''} o Google Maps, que tienen sus propias políticas de privacidad.</p>
 <h2>Información de las unidades</h2>
 <p>Los datos de las unidades (año, kilometraje, precio, disponibilidad) provienen de las publicaciones de la agencia y del catálogo público de ${esc(GNAME)}, y pueden haber cambiado. Confirmá siempre con ${esc(NAME)} antes de decidir.</p>
 <h2>Documento preliminar</h2>

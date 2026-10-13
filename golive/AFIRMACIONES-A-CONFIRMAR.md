@@ -15,6 +15,12 @@ Estado al 12/10/2026 (incluye la investigación V2 y el expediente OSINT textual
 | Forma parte del Grupo Almafuerte | Sitio oficial del grupo (sucursal «Concesionario Usados María Grande»); Instagram; confirmación del responsable del proyecto | Naturaleza de la relación sin definir (P15, P7) |
 | Diez años de respaldo en el mercado regional (atribuido a su Facebook) | Introducción de la página de Facebook | Frase de marketing; confirmar año (P9) |
 | 5 unidades con precio, año, km (excepto el Peugeot 307, sin km) y color | Fichas públicas de grupoalmafuerte.com/producto/, relevadas el 12/10/2026 | Disponibilidad y precio sin confirmar (P5) |
+| Comparador de hasta 3 unidades | Datos de `data/vehicles.json` (fichas públicas de grupoalmafuerte.com/producto/, 12/10/2026) | Mismos datos que las tarjetas; Peugeot 307 sin km («Sin dato») |
+| Cómo comprar (elegí, consultá, visitá, financiá) | Derivado de lo ya publicado: unidades, reserva.html, financiación y permuta atribuidas al grupo | Sin promesas de confirmación ni plazos |
+| «Entregá tu usado como parte de pago» (formulario que arma un mensaje) | Permuta y tasación del grupo (grupoalmafuerte.com/contacto, FAQ) | Solo se muestra si `services.published` tiene `permuta`; confirmar para María Grande (P8) |
+| «Contanos qué auto buscás» (formulario que arma un mensaje) | Sin dato del negocio | No confirma disponibilidad ni precios |
+| Guía «Antes de comprar un usado» | Información general, octubre de 2026 | No es condición del negocio; revisión profesional pendiente (P18) |
+| Mapa de Contacto (OpenStreetMap) | Coordenadas -31.65775, -59.92451 de Infoisinfo | Aproximada; confirmar el punto (P19) |
 | Enlaces a Facebook (`horizonteautos`), Instagram (`horizonte_automotores`) y grupoalmafuerte.com | Perfiles y sitio propios | Verificado |
 
 ## No publicado (a propósito)

@@ -119,6 +119,27 @@
       "bloqueante": false,
       "estado": "abierto",
       "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021."
+    },
+    {
+      "id": "P18",
+      "tema": "Revisión profesional de la guía «Antes de comprar un usado»",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "La sección #guia es información general de octubre de 2026 (qué mirar en el auto y papeles que suelen pedirse). Los requisitos y costos del Registro del Automotor cambian: que la revise un gestor o escribano antes de producción y fecharla de nuevo."
+    },
+    {
+      "id": "P19",
+      "tema": "Coordenadas del mapa",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "El mapa de Contacto usa -31.65775, -59.92451 (Infoisinfo, directorio) y avisa que la ubicación es aproximada. Confirmar el punto exacto con el dueño y actualizar location.coordenadas en data/dealership.json."
+    },
+    {
+      "id": "P20",
+      "tema": "Secciones que faltan por no haber datos",
+      "bloqueante": false,
+      "estado": "abierto",
+      "como": "No hay datos ni autorización para: entregas con prueba social, reseñas (P10), horarios (P2), conocé el local y el equipo (fotos y videos, P4), historia (P9), próximos ingresos. Ver golive/SECCIONES-PENDIENTES.md."
     }
   ]
 }
