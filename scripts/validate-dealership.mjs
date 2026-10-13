@@ -68,7 +68,8 @@ if (d && a) {
     for (const p of ['index.html']) if (!html[p].includes(`wa.me/${c.whatsApp}`)) err(`${p}: WhatsApp no coincide con dealership.json`);
     if (!c.confirmadoPorDueno) err('contact.whatsApp está cargado pero confirmadoPorDueno es false');
   } else {
-    for (const p of pages) if (/wa\.me|tel:/.test(html[p])) err(`${p}: hay teléfono o WhatsApp publicado sin confirmar`);
+    for (const p of pages) if (/wa\.me/.test(html[p])) err(`${p}: hay WhatsApp publicado sin confirmar`);
+    for (const p of pages) if (!c.phoneTel && /tel:/.test(html[p])) err(`${p}: hay teléfono publicado sin cargarlo en dealership.json`);
   }
   if (c.phoneTel && !idx.includes(`tel:${c.phoneTel}`)) err('index.html: teléfono no coincide con dealership.json');
   if (!c.confirmadoPorDueno) {
@@ -89,12 +90,13 @@ if (d && a) {
     [/tasaci[oó]n/i, 'tasación sin fuente', 'tasacion'],
     [/garant[ií]a/i, 'garantía sin fuente', 'garantia'],
     [/\b0 ?km\b/i, '0 km sin fuente', null],
-    [/rese[ñn]as?|estrellas|opiniones|\b\d[.,]\d\s?\/\s?(5|10)\b/i, 'valoración o reseñas sin verificar', null],
+    [/estrellas|\b\d[.,]\d\s?\/\s?(5|10)\b/i, 'valoración sin verificar', null],
+    [/rese[ñn]as?|opiniones/i, 'reseñas sin enlace a la ficha de Google', null, !!d.reviews?.googleUrl],
     [/\$\s?\d|US\$|\d{1,3}(\.\d{3})+ ?km/i, 'precio o kilometraje fuera de una tarjeta de unidad', null],
     [/c[aá]mara del comercio automotor|\bCCA\b/i, 'afiliación a la CCA no verificada', null],
     [/adquirid[ao]|absorbid[ao]|renombrad[ao]/i, 'relación con el grupo sin redacción autorizada (P15)', null],
   ];
-  for (const [re, why, clave] of vetadas) if ((!clave || !claves.has(clave)) && re.test(visNoCars)) err(`Texto no permitido en el sitio (${why}): ${re}`);
+  for (const [re, why, clave, permitido] of vetadas) if (!permitido && (!clave || !claves.has(clave)) && re.test(visNoCars)) err(`Texto no permitido en el sitio (${why}): ${re}`);
   if (/test ?drive|haval|\btank\b|\bora 03\b|\bgwm\b/i.test(visible)) err('GWM / test drive: se atiende en Paraná y Santa Fe, no se muestra como oferta de María Grande');
   if (!d.hours.display && /horario|lunes a |\b\d{1,2}[:.]\d{2} ?(hs|a)\b/i.test(visible)) err('hay un horario publicado sin confirmar');
   if (/verificad[oa]|confirmad[oa]/i.test(visible)) err('texto "verificado/confirmado" no permitido');

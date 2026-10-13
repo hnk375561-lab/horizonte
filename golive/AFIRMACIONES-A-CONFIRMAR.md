@@ -20,14 +20,16 @@ Estado al 12/10/2026 (incluye la investigación V2 y el expediente OSINT textual
 | «Entregá tu usado como parte de pago» (formulario que arma un mensaje) | Permuta y tasación del grupo (grupoalmafuerte.com/contacto, FAQ) | Solo se muestra si `services.published` tiene `permuta`; confirmar para María Grande (P8) |
 | «Contanos qué auto buscás» (formulario que arma un mensaje) | Sin dato del negocio | No confirma disponibilidad ni precios |
 | Guía «Antes de comprar un usado» | Información general, octubre de 2026 | No es condición del negocio; revisión profesional pendiente (P18) |
-| Mapa de Contacto (OpenStreetMap) | Coordenadas -31.65775, -59.92451 de Infoisinfo | Aproximada; confirmar el punto (P19) |
+| Mapa de Contacto (OpenStreetMap) y «Abrir en Google Maps» | Coordenadas -31.6579811, -59.9246037 y enlace de la ficha de Google Maps (12/10/2026) | Punto de la ficha de Google (P19, resuelto) |
+| Teléfono 343 461-8388 (botón «Llamar») | Ficha de Google Maps; video del Grupo Automóviles Almafuerte; grupoalmafuerte.com/nosotros; directorios | Coincidencia de 4 fuentes; falta confirmación del dueño (P1) |
+| Enlace «Ver reseñas en Google» (sin puntaje ni comentarios) | Ficha de Google Maps de Horizonte Automotores, Av. Argentina 2021 | Solo enlace (P10) |
 | Enlaces a Facebook (`horizonteautos`), Instagram (`horizonte_automotores`) y grupoalmafuerte.com | Perfiles y sitio propios | Verificado |
 
 ## No publicado (a propósito)
 | Dato | Motivo |
 |---|---|
-| Teléfono / WhatsApp | Siete números distintos en las fuentes, incluidos dos teléfonos distintos en el propio sitio del grupo (P1) |
-| Horario | Versión oficial del grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00) frente a la de directorios (L-V 9:30–18:00, S 8:30–12:30) y la de GTM (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30); falta confirmación del operador (P2) |
+| WhatsApp | Sin resolver: el video del grupo da 342-6108942 (número de Santa Fe, repetido como teléfono de esa sucursal) y el sitio del grupo 3436 10-9949; el resto de los números candidatos tampoco está confirmado (P1) |
+| Horario | Cuatro versiones: ficha de Google y GTM (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30, domingo cerrado); versión oficial del grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00) frente a la de directorios (L-V 9:30–18:00, S 8:30–12:30) y la de GTM (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30); falta confirmación del operador (P2) |
 | Correo | Solo hay una casilla personal en Facebook (P6) |
 | Peugeot 1.6 Feline, Volkswagen Camión 17.220, Renault Sandero 2024 | Contradicciones en sus fichas; están en `data/autos-en-revision.json` (P5) |
 | Gama GWM 0 km y test drive | Se atienden en Paraná y Santa Fe, no en María Grande (P16) |

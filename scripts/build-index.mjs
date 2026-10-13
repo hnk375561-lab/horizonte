@@ -90,6 +90,7 @@ const dl = [
   C.phone ? ['Teléfono', `<a href="tel:${C.phoneTel}">${esc(C.phone)}</a>`] : null,
   C.whatsApp ? ['WhatsApp', `<a href="${WA}" ${EXT}>Escribinos</a>`] : null,
   D.hours.display ? ['Horario', esc(D.hours.display)] : null,
+  D.reviews.googleUrl ? ['Reseñas', `<a href="${D.reviews.googleUrl}" ${EXT}>Ver reseñas en Google</a>`] : null,
   ['Redes', `<a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram @${esc(C.instagram)}</a>`],
   ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)} · Concesionario Usados ${esc(L.city)}</a>`],
 ].filter(Boolean);
@@ -177,7 +178,7 @@ const mapa = COORD ? `
 <div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
 <div class="map-v" role="region" aria-label="Mapa con la ubicación" hidden></div>
 <div class="row"><a class="btn" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a><a class="btn" href="https://waze.com/ul?ll=${COORD.lat},${COORD.lng}&amp;navigate=yes" ${EXT}>Abrir en Waze</a><button class="btn" type="button" data-copiar="${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}" hidden>Copiar dirección</button></div>
-<p class="src">Ubicación aproximada según un directorio (Infoisinfo). La dirección es ${esc(L.address)}, ${esc(L.city)}.</p>
+<p class="src">Ubicación según la ficha de Google Maps. La dirección es ${esc(L.address)}, ${esc(L.city)}.</p>
 </div>` : '';
 
 const ld = {
@@ -230,7 +231,7 @@ ${secVisita}
 <section id="contacto" class="ct" aria-labelledby="contacto-t"><div class="w">
 <p class="ey">Contacto</p><h2 id="contacto-t">Dónde <em>encontrarnos</em></h2>
 <div class="ct-g"><dl>${dl.map(([t, v]) => `<dt>${t}</dt><dd>${v}</dd>`).join('')}</dl>
-<div class="ct-c"><p class="ct-t">¿Buscás un auto o una moto?</p><p>Escribinos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p><div class="row"><a class="btn p" href="${ctaHead.href}" ${EXT}>${WA ? 'Escribir por WhatsApp' : 'Escribir por Facebook'}</a><a class="btn" href="${IG}" ${EXT}>Instagram</a></div></div></div>
+<div class="ct-c"><p class="ct-t">¿Buscás un auto o una moto?</p><p>Escribinos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p><div class="row"><a class="btn p" href="${ctaHead.href}" ${EXT}>${WA ? 'Escribir por WhatsApp' : 'Escribir por Facebook'}</a>${C.phoneTel ? `<a class="btn" href="tel:${C.phoneTel}">Llamar</a>` : ''}<a class="btn" href="${IG}" ${EXT}>Instagram</a></div></div></div>
 ${mapa}
 </div></section>
 </main>

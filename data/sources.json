@@ -10,13 +10,13 @@
     {
       "id": "facebook",
       "url": "https://www.facebook.com/horizonteautos/",
-      "aporta": "Dirección, introducción de la página (autos y motos, financiación, diez años), teléfono +54 343 494-7176 y un correo personal. Sin calificar (0 reseñas). Aviso Hyundai Tucson 2WD 2.0 2018 'Nuevo ingreso', sin fecha.",
+      "aporta": "Dirección, introducción de la página (autos y motos, financiación, diez años), teléfono +54 343 494-7176 y un correo personal. Sin calificar (0 reseñas). Aviso Hyundai Tucson 2WD 2.0 2018 'Nuevo ingreso', sin fecha. Captura del 12/10/2026: teléfono móvil 343 494-7176, Messenger «Horizonte Automotores - Maria Grande», horario sin cargar («Cerrado ahora»).",
       "confianza": "alta (es la página de la propia agencia)"
     },
     {
       "id": "instagram",
       "url": "https://www.instagram.com/horizonte_automotores/",
-      "aporta": "Perfil propio que la investigación OSINT no incluía. Biografía: concesionario en María Grande del Grupo Automóviles Almafuerte.",
+      "aporta": "Perfil propio que la investigación OSINT no incluía. Biografía: concesionario en María Grande del Grupo Automóviles Almafuerte. Captura del 12/10/2026: 167 publicaciones, 1774 seguidores; la biografía remite a @almafuerte_usados.",
       "confianza": "alta"
     },
     {
@@ -132,6 +132,24 @@
       "url": "https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias_22-7-25.pdf",
       "aporta": "Verificación propia (12/10/2026): otra versión de 2025 con la misma fila («Maria Grande | Horizonte Automores | Av. Argentina 2021»). En listados del banco figura también «Automóviles Almafuerte» en Paraná (Av. Almafuerte 960).",
       "confianza": "alta; copia del mismo listado"
+    },
+    {
+      "id": "google-maps",
+      "url": "https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq",
+      "aporta": "Ficha de Google Maps (captura y enlaces del 12/10/2026): Avenida Argentina 2021, E3133 María Grande; coordenadas -31.6579811, -59.9246037; teléfono 0343 461-8388; horario L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30, domingo cerrado (Google avisa que puede variar). El enlace a las reseñas de esa ficha se usa en el sitio sin copiar puntaje.",
+      "confianza": "alta (ficha del propio negocio en Google)"
+    },
+    {
+      "id": "almafuerte-video",
+      "url": null,
+      "aporta": "Video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte (capturas del 12/10/2026): Horizonte Automotores, Av. Argentina 2021, tel. 343-4618388, WhatsApp 342-6108942 (este último sin resolver, ver P1); publicación «Nueva sucursal» en Av. Almafuerte 1504, Paraná.",
+      "confianza": "alta (material del grupo; sin URL, es una captura aportada por el responsable del proyecto)"
+    },
+    {
+      "id": "cca-captura",
+      "url": "https://ccaentrerios.org/agencias/",
+      "aporta": "Captura 12/10/2026 de la fila «María Grande · Horizonte Automotores · Av Argentina 2021 · 343 4050787».",
+      "confianza": "media (listado de agencias)"
     }
   ],
   "contradiccionesConLaInvestigacionOriginal": [

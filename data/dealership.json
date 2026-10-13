@@ -32,8 +32,32 @@
     "relacionConGrupo": {
       "estado": "asociación confirmada por el responsable del proyecto (12/10/2026); naturaleza exacta sin definir",
       "regla": "No escribir «adquirida», «absorbida» ni «renombrada». Solo «forma parte del Grupo Almafuerte» hasta tener una redacción autorizada (P15).",
-      "nombreExacto": "La web oficial dice «Grupo Almafuerte»; la biografía de Instagram dice «Grupo Automóviles Almafuerte». Confirmar cuál usar (P7)."
-    }
+      "nombreExacto": "La web oficial dice «Grupo Almafuerte»; la biografía de Instagram dice «Grupo Automóviles Almafuerte». Confirmar cuál usar (P7).",
+      "instagram": "Biografía de @horizonte_automotores (12/10/2026): «Concesionario en la ciudad de María Grande del Grupo Automóviles Almafuerte»; remite a @almafuerte_usados. El video del grupo lista a Horizonte Automotores entre sus sucursales."
+    },
+    "grupoSucursales": [
+      {
+        "nombre": "Casa central",
+        "direccion": "Av. Almafuerte 960, Paraná"
+      },
+      {
+        "nombre": "Predio",
+        "direccion": "Av. Almafuerte 3408, Paraná"
+      },
+      {
+        "nombre": "Horizonte Automotores",
+        "direccion": "Av. Argentina 2021, María Grande"
+      },
+      {
+        "nombre": "Sucursal Santa Fe",
+        "direccion": "Urquiza 2809, Santa Fe"
+      },
+      {
+        "nombre": "Nueva sucursal",
+        "direccion": "Av. Almafuerte 1504, Paraná"
+      }
+    ],
+    "grupoSucursalesFuente": "Video «Teléfonos & sucursales» y publicación «Nueva sucursal» del Grupo Automóviles Almafuerte (capturas 12/10/2026). Dato de referencia; no se muestra en el sitio."
   },
   "location": {
     "address": "Avenida Argentina 2021",
@@ -41,40 +65,39 @@
     "city": "María Grande",
     "province": "Entre Ríos",
     "country": "Argentina",
-    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Avenida+Argentina+2021%2C+Mar%C3%ADa+Grande%2C+Entre+R%C3%ADos",
+    "mapsUrl": "https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq",
     "fuentes": [
       "Listado oficial de concesionarias de Créditos Más Autos (Banco Nación, 16/07/2025): Avda Argentina 2021",
       "Ficha de Facebook de la agencia (consultada el 12/10/2026): Av Argentina 2021",
       "Infoisinfo (ficha 261219) y GTM: Av. Argentina 2021",
       "Sitio oficial de Grupo Almafuerte, páginas Nosotros y Contacto (12/10/2026): Av. Argentina 2021, María Grande",
       "Listado de agencias de la Cámara del Comercio Automotor de Entre Ríos: Av Argentina 2021",
-      "Listados del Banco Nación (+Autos con BNA): la fila «Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021» figura en versiones de julio, agosto y septiembre de 2025 y en la del 19/05/2026 (verificado en el texto indexado del PDF el 12/10/2026)"
+      "Listados del Banco Nación (+Autos con BNA): la fila «Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021» figura en versiones de julio, agosto y septiembre de 2025 y en la del 19/05/2026 (verificado en el texto indexado del PDF el 12/10/2026)",
+      "Ficha de Google Maps «Horizonte Automotores» (aportada por el responsable del proyecto, 12/10/2026): Avenida Argentina 2021, E3133 María Grande, Entre Ríos",
+      "Video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte (captura aportada 12/10/2026): Horizonte Automotores, Av. Argentina 2021"
     ],
-    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios): ficha antigua. No se usa. Discrepancia entre verificaciones del 12/10/2026: la verificación previa leyó que Entre Ríos Total la ubica en Paraná; el expediente OSINT textual V2 la lee como María Grande, Avda. Argentina 536, tel. 0343 4941092. Sin resolver; la ficha de TodosNegocios del 536 tiene además un encabezado de Santiago del Estero. No hay prueba de mudanza.",
+    "descartada": "Av. Argentina 536 (Infoisinfo ficha 18919, Citiservi, Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios): ficha antigua. No se usa. Discrepancia entre verificaciones del 12/10/2026: la verificación previa leyó que Entre Ríos Total la ubica en Paraná; el expediente OSINT textual V2 la lee como María Grande, Avda. Argentina 536, tel. 0343 4941092. Sin resolver; la ficha de TodosNegocios del 536 tiene además un encabezado de Santiago del Estero. No hay prueba de mudanza. Capturas del 12/10/2026: la ficha del 536 (tel. 0343 494-1092) muestra además un encabezado de Santiago del Estero y 0 «Me gusta»; la ficha de Facebook y la de Google usan solo el 2021. Se sigue usando solo el 2021.",
     "coordenadas": {
-      "lat": -31.65775,
-      "lng": -59.92451,
-      "fuente": "Infoisinfo (ficha 261219), directorio; ubicación aproximada, sin confirmar con el dueño (P19)"
-    }
+      "lat": -31.6579811,
+      "lng": -59.9246037,
+      "fuente": "Ficha de Google Maps «Horizonte Automotores» (enlace aportado por el responsable del proyecto, 12/10/2026). Reemplaza la coordenada aproximada de Infoisinfo (-31.65775, -59.92451)."
+    },
+    "googleFtid": "0x95b45273501b1f37:0x93976f85e6dd10f5"
   },
   "contact": {
     "facebook": "https://www.facebook.com/horizonteautos/",
     "instagram": "horizonte_automotores",
-    "phone": null,
-    "phoneTel": null,
+    "phone": "343 461-8388",
+    "phoneTel": "+543434618388",
     "whatsApp": null,
     "email": null,
     "confirmadoPorDueno": false,
     "conflicto": {
-      "regla": "Las fuentes dan números distintos. No se publica ninguno hasta que el dueño confirme cuál es el teléfono y cuál el WhatsApp (pendiente P1). Para activar el WhatsApp del sitio oficial del grupo: cargar whatsApp «5493436109949» y confirmadoPorDueno=true, y correr npm run build.",
+      "regla": "El teléfono 343 461-8388 quedó resuelto con las fuentes de contact.telefonoFuentes. El WhatsApp sigue en disputa: el video oficial del grupo lista 342-6108942 para Horizonte, pero es un número con característica 342 (Santa Fe) que el mismo video asigna a la Sucursal Santa Fe, y el sitio del grupo publica otro (3436 10-9949). No se publica ninguno hasta que el dueño confirme (P1). Para activarlo: cargar whatsApp «549…» y confirmadoPorDueno=true, y correr npm run build.",
       "candidatos": [
         {
           "numero": "343 494-7176",
-          "fuente": "Ficha de Facebook de la agencia (12/10/2026)"
-        },
-        {
-          "numero": "343 461-8388",
-          "fuente": "Directorios (Cylex, TodosNegocios, Tellows, GTM) y página «Nosotros» de grupoalmafuerte.com (+54 9 3434 61-8388); Yably y Tellows (posible dato replicado entre directorios, no verificaciones independientes)"
+          "fuente": "Ficha de Facebook de la agencia (12/10/2026); capturada de nuevo el 12/10/2026, etiquetada «Móvil»"
         },
         {
           "numero": "3434 62-2671",
@@ -86,25 +109,44 @@
         },
         {
           "numero": "343 405-0787",
-          "fuente": "Listado de agencias de la CCA Entre Ríos"
+          "fuente": "Listado de agencias de la CCA Entre Ríos; la ficha sigue visible en la captura del 12/10/2026 (María Grande, Av Argentina 2021)"
         },
         {
           "numero": "343 494-1092",
-          "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536 (Entre Ríos Total, TodosNegocios); la ficha principal de TodosNegocios lo muestra junto a Av. Argentina 2021 (expediente V2)"
+          "fuente": "Directorios antiguos asociados a la dirección Av. Argentina 536 (Entre Ríos Total, TodosNegocios); la ficha principal de TodosNegocios lo muestra junto a Av. Argentina 2021 (expediente V2); capturas 12/10/2026: figura en la ficha antigua del 536 (con encabezado de Santiago del Estero) y también en una ficha de directorio junto al 2021"
         },
         {
           "numero": "341 210-2911",
           "fuente": "WhatsApp en un aviso de Facebook (Hyundai Tucson); la característica 341 corresponde a Rosario"
+        },
+        {
+          "numero": "342 610-8942",
+          "fuente": "WhatsApp de «Horizonte Automotores» en el video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte (12/10/2026). Es el mismo número que el video da como teléfono de la Sucursal Santa Fe (Urquiza 2809); confirmar que atiende María Grande"
         }
       ]
     },
-    "correo": "Un correo @hotmail figura en la ficha de Facebook; parece una casilla personal. No se publica ni se guarda aquí.",
-    "grupoWeb": "https://grupoalmafuerte.com/contacto/"
+    "correo": "Un correo @hotmail figura en la ficha de Facebook (capturada de nuevo el 12/10/2026); parece una casilla personal. No se publica ni se guarda aquí.",
+    "grupoWeb": "https://grupoalmafuerte.com/contacto/",
+    "telefonoFuentes": [
+      "Ficha de Google Maps de Horizonte Automotores: 0343 461-8388 (captura 12/10/2026)",
+      "Video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte, línea «Horizonte Automotores – Av. Argentina 2021»: 343-4618388 (captura 12/10/2026)",
+      "grupoalmafuerte.com/nosotros: +54 9 3434 61-8388",
+      "Directorios (Cylex, TodosNegocios, Tellows, GTM): 343 461-8388"
+    ],
+    "telefonoNota": "Publicado como teléfono de contacto porque coinciden la ficha de Google, el video oficial del grupo, su sitio web y los directorios. Sigue sin estar confirmado por el dueño (confirmadoPorDueno=false), por eso el sitio no lo presenta como WhatsApp y la puerta de producción sigue cerrada.",
+    "otrosNumerosDelGrupo": "Video del grupo (12/10/2026): Casa central Av. Almafuerte 960, tel. 343-4242921, WhatsApp 343-6220915; Predio Av. Almafuerte 3408, tel. 343-4618392; Sucursal Santa Fe, Urquiza 2809, tel. 342-6108942. No son de María Grande y no se publican.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq"
   },
   "hours": {
     "display": null,
-    "conflicto": "Dos versiones: (a) sitio oficial de Grupo Almafuerte (Nosotros y Contacto): lunes a viernes 8:30–12:30 y 15:30–19:30, sábados 8:30–13:00; (b) directorios (Cylex, TodosNegocios, Tellows, Infoisinfo; Cylex actualizado el 13/09/2024): lunes a viernes 9:30–18:00, sábados 8:30–12:30. La (a) es la más reciente y oficial, pero hasta que el operador la confirme no se publica ninguna (P2). Versión (c), expediente OSINT textual V2: GTM publica lunes a viernes 8:30–12:30 y 16:00–20:00, sábados 8:30–12:30 (otra contradicción en días hábiles). Cylex, TodosNegocios y Tellows repiten la (b).",
-    "candidatoOficial": "Lunes a viernes 8:30–12:30 y 15:30–19:30; sábados 8:30–13:00 (grupoalmafuerte.com, 12/10/2026)"
+    "conflicto": "Dos versiones: (a) sitio oficial de Grupo Almafuerte (Nosotros y Contacto): lunes a viernes 8:30–12:30 y 15:30–19:30, sábados 8:30–13:00; (b) directorios (Cylex, TodosNegocios, Tellows, Infoisinfo; Cylex actualizado el 13/09/2024): lunes a viernes 9:30–18:00, sábados 8:30–12:30. La (a) es la más reciente y oficial, pero hasta que el operador la confirme no se publica ninguna (P2). Versión (c), expediente OSINT textual V2: GTM publica lunes a viernes 8:30–12:30 y 16:00–20:00, sábados 8:30–12:30 (otra contradicción en días hábiles). Cylex, TodosNegocios y Tellows repiten la (b). Versión (d), ficha de Google Maps (12/10/2026): lunes a viernes 8:30–12:30 y 16:00–20:00, sábados 8:30–12:30, domingo cerrado; coincide con GTM (c) y difiere del sitio del grupo (a) en la tarde (15:30–19:30) y en el cierre del sábado (13:00). Sigue sin publicarse hasta que el operador elija (P2).",
+    "candidatoOficial": "Lunes a viernes 8:30–12:30 y 15:30–19:30; sábados 8:30–13:00 (grupoalmafuerte.com, 12/10/2026). Alternativa respaldada por Google Maps y GTM: L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30.",
+    "googleMaps": {
+      "fuente": "Ficha de Google Maps (captura 12/10/2026; Google avisa «Los horarios pueden variar»)",
+      "lunesAViernes": "8:30–12:30 y 16:00–20:00",
+      "sabado": "8:30–12:30",
+      "domingo": "Cerrado"
+    }
   },
   "services": {
     "published": [
@@ -163,7 +205,8 @@
   },
   "reviews": {
     "publicadas": false,
-    "nota": "Yably: 4,20/5 con 17 reseñas de Google; GTM: 8.4 con 27 reseñas (origen sin indicar y un 4.2 en la misma página); Infoisinfo y Facebook: 0 reseñas. Las cifras no son comparables y la ficha de Google podría corresponder al nombre histórico. No se publica puntaje ni comentarios (P10). Cylex (V2): 4,1/5 con 15 opiniones («1 fuente»), registro del 13/09/2024; Cylex y Yably parecen compartir fuente, por eso no se suman. No se calcula un puntaje único."
+    "nota": "Yably: 4,20/5 con 17 reseñas de Google; GTM: 8.4 con 27 reseñas (origen sin indicar y un 4.2 en la misma página); Infoisinfo y Facebook: 0 reseñas. Las cifras no son comparables y la ficha de Google podría corresponder al nombre histórico. No se publica puntaje ni comentarios (P10). Cylex (V2): 4,1/5 con 15 opiniones («1 fuente»), registro del 13/09/2024; Cylex y Yably parecen compartir fuente, por eso no se suman. No se calcula un puntaje único. 12/10/2026: la ficha de Google Maps (Av. Argentina 2021) es la de la agencia actual, así que el sitio solo enlaza a ella; no copia puntaje ni comentarios.",
+    "googleUrl": "https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.9246037,17z/data=!4m8!3m7!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!9m1!1b1!16s%2Fg%2F1tf7hvyq"
   },
   "photos": {
     "provided": false,
