@@ -418,6 +418,30 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
   .menu-toggle{margin-left:auto}
 }
 @media(max-width:380px){#contacto h2{font-size:clamp(28px,9.4vw,40px)}} /* evita partir «ENCONTRARNOS» a mitad de palabra */
+
+/* ── UX · tarjetas alineadas: en cada fila comparten líneas (cabecera, título, año/km, ficha, precio) ── */
+.car-f{display:flex;flex-direction:column;gap:12px;min-width:0}
+.car-f .pr{margin-top:auto}
+@supports (grid-template-rows:subgrid){
+  @media(min-width:520px){
+    .car{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:12px;align-content:start}
+    .car-f{align-content:start}
+    .car h3{min-height:0}
+    .car-f .pr{margin-top:0}
+    .car-f .btn{margin-top:auto}
+  }
+}
+
+/* ── UX · guía en acordeón nativo (abierto en desktop, plegado en mobile) y CTA de financiación ── */
+.gd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px}
+.gd>summary::-webkit-details-marker{display:none}
+.gd>summary h3{margin:0}
+.gd>summary::after{content:"+";flex:none;display:grid;place-items:center;width:32px;height:32px;border:2px solid currentColor;font:800 20px/1 var(--b)}
+.gd[open]>summary::after{content:"\2212"}
+.gd[open]>summary{margin-bottom:8px}
+.fin-cta{margin-top:26px}
+/* Header de una sola fila en celulares (≤399px): el WhatsApp sigue en el hero, el menú y el botón flotante */
+@media(max-width:399px){header .w{flex-wrap:nowrap;gap:10px;padding-top:0}header .hc{display:none}.mark .lg-img{height:40px}.menu-toggle{margin-left:auto}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","email":"snicolas540@hotmail.com","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
@@ -466,35 +490,35 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
 <h3>Cruze 1.4 LTZ 4P</h3>
 <div class="car-s"><p><b>2018</b><small>Año</small></p><p><b>157.000</b><small>Kilómetros</small></p></div>
 <dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#f1f1ee"></i>Blanco</dd></div></dl>
-<p class="pr">$ 22.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Chevrolet%20Cruze%201.4%20LTZ%204P%202018." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Chevrolet Cruze 1.4 LTZ 4P">Consultar</a>
+<div class="car-f"><p class="pr">$ 22.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Chevrolet%20Cruze%201.4%20LTZ%204P%202018." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Chevrolet Cruze 1.4 LTZ 4P">Consultar</a></div>
 </li>
 <li class="car" data-t="volkswagen vento 1.4 tsi bm tech comfortline volkswagen vento tsi bm tech comfortline 1.4 negro 2017" data-i="1">
 <div class="car-h"><span class="car-b">Volkswagen</span><label class="car-c" hidden><input type="checkbox" value="1" aria-label="Comparar Volkswagen Vento 1.4 TSI BM Tech Comfortline"><span>Comparar</span></label></div>
 <h3>Vento 1.4 TSI BM Tech Comfortline</h3>
 <div class="car-s"><p><b>2017</b><small>Año</small></p><p><b>182.000</b><small>Kilómetros</small></p></div>
 <dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#161b1d"></i>Negro</dd></div></dl>
-<p class="pr">$ 26.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Volkswagen%20Vento%201.4%20TSI%20BM%20Tech%20Comfortline%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Volkswagen Vento 1.4 TSI BM Tech Comfortline">Consultar</a>
+<div class="car-f"><p class="pr">$ 26.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Volkswagen%20Vento%201.4%20TSI%20BM%20Tech%20Comfortline%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Volkswagen Vento 1.4 TSI BM Tech Comfortline">Consultar</a></div>
 </li>
 <li class="car" data-t="citroen c3 1.6 vti shine citroen c3 vti shine 1.6 blanco 2016" data-i="2">
 <div class="car-h"><span class="car-b">Citroën</span><label class="car-c" hidden><input type="checkbox" value="2" aria-label="Comparar Citroën C3 1.6 VTI Shine"><span>Comparar</span></label></div>
 <h3>C3 1.6 VTI Shine</h3>
 <div class="car-s"><p><b>2016</b><small>Año</small></p><p><b>135.000</b><small>Kilómetros</small></p></div>
 <dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#f1f1ee"></i>Blanco</dd></div></dl>
-<p class="pr">$ 15.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Citro%C3%ABn%20C3%201.6%20VTI%20Shine%202016." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Citroën C3 1.6 VTI Shine">Consultar</a>
+<div class="car-f"><p class="pr">$ 15.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Citro%C3%ABn%20C3%201.6%20VTI%20Shine%202016." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Citroën C3 1.6 VTI Shine">Consultar</a></div>
 </li>
 <li class="car" data-t="peugeot 307 1.6 xs ln 5p peugeot 307 xs ln 5p 1.6 rojo 2007" data-i="3">
 <div class="car-h"><span class="car-b">Peugeot</span><label class="car-c" hidden><input type="checkbox" value="3" aria-label="Comparar Peugeot 307 1.6 XS Ln 5P"><span>Comparar</span></label></div>
 <h3>307 1.6 XS Ln 5P</h3>
 <div class="car-s"><p><b>2007</b><small>Año</small></p><p><b class="nd">No publicado</b><small>Kilómetros</small></p></div>
 <dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#c21f1f"></i>Rojo</dd></div></dl>
-<p class="pr">$ 9.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Peugeot%20307%201.6%20XS%20Ln%205P%202007." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Peugeot 307 1.6 XS Ln 5P">Consultar</a>
+<div class="car-f"><p class="pr">$ 9.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Peugeot%20307%201.6%20XS%20Ln%205P%202007." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Peugeot 307 1.6 XS Ln 5P">Consultar</a></div>
 </li>
 <li class="car" data-t="renault sandero stepway 1.6 dynamique renault sandero stepway dynamique 1.6 gris plata 2017" data-i="4">
 <div class="car-h"><span class="car-b">Renault</span><label class="car-c" hidden><input type="checkbox" value="4" aria-label="Comparar Renault Sandero Stepway 1.6 Dynamique"><span>Comparar</span></label></div>
 <h3>Sandero Stepway 1.6 Dynamique</h3>
 <div class="car-s"><p><b>2017</b><small>Año</small></p><p><b>124.000</b><small>Kilómetros</small></p></div>
 <dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#b4bbbe"></i>Gris plata</dd></div></dl>
-<p class="pr">$ 17.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Renault%20Sandero%20Stepway%201.6%20Dynamique%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Renault Sandero Stepway 1.6 Dynamique">Consultar</a>
+<div class="car-f"><p class="pr">$ 17.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Renault%20Sandero%20Stepway%201.6%20Dynamique%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Renault Sandero Stepway 1.6 Dynamique">Consultar</a></div>
 </li>
 </ul>
 <script type="application/json" id="cat-data">[{"i":0,"titulo":"Chevrolet Cruze 1.4 LTZ 4P","marca":"Chevrolet","modelo":"Cruze","cilindrada":"1.4","version":"LTZ 4P","anio":2018,"km":157000,"transmision":"Manual","combustible":"Nafta","color":"Blanco","sw":"#f1f1ee","precio":{"moneda":"ARS","monto":22000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Chevrolet%20Cruze%201.4%20LTZ%204P%202018."},{"i":1,"titulo":"Volkswagen Vento 1.4 TSI BM Tech Comfortline","marca":"Volkswagen","modelo":"Vento","cilindrada":"1.4","version":"TSI BM Tech Comfortline","anio":2017,"km":182000,"transmision":"Manual","combustible":"Nafta","color":"Negro","sw":"#161b1d","precio":{"moneda":"ARS","monto":26500000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Volkswagen%20Vento%201.4%20TSI%20BM%20Tech%20Comfortline%202017."},{"i":2,"titulo":"Citroën C3 1.6 VTI Shine","marca":"Citroën","modelo":"C3","cilindrada":"1.6","version":"VTI Shine","anio":2016,"km":135000,"transmision":"Manual","combustible":"Nafta","color":"Blanco","sw":"#f1f1ee","precio":{"moneda":"ARS","monto":15000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Citro%C3%ABn%20C3%201.6%20VTI%20Shine%202016."},{"i":3,"titulo":"Peugeot 307 1.6 XS Ln 5P","marca":"Peugeot","modelo":"307","cilindrada":"1.6","version":"XS Ln 5P","anio":2007,"km":null,"transmision":"Manual","combustible":"Nafta","color":"Rojo","sw":"#c21f1f","precio":{"moneda":"ARS","monto":9000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Peugeot%20307%201.6%20XS%20Ln%205P%202007."},{"i":4,"titulo":"Renault Sandero Stepway 1.6 Dynamique","marca":"Renault","modelo":"Sandero Stepway","cilindrada":"1.6","version":"Dynamique","anio":2017,"km":124000,"transmision":"Manual","combustible":"Nafta","color":"Gris plata","sw":"#b4bbbe","precio":{"moneda":"ARS","monto":17500000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Renault%20Sandero%20Stepway%201.6%20Dynamique%202017."}]</script>
@@ -517,6 +541,7 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
 <div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de mayo de 2026). <a href="https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf" target="_blank" rel="noopener noreferrer">Ver el listado</a>.</p></div><div class="card"><h3>Tu usado, parte de pago</h3><p>Recibimos vehículos usados como parte de pago. La tasación es sin cargo.</p></div><div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div></div>
+<div class="row fin-cta"><a class="btn p" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20financiaci%C3%B3n." target="_blank" rel="noopener noreferrer">Consultar financiación</a><a class="btn" href="#tu-usado">Cotizá tu usado</a></div>
 <p class="src">Servicios según lo informado por Grupo Almafuerte en <a href="https://grupoalmafuerte.com/contacto/" target="_blank" rel="noopener noreferrer">su sitio</a>.</p>
 </div></section>
 
@@ -557,8 +582,8 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
 <p class="ey">Guía</p><h2 id="guia-t">Antes de comprar un <em>usado</em></h2>
 <p class="sec-p">Información general para cualquier compra de un usado, de octubre de 2026. No es una condición ni una promesa de Horizonte Automotores.</p>
 <div class="guia">
-<div class="card"><h3>Qué mirar en el auto</h3><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></div>
-<div class="card"><h3>Papeles que conviene pedir</h3><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></div>
+<details class="card gd" open><summary><h3>Qué mirar en el auto</h3></summary><ul><li>Carrocería y pintura: diferencias de tono, juntas desparejas o signos de golpes.</li><li>Neumáticos, frenos y suspensión: desgaste parejo y ruidos al probarlo.</li><li>Motor y debajo del auto: fugas de aceite o líquidos.</li><li>Tablero y luces: que no queden testigos encendidos.</li><li>Kilometraje: que sea coherente con el desgaste de pedales, volante y asientos.</li><li>Probalo en marcha, en calle y en ruta si podés.</li></ul></details>
+<details class="card gd" open><summary><h3>Papeles que conviene pedir</h3></summary><ul><li>Título y cédula del automotor, y que los datos coincidan con el auto (dominio, motor y chasis).</li><li>Informe de dominio del Registro del Automotor.</li><li>Libre deuda de patentes y de multas.</li><li>Verificación policial vigente.</li><li>Formulario 08 de transferencia, firmado por quien vende.</li></ul></details>
 </div>
 <p class="src">Los requisitos y costos de la transferencia cambian: consultalos en el Registro del Automotor o con un gestor o escribano antes de pagar.</p>
 </div></section>

@@ -426,7 +426,9 @@
     }
 
     deUrl();
-    abrirPanel(window.matchMedia ? window.matchMedia('(min-width: 900px)').matches : true);
+    /* Con pocas unidades los filtros sobran: se ve primero el catálogo y los filtros quedan a un clic.
+       El panel solo arranca abierto en pantallas anchas y con un catálogo grande (> 8 unidades). */
+    abrirPanel((window.matchMedia ? window.matchMedia('(min-width: 900px)').matches : true) && Object.keys(items).length > 8);
     tools.hidden = false;
     aplicar(false);
   })();

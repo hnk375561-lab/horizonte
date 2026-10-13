@@ -1,6 +1,10 @@
 /* Horizonte Automotores · navegación de sitio y comportamiento mobile-first. */
 (function () {
   'use strict';
+  /* Guía: en celulares arranca plegada (salvo la primera tarjeta) para acortar el recorrido; en desktop, abierta. */
+  if (window.matchMedia && window.matchMedia('(max-width: 699px)').matches) {
+    Array.prototype.slice.call(document.querySelectorAll('details.gd')).forEach(function (d, i) { if (i > 0) d.removeAttribute('open'); });
+  }
   var toggle = document.querySelector('[data-menu-toggle]');
   var nav = document.querySelector('.site-nav');
   if (!toggle || !nav) return;
@@ -55,5 +59,5 @@
     entries.forEach(function (en) { en.isIntersecting ? inside.add(en.target) : inside.delete(en.target); });
     hidden.zone = inside.size; render();
   }, { rootMargin: '-20% 0px -20% 0px' });
-  document.querySelectorAll('#unidades, #como-comprar, #guia, #preguntas, #tu-usado, #busqueda, #visita, #contacto, .tray').forEach(function (el) { zones.observe(el); });
+  document.querySelectorAll('#unidades, #como-comprar, #financiacion, #guia, #preguntas, #tu-usado, #busqueda, #visita, #contacto, .tray').forEach(function (el) { zones.observe(el); });
 })();

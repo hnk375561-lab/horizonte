@@ -34,6 +34,9 @@ def main():
                 if errs: problems.append(f"{tag}: errores de consola {errs[:2]}")
                 br = pg.evaluate(JS_BREAK)
                 if br: problems.append(f"{tag}: titulares partidos a mitad de palabra {br}")
+                if w <= 700:
+                    hh = pg.evaluate("document.querySelector('header').getBoundingClientRect().height")
+                    if hh > 100: problems.append(f"{tag}: el header fijo ocupa {round(hh)}px (se parte en dos filas)")
                 if w <= 980:
                     sm = pg.evaluate(JS_SMALL)
                     if sm: problems.append(f"{tag}: controles <44px {sm[:4]}")

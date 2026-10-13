@@ -418,6 +418,30 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
   .menu-toggle{margin-left:auto}
 }
 @media(max-width:380px){#contacto h2{font-size:clamp(28px,9.4vw,40px)}} /* evita partir «ENCONTRARNOS» a mitad de palabra */
+
+/* ── UX · tarjetas alineadas: en cada fila comparten líneas (cabecera, título, año/km, ficha, precio) ── */
+.car-f{display:flex;flex-direction:column;gap:12px;min-width:0}
+.car-f .pr{margin-top:auto}
+@supports (grid-template-rows:subgrid){
+  @media(min-width:520px){
+    .car{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:12px;align-content:start}
+    .car-f{align-content:start}
+    .car h3{min-height:0}
+    .car-f .pr{margin-top:0}
+    .car-f .btn{margin-top:auto}
+  }
+}
+
+/* ── UX · guía en acordeón nativo (abierto en desktop, plegado en mobile) y CTA de financiación ── */
+.gd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px}
+.gd>summary::-webkit-details-marker{display:none}
+.gd>summary h3{margin:0}
+.gd>summary::after{content:"+";flex:none;display:grid;place-items:center;width:32px;height:32px;border:2px solid currentColor;font:800 20px/1 var(--b)}
+.gd[open]>summary::after{content:"\2212"}
+.gd[open]>summary{margin-bottom:8px}
+.fin-cta{margin-top:26px}
+/* Header de una sola fila en celulares (≤399px): el WhatsApp sigue en el hero, el menú y el botón flotante */
+@media(max-width:399px){header .w{flex-wrap:nowrap;gap:10px;padding-top:0}header .hc{display:none}.mark .lg-img{height:40px}.menu-toggle{margin-left:auto}}
 </style>
 </head>
 <body>
