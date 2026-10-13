@@ -71,21 +71,38 @@ const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
-<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a>${autos.length > 1 ? `<a href="${pre}#comparador">Comparar</a>` : ''}<a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
+<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;
 
 // ---- unidades ----
 const fmt = (n) => n.toLocaleString('es-AR');
 const norm = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const jsonSafe = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
+// Muestra de color solo para dibujar el punto junto al nombre del color publicado; no es un dato de la ficha.
+const SW = { blanco: '#f1f1ee', negro: '#161b1d', rojo: '#c21f1f', 'gris plata': '#b4bbbe', plata: '#b4bbbe', gris: '#8a9296', azul: '#1e4a8c', verde: '#2f6b45', bordo: '#6d1a2a', beige: '#cdbb98', dorado: '#b99a45', naranja: '#d9742a', amarillo: '#e5c717', marron: '#6b4a32' };
+const swatch = (c) => SW[norm(c || '')] || null;
+const marcaDe = (a) => a.marca || a.titulo.split(' ')[0];
+const sinMarca = (a) => { const m = marcaDe(a); return a.titulo.startsWith(m + ' ') ? a.titulo.slice(m.length + 1) : a.titulo; };
+const consultaHref = (a) => wa(`Hola! Quiero consultar por el ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`) || a.url;
 const card = (a) => {
-  const meta = [a.anio, a.transmision, a.km != null ? `${fmt(a.km)} km` : '', a.combustible, a.color].filter((x) => x !== undefined && x !== '' && x !== null).join(' · ');
+  const i = autos.indexOf(a);
+  const marca = marcaDe(a);
+  const sw = swatch(a.color);
+  const fila = (k, v) => (v ? `<div><dt>${k}</dt><dd>${v}</dd></div>` : '');
   const pr = a.precio ? `<p class="pr">${a.precio.moneda === 'USD' ? 'US$ ' : '$ '}${fmt(a.precio.monto)}</p><p class="n">Precio publicado el ${esc(fdate(a.precio.fecha))}; puede haber cambiado.</p>` : '<p class="pr">Consultar precio</p>';
-  const link = wa(`Hola! Quiero consultar por el ${a.titulo}${a.anio ? ' ' + a.anio : ''}.`) || a.url;
-  return `<li class="car" data-t="${esc(norm(`${a.titulo} ${a.color || ''} ${a.anio || ''}`))}" data-p="${a.precio && a.precio.moneda !== 'USD' ? a.precio.monto : ''}" data-a="${a.anio ?? ''}" data-k="${a.km ?? ''}" data-i="${autos.indexOf(a)}"><h3>${esc(a.titulo)}</h3>${meta ? `<p class="m">${esc(meta)}</p>` : ''}${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<a class="btn sm" href="${esc(link)}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Consultar' : 'Ver publicación'}</a></li>`;
+  const busca = norm([a.titulo, marca, a.modelo, a.version, a.cilindrada, a.color, a.anio].filter((x) => x !== undefined && x !== null && x !== '').join(' '));
+  return `<li class="car" data-t="${esc(busca)}" data-i="${i}">
+<div class="car-h"><span class="car-b">${esc(marca)}</span><label class="car-c" hidden><input type="checkbox" value="${i}" aria-label="Comparar ${esc(a.titulo)}"><span>Comparar</span></label></div>
+<h3>${esc(sinMarca(a))}</h3>
+<div class="car-s"><p><b${a.anio == null ? ' class="nd"' : ''}>${a.anio != null ? a.anio : 'Sin dato'}</b><small>Año</small></p><p><b${a.km == null ? ' class="nd"' : ''}>${a.km != null ? fmt(a.km) : 'No publicado'}</b><small>Kilómetros</small></p></div>
+<dl class="sp">${fila('Caja', a.transmision ? esc(a.transmision) : '')}${fila('Combustible', a.combustible ? esc(a.combustible) : '')}${fila('Color', a.color ? `${sw ? `<i class="sw" style="--sw:${sw}"></i>` : ''}${esc(a.color)}` : '')}</dl>
+${pr}${a.nota ? `<p class="n">${esc(a.nota)}</p>` : ''}<a class="btn sm" href="${esc(consultaHref(a))}" ${EXT} aria-label="Consultar por ${esc(a.titulo)}">${WA ? 'Consultar' : 'Ver publicación'}</a>
+</li>`;
 };
+const catData = autos.map((a, i) => ({ i, titulo: a.titulo, marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
 const unidades = autos.length
-  ? `${autos.length > 1 ? `<div class="tools" id="tools" hidden><div class="f"><label for="q">Buscar por marca, modelo, año o color</label><input id="q" type="search" autocomplete="off"></div><div class="f"><label for="orden">Ordenar</label><select id="orden"><option value="">Orden de publicación</option><option value="p-asc">Precio: menor a mayor</option><option value="p-desc">Precio: mayor a menor</option><option value="a-desc">Año: más nuevo primero</option><option value="k-asc">Kilometraje: menor primero</option></select></div><button type="button" class="btn sm" id="limpiar" hidden>Limpiar</button><p class="cmp-st" id="cuenta" role="status" aria-live="polite"></p></div>\n` : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con la búsqueda. Probá con otra palabra o limpiá los filtros.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<p class="src">Fichas del catálogo público de ${esc(GNAME)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
+  ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<p class="src">Fichas del catálogo público de ${esc(GNAME)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
 
 // ---- contacto ----
@@ -144,7 +161,7 @@ const glos = [
   ['Parte de pago', 'Entregar tu usado como parte del precio de otra unidad.'],
 ].map(([t, d]) => qa(t, d)).join('\n');
 const secPreguntas = `
-<section id="preguntas" aria-labelledby="preg-t"><div class="w">
+<section class="lt" id="preguntas" aria-labelledby="preg-t"><div class="w">
 <p class="ey">Preguntas</p><h2 id="preg-t">Lo que <em>conviene saber</em></h2>
 <p class="sec-p">Respuestas cortas sobre cómo trabajamos y un glosario con las palabras que aparecen al comprar un usado. Información general de octubre de 2026: no es una condición ni una promesa de ${esc(NAME)}.</p>
 <div class="qa"><div><h3>Preguntas frecuentes</h3>${faq}</div><div><h3>Glosario del comprador</h3>${glos}</div></div>
@@ -158,27 +175,16 @@ const openSpec = semana.flatMap((g) => g.rangos.map((r) => ({ '@type': 'OpeningH
 
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
 const COORD = L.coordenadas;
-const jsonSafe = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
-const cmpData = autos.map((a) => ({ titulo: a.titulo, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, precio: a.precio || null, url: a.url }));
-const secComparador = autos.length > 1 ? `
-<section id="comparador" aria-labelledby="cmp-t"><div class="w">
-<p class="ey">Comparador</p><h2 id="cmp-t">Compará <em>unidades</em></h2>
-<p class="sec-p">Elegí hasta tres y mirá año, kilometraje y precio publicado lado a lado. Los datos son los de cada ficha pública.</p>
-<noscript><p id="cmp-ns" class="src">El comparador necesita JavaScript. Los datos de cada unidad están en la sección Unidades.</p></noscript>
-<div id="cmp" hidden><div class="cmp-pick"></div><p class="cmp-st" role="status" aria-live="polite"></p><div class="cmp-out"></div></div>
-<script type="application/json" id="cmp-data">${jsonSafe(cmpData)}</script>
-</div></section>` : '';
-
 const pasoFin = hasSvc('permuta') ? 'Consultá la financiación para la unidad que elijas y, si querés, entregá tu usado como parte de pago.' : 'Consultá la financiación para la unidad que elijas.';
 const secComo = `
 <section id="como-comprar" aria-labelledby="como-t"><div class="w">
 <p class="ey">Cómo comprar</p><h2 id="como-t">Del primer mensaje a tu <em>visita</em></h2>
 <p class="sec-p">Un camino simple para llegar a la unidad que te interesa.</p>
-<ol class="steps">
-<li><h3>Elegí</h3><p>Mirá las unidades publicadas con año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a tres.' : ''}</p></li>
-<li><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
-<li><h3>Visitá</h3><p>Coordiná una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
-<li><h3>Financiá</h3><p>${pasoFin}</p></li>
+<ol class="ruta">
+<li style="--ph:.3"><i class="sol" aria-hidden="true"><s></s></i><h3>Elegí</h3><p>Filtrá las unidades publicadas y mirá año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a cuatro con el botón Comparar de cada ficha.' : ''}</p></li>
+<li style="--ph:.55"><i class="sol" aria-hidden="true"><s></s></i><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
+<li style="--ph:.8"><i class="sol" aria-hidden="true"><s></s></i><h3>Visitá</h3><p>Coordiná una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
+<li style="--ph:1"><i class="sol" aria-hidden="true"><s></s></i><h3>Financiá</h3><p>${pasoFin}</p></li>
 </ol>
 </div></section>`;
 
@@ -200,7 +206,7 @@ const secUsado = hasSvc('permuta') ? `
 </div></section>` : '';
 
 const secBusqueda = `
-<section id="busqueda" aria-labelledby="bus-t"><div class="w">
+<section class="lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
 <p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 <form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
@@ -268,15 +274,14 @@ const index = page({
 </div>
 ${bar}
 
-<section id="unidades" aria-labelledby="unidades-t"><div class="w">
+<section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
 <p class="ey">Unidades</p><h2 id="unidades-t">Nuestras <em>unidades</em></h2>
 <p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
 ${unidades}
 </div></section>
-${secComparador}
 ${secComo}
 
-<section id="financiacion" aria-labelledby="fin-t"><div class="w">
+<section class="lt" id="financiacion" aria-labelledby="fin-t"><div class="w">
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
 <div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de ${esc(BNAFECHA)}). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card"><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
@@ -289,7 +294,7 @@ ${secGuia}
 ${secPreguntas}
 ${secVisita}
 
-<section id="nosotros" aria-labelledby="nos-t"><div class="w">
+<section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
 <p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}. ${esc(D.presentacion.antiguedad)}</p>
 <div class="stats"><div class="stat"><b>10</b><span>años de respaldo en el mercado regional, según su página de Facebook</span></div>${autos.length ? `<div class="stat"><b>${autos.length}</b><span>unidades publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></div>` : ''}<div class="stat"><b>${suc.length + 1}</b><span>puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></div></div>

@@ -21,7 +21,7 @@ data/                dealership.json · vehicles.json · autos-en-revision.json 
 docs/                notas de trabajo e investigación (no se publica) · docs/archivo/
 fonts/               tipografías autoalojadas + LICENSES.txt
 golive/              pendientes y pasos a producción (no se publica)
-js/                  secciones.js, mapa.js, reserva.js, motion.js, motion/ y vendor/ (GSAP, Leaflet); el resto está reservado y vacío
+js/                  secciones.js (filtros, comparador y formularios), mapa.js, reserva.js, motion.js, motion/ y vendor/ (GSAP, Leaflet); el resto está reservado y vacío
 scripts/             build-index.mjs · validate-dealership.mjs · build-site.mjs · serve.mjs · estilos.css y utilitarios
 raíz                 index.html, reserva.html, privacidad.html, 404.html (generados) · robots.txt · site.webmanifest
                      favicon.svg · CLAUDE.md · plan.md · PERF-CAMBIOS.md · LICENSE · package.json · _config.yml · netlify.toml
@@ -50,6 +50,8 @@ Los archivos de `css/`, `js/` y `scripts/` marcados como «reservados» existen 
 Ver `data/pendientes.json` y `golive/PRODUCCION.md`. Lo bloqueante: marca y relación con el grupo (P15), teléfono/WhatsApp confirmados, stock confirmado, fotos autorizadas, dominio y revisión legal.
 
 ## Cargar stock
+Cada ficha lleva además `marca`, `modelo`, `cilindrada` y `version` (se copian del título de la ficha pública): con eso se arman los filtros del catálogo. Sin esos campos la unidad igual se publica, pero no aparece en esos filtros.
+
 Hoy `data/vehicles.json` tiene 5 fichas del catálogo de Grupo Almafuerte (relevadas el 12/10/2026). Para sumar o cambiar unidades, seguir el formato de `docs/vehicles.ejemplo.json` (enlace a su ficha pública y fecha de relevamiento), luego `npm run build && npm test`. Las fichas con contradicciones están en `data/autos-en-revision.json` y no se muestran.
 
 ## Activar WhatsApp

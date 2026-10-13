@@ -57,16 +57,11 @@ h1 em,h2 em{font-style:normal;color:var(--y)}
 h2{font-weight:800;font-size:clamp(28px,3.8vw,48px);line-height:1;letter-spacing:0;text-transform:uppercase;overflow-wrap:break-word;color:var(--s3)}
 .lead{margin:22px 0 26px;max-width:32em;font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:var(--s2)}
 section{padding:clamp(48px,7vw,88px) 0}
-section:nth-of-type(even):not(.ct){background:#f8f8f8;color-scheme:light;--k1:#f8f8f8;--k2:#eef0ee;--k3:#fff;--k4:#e3e6e7;--g1:#cfd5d7;--g3:#7b878d;--g4:#4d5a61;--s1:#33414a;--s2:#1b2428;--s3:#0a1012;--acc:#0a1012;--fo:#0a1012;color:var(--s2)}
+section.lt:not(.ct){background:#f8f8f8;color-scheme:light;--k1:#f8f8f8;--k2:#eef0ee;--k3:#fff;--k4:#e3e6e7;--g1:#cfd5d7;--g3:#7b878d;--g4:#4d5a61;--s1:#33414a;--s2:#1b2428;--s3:#0a1012;--acc:#0a1012;--fo:#0a1012;color:var(--s2)}
 .sec-p{max-width:46em;margin:16px 0 28px;color:var(--s1);font-size:18px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
 .card{padding:24px;background:var(--k3);border:1px solid var(--g1);border-top:6px solid var(--y)}
 .card h3{font:800 20px/1.1 var(--h);text-transform:uppercase;color:var(--s3);margin-bottom:10px}.card p{margin:0;color:var(--s2)}
-.cars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
-.car{display:flex;flex-direction:column;gap:6px;padding:22px;background:var(--k3);border:1px solid var(--g1);border-left:8px solid var(--y)}
-.car h3{font:800 21px/1.1 var(--h);text-transform:uppercase;color:var(--s3)}.car .m{margin:0;color:var(--s1);font-size:15.5px}
-.car .pr{margin:6px 0 0;font:800 24px var(--h);color:var(--acc)}.car .n{margin:0;color:var(--g4);font-size:13.5px}
-.car .btn{margin-top:auto;align-self:flex-start}
 .vacio{padding:26px;background:var(--k3);border-left:8px solid var(--y)}.vacio p{margin:0 0 18px;max-width:42em}
 .ct{background:var(--k0)!important;border-top:6px solid var(--y)}
 .ct-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:26px;align-items:start}
@@ -88,23 +83,6 @@ footer p{margin:4px 0}footer a{color:var(--y)}
 @media(max-width:700px){.btn{width:100%}.row .btn{flex:1 1 100%}header .hc .btn{width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 [hidden]{display:none!important}
-.cmp-pick fieldset{margin:0;padding:18px;border:1px solid var(--g1);background:var(--k3)}
-.cmp-pick legend{padding:0 8px;font:800 13px var(--b);letter-spacing:.16em;text-transform:uppercase;color:var(--g4)}
-.cmp-opt{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer;color:var(--s2)}
-.cmp-opt input{width:22px;height:22px;accent-color:var(--acc);flex:none}
-.cmp-opt input:disabled+span{color:var(--g3)}
-.cmp-st{margin:12px 0 0;min-height:1.5em;color:var(--g4);font-size:14px}
-.cmp-sc{margin-top:16px;overflow-x:auto;border:1px solid var(--g1);border-top:6px solid var(--y)}
-.cmp-sc table{width:100%;min-width:560px;border-collapse:collapse;background:var(--k3)}
-.cmp-sc th,.cmp-sc td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--g1);vertical-align:top}
-.cmp-sc thead th{font:800 17px/1.2 var(--h);text-transform:uppercase;color:var(--s3)}
-.cmp-sc tbody th{font:800 12.5px var(--b);letter-spacing:.14em;text-transform:uppercase;color:var(--g4);white-space:nowrap}
-.cmp-sc tr:last-child>*{border-bottom:0}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;counter-reset:s}
-.steps li{counter-increment:s;position:relative;padding:24px 22px 22px;background:var(--k3);border:1px solid var(--g1);border-top:6px solid var(--y)}
-.steps li::before{content:counter(s,decimal-leading-zero);display:inline-block;margin-bottom:12px;padding:2px 10px;background:var(--y);color:var(--ink);font:800 30px/1.1 var(--h)}
-.steps h3{font:800 20px/1.1 var(--h);text-transform:uppercase;color:var(--s3);margin-bottom:6px}.steps p{margin:0;color:var(--s2)}
-.steps .btn{margin-top:14px}
 .fm{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;padding:26px;background:var(--k3);border-left:8px solid var(--y)}
 .fm .f{display:flex;flex-direction:column;gap:6px}.fm .f.full,.fm .acts,.fm .msg-v,.fm .msg-s{grid-column:1/-1}
 .fm label{font:800 12.5px var(--b);letter-spacing:.14em;text-transform:uppercase;color:var(--g4)}
@@ -122,14 +100,13 @@ footer p{margin:4px 0}footer a{color:var(--y)}
 .map .row{margin-top:14px}
 .leaflet-container{background:var(--k3)!important}
 @media(max-width:900px){.fm,.guia{grid-template-columns:1fr}}
-@media(max-width:700px){.cmp-sc{margin-inline:-20px;border-inline:0}}
-section:nth-of-type(even):not(.ct) h2 em{color:var(--ink);background:var(--y);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-section:nth-of-type(even):not(.ct) .btn:hover{background:var(--ink);color:#fff}
-section:nth-of-type(even):not(.ct) .btn.p:hover{background:var(--ink);color:var(--y);border-color:var(--ink)}
-section:nth-of-type(even):not(.ct) .ey{background:var(--ink);color:var(--y)}
-section:nth-of-type(even):not(.ct) a{color:var(--s3);text-decoration-color:var(--y);text-decoration-thickness:2px;text-underline-offset:3px}
-section:nth-of-type(even):not(.ct) a.btn{text-decoration:none}
-section:nth-of-type(even):not(.ct) a.btn.p{color:var(--ink)}
+section.lt:not(.ct) h2 em{color:var(--ink);background:var(--y);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+section.lt:not(.ct) .btn:hover{background:var(--ink);color:#fff}
+section.lt:not(.ct) .btn.p:hover{background:var(--ink);color:var(--y);border-color:var(--ink)}
+section.lt:not(.ct) .ey{background:var(--ink);color:var(--y)}
+section.lt:not(.ct) a{color:var(--s3);text-decoration-color:var(--y);text-decoration-thickness:2px;text-underline-offset:3px}
+section.lt:not(.ct) a.btn{text-decoration:none}
+section.lt:not(.ct) a.btn.p{color:var(--ink)}
 
 /* ===== Identidad v2 · paleta del logo: tinta #0a1012, sol #f2d21b, hueso #f8f8f8 y sus tonos ===== */
 :root{--y3:#fff3a1;--yd:#6e5d00;--rule:#243138}
@@ -152,21 +129,13 @@ dd .ant{display:block;margin:2px 0 0;font-size:14px;color:var(--y)}
 /* Hero: más aire y jerarquía */
 .lead{font-size:clamp(18px,1.6vw,21px)}
 /* Tarjetas con sombra de sol */
-.card,.car,.steps li{transition:transform .2s ease,box-shadow .2s ease}
-.car:hover,.card:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--y)}
-section:nth-of-type(even):not(.ct) .car:hover,section:nth-of-type(even):not(.ct) .card:hover{box-shadow:6px 6px 0 var(--ink)}
-.car .pr{display:inline-block;align-self:flex-start;padding:2px 10px;background:var(--y);color:var(--ink)}
+.card{transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--y)}
+section.lt:not(.ct) .card:hover{box-shadow:6px 6px 0 var(--ink)}
 /* Cómo comprar: banda amarilla de punta a punta */
 #como-comprar{background:var(--y)!important;color:var(--ink);--s1:#1b2428;--s2:#0a1012;--s3:#0a1012;--g1:#0a1012;--acc:#0a1012;--fo:#0a1012}
-#como-comprar h2::after{background:radial-gradient(circle at 26px 16px,var(--ink) 0 14px,transparent 15px),linear-gradient(var(--ink),var(--ink)) left bottom/100% 3px no-repeat}
 #como-comprar .ey{background:var(--ink);color:var(--y)}
 #como-comprar h2 em{background:var(--ink);color:var(--y);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-#como-comprar .steps li{background:var(--ink);border:0;border-top:6px solid #fff;color:#e6eaeb}
-#como-comprar .steps li::before{background:var(--y);color:var(--ink)}
-#como-comprar .steps h3{color:#fff}
-#como-comprar .steps p{color:#e6eaeb}
-#como-comprar .steps .btn{border-color:#fff;color:#fff}
-#como-comprar .steps .btn:hover{background:var(--y);border-color:var(--y);color:var(--ink)}
 #como-comprar :focus-visible{outline-color:var(--ink)}
 /* Preguntas y glosario */
 .qa{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);align-items:start}
@@ -215,7 +184,6 @@ details.dd p{margin:0;padding:14px 18px 18px;color:var(--s2)}
 }
 @media(max-width:900px){.bar ul{grid-template-columns:1fr 1fr}.bar li{border-left:0;padding-left:0;border-top:3px solid var(--ink)}.bar li:nth-child(-n+2){border-top:0}.qa,.ft{grid-template-columns:1fr}}
 
-.tools{display:flex;flex-wrap:wrap;gap:16px;align-items:end;margin:0 0 22px;padding:14px 0;border-top:2px solid var(--s2);border-bottom:1px solid var(--g3)}.tools[hidden],#sinres[hidden]{display:none}.tools .f{flex:1 1 220px}.tools .cmp-st{flex:1 0 100%;margin:0}
 .mark .lg-img{display:block;height:46px;width:auto;background:#fefefe;padding:4px 10px}
 .lg-ft{display:block;height:64px;width:auto;background:#fefefe;padding:6px 14px;margin:0 0 14px}
 .lg-sec{display:block;height:72px;width:auto;max-width:100%;margin:0 0 14px;border:1px solid var(--g3)}
@@ -261,6 +229,153 @@ background:var(--hero-img) center/cover no-repeat,linear-gradient(90deg,var(--k0
 @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:0;padding:36px 16px calc(min(78vw,340px) / 2 + 48px);background:var(--hero-img) center/cover no-repeat,linear-gradient(180deg,rgba(7,11,13,.9) 0,rgba(7,11,13,.35) 70%),radial-gradient(90% 60% at 70% 100%,rgba(240,130,30,.5),rgba(240,130,30,0) 70%),linear-gradient(180deg,#09111d 0,#1a2536 50%,#6b3a1a 100%)}.hx-sun{right:-40px;width:min(78vw,340px)}.hero .row .btn:not(.lnk){flex:1 1 220px}.bar li,.bar li:first-child{padding:16px 12px 16px 56px;border-left:0;border-top:1px solid rgba(255,255,255,.14)}.bar li:nth-child(-n+2){border-top:0}.bar li svg{left:12px;top:18px}}
 @media(max-width:560px){.bar ul{grid-template-columns:1fr}.bar li:nth-child(2){border-top:1px solid rgba(255,255,255,.14)}.hx-down{display:none}}
 @media(min-width:981px) and (max-width:1180px){header nav{gap:14px}header nav a{font-size:12px;letter-spacing:.04em}header .w{gap:12px}.mark .lg-img{height:40px}}
+
+/* ===== v3 · Unidades (5 columnas + filtros), comparador y «Cómo comprar» ===== */
+.w.wide{width:min(1560px,100% - 40px)}
+/* Panel de filtros */
+.fx{margin:0 0 22px;background:var(--k3);border:1px solid var(--g1);border-top:6px solid var(--y)}
+.fx-top{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) auto;gap:16px;align-items:end;padding:18px 20px}
+.fx .f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fx .f label,.fx legend{font:800 12px var(--b);letter-spacing:.14em;text-transform:uppercase;color:var(--g4)}
+.fx input[type=search],.fx select{width:100%;min-height:46px;padding:8px 12px;border:2px solid var(--g3);border-radius:0;background:var(--k1);color:var(--s3);font:400 16px var(--b)}
+.fx input[type=search]:focus,.fx select:focus{border-color:var(--y)}
+.fx option:disabled{color:var(--g3)}
+.fx-tg{min-height:46px}
+.fx-body{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 24px;padding:20px;border-top:1px solid var(--g1)}
+.fg{margin:0;padding:0;border:0;min-width:0}
+.fg legend{padding:0;margin-bottom:9px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:block}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:2px solid var(--g3);color:var(--s2);font:700 14.5px var(--b);transition:background-color .15s,border-color .15s}
+.chip em{font-style:normal}
+.chip b{font:700 12px var(--b);color:var(--g4)}
+.chip:hover input:not(:disabled):not(:checked)+span{border-color:var(--y)}
+.chip input:checked+span{background:var(--y);border-color:var(--y);color:var(--ink)}
+.chip input:checked+span b{color:var(--ink)}
+.chip input:focus-visible+span{outline:3px solid var(--fo);outline-offset:2px}
+.chip input:disabled{cursor:not-allowed}
+.chip input:disabled+span{opacity:.35}
+.rng{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fg-n{margin:8px 0 0;font-size:13px;color:var(--g4)}
+.sw{display:inline-block;flex:none;width:14px;height:14px;border-radius:50%;background:var(--sw);border:2px solid rgba(255,255,255,.6);vertical-align:-2px}
+.chip input:checked+span .sw{border-color:var(--ink)}
+.fx-act{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px 20px;border-top:1px solid var(--g1);background:var(--k2)}
+.fx-n{margin:0;font-weight:700;color:var(--s2)}
+.fx-tags{display:flex;flex-wrap:wrap;gap:8px;flex:1}
+.tag{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 10px 0 12px;border:2px solid var(--y);background:transparent;color:var(--s3);font:700 13.5px var(--b);cursor:pointer}
+.tag::after{content:"×";font:800 18px/1 var(--h);color:var(--y)}
+.tag:hover{background:var(--y);color:var(--ink)}.tag:hover::after{color:var(--ink)}
+@media(min-width:1250px){
+  .fx-body{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .fg.s2{grid-column:span 2}.fg.s3{grid-column:span 3}.fg.s4{grid-column:span 4}.fg.s5{grid-column:span 5}
+}
+@media(max-width:899px){.fx-top{grid-template-columns:1fr}.fx-body{grid-template-columns:1fr}}
+/* Fichas: 5 columnas */
+.cars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media(max-width:1199px){.cars{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:819px){.cars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:519px){.cars{grid-template-columns:1fr}}
+.car{display:flex;flex-direction:column;gap:12px;min-width:0;padding:16px 16px 18px;background:var(--k3);border:1px solid var(--g1);border-left:8px solid var(--y)}
+.car:has(.car-c input:checked){border-color:var(--y);box-shadow:inset 0 0 0 2px var(--y)}
+.car-h{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:36px}
+.car-b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:800 11.5px var(--b);letter-spacing:.1em;text-transform:uppercase;color:var(--y)}
+.car-c{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 8px;border:2px solid var(--g3);cursor:pointer;font:800 11px var(--b);letter-spacing:.04em;text-transform:uppercase;color:var(--s2)}
+.car-c input{width:17px;height:17px;margin:0;accent-color:var(--y)}
+.car-c:hover{border-color:var(--y)}
+.car-c:has(input:checked){background:var(--y);border-color:var(--y);color:var(--ink)}
+.car-c:has(input:disabled){opacity:.4;cursor:not-allowed}
+.car-c:has(input:focus-visible){outline:3px solid var(--fo);outline-offset:2px}
+.car h3{min-height:2.1em;font:800 21px/1.05 var(--h);text-transform:uppercase;color:var(--s3);overflow-wrap:anywhere}
+.car-s{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--s3);border-bottom:1px solid var(--g1)}
+.car-s p{margin:0;padding:10px 0 9px;min-width:0}
+.car-s p+p{padding-left:12px;border-left:1px solid var(--g1)}
+.car-s b{display:block;font:800 clamp(22px,1.75vw,29px)/1 var(--h);color:var(--s3)}
+.car-s b.nd{font:700 15px/1.3 var(--b);padding-top:6px;color:var(--g4)}
+.car-s small{display:block;margin-top:5px;font:700 11px var(--b);letter-spacing:.14em;text-transform:uppercase;color:var(--g4)}
+.sp{margin:0}
+.sp div{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--g1)}
+.sp dt{margin:0;font:700 11.5px var(--b);letter-spacing:.12em;text-transform:uppercase;color:var(--g4)}
+.sp dd{margin:0;display:inline-flex;align-items:center;gap:7px;font:600 15px var(--b);color:var(--s2)}
+.car .pr{margin:auto 0 0;display:inline-block;align-self:flex-start;padding:2px 10px;background:var(--y);color:var(--ink);font:800 24px/1.3 var(--h)}
+.car .n{margin:0;color:var(--g4);font-size:13px;line-height:1.4}
+.car .btn{align-self:flex-start;margin-top:4px}
+/* Bandeja del comparador */
+.tray{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--y);color:var(--ink);border-top:4px solid var(--ink);padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px))}
+.tray .w{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.tray-l{display:flex;flex-wrap:wrap;gap:8px;flex:1 1 320px;min-width:0;margin:0;padding:0;list-style:none}
+.tray-i{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 4px 0 12px;background:var(--ink);color:#fff;font:700 14px var(--b)}
+.tray-i button{min-width:36px;min-height:36px;border:0;background:none;color:var(--y);font:800 22px/1 var(--h);cursor:pointer}
+.tray-i button:hover{color:#fff}
+.tray .btn{border-color:var(--ink);color:var(--ink)}
+.tray .btn:hover{background:var(--ink);color:var(--y)}
+.tray .btn.p{background:var(--ink);color:var(--y);border-color:var(--ink);clip-path:none}
+.tray .btn.p:hover{background:#fff;color:var(--ink)}
+.tray .btn:disabled{opacity:.55;cursor:not-allowed}
+.tray :focus-visible{outline-color:var(--ink)}
+body.has-tray{padding-bottom:84px}
+body.has-tray .fab{display:none}
+html.has-dlg{overflow:hidden}
+/* Ventana de comparación */
+dialog.cmp{width:min(1200px,100% - 24px);max-height:calc(100dvh - 24px);margin:auto;padding:0;border:0;border-top:8px solid var(--y);background:#f8f8f8;color:#1b2428;color-scheme:light;--s1:#33414a;--s2:#1b2428;--s3:#0a1012;--g1:#cfd5d7;--g3:#7b878d;--g4:#4d5a61;--fo:#0a1012;overflow:auto}
+dialog.cmp::backdrop{background:rgba(7,11,13,.8)}
+.cmp-hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px 12px}
+.cmp-hd h2{font-size:clamp(26px,3vw,38px);color:#0a1012}
+.cmp-hd h2::after{content:none}
+dialog.cmp .btn{border-color:#0a1012;color:#0a1012}
+dialog.cmp .btn:hover{background:#0a1012;color:#fff}
+dialog.cmp .btn.p{background:var(--y);color:#0a1012;clip-path:none}
+dialog.cmp .btn.p:hover{background:#0a1012;color:var(--y)}
+.cmp-sc{overflow-x:auto;padding:0 24px 8px}
+.cmpt{width:100%;min-width:720px;table-layout:fixed;border-collapse:separate;border-spacing:0}
+.cmpt thead th:first-child{width:150px;padding:0;background:none;border:0}
+.cmpt thead th{padding:14px 16px;background:#0a1012;color:#fff;text-align:left;vertical-align:bottom;border-left:1px solid #243138}
+.cmpt thead th:nth-child(2){border-left:0}
+.cmpt .cb{display:block;font:800 11.5px var(--b);letter-spacing:.16em;text-transform:uppercase;color:var(--y)}
+.cmpt .cn{display:block;margin-top:4px;font:800 21px/1.05 var(--h);text-transform:uppercase}
+.cmpt tbody th{position:sticky;left:0;z-index:1;width:150px;padding:14px 16px 14px 0;background:#f8f8f8;text-align:left;font:800 12px var(--b);letter-spacing:.14em;text-transform:uppercase;color:#4d5a61;vertical-align:top;border-bottom:1px solid #cfd5d7}
+.cmpt td{padding:14px 16px;vertical-align:top;border-bottom:1px solid #cfd5d7;border-left:1px solid #e3e6e7;font-size:16px;color:#1b2428}
+.cmpt .big{display:block;white-space:nowrap;font:800 clamp(20px,2.2vw,28px)/1.1 var(--h);color:#0a1012}
+.cmpt .big.nd{font:700 16px/1.3 var(--b);white-space:normal;color:#4d5a61}
+.cmpt .sw{margin-right:8px;border-color:#7b878d}
+.bd{display:inline-block;margin-top:8px;padding:2px 9px;background:var(--y);color:#0a1012;font:800 11px/1.5 var(--b);letter-spacing:.1em;text-transform:uppercase}
+.mb{display:block;height:8px;margin-top:10px;background:#e3e6e7}
+.mb i{display:block;height:100%;background:#7b878d}
+.mb.best i{background:#0a1012}
+.cmpt td .btn{display:flex;margin-bottom:10px}
+.cmpt td .vp{font-weight:700;color:#0a1012;text-decoration-color:var(--y);text-decoration-thickness:3px;text-underline-offset:4px}
+.cmp-ft{padding:8px 24px 22px}
+@media(max-width:700px){.cmp-hd,.cmp-sc{padding-inline:14px}.cmp-ft{padding-inline:14px}.cmpt tbody th{width:104px}}
+/* Cómo comprar: una ruta con el sol saliendo a cada paso */
+#como-comprar{overflow:hidden}
+#como-comprar h2::after{content:none}
+.ruta{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ruta li{position:relative;padding:108px 30px 6px 0}
+.ruta li::before{content:"";position:absolute;top:76px;left:0;right:0;height:18px;background:linear-gradient(90deg,var(--y) 0 22px,transparent 22px 44px) 0 50%/44px 4px repeat-x,var(--ink)}
+.ruta li:first-child::before{left:calc(-1 * max(20px,(100vw - 1120px) / 2))}
+.ruta li:last-child::before{right:calc(-1 * max(20px,(100vw - 1120px) / 2))}
+.ruta .sol{position:absolute;left:0;top:0;width:76px;height:76px;overflow:hidden}
+.ruta .sol s{display:block;width:76px;height:76px;border-radius:50%;background:var(--ink);transform:translateY(calc((1 - var(--ph)) * 100%))}
+.ruta h3{margin:0 0 10px;font:800 clamp(28px,2.8vw,38px)/1 var(--h);text-transform:uppercase;color:var(--ink)}
+.ruta p{margin:0;max-width:24em;color:var(--ink);font-size:17px}
+.ruta .btn{margin-top:18px;border-color:var(--ink);color:var(--ink)}
+.ruta .btn:hover{background:var(--ink);color:var(--y)}
+@media(max-width:1000px){
+  .ruta{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+  .ruta li:nth-child(odd)::before{left:calc(-1 * max(20px,(100vw - 1120px) / 2));right:0}
+  .ruta li:nth-child(even)::before{right:calc(-1 * max(20px,(100vw - 1120px) / 2));left:0}
+}
+@media(max-width:620px){
+  .ruta{grid-template-columns:1fr;margin-top:30px}
+  .ruta li::before{left:-20px!important;right:-20px!important}
+}
+@media(prefers-reduced-motion:no-preference){
+  .ruta.js .sol s{transform:translateY(100%)}
+  .ruta.js.on .sol s{transform:translateY(calc((1 - var(--ph)) * 100%));transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+  .ruta.js.on li:nth-child(2) .sol s{transition-delay:.25s}
+  .ruta.js.on li:nth-child(3) .sol s{transition-delay:.5s}
+  .ruta.js.on li:nth-child(4) .sol s{transition-delay:.75s}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","email":"snicolas540@hotmail.com","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
@@ -270,7 +385,7 @@ background:var(--hero-img) center/cover no-repeat,linear-gradient(90deg,var(--k0
 <body>
 <a class="skip" href="#unidades">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="Horizonte Automotores, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="Horizonte Automotores"></a>
-<nav aria-label="Principal"><a href="#unidades">Unidades</a><a href="#comparador">Comparar</a><a href="#como-comprar">Cómo comprar</a><a href="#financiacion">Financiación</a><a href="#guia">Guía</a><a href="#preguntas">Preguntas</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
+<nav aria-label="Principal"><a href="#unidades">Unidades</a><a href="#como-comprar">Cómo comprar</a><a href="#financiacion">Financiación</a><a href="#guia">Guía</a><a href="#preguntas">Preguntas</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
 <div class="hc"><a class="btn p sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></header>
 <p class="demo"><span>Demo ilustrativa construida a partir de información pública. Datos y disponibilidad sujetos a confirmación por Horizonte Automotores. No es el sitio oficial.</span></p>
 <main id="top">
@@ -290,41 +405,64 @@ background:var(--hero-img) center/cover no-repeat,linear-gradient(90deg,var(--k0
 <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg><span class="k">Horario</span><b data-estado>L-V 8:30–12:30 y 15:30–19:30 · S 8:30–13:00</b><small>Hora de Argentina</small></li>
 </ul></div></div>
 
-<section id="unidades" aria-labelledby="unidades-t"><div class="w">
+<section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
 <p class="ey">Unidades</p><h2 id="unidades-t">Nuestras <em>unidades</em></h2>
 <p class="sec-p">Usados publicados para María Grande.</p>
-<div class="tools" id="tools" hidden><div class="f"><label for="q">Buscar por marca, modelo, año o color</label><input id="q" type="search" autocomplete="off"></div><div class="f"><label for="orden">Ordenar</label><select id="orden"><option value="">Orden de publicación</option><option value="p-asc">Precio: menor a mayor</option><option value="p-desc">Precio: mayor a menor</option><option value="a-desc">Año: más nuevo primero</option><option value="k-asc">Kilometraje: menor primero</option></select></div><button type="button" class="btn sm" id="limpiar" hidden>Limpiar</button><p class="cmp-st" id="cuenta" role="status" aria-live="polite"></p></div>
-<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con la búsqueda. Probá con otra palabra o limpiá los filtros.</p><ul class="cars" id="cars">
-<li class="car" data-t="chevrolet cruze 1.4 ltz 4p blanco 2018" data-p="22000000" data-a="2018" data-k="157000" data-i="0"><h3>Chevrolet Cruze 1.4 LTZ 4P</h3><p class="m">2018 · Manual · 157.000 km · Nafta · Blanco</p><p class="pr">$ 22.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Chevrolet%20Cruze%201.4%20LTZ%204P%202018." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Chevrolet Cruze 1.4 LTZ 4P">Consultar</a></li>
-<li class="car" data-t="volkswagen vento 1.4 tsi bm tech comfortline negro 2017" data-p="26500000" data-a="2017" data-k="182000" data-i="1"><h3>Volkswagen Vento 1.4 TSI BM Tech Comfortline</h3><p class="m">2017 · Manual · 182.000 km · Nafta · Negro</p><p class="pr">$ 26.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Volkswagen%20Vento%201.4%20TSI%20BM%20Tech%20Comfortline%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Volkswagen Vento 1.4 TSI BM Tech Comfortline">Consultar</a></li>
-<li class="car" data-t="citroen c3 1.6 vti shine blanco 2016" data-p="15000000" data-a="2016" data-k="135000" data-i="2"><h3>Citroën C3 1.6 VTI Shine</h3><p class="m">2016 · Manual · 135.000 km · Nafta · Blanco</p><p class="pr">$ 15.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Citro%C3%ABn%20C3%201.6%20VTI%20Shine%202016." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Citroën C3 1.6 VTI Shine">Consultar</a></li>
-<li class="car" data-t="peugeot 307 1.6 xs ln 5p rojo 2007" data-p="9000000" data-a="2007" data-k="" data-i="3"><h3>Peugeot 307 1.6 XS Ln 5P</h3><p class="m">2007 · Manual · Nafta · Rojo</p><p class="pr">$ 9.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Peugeot%20307%201.6%20XS%20Ln%205P%202007." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Peugeot 307 1.6 XS Ln 5P">Consultar</a></li>
-<li class="car" data-t="renault sandero stepway 1.6 dynamique gris plata 2017" data-p="17500000" data-a="2017" data-k="124000" data-i="4"><h3>Renault Sandero Stepway 1.6 Dynamique</h3><p class="m">2017 · Manual · 124.000 km · Nafta · Gris plata</p><p class="pr">$ 17.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Renault%20Sandero%20Stepway%201.6%20Dynamique%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Renault Sandero Stepway 1.6 Dynamique">Consultar</a></li>
+<div class="fx" id="tools" hidden></div>
+<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las 5 unidades.</p><ul class="cars" id="cars">
+<li class="car" data-t="chevrolet cruze 1.4 ltz 4p chevrolet cruze ltz 4p 1.4 blanco 2018" data-i="0">
+<div class="car-h"><span class="car-b">Chevrolet</span><label class="car-c" hidden><input type="checkbox" value="0" aria-label="Comparar Chevrolet Cruze 1.4 LTZ 4P"><span>Comparar</span></label></div>
+<h3>Cruze 1.4 LTZ 4P</h3>
+<div class="car-s"><p><b>2018</b><small>Año</small></p><p><b>157.000</b><small>Kilómetros</small></p></div>
+<dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#f1f1ee"></i>Blanco</dd></div></dl>
+<p class="pr">$ 22.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Chevrolet%20Cruze%201.4%20LTZ%204P%202018." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Chevrolet Cruze 1.4 LTZ 4P">Consultar</a>
+</li>
+<li class="car" data-t="volkswagen vento 1.4 tsi bm tech comfortline volkswagen vento tsi bm tech comfortline 1.4 negro 2017" data-i="1">
+<div class="car-h"><span class="car-b">Volkswagen</span><label class="car-c" hidden><input type="checkbox" value="1" aria-label="Comparar Volkswagen Vento 1.4 TSI BM Tech Comfortline"><span>Comparar</span></label></div>
+<h3>Vento 1.4 TSI BM Tech Comfortline</h3>
+<div class="car-s"><p><b>2017</b><small>Año</small></p><p><b>182.000</b><small>Kilómetros</small></p></div>
+<dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#161b1d"></i>Negro</dd></div></dl>
+<p class="pr">$ 26.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Volkswagen%20Vento%201.4%20TSI%20BM%20Tech%20Comfortline%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Volkswagen Vento 1.4 TSI BM Tech Comfortline">Consultar</a>
+</li>
+<li class="car" data-t="citroen c3 1.6 vti shine citroen c3 vti shine 1.6 blanco 2016" data-i="2">
+<div class="car-h"><span class="car-b">Citroën</span><label class="car-c" hidden><input type="checkbox" value="2" aria-label="Comparar Citroën C3 1.6 VTI Shine"><span>Comparar</span></label></div>
+<h3>C3 1.6 VTI Shine</h3>
+<div class="car-s"><p><b>2016</b><small>Año</small></p><p><b>135.000</b><small>Kilómetros</small></p></div>
+<dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#f1f1ee"></i>Blanco</dd></div></dl>
+<p class="pr">$ 15.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Citro%C3%ABn%20C3%201.6%20VTI%20Shine%202016." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Citroën C3 1.6 VTI Shine">Consultar</a>
+</li>
+<li class="car" data-t="peugeot 307 1.6 xs ln 5p peugeot 307 xs ln 5p 1.6 rojo 2007" data-i="3">
+<div class="car-h"><span class="car-b">Peugeot</span><label class="car-c" hidden><input type="checkbox" value="3" aria-label="Comparar Peugeot 307 1.6 XS Ln 5P"><span>Comparar</span></label></div>
+<h3>307 1.6 XS Ln 5P</h3>
+<div class="car-s"><p><b>2007</b><small>Año</small></p><p><b class="nd">No publicado</b><small>Kilómetros</small></p></div>
+<dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#c21f1f"></i>Rojo</dd></div></dl>
+<p class="pr">$ 9.000.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Peugeot%20307%201.6%20XS%20Ln%205P%202007." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Peugeot 307 1.6 XS Ln 5P">Consultar</a>
+</li>
+<li class="car" data-t="renault sandero stepway 1.6 dynamique renault sandero stepway dynamique 1.6 gris plata 2017" data-i="4">
+<div class="car-h"><span class="car-b">Renault</span><label class="car-c" hidden><input type="checkbox" value="4" aria-label="Comparar Renault Sandero Stepway 1.6 Dynamique"><span>Comparar</span></label></div>
+<h3>Sandero Stepway 1.6 Dynamique</h3>
+<div class="car-s"><p><b>2017</b><small>Año</small></p><p><b>124.000</b><small>Kilómetros</small></p></div>
+<dl class="sp"><div><dt>Caja</dt><dd>Manual</dd></div><div><dt>Combustible</dt><dd>Nafta</dd></div><div><dt>Color</dt><dd><i class="sw" style="--sw:#b4bbbe"></i>Gris plata</dd></div></dl>
+<p class="pr">$ 17.500.000</p><p class="n">Precio publicado el 12/10/2026; puede haber cambiado.</p><p class="n">Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad.</p><a class="btn sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Renault%20Sandero%20Stepway%201.6%20Dynamique%202017." target="_blank" rel="noopener noreferrer" aria-label="Consultar por Renault Sandero Stepway 1.6 Dynamique">Consultar</a>
+</li>
 </ul>
+<script type="application/json" id="cat-data">[{"i":0,"titulo":"Chevrolet Cruze 1.4 LTZ 4P","marca":"Chevrolet","modelo":"Cruze","cilindrada":"1.4","version":"LTZ 4P","anio":2018,"km":157000,"transmision":"Manual","combustible":"Nafta","color":"Blanco","sw":"#f1f1ee","precio":{"moneda":"ARS","monto":22000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Chevrolet%20Cruze%201.4%20LTZ%204P%202018."},{"i":1,"titulo":"Volkswagen Vento 1.4 TSI BM Tech Comfortline","marca":"Volkswagen","modelo":"Vento","cilindrada":"1.4","version":"TSI BM Tech Comfortline","anio":2017,"km":182000,"transmision":"Manual","combustible":"Nafta","color":"Negro","sw":"#161b1d","precio":{"moneda":"ARS","monto":26500000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Volkswagen%20Vento%201.4%20TSI%20BM%20Tech%20Comfortline%202017."},{"i":2,"titulo":"Citroën C3 1.6 VTI Shine","marca":"Citroën","modelo":"C3","cilindrada":"1.6","version":"VTI Shine","anio":2016,"km":135000,"transmision":"Manual","combustible":"Nafta","color":"Blanco","sw":"#f1f1ee","precio":{"moneda":"ARS","monto":15000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Citro%C3%ABn%20C3%201.6%20VTI%20Shine%202016."},{"i":3,"titulo":"Peugeot 307 1.6 XS Ln 5P","marca":"Peugeot","modelo":"307","cilindrada":"1.6","version":"XS Ln 5P","anio":2007,"km":null,"transmision":"Manual","combustible":"Nafta","color":"Rojo","sw":"#c21f1f","precio":{"moneda":"ARS","monto":9000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Peugeot%20307%201.6%20XS%20Ln%205P%202007."},{"i":4,"titulo":"Renault Sandero Stepway 1.6 Dynamique","marca":"Renault","modelo":"Sandero Stepway","cilindrada":"1.6","version":"Dynamique","anio":2017,"km":124000,"transmision":"Manual","combustible":"Nafta","color":"Gris plata","sw":"#b4bbbe","precio":{"moneda":"ARS","monto":17500000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/","href":"https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20el%20Renault%20Sandero%20Stepway%201.6%20Dynamique%202017."}]</script>
 <p class="src">Fichas del catálogo público de Grupo Almafuerte relevadas el 12/10/2026. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>
 <div class="row mt"><a class="btn p" href="https://grupoalmafuerte.com/autos-usados/" target="_blank" rel="noopener noreferrer">Ver catálogo completo</a><a class="btn" href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Ver más en Facebook</a><a class="btn" href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Ver más en Instagram</a></div>
-</div></section>
-
-<section id="comparador" aria-labelledby="cmp-t"><div class="w">
-<p class="ey">Comparador</p><h2 id="cmp-t">Compará <em>unidades</em></h2>
-<p class="sec-p">Elegí hasta tres y mirá año, kilometraje y precio publicado lado a lado. Los datos son los de cada ficha pública.</p>
-<noscript><p id="cmp-ns" class="src">El comparador necesita JavaScript. Los datos de cada unidad están en la sección Unidades.</p></noscript>
-<div id="cmp" hidden><div class="cmp-pick"></div><p class="cmp-st" role="status" aria-live="polite"></p><div class="cmp-out"></div></div>
-<script type="application/json" id="cmp-data">[{"titulo":"Chevrolet Cruze 1.4 LTZ 4P","anio":2018,"km":157000,"transmision":"Manual","combustible":"Nafta","color":"Blanco","precio":{"moneda":"ARS","monto":22000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/"},{"titulo":"Volkswagen Vento 1.4 TSI BM Tech Comfortline","anio":2017,"km":182000,"transmision":"Manual","combustible":"Nafta","color":"Negro","precio":{"moneda":"ARS","monto":26500000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/"},{"titulo":"Citroën C3 1.6 VTI Shine","anio":2016,"km":135000,"transmision":"Manual","combustible":"Nafta","color":"Blanco","precio":{"moneda":"ARS","monto":15000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/"},{"titulo":"Peugeot 307 1.6 XS Ln 5P","anio":2007,"km":null,"transmision":"Manual","combustible":"Nafta","color":"Rojo","precio":{"moneda":"ARS","monto":9000000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/"},{"titulo":"Renault Sandero Stepway 1.6 Dynamique","anio":2017,"km":124000,"transmision":"Manual","combustible":"Nafta","color":"Gris plata","precio":{"moneda":"ARS","monto":17500000,"fecha":"2026-10-12"},"url":"https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/"}]</script>
 </div></section>
 
 <section id="como-comprar" aria-labelledby="como-t"><div class="w">
 <p class="ey">Cómo comprar</p><h2 id="como-t">Del primer mensaje a tu <em>visita</em></h2>
 <p class="sec-p">Un camino simple para llegar a la unidad que te interesa.</p>
-<ol class="steps">
-<li><h3>Elegí</h3><p>Mirá las unidades publicadas con año, kilómetros y el precio con su fecha de relevamiento. Podés compararlas de a tres.</p></li>
-<li><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
-<li><h3>Visitá</h3><p>Coordiná una visita a Avenida Argentina 2021, María Grande.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
-<li><h3>Financiá</h3><p>Consultá la financiación para la unidad que elijas y, si querés, entregá tu usado como parte de pago.</p></li>
+<ol class="ruta">
+<li style="--ph:.3"><i class="sol" aria-hidden="true"><s></s></i><h3>Elegí</h3><p>Filtrá las unidades publicadas y mirá año, kilómetros y el precio con su fecha de relevamiento. Podés compararlas de a cuatro con el botón Comparar de cada ficha.</p></li>
+<li style="--ph:.55"><i class="sol" aria-hidden="true"><s></s></i><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
+<li style="--ph:.8"><i class="sol" aria-hidden="true"><s></s></i><h3>Visitá</h3><p>Coordiná una visita a Avenida Argentina 2021, María Grande.</p><a class="btn sm" href="reserva.html">Coordiná tu visita</a></li>
+<li style="--ph:1"><i class="sol" aria-hidden="true"><s></s></i><h3>Financiá</h3><p>Consultá la financiación para la unidad que elijas y, si querés, entregá tu usado como parte de pago.</p></li>
 </ol>
 </div></section>
 
-<section id="financiacion" aria-labelledby="fin-t"><div class="w">
+<section class="lt" id="financiacion" aria-labelledby="fin-t"><div class="w">
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
 <p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p>
 <div class="cards"><div class="card"><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de mayo de 2026). <a href="https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf" target="_blank" rel="noopener noreferrer">Ver el listado</a>.</p></div><div class="card"><h3>Tu usado, parte de pago</h3><p>Recibimos vehículos usados como parte de pago. La tasación es sin cargo.</p></div><div class="card"><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div></div>
@@ -348,7 +486,7 @@ background:var(--hero-img) center/cover no-repeat,linear-gradient(90deg,var(--k0
 <p class="src">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. La tasación y las condiciones se acuerdan con la agencia.</p>
 </div></section>
 
-<section id="busqueda" aria-labelledby="bus-t"><div class="w">
+<section class="lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
 <p class="ey">Tu búsqueda</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 <form class="fm" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
@@ -374,7 +512,7 @@ background:var(--hero-img) center/cover no-repeat,linear-gradient(90deg,var(--k0
 <p class="src">Los requisitos y costos de la transferencia cambian: consultalos en el Registro del Automotor o con un gestor o escribano antes de pagar.</p>
 </div></section>
 
-<section id="preguntas" aria-labelledby="preg-t"><div class="w">
+<section class="lt" id="preguntas" aria-labelledby="preg-t"><div class="w">
 <p class="ey">Preguntas</p><h2 id="preg-t">Lo que <em>conviene saber</em></h2>
 <p class="sec-p">Respuestas cortas sobre cómo trabajamos y un glosario con las palabras que aparecen al comprar un usado. Información general de octubre de 2026: no es una condición ni una promesa de Horizonte Automotores.</p>
 <div class="qa"><div><h3>Preguntas frecuentes</h3><details class="dd"><summary>¿Reciben mi usado como parte de pago?</summary><p>Según informa Grupo Almafuerte, sí: se reciben vehículos usados como parte de pago. Armá el mensaje en la sección «Tu usado» y envialo a la agencia.</p></details>
@@ -400,7 +538,7 @@ background:var(--hero-img) center/cover no-repeat,linear-gradient(90deg,var(--k0
 <div class="row"><a class="btn p" href="reserva.html">Coordiná tu visita</a><a class="btn" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Cómo llegar</a></div>
 </div></section>
 
-<section id="nosotros" aria-labelledby="nos-t"><div class="w">
+<section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
 <p class="sec-p">Horizonte Automotores es un concesionario de María Grande que forma parte del Grupo Almafuerte. En su página de Facebook se presenta con diez años de respaldo en el mercado regional.</p>
 <div class="stats"><div class="stat"><b>10</b><span>años de respaldo en el mercado regional, según su página de Facebook</span></div><div class="stat"><b>5</b><span>unidades publicadas en esta web, relevadas el 12/10/2026</span></div><div class="stat"><b>5</b><span>puntos de atención que lista el Grupo Almafuerte, uno de ellos en María Grande</span></div></div>
