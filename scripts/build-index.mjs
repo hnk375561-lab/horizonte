@@ -248,6 +248,13 @@ ${H.display ? `<p class="estado" data-estado hidden></p><p class="src">Horario: 
 <div class="visit-card glass reveal"><p class="visit-card-kicker">Consulta personalizada</p><h3>Agendá una visita y prueba de manejo</h3><p>Elegí un día y una franja para armar tu consulta. No es un turno: el día y la hora se acuerdan con la agencia.</p><div class="row"><a class="btn p" href="reserva.html">Agendar visita y prueba de manejo</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
 </div></section>`;
 
+const secQuick = `
+<section class="quick-proof" id="resumen" aria-labelledby="resumen-t"><div class="w">
+<div class="quick-intro"><p class="ey">En pocas palabras</p><h2 id="resumen-t">Comprar mejor empieza por <em>mirar claro</em></h2><p>Un catálogo acotado, información visible y contacto directo para decidir sin vueltas.</p></div>
+<div class="quick-grid">
+<a class="quick-card" href="#unidades"><span class="quick-number">0${autos.length}</span><span><b>unidades publicadas</b><small>Con año, kilometraje y precio relevado.</small></span><i aria-hidden="true">↗</i></a>
+<a class="quick-card" href="#como-comprar"><span class="quick-number">04</span><span><b>pasos simples</b><small>Elegí, consultá, visitá y financiá.</small></span><i aria-hidden="true">↗</i></a>
+</div></div></section>`;
 const mapa = COORD ? `
 <div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
@@ -281,6 +288,7 @@ const index = page({
 </div>
 </div>
 ${bar}
+${secQuick}
 <section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
 <p class="ey reveal">Unidades</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2>
 <p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
