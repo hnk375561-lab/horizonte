@@ -98,7 +98,7 @@
     GR.push(porValor('color', 'chips', 'Color', 3, function (a) { return a.color; }, null, { sw: true }));
     GR.push({ k: 'ant', tipo: 'chips', t: 'Antigüedad del modelo', s: 3, ops: buckets });
     /* los filtros que no separan nada (un solo valor distinto en select o rango) no se muestran */
-    GR = GR.filter(function (g) { return g.tipo === 'chips' ? g.ops.length > 1 : g.tipo === 'select' ? g.ops.length > 1 : g.vals.length > 1; });
+    GR = GR.filter(function (g) { return g.tipo === 'chips' ? g.ops.length > 0 : g.tipo === 'select' ? g.ops.length > 1 : g.vals.length > 1; });
 
     var ORDEN = [['', 'Orden de publicación'], ['p-asc', 'Precio: menor a mayor'], ['p-desc', 'Precio: mayor a menor'], ['a-desc', 'Año: más nuevo primero'], ['a-asc', 'Año: más antiguo primero'], ['k-asc', 'Kilometraje: menor primero'], ['k-desc', 'Kilometraje: mayor primero'], ['m-asc', 'Marca: de la A a la Z']];
     var KEY = { p: function (a) { return a.monto; }, a: function (a) { return a.anio; }, k: function (a) { return a.km; }, m: function (a) { return a.marca; } };
@@ -140,12 +140,12 @@
     ord.id = 'orden'; lo.htmlFor = 'orden';
     ORDEN.forEach(function (o) { var op = el('option', o[1]); op.value = o[0]; ord.appendChild(op); });
     fo.appendChild(lo); fo.appendChild(ord);
-    var tg = el('button', 'Más filtros', 'btn sm fx-tg'); tg.type = 'button'; tg.setAttribute('aria-controls', 'fx-body');
+    var tg = el('button', 'Ocultar filtros', 'btn sm fx-tg'); tg.type = 'button'; tg.setAttribute('aria-controls', 'fx-body');
     top.appendChild(fq); top.appendChild(fo); top.appendChild(tg);
 
     var refs = {};   /* k -> { g, inputs:[{o,input,n}], select, note, d, h } */
     GR.forEach(function (g) {
-      var fs = el('fieldset', null, 'fg s' + g.s), lg = el('legend', g.t), r = refs[g.k] = { g: g, fieldset: fs };
+      var fs = el('fieldset', null, 'fg s' + g.s), lg = el('legend', g.t), r = refs[g.k] = { g: g };
       fs.appendChild(lg);
       if (g.tipo === 'chips') {
         var cw = el('div', null, 'chips'); r.inputs = [];
@@ -189,17 +189,11 @@
       }
       body.appendChild(fs);
     });
-    /* Tres controles de decisión rápida quedan visibles en la píldora; el resto vive en el drawer. */
-    ['marca', 'precio', 'anio'].forEach(function (key) {
-      if (refs[key] && refs[key].fieldset) { refs[key].fieldset.classList.add('fx-quick'); top.appendChild(refs[key].fieldset); }
-    });
 
-    var cuenta = el('p', null, 'fx-n'), tags = el('div', null, 'fx-tags'), lim = el('button', 'Limpiar filtros', 'btn sm'), mostrar = el('button', 'Ver unidades', 'btn p sm');
+    var cuenta = el('p', null, 'fx-n'), tags = el('div', null, 'fx-tags'), lim = el('button', 'Limpiar filtros', 'btn sm');
     cuenta.id = 'cuenta'; cuenta.setAttribute('role', 'status'); cuenta.setAttribute('aria-live', 'polite');
     lim.type = 'button'; lim.id = 'limpiar'; lim.hidden = true;
-    mostrar.type = 'button'; mostrar.className += ' fx-view';
-    mostrar.addEventListener('click', function () { if (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) { abrirPanel(false); tg.focus(); } });
-    act.appendChild(cuenta); act.appendChild(tags); act.appendChild(lim); act.appendChild(mostrar);
+    act.appendChild(cuenta); act.appendChild(tags); act.appendChild(lim);
     tools.appendChild(top); tools.appendChild(body); tools.appendChild(act);
 
     /* ----- aplicar ----- */
@@ -268,7 +262,6 @@
       });
       lim.hidden = !(act2.length || st.orden);
       cuenta.textContent = (n === list.length ? 'Mostrando las ' + list.length + ' unidades' : 'Mostrando ' + n + ' de ' + list.length + ' unidades') + '.';
-      mostrar.textContent = 'Ver ' + n + (n === 1 ? ' unidad' : ' unidades');
       nAct = act2.length; etiquetaTg();
       if (escribirUrl) aUrl();
     }
@@ -314,23 +307,9 @@
       aplicar(true); q.focus();
     });
     var nAct = 0;
-    function etiquetaTg() { tg.textContent = (body.hidden ? 'Más filtros' : 'Cerrar filtros') + (nAct ? ' (' + nAct + ')' : ''); }
-    function abrirPanel(si) {
-      body.hidden = !si;
-      body.setAttribute('role', 'region');
-      body.setAttribute('aria-label', 'Más filtros del catálogo');
-      body.removeAttribute('aria-modal');
-      tg.setAttribute('aria-expanded', si ? 'true' : 'false');
-      tools.classList.add('filter-bar');
-      tools.classList.toggle('is-open', si);
-      etiquetaTg();
-      if (si) { var first = body.querySelector('input,select,button'); if (first) setTimeout(function () { first.focus(); }, 0); }
-    }
+    function etiquetaTg() { tg.textContent = (body.hidden ? 'Mostrar filtros' : 'Ocultar filtros') + (nAct ? ' (' + nAct + ')' : ''); }
+    function abrirPanel(si) { body.hidden = !si; tg.setAttribute('aria-expanded', si ? 'true' : 'false'); etiquetaTg(); }
     tg.addEventListener('click', function () { abrirPanel(body.hidden); });
-    document.addEventListener('keydown', function (event) {
-      if (body.hidden) return;
-      if (event.key === 'Escape') { event.preventDefault(); abrirPanel(false); tg.focus(); return; }
-    });
 
     /* ----- comparador: hasta 4 unidades, desde un botón en cada ficha ----- */
     var MAX = 4, cmp = [], tray = null, dlg = null;
@@ -344,7 +323,6 @@
       if (!tray) {
         tray = el('div', null, 'tray'); tray.setAttribute('role', 'region'); tray.setAttribute('aria-label', 'Unidades para comparar');
         document.body.appendChild(tray);
-        if (window.ResizeObserver) new ResizeObserver(function () { document.documentElement.style.setProperty('--tray-h', tray.offsetHeight + 'px'); }).observe(tray);
       }
       tray.hidden = false; tray.textContent = '';
       var w = el('div', null, 'w'), lst = el('ul', null, 'tray-l');
@@ -393,7 +371,7 @@
       var minK = mejor(sel, function (a) { return a.km; }, -1), maxK = Math.max.apply(null, sel.map(function (a) { return a.km || 0; }));
       var base = Math.min.apply(null, sel.map(function (a) { return a.monto; }).filter(function (v) { return v != null; }));
 
-      var t = el('table', null, 'cmpt'), cap = el('caption', 'Comparación de unidades'); cap.className = 'sr'; t.appendChild(cap); t.style.setProperty('--n', sel.length);
+      var t = el('table', null, 'cmpt'), cap = el('caption', 'Comparación de unidades'); cap.className = 'sr'; t.appendChild(cap);
       var hr = el('tr'), c0 = el('th'); c0.scope = 'col'; c0.appendChild(el('span', 'Dato', 'sr')); hr.appendChild(c0);
       sel.forEach(function (a) {
         var th = el('th'); th.scope = 'col';
@@ -445,85 +423,10 @@
       document.documentElement.classList.add('has-dlg');
       if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
       x.focus();
-      /* pista de scroll lateral: la tabla se desvanece en el borde derecho mientras haya más columnas */
-      var marca = function () { sc.classList.toggle('mas', sc.scrollLeft + sc.clientWidth < sc.scrollWidth - 2); };
-      sc.addEventListener('scroll', marca, { passive: true });
-      if (window.ResizeObserver) new ResizeObserver(marca).observe(sc);
-      marca();
     }
 
-    /* ----- ficha técnica: dialog nativo, sin datos inventados ----- */
-    (function () {
-      var triggers = $$('.ficha-trigger', ul);
-      if (!triggers.length) return;
-      var ficha = null, lastTrigger = null;
-      function cerrar() { if (ficha && ficha.open) ficha.close(); }
-      function abrir(i, trigger) {
-        var a = list[i]; if (!a) return;
-        lastTrigger = trigger;
-        if (!ficha) {
-          ficha = el('dialog', null, 'vehicle-sheet');
-          ficha.setAttribute('aria-labelledby', 'vehicle-sheet-title');
-          ficha.addEventListener('click', function (event) { if (event.target === ficha) cerrar(); });
-          ficha.addEventListener('close', function () { document.documentElement.classList.remove('has-dlg'); if (lastTrigger) lastTrigger.focus(); });
-          document.body.appendChild(ficha);
-        }
-        ficha.textContent = '';
-        var head = el('div', null, 'vehicle-sheet-head');
-        var title = el('h2', a.titulo); title.id = 'vehicle-sheet-title';
-        var close = el('button', 'Cerrar', 'btn sm'); close.type = 'button'; close.addEventListener('click', cerrar);
-        head.appendChild(title); head.appendChild(close); ficha.appendChild(head);
-        var intro = el('p', 'Ficha completa · información publicada por la agencia', 'vehicle-sheet-kicker'); ficha.appendChild(intro);
-        var dl = el('dl', null, 'vehicle-specs');
-        [['Marca', a.marca], ['Modelo', a.modeloTxt], ['Año', a.anio != null ? String(a.anio) : 'Sin dato'], ['Kilómetros', a.km != null ? fmt(a.km) + ' km' : 'No publicado'], ['Caja', a.transmision], ['Combustible', a.combustible], ['Color', a.color], ['Cilindrada', a.cilindrada], ['Versión', a.version]].forEach(function (pair) {
-          if (pair[1] == null || pair[1] === '') return;
-          var group = el('div'), dt = el('dt', pair[0]), dd = el('dd', pair[1]); group.appendChild(dt); group.appendChild(dd); dl.appendChild(group);
-        });
-        ficha.appendChild(dl);
-        if (a.precio) ficha.appendChild(el('p', (a.precio.moneda === 'USD' ? 'US$ ' : '$ ') + fmt(a.precio.monto) + ' · publicado el ' + fecha(a.precio.fecha) + '. Puede haber cambiado.', 'vehicle-price'));
-        if (a.nota) ficha.appendChild(el('p', a.nota, 'src'));
-        var actions = el('div', null, 'vehicle-actions');
-        var consult = el('a', 'Consultar con un asesor', 'btn p'); consult.href = a.href; consult.target = '_blank'; consult.rel = 'noopener noreferrer';
-        var source = el('a', 'Ver publicación original', 'btn'); source.href = a.url; source.target = '_blank'; source.rel = 'noopener noreferrer';
-        actions.appendChild(consult); actions.appendChild(source); ficha.appendChild(actions);
-        document.documentElement.classList.add('has-dlg');
-        if (typeof ficha.showModal === 'function') ficha.showModal(); else ficha.setAttribute('open', '');
-        close.focus();
-      }
-      var galleries = $$('.gallery-trigger', ul);
-      function galeria(a, host) {
-        if (!a.media || !a.media.length) return;
-        var wrap = el('div', null, 'vehicle-gallery'), stage = el('div', null, 'vehicle-gallery-stage');
-        var image = document.createElement('img'), current = 0;
-        image.alt = a.media[0].alt || a.titulo; image.loading = 'eager'; image.decoding = 'async'; stage.appendChild(image);
-        var controls = el('div', null, 'vehicle-gallery-controls'), prev = el('button', 'Anterior', 'btn sm'), next = el('button', 'Siguiente', 'btn sm');
-        prev.type = 'button'; next.type = 'button'; controls.appendChild(prev); controls.appendChild(next); stage.appendChild(controls); wrap.appendChild(stage);
-        var thumbs = el('div', null, 'vehicle-gallery-thumbs');
-        function paint() { var m = a.media[current]; image.src = m.src; image.srcset = m.srcset || ''; image.sizes = '(max-width: 700px) 100vw, 680px'; image.alt = m.alt || a.titulo; [].slice.call(thumbs.children).forEach(function (b, i) { b.setAttribute('aria-current', i === current ? 'true' : 'false'); }); prev.disabled = current === 0; next.disabled = current === a.media.length - 1; }
-        a.media.forEach(function (m, i) { var b = el('button', null, 'gallery-thumb'); b.type = 'button'; b.setAttribute('aria-label', 'Ver foto ' + (i + 1)); var im = document.createElement('img'); im.src = m.src; im.alt = ''; im.loading = 'lazy'; b.appendChild(im); b.addEventListener('click', function () { current = i; paint(); }); thumbs.appendChild(b); });
-        prev.addEventListener('click', function () { if (current) { current--; paint(); } }); next.addEventListener('click', function () { if (current < a.media.length - 1) { current++; paint(); } });
-        var startX = 0; stage.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; }, { passive: true }); stage.addEventListener('touchend', function (e) { var delta = e.changedTouches[0].clientX - startX; if (Math.abs(delta) > 40) { current = Math.max(0, Math.min(a.media.length - 1, current + (delta < 0 ? 1 : -1))); paint(); } }, { passive: true });
-        host.appendChild(wrap); host.appendChild(thumbs);
-        if (a.media.length >= 24 && a.media.length <= 36) {
-          var spin = el('button', 'Ver en 360°', 'btn sm'); spin.type = 'button'; spin.className += ' gallery-360';
-          var start = 0;
-          spin.addEventListener('click', function () { wrap.classList.toggle('is-360'); spin.textContent = wrap.classList.contains('is-360') ? 'Cerrar 360°' : 'Ver en 360°'; });
-          stage.addEventListener('pointerdown', function (event) { if (wrap.classList.contains('is-360')) { start = event.clientX; stage.setPointerCapture(event.pointerId); } });
-          stage.addEventListener('pointermove', function (event) { if (!wrap.classList.contains('is-360') || !start) return; var delta = event.clientX - start; if (Math.abs(delta) < 8) return; var step = delta < 0 ? 1 : -1; current = (current + step + a.media.length) % a.media.length; start = event.clientX; paint(); });
-          stage.addEventListener('pointerup', function () { start = 0; });
-          host.appendChild(spin);
-        }
-        paint();
-      }
-      function abrirGaleria(i, trigger) { var a = list[i]; if (!a || !a.media || !a.media.length) return; abrir(i, trigger); var host = el('div'); host.className = 'vehicle-gallery-host'; ficha.insertBefore(host, ficha.querySelector('.vehicle-specs')); galeria(a, host); }
-      triggers.forEach(function (trigger) { trigger.addEventListener('click', function () { abrir(+trigger.getAttribute('data-ficha'), trigger); }); });
-      galleries.forEach(function (trigger) { trigger.hidden = false; trigger.addEventListener('click', function () { abrirGaleria(+trigger.getAttribute('data-gallery'), trigger); }); });
-      document.addEventListener('keydown', function (event) { if (!ficha || !ficha.open) return; if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return; var image = ficha.querySelector('.vehicle-gallery-stage img'); if (!image) return; var buttons = $$('.gallery-thumb', ficha), active = buttons.findIndex(function (b) { return b.getAttribute('aria-current') === 'true'; }); var target = event.key === 'ArrowLeft' ? active - 1 : active + 1; if (buttons[target]) buttons[target].click(); });
-    }());
     deUrl();
-    /* Con pocas unidades los filtros sobran: se ve primero el catálogo y los filtros quedan a un clic.
-       El panel solo arranca abierto en pantallas anchas y con un catálogo grande (> 8 unidades). */
-    abrirPanel((window.matchMedia ? window.matchMedia('(min-width: 900px)').matches : true) && Object.keys(items).length > 8);
+    abrirPanel(window.matchMedia ? window.matchMedia('(min-width: 900px)').matches : true);
     tools.hidden = false;
     aplicar(false);
   })();
@@ -541,7 +444,7 @@
 
   /* ---------- 2) formularios que arman un mensaje ---------- */
   $$('form[data-msg]').forEach(function (f) {
-    var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f), wa = $('[data-wa-msg]', f);
+    var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f);
     function texto() {
       var lineas = [f.getAttribute('data-intro') || 'Hola!'];
       $$('[data-lbl]', f).forEach(function (c) {
@@ -550,20 +453,13 @@
       });
       return lineas.join('\n');
     }
-    function actualizar() {
-      if (vista) vista.value = texto();
-      if (wa) wa.href = 'https://wa.me/' + wa.getAttribute('data-wa') + '?text=' + encodeURIComponent(texto());
-    }
-    if (wa) wa.addEventListener('click', function (e) {
-      if (f.checkValidity && !f.checkValidity()) { e.preventDefault(); if (f.reportValidity) f.reportValidity(); return; }
-      actualizar();
-    });
+    function actualizar() { if (vista) vista.value = texto(); }
     f.addEventListener('input', actualizar);
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var t = texto(); actualizar();
       copiar(t, function (ok) {
-        estado.textContent = ok ? 'Mensaje copiado. Pegalo en una conversación con la agencia (' + (wa ? 'WhatsApp, ' : '') + 'Facebook o Instagram).' : 'No se pudo copiar solo: seleccioná el mensaje de arriba, copialo y pegalo en una conversación con la agencia.';
+        estado.textContent = ok ? 'Mensaje copiado. Pegalo en una conversación con la agencia (Facebook o Instagram).' : 'No se pudo copiar solo: seleccioná el mensaje de arriba, copialo y pegalo en una conversación con la agencia.';
       });
     });
     if (btn) btn.hidden = false;

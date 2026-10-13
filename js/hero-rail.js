@@ -8,10 +8,12 @@
   const saveData = Boolean(navigator.connection && navigator.connection.saveData);
   let active = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
   let timer = null;
+  let last = active;
 
   const render = () => {
     slides.forEach((slide, index) => {
       const selected = index === active;
+      slide.classList.toggle('is-prev', !selected && index === last && last !== active);
       slide.classList.toggle('is-active', selected);
       slide.setAttribute('aria-hidden', String(!selected));
       if (selected) {
@@ -19,6 +21,7 @@
         if (image) image.loading = 'eager';
       }
     });
+    last = active;
   };
 
   const stop = () => {
@@ -32,7 +35,7 @@
     timer = window.setInterval(() => {
       active = (active + 1) % slides.length;
       render();
-    }, 5000);
+    }, 6000);
   };
 
   if ('IntersectionObserver' in window && window.matchMedia('(max-width: 700px)').matches) {
