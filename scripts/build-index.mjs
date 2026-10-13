@@ -260,6 +260,7 @@ const index = page({
 <main id="top">
 <div class="hero">
 <div class="hero-media" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="images/hero/horizonte-hero-audi-mobile.webp"><img src="images/hero/horizonte-hero-audi.webp" width="960" height="720" alt="" fetchpriority="high" decoding="async"></picture></div>
+<nav class="hero-hotspots" aria-label="Accesos rápidos del hero"><a class="hero-hotspot hero-home" href="./" aria-label="Inicio"></a><a class="hero-hotspot hero-nav-unidades" href="#unidades" aria-label="Unidades"></a><a class="hero-hotspot hero-nav-financiacion" href="#financiacion" aria-label="Financiación"></a><a class="hero-hotspot hero-nav-guia" href="#guia" aria-label="Guía"></a><a class="hero-hotspot hero-nav-preguntas" href="#preguntas" aria-label="Preguntas"></a><a class="hero-hotspot hero-nav-nosotros" href="#nosotros" aria-label="Nosotros"></a><a class="hero-hotspot hero-nav-contacto" href="#contacto" aria-label="Contacto"></a><a class="hero-hotspot hero-cta-unidades" href="#unidades" aria-label="Ver unidades"></a><a class="hero-hotspot hero-cta-whatsapp" href="${WA || FB}" ${EXT} aria-label="Escribir por WhatsApp"></a><a class="hero-hotspot hero-cta-maps" href="${L.mapsUrl}" ${EXT} aria-label="Cómo llegar"></a></nav>
 <div class="hx-copy">
 <p class="ey">Horizonte Automotores</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
