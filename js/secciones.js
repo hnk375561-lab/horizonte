@@ -452,7 +452,7 @@
 
   /* ---------- 2) formularios que arman un mensaje ---------- */
   $$('form[data-msg]').forEach(function (f) {
-    var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f);
+    var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f), wa = $('[data-wa-msg]', f);
     function texto() {
       var lineas = [f.getAttribute('data-intro') || 'Hola!'];
       $$('[data-lbl]', f).forEach(function (c) {
@@ -461,13 +461,20 @@
       });
       return lineas.join('\n');
     }
-    function actualizar() { if (vista) vista.value = texto(); }
+    function actualizar() {
+      if (vista) vista.value = texto();
+      if (wa) wa.href = 'https://wa.me/' + wa.getAttribute('data-wa') + '?text=' + encodeURIComponent(texto());
+    }
+    if (wa) wa.addEventListener('click', function (e) {
+      if (f.checkValidity && !f.checkValidity()) { e.preventDefault(); if (f.reportValidity) f.reportValidity(); return; }
+      actualizar();
+    });
     f.addEventListener('input', actualizar);
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var t = texto(); actualizar();
       copiar(t, function (ok) {
-        estado.textContent = ok ? 'Mensaje copiado. Pegalo en una conversación con la agencia (Facebook o Instagram).' : 'No se pudo copiar solo: seleccioná el mensaje de arriba, copialo y pegalo en una conversación con la agencia.';
+        estado.textContent = ok ? 'Mensaje copiado. Pegalo en una conversación con la agencia (' + (wa ? 'WhatsApp, ' : '') + 'Facebook o Instagram).' : 'No se pudo copiar solo: seleccioná el mensaje de arriba, copialo y pegalo en una conversación con la agencia.';
       });
     });
     if (btn) btn.hidden = false;
