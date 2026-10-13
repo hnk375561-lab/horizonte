@@ -953,6 +953,51 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 .conversion h2{max-width:13ch;line-height:.96}
 .conversion--trade .conversion-layout,.conversion--search .conversion-layout{gap:clamp(34px,6vw,82px)}
 @media(max-width:700px){.finance-section h2{font-size:clamp(42px,12vw,66px)}.conversion h2{max-width:12ch}}
+
+/* ===== Ajustes finales: sin cuadrícula, fondos con vehículos visibles, textos legibles, sin numeración ===== */
+.hero::before,.inventory-section::before,.finance-section::before,.hero::after{content:none!important;display:none!important;background:none!important}
+.hero-slide img{filter:none}
+.conversion-index,.conversion-steps,.conversion-art,.conversion-art-number,.finance-card-no{display:none!important}
+.finance-aside{padding-bottom:18px}
+.finance-aside span{display:block;margin-bottom:10px}
+.finance-aside p{color:#e2e2e2}
+.inventory-meta>span:last-of-type{color:#d4d4d4}
+.finance-section,section.conversion{filter:none}
+.finance-section{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.58) 42%,rgba(10,16,18,.22) 100%),url("images/hero/horizonte-hero-audi.webp");background-position:center,62% 54%}
+section.conversion::before{filter:none;opacity:1}
+section.conversion--trade::before{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.52) 45%,rgba(10,16,18,.10) 100%),url("images/conversion/tu-usado.webp");background-position:center,58% 56%}
+section.conversion--search::before{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.52) 45%,rgba(10,16,18,.10) 100%),url("images/conversion/busqueda.webp");background-position:center,55% 52%}
+.finance-section .w,.conversion .w{text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.conversion-form,.finance-card,.conversion-form *,.finance-card *{text-shadow:none}
+.finance-card{background:rgba(10,16,18,.86)}
+.conversion-form,.conversion--search .conversion-form{background:rgba(10,16,18,.90)}
+section.conversion.lt h2,section.conversion.lt:not(.ct) h2{color:#f8f8f8}
+section.conversion.lt h2 em,section.conversion.lt:not(.ct) h2 em{color:#f2d21b;background:none;padding:0}
+section.conversion.lt .sec-p,section.conversion.lt:not(.ct) .sec-p{color:#f4f4f4}
+section.conversion.lt .ey{background:rgba(10,16,18,.78);color:#ffe14d;border-left:3px solid #f2d21b}
+.conversion-note,.conversion--search .conversion-note{color:#e8e8e8}
+.conversion-form label,.conversion--search .conversion-form label{color:#f0f0f0;font-size:11px}
+.conversion-form input,.conversion-form select,.conversion-form textarea{background:#fff!important;color:#111!important;border-color:#cfcfcf!important}
+.conversion-form input::placeholder,.conversion-form textarea::placeholder{color:#6b6b6b}
+.conversion-form .msg-v{background:rgba(255,255,255,.08);color:#f2f2f2}
+section.lt:not(.ct) .ey{display:inline-block;background:none;color:#111415;padding:2px 0 2px 10px;border-left:4px solid #f2d21b;font-size:12px;letter-spacing:.16em}
+section.lt:not(.ct) .sec-p{color:#33373a}
+section.lt:not(.ct) .card{background:#fff;border:1px solid #dcdcdc;border-top:4px solid #f2d21b}
+section.lt:not(.ct) .card h3{color:#111415}
+section.lt:not(.ct) .card p{color:#33373a}
+section.lt:not(.ct) .card a{color:#111415}
+.stats .stat b{font:800 12px/1 var(--b);letter-spacing:.2em;text-transform:uppercase;color:#f2d21b}
+.stats .stat span{margin-top:12px;font-size:17px;line-height:1.45;color:#f4f4f4}
+.src,.sec-note,.guia .src,.visita .src,small{color:#cfcfcf}
+section.lt:not(.ct) .src,section.lt:not(.ct) small{color:#4a4d4f}
+.sec-p{color:#d6d6d6}
+section.conversion.lt:not(.ct) .ey,section.conversion:not(.ct) .ey{display:inline-flex;background:rgba(10,16,18,.82);color:#ffe14d;border-left:3px solid #f2d21b;padding:6px 10px;text-shadow:none}
+section.conversion:not(.ct) .conversion-form-head .ey{background:none;padding:0 0 0 10px}
+.conversion-note,.conversion--search .conversion-note{display:block;width:fit-content;max-width:100%;padding:10px 14px;background:rgba(10,16,18,.86);color:#f2f2f2;text-shadow:none}
+.finance-section .src,.finance-section .finance-aside{text-shadow:none}
+.finance-section .src{display:block;width:fit-content;padding:8px 12px;background:rgba(10,16,18,.82);color:#f2f2f2}
+.stats .stat{min-height:0;height:auto;align-self:stretch}
+.conversion-note,.conversion--search .conversion-note{color:#f2f2f2!important}
 </style>
 </head>
 <body>

@@ -953,6 +953,51 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 .conversion h2{max-width:13ch;line-height:.96}
 .conversion--trade .conversion-layout,.conversion--search .conversion-layout{gap:clamp(34px,6vw,82px)}
 @media(max-width:700px){.finance-section h2{font-size:clamp(42px,12vw,66px)}.conversion h2{max-width:12ch}}
+
+/* ===== Ajustes finales: sin cuadrícula, fondos con vehículos visibles, textos legibles, sin numeración ===== */
+.hero::before,.inventory-section::before,.finance-section::before,.hero::after{content:none!important;display:none!important;background:none!important}
+.hero-slide img{filter:none}
+.conversion-index,.conversion-steps,.conversion-art,.conversion-art-number,.finance-card-no{display:none!important}
+.finance-aside{padding-bottom:18px}
+.finance-aside span{display:block;margin-bottom:10px}
+.finance-aside p{color:#e2e2e2}
+.inventory-meta>span:last-of-type{color:#d4d4d4}
+.finance-section,section.conversion{filter:none}
+.finance-section{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.58) 42%,rgba(10,16,18,.22) 100%),url("images/hero/horizonte-hero-audi.webp");background-position:center,62% 54%}
+section.conversion::before{filter:none;opacity:1}
+section.conversion--trade::before{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.52) 45%,rgba(10,16,18,.10) 100%),url("images/conversion/tu-usado.webp");background-position:center,58% 56%}
+section.conversion--search::before{background-image:linear-gradient(90deg,rgba(10,16,18,.80) 0%,rgba(10,16,18,.52) 45%,rgba(10,16,18,.10) 100%),url("images/conversion/busqueda.webp");background-position:center,55% 52%}
+.finance-section .w,.conversion .w{text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.conversion-form,.finance-card,.conversion-form *,.finance-card *{text-shadow:none}
+.finance-card{background:rgba(10,16,18,.86)}
+.conversion-form,.conversion--search .conversion-form{background:rgba(10,16,18,.90)}
+section.conversion.lt h2,section.conversion.lt:not(.ct) h2{color:#f8f8f8}
+section.conversion.lt h2 em,section.conversion.lt:not(.ct) h2 em{color:#f2d21b;background:none;padding:0}
+section.conversion.lt .sec-p,section.conversion.lt:not(.ct) .sec-p{color:#f4f4f4}
+section.conversion.lt .ey{background:rgba(10,16,18,.78);color:#ffe14d;border-left:3px solid #f2d21b}
+.conversion-note,.conversion--search .conversion-note{color:#e8e8e8}
+.conversion-form label,.conversion--search .conversion-form label{color:#f0f0f0;font-size:11px}
+.conversion-form input,.conversion-form select,.conversion-form textarea{background:#fff!important;color:#111!important;border-color:#cfcfcf!important}
+.conversion-form input::placeholder,.conversion-form textarea::placeholder{color:#6b6b6b}
+.conversion-form .msg-v{background:rgba(255,255,255,.08);color:#f2f2f2}
+section.lt:not(.ct) .ey{display:inline-block;background:none;color:#111415;padding:2px 0 2px 10px;border-left:4px solid #f2d21b;font-size:12px;letter-spacing:.16em}
+section.lt:not(.ct) .sec-p{color:#33373a}
+section.lt:not(.ct) .card{background:#fff;border:1px solid #dcdcdc;border-top:4px solid #f2d21b}
+section.lt:not(.ct) .card h3{color:#111415}
+section.lt:not(.ct) .card p{color:#33373a}
+section.lt:not(.ct) .card a{color:#111415}
+.stats .stat b{font:800 12px/1 var(--b);letter-spacing:.2em;text-transform:uppercase;color:#f2d21b}
+.stats .stat span{margin-top:12px;font-size:17px;line-height:1.45;color:#f4f4f4}
+.src,.sec-note,.guia .src,.visita .src,small{color:#cfcfcf}
+section.lt:not(.ct) .src,section.lt:not(.ct) small{color:#4a4d4f}
+.sec-p{color:#d6d6d6}
+section.conversion.lt:not(.ct) .ey,section.conversion:not(.ct) .ey{display:inline-flex;background:rgba(10,16,18,.82);color:#ffe14d;border-left:3px solid #f2d21b;padding:6px 10px;text-shadow:none}
+section.conversion:not(.ct) .conversion-form-head .ey{background:none;padding:0 0 0 10px}
+.conversion-note,.conversion--search .conversion-note{display:block;width:fit-content;max-width:100%;padding:10px 14px;background:rgba(10,16,18,.86);color:#f2f2f2;text-shadow:none}
+.finance-section .src,.finance-section .finance-aside{text-shadow:none}
+.finance-section .src{display:block;width:fit-content;padding:8px 12px;background:rgba(10,16,18,.82);color:#f2f2f2}
+.stats .stat{min-height:0;height:auto;align-self:stretch}
+.conversion-note,.conversion--search .conversion-note{color:#f2f2f2!important}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
@@ -971,10 +1016,10 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 <main id="top">
 <div class="hero" data-hero-carousel role="region" aria-roledescription="carrusel" aria-label="Fotografías de vehículos">
 <div class="hero-media" role="group" aria-label="Imágenes del carrusel">
-<figure class="hero-slide hero-slide--01 is-active" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="1 de 4" aria-hidden="false"><img src="images/hero/horizonte-slide-01.webp" width="1440" height="1920" alt="" fetchpriority="high" loading="eager" decoding="async"></figure>
-<figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
-<figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
-<figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--01 is-active" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="false"><img src="images/hero/horizonte-slide-01.webp" width="1440" height="1920" alt="" fetchpriority="high" loading="eager" decoding="async"></figure>
+<figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
 </div>
 <div class="hx-copy">
 <p class="ey">Horizonte Automotores</p>
@@ -993,7 +1038,7 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 <section id="unidades" class="inventory-section" aria-labelledby="unidades-t"><div class="w wide">
 <div class="inventory-head">
 <div class="inventory-title"><p class="ey reveal">Catálogo seleccionado · María Grande</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2><p class="sec-p">Usados multimarca publicados para María Grande, con financiación y la posibilidad de tomar tu usado como parte de pago.</p></div>
-<div class="inventory-meta" aria-label="Resumen del catálogo"><span class="inventory-meta-kicker">Horizonte Automotores</span><strong>05</strong><span>unidades publicadas</span><i aria-hidden="true"></i></div>
+<div class="inventory-meta" aria-label="Resumen del catálogo"><span class="inventory-meta-kicker">Horizonte Automotores</span><span>Unidades publicadas en esta web</span><i aria-hidden="true"></i></div>
 </div>
 <div class="inventory-rule" aria-hidden="true"><span></span><small>María Grande · Entre Ríos</small><span></span></div>
 <div class="fx" id="tools" hidden></div>
@@ -1045,9 +1090,9 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 </div></section>
 
 <section class="finance-section" id="financiacion" aria-labelledby="fin-t"><div class="w">
-<div class="finance-head"><div><p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2><p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p></div><aside class="finance-aside"><span>Horizonte Automotores</span><strong>01</strong><p>Encontrá una forma de avanzar hacia tu próxima unidad.</p></aside></div>
+<div class="finance-head"><div><p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2><p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p></div><aside class="finance-aside"><span>Horizonte Automotores</span><p>Encontrá una forma de avanzar hacia tu próxima unidad.</p></aside></div>
 <div class="finance-rule" aria-hidden="true"><span></span><small>Servicios para moverte mejor</small><span></span></div>
-<div class="cards finance-cards"><div class="card finance-card"><span class="finance-card-no">01 / FINANCIACIÓN</span><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de mayo de 2026). <a href="https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf" target="_blank" rel="noopener noreferrer">Ver el listado</a>.</p></div><div class="card finance-card"><span class="finance-card-no">02 / TU USADO</span><h3>Tu usado, parte de pago</h3><p>Recibimos vehículos usados como parte de pago. La tasación es sin cargo.</p></div><div class="card finance-card"><span class="finance-card-no">03 / RESPALDO</span><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div></div>
+<div class="cards finance-cards"><div class="card finance-card"><span class="finance-card-no">Financiación</span><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de mayo de 2026). <a href="https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf" target="_blank" rel="noopener noreferrer">Ver el listado</a>.</p></div><div class="card finance-card"><span class="finance-card-no">Tu usado</span><h3>Tu usado, parte de pago</h3><p>Recibimos vehículos usados como parte de pago. La tasación es sin cargo.</p></div><div class="card finance-card"><span class="finance-card-no">Respaldo</span><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div></div>
 <div class="row fin-cta"><a class="btn p" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20un%20plan%20a%20medida." target="_blank" rel="noopener noreferrer">Consultar un plan a medida</a><a class="btn" href="#tu-usado">Solicitar tasación personalizada</a></div>
 <p class="src">Servicios según lo informado por Grupo Almafuerte en <a href="https://grupoalmafuerte.com/contacto/" target="_blank" rel="noopener noreferrer">su sitio</a>.</p>
 </div></section>
@@ -1056,14 +1101,8 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 <section class="conversion conversion--trade" id="tu-usado" aria-labelledby="usado-t"><div class="w">
 <div class="conversion-layout">
 <div class="conversion-story">
-<div class="conversion-index"><span>HORIZONTE / PERMUTA</span><span>01 — 02</span></div>
 <p class="ey">Tu próximo paso</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
 <p class="sec-p">Recibimos vehículos usados como parte de pago y la tasación es sin cargo, según informa Grupo Almafuerte. Contanos cuál es y armá el mensaje para enviárselo a la agencia.</p>
-<ol class="conversion-steps" aria-label="Cómo funciona la consulta">
-<li><b>01</b><span>Contanos marca, modelo y año.</span></li>
-<li><b>02</b><span>Revisá el mensaje que se arma.</span></li>
-<li><b>03</b><span>Elegí el canal para enviarlo vos.</span></li>
-</ol>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
@@ -1085,7 +1124,6 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 <section class="conversion conversion--search lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
 <div class="conversion-layout">
 <div class="conversion-story">
-<div class="conversion-index"><span>HORIZONTE / BÚSQUEDA</span><span>02 — 02</span></div>
 <p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 </div>
@@ -1145,7 +1183,7 @@ section.conversion--search::before{background-image:linear-gradient(90deg,rgba(1
 <section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
 <p class="sec-p">Horizonte Automotores es un concesionario de María Grande que forma parte del Grupo Almafuerte. En su página de Facebook se presenta con diez años de respaldo en el mercado regional.</p>
-<div class="stats"><div class="stat"><b>10</b><span>años de respaldo en el mercado regional, según su página de Facebook</span></div><div class="stat"><b>5</b><span>unidades publicadas en esta web, relevadas el 12/10/2026</span></div><div class="stat"><b>5</b><span>puntos de atención que lista el Grupo Almafuerte, uno de ellos en María Grande</span></div></div>
+<div class="stats"><div class="stat"><b>Trayectoria</b><span>Diez años de respaldo en el mercado regional, según su página de Facebook.</span></div><div class="stat"><b>Unidades</b><span>5 publicadas en esta web, relevadas el 12/10/2026</span></div><div class="stat"><b>Atención</b><span>5 puntos de atención que lista el Grupo Almafuerte, uno de ellos en María Grande</span></div></div>
 <div class="cards"><div class="card"><h3>Autos y motos</h3><p>Usados publicados para María Grande y financiación para llevarlos.</p></div><div class="card"><h3>Tu usado cuenta</h3><p>Se reciben usados como parte de pago y la tasación es sin cargo, según informa Grupo Almafuerte.</p></div><div class="card"><h3>Respaldo del grupo</h3><p>Forma parte del Grupo Almafuerte, con sucursales en Paraná y Santa Fe.</p></div></div>
 </div></section>
 

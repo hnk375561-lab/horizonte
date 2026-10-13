@@ -167,10 +167,7 @@ button.day-cell{min-height:32px}
 
 /* HORIZONTE v100 · refinamiento de flujo, jerarquía y estados */
 .booking-nav{box-shadow:0 10px 32px rgba(0,0,0,.22)}
-.booking-nav::after{content:"";position:absolute;left:0;bottom:-4px;height:4px;width:25%;background:var(--y);transition:width .35s cubic-bezier(.2,.7,.2,1)}
-#booking[data-step="day"] .booking-nav::after{width:50%}
-#booking[data-step="time"] .booking-nav::after{width:75%}
-#booking[data-step="confirm"] .booking-nav::after{width:100%}
+.booking-nav::after{content:none}
 .calendar-shell{box-shadow:none}
 .calendar-head button{min-width:44px;min-height:44px;border:2px solid transparent;border-radius:2px;transition:background .2s ease,border-color .2s ease}
 .calendar-head button:hover,.calendar-head button:focus-visible{border-color:var(--ink)}

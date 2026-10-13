@@ -20,11 +20,11 @@
   <header class="booking-nav">
     <a class="brand" href="index.html" aria-label="Volver a Horizonte Automotores"><img class="lg-bk" src="images/logo-sm.png" width="360" height="144" alt="Horizonte Automotores"></a>
     <p class="eyebrow">Coordiná tu visita <span aria-hidden="true">/</span> consulta</p>
-    <button class="back" id="back" type="button" aria-label="Volver un paso" hidden>← Atrás</button>
+    <button class="back" id="back" type="button" aria-label="Volver" hidden>← Atrás</button>
   </header>
 
   <section class="scene scene--month" aria-labelledby="month-title">
-    <div class="scene__meta"><span>01 / MES</span><span id="month-status" aria-live="polite"></span></div>
+    <div class="scene__meta"><span id="month-status" aria-live="polite"></span></div>
     <div class="month-copy"><p class="kicker">Horizonte Automotores</p><h1 id="month-title">Elegí<em>cuándo</em><em>venir.</em></h1><p class="intro">Elegí un día en el calendario y armá la consulta. Todavía no es un turno.</p></div>
     <div class="calendar-shell">
       <div class="calendar-head"><button id="prev-month" type="button" aria-label="Mes anterior">←</button><h2 id="month-label"></h2><button id="next-month" type="button" aria-label="Mes siguiente">→</button></div>
@@ -34,14 +34,14 @@
   </section>
 
   <section class="scene scene--day" aria-labelledby="day-title" hidden>
-    <div class="scene__meta"><span>02 / DÍA</span><span id="day-status" aria-live="polite"></span></div>
+    <div class="scene__meta"><span id="day-status" aria-live="polite"></span></div>
     <div class="giant-day" aria-hidden="true"><small id="day-month">—</small><span id="day-number">—</span><strong id="day-weekday">—</strong></div>
     <div class="day-copy"><p class="kicker">Tu visita</p><h2 id="day-title">¿Qué día<br><em>te queda bien?</em></h2><p>Elegí el día y se arma el mensaje de consulta.</p></div>
     <button class="next-step" id="to-time" type="button" disabled>Elegir franja <span>→</span></button>
   </section>
 
   <section class="scene scene--time" aria-labelledby="time-title" hidden>
-    <div class="scene__meta"><span>03 / FRANJA</span><span id="time-status" aria-live="polite"></span></div>
+    <div class="scene__meta"><span id="time-status" aria-live="polite"></span></div>
     <div class="time-copy"><p class="kicker">Franja del día</p><h2 id="time-title">¿Mañana<br><em>o tarde?</em></h2><p>La hora exacta se acuerda con el negocio.</p></div>
     <div id="slots" class="slots" role="listbox" aria-label="Franja del día"></div>
     <button class="next-step" id="to-confirm" type="button" disabled>Ver resumen <span>→</span></button>
@@ -49,7 +49,7 @@
 
   <section class="scene scene--confirm" aria-labelledby="confirm-title" hidden>
     <div class="diagonal-wipe" aria-hidden="true"></div>
-    <div class="scene__meta"><span>04 / CONFIRMAR</span><span>consulta de visita</span></div>
+    <div class="scene__meta"><span>consulta de visita</span></div>
     <div class="confirm-copy"><p class="kicker">Tu visita</p><h2 id="confirm-title"><span id="summary-day">DÍA</span><em id="summary-time">FRANJA</em></h2><p>Avenida Argentina 2021<br>María Grande</p></div>
     <div class="confirm-actions"><a id="whatsapp" class="primary" href="https://wa.me/5493436109949" data-wa="5493436109949" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp <span>↗</span></a><a class="secondary" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Abrir Maps</a><button id="restart" class="secondary" type="button">Elegir otro día</button></div>
     <p id="send-state" class="send-state" role="status" aria-live="polite" data-state="ready">Listo para copiar · lo mandás vos por Facebook o Instagram</p>

@@ -186,14 +186,8 @@ const secUsado = hasSvc('permuta') ? `
 <section class="conversion conversion--trade" id="tu-usado" aria-labelledby="usado-t"><div class="w">
 <div class="conversion-layout">
 <div class="conversion-story">
-<div class="conversion-index"><span>HORIZONTE / PERMUTA</span><span>01 — 02</span></div>
 <p class="ey">Tu próximo paso</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
 <p class="sec-p">${hasSvc('tasacion') ? 'Recibimos vehículos usados como parte de pago y la tasación es sin cargo, según informa ' + esc(GNAME) + '. ' : 'Recibimos vehículos usados como parte de pago, según informa ' + esc(GNAME) + '. '}Contanos cuál es y armá el mensaje para enviárselo a la agencia.</p>
-<ol class="conversion-steps" aria-label="Cómo funciona la consulta">
-<li><b>01</b><span>Contanos marca, modelo y año.</span></li>
-<li><b>02</b><span>Revisá el mensaje que se arma.</span></li>
-<li><b>03</b><span>Elegí el canal para enviarlo vos.</span></li>
-</ol>
 </div>
 <div class="conversion-panel">
 <form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
@@ -216,7 +210,6 @@ const secBusqueda = `
 <section class="conversion conversion--search lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
 <div class="conversion-layout">
 <div class="conversion-story">
-<div class="conversion-index"><span>HORIZONTE / BÚSQUEDA</span><span>02 — 02</span></div>
 <p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
 </div>
@@ -281,10 +274,10 @@ const index = page({
 <main id="top">
 <div class="hero" data-hero-carousel role="region" aria-roledescription="carrusel" aria-label="Fotografías de vehículos">
 <div class="hero-media" role="group" aria-label="Imágenes del carrusel">
-<figure class="hero-slide hero-slide--01 is-active" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="1 de 4" aria-hidden="false"><img src="images/hero/horizonte-slide-01.webp" width="1440" height="1920" alt="" fetchpriority="high" loading="eager" decoding="async"></figure>
-<figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
-<figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
-<figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--01 is-active" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="false"><img src="images/hero/horizonte-slide-01.webp" width="1440" height="1920" alt="" fetchpriority="high" loading="eager" decoding="async"></figure>
+<figure class="hero-slide hero-slide--02" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="true"><img src="images/hero/horizonte-slide-02.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--03" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="true"><img src="images/hero/horizonte-slide-03.webp" width="1440" height="1920" alt="" loading="lazy" decoding="async"></figure>
+<figure class="hero-slide hero-slide--04" data-hero-slide role="group" aria-roledescription="diapositiva" aria-label="Fotografía" aria-hidden="true"><img src="images/hero/horizonte-slide-04.webp" width="1440" height="1440" alt="" loading="lazy" decoding="async"></figure>
 </div>
 <div class="hx-copy">
 <p class="ey">Horizonte Automotores</p>
@@ -298,16 +291,16 @@ ${bar}
 <section id="unidades" class="inventory-section" aria-labelledby="unidades-t"><div class="w wide">
 <div class="inventory-head">
 <div class="inventory-title"><p class="ey reveal">Catálogo seleccionado · ${esc(L.city)}</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2><p class="sec-p">Usados multimarca publicados para María Grande, con financiación y la posibilidad de tomar tu usado como parte de pago.</p></div>
-<div class="inventory-meta" aria-label="Resumen del catálogo"><span class="inventory-meta-kicker">Horizonte Automotores</span><strong>${String(autos.length).padStart(2, '0')}</strong><span>unidades publicadas</span><i aria-hidden="true"></i></div>
+<div class="inventory-meta" aria-label="Resumen del catálogo"><span class="inventory-meta-kicker">Horizonte Automotores</span><span>Unidades publicadas en esta web</span><i aria-hidden="true"></i></div>
 </div>
 <div class="inventory-rule" aria-hidden="true"><span></span><small>María Grande · Entre Ríos</small><span></span></div>
 ${unidades}
 </div></section>
 
 <section class="finance-section" id="financiacion" aria-labelledby="fin-t"><div class="w">
-<div class="finance-head"><div><p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2><p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p></div><aside class="finance-aside"><span>Horizonte Automotores</span><strong>01</strong><p>Encontrá una forma de avanzar hacia tu próxima unidad.</p></aside></div>
+<div class="finance-head"><div><p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2><p class="sec-p">Ofrecemos financiación para autos y motos. Los montos y condiciones dependen de la unidad y de cada solicitante: consultanos por la que te interese.</p></div><aside class="finance-aside"><span>Horizonte Automotores</span><p>Encontrá una forma de avanzar hacia tu próxima unidad.</p></aside></div>
 <div class="finance-rule" aria-hidden="true"><span></span><small>Servicios para moverte mejor</small><span></span></div>
-<div class="cards finance-cards"><div class="card finance-card"><span class="finance-card-no">01 / FINANCIACIÓN</span><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de ${esc(BNAFECHA)}). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card finance-card"><span class="finance-card-no">02 / TU USADO</span><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card finance-card"><span class="finance-card-no">03 / RESPALDO</span><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
+<div class="cards finance-cards"><div class="card finance-card"><span class="finance-card-no">Financiación</span><h3>Créditos Más Autos</h3><p>Figuramos en el listado de concesionarias adheridas a Créditos Más Autos del Banco de la Nación Argentina (listado de ${esc(BNAFECHA)}). <a href="${BNA}" ${EXT}>Ver el listado</a>.</p></div>${hasSvc('permuta') || hasSvc('tasacion') ? `<div class="card finance-card"><span class="finance-card-no">Tu usado</span><h3>Tu usado, parte de pago</h3><p>${[hasSvc('permuta') ? 'Recibimos vehículos usados como parte de pago.' : '', hasSvc('tasacion') ? 'La tasación es sin cargo.' : ''].filter(Boolean).join(' ')}</p></div>` : ''}${hasSvc('garantia') ? `<div class="card finance-card"><span class="finance-card-no">Respaldo</span><h3>Revisión técnica y garantía</h3><p>Los usados pasan por revisión técnica antes de publicarse y se entregan con garantía. Las condiciones dependen de cada vehículo.</p></div>` : ''}</div>
 <div class="row fin-cta"><a class="btn p" href="${wa('Hola! Quiero consultar un plan a medida.') || FB}" ${EXT}>${C.whatsApp ? 'Consultar un plan a medida' : 'Consultar por Facebook'}</a><a class="btn" href="#tu-usado">Solicitar tasación personalizada</a></div>
 <p class="src">Servicios según lo informado por ${esc(GNAME)} en <a href="${GWEB}" ${EXT}>su sitio</a>.</p>
 </div></section>
@@ -321,7 +314,7 @@ ${secVisita}
 <section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
 <p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}. ${esc(D.presentacion.antiguedad)}</p>
-<div class="stats"><div class="stat"><b>10</b><span>años de respaldo en el mercado regional, según su página de Facebook</span></div>${autos.length ? `<div class="stat"><b>${autos.length}</b><span>unidades publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></div>` : ''}<div class="stat"><b>${suc.length + 1}</b><span>puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></div></div>
+<div class="stats"><div class="stat"><b>Trayectoria</b><span>Diez años de respaldo en el mercado regional, según su página de Facebook.</span></div>${autos.length ? `<div class="stat"><b>Unidades</b><span>${autos.length} publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></div>` : ''}<div class="stat"><b>Atención</b><span>${suc.length + 1} puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></div></div>
 <div class="cards"><div class="card"><h3>Autos y motos</h3><p>Usados publicados para ${esc(L.city)} y financiación para llevarlos.</p></div>${hasSvc('permuta') ? `<div class="card"><h3>Tu usado cuenta</h3><p>Se reciben usados como parte de pago${hasSvc('tasacion') ? ' y la tasación es sin cargo' : ''}, según informa ${esc(GNAME)}.</p></div>` : ''}<div class="card"><h3>Respaldo del grupo</h3><p>Forma parte del ${esc(GNAME)}, con sucursales en Paraná y Santa Fe.</p></div></div>
 </div></section>
 
@@ -396,11 +389,11 @@ ${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
   <header class="booking-nav">
     <a class="brand" href="index.html" aria-label="Volver a ${esc(NAME)}"><img class="lg-bk" src="images/logo-sm.png" width="360" height="144" alt="${esc(NAME)}"></a>
     <p class="eyebrow">Coordiná tu visita <span aria-hidden="true">/</span> consulta</p>
-    <button class="back" id="back" type="button" aria-label="Volver un paso" hidden>← Atrás</button>
+    <button class="back" id="back" type="button" aria-label="Volver" hidden>← Atrás</button>
   </header>
 
   <section class="scene scene--month" aria-labelledby="month-title">
-    <div class="scene__meta"><span>01 / MES</span><span id="month-status" aria-live="polite"></span></div>
+    <div class="scene__meta"><span id="month-status" aria-live="polite"></span></div>
     <div class="month-copy"><p class="kicker">${esc(NAME)}</p><h1 id="month-title">Elegí<em>cuándo</em><em>venir.</em></h1><p class="intro">Elegí un día en el calendario y armá la consulta. Todavía no es un turno.</p></div>
     <div class="calendar-shell">
       <div class="calendar-head"><button id="prev-month" type="button" aria-label="Mes anterior">←</button><h2 id="month-label"></h2><button id="next-month" type="button" aria-label="Mes siguiente">→</button></div>
@@ -410,14 +403,14 @@ ${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
   </section>
 
   <section class="scene scene--day" aria-labelledby="day-title" hidden>
-    <div class="scene__meta"><span>02 / DÍA</span><span id="day-status" aria-live="polite"></span></div>
+    <div class="scene__meta"><span id="day-status" aria-live="polite"></span></div>
     <div class="giant-day" aria-hidden="true"><small id="day-month">—</small><span id="day-number">—</span><strong id="day-weekday">—</strong></div>
     <div class="day-copy"><p class="kicker">Tu visita</p><h2 id="day-title">¿Qué día<br><em>te queda bien?</em></h2><p>Elegí el día y se arma el mensaje de consulta.</p></div>
     <button class="next-step" id="to-time" type="button" disabled>Elegir franja <span>→</span></button>
   </section>
 
   <section class="scene scene--time" aria-labelledby="time-title" hidden>
-    <div class="scene__meta"><span>03 / FRANJA</span><span id="time-status" aria-live="polite"></span></div>
+    <div class="scene__meta"><span id="time-status" aria-live="polite"></span></div>
     <div class="time-copy"><p class="kicker">Franja del día</p><h2 id="time-title">¿Mañana<br><em>o tarde?</em></h2><p>La hora exacta se acuerda con el negocio.</p></div>
     <div id="slots" class="slots" role="listbox" aria-label="Franja del día"></div>
     <button class="next-step" id="to-confirm" type="button" disabled>Ver resumen <span>→</span></button>
@@ -425,7 +418,7 @@ ${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
 
   <section class="scene scene--confirm" aria-labelledby="confirm-title" hidden>
     <div class="diagonal-wipe" aria-hidden="true"></div>
-    <div class="scene__meta"><span>04 / CONFIRMAR</span><span>consulta de visita</span></div>
+    <div class="scene__meta"><span>consulta de visita</span></div>
     <div class="confirm-copy"><p class="kicker">Tu visita</p><h2 id="confirm-title"><span id="summary-day">DÍA</span><em id="summary-time">FRANJA</em></h2><p>${esc(L.address)}<br>${esc(L.city)}</p></div>
     <div class="confirm-actions">${reservaBtn}<a class="secondary" href="${esc(L.mapsUrl)}" ${EXT}>Abrir Maps</a><button id="restart" class="secondary" type="button">Elegir otro día</button></div>
     <p id="send-state" class="send-state" role="status" aria-live="polite" data-state="ready">Listo para copiar · lo mandás vos por Facebook o Instagram</p>
