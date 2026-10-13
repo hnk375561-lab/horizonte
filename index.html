@@ -456,7 +456,25 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
 .fin-cta{margin-top:26px}
 /* Header de una sola fila en celulares (≤399px): el WhatsApp sigue en el hero, el menú y el botón flotante */
 @media(max-width:399px){header .w{flex-wrap:nowrap;gap:10px;padding-top:0}header .hc{display:none} /* WhatsApp sigue en el hero, en el menú y en el botón flotante */.mark .lg-img{height:40px}.menu-toggle{margin-left:auto}}
-#unidades .w>.ey,#unidades .w>h2,#unidades .w>.sec-p{padding-left:max(0px,calc((100% - 1120px)/2))}.bar a{display:inline-block;min-height:24px;padding-block:2px}</style>
+#unidades .w>.ey,#unidades .w>h2,#unidades .w>.sec-p{padding-left:max(0px,calc((100% - 1120px)/2))}.bar a{display:inline-block;min-height:24px;padding-block:2px}/* Hero premium con fotografía real: la paleta continúa gobernada por las variables originales. */
+.hero{grid-template-columns:minmax(0,.82fr) minmax(360px,1.18fr);align-items:center;min-height:min(100svh,920px);padding:clamp(54px,7vw,110px) max(20px,calc((100vw - 1120px)/2)) clamp(82px,9vw,120px);background:var(--ink);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--ink) 0%,rgba(10,11,12,.94) 25%,rgba(10,11,12,.68) 47%,rgba(10,11,12,.12) 78%,transparent 100%),linear-gradient(0deg,var(--ink),transparent 42%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;border:1px solid rgba(198,161,91,.24);pointer-events:none}
+.hero-media{position:absolute;inset:0 0 0 35%;z-index:0;overflow:hidden;background:var(--ink)}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,transparent 42%),linear-gradient(0deg,rgba(10,11,12,.74),transparent 34%);pointer-events:none}
+.hero-media picture,.hero-media img{display:block;width:100%;height:100%}
+.hero-media img{object-fit:cover;object-position:58% 50%;filter:saturate(.86) contrast(1.06) brightness(.78);transform:scale(1.035)}
+.hero .hx-copy{z-index:2;max-width:650px}
+.hero .hx-copy .ey{color:var(--gold);text-shadow:0 1px 18px rgba(0,0,0,.4)}
+.hero h1{max-width:9ch;font-size:clamp(48px,6.5vw,96px);letter-spacing:-.045em;text-shadow:0 8px 34px rgba(0,0,0,.26)}
+.hero h1 em{color:var(--gold)}
+.hero .lead{max-width:31em;color:var(--ivory);font-size:clamp(17px,1.5vw,20px)}
+.hero .hx-sun{display:none}
+.hero .hx-down{z-index:3}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:calc(100svh - var(--hdr));padding:54px 16px 250px}.hero-media{inset:0}.hero-media::after{background:linear-gradient(90deg,rgba(10,11,12,.86),rgba(10,11,12,.3) 75%),linear-gradient(0deg,var(--ink) 3%,transparent 64%)}.hero-media img{object-position:64% 50%;filter:saturate(.82) contrast(1.04) brightness(.6)}.hero .hx-copy{max-width:680px}.hero h1{max-width:10ch}}
+@media(max-width:560px){.hero{padding-top:44px;padding-bottom:220px}.hero-media img{object-position:67% 50%}.hero h1{font-size:clamp(46px,14vw,72px)}.hero .lead{font-size:17px}.hero::after{border-color:rgba(198,161,91,.18)}}
+
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","email":"snicolas540@hotmail.com","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
 <script defer src="js/mapa.js"></script>
@@ -471,14 +489,15 @@ section.lt:not(.ct){background:var(--paper);color:#182126}section.lt:not(.ct) h2
 <div class="hc"><a class="btn p sm" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></header>
 <p class="demo"><span>Demo ilustrativa · No es el sitio oficial</span></p>
 <main id="top">
-<div class="hero"><div class="hx-copy">
+<div class="hero">
+<div class="hero-media" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="images/hero/horizonte-hero-audi-mobile.webp"><img src="images/hero/horizonte-hero-audi.webp" width="960" height="720" alt="" fetchpriority="high" decoding="async"></picture></div>
+<div class="hx-copy">
 <p class="ey">Tu próximo vehículo te espera</p>
 <h1><span class="sr">Horizonte Automotores: </span>Autos y motos <em>en María Grande</em></h1>
 <p class="lead">Concesionario del Grupo Almafuerte. Usados multimarca, financiación y tu usado como parte de pago.</p>
 <div class="row"><a class="btn p" href="#unidades">Ver unidades</a><a class="btn" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="btn lnk" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Cómo llegar</a></div></div>
 <div class="hx-sun" aria-hidden="true"><span class="orb"></span></div>
 <a class="hx-down" href="#unidades">Ver más</a>
-</div>
 </div>
 <div class="bar" role="region" aria-label="Datos rápidos"><div class="w"><ul>
 <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="k">Dirección</span><b>Av. Argentina 2021</b><small>María Grande · antes Av. Argentina 536</small></li>

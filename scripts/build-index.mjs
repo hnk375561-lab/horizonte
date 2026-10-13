@@ -258,7 +258,9 @@ const index = page({
 <script defer src="js/site.js"></script>\n`,
   body: `${header()}
 <main id="top">
-<div class="hero"><div class="hx-copy">
+<div class="hero">
+<div class="hero-media" aria-hidden="true"><picture><source media="(max-width:700px)" srcset="images/hero/horizonte-hero-audi-mobile.webp"><img src="images/hero/horizonte-hero-audi.webp" width="960" height="720" alt="" fetchpriority="high" decoding="async"></picture></div>
+<div class="hx-copy">
 <p class="ey">Tu próximo vehículo te espera</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
 <p class="lead">Concesionario del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago.</p>
