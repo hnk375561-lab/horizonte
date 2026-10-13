@@ -84,7 +84,7 @@ const fmt = (n) => n.toLocaleString('es-AR');
 const norm = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const jsonSafe = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 // Muestra de color solo para dibujar el punto junto al nombre del color publicado; no es un dato de la ficha.
-const SW = { blanco: '#f1f1ee', negro: '#161b1d', rojo: '#c21f1f', 'gris plata': '#b4bbbe', plata: '#b4bbbe', gris: '#8a9296', azul: '#1e4a8c', verde: '#2f6b45', bordo: '#6d1a2a', beige: '#cdbb98', dorado: '#b99a45', naranja: '#d9742a', amarillo: '#e5c717', marron: '#6b4a32' };
+const SW = { blanco: '#f1f1ee', negro: '#161b1d', rojo: '#c21f1f', 'gris plata': '#b4bbbe', 'gris oscuro': '#4b5256', plata: '#b4bbbe', gris: '#8a9296', azul: '#1e4a8c', verde: '#2f6b45', bordo: '#6d1a2a', beige: '#cdbb98', dorado: '#b99a45', naranja: '#d9742a', amarillo: '#e5c717', marron: '#6b4a32' };
 const swatch = (c) => SW[norm(c || '')] || null;
 const marcaDe = (a) => a.marca || a.titulo.split(' ')[0];
 const sinMarca = (a) => { const m = marcaDe(a); return a.titulo.startsWith(m + ' ') ? a.titulo.slice(m.length + 1) : a.titulo; };
@@ -110,7 +110,7 @@ ${mediaTag(a, i)}
 };
 const catData = autos.map((a, i) => ({ i, titulo: a.titulo, media: mediaDe(a), marca: marcaDe(a), modelo: a.modelo || null, cilindrada: a.cilindrada || null, version: a.version || null, anio: a.anio ?? null, km: a.km ?? null, transmision: a.transmision || null, combustible: a.combustible || null, color: a.color || null, sw: swatch(a.color), precio: a.precio || null, url: a.url, href: consultaHref(a) }));
 const unidades = autos.length
-  ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<p class="src">Fichas del catálogo público de ${esc(GNAME)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
+  ? `${autos.length > 1 ? '<div class="fx" id="tools" hidden></div>\n' : ''}<p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las ${autos.length} unidades.</p><ul class="cars" id="cars">\n${autos.map(card).join('\n')}\n</ul>\n<script type="application/json" id="cat-data">${jsonSafe(catData)}</script>\n<p class="src">Unidades publicadas en el Instagram de @${esc(C.instagram)}${A.relevadoEl ? ` relevadas el ${esc(fdate(A.relevadoEl))}` : ''}. Precio y disponibilidad pueden haber cambiado: consultalos antes de ir.</p>\n<div class="row mt"><a class="btn p" href="${GCAT}" ${EXT}>Ver catálogo completo</a><a class="btn" href="${FB}" ${EXT}>Ver más en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver más en Instagram</a></div>`
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
 
 // ---- contacto ----

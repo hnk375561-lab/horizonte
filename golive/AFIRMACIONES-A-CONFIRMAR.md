@@ -44,3 +44,6 @@ Estado al 12/10/2026 (incluye la investigación V2 y el expediente OSINT textual
 | Tasas y plazos de +Autos con BNA | Son del programa (nota del 09/07/2026), no una oferta de la agencia |
 | Historia institucional del grupo («más de 40 años», «seis décadas») | Cifras inconsistentes en su propia web |
 | Fotos y logotipo | Sin autorización (P3, P4) |
+
+## Stock de Instagram (relevado el 13/10/2026)
+- 10 unidades de las publicaciones «Nuevo ingreso» de https://www.instagram.com/horizonte_automotores/ (año, kilometraje cuando figura, caja, combustible, color). Fuente: capturas aportadas por el responsable del proyecto. Sin precio. Confirmar disponibilidad con el vendedor.

@@ -14,3 +14,22 @@ Autorización escrita del responsable del proyecto: ZIP adjunto el 13/10/2026 pa
 | `#busqueda` | `images/conversion/busqueda.webp` | `777064701_18124904371748177_6258504343910198683_n.heic` | 1440 × 1920 |
 
 La numeración se mantiene sincronizada con `scripts/build-index.mjs`. Las fotos de `#tu-usado` y `#busqueda` se aplican como fondo de su propia sección, no se duplican como tarjetas. No se añade texto de marca/modelo a las fotos ni se presenta ninguna como parte del stock vigente.
+
+## Stock · fotos de las unidades (13/10/2026)
+
+Instrucción expresa del responsable del proyecto (13/10/2026): usar las capturas de las publicaciones «Nuevo ingreso» de @horizonte_automotores como especificaciones del stock y las fotografías originales del ZIP (mayor calidad) como foto de cada unidad. Se derivan a WebP cuadrado (720, 1080 y 1440 px) en `images/stock/`; las fichas están en `data/vehicles.json` (campo `fotos`). El Amarok comparte la toma con la diapositiva 4 del hero por indicación expresa.
+
+| Unidad | Archivo de origen del ZIP |
+|---|---|
+| Volkswagen Saveiro 1.6 C/Ext Full | `837039709_18129677737748177_…_n.heic` |
+| Peugeot 408 1.6 Allure Plus | `831400912_18129261475748177_…_n.heic` |
+| Volkswagen Fox Highline | `829602619_18129161434748177_…_n.heic` |
+| Chevrolet Cruze 1.4T LTZ | `829873447_18128973391748177_…_n.heic` |
+| Chevrolet Prisma Joy | `819811644_18128365651748177_…_n.heic` |
+| Chevrolet Classic LS Full | `809876545_18127577269748177_…_n.heic` |
+| Chevrolet Spin 1.8 LTZ 7AS | `801963554_18127080979748177_…_n.heic` |
+| Peugeot 207 1.4 Compact Xs | `846737521_18130437703748177_…_n.heic` |
+| Chevrolet Sonic LTZ 1.6 | `841886022_18130039006748177_…_n.heic` |
+| Volkswagen Amarok 4x4 Highline | `840264294_18129862399748177_…_n.heic` |
+
+Datos no publicados en la fuente (precio, y kilometraje en 408, Sonic y Amarok) se omiten; no se completan.

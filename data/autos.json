@@ -1,105 +1,239 @@
 {
-  "fuente": "Catálogo público de Grupo Almafuerte (grupoalmafuerte.com), fichas que indican «Disponible en María Grande»",
-  "relevadoEl": "2026-10-12",
+  "fuente": "Publicaciones «Nuevo ingreso» de Instagram @horizonte_automotores (María Grande)",
+  "relevadoEl": "2026-10-13",
   "autos": [
     {
-      "id": "mg-01",
-      "titulo": "Chevrolet Cruze 1.4 LTZ 4P",
-      "marca": "Chevrolet",
-      "modelo": "Cruze",
-      "cilindrada": "1.4",
-      "version": "LTZ 4P",
-      "anio": 2018,
-      "km": 157000,
+      "id": "hz-01",
+      "titulo": "Volkswagen Saveiro 1.6 C/Ext Full",
+      "marca": "Volkswagen",
+      "modelo": "Saveiro",
+      "cilindrada": "1.6",
+      "version": "C/Ext Full",
+      "anio": 2013,
+      "km": 99100,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Blanca",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/saveiro-1080.webp",
+          "srcset": "images/stock/saveiro-720.webp 720w, images/stock/saveiro-1080.webp 1080w, images/stock/saveiro-1440.webp 1440w",
+          "alt": "Volkswagen Saveiro 1.6 C/Ext Full",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 05/10/2026. Consultá disponibilidad."
+    },
+    {
+      "id": "hz-02",
+      "titulo": "Peugeot 408 1.6 Allure Plus",
+      "marca": "Peugeot",
+      "modelo": "408",
+      "cilindrada": "1.6",
+      "version": "Allure Plus",
+      "anio": 2017,
       "transmision": "Manual",
       "combustible": "Nafta",
       "color": "Blanco",
-      "precio": {
-        "moneda": "ARS",
-        "monto": 22000000,
-        "fecha": "2026-10-12"
-      },
-      "url": "https://grupoalmafuerte.com/producto/chevrolet-cruze-1-4-ltz-4p-3/",
-      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/peugeot-408-1080.webp",
+          "srcset": "images/stock/peugeot-408-720.webp 720w, images/stock/peugeot-408-1080.webp 1080w, images/stock/peugeot-408-1440.webp 1440w",
+          "alt": "Peugeot 408 1.6 Allure Plus",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 01/10/2026. Consultá disponibilidad."
     },
     {
-      "id": "mg-02",
-      "titulo": "Volkswagen Vento 1.4 TSI BM Tech Comfortline",
+      "id": "hz-03",
+      "titulo": "Volkswagen Fox Highline",
       "marca": "Volkswagen",
-      "modelo": "Vento",
-      "cilindrada": "1.4",
-      "version": "TSI BM Tech Comfortline",
+      "modelo": "Fox",
+      "version": "Highline",
+      "anio": 2013,
+      "km": 87000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Gris",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/fox-1080.webp",
+          "srcset": "images/stock/fox-720.webp 720w, images/stock/fox-1080.webp 1080w, images/stock/fox-1440.webp 1440w",
+          "alt": "Volkswagen Fox Highline",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 30/09/2026. Consultá disponibilidad."
+    },
+    {
+      "id": "hz-04",
+      "titulo": "Chevrolet Cruze 1.4T LTZ",
+      "marca": "Chevrolet",
+      "modelo": "Cruze",
+      "cilindrada": "1.4T",
+      "version": "LTZ",
       "anio": 2017,
-      "km": 182000,
+      "km": 150000,
+      "transmision": "Automático",
+      "combustible": "Nafta",
+      "color": "Bordó",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/cruze-1080.webp",
+          "srcset": "images/stock/cruze-720.webp 720w, images/stock/cruze-1080.webp 1080w, images/stock/cruze-1440.webp 1440w",
+          "alt": "Chevrolet Cruze 1.4T LTZ",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 28/09/2026. Consultá disponibilidad."
+    },
+    {
+      "id": "hz-05",
+      "titulo": "Chevrolet Prisma Joy",
+      "marca": "Chevrolet",
+      "modelo": "Prisma",
+      "version": "Joy",
+      "anio": 2016,
+      "km": 134000,
       "transmision": "Manual",
       "combustible": "Nafta",
       "color": "Negro",
-      "precio": {
-        "moneda": "ARS",
-        "monto": 26500000,
-        "fecha": "2026-10-12"
-      },
-      "url": "https://grupoalmafuerte.com/producto/volkswagen-vento-1-4-tsi-bm-tech-comfortline/",
-      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/prisma-1080.webp",
+          "srcset": "images/stock/prisma-720.webp 720w, images/stock/prisma-1080.webp 1080w, images/stock/prisma-1440.webp 1440w",
+          "alt": "Chevrolet Prisma Joy",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 22/09/2026. Consultá disponibilidad."
     },
     {
-      "id": "mg-04",
-      "titulo": "Citroën C3 1.6 VTI Shine",
-      "marca": "Citroën",
-      "modelo": "C3",
-      "cilindrada": "1.6",
-      "version": "VTI Shine",
-      "anio": 2016,
-      "km": 135000,
+      "id": "hz-06",
+      "titulo": "Chevrolet Classic LS Full",
+      "marca": "Chevrolet",
+      "modelo": "Classic",
+      "version": "LS Full",
+      "anio": 2011,
+      "km": 147000,
       "transmision": "Manual",
       "combustible": "Nafta",
-      "color": "Blanco",
-      "precio": {
-        "moneda": "ARS",
-        "monto": 15000000,
-        "fecha": "2026-10-12"
-      },
-      "url": "https://grupoalmafuerte.com/producto/citroen-c3-1-6-vti-shine/",
-      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+      "color": "Gris oscuro",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/classic-1080.webp",
+          "srcset": "images/stock/classic-720.webp 720w, images/stock/classic-1080.webp 1080w, images/stock/classic-1440.webp 1440w",
+          "alt": "Chevrolet Classic LS Full",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 14/09/2026. Consultá disponibilidad."
     },
     {
-      "id": "mg-05",
-      "titulo": "Peugeot 307 1.6 XS Ln 5P",
+      "id": "hz-07",
+      "titulo": "Chevrolet Spin 1.8 LTZ 7AS",
+      "marca": "Chevrolet",
+      "modelo": "Spin",
+      "cilindrada": "1.8",
+      "version": "LTZ 7AS",
+      "anio": 2013,
+      "km": 137000,
+      "transmision": "Manual",
+      "combustible": "Nafta",
+      "color": "Gris",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/spin-1080.webp",
+          "srcset": "images/stock/spin-720.webp 720w, images/stock/spin-1080.webp 1080w, images/stock/spin-1440.webp 1440w",
+          "alt": "Chevrolet Spin 1.8 LTZ 7AS",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 09/09/2026. Consultá disponibilidad."
+    },
+    {
+      "id": "hz-08",
+      "titulo": "Peugeot 207 1.4 Compact Xs",
       "marca": "Peugeot",
-      "modelo": "307",
-      "cilindrada": "1.6",
-      "version": "XS Ln 5P",
-      "anio": 2007,
+      "modelo": "207",
+      "cilindrada": "1.4",
+      "version": "Compact Xs",
+      "anio": 2012,
+      "km": 130000,
       "transmision": "Manual",
       "combustible": "Nafta",
-      "color": "Rojo",
-      "precio": {
-        "moneda": "ARS",
-        "monto": 9000000,
-        "fecha": "2026-10-12"
-      },
-      "url": "https://grupoalmafuerte.com/producto/peugeot-307-1-6-xs-ln-5p-2/",
-      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+      "color": "Gris",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/peugeot-207-1080.webp",
+          "srcset": "images/stock/peugeot-207-720.webp 720w, images/stock/peugeot-207-1080.webp 1080w, images/stock/peugeot-207-1440.webp 1440w",
+          "alt": "Peugeot 207 1.4 Compact Xs",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 13/10/2026. Consultá disponibilidad."
     },
     {
-      "id": "mg-06",
-      "titulo": "Renault Sandero Stepway 1.6 Dynamique",
-      "marca": "Renault",
-      "modelo": "Sandero Stepway",
+      "id": "hz-09",
+      "titulo": "Chevrolet Sonic LTZ 1.6",
+      "marca": "Chevrolet",
+      "modelo": "Sonic",
       "cilindrada": "1.6",
-      "version": "Dynamique",
-      "anio": 2017,
-      "km": 124000,
-      "transmision": "Manual",
+      "version": "LTZ",
+      "anio": 2012,
+      "transmision": "Automático",
       "combustible": "Nafta",
-      "color": "Gris plata",
-      "precio": {
-        "moneda": "ARS",
-        "monto": 17500000,
-        "fecha": "2026-10-12"
-      },
-      "url": "https://grupoalmafuerte.com/producto/renault-sandero-stepway-1-6-dynamique/",
-      "nota": "Ficha publicada en el catálogo de Grupo Almafuerte. Consultá disponibilidad."
+      "color": "Negro",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/sonic-1080.webp",
+          "srcset": "images/stock/sonic-720.webp 720w, images/stock/sonic-1080.webp 1080w, images/stock/sonic-1440.webp 1440w",
+          "alt": "Chevrolet Sonic LTZ 1.6",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 09/10/2026. Consultá disponibilidad."
+    },
+    {
+      "id": "hz-10",
+      "titulo": "Volkswagen Amarok 4x4 Highline",
+      "marca": "Volkswagen",
+      "modelo": "Amarok",
+      "version": "4x4 Highline",
+      "anio": 2010,
+      "transmision": "Manual",
+      "combustible": "Diésel",
+      "color": "Gris",
+      "url": "https://www.instagram.com/horizonte_automotores/",
+      "fotos": [
+        {
+          "src": "images/stock/amarok-1080.webp",
+          "srcset": "images/stock/amarok-720.webp 720w, images/stock/amarok-1080.webp 1080w, images/stock/amarok-1440.webp 1440w",
+          "alt": "Volkswagen Amarok 4x4 Highline",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "nota": "Publicada en Instagram (@horizonte_automotores) el 07/10/2026. Consultá disponibilidad."
     }
   ]
 }
