@@ -623,6 +623,62 @@ html.save-data .hero{animation:none!important}
   .hero{display:block;min-height:100svh;height:100svh;padding:0;background:var(--ink) url('images/hero/horizonte-hero-preview.png') center center/100% 100% no-repeat;border:0}
   .hero::before,.hero::after,.hero-media,.hero .hx-copy,.hero .hx-sun,.hero .hx-down{display:none}
 }
+
+/* Rediseño editorial de Unidades · misma firma visual del hero */
+.inventory-section{position:relative;overflow:hidden;padding-block:clamp(82px,9vw,132px);background:radial-gradient(circle at 88% 8%,rgba(242,210,27,.075),transparent 22%),linear-gradient(145deg,#080d0f 0%,#0d1519 54%,#0a1012 100%);border-top:1px solid rgba(242,210,27,.2)}
+.inventory-section::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(135deg,#000,transparent 72%)}
+.inventory-section>.w{position:relative;z-index:1}
+.inventory-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,250px);gap:clamp(32px,8vw,120px);align-items:end}
+.inventory-title .ey{margin-bottom:18px;color:var(--y);background:transparent;padding:0;font-size:11px;letter-spacing:.28em}
+.inventory-title h2{max-width:10ch;font-size:clamp(54px,7.2vw,104px);font-weight:400;line-height:.82;letter-spacing:-.035em;text-transform:none}
+.inventory-title h2 em{color:var(--y);font-style:normal}
+.inventory-title h2::after{width:154px;height:18px;margin-top:24px}
+.inventory-title .sec-p{max-width:41em;margin:24px 0 0;color:#b8c1c4;font-size:18px;line-height:1.5}
+.inventory-meta{position:relative;display:flex;flex-direction:column;align-items:flex-end;padding:0 0 18px;border-bottom:1px solid rgba(242,210,27,.55);text-align:right}
+.inventory-meta-kicker{color:var(--y);font:800 10px/1 var(--b);letter-spacing:.22em;text-transform:uppercase}
+.inventory-meta strong{margin:14px 0 0;color:var(--s3);font:400 clamp(70px,8vw,116px)/.78 var(--h);letter-spacing:-.06em}
+.inventory-meta>span:last-of-type{margin-top:12px;color:#9aa7ad;font:700 11px/1 var(--b);letter-spacing:.18em;text-transform:uppercase}
+.inventory-meta i{position:absolute;right:0;bottom:-1px;width:54px;height:3px;background:var(--y)}
+.inventory-rule{display:flex;align-items:center;gap:16px;margin:clamp(40px,5vw,66px) 0 20px;color:#7e8c92}
+.inventory-rule span{height:1px;flex:1;background:linear-gradient(90deg,rgba(242,210,27,.7),rgba(255,255,255,.1))}
+.inventory-rule span:last-child{transform:scaleX(-1)}
+.inventory-rule small{font:800 10px/1 var(--b);letter-spacing:.26em;text-transform:uppercase;white-space:nowrap}
+.inventory-section .fx{position:relative;margin:0 0 26px;padding:10px 14px;border:1px solid rgba(242,210,27,.3);border-radius:999px;background:rgba(7,11,13,.68);box-shadow:0 18px 60px rgba(0,0,0,.2);backdrop-filter:blur(16px)}
+.inventory-section .fx::before{content:"EXPLORAR INVENTARIO";display:block;flex:0 0 auto;margin-right:8px;color:var(--y);font:800 10px/1 var(--b);letter-spacing:.2em;white-space:nowrap}
+.inventory-section .fx input,.inventory-section .fx select,.inventory-section .fx button,.inventory-section .fx label{border-color:rgba(255,255,255,.2);border-radius:999px;background:#10191d;color:#e6eaeb}
+.inventory-section .fx input:focus,.inventory-section .fx select:focus,.inventory-section .fx button:focus{border-color:var(--y);outline:none}
+.inventory-section .fx button:hover,.inventory-section .fx label:hover{border-color:var(--y);color:var(--y)}
+.inventory-section .cars{position:relative;gap:14px;margin-top:0}
+.inventory-section .car{counter-increment:inventory-card;min-height:416px;padding:22px 22px 20px;background:linear-gradient(160deg,rgba(26,36,41,.9),rgba(10,16,18,.98));border:1px solid rgba(255,255,255,.12);border-top:0;border-left:0;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.05);transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,background .35s ease}
+.inventory-section .car::before{content:counter(inventory-card,decimal-leading-zero);position:absolute;top:18px;right:20px;color:rgba(242,210,27,.72);font:400 22px/1 var(--h);letter-spacing:-.04em}
+.inventory-section .car::after{content:"";position:absolute;left:0;top:0;width:3px;height:72px;background:var(--y);transform-origin:top;transition:height .35s ease}
+.inventory-section .car:hover{transform:translateY(-8px);border-color:rgba(242,210,27,.62);background:linear-gradient(160deg,rgba(35,47,53,.98),rgba(10,16,18,.98));box-shadow:0 22px 50px rgba(0,0,0,.28)}
+.inventory-section .car:hover::after{height:100%}
+.inventory-section .car-ph{height:160px;margin:-22px -22px 22px;overflow:hidden;background:linear-gradient(135deg,#1b252a,#0a1012);border-bottom:1px solid rgba(255,255,255,.12)}
+.inventory-section .car-ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.05);transition:transform .6s ease,filter .6s ease}
+.inventory-section .car:hover .car-ph img{transform:scale(1.045);filter:saturate(1) contrast(1.08)}
+.inventory-section .car-b{color:var(--y);font:800 10px/1 var(--b);letter-spacing:.22em;text-transform:uppercase}
+.inventory-section .car-h{min-height:24px;padding-right:72px;border-bottom:0}
+.inventory-section .car h3{max-width:14ch;margin:16px 0 20px;color:#f4f1e9;font:400 clamp(25px,2.2vw,32px)/.98 var(--h);letter-spacing:-.02em;text-transform:none}
+.inventory-section .car-s{gap:0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.inventory-section .car-s p{padding:12px 10px 11px 0;border-right:1px solid rgba(255,255,255,.14)}
+.inventory-section .car-s p:last-child{padding-left:14px;border-right:0}
+.inventory-section .car-s b{color:#f4f1e9;font:400 25px/1 var(--h)}
+.inventory-section .car-s small{color:#8d9aa0;font-size:9px;letter-spacing:.16em}
+.inventory-section .sp{margin:12px 0 0}
+.inventory-section .sp div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.inventory-section .sp dt{margin:0;color:#829096;font:800 9px/1.2 var(--b);letter-spacing:.16em}
+.inventory-section .sp dd{margin:0;color:#dbe1e2;font:700 13px/1.2 var(--b);text-align:right}
+.inventory-section .car .pr{margin:14px 0 0;color:var(--y);font:400 25px/1 var(--h)}
+.inventory-section .car .n{color:#7f8c91;font-size:11px;line-height:1.25}
+.inventory-section .car-f{gap:8px}
+.inventory-section .car-f .btn{width:100%;min-height:43px;border-width:1px;font-size:10px;letter-spacing:.13em}
+.inventory-section .car-f .btn.p{margin-top:3px}
+.inventory-section .src{margin-top:22px;color:#829096;font-size:12px}
+.inventory-section .row.mt{margin-top:22px}
+@media(min-width:1100px){.inventory-section .cars{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.inventory-section .car{min-width:0}.inventory-section .car h3{font-size:28px}.inventory-section .car-s b{font-size:22px}}
+@media(max-width:900px){.inventory-head{grid-template-columns:1fr}.inventory-meta{align-items:flex-start;text-align:left;max-width:220px}.inventory-meta i{left:0;right:auto}.inventory-title h2{max-width:none}.inventory-section .fx{border-radius:20px;flex-wrap:wrap}.inventory-section .fx::before{flex-basis:100%;margin:0 0 6px}.inventory-section .cars{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.inventory-section{padding-block:68px}.inventory-title h2{font-size:clamp(52px,16vw,78px)}.inventory-title .sec-p{font-size:16px}.inventory-rule small{font-size:8px;letter-spacing:.14em}.inventory-section .cars{grid-template-columns:1fr}.inventory-section .car{min-height:0}.inventory-section .car-ph{height:200px}.inventory-section .car h3{max-width:18ch;font-size:32px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
@@ -655,9 +711,12 @@ html.save-data .hero{animation:none!important}
 <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg><span class="k">WhatsApp</span><a href="https://wa.me/5493436109949?text=Hola!%20Quiero%20consultar%20por%20las%20unidades%20disponibles." target="_blank" rel="noopener noreferrer">3436 10-9949</a><small>Escribinos</small></li>
 <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg><span class="k">Horario</span><b data-estado>L-V 8:30–12:30 y 15:30–19:30 · S 8:30–13:00</b><small>Hora de Argentina</small></li>
 </ul></div></div>
-<section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
-<p class="ey reveal">Unidades</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2>
-<p class="sec-p">Usados publicados para María Grande.</p>
+<section id="unidades" class="inventory-section" aria-labelledby="unidades-t"><div class="w wide">
+<div class="inventory-head">
+<div class="inventory-title"><p class="ey reveal">Catálogo seleccionado · María Grande</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2><p class="sec-p">Usados multimarca publicados para María Grande, con financiación y la posibilidad de tomar tu usado como parte de pago.</p></div>
+<div class="inventory-meta" aria-label="Resumen del catálogo"><span class="inventory-meta-kicker">Horizonte Automotores</span><strong>05</strong><span>unidades publicadas</span><i aria-hidden="true"></i></div>
+</div>
+<div class="inventory-rule" aria-hidden="true"><span></span><small>María Grande · Entre Ríos</small><span></span></div>
 <div class="fx" id="tools" hidden></div>
 <p id="sinres" class="vacio" hidden>Ninguna unidad coincide con los filtros. Sacá alguno o limpiá todos para ver las 5 unidades.</p><ul class="cars" id="cars">
 <li class="car reveal" style="--reveal-delay:0ms" data-t="chevrolet cruze 1.4 ltz 4p chevrolet cruze ltz 4p 1.4 blanco 2018" data-i="0">

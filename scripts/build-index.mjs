@@ -270,9 +270,12 @@ const index = page({
 </div>
 </div>
 ${bar}
-<section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
-<p class="ey reveal">Unidades</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2>
-<p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
+<section id="unidades" class="inventory-section" aria-labelledby="unidades-t"><div class="w wide">
+<div class="inventory-head">
+<div class="inventory-title"><p class="ey reveal">Catálogo seleccionado · ${esc(L.city)}</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2><p class="sec-p">Usados multimarca publicados para María Grande, con financiación y la posibilidad de tomar tu usado como parte de pago.</p></div>
+<div class="inventory-meta" aria-label="Resumen del catálogo"><span class="inventory-meta-kicker">Horizonte Automotores</span><strong>${String(autos.length).padStart(2, '0')}</strong><span>unidades publicadas</span><i aria-hidden="true"></i></div>
+</div>
+<div class="inventory-rule" aria-hidden="true"><span></span><small>María Grande · Entre Ríos</small><span></span></div>
 ${unidades}
 </div></section>
 
