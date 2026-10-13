@@ -74,7 +74,7 @@ const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><img class="lg-img" src="images/logo.png" width="900" height="360" alt="${esc(NAME)}"></a>
-<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a><a href="${pre}#tu-usado">Tu usado</a><a href="${pre}#busqueda">Tu búsqueda</a><a href="${pre}#visita">Visita</a></nav>
+<nav class="site-nav" id="site-nav" aria-label="Principal"><a href="${pre}#unidades">Unidades</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a><a href="${pre}#tu-usado">Tu usado</a><a href="${pre}#busqueda">Tu búsqueda</a><a href="${pre}#visita">Visita</a></nav>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span class="menu-icon" aria-hidden="true"></span><span>Menú</span></button>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA_CORTA)}</span></p>` : ''}`;
@@ -182,19 +182,6 @@ const openSpec = semana.flatMap((g) => g.rangos.map((r) => ({ '@type': 'OpeningH
 
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
 const COORD = L.coordenadas;
-const pasoFin = hasSvc('permuta') ? 'Consultá la financiación para la unidad que elijas y, si querés, entregá tu usado como parte de pago.' : 'Consultá la financiación para la unidad que elijas.';
-const secComo = `
-<section id="como-comprar" aria-labelledby="como-t"><div class="w">
-<p class="ey">Cómo comprar</p><h2 id="como-t">Del primer mensaje a tu <em>visita</em></h2>
-<p class="sec-p">Un camino simple para llegar a la unidad que te interesa.</p>
-<ol class="ruta">
-<li style="--ph:.3"><i class="sol" aria-hidden="true"><s></s></i><h3>Elegí</h3><p>Filtrá las unidades publicadas y mirá año, kilómetros y el precio con su fecha de relevamiento.${autos.length > 1 ? ' Podés compararlas de a cuatro con el botón Comparar de cada ficha.' : ''}</p></li>
-<li style="--ph:.55"><i class="sol" aria-hidden="true"><s></s></i><h3>Consultá</h3><p>Armá el mensaje con la unidad que te interesa. Precio y disponibilidad pueden haber cambiado desde el relevamiento: consultalos antes de ir.</p></li>
-<li style="--ph:.8"><i class="sol" aria-hidden="true"><s></s></i><h3>Visitá</h3><p>Agendá una visita a ${esc(L.address)}, ${esc(L.city)}.</p><a class="btn sm" href="reserva.html">Agendar visita y prueba de manejo</a></li>
-<li style="--ph:1"><i class="sol" aria-hidden="true"><s></s></i><h3>Financiá</h3><p>${pasoFin}</p></li>
-</ol>
-</div></section>`;
-
 const secUsado = hasSvc('permuta') ? `
 <section id="tu-usado" aria-labelledby="usado-t"><div class="w">
 <p class="ey">Tu usado</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
@@ -243,18 +230,9 @@ const secGuia = `
 const secVisita = `
 <section id="visita" aria-labelledby="vis-t"><div class="w">
 <p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
-<p class="sec-p">En la página de reserva elegís un día y una franja y se arma la consulta para enviarla a la agencia. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
-${H.display ? `<p class="estado" data-estado hidden></p><p class="src">Horario: ${esc(H.display)}.</p>` : ''}
-<div class="visit-card glass reveal"><p class="visit-card-kicker">Consulta personalizada</p><h3>Agendá una visita y prueba de manejo</h3><p>Elegí un día y una franja para armar tu consulta. No es un turno: el día y la hora se acuerdan con la agencia.</p><div class="row"><a class="btn p" href="reserva.html">Agendar visita y prueba de manejo</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
+<div class="visit-card glass reveal"><p class="visit-card-kicker">Antes de venir</p><h3>Elegí día y franja</h3><p>Armá la consulta en la página de reserva. No es un turno: la agencia confirma el día y el horario.</p>
+${H.display ? `<p class="src">Horario: ${esc(H.display)}.</p>` : ''}<div class="row"><a class="btn p" href="reserva.html">Reservar visita</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
 </div></section>`;
-
-const secQuick = `
-<section class="quick-proof" id="resumen" aria-labelledby="resumen-t"><div class="w">
-<div class="quick-intro"><p class="ey">En pocas palabras</p><h2 id="resumen-t">Comprar mejor empieza por <em>mirar claro</em></h2><p>Un catálogo acotado, información visible y contacto directo para decidir sin vueltas.</p></div>
-<div class="quick-grid">
-<a class="quick-card" href="#unidades"><span class="quick-number">0${autos.length}</span><span><b>unidades publicadas</b><small>Con año, kilometraje y precio relevado.</small></span><i aria-hidden="true">↗</i></a>
-<a class="quick-card" href="#como-comprar"><span class="quick-number">04</span><span><b>pasos simples</b><small>Elegí, consultá, visitá y financiá.</small></span><i aria-hidden="true">↗</i></a>
-</div></div></section>`;
 const mapa = COORD ? `
 <div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
@@ -288,13 +266,11 @@ const index = page({
 </div>
 </div>
 ${bar}
-${secQuick}
 <section id="unidades" aria-labelledby="unidades-t"><div class="w wide">
 <p class="ey reveal">Unidades</p><h2 id="unidades-t" class="reveal">Nuestras <em>unidades</em></h2>
 <p class="sec-p">Usados publicados para ${esc(L.city)}.</p>
 ${unidades}
 </div></section>
-${secComo}
 
 <section class="lt" id="financiacion" aria-labelledby="fin-t"><div class="w">
 <p class="ey">Financiación y servicios</p><h2 id="fin-t">Financiá tu <em>próximo vehículo</em></h2>
@@ -308,7 +284,6 @@ ${secUsado}
 ${secBusqueda}
 ${secGuia}
 ${secPreguntas}
-${secVisita}
 
 <section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
@@ -324,6 +299,7 @@ ${secVisita}
 ${mapa}
 ${grupo}
 </div></section>
+${secVisita}
 </main>
 ${footer(true)}
 ${C.whatsApp ? `<nav class="cta-bar" aria-label="Acciones rápidas"><a href="${WA}" ${EXT}>Consultar</a><a href="reserva.html">Agendar visita</a></nav>` : `<nav class="cta-bar" aria-label="Acciones rápidas"><a href="${FB}" ${EXT}>Consultar</a><a href="reserva.html">Agendar visita</a></nav>`}

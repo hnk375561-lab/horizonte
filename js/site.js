@@ -6,7 +6,7 @@
   /* Entrada editorial: reveal progresivo sin bloquear el contenido. */
   if ('IntersectionObserver' in window && !saveData && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     var revealObserver = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.15 });
-    document.querySelectorAll('section h2, .car, .card, .quick-card, .ct-c, .visit-card, .reveal').forEach(function (node, index) {
+    document.querySelectorAll('section h2, .car, .card, .ct-c, .visit-card, .reveal').forEach(function (node, index) {
       node.classList.add('reveal');
       node.style.transitionDelay = (Math.min(index % 6, 5) * 60) + 'ms';
       revealObserver.observe(node);
