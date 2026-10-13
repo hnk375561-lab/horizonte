@@ -4,16 +4,16 @@
     {
       "id": "P1",
       "tema": "Teléfono y WhatsApp oficiales",
-      "bloqueante": true,
-      "estado": "abierto",
-      "como": "Teléfono: 343 461-8388 publicado el 12/10/2026 por coincidencia de la ficha de Google, el video del grupo, grupoalmafuerte.com y directorios (falta que el dueño lo confirme). WhatsApp: sin publicar; el video del grupo da 342-6108942 (característica de Santa Fe, repetida como teléfono de la Sucursal Santa Fe) y el sitio del grupo 3436 10-9949. Preguntar al dueño cuál atiende María Grande; cargar whatsApp (549…) y confirmadoPorDueno=true; npm run build."
+      "bloqueante": false,
+      "estado": "resuelto",
+      "como": "Resuelto el 12/10/2026 por el responsable del proyecto: teléfono 343 461-8388 y WhatsApp 3436 10-9949 (chequeado como funcional). Cada número del Grupo se muestra en su sucursal (video «Teléfonos & sucursales»). Los demás candidatos no se publican. Falta, antes de producción, que el dueño del negocio ratifique estos datos."
     },
     {
       "id": "P2",
       "tema": "Horario de atención",
       "bloqueante": false,
-      "estado": "abierto",
-      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display. V2 suma GTM: L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30. V4 repite las dos versiones de directorios (L-V 9:30–18:00 frente al horario partido de GTM); sigue sin fuente primaria. 12/10/2026: la ficha de Google Maps coincide con GTM (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30, domingo cerrado) y difiere del sitio del grupo. Está registrado en hours.googleMaps; para publicarlo, cargar hours.display."
+      "estado": "resuelto",
+      "como": "Resuelto el 12/10/2026: vale el horario del sitio del Grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00); domingo cerrado según Google Maps. Cargado en hours.semana; el sitio muestra la tabla y «Abierto ahora»."
     },
     {
       "id": "P3",
@@ -41,7 +41,7 @@
       "tema": "Correo institucional",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Definir un correo comercial. No usar la casilla hotmail de Facebook."
+      "como": "Se publica el correo de la ficha de Facebook (snicolas540@hotmail.com) por pedido expreso del responsable del proyecto (12/10/2026). Es una casilla de aspecto personal: reemplazarla por un correo comercial cuando exista."
     },
     {
       "id": "P7",
@@ -69,7 +69,7 @@
       "tema": "Reseñas y valoración",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman. V4: las 15 opiniones de Cylex se declaran de una sola fuente; no promediar con Yably ni GTM sin revisar las reseñas originales. 12/10/2026: la ficha de Google Maps (Av. Argentina 2021) corresponde a la agencia actual; el sitio enlaza a sus reseñas sin publicar puntaje. Falta leer el puntaje real y pedir permiso para citar comentarios."
+      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman. V4: las 15 opiniones de Cylex se declaran de una sola fuente; no promediar con Yably ni GTM sin revisar las reseñas originales. 12/10/2026: la ficha de Google Maps (Av. Argentina 2021) corresponde a la agencia actual; el sitio enlaza a sus reseñas sin publicar puntaje. Falta leer el puntaje real y pedir permiso para citar comentarios. 12/10/2026: el responsable confirmó que el enlace a Google es el correcto; el sitio solo enlaza."
     },
     {
       "id": "P11",
@@ -117,8 +117,8 @@
       "id": "P17",
       "tema": "Domicilio alternativo Av. Argentina 536",
       "bloqueante": false,
-      "estado": "abierto",
-      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021. La V3 confirma que el 536 aparece en Entre Ríos Total (dos categorías del mismo sitio), TodosNegocios y Guía Clarín, y que la ficha de TodosNegocios del 536 trae un encabezado de Santiago del Estero. Sigue sin cronología. V4: no encontró cronología. No escribir «se mudó» ni «tiene dos sucursales»; WorldOrgs y el encabezado de Santiago del Estero de TodosNegocios no sirven para ubicarlo. Capturas 12/10/2026: la ficha del 536 (tel. 0343 494-1092) trae el encabezado de Santiago del Estero; Google y Facebook usan solo el 2021."
+      "estado": "resuelto",
+      "como": "Resuelto el 12/10/2026: el 536 era el domicilio anterior (confirmado por el responsable). El sitio muestra «Antes: Av. Argentina 536» junto a la dirección actual (2021). No escribir «se mudó» ni «tiene dos sucursales»."
     },
     {
       "id": "P18",
@@ -132,7 +132,7 @@
       "tema": "Coordenadas del mapa",
       "bloqueante": false,
       "estado": "resuelto",
-      "como": "Resuelto el 12/10/2026: el mapa usa -31.6579811, -59.9246037 de la ficha de Google Maps. Si el dueño corrige el punto, actualizar location.coordenadas."
+      "como": "Resuelto el 12/10/2026: el mapa usa -31.6579811, -59.9246037 de la ficha de Google Maps. Si el dueño corrige el punto, actualizar location.coordenadas. Chequeado por el responsable del proyecto el 12/10/2026."
     },
     {
       "id": "P20",

@@ -21,22 +21,26 @@ Estado al 12/10/2026 (incluye la investigación V2 y el expediente OSINT textual
 | «Contanos qué auto buscás» (formulario que arma un mensaje) | Sin dato del negocio | No confirma disponibilidad ni precios |
 | Guía «Antes de comprar un usado» | Información general, octubre de 2026 | No es condición del negocio; revisión profesional pendiente (P18) |
 | Mapa de Contacto (OpenStreetMap) y «Abrir en Google Maps» | Coordenadas -31.6579811, -59.9246037 y enlace de la ficha de Google Maps (12/10/2026) | Punto de la ficha de Google (P19, resuelto) |
-| Teléfono 343 461-8388 (botón «Llamar») | Ficha de Google Maps; video del Grupo Automóviles Almafuerte; grupoalmafuerte.com/nosotros; directorios | Coincidencia de 4 fuentes; falta confirmación del dueño (P1) |
+| Teléfono 343 461-8388 (botón «Llamar») | Ficha de Google Maps; video del Grupo; grupoalmafuerte.com/nosotros; directorios | Resuelto por el responsable del proyecto (12/10/2026); falta ratificación del dueño (P1) |
+| WhatsApp 3436 10-9949 | grupoalmafuerte.com (Nosotros y Contacto) | Chequeado como funcional por el responsable (12/10/2026) |
+| Correo snicolas540@hotmail.com | Ficha de Facebook | Publicado por pedido expreso del responsable; casilla de aspecto personal (P6) |
+| Horario: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; domingo cerrado | Sitio del Grupo (Nosotros y Contacto); domingo: Google Maps | Elegido por el responsable (P2, resuelto); «Abierto ahora» se calcula en el navegador con hora de Argentina |
+| «Antes: Av. Argentina 536» | Directorios antiguos; confirmación del responsable | Domicilio anterior (P17, resuelto) |
+| Sucursales del Grupo con su teléfono y WhatsApp | Video «Teléfonos & sucursales» del Grupo | Cada número en su sucursal; Horizonte usa los de arriba |
+| Preguntas frecuentes y glosario del comprador | Servicios atribuidos al Grupo (permuta, tasación, garantía, BNA) e información general de octubre de 2026 | Revisión profesional pendiente (P18) |
+| Cifras de «Nosotros»: 10 años (Facebook), unidades publicadas, puntos de atención del Grupo | Facebook; data/vehicles.json; video del Grupo | La cifra de años es una frase de la agencia (P9) |
 | Enlace «Ver reseñas en Google» (sin puntaje ni comentarios) | Ficha de Google Maps de Horizonte Automotores, Av. Argentina 2021 | Solo enlace (P10) |
 | Enlaces a Facebook (`horizonteautos`), Instagram (`horizonte_automotores`) y grupoalmafuerte.com | Perfiles y sitio propios | Verificado |
 
 ## No publicado (a propósito)
 | Dato | Motivo |
 |---|---|
-| WhatsApp | Sin resolver: el video del grupo da 342-6108942 (número de Santa Fe, repetido como teléfono de esa sucursal) y el sitio del grupo 3436 10-9949; el resto de los números candidatos tampoco está confirmado (P1) |
-| Horario | Cuatro versiones: ficha de Google y GTM (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30, domingo cerrado); versión oficial del grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00) frente a la de directorios (L-V 9:30–18:00, S 8:30–12:30) y la de GTM (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30); falta confirmación del operador (P2) |
-| Correo | Solo hay una casilla personal en Facebook (P6) |
+| Teléfonos 343 494-7176 (Facebook), 343 494-1092 (ficha del 536), 343 405-0787 (CCA), 3434 62-2671, 341 210-2911 y WhatsApp 342 610-8942 como contacto de Horizonte | Indicación del responsable (12/10/2026): quedan sin publicar. 342 610-8942 solo aparece como teléfono de la Sucursal Santa Fe |
 | Peugeot 1.6 Feline, Volkswagen Camión 17.220, Renault Sandero 2024 | Contradicciones en sus fichas; están en `data/autos-en-revision.json` (P5) |
 | Gama GWM 0 km y test drive | Se atienden en Paraná y Santa Fe, no en María Grande (P16) |
 | Motos, consignación, gestoría, entrega inmediata, reserva online | Solo en directorios o sin fuente (P8) |
 | Pertenencia a la CCA Entre Ríos | Figura en su listado de agencias, falta confirmar vigencia (P14) |
 | Puntaje y reseñas | Cifras sin origen claro (Yably 4,20/5 con 17; Cylex 4,1/5 con 15; GTM 8,4 con 27), probable fuente compartida, y posible ficha del nombre histórico (P10) |
-| Domicilio Av. Argentina 536 | Aparece en Entre Ríos Total, Guía Clarín y TodosNegocios; las verificaciones leen distinto la localidad en Entre Ríos Total. Se usa solo 2021 (P17) |
 | Tasas y plazos de +Autos con BNA | Son del programa (nota del 09/07/2026), no una oferta de la agencia |
 | Historia institucional del grupo («más de 40 años», «seis décadas») | Cifras inconsistentes en su propia web |
 | Fotos y logotipo | Sin autorización (P3, P4) |

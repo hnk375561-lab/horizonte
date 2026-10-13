@@ -4,8 +4,8 @@ Página independiente: [`/reserva.html`](../reserva.html), generada por `scripts
 
 ## Cómo funciona el envío
 - Si en `data/dealership.json` → `contact` hay `whatsApp` y `confirmadoPorDueno: true`, el botón abre WhatsApp con el mensaje armado. El número viaja en el atributo `data-wa` del botón: no está escrito en `js/reserva.js`.
-- Si no (hoy), el botón **copia el mensaje** para pegarlo en Facebook o Instagram.
-- No se asumen días ni horarios de atención: el horario no está confirmado (P2).
+- Si no, el botón **copia el mensaje** para pegarlo en Facebook o Instagram.
+- Desde el 12/10/2026 el calendario respeta `hours.semana` de `data/dealership.json`: los días sin atención (domingo) quedan deshabilitados y los sábados solo ofrecen la franja de mañana. Se leen de `data-closed` y `data-morning-only` del `<main>`.
 
 ## Configuración
 `CONFIG` al inicio de `js/reserva.js`: franjas del día y texto de aviso.

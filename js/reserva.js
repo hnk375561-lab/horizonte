@@ -7,6 +7,9 @@ const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 const state = { month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), day: null, slot: null, step: "month", control: null };
 const live = $("#live");
+const bookData = $("#booking")?.dataset || {};
+const listDays = (v) => (v || "").split(",").filter(Boolean).map(Number);
+const closedDays = listDays(bookData.closed), morningOnly = listDays(bookData.morningOnly);
 const startOfToday = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
 const announce = (text) => { if (live) live.textContent = text; };
 const monthTitle = (date) => `${months[date.getMonth()]} ${date.getFullYear()}`;
@@ -18,9 +21,9 @@ function renderCalendar() {
   const calendar = $("#calendar"); if (!calendar) return; calendar.textContent = ""; $("#month-label").textContent = monthTitle(state.month); $("#month-status").textContent = CONFIG.slotsNote;
   for (let i = 0; i < firstDay(state.month); i += 1) { const empty = document.createElement("span"); empty.className = "day-cell day-cell--empty"; empty.setAttribute("aria-hidden", "true"); calendar.appendChild(empty); }
   for (let day = 1; day <= daysInMonth(state.month); day += 1) {
-    const date = new Date(state.month.getFullYear(), state.month.getMonth(), day), enabled = date >= startOfToday(), button = document.createElement("button");
+    const date = new Date(state.month.getFullYear(), state.month.getMonth(), day), enabled = date >= startOfToday() && !closedDays.includes(date.getDay()), button = document.createElement("button");
     button.className = "day-cell"; button.type = "button"; button.dataset.day = day; button.disabled = !enabled; button.setAttribute("aria-disabled", String(!enabled)); button.setAttribute("aria-pressed", String(state.day?.getTime() === date.getTime())); if (state.day?.getTime() === date.getTime()) button.setAttribute("aria-current", "true");
-    button.innerHTML = `<span>${String(day).padStart(2, "0")}</span><small>${date.getTime() === startOfToday().getTime() ? "hoy" : ""}</small>`; calendar.appendChild(button);
+    button.innerHTML = `<span>${String(day).padStart(2, "0")}</span><small>${closedDays.includes(date.getDay()) ? "cerrado" : date.getTime() === startOfToday().getTime() ? "hoy" : ""}</small>`; calendar.appendChild(button);
   }
 }
 
@@ -37,7 +40,7 @@ function animateScene(show) {
   state.control = tl;
 }
 function selectDay(day) { const date = new Date(state.month.getFullYear(), state.month.getMonth(), day); if (date < startOfToday()) return; state.day = date; state.slot = null; $("#day-number").textContent = String(day).padStart(2, "0"); $("#day-month").textContent = `${months[date.getMonth()]} ${date.getFullYear()}`; $("#day-weekday").textContent = date.toLocaleDateString("es-AR", { weekday: "long" }); $("#day-status").textContent = formatDate(date); $("#to-time").disabled = false; renderCalendar(); announce(`Día seleccionado: ${formatDate(date)}`); animateScene("day"); }
-function renderSlots() { const box = $("#slots"); box.textContent = ""; CONFIG.slots.forEach((slot) => { const button = document.createElement("button"); button.type = "button"; button.className = "slot"; button.dataset.slot = slot; button.setAttribute("role", "option"); button.setAttribute("aria-selected", String(state.slot === slot)); button.innerHTML = `<b>${slot}</b><small>a coordinar</small>`; box.appendChild(button); }); }
+function renderSlots() { const box = $("#slots"); box.textContent = ""; (state.day && morningOnly.includes(state.day.getDay()) ? CONFIG.slots.slice(0, 1) : CONFIG.slots).forEach((slot) => { const button = document.createElement("button"); button.type = "button"; button.className = "slot"; button.dataset.slot = slot; button.setAttribute("role", "option"); button.setAttribute("aria-selected", String(state.slot === slot)); button.innerHTML = `<b>${slot}</b><small>a coordinar</small>`; box.appendChild(button); }); }
 function selectSlot(slot) { state.slot = slot; $$(".slot").forEach((button) => button.setAttribute("aria-selected", String(button.dataset.slot === slot))); $("#time-status").textContent = slot; $("#to-confirm").disabled = false; announce(`Franja seleccionada: ${slot}`); }
 function waNumber() { const b = $("#whatsapp"); return b ? (b.dataset.wa || "") : ""; }
 function sendState(sent) { const el = $("#send-state"); if (!el) return; const wa = waNumber(); el.dataset.state = sent ? "pending" : "ready"; el.textContent = sent ? (wa ? "Consulta abierta en WhatsApp · la respuesta llega por ahí" : "Mensaje copiado · pegalo en Facebook o Instagram") : (wa ? "Listo para enviar · lo mandás vos por WhatsApp" : "Listo para copiar · lo mandás vos por Facebook o Instagram"); }

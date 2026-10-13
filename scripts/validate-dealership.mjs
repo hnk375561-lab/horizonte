@@ -77,8 +77,12 @@ if (d && a) {
     const page = digits(visible + pages.map((p) => html[p].match(/href="[^"]*"/g)?.join('') ?? '').join(''));
     for (const k of c.conflicto?.candidatos ?? []) if (page.includes(digits(k.numero))) err(`El número ${k.numero} aparece en el sitio sin confirmación`);
   }
-  if (c.email) err('contact.email debe ser null hasta definir un correo institucional');
-  if (/@hotmail|@gmail|@yahoo/i.test(visible)) err('hay un correo personal publicado');
+  if (c.email && !c.confirmadoPorDueno) err('contact.email está cargado pero confirmadoPorDueno es false');
+  if (c.email && !idx.includes(`mailto:${c.email}`)) err('index.html: el correo no coincide con dealership.json');
+  for (const m of visible.matchAll(/[\w.+-]+@[\w.-]+\.\w+/g)) if (m[0].toLowerCase() !== (c.email || '').toLowerCase()) err(`hay un correo publicado que no está en dealership.json: ${m[0]}`);
+  if (d.location.direccionAnterior && !idx.includes(d.location.direccionAnterior)) err('index.html: falta la dirección anterior');
+  if (d.hours.display && !idx.includes('data-semana')) err('index.html: falta la tabla de horarios');
+  for (const x of d.identity.grupoSucursales ?? []) if (x.telTel && !idx.includes(`tel:${x.telTel}`)) err(`index.html: falta el teléfono de ${x.nombre}`);
 
   // --- afirmaciones sin fuente ---
   // Cada servicio solo puede aparecer si tiene su `clave` en services.published (con fuente citada).

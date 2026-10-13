@@ -27,3 +27,8 @@ Regla de contraste: el amarillo es relleno o texto sobre negro; sobre fondo clar
 - Páginas del inicio, privacidad y 404: `scripts/estilos.css` y marcado en `scripts/build-index.mjs` (luego `npm run build`).
 - Reserva: `css/reserva.css` (y paleta heredada en `css/motion.css`).
 - Mapa: color del marcador en `js/mapa.js`. Color de tema y manifest: `scripts/build-index.mjs`.
+
+## Identidad v2 (12/10/2026)
+Paleta tomada del logotipo (solo colores, no la imagen): tinta `#0a1012`, sol `#f2d21b`, hueso `#f8f8f8`. Tonos derivados: `#ffe14d` (sol claro, hover), `#fff3a1` (sol pálido), `#6e5d00` (sol oscuro para texto sobre claro), `#243138` (líneas sobre tinta).
+
+Recursos: el sol sobre la línea del horizonte aparece en el logo de cabecera y pie, debajo de cada `h2` y en la página 404; la banda amarilla se usa en la barra de datos y en «Cómo comprar»; las cifras de «Nosotros» son bloques de tinta con base amarilla. Todo sale de `scripts/estilos.css` (bloque «Identidad v2»).

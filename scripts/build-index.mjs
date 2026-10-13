@@ -61,13 +61,17 @@ ${body}
 `;
 }
 
-const footer = (fuentes) => `<footer><div class="w"><p>© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, ${esc(BNAFECHA)})</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
+const footer = (fuentes) => `<footer><div class="w">
+<div class="ft"><div class="ft-m"><span class="sun" aria-hidden="true"></span><p class="ft-b">${esc(NAME)}</p><p>${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}</p><p class="ft-a">Antes: ${esc(L.direccionAnterior)}</p></div>
+<div><p class="ft-k">Contacto</p>${C.phoneTel ? `<p><a href="tel:${C.phoneTel}">${esc(C.phone)}</a></p>` : ''}${C.whatsApp ? `<p><a href="${WA}" ${EXT}>WhatsApp ${esc(C.whatsAppDisplay)}</a></p>` : ''}${C.email ? `<p><a href="mailto:${esc(C.email)}">${esc(C.email)}</a></p>` : ''}</div>
+<div><p class="ft-k">Redes</p><p><a href="${FB}" ${EXT}>Facebook</a></p><p><a href="${IG}" ${EXT}>Instagram</a></p><p><a href="${GWEB}" ${EXT}>${esc(GNAME)}</a></p></div></div>
+<p class="ft-c">© 2026 ${esc(NAME)}</p>${demo ? `<p>${esc(LEYENDA)}</p><p class="demo-note" data-demo-note>Versión de demostración · No es el sitio oficial · Datos pendientes de confirmación</p>` : ''}${fuentes ? `<p>Fuentes: <a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram</a> · <a href="${GWEB}" ${EXT}>${esc(GNAME)}</a> · <a href="${BNA}" ${EXT}>Listado de concesionarias de Créditos Más Autos (Banco Nación, ${esc(BNAFECHA)})</a></p>` : ''}<p><a href="privacidad.html">Privacidad y avisos</a></p></div></footer>`;
 
 const autos = A.autos;
 const ctaHead = WA ? { href: WA, t: 'WhatsApp' } : { href: FB, t: 'Facebook' };
 const header = (pre = '', skip = '#unidades') => `<a class="skip" href="${skip}">Saltar al contenido</a>
 <header><div class="w"><a class="mark" href="./" aria-label="${esc(NAME)}, inicio"><span class="sun" aria-hidden="true"></span><span class="mk"><b>Horizonte</b><small>Automotores</small></span></a>
-<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a>${autos.length > 1 ? `<a href="${pre}#comparador">Comparar</a>` : ''}<a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
+<nav aria-label="Principal"><a href="${pre}#unidades">Unidades</a>${autos.length > 1 ? `<a href="${pre}#comparador">Comparar</a>` : ''}<a href="${pre}#como-comprar">Cómo comprar</a><a href="${pre}#financiacion">Financiación</a><a href="${pre}#guia">Guía</a><a href="${pre}#preguntas">Preguntas</a><a href="${pre}#nosotros">Nosotros</a><a href="${pre}#contacto">Contacto</a></nav>
 <div class="hc"><a class="btn p sm" href="${ctaHead.href}" ${EXT}>${ctaHead.t}</a></div></div></header>
 ${demo ? `<p class="demo"><span>${esc(LEYENDA)}</span></p>` : ''}`;
 
@@ -84,16 +88,72 @@ const unidades = autos.length
   : `<div class="vacio"><p>Las unidades disponibles se publican con fotos en nuestra página de Facebook y en Instagram. Escribinos y te contamos disponibilidad y precio.</p><div class="row"><a class="btn p" href="${FB}" ${EXT}>Ver unidades en Facebook</a><a class="btn" href="${IG}" ${EXT}>Ver Instagram</a></div></div>`;
 
 // ---- contacto ----
+const H = D.hours;
+const fh = (t) => t.replace(/^0/, '');
+const rng = (r) => r.map((x) => `${fh(x[0])} a ${fh(x[1])}`).join(' y ');
+const hrsRows = H.display ? H.semana.map((g) => `<tr data-dias="${g.dias.join(',')}"><th scope="row">${esc(g.etiqueta)}</th><td>${rng(g.rangos)} h</td></tr>`).join('') + (H.domingo ? `<tr data-dias="0"><th scope="row">Domingos</th><td>${esc(H.domingo)}</td></tr>` : '') : '';
+const estadoP = H.display ? `<p class="estado" data-estado data-semana="${esc(JSON.stringify(H.semana))}" hidden></p>` : '';
+const hrsTable = H.display ? `${estadoP}<table class="hrs"><caption class="sr">Horario de atención</caption><tbody>${hrsRows}</tbody></table>` : '';
+const direccion = `${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}${L.direccionAnterior ? `<small class="ant">Antes: ${esc(L.direccionAnterior)}</small>` : ''}`;
 const dl = [
-  ['Dirección', `${esc(L.address)}, ${esc(L.city)}, ${esc(L.province)}`],
+  ['Dirección', direccion],
   ['Cómo llegar', `<a href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a>`],
   C.phone ? ['Teléfono', `<a href="tel:${C.phoneTel}">${esc(C.phone)}</a>`] : null,
-  C.whatsApp ? ['WhatsApp', `<a href="${WA}" ${EXT}>Escribinos</a>`] : null,
-  D.hours.display ? ['Horario', esc(D.hours.display)] : null,
+  C.whatsApp ? ['WhatsApp', `<a href="${WA}" ${EXT}>${esc(C.whatsAppDisplay)} · Escribinos</a>`] : null,
+  C.email ? ['Correo', `<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>`] : null,
+  H.display ? ['Horario', hrsTable] : null,
   D.reviews.googleUrl ? ['Reseñas', `<a href="${D.reviews.googleUrl}" ${EXT}>Ver reseñas en Google</a>`] : null,
   ['Redes', `<a href="${FB}" ${EXT}>Facebook</a> · <a href="${IG}" ${EXT}>Instagram @${esc(C.instagram)}</a>`],
   ['Grupo', `<a href="${GWEB}" ${EXT}>${esc(GNAME)} · Concesionario Usados ${esc(L.city)}</a>`],
 ].filter(Boolean);
+
+// ---- barra de datos, sucursales del grupo, preguntas ----
+const bar = `<div class="bar" role="region" aria-label="Datos rápidos"><div class="w"><ul>
+<li><span class="k">Dirección</span><b>${esc(L.address.replace('Avenida', 'Av.'))}</b><small>${esc(L.city)}${L.direccionAnterior ? ` · antes ${esc(L.direccionAnterior)}` : ''}</small></li>
+${C.phoneTel ? `<li><span class="k">Teléfono</span><a href="tel:${C.phoneTel}">${esc(C.phone)}</a><small>Llamanos</small></li>` : ''}
+${C.whatsApp ? `<li><span class="k">WhatsApp</span><a href="${WA}" ${EXT}>${esc(C.whatsAppDisplay)}</a><small>Escribinos</small></li>` : ''}
+${H.display ? `<li><span class="k">Horario</span><b data-estado>${esc(H.corto)}</b><small>${estadoP ? 'Hora de Argentina' : ''}</small></li>` : ''}
+</ul></div></div>`;
+
+const suc = (D.identity.grupoSucursales || []).filter((x) => !x.esta);
+const grupo = suc.length ? `
+<div class="grp"><h3>Sucursales del ${esc(GNAME)}</h3>
+<p class="sec-p">Cada número corresponde a su sucursal. Los publica el grupo en su material de contacto.</p>
+<ul class="grp-l">${suc.map((x) => `<li><b>${esc(x.nombre)}</b><span>${esc(x.direccion)}</span>${x.tel ? `<a href="tel:${x.telTel}">Tel. ${esc(x.tel)}</a>` : ''}${x.wa ? `<a href="https://wa.me/${x.waNum}" ${EXT}>WhatsApp ${esc(x.wa)}</a>` : ''}</li>`).join('')}</ul>
+<p class="src">Fuente: material de contacto del ${esc(GNAME)}.</p></div>` : '';
+
+const qa = (q, a) => `<details class="dd"><summary>${q}</summary><p>${a}</p></details>`;
+const faq = [
+  hasSvc('permuta') ? qa('¿Reciben mi usado como parte de pago?', `Según informa ${esc(GNAME)}, sí: se reciben vehículos usados como parte de pago. Armá el mensaje en la sección «Tu usado» y envialo a la agencia.`) : '',
+  hasSvc('tasacion') ? qa('¿La tasación tiene costo?', `Según informa ${esc(GNAME)} en su sitio, la tasación es sin cargo.`) : '',
+  hasSvc('garantia') ? qa('¿Los autos tienen garantía?', `Los usados pasan por revisión técnica y se entregan con garantía. Las condiciones dependen de cada vehículo: consultalas por la unidad que te interese.`) : '',
+  qa('¿Cómo financio?', `Ofrecemos financiación para autos y motos y figuramos en el listado de Créditos Más Autos del Banco de la Nación (${esc(BNAFECHA)}). Los montos y las condiciones dependen de la unidad y de cada solicitante.`),
+  qa('¿Los precios publicados son definitivos?', `No necesariamente. Cada tarjeta muestra el precio de la ficha pública en la fecha en que se relevó: consultalo antes de ir.`),
+  qa('¿Cómo coordino una visita?', `Entrá a <a href="reserva.html">Coordiná tu visita</a>, elegí un día y una franja y enviá la consulta. No es un turno: el día y la hora se acuerdan con la agencia.`),
+  H.display ? qa('¿Cuándo atienden?', `${esc(H.display)}. Los domingos: ${esc((H.domingo || '').toLowerCase())}.`) : '',
+].filter(Boolean).join('\n');
+const glos = [
+  ['Título del automotor', 'Documento del Registro del Automotor que acredita quién es el titular del vehículo.'],
+  ['Cédula de identificación', 'Documento que habilita a circular con el vehículo. La del titular es la «cédula verde».'],
+  ['Dominio', 'La patente: letras y números que identifican al vehículo.'],
+  ['Informe de dominio', 'Certificado del Registro con los datos del titular y las anotaciones del vehículo, por ejemplo prendas o embargos.'],
+  ['Libre deuda', 'Constancia de que no hay deuda de patentes o multas.'],
+  ['Verificación policial', 'Control físico que comprueba que los números de motor y chasis coinciden con los papeles.'],
+  ['Formulario 08', 'Formulario de transferencia que firman las partes cuando cambia el titular.'],
+  ['Parte de pago', 'Entregar tu usado como parte del precio de otra unidad.'],
+].map(([t, d]) => qa(t, d)).join('\n');
+const secPreguntas = `
+<section id="preguntas" aria-labelledby="preg-t"><div class="w">
+<p class="ey">Preguntas</p><h2 id="preg-t">Lo que <em>conviene saber</em></h2>
+<p class="sec-p">Respuestas cortas sobre cómo trabajamos y un glosario con las palabras que aparecen al comprar un usado. Información general de octubre de 2026: no es una condición ni una promesa de ${esc(NAME)}.</p>
+<div class="qa"><div><h3>Preguntas frecuentes</h3>${faq}</div><div><h3>Glosario del comprador</h3>${glos}</div></div>
+</div></section>`;
+const fab = C.whatsApp ? `<a class="fab" href="${WA}" ${EXT} aria-label="Escribir por WhatsApp"><span aria-hidden="true"></span>WhatsApp</a>` : '';
+const semana = H.semana || [];
+const closedDays = [0, 1, 2, 3, 4, 5, 6].filter((d) => !semana.some((g) => g.dias.includes(d)));
+const morningOnly = semana.filter((g) => g.rangos.length === 1).flatMap((g) => g.dias);
+const DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const openSpec = semana.flatMap((g) => g.rangos.map((r) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: g.dias.map((x) => DOW[x]), opens: r[0], closes: r[1] })));
 
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
 const COORD = L.coordenadas;
@@ -170,6 +230,7 @@ const secVisita = `
 <section id="visita" aria-labelledby="vis-t"><div class="w">
 <p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
 <p class="sec-p">Elegí un día y una franja y armá la consulta. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
+${H.display ? `<p class="estado" data-estado hidden></p><p class="src">Horario: ${esc(H.display)}.</p>` : ''}
 <div class="row"><a class="btn p" href="reserva.html">Coordiná tu visita</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div>
 </div></section>`;
 
@@ -185,23 +246,24 @@ const ld = {
   '@context': 'https://schema.org', '@type': 'AutoDealer', name: NAME,
   address: { '@type': 'PostalAddress', streetAddress: L.address, postalCode: L.postalCode, addressLocality: L.city, addressRegion: L.province, addressCountry: 'AR' },
   sameAs: [FB, IG],
-  ...(siteUrl ? { url: siteUrl } : {}), ...(C.phoneTel ? { telephone: C.phoneTel } : {}),
+  ...(siteUrl ? { url: siteUrl } : {}), ...(C.phoneTel ? { telephone: C.phoneTel } : {}), ...(C.email ? { email: C.email } : {}), ...(L.mapsUrl ? { hasMap: L.mapsUrl } : {}), ...(openSpec.length ? { openingHoursSpecification: openSpec } : {}),
 };
 
 const index = page({
   title: `${NAME} · Autos y motos en ${L.city}, ${L.province}`,
   desc: `${NAME} en ${L.city}, ${L.province}: autos y motos con financiación. Visitanos en ${L.address} o mirá las unidades en Facebook e Instagram.`,
   file: 'index.html',
-  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(ld)}</script>\n<script defer src="js/secciones.js"></script>\n<script defer src="js/mapa.js"></script>\n<script defer src="js/horarios.js"></script>\n`,
   body: `${header()}
 <main id="top">
 <div class="hero"><div class="hx-copy">
 <p class="ey">${esc(L.city)} · ${esc(L.province)}</p>
 <h1><span class="sr">${esc(NAME)}: </span>Autos y motos <em>en ${esc(L.city)}</em></h1>
 <p class="lead">Concesionario de ${esc(L.city)} del ${esc(GNAME)}. Usados multimarca, financiación y tu usado como parte de pago: mirá las unidades y visitanos en ${esc(L.address)}.</p>
-<div class="row"><a class="btn p" href="#unidades">Ver unidades</a><a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
-<div class="hx-card"><p class="k">Visitanos</p><p class="v">${esc(L.address)}<br>${esc(L.city)}, ${esc(L.province)}</p><a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div>
+<div class="row"><a class="btn p" href="#unidades">Ver unidades</a>${C.whatsApp ? `<a class="btn" href="${WA}" ${EXT}>Escribir por WhatsApp</a>` : ''}<a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a></div></div>
+<div class="hx-card"><p class="k">Visitanos</p><p class="v">${esc(L.address)}<br>${esc(L.city)}, ${esc(L.province)}</p>${L.direccionAnterior ? `<p class="ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}<a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div>
 </div>
+${bar}
 
 <section id="unidades" aria-labelledby="unidades-t"><div class="w">
 <p class="ey">Unidades</p><h2 id="unidades-t">Nuestras <em>unidades</em></h2>
@@ -221,11 +283,14 @@ ${secComo}
 ${secUsado}
 ${secBusqueda}
 ${secGuia}
+${secPreguntas}
 ${secVisita}
 
 <section id="nosotros" aria-labelledby="nos-t"><div class="w">
 <p class="ey">Nosotros</p><h2 id="nos-t">Quiénes <em>somos</em></h2>
 <p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}. ${esc(D.presentacion.antiguedad)}</p>
+<div class="stats"><div class="stat"><b>10</b><span>años de respaldo en el mercado regional, según su página de Facebook</span></div>${autos.length ? `<div class="stat"><b>${autos.length}</b><span>unidades publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></div>` : ''}<div class="stat"><b>${suc.length + 1}</b><span>puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></div></div>
+<div class="cards"><div class="card"><h3>Autos y motos</h3><p>Usados publicados para ${esc(L.city)} y financiación para llevarlos.</p></div>${hasSvc('permuta') ? `<div class="card"><h3>Tu usado cuenta</h3><p>Se reciben usados como parte de pago${hasSvc('tasacion') ? ' y la tasación es sin cargo' : ''}, según informa ${esc(GNAME)}.</p></div>` : ''}<div class="card"><h3>Respaldo del grupo</h3><p>Forma parte del ${esc(GNAME)}, con sucursales en Paraná y Santa Fe.</p></div></div>
 </div></section>
 
 <section id="contacto" class="ct" aria-labelledby="contacto-t"><div class="w">
@@ -233,9 +298,11 @@ ${secVisita}
 <div class="ct-g"><dl>${dl.map(([t, v]) => `<dt>${t}</dt><dd>${v}</dd>`).join('')}</dl>
 <div class="ct-c"><p class="ct-t">¿Buscás un auto o una moto?</p><p>Escribinos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p><div class="row"><a class="btn p" href="${ctaHead.href}" ${EXT}>${WA ? 'Escribir por WhatsApp' : 'Escribir por Facebook'}</a>${C.phoneTel ? `<a class="btn" href="tel:${C.phoneTel}">Llamar</a>` : ''}<a class="btn" href="${IG}" ${EXT}>Instagram</a></div></div></div>
 ${mapa}
+${grupo}
 </div></section>
 </main>
-${footer(true)}`,
+${footer(true)}
+${fab}`,
 });
 
 const privacidad = page({
@@ -286,7 +353,7 @@ ${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="css/reserva.css"><link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
-<main id="booking" data-step="month">
+<main id="booking" data-step="month" data-closed="${closedDays.join(',')}" data-morning-only="${morningOnly.join(',')}">
   <header class="booking-nav">
     <a class="brand" href="index.html" aria-label="Volver a ${esc(NAME)}">${esc(NAME)}</a>
     <p class="eyebrow">Coordiná tu visita <span aria-hidden="true">/</span> consulta</p>

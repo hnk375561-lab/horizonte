@@ -142,7 +142,7 @@
     {
       "id": "almafuerte-video",
       "url": null,
-      "aporta": "Video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte (capturas del 12/10/2026): Horizonte Automotores, Av. Argentina 2021, tel. 343-4618388, WhatsApp 342-6108942 (este último sin resolver, ver P1); publicación «Nueva sucursal» en Av. Almafuerte 1504, Paraná.",
+      "aporta": "Video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte (capturas del 12/10/2026): Horizonte Automotores, Av. Argentina 2021, tel. 343-4618388, WhatsApp 342-6108942 (este último sin resolver, ver P1); publicación «Nueva sucursal» en Av. Almafuerte 1504, Paraná. Se usan los teléfonos y WhatsApp de Casa central, Predio y Santa Fe en la sección Contacto; el WhatsApp 342-6108942 de Horizonte no se usa (el responsable indicó 3436 10-9949).",
       "confianza": "alta (material del grupo; sin URL, es una captura aportada por el responsable del proyecto)"
     },
     {
@@ -150,6 +150,12 @@
       "url": "https://ccaentrerios.org/agencias/",
       "aporta": "Captura 12/10/2026 de la fila «María Grande · Horizonte Automotores · Av Argentina 2021 · 343 4050787».",
       "confianza": "media (listado de agencias)"
+    },
+    {
+      "id": "responsable-2026-10-12",
+      "url": null,
+      "aporta": "Indicaciones del responsable del proyecto (12/10/2026): teléfono 343 461-8388; WhatsApp 3436 10-9949 chequeado; horario del sitio del Grupo; punto del mapa y enlace de reseñas correctos; correo de Facebook publicable; Av. Argentina 536 como domicilio anterior.",
+      "confianza": "alta (decisión del responsable; falta ratificación del dueño del negocio)"
     }
   ],
   "contradiccionesConLaInvestigacionOriginal": [
