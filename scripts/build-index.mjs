@@ -140,7 +140,7 @@ ${H.display ? `<li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" c
 const suc = (D.identity.grupoSucursales || []).filter((x) => !x.esta);
 const grupo = suc.length ? `
 <div class="grp"><h3>Sucursales del ${esc(GNAME)}</h3>
-<p class="sec-p">Cada número corresponde a su sucursal. Los publica el grupo en su material de contacto.</p>
+<p class="sec-p">Los números los publica el grupo en su material de contacto; algunas sucursales comparten el mismo WhatsApp.</p>
 <ul class="grp-l">${suc.map((x) => `<li><b>${esc(x.nombre)}</b><span>${esc(x.direccion)}</span>${x.tel ? `<a href="tel:${x.telTel}">Tel. ${esc(x.tel)}</a>` : ''}${x.wa ? `<a href="https://wa.me/${x.waNum}" ${EXT}>WhatsApp ${esc(x.wa)}</a>` : ''}</li>`).join('')}</ul>
 <p class="src">Fuente: material de contacto del ${esc(GNAME)}.</p></div>` : '';
 
@@ -251,7 +251,6 @@ const secQuick = `
 <div class="quick-grid">
 <a class="quick-card" href="#unidades"><span class="quick-number">0${autos.length}</span><span><b>unidades publicadas</b><small>Con año, kilometraje y precio relevado.</small></span><i aria-hidden="true">↗</i></a>
 <a class="quick-card" href="#como-comprar"><span class="quick-number">04</span><span><b>pasos simples</b><small>Elegí, consultá, visitá y financiá.</small></span><i aria-hidden="true">↗</i></a>
-<a class="quick-card" href="#contacto"><span class="quick-number">01</span><span><b>contacto directo</b><small>WhatsApp, teléfono y ubicación a mano.</small></span><i aria-hidden="true">↗</i></a>
 </div></div></section>`;
 const mapa = COORD ? `
 <div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
