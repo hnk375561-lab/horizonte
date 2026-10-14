@@ -905,7 +905,7 @@ function initInteractions({ desktop, fine }) {
     on(document, "toggle", (event) => {
       const details = event.target;
       if (!(details instanceof HTMLDetailsElement)) return;
-      if (details.open && !details.classList.contains("gd")) {
+      if (details.open) {
         const kids = [...details.children].filter((el) => el.tagName !== "SUMMARY");
         const items = kids.flatMap((el) => (el.matches("ul, ol") ? [...el.children] : [el]));
         gsap.fromTo(items, { opacity: 0, y: -14, x: -10 }, { opacity: 1, y: 0, x: 0, duration: 0.7, ease: EASE.soft, stagger: 0.045, clearProps: "opacity,transform" });
@@ -1057,6 +1057,7 @@ function initSceneChoreography({ desktop }) {
     });
     /* Guía: acordeones como hojas que se abren desde el centro, manteniendo lectura estable. */
     scene("guia", (s) => {
+      qsa("details", s).forEach((detail, i) => gsap.fromTo(detail, { x: (i % 2 ? 1 : -1) * 14 * k, scaleX: .97, transformOrigin: i % 2 ? "100% 50%" : "0 50%" }, { x: 0, scaleX: 1.01, ease: EASE.linear, scrollTrigger: scrubScene(s, "top 90%", "bottom 28%") }));
       const intro = qs(".xl", s); if (intro) gsap.fromTo(intro, { yPercent: 5 * k, scale: .97 }, { yPercent: -5 * k, scale: 1.02, ease: EASE.linear, scrollTrigger: scrubScene(s, "top bottom", "bottom top") });
     });
     /* Equipo: la foto es la profundidad; la lista sigue una diagonal suave. */

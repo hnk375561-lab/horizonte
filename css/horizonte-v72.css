@@ -35,3 +35,11 @@ html body .hz-v71 .hz-addr .btn{flex:1 1 auto}
 html.rs-open,html.rs-open body{overflow:hidden}
 @keyframes rsIn{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.rs-dlg[open]{animation:none}}
+
+/* Carrusel del hero: puntos */
+.hero-dots{position:absolute;right:clamp(18px,3vw,48px);bottom:clamp(20px,3vw,40px);z-index:5;display:flex;gap:10px}
+.hero-dots button{width:34px;height:6px;padding:0;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:background .3s,width .3s}
+.hero-dots button[aria-current="true"]{background:#f2d21b;width:52px}
+.hero-dots button:hover{background:#fff}
+.hero-dots button:focus-visible{outline:3px solid #f2d21b;outline-offset:3px}
+@media(max-width:700px){.hero-dots{right:18px;bottom:14px}.hero-dots button{width:24px}.hero-dots button[aria-current="true"]{width:38px}}

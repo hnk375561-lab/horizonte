@@ -23,16 +23,35 @@
       }, { passive: true });
     }
   }
-  /* Guía: acordeones. En celulares arranca plegada (salvo la primera tarjeta); botón para expandir o plegar todo. */
+  /* Guía: acordeones. Arranca plegada; botón para expandir o plegar todo. */
   (function () {
     var gds = Array.prototype.slice.call(document.querySelectorAll('details.gd')), all = document.querySelector('[data-guia-all]');
     if (!gds.length) return;
-    if (window.matchMedia && window.matchMedia('(max-width: 699px)').matches) gds.forEach(function (d, i) { if (i > 0) d.removeAttribute('open'); });
+    gds.forEach(function (d) { d.removeAttribute('open'); });
     if (!all) return;
     var sync = function () { all.textContent = gds.some(function (d) { return d.open; }) ? 'Plegar todo' : 'Expandir todo'; };
     all.hidden = false; sync();
     all.addEventListener('click', function () { var abrir = !gds.some(function (d) { return d.open; }); gds.forEach(function (d) { d.open = abrir; }); sync(); });
     gds.forEach(function (d) { d.addEventListener('toggle', sync); });
+  })();
+  /* Preguntas: pestañas «Preguntas frecuentes» / «Glosario» para que la sección ocupe una sola lista. Sin JavaScript se ven las dos. */
+  (function () {
+    var qa = document.querySelector('[data-qa]'); if (!qa) return;
+    var tabs = [].slice.call(qa.querySelectorAll('[role="tab"]')), bar = qa.querySelector('.qa-tabs');
+    if (tabs.length < 2 || !bar) return;
+    var pan = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    function ir(k, foco) {
+      tabs.forEach(function (t, j) { var on = j === k; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (pan[j]) pan[j].hidden = !on; });
+      if (foco) tabs[k].focus();
+    }
+    bar.hidden = false; qa.classList.add('js'); ir(0, false);
+    tabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { ir(k, false); });
+      t.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); ir((k + d + tabs.length) % tabs.length, true); }
+      });
+    });
   })();
   var toggle = document.querySelector('[data-menu-toggle]');
   var nav = document.querySelector('.site-nav');
