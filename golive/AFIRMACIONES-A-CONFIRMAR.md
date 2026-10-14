@@ -47,3 +47,6 @@ Estado al 12/10/2026 (incluye la investigación V2 y el expediente OSINT textual
 
 ## Stock de Instagram (relevado el 13/10/2026)
 - 10 unidades de las publicaciones «Nuevo ingreso» de https://www.instagram.com/horizonte_automotores/ (año, kilometraje cuando figura, caja, combustible, color). Fuente: capturas aportadas por el responsable del proyecto. Sin precio. Confirmar disponibilidad con el vendedor.
+
+## Cambio 14/10/2026 — Sucursal Santa Fe
+Se reemplazó la dirección «Urquiza 2809, Santa Fe» (hoy es otro comercio) por «San Martín 3540, Santa Fe», dirección vigente de la sucursal según la ficha de Google Maps (captura del responsable, 14/10/2026). Teléfono 343-4618387 y WhatsApp 342-4457595 tomados de la misma captura (ficha «Concesionario GWM Santa Fe» del grupo). Se mantiene el nombre «Sucursal Santa Fe» en el sitio (regla 11 de CLAUDE.md: GWM no se muestra como oferta). A confirmar con el dueño: que ambos números sean los vigentes (el prefijo 3434 del teléfono corresponde a Paraná). El horario de la ficha no se publica (sin confirmación).

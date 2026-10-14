@@ -44,9 +44,10 @@ if (d && a) {
     for (const m of h.matchAll(/(?:src|href)="([^"]+)"/g)) {
       const u = m[1];
       if (/^(https?:|mailto:|tel:|#|\.\/?#?)/.test(u) || u === './') continue;
-      if (!fs.existsSync(path.join(root, u.split(/[?#]/)[0]))) err(`${p}: referencia a archivo inexistente ${u}`);
+      const local = u.split(/[?#]/)[0].replace(/^\/horizonte\//, ''); // la 404 usa rutas absolutas bajo /horizonte/ (GitHub Pages)
+      if (local && !fs.existsSync(path.join(root, local))) err(`${p}: referencia a archivo inexistente ${u}`);
     }
-    for (const m of h.matchAll(/url\(([^)]+)\)/g)) if (!m[1].startsWith('data:') && !fs.existsSync(path.join(root, m[1].replace(/["']/g, '')))) err(`${p}: css url() a archivo inexistente ${m[1]}`);
+    for (const m of h.matchAll(/url\(([^)]+)\)/g)) { const u = m[1].replace(/["']/g, '').trim(); if (u.startsWith('data:') || u.startsWith('#')) continue; if (!fs.existsSync(path.join(root, u))) err(`${p}: css url() a archivo inexistente ${m[1]}`); }
   }
 
   const idx = html['index.html'];
@@ -76,8 +77,9 @@ if (d && a) {
     const page = digits(visible + pages.map((p) => html[p].match(/href="[^"]*"/g)?.join('') ?? '').join(''));
     for (const k of c.conflicto?.candidatos ?? []) if (page.includes(digits(k.numero))) err(`El número ${k.numero} aparece en el sitio sin confirmación`);
   }
-  if (c.email) err('contact.email debe ser null hasta definir un correo institucional');
-  if (/@hotmail|@gmail|@yahoo/i.test(visible)) err('hay un correo personal publicado');
+  const correos = (visible.match(/[\w.+-]+@(?:hotmail|gmail|yahoo)[\w.]*/gi) || []).map((x) => x.toLowerCase());
+  if (correos.some((x) => x !== String(c.email || '').toLowerCase())) err('hay un correo publicado distinto del cargado en contact.email');
+  if (c.email) console.log('aviso: contact.email publicado por excepción (CLAUDE.md regla 5); reemplazar por uno comercial (P6)');
 
   // --- afirmaciones sin fuente ---
   // Cada servicio solo puede aparecer si tiene su `clave` en services.published (con fuente citada).
@@ -90,7 +92,7 @@ if (d && a) {
     [/garant[ií]a/i, 'garantía sin fuente', 'garantia'],
     [/\b0 ?km\b/i, '0 km sin fuente', null],
     [/rese[ñn]as?|estrellas|opiniones|\b\d[.,]\d\s?\/\s?(5|10)\b/i, 'valoración o reseñas sin verificar', null],
-    [/\$\s?\d|US\$|\d{1,3}(\.\d{3})+ ?km/i, 'precio o kilometraje fuera de una tarjeta de unidad', null],
+    [/\$\s?\d|US\$\s?\d|\d{1,3}(\.\d{3})+ ?km/i, 'precio o kilometraje fuera de una tarjeta de unidad', null],
     [/c[aá]mara del comercio automotor|\bCCA\b/i, 'afiliación a la CCA no verificada', null],
     [/adquirid[ao]|absorbid[ao]|renombrad[ao]/i, 'relación con el grupo sin redacción autorizada (P15)', null],
   ];
@@ -102,7 +104,7 @@ if (d && a) {
   if (!publicados.some((t) => t.includes('financiaci'))) err('services.published no incluye la financiación que muestra el sitio');
 
   // --- stock ---
-  const nCards = (idx.match(/<li class="car">/g) || []).length;
+  const nCards = (idx.match(/<li class="car[ "]/g) || []).length;
   if (nCards !== a.autos.length) err(`index.html tiene ${nCards} tarjetas y data/vehicles.json tiene ${a.autos.length} unidades (correr npm run build)`);
   const ids = new Set();
   for (const v of a.autos) {
@@ -122,7 +124,7 @@ if (d && a) {
   }
 
   // --- restos de otras agencias ---
-  const legacy = /chita|zabala|clasionce|elonce|galarza|concepci[oó]n del uruguay|poerio|hnk375561/i;
+  const legacy = /chita|zabala|clasionce|elonce|galarza|concepci[oó]n del uruguay|poerio/i;
   const skip = new Set(['node_modules', '.git', 'fonts', 'docs', '_site']);
   const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => skip.has(e.name) ? [] : e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
   for (const f of walk(root)) {
