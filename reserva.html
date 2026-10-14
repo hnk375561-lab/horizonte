@@ -13,6 +13,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
 <link rel="apple-touch-icon" href="images/icon-180.png">
+<script>if(/[?&]embed=1/.test(location.search))document.documentElement.classList.add("is-embed")</script>
 <link rel="stylesheet" href="css/reserva.css"><link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
   <header class="booking-nav">
     <a class="brand" href="index.html" aria-label="Volver a Horizonte Automotores"><img class="lg-bk" src="images/logo-sm.png" width="360" height="144" alt="Horizonte Automotores"></a>
     <p class="eyebrow">Coordiná tu visita <span aria-hidden="true">/</span> consulta</p>
-    <button class="back" id="back" type="button" aria-label="Volver" hidden>← Atrás</button>
+    <div class="nav-actions"><button class="back" id="back" type="button" aria-label="Volver" hidden>← Atrás</button><button class="close-embed" id="close-embed" type="button" aria-label="Cerrar y volver al sitio">✕ Cerrar</button></div>
   </header>
 
   <section class="scene scene--month" aria-labelledby="month-title">

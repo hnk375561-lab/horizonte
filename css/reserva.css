@@ -187,3 +187,9 @@ body{font-family:"Inter",system-ui,sans-serif}.booking-nav{background:rgba(10,16
 .next-step,.primary,.secondary{clip-path:none;border-radius:999px;box-shadow:none;transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease)}.primary{background:linear-gradient(135deg,var(--gold),var(--gold-hi));color:var(--ink)}.primary:hover,.primary:focus-visible{background:var(--gold-hi);color:var(--ink);transform:translateY(-2px)}.secondary{box-shadow:none}
 .scene--confirm{background:var(--ink)}.send-state{border-left:2px solid var(--gold);background:rgba(242,210,27,.08)}
 @media(prefers-reduced-motion:reduce){.primary,.secondary,.next-step{transform:none!important;transition:none!important}}
+
+/* v72 · modo embebido: la reserva se abre dentro del index */
+.nav-actions{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
+.close-embed{display:none}
+.is-embed .close-embed{display:inline-flex;align-items:center;gap:8px;padding:10px 0;font:700 12px/1.3 "Inter",system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.is-embed .close-embed:hover,.is-embed .close-embed:focus-visible{color:var(--y)}

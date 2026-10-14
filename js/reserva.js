@@ -7,6 +7,8 @@ const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 const state = { month: new Date(new Date().getFullYear(), new Date().getMonth(), 1), day: null, slot: null, step: "month", control: null };
 const live = $("#live");
+const EMBED = new URLSearchParams(location.search).get("embed") === "1";
+const cerrarEmbed = () => { try { window.parent.postMessage({ hz: "cerrar-reserva" }, location.origin); } catch (e) {} };
 const startOfToday = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
 const announce = (text) => { if (live) live.textContent = text; };
 const monthTitle = (date) => `${months[date.getMonth()]} ${date.getFullYear()}`;
@@ -52,6 +54,11 @@ if ($("#booking")) {
   $("#prev-month").addEventListener("click", () => { state.month.setMonth(state.month.getMonth() - 1); renderCalendar(); announce(`Mes anterior: ${monthTitle(state.month)}`); });
   $("#next-month").addEventListener("click", () => { state.month.setMonth(state.month.getMonth() + 1); renderCalendar(); announce(`Mes siguiente: ${monthTitle(state.month)}`); });
   $("#to-time").addEventListener("click", () => { renderSlots(); animateScene("time"); }); $("#to-confirm").addEventListener("click", showConfirm); $("#whatsapp").addEventListener("click", (e) => { const btn = e.currentTarget; if (btn.dataset.wa) { sendState(true); return; } const msg = btn.dataset.msg || ""; const show = () => { const el = $("#send-state"); if (el) { el.dataset.state = "ready"; el.textContent = msg; } }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(msg).then(() => sendState(true), show); else show(); }); $("#back").addEventListener("click", goBack); $("#restart").addEventListener("click", reset);
-  document.addEventListener("keydown", (event) => { const active = document.activeElement; if (state.step === "month" && active?.matches(".day-cell")) { const days = $$("#calendar button.day-cell"), pos = days.indexOf(active), step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : event.key === "ArrowDown" ? 7 : event.key === "ArrowUp" ? -7 : 0; if (step) { let i = pos + step; while (days[i] && days[i].disabled) i += step > 0 ? (Math.abs(step) === 7 ? 7 : 1) : (Math.abs(step) === 7 ? -7 : -1); const target = days[i]; if (target) { event.preventDefault(); target.focus(); } } } if (event.key === "Escape") goBack(); });
+  document.addEventListener("keydown", (event) => { const active = document.activeElement; if (state.step === "month" && active?.matches(".day-cell")) { const days = $$("#calendar button.day-cell"), pos = days.indexOf(active), step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : event.key === "ArrowDown" ? 7 : event.key === "ArrowUp" ? -7 : 0; if (step) { let i = pos + step; while (days[i] && days[i].disabled) i += step > 0 ? (Math.abs(step) === 7 ? 7 : 1) : (Math.abs(step) === 7 ? -7 : -1); const target = days[i]; if (target) { event.preventDefault(); target.focus(); } } } if (event.key === "Escape") { if (EMBED && state.step === "month") cerrarEmbed(); else goBack(); } });
+  $("#close-embed")?.addEventListener("click", cerrarEmbed);
+  if (EMBED) {
+    $(".brand")?.addEventListener("click", (e) => { e.preventDefault(); cerrarEmbed(); });
+    window.addEventListener("message", (e) => { if (e.origin === location.origin && e.data && e.data.hz === "reiniciar-reserva") reset(); });
+  }
   renderCalendar(); renderSlots();
 }
