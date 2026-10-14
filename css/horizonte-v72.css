@@ -13,10 +13,13 @@ html body .hz-v71 .hz-addr .row{display:flex;flex-wrap:wrap;gap:8px;margin:0}
 html body .hz-v71 .hz-addr .btn{flex:1 1 auto}
 
 /* 2 · Hero: entrada + zoom lento en un solo sentido (sin transiciones que vayan y vuelvan) */
-@keyframes hzKen{from{transform:scale(1.15)}to{transform:scale(1.05)}}
-@keyframes hzFade{from{filter:brightness(.6)}to{filter:brightness(1)}}
-.hero-slide img{transform:scale(1.05);transition:none!important}
-.hero-slide.is-active img,.hero-slide.is-leaving img{animation:hzKen 4.5s cubic-bezier(.22,.61,.36,1) both,hzFade 1.4s ease-out both}
+@keyframes hzKen{from{transform:scale(1.12)}to{transform:scale(1.05)}}
+@keyframes hzMediaIn{from{opacity:0}to{opacity:1}}
+.hero-slide img{transform:scale(1.05);transition:none!important;will-change:transform;backface-visibility:hidden}
+.hero-slide{will-change:opacity}
+.hero-media{animation:hzMediaIn 1.2s ease-out both}
+.hero{background-position:center center!important}
+.hero-slide.is-active img,.hero-slide.is-leaving img{animation:hzKen 4.5s cubic-bezier(.22,.61,.36,1) both}
 .hero-slide.is-leaving img{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.hero-slide.is-active img,.hero-slide.is-leaving img{animation:none}}
 
@@ -77,6 +80,6 @@ html body .hz-v71 .hz-addr .btn{flex:1 1 auto}
 
 /* 5 · Fondos con imagen en secciones oscuras (se cargan al acercarse, sin fixed ni blur: no pesan al scrollear) */
 .hz-bgh{position:relative;isolation:isolate}
-.hz-bgimg{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;background-position:center;background-size:cover;background-repeat:no-repeat;transition:opacity 1s ease}
+.hz-bgimg{transform:translateZ(0);backface-visibility:hidden;position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;background-position:center;background-size:cover;background-repeat:no-repeat;transition:opacity 1s ease}
 .hz-bgimg.is-on{opacity:1}
 @media(prefers-reduced-motion:reduce){.hz-bgimg{transition:none}}

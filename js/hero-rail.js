@@ -25,5 +25,5 @@
   function start() { if (reduce || paused || timer || document.hidden) return; timer = setInterval(function () { go(i + 1); }, 3000); }
   start();
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-  slides.forEach(function (s) { var m = s.querySelector('img'); if (m) m.loading = 'eager'; });
+  slides.forEach(function (s) { var m = s.querySelector('img'); if (m) { m.loading = 'eager'; if (m.decode) m.decode().catch(function () {}); } });
 })();

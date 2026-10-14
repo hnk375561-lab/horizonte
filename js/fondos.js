@@ -4,8 +4,7 @@
   'use strict';
   if (navigator.connection && navigator.connection.saveData) return;
   var MAPA = [
-    ['#horarios', 'images/lz-frente-local-1170.webp', 'images/lz-frente-local-800.webp', 'linear-gradient(rgba(10,16,18,.80),rgba(10,16,18,.88))'],
-    ['#unidades', 'images/hero/horizonte-hero-audi.webp', 'images/hero/horizonte-hero-audi-mobile.webp', 'linear-gradient(rgba(10,16,18,.84),rgba(10,16,18,.90))'],
+    ['#guia', 'images/stock/cruze-1440.webp', 'images/stock/cruze-1080.webp', 'linear-gradient(rgba(10,16,18,.80),rgba(10,16,18,.90))'],
     ['#visita', 'images/stock/sonic-1440.webp', 'images/stock/sonic-1080.webp', 'linear-gradient(rgba(10,16,18,.78),rgba(10,16,18,.88))'],
     ['#contacto', 'images/stock/peugeot-207-1440.webp', 'images/stock/peugeot-207-1080.webp', 'linear-gradient(rgba(10,16,18,.80),rgba(10,16,18,.90))'],
     ['footer', 'images/stock/fox-1440.webp', 'images/stock/fox-1080.webp', 'linear-gradient(rgba(10,16,18,.84),rgba(10,16,18,.92))']
