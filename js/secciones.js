@@ -786,8 +786,12 @@
       }
 
       /* ----- burbuja de vista previa ----- */
+      var ultBub = null;
       function pintarBurbuja() {
         if (!bub) return;
+        var clave = texto();
+        if (clave === ultBub) return;
+        ultBub = clave;
         bub.textContent = '';
         bub.appendChild(el('p', f.getAttribute('data-intro') || 'Hola!', 'cv-b-i'));
         var ls = lineas();
@@ -831,8 +835,12 @@
           return true;
         });
       }
+      var ultMatch = null;
       function pintarMatch() {
         if (!panel) return;
+        var clave = ['b-mm', 'b-an', 'b-tr', 'b-co', 'b-ca', 'b-pr', 'b-mo'].map(val).join('|');
+        if (clave === ultMatch) return;
+        ultMatch = clave;
         var r = coincidencias();
         mL.textContent = '';
         panel.classList.toggle('has-r', !!(r && r.length));
@@ -851,10 +859,16 @@
         if (r.length > 3) mL.appendChild(el('li', 'y ' + (r.length - 3) + ' más en «Nuestras unidades»', 'cv-m-more'));
       }
 
-      function todo() {
+      /* Un solo repintado por cuadro de animación (antes cada tecla reconstruía todo) y las coincidencias esperan
+         a que dejes de escribir. */
+      var raf = 0, tMatch = 0;
+      function ahoraTodo() {
+        raf = 0;
         if (vista) vista.value = texto();
-        pintarBurbuja(); progreso(); actualizarWa(); pintarMatch();
+        pintarBurbuja(); progreso(); actualizarWa();
+        if (panel) { clearTimeout(tMatch); tMatch = setTimeout(pintarMatch, 180); }
       }
+      function todo() { if (!raf) raf = requestAnimationFrame(ahoraTodo); }
 
       /* ----- chips (selección simple o múltiple) ----- */
       function chipsDe(g) { return $$('.cv-chip', g); }
@@ -893,8 +907,8 @@
         t.addEventListener('input', u); u();
       });
 
-      f.addEventListener('input', todo);
-      f.addEventListener('change', todo);
+      f.addEventListener('input', todo, { passive: true });
+      f.addEventListener('change', todo, { passive: true });
 
       /* ----- ejemplo y limpiar ----- */
       var bEj = $('[data-ejemplo]', f), bLi = $('[data-limpiar]', f);

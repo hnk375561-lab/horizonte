@@ -1,6 +1,6 @@
 /* Horizonte Automotores · js/mapa.js
    Mapa interactivo de «Horarios y ubicación». Leaflet + OpenStreetMap se cargan al acercarse a la sección
-   (o al tocar «Ver mapa»). Marcador propio con popup, botón para centrar y, si fallan las teselas, mapa de Google. */
+   (o al tocar «Ver mapa»). Mapa siempre claro (sin filtros de color, que eran lo que lo hacía pesado), marcador con el nombre, botón para centrar y, si fallan las teselas, mapa de Google. */
 (function () {
   'use strict';
   var root = document.querySelector('[data-leaflet]');
@@ -51,12 +51,12 @@
     root.classList.add('is-open');
     if (ph) ph.hidden = true;
     var movil = !!(L.Browser && L.Browser.mobile);
-    mapa = L.map(view, { scrollWheelZoom: false, dragging: !movil, zoomControl: true, attributionControl: true, zoomSnap: 0.5 }).setView([lat, lng], 16);
+    mapa = L.map(view, { scrollWheelZoom: false, dragging: !movil, zoomControl: true, attributionControl: true, zoomSnap: 1, minZoom: 12, maxZoom: 19, fadeAnimation: false, markerZoomAnimation: false, inertia: !movil }).setView([lat, lng], 17);
 
     var attr = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>';
     var fuentes = [
-      { url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', o: { maxZoom: 19, attribution: attr } },
-      { url: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', o: { maxZoom: 19, subdomains: 'abc', attribution: attr } }
+      { url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', o: { maxZoom: 19, attribution: attr, keepBuffer: 3, updateWhenIdle: movil, updateWhenZooming: false } },
+      { url: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', o: { maxZoom: 19, subdomains: 'abc', attribution: attr, keepBuffer: 3, updateWhenIdle: movil, updateWhenZooming: false } }
     ];
     var k = 0, errores = 0, tiles = null, cargo = false;
     function capa() {
@@ -80,7 +80,7 @@
     });
     var marca = L.marker([lat, lng], { icon: icono, title: nombre, keyboard: true, alt: nombre }).addTo(mapa);
     marca.bindPopup(popup(), { closeButton: false, minWidth: 210, maxWidth: 260, offset: [0, 0] });
-    setTimeout(function () { marca.openPopup(); }, 350);
+    marca.bindTooltip(nombre, { permanent: true, direction: 'right', offset: [24, -26], className: 'hz-tt' });
 
     /* botón «Centrar» */
     var Centrar = L.Control.extend({
@@ -88,26 +88,11 @@
       onAdd: function () {
         var b = L.DomUtil.create('button', 'hz-ctr'); b.type = 'button'; b.textContent = 'Centrar'; b.setAttribute('aria-label', 'Volver a centrar el mapa en ' + nombre);
         L.DomEvent.disableClickPropagation(b);
-        L.DomEvent.on(b, 'click', function () { mapa.setView([lat, lng], 16); marca.openPopup(); });
+        L.DomEvent.on(b, 'click', function () { mapa.setView([lat, lng], 17); });
         return b;
       }
     });
     mapa.addControl(new Centrar());
-
-    /* botón «Claro / Oscuro»: el mapa arranca en el estilo oscuro de la marca */
-    var Tema = L.Control.extend({
-      options: { position: 'topright' },
-      onAdd: function () {
-        var b = L.DomUtil.create('button', 'hz-ctr hz-ctr--t'); b.type = 'button'; b.textContent = 'Mapa claro'; b.setAttribute('aria-pressed', 'false');
-        L.DomEvent.disableClickPropagation(b);
-        L.DomEvent.on(b, 'click', function () {
-          var claro = root.classList.toggle('is-claro');
-          b.textContent = claro ? 'Mapa oscuro' : 'Mapa claro'; b.setAttribute('aria-pressed', claro ? 'true' : 'false');
-        });
-        return b;
-      }
-    });
-    mapa.addControl(new Tema());
 
     /* rueda del mouse: se activa al hacer clic en el mapa; en el celular, un toque habilita mover el mapa con un dedo */
     if (movil) {
@@ -120,7 +105,7 @@
     }
     setTimeout(function () { mapa.invalidateSize(); }, 60);
     setTimeout(function () { mapa.invalidateSize(); }, 450);
-    window.addEventListener('resize', function () { if (mapa) mapa.invalidateSize(); });
+    var rz = 0; window.addEventListener('resize', function () { if (rz) return; rz = requestAnimationFrame(function () { rz = 0; if (mapa) mapa.invalidateSize(); }); });
   }
 
   function iniciar() {

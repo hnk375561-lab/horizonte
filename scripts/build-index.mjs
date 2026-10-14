@@ -300,17 +300,6 @@ const secGuia = `
 <p class="src">Los requisitos y costos de la transferencia cambian: consultalos en el Registro del Automotor o con un gestor o escribano antes de pagar.</p>
 </div></section>`;
 
-const secVisita = `
-<section id="visita" class="visita-s" aria-labelledby="vis-t"><div class="w vis-w">
-<p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
-<div class="visit-card">
-<div class="visit-main"><h3>Agendá una visita y prueba de manejo</h3>
-<p>Elegí día y franja en la página de reserva y se arma la consulta para la agencia. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
-<div class="row"><a class="btn p" href="reserva.html">Agendar visita</a>${C.whatsApp ? `<a class="btn" href="${wa('Hola! Quiero coordinar una visita y prueba de manejo.')}" ${EXT}>WhatsApp</a>` : ''}<a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a>${C.phoneTel ? `<a class="btn" href="tel:${C.phoneTel}">Llamar</a>` : ''}</div></div>
-${H.display ? `<div class="vis-hrs"><p class="vis-k">Antes de venir</p><p class="vis-t">Mirá los días y franjas de atención y cómo llegar.</p><a class="btn sm" href="#horarios">Ver horarios y mapa</a></div>` : ''}
-</div>
-</div></section>`;
-
 const mapa = COORD ? `
 <div class="map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="map-p"><p>Mapa interactivo de OpenStreetMap. Se carga solo si lo pedís.</p><button class="btn" type="button" data-mapa-abrir hidden>Ver mapa</button><p class="map-m src" role="status" aria-live="polite"></p></div>
@@ -328,23 +317,35 @@ const ICX = {
   pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
   sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h16M7 17a5 5 0 0 1 10 0M12 6v2.5M5.6 9.6l1.8 1.8M18.4 9.6l-1.8 1.8"/></svg>',
 };
-const hrFilas = H.display ? H.semana.map((g) => `<tr data-dias="${g.dias.join(',')}"><th scope="row">${esc(g.etiqueta)}</th><td>${g.rangos.map((r) => `<span class="hz-rg">${fh(r[0])} a ${fh(r[1])}</span>`).join('')}</td></tr>`).join('') + (H.domingo ? `<tr data-dias="0"><th scope="row">Domingos</th><td><span class="hz-rg hz-rg--x">${esc(H.domingo)}</span></td></tr>` : '') : '';
+const ICN = {
+  route: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/></svg>',
+  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 15.5v-3l2-5h13l2 5v3M3.5 15.5h17M3.5 15.5v2.5M20.5 15.5v2.5"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></svg>',
+  coin: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.2c-.6-.8-1.6-1.2-2.8-1.2-1.6 0-2.7.8-2.7 2s1 1.7 2.7 2c1.7.3 2.7.8 2.7 2s-1.1 2-2.7 2c-1.2 0-2.2-.4-2.8-1.2M12 6.5V8M12 16v1.5"/></svg>',
+  swap: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h13l-3.5-3.5M19 15H6l3.5 3.5"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6v5.5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>',
+  group: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M12 8.5v3.5M12 12 6.5 15.2M12 12l5.5 3.2"/></svg>',
+};
+const hrFilas = H.display ? H.semana.map((g) => `<tr data-dias="${g.dias.join(',')}"><th scope="row"><span class="hz-dn">${esc(g.etiqueta)}</span><span class="hz-hoy">Hoy</span></th><td>${g.rangos.map((r) => `<span class="hz-rg">${fh(r[0])} a ${fh(r[1])}</span>`).join('')}</td></tr>`).join('') + (H.domingo ? `<tr data-dias="0"><th scope="row"><span class="hz-dn">Domingos</span><span class="hz-hoy">Hoy</span></th><td><span class="hz-rg hz-rg--x">${esc(H.domingo)}</span></td></tr>` : '') : '';
 const mapaHr = COORD ? `<div class="hz-map" id="mapa" data-lat="${COORD.lat}" data-lng="${COORD.lng}" data-nombre="${esc(NAME)}" data-dir="${esc(DIR_COMPLETA)}" data-gmaps="${esc(L.mapsUrl)}" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="hz-map-v" role="region" aria-label="Mapa con la ubicación de ${esc(NAME)}"></div>
-<div class="hz-map-ph" data-mapa-ph><span class="hz-map-ic">${ICX.pin}</span><p>Mapa interactivo de ${esc(L.city)}</p><div class="row"><button class="btn p sm" type="button" data-mapa-abrir hidden>Ver mapa</button><a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div><p class="map-m src" role="status" aria-live="polite"></p></div>
+<div class="hz-map-ph" data-mapa-ph><span class="hz-map-ic">${ICX.pin}</span><p>Mapa de ${esc(L.city)}</p><div class="row"><button class="btn p sm" type="button" data-mapa-abrir hidden>Ver mapa</button><a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div><p class="map-m src" role="status" aria-live="polite"></p></div>
 </div>` : '';
-const hrAddr = H.display ? `<div class="hz-addr"><p class="hz-k">Estamos en</p><p class="hz-a">${esc(DIR_COMPLETA)}</p>${L.direccionAnterior ? `<p class="hz-ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}
+const hrAddr = H.display ? `<div class="hz-addr"><div class="hz-addr-t"><span class="hz-addr-i">${ICX.pin}</span><div><p class="hz-k">Dónde estamos</p><p class="hz-a">${esc(DIR_COMPLETA)}</p>${L.direccionAnterior ? `<p class="hz-ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}</div></div>
 <div class="row"><a class="btn p sm" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a>${COORD ? `<a class="btn sm" href="https://waze.com/ul?ll=${COORD.lat},${COORD.lng}&amp;navigate=yes" ${EXT}>Abrir en Waze</a>` : ''}<button class="btn sm" type="button" data-copiar="${esc(DIR_COMPLETA)}" hidden>Copiar dirección</button></div></div>` : '';
 const secHorarios = H.display ? `
-<section id="horarios" class="hz-hr hz-lux" aria-labelledby="hor-t" data-semana="${esc(JSON.stringify(H.semana))}"><div class="w">
-<div class="hz-hr-head"><div><p class="ey">Horarios y ubicación</p><h2 id="hor-t">Cuándo y dónde <em>visitarnos</em></h2></div>
-<div class="hz-live" data-live data-abierto="0"><span class="hz-dot" aria-hidden="true"></span><div><p class="hz-live-t" data-estado-t>Horario de atención</p><p class="hz-live-d" data-estado-d>${esc(H.corto)}</p></div></div></div>
+<section id="horarios" class="hz-hr hz-lux hz-v71" aria-labelledby="hor-t" data-semana="${esc(JSON.stringify(H.semana))}"><div class="w">
+<div class="hz-hr-head"><p class="ey">Horarios y ubicación</p><h2 id="hor-t">Cuándo y dónde <em>visitarnos</em></h2></div>
 <div class="hz-stage">
 <div class="hz-panel">
-<div class="hz-dial" data-dial aria-hidden="true"></div>
-<div class="hz-wk"><p class="hz-wk-t">La semana en un vistazo</p>
+<div class="hz-now" data-live data-abierto="0">
+<p class="hz-now-st"><span class="hz-dot" aria-hidden="true"></span><span data-estado-t>Horario de atención</span></p>
+<p class="hz-now-lbl" data-cd-lbl></p>
+<div class="hz-cd" role="timer" aria-label="Tiempo que falta"><span class="hz-cd-u"><b data-cd-h>--</b><i>horas</i></span><span class="hz-cd-u"><b data-cd-m>--</b><i>minutos</i></span><span class="hz-cd-u"><b data-cd-s>--</b><i>segundos</i></span></div>
+<p class="hz-now-d" data-estado-d>${esc(H.corto)}</p>
+</div>
+<div class="hz-wk"><p class="hz-wk-t">Días y horarios de atención</p>
 <table class="hz-tbl"><caption class="sr">Horario de atención</caption><tbody>${hrFilas}</tbody></table></div>
-<p class="hz-tz">Hora de Argentina · el sol marca dónde está el día ahora.</p>
+<p class="hz-tz">Hora de Argentina: ahora son las <b data-reloj>--:--:--</b></p>
 </div>
 <div class="hz-mapwrap">
 ${mapaHr}
@@ -353,6 +354,23 @@ ${hrAddr}
 </div>
 <p class="src hz-src">Ubicación según la ficha de Google Maps. Horario según el sitio del ${esc(GNAME)}; puede variar, confirmalo antes de ir.</p>
 </div></section>` : '';
+
+const visHr = H.display ? `<ul class="vz-hrs">${H.semana.map((g) => `<li data-dias="${g.dias.join(',')}"><span>${esc(g.etiqueta)}</span><b>${g.rangos.map((r) => `${fh(r[0])} a ${fh(r[1])}`).join(' y ')}</b></li>`).join('')}${H.domingo ? `<li data-dias="0"><span>Domingos</span><b>${esc(H.domingo)}</b></li>` : ''}</ul>` : '';
+const secVisita = `
+<section id="visita" class="visita-s vz" aria-labelledby="vis-t"><div class="w vis-w">
+<div class="vz-head"><p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
+<p class="sec-p">Pasá a conocer las unidades. Armá la consulta en un minuto y la agencia acuerda con vos el día y la hora.</p></div>
+<div class="vz-grid">
+<div class="vz-main"><h3>Agendá una visita y prueba de manejo</h3>
+<ol class="vz-steps"><li><b>Elegí día y franja</b><span>En la página de reserva, desde el celular o la computadora.</span></li><li><b>Se arma tu consulta</b><span>Queda lista para enviarla a la agencia por WhatsApp.</span></li><li><b>La agencia te confirma</b><span>Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</span></li></ol>
+<div class="vz-cta"><a class="btn p vz-go" href="reserva.html">Agendar visita</a>${C.whatsApp ? `<a class="btn" href="${wa('Hola! Quiero coordinar una visita y prueba de manejo.')}" ${EXT}>WhatsApp</a>` : ''}<a class="btn" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a>${C.phoneTel ? `<a class="btn" href="tel:${C.phoneTel}">Llamar</a>` : ''}</div></div>
+${H.display ? `<aside class="vz-side" aria-label="Antes de venir"><p class="vz-side-k">Antes de venir</p>
+<div class="vz-live" data-live data-abierto="0"><span class="hz-dot" aria-hidden="true"></span><div><p class="vz-live-t" data-estado-t>Horario de atención</p><p class="vz-live-c" data-cd-full></p></div></div>
+${visHr}
+<p class="vz-addr">${ICX.pin}<span>${esc(DIR_COMPLETA)}</span></p>
+<a class="btn sm" href="#horarios">Ver horarios y mapa</a></aside>` : ''}
+</div>
+</div></section>`;
 
 const chan = (cls, icon, k, v, sub, href, ext) => `<li><a class="hz-chn${cls ? ' ' + cls : ''}" href="${href}"${ext ? ' ' + EXT : ''}><span class="hz-chn-i">${icon}</span><span class="hz-chn-t"><span class="hz-chn-k">${k}</span><span class="hz-chn-v">${v}</span><span class="hz-chn-s">${sub}</span></span></a></li>`;
 const canales = [
@@ -370,11 +388,47 @@ const redes = [
 
 const brQ = (x) => `${x.direccion}, ${/Santa Fe$/.test(x.direccion.trim()) ? 'Santa Fe' : 'Entre Ríos'}, Argentina`;
 const suc = (D.identity.grupoSucursales || []).filter((x) => !x.esta);
+const cityOf = (x) => x.direccion.split(',').pop().trim();
 const grupo = suc.length ? `
-<div class="hz-grp"><div class="hz-grp-head"><h3>Sucursales del ${esc(GNAME)}</h3>
-<p class="sec-p">Cada sucursal tiene su mapa. Los números los publica el grupo en su material de contacto; algunas comparten el mismo WhatsApp.</p></div>
-<ul class="hz-br-l">${suc.map((x) => `<li class="hz-br"><div class="hz-br-map"><iframe src="${esc(gmapsEmbed(brQ(x)))}" title="Mapa de ${esc(x.nombre)}: ${esc(x.direccion)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><h4>${esc(x.nombre)}</h4><p class="hz-br-a">${esc(x.direccion)}</p><div class="hz-br-act"><a class="btn p sm" href="${esc(gmapsSearch(brQ(x)))}" ${EXT}>Cómo llegar</a>${x.tel ? `<a class="btn sm" href="tel:${x.telTel}">Tel. ${esc(x.tel)}</a>` : ''}${x.wa ? `<a class="btn sm" href="https://wa.me/${x.waNum}" ${EXT}>WhatsApp ${esc(x.wa)}</a>` : ''}</div></div></li>`).join('')}</ul>
-<p class="src">Fuente: material de contacto del ${esc(GNAME)}.</p></div>` : '';
+<div class="hz-grp sb" id="sucursales"><div class="sb-head"><div><p class="sb-k">${suc.length + 1} puntos de atención</p><h3>Sucursales del ${esc(GNAME)}</h3>
+<p class="sec-p">Elegí la sucursal que te quede más cerca. Cada tarjeta tiene su mapa, el botón para llegar y cómo contactarla.</p></div>
+<ul class="sb-how" aria-label="Cómo usar esta sección"><li>${ICX.pin}<span>Mirá dónde queda</span></li><li>${ICN.route}<span>Tocá «Cómo llegar»</span></li><li>${IC.tel}<span>Llamá o escribí</span></li></ul></div>
+<ul class="hz-br-l">${suc.map((x) => `<li class="hz-br"><div class="hz-br-top"><span class="hz-br-pin">${ICX.pin}</span><div><h4>${esc(x.nombre)}</h4><p class="hz-br-city">${esc(cityOf(x))}</p></div></div><div class="hz-br-map"><iframe src="${esc(gmapsEmbed(brQ(x)))}" title="Mapa de ${esc(x.nombre)}: ${esc(x.direccion)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><p class="hz-br-a">${esc(x.direccion)}</p><div class="hz-br-act"><a class="sb-b sb-b--p" href="${esc(gmapsSearch(brQ(x)))}" ${EXT}>${ICN.route}<span>Cómo llegar</span></a>${x.tel ? `<a class="sb-b" href="tel:${x.telTel}">${IC.tel}<span>Llamar<small>${esc(x.tel)}</small></span></a>` : ''}${x.wa ? `<a class="sb-b" href="https://wa.me/${x.waNum}" ${EXT}>${IC.wa}<span>WhatsApp<small>${esc(x.wa)}</small></span></a>` : ''}</div></div></li>`).join('')}</ul>
+<p class="src">Fuente: material de contacto del ${esc(GNAME)}. Los números los publica el grupo; algunas sucursales comparten el mismo WhatsApp.</p></div>` : '';
+
+const puntos = D.identity.grupoSucursales || [];
+const ciudades = [...new Set(puntos.map(cityOf))];
+const secNosotros = `
+<section class="nz" id="nosotros" aria-labelledby="nos-t">
+<div class="nz-top"><div class="w nz-w">
+<div class="nz-intro">
+<p class="ey">Nosotros</p>
+<span class="nz-logo"><img src="images/logo-sm.png" width="360" height="144" alt=""></span>
+<h2 id="nos-t">Quiénes <em>somos</em></h2>
+<p class="nz-lead">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}.</p>
+<p class="nz-p">${esc(D.presentacion.antiguedad)}</p>
+<div class="row nz-cta"><a class="btn p" href="#unidades">Ver unidades</a><a class="btn" href="#contacto">Hablar con un asesor</a></div>
+</div>
+<div class="nz-big"><span class="nz-sun" aria-hidden="true"></span><p class="nz-num">10</p><p class="nz-num-l">años de respaldo</p><p class="nz-num-s">en el mercado regional, según su página de Facebook</p></div>
+</div></div>
+<div class="nz-stats"><ul>
+${autos.length ? `<li><b>${autos.length}</b><span>unidades publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></li>` : ''}
+<li><b>${puntos.length}</b><span>puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></li>
+<li><b>${ciudades.length}</b><span>localidades con atención: ${esc(ciudades.join(', ').replace(/, ([^,]*)$/, ' y $1'))}</span></li>
+</ul></div>
+<div class="nz-body"><div class="w">
+<h3 class="nz-h">Qué podés resolver con nosotros</h3>
+<ul class="nz-tiles">
+<li class="nz-tile"><span class="nz-ic">${ICN.car}</span><h4>Autos y motos</h4><p>Usados publicados para ${esc(L.city)} y financiación para llevarlos.</p><a href="#unidades">Ver unidades</a></li>
+<li class="nz-tile"><span class="nz-ic">${ICN.coin}</span><h4>Financiación</h4><p>Ofrecemos financiación para autos y motos. Los montos y las condiciones dependen de la unidad y de cada solicitante.</p><a href="#financiacion">Ver cómo financiar</a></li>
+${hasSvc('permuta') ? `<li class="nz-tile"><span class="nz-ic">${ICN.swap}</span><h4>Tu usado cuenta</h4><p>Se reciben usados como parte de pago${hasSvc('tasacion') ? ' y la tasación es sin cargo' : ''}, según informa ${esc(GNAME)}.</p><a href="#tu-usado">Armar mi consulta</a></li>` : ''}
+${hasSvc('garantia') ? `<li class="nz-tile"><span class="nz-ic">${ICN.shield}</span><h4>Revisión y garantía</h4><p>Los usados pasan por revisión técnica y se entregan con garantía, según informa ${esc(GNAME)}. Las condiciones dependen de cada vehículo.</p><a href="#preguntas">Ver preguntas</a></li>` : ''}
+<li class="nz-tile"><span class="nz-ic">${ICN.group}</span><h4>Respaldo del grupo</h4><p>Forma parte del ${esc(GNAME)}, con sucursales en Paraná y Santa Fe.</p><a href="#sucursales">Ver sucursales</a></li>
+</ul>
+<div class="nz-net"><h3 class="nz-h">Dónde encontrarnos</h3><p class="nz-net-p">Estos son los puntos de atención que lista el ${esc(GNAME)}.</p>
+<ul>${puntos.map((x) => `<li${x.esta ? ' class="is-here"' : ''}>${ICX.pin}<div><b>${esc(x.nombre)}</b><span>${esc(x.direccion)}</span>${x.esta ? '<em>Estás en esta sucursal web</em>' : ''}</div></li>`).join('')}</ul></div>
+</div></div>
+</section>`;
 
 const ld = {
   '@context': 'https://schema.org', '@type': 'AutoDealer', name: NAME,
@@ -430,12 +484,7 @@ ${secGuia}
 ${secPreguntas}
 ${secVisita}
 
-<section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
-<p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
-<p class="sec-p">${esc(NAME)} es un concesionario de ${esc(L.city)} que forma parte del ${esc(GNAME)}. ${esc(D.presentacion.antiguedad)}</p>
-<div class="stats"><div class="stat"><b>Trayectoria</b><span>Diez años de respaldo en el mercado regional, según su página de Facebook.</span></div>${autos.length ? `<div class="stat"><b>Unidades</b><span>${autos.length} publicadas en esta web${A.relevadoEl ? `, relevadas el ${esc(fdate(A.relevadoEl))}` : ''}</span></div>` : ''}<div class="stat"><b>Atención</b><span>${suc.length + 1} puntos de atención que lista el ${esc(GNAME)}, uno de ellos en ${esc(L.city)}</span></div></div>
-<div class="cards"><div class="card"><h3>Autos y motos</h3><p>Usados publicados para ${esc(L.city)} y financiación para llevarlos.</p></div>${hasSvc('permuta') ? `<div class="card"><h3>Tu usado cuenta</h3><p>Se reciben usados como parte de pago${hasSvc('tasacion') ? ' y la tasación es sin cargo' : ''}, según informa ${esc(GNAME)}.</p></div>` : ''}<div class="card"><h3>Respaldo del grupo</h3><p>Forma parte del ${esc(GNAME)}, con sucursales en Paraná y Santa Fe.</p></div></div>
-</div></section>
+${secNosotros}
 
 <section id="contacto" class="ct hz-ct" aria-labelledby="contacto-t"><div class="w">
 <div class="hz-ct-head"><p class="ey">Contacto</p><h2 id="contacto-t">Hablá con <em>un asesor</em></h2><p class="sec-p">Escribinos o llamanos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p></div>

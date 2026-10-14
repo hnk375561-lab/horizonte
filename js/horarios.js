@@ -1,7 +1,9 @@
 /* Horizonte Automotores · js/horarios.js
    Sección «Horarios y ubicación»: estado «Abierto ahora / Cerrado ahora» según el horario de data/dealership.json
-   (viaja en data-semana), línea de tiempo del día y resaltado de hoy en la tabla. Hora de Argentina (UTC-3, sin
-   horario de verano). Sin red ni cookies. Expone window.hzEstado() para que otras partes (la ficha) lean el estado. */
+   (viaja en data-semana), cuenta regresiva en horas, minutos y segundos hasta que abre o cierra, y resaltado de hoy.
+   Hora de Argentina (UTC-3, sin horario de verano). Sin red ni cookies.
+   Rendimiento: cada segundo solo se reescriben unos pocos textos; el resto (estado, filas) se repinta cuando algo cambia.
+   Expone window.hzEstado() para que otras partes (la ficha) lean el estado. */
 (function () {
   'use strict';
   var src = document.querySelector('[data-semana]');
@@ -10,10 +12,10 @@
   try { semana = JSON.parse(src.getAttribute('data-semana')); } catch (e) { return; }
   if (!semana || !semana.length) return;
   var NOMBRES = ['el domingo', 'el lunes', 'el martes', 'el miércoles', 'el jueves', 'el viernes', 'el sábado'];
-  var DIAS = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
-  function min(t) { var p = t.split(':'); return (+p[0]) * 60 + (+p[1]); }
+  function seg(t) { var p = t.split(':'); return (+p[0]) * 3600 + (+p[1]) * 60 + (p[2] ? +p[2] : 0); }
   function hora(t) { return t.replace(/^0/, ''); }
+  function dos(n) { return n < 10 ? '0' + n : '' + n; }
   function rangos(dia) {
     for (var i = 0; i < semana.length; i++) if (semana[i].dias.indexOf(dia) !== -1) return semana[i].rangos;
     return [];
@@ -22,111 +24,78 @@
     var n = new Date();
     return new Date(n.getTime() + n.getTimezoneOffset() * 60000 - 3 * 3600000);
   }
-  function dur(m) {
-    var h = Math.floor(m / 60), r = m % 60;
-    if (h && r) return h + ' h ' + r + ' min';
-    return h ? h + ' h' : r + ' min';
-  }
-  function estado() {
-    var a = ahora(), dia = a.getDay(), m = a.getHours() * 60 + a.getMinutes(), r = rangos(dia), i;
-    for (i = 0; i < r.length; i++) if (m >= min(r[i][0]) && m < min(r[i][1])) {
-      return { abierto: true, titulo: 'Abierto ahora', detalle: 'Cierra a las ' + hora(r[i][1]) + ' · faltan ' + dur(min(r[i][1]) - m), txt: 'Abierto ahora · cierra a las ' + hora(r[i][1]) };
+
+  function estado(a) {
+    a = a || ahora();
+    var dia = a.getDay(), s = a.getHours() * 3600 + a.getMinutes() * 60 + a.getSeconds(), r = rangos(dia), i;
+    for (i = 0; i < r.length; i++) if (s >= seg(r[i][0]) && s < seg(r[i][1])) {
+      return { abierto: true, dia: dia, idx: i, falta: seg(r[i][1]) - s, etiqueta: 'Falta para que cierre', corto: 'Cierra en ',
+        titulo: 'Abierto ahora', detalle: 'Hoy cerramos a las ' + hora(r[i][1]), txt: 'Abierto ahora · cierra a las ' + hora(r[i][1]) };
     }
-    for (i = 0; i < r.length; i++) if (m < min(r[i][0])) {
-      return { abierto: false, titulo: 'Cerrado ahora', detalle: 'Abre hoy a las ' + hora(r[i][0]) + ' · en ' + dur(min(r[i][0]) - m), txt: 'Cerrado ahora · abre hoy a las ' + hora(r[i][0]) };
+    for (i = 0; i < r.length; i++) if (s < seg(r[i][0])) {
+      return { abierto: false, dia: dia, idx: -1, falta: seg(r[i][0]) - s, etiqueta: 'Falta para que abra', corto: 'Abre en ',
+        titulo: 'Cerrado ahora', detalle: (i ? 'Volvemos a abrir hoy a las ' : 'Hoy abrimos a las ') + hora(r[i][0]), txt: 'Cerrado ahora · abre hoy a las ' + hora(r[i][0]) };
     }
     for (var k = 1; k <= 7; k++) {
       var d = (dia + k) % 7, rr = rangos(d);
       if (rr.length) {
         var cuando = k === 1 ? 'mañana' : NOMBRES[d];
-        return { abierto: false, titulo: 'Cerrado ahora', detalle: 'Abre ' + cuando + ' a las ' + hora(rr[0][0]), txt: 'Cerrado ahora · abre ' + cuando + ' a las ' + hora(rr[0][0]) };
+        return { abierto: false, dia: dia, idx: -1, falta: (86400 - s) + (k - 1) * 86400 + seg(rr[0][0]), etiqueta: 'Falta para que abra', corto: 'Abre en ',
+          titulo: 'Cerrado ahora', detalle: 'Abrimos ' + cuando + ' a las ' + hora(rr[0][0]), txt: 'Cerrado ahora · abre ' + cuando + ' a las ' + hora(rr[0][0]) };
       }
     }
-    return { abierto: false, titulo: 'Cerrado ahora', detalle: '', txt: 'Cerrado ahora' };
+    return { abierto: false, dia: dia, idx: -1, falta: 0, etiqueta: '', corto: '', titulo: 'Cerrado ahora', detalle: '', txt: 'Cerrado ahora' };
   }
-  window.hzEstado = estado;
+  window.hzEstado = function () { return estado(); };
 
-  /* ---- dial del día: el sol recorre el arco de atención; fuera de horario se oculta tras el horizonte ---- */
-  var dial = document.querySelector('[data-dial]');
-  var lo = 24 * 60, hi = 0;
-  semana.forEach(function (g) { g.rangos.forEach(function (r) { lo = Math.min(lo, min(r[0])); hi = Math.max(hi, min(r[1])); }); });
-  lo = Math.floor(lo / 60) * 60; hi = Math.ceil(hi / 60) * 60;
-  var CX = 210, CY = 196, R = 158;
-  function pct(m) { return Math.max(0, Math.min(1, (m - lo) / (hi - lo))); }
-  function pt(m, r) { var th = Math.PI * (1 - pct(m)); return [CX + (r || R) * Math.cos(th), CY - (r || R) * Math.sin(th)]; }
-  function f1(n) { return n.toFixed(1); }
-  function arco(m1, m2) {
-    var p1 = pt(m1), p2 = pt(m2);
-    return 'M' + f1(p1[0]) + ' ' + f1(p1[1]) + ' A' + R + ' ' + R + ' 0 0 1 ' + f1(p2[0]) + ' ' + f1(p2[1]);
-  }
-  function hhmm(a) { var h = a.getHours(), m = a.getMinutes(); return h + ':' + (m < 10 ? '0' : '') + m; }
-  function lineaDelDia(a) {
-    if (!dial || hi <= lo) return;
-    var dia = a.getDay(), m = a.getHours() * 60 + a.getMinutes(), r = rangos(dia), h, i;
-    var s = '<svg viewBox="0 0 420 262" focusable="false" role="presentation"><defs><clipPath id="hzCielo"><rect x="0" y="0" width="420" height="' + CY + '"/></clipPath>' +
-      '<radialGradient id="hzGlow"><stop offset="0" stop-color="#f2d21b" stop-opacity=".55"/><stop offset="1" stop-color="#f2d21b" stop-opacity="0"/></radialGradient></defs>';
-    s += '<path class="hz-d-base" d="' + arco(lo, hi) + '"/>';
-    for (h = lo; h <= hi; h += 60) {
-      var a1 = pt(h, R + 12), a2 = pt(h, R - 12);
-      s += '<path class="hz-d-tick' + (h % 120 ? ' hz-d-tick--s' : '') + '" d="M' + f1(a1[0]) + ' ' + f1(a1[1]) + 'L' + f1(a2[0]) + ' ' + f1(a2[1]) + '"/>';
-      if (h % 120 === 0) { var lb = pt(h, R - 30); s += '<text class="hz-d-lbl" x="' + f1(lb[0]) + '" y="' + f1(lb[1] + 4) + '" text-anchor="middle">' + (h / 60) + '</text>'; }
+  /* nodos (se buscan una sola vez) */
+  function todos(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+  var N = {
+    est: todos('[data-estado]'), t: todos('[data-estado-t]'), d: todos('[data-estado-d]'), live: todos('[data-live]'),
+    lbl: todos('[data-cd-lbl]'), h: todos('[data-cd-h]'), m: todos('[data-cd-m]'), s: todos('[data-cd-s]'),
+    full: todos('[data-cd-full]'), reloj: todos('[data-reloj]'), dias: todos('[data-dias]')
+  };
+
+  function poner(lista, txt) { for (var i = 0; i < lista.length; i++) if (lista[i].textContent !== txt) lista[i].textContent = txt; }
+
+  /* lo que cambia poco: estado, textos y fila de hoy */
+  function pintar(e, a) {
+    var i, dia = String(a.getDay());
+    for (i = 0; i < N.est.length; i++) {
+      N.est[i].textContent = e.txt; N.est[i].setAttribute('data-abierto', e.abierto ? '1' : '0'); N.est[i].hidden = false;
     }
-    r.forEach(function (x) { s += '<path class="hz-d-open" d="' + arco(min(x[0]), min(x[1])) + '"/>'; });
-    s += '<path class="hz-d-hz" d="M18 ' + CY + 'H402"/>';
-    s += '<path class="hz-d-hz2" d="M64 ' + (CY + 9) + 'H356M116 ' + (CY + 18) + 'H304"/>';
-    var hoyAbre = r.length ? min(r[0][0]) : null, hoyCierra = r.length ? min(r[r.length - 1][1]) : null;
-    var dentro = false; r.forEach(function (x) { if (m >= min(x[0]) && m < min(x[1])) dentro = true; });
-    var sp;
-    if (m >= lo && m <= hi) sp = pt(m); else if (m < lo) sp = [CX - R, CY]; else sp = [CX + R, CY];
-    var vis = r.length > 0 && (m >= lo && m <= hi);
-    var cls = 'hz-d-sun' + (dentro ? ' is-open' : '') + (vis ? '' : ' is-set');
-    if (r.length || m >= lo) {
-      s += '<g clip-path="' + (vis ? '' : 'url(#hzCielo)') + '" class="' + cls + '"><circle class="hz-d-glow" cx="' + f1(sp[0]) + '" cy="' + f1(sp[1]) + '" r="44"/><circle class="hz-d-orb" cx="' + f1(sp[0]) + '" cy="' + f1(sp[1]) + '" r="13"/></g>';
+    poner(N.t, e.titulo);
+    for (i = 0; i < N.d.length; i++) { N.d[i].textContent = e.detalle; N.d[i].hidden = !e.detalle; }
+    poner(N.lbl, e.etiqueta);
+    for (i = 0; i < N.live.length; i++) { N.live[i].setAttribute('data-abierto', e.abierto ? '1' : '0'); N.live[i].setAttribute('data-listo', '1'); }
+    for (i = 0; i < N.dias.length; i++) {
+      var on = N.dias[i].getAttribute('data-dias').split(',').indexOf(dia) !== -1;
+      N.dias[i].classList.toggle('hoy', on);
     }
-    s += '<text class="hz-d-clock" x="' + CX + '" y="' + (CY - 52) + '" text-anchor="middle">' + hhmm(a) + '</text>';
-    s += '<text class="hz-d-cap" x="' + CX + '" y="' + (CY - 28) + '" text-anchor="middle">' + (r.length ? (dentro ? 'DENTRO DEL HORARIO' : 'FUERA DE HORARIO') : 'HOY NO ATENDEMOS') + '</text>';
-    s += '<text class="hz-d-end" x="' + (CX - R) + '" y="' + (CY + 40) + '" text-anchor="middle">' + (hoyAbre != null ? 'abre ' + hora(r[0][0]) : '') + '</text>';
-    s += '<text class="hz-d-end" x="' + (CX + R) + '" y="' + (CY + 40) + '" text-anchor="middle">' + (hoyCierra != null ? 'cierra ' + hora(r[r.length - 1][1]) : '') + '</text>';
-    s += '</svg>';
-    dial.innerHTML = s;
-    dial.classList.toggle('is-open', dentro);
+    /* franja en curso dentro de la fila de hoy */
+    var rg = todos('.hz-tbl .hz-rg');
+    for (i = 0; i < rg.length; i++) {
+      var fila = rg[i].closest('tr'), pos = Array.prototype.indexOf.call(fila.querySelectorAll('.hz-rg'), rg[i]);
+      rg[i].classList.toggle('is-on', !!(e.abierto && fila.classList.contains('hoy') && pos === e.idx));
+    }
   }
 
-  /* ---- barras de la semana: una pista por fila, con las franjas abiertas ---- */
-  function barras() {
-    var filas = document.querySelectorAll('tr[data-dias]');
-    for (var i = 0; i < filas.length; i++) {
-      if (filas[i].querySelector('.hz-bar')) continue;
-      var d = +filas[i].getAttribute('data-dias').split(',')[0], rr = rangos(d);
-      var td = document.createElement('td'); td.className = 'hz-bar-c'; td.setAttribute('aria-hidden', 'true');
-      var b = div('hz-bar');
-      rr.forEach(function (x) { var s = div('hz-bar-s'); s.style.left = (pct(min(x[0])) * 100) + '%'; s.style.width = ((pct(min(x[1])) - pct(min(x[0]))) * 100) + '%'; b.appendChild(s); });
-      td.appendChild(b); filas[i].appendChild(td);
-    }
+  /* lo que cambia cada segundo: solo números */
+  function numeros(e, a) {
+    var f = e.falta, h = Math.floor(f / 3600), m = Math.floor((f % 3600) / 60), s = f % 60;
+    poner(N.h, dos(h)); poner(N.m, dos(m)); poner(N.s, dos(s));
+    poner(N.full, e.corto ? e.corto + h + ' h ' + dos(m) + ' min ' + dos(s) + ' s' : '');
+    poner(N.reloj, dos(a.getHours()) + ':' + dos(a.getMinutes()) + ':' + dos(a.getSeconds()));
   }
-  function div(cls, txt) { var d = document.createElement('div'); if (cls) d.className = cls; if (txt != null) d.textContent = txt; return d; }
 
-  function pintar() {
-    var a = ahora(), e = estado(), dia = String(a.getDay()), i;
-    var els = document.querySelectorAll('[data-estado]');
-    for (i = 0; i < els.length; i++) {
-      els[i].textContent = e.txt;
-      els[i].setAttribute('data-abierto', e.abierto ? '1' : '0');
-      els[i].hidden = false;
-    }
-    var ts = document.querySelectorAll('[data-estado-t]'), ds = document.querySelectorAll('[data-estado-d]'), lv = document.querySelectorAll('[data-live]');
-    for (i = 0; i < ts.length; i++) ts[i].textContent = e.titulo;
-    for (i = 0; i < ds.length; i++) { ds[i].textContent = e.detalle; ds[i].hidden = !e.detalle; }
-    for (i = 0; i < lv.length; i++) { lv[i].setAttribute('data-abierto', e.abierto ? '1' : '0'); lv[i].setAttribute('data-listo', '1'); }
-    var filas = document.querySelectorAll('tr[data-dias]');
-    for (i = 0; i < filas.length; i++) {
-      var on = filas[i].getAttribute('data-dias').split(',').indexOf(dia) !== -1;
-      if (on) filas[i].classList.add('hoy'); else filas[i].classList.remove('hoy');
-    }
-    lineaDelDia(a);
+  var ultimo = '';
+  function tick() {
+    if (document.hidden) return;
+    var a = ahora(), e = estado(a), clave = e.txt + '|' + e.dia;
+    if (clave !== ultimo) { ultimo = clave; pintar(e, a); }
+    numeros(e, a);
   }
-  barras();
-  pintar();
-  setInterval(pintar, 30000);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) pintar(); });
+  function bucle() { tick(); setTimeout(bucle, 1000 - (Date.now() % 1000) + 5); }
+  bucle();
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) tick(); });
 })();

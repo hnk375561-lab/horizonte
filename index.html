@@ -1739,6 +1739,248 @@ dialog.cmp-lux .cmp-ft{padding:10px clamp(18px,3vw,38px) 28px;color:#9ba8ac}
   dialog.cmp-lux .cmp-ft{padding-inline:12px}
 }
 @media(prefers-reduced-motion:reduce){dialog.cmp-lux .cmp-ph img,dialog.cmp-lux .cmp-sw-k,dialog.cmp-lux .cmp-sw-k::after{transition:none}}
+
+/* ===== v71 · Horarios claros con cuenta regresiva, mapa claro y liviano, formularios compactos y legibles,
+   sucursales, «Quiénes somos» ampliado y «Coordiná tu visita» ===== */
+
+/* ── 1 · Horarios y ubicación ── */
+html body .hz-v71 .hz-hr-head{display:block}
+html body .hz-v71 .hz-stage{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}
+html body .hz-v71 .hz-panel{gap:20px;padding:clamp(16px,2.2vw,26px);background:#10181a;border:1px solid rgba(242,210,27,.32);border-top:4px solid #f2d21b}
+.hz-now{padding:clamp(16px,2vw,24px);text-align:center;background:#0a1012;border:1px solid rgba(255,255,255,.16);color:#fff}
+.hz-now[data-abierto="1"]{background:#f2d21b;border-color:#f2d21b;color:#0a1012}
+.hz-now p{margin:0}
+.hz-now-st{display:flex;align-items:center;justify-content:center;gap:10px;font:800 clamp(22px,2.6vw,30px)/1.1 var(--hero-title,var(--b))}
+.hz-now .hz-dot{flex:none;width:14px;height:14px;border-radius:50%;background:#ff6a55;animation:none;box-shadow:none}
+.hz-now[data-abierto="1"] .hz-dot{background:#0a1012}
+.hz-now-lbl{margin-top:14px!important;font:600 16px/1.3 var(--hero-copy,var(--b));opacity:.9}
+.hz-cd{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.hz-now:not([data-listo]) .hz-cd,.hz-now:not([data-listo]) .hz-now-lbl{visibility:hidden}
+.hz-cd-u{flex:1 1 0;max-width:118px;padding:12px 6px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+.hz-now[data-abierto="1"] .hz-cd-u{background:rgba(10,16,18,.09);border-color:rgba(10,16,18,.35)}
+.hz-cd-u b{display:block;font:800 clamp(36px,4.6vw,54px)/1 var(--hero-title,var(--b));letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#f2d21b}
+.hz-now[data-abierto="1"] .hz-cd-u b{color:#0a1012}
+.hz-cd-u i{display:block;margin-top:6px;font:600 13px/1 var(--hero-copy,var(--b));font-style:normal;opacity:.85}
+.hz-now-d{margin-top:14px!important;font:600 17px/1.35 var(--hero-copy,var(--b))}
+.hz-wk-t{margin:0 0 4px;color:#f2d21b;font:800 14px/1.2 var(--hero-copy,var(--b));letter-spacing:.04em;text-transform:none}
+html body .hz-v71 .hz-tbl{width:100%;border-collapse:collapse}
+html body .hz-v71 .hz-tbl tr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;margin:0;padding:14px;border-bottom:1px solid rgba(255,255,255,.12)}
+html body .hz-v71 .hz-tbl th{display:flex;align-items:center;gap:10px;width:auto;padding:0;color:#fff;font:800 18px/1.2 var(--hero-copy,var(--b))}
+html body .hz-v71 .hz-tbl td{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;padding:0;border:0}
+html body .hz-v71 .hz-tbl tr.hoy th::after{content:none}
+html body .hz-v71 .hz-rg{padding:7px 12px;border:1px solid rgba(255,255,255,.34);color:#fff;font:700 16px/1.2 var(--hero-copy,var(--b));font-variant-numeric:tabular-nums}
+html body .hz-v71 .hz-rg--x{border-style:dashed;color:#c4cdd0}
+html body .hz-v71 .hz-rg.is-on{background:#f2d21b;border-color:#f2d21b;color:#0a1012}
+.hz-hoy{display:none;padding:3px 8px;background:#f2d21b;color:#0a1012;font:800 12px/1.2 var(--hero-copy,var(--b))}
+.hz-tbl tr.hoy .hz-hoy{display:inline-block}
+html body .hz-v71 .hz-tbl tr.hoy{background:rgba(242,210,27,.11);box-shadow:inset 4px 0 0 #f2d21b}
+html body .hz-v71 .hz-tbl tr.hoy th{color:#f2d21b}
+html body .hz-v71 .hz-tz{margin:0;color:#c4cdd0;font:500 14px/1.4 var(--hero-copy,var(--b))}
+.hz-tz b{color:#fff;font-variant-numeric:tabular-nums}
+
+/* mapa: claro, sin filtros ni animaciones infinitas */
+html body .hz-v71 .hz-mapwrap{flex-direction:column;gap:0;align-self:stretch}
+html body .hz-v71 .hz-map{flex:1 1 auto;min-height:clamp(380px,46vw,560px);background:#e8eef0;border:1px solid rgba(242,210,27,.6);border-bottom:0}
+html body .hz-v71 .hz-map-v .leaflet-tile-pane{filter:none}
+html body .hz-v71 .hz-map-v .leaflet-container{background:#e8eef0;font-family:var(--b)}
+html body .hz-v71 .hz-map-ph{background:#eef2f3;background-image:none;color:#0a1012}
+html body .hz-v71 .hz-map-ic{border-color:#0a1012}
+html body .hz-v71 .hz-map-ic svg{stroke:#0a1012}
+html body .hz-v71 .hz-map-v .leaflet-bar{border:0;border-radius:2px;box-shadow:0 2px 10px rgba(10,16,18,.3)}
+html body .hz-v71 .hz-map-v .leaflet-bar a{width:42px;height:42px;line-height:42px;background:#fff;color:#0a1012;border-bottom:1px solid #d3d9db;font-size:22px}
+html body .hz-v71 .hz-map-v .leaflet-bar a:hover{background:#f2d21b;color:#0a1012}
+html body .hz-v71 .hz-ctr{padding:12px 15px;border:0;background:#fff;color:#0a1012;font:800 14px/1 var(--b);box-shadow:0 2px 10px rgba(10,16,18,.3)}
+html body .hz-v71 .hz-ctr:hover{background:#f2d21b;color:#0a1012}
+html body .hz-v71 .hz-map-v .leaflet-control-attribution{background:rgba(255,255,255,.9);color:#333}
+html body .hz-v71 .hz-map-v .leaflet-control-attribution a{color:#0a4a8c}
+html body .hz-v71 .hz-map-v .leaflet-popup-content-wrapper{background:#fff;color:#0a1012;border-radius:2px;border-top:3px solid #f2d21b}
+html body .hz-v71 .hz-map-v .leaflet-popup-tip{background:#fff}
+html body .hz-v71 .hz-pop-t{color:#0a1012}
+html body .hz-v71 .hz-pop-a{color:#3d4a4f}
+html body .hz-v71 .hz-pin-r{display:none;animation:none}
+.hz-tt.leaflet-tooltip{padding:7px 11px;border:2px solid #0a1012;border-radius:0;background:#fff;color:#0a1012;font:800 14px/1.1 var(--b);box-shadow:0 2px 8px rgba(10,16,18,.3)}
+.hz-tt.leaflet-tooltip-right::before{border-right-color:#0a1012}
+
+/* dirección: debajo del mapa, sin tapar nada */
+html body .hz-v71 .hz-addr{position:static;inset:auto;width:auto;margin:0;padding:18px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 24px;align-items:center;border:1px solid rgba(242,210,27,.6);border-left:5px solid #f2d21b;background:#0a1012}
+.hz-addr-t{display:flex;align-items:center;gap:14px;min-width:0}
+.hz-addr-i{flex:none;display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(242,210,27,.6)}
+.hz-addr-i svg{width:24px;height:24px;stroke:#f2d21b;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html body .hz-v71 .hz-k{margin:0 0 4px;color:#f2d21b;font:800 13px/1.2 var(--hero-copy,var(--b));letter-spacing:.04em;text-transform:none}
+html body .hz-v71 .hz-a{font:800 clamp(19px,2vw,24px)/1.2 var(--hero-title,var(--b));letter-spacing:-.01em}
+html body .hz-v71 .hz-addr .row{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+html body .hz-v71 .hz-addr .btn{flex:0 1 auto}
+@media(max-width:1000px){html body .hz-v71 .hz-stage{grid-template-columns:minmax(0,1fr)}html body .hz-v71 .hz-addr{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.hz-cd{gap:6px}.hz-cd-u{padding:10px 2px 8px}html body .hz-v71 .hz-tbl tr{padding:12px 10px}html body .hz-v71 .hz-addr .btn{flex:1 1 100%}}
+
+/* ── 2 · Formularios: legibles, compactos y sin lag ── */
+/* la cabecera heredaba el estilo global de <header> (fijo, oscuro y con desenfoque): por eso era ilegible y pesaba */
+html body header.cv-head{position:static;z-index:auto;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;gap:2px 14px;padding:0 0 10px;border-bottom:1px solid var(--cv-ln)}
+/* un recorte de forma sobre todo el formulario se rehace con cada tecla; los fondos filtrados se rehacían con cada línea nueva */
+html body .cv-form{clip-path:none;gap:12px;padding:clamp(14px,1.8vw,22px)}
+section.conversion::before{filter:none}
+.cv-sun{width:62px;height:35px}
+.cv-ey{margin:0 0 3px;font-size:11px;letter-spacing:.18em}
+.cv-ht h3{font-size:clamp(20px,2.2vw,26px)}
+.cv-prog{margin-top:8px;gap:10px}
+.cv-prog-t{min-width:100px;font-size:11px}
+.cv-prog-b{height:4px}
+.cv-grid{gap:11px 12px}
+.cv-f{gap:5px}
+.cv-l{font-size:11px;letter-spacing:.1em}
+.cv-l small{font-size:12px}
+.cv-form input:not([type=hidden]),.cv-form select,.cv-form textarea{min-height:42px;padding:8px 12px;font-size:15px}
+.cv-form textarea{min-height:62px}
+.cv-form select{padding-right:36px;background-position:right 12px center}
+.cv-sfx input{padding-right:50px!important}
+.cv-chips{gap:6px}
+.cv-chip{min-height:36px;padding:0 12px;font-size:14px}
+.cv-chip.is-on::before{margin-right:6px}
+.cv-q{min-height:30px;padding:0 10px;font-size:12.5px}
+.cv-money-r{gap:8px}
+.cv-cur .cv-chip{min-width:52px;padding:0 10px}
+.cv-match{padding:10px 12px}
+.cv-match-h{font-size:14px}
+.cv-match-l{gap:8px;margin-top:10px}
+.cv-m{grid-template-columns:60px minmax(0,1fr) auto;gap:10px;padding:6px}
+.cv-m-p{width:60px}
+.cv-m-a{min-height:34px;padding:0 12px}
+.cv-bub{gap:6px}
+.cv-bub-b{min-height:0;padding:10px 14px 26px;font-size:14px;line-height:1.45}
+.cv-acts{gap:8px}
+.cv-btn{min-height:40px;padding:0 14px;font-size:12px}
+.cv-btn--wa,.cv-btn--main{min-height:48px;font-size:13.5px}
+.cv-tools{gap:8px}
+.cv-soc{font-size:13.5px}
+#tu-usado .conversion-layout,#busqueda .conversion-layout{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(24px,4vw,56px)}
+@media(max-width:960px){#tu-usado .conversion-layout,#busqueda .conversion-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.cv-grid{gap:10px}.cv-sun{width:52px;height:30px}.cv-form input:not([type=hidden]),.cv-form select{min-height:44px}}
+
+/* ── 3 · Sucursales del grupo ── */
+.sb{margin-top:clamp(44px,6vw,80px);padding-top:clamp(28px,3.4vw,44px);border-top:4px solid #f2d21b}
+.sb-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:end}
+.sb-k{display:inline-block;margin:0 0 12px;padding:5px 11px;background:#f2d21b;color:#0a1012;font:800 14px/1.2 var(--hero-copy,var(--b))}
+.sb h3{margin:0;color:#fff;font:800 clamp(32px,4.4vw,58px)/.98 var(--hero-title,var(--b));letter-spacing:-.035em}
+.sb-head .sec-p{margin:12px 0 0;max-width:46ch;color:#e2e6e7;font-size:17.5px;line-height:1.5}
+.sb-how{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.sb-how li{display:flex;align-items:center;gap:10px;padding:11px 15px;border:1px solid rgba(242,210,27,.5);background:rgba(242,210,27,.06);color:#fff;font:700 15px/1.2 var(--hero-copy,var(--b))}
+.sb-how svg{flex:none;width:22px;height:22px;stroke:#f2d21b;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html body .sb .hz-br-l{gap:clamp(16px,2vw,26px);margin-top:28px}
+html body .sb .hz-br{background:#10181a;border:1px solid rgba(255,255,255,.16);border-top:5px solid #f2d21b}
+.hz-br-top{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#0a1012}
+.hz-br-pin{flex:none;display:grid;place-items:center;width:46px;height:46px;background:#f2d21b;clip-path:var(--cut)}
+.hz-br-pin svg{width:24px;height:24px;stroke:#0a1012;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html body .sb .hz-br-top h4{margin:0;color:#fff;font:800 clamp(22px,2.4vw,30px)/1.05 var(--hero-title,var(--b));letter-spacing:-.02em}
+.hz-br-city{margin:3px 0 0;color:#f2d21b;font:700 15px/1.2 var(--hero-copy,var(--b))}
+html body .sb .hz-br-map{aspect-ratio:16/10;border-bottom:0}
+html body .sb .hz-br-b{padding:16px 20px 20px;gap:14px}
+html body .sb .hz-br-a{margin:0;color:#fff;font:700 18px/1.3 var(--hero-copy,var(--b))}
+.hz-br-act{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sb-b{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;border:1px solid rgba(255,255,255,.34);color:#fff;font:800 16px/1.15 var(--hero-copy,var(--b));text-decoration:none}
+.sb-b:hover{border-color:#f2d21b;background:rgba(242,210,27,.1)}
+.sb-b svg{flex:none;width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sb-b small{display:block;margin-top:2px;font:600 14px/1.1 var(--hero-copy,var(--b));opacity:.85;font-variant-numeric:tabular-nums}
+.sb-b--p{grid-column:1/-1;justify-content:center;border-color:#f2d21b;background:#f2d21b;color:#0a1012;clip-path:var(--cut);font-size:17px}
+.sb-b--p:hover{background:#ffe14d;border-color:#ffe14d}
+.sb-b:nth-child(2):last-child{grid-column:1/-1}
+html body .sb>.src{margin-top:18px;color:#c4cdd0}
+@media(max-width:900px){.sb-head{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.hz-br-act{grid-template-columns:minmax(0,1fr)}.sb-how li{flex:1 1 100%}}
+
+/* ── 4 · Quiénes somos ── */
+#nosotros.nz{padding:0;background:#f8f8f8;color:#0a1012}
+.nz .w{width:min(1280px,100% - 40px)}
+.nz-top{padding-block:clamp(52px,8vw,112px);background:linear-gradient(180deg,#f8f8f8,#efefea)}
+.nz-w{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,80px);align-items:center}
+.nz .ey{margin:0 0 16px}
+.nz-logo{display:inline-block;margin:0 0 18px;background:#fefefe;border:1px solid #0a1012;line-height:0}
+.nz-logo img{display:block;width:auto;height:clamp(64px,7vw,88px)}
+#nosotros.nz h2{max-width:none;margin:0;color:#0a1012;font:800 clamp(54px,9vw,132px)/.9 var(--hero-title,var(--b));letter-spacing:-.05em}
+#nosotros.nz h2 em{display:block;width:fit-content;margin-top:.04em;padding:0 .1em;background:#f2d21b;color:#0a1012;font-style:normal}
+#nosotros.nz h2::after{content:none}
+.nz-lead{margin:26px 0 0;max-width:30ch;color:#0a1012;font:700 clamp(22px,2.4vw,30px)/1.25 var(--hero-copy,var(--b))}
+.nz-p{margin:14px 0 0;max-width:52ch;color:#3d4a4f;font-size:18px;line-height:1.6}
+.nz-cta{margin-top:28px;gap:10px}
+.nz-cta .btn:not(.p){border-color:#0a1012;color:#0a1012}
+.nz-cta .btn:not(.p):hover{background:#0a1012;color:#f2d21b}
+.nz-big{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(340px,40vw,500px);padding:clamp(24px,3vw,40px);background:#0a1012;color:#fff;border-bottom:8px solid #f2d21b;clip-path:polygon(0 0,calc(100% - 40px) 0,100% 40px,100% 100%,0 100%)}
+.nz-sun{position:absolute;right:-12%;top:-14%;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#f2d21b 0 46%,rgba(242,210,27,.3) 47% 60%,rgba(242,210,27,.12) 61% 76%,transparent 77%)}
+.nz-big p{position:relative;margin:0}
+.nz-num{color:#f2d21b;font:800 clamp(120px,18vw,240px)/.78 var(--hero-title,var(--b));letter-spacing:-.06em}
+.nz-num-l{margin-top:14px!important;font:800 clamp(24px,2.8vw,36px)/1.05 var(--hero-title,var(--b));letter-spacing:-.02em}
+.nz-num-s{margin-top:8px!important;color:#e2e6e7;font-size:16.5px;line-height:1.4;max-width:30ch}
+.nz-stats{background:#0a1012;border-block:4px solid #f2d21b}
+.nz-stats ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));width:min(1280px,100% - 40px);margin:0 auto;padding:0;list-style:none}
+.nz-stats li{padding:clamp(22px,3vw,40px) clamp(14px,2.4vw,32px);border-left:1px solid rgba(255,255,255,.16)}
+.nz-stats li:first-child{border-left:0;padding-left:0}
+.nz-stats b{display:block;color:#f2d21b;font:800 clamp(60px,8.4vw,116px)/.88 var(--hero-title,var(--b));letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.nz-stats span{display:block;margin-top:12px;max-width:30ch;color:#e8ecec;font-size:17px;line-height:1.4}
+.nz-body{padding-block:clamp(48px,6vw,92px)}
+.nz-h{margin:0;color:#0a1012;font:800 clamp(30px,4.2vw,56px)/1 var(--hero-title,var(--b));letter-spacing:-.035em}
+.nz-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:28px 0 0;padding:0;list-style:none}
+.nz-tile{display:flex;flex-direction:column;gap:12px;margin:0;padding:24px;background:#fff;border:1px solid rgba(10,16,18,.16);border-top:6px solid #f2d21b}
+.nz-ic{display:grid;place-items:center;width:56px;height:56px;background:#0a1012}
+.nz-ic svg{width:30px;height:30px;stroke:#f2d21b;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.nz-tile h4{margin:0;color:#0a1012;font:800 23px/1.1 var(--hero-title,var(--b));letter-spacing:-.02em}
+.nz-tile p{flex:1;margin:0;color:#3d4a4f;font-size:16.5px;line-height:1.55}
+.nz-tile a{width:fit-content;color:#0a1012;font:800 15px/1.2 var(--hero-copy,var(--b));text-decoration:underline;text-decoration-color:#f2d21b;text-decoration-thickness:3px;text-underline-offset:5px}
+.nz-net{margin-top:clamp(36px,5vw,64px);padding:clamp(22px,3vw,40px);background:#0a1012;color:#fff;border-top:6px solid #f2d21b}
+.nz-net .nz-h{color:#fff}
+.nz-net-p{margin:10px 0 0;color:#e2e6e7;font-size:17px}
+.nz-net ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:22px 0 0;padding:0;list-style:none}
+.nz-net li{display:flex;align-items:flex-start;gap:12px;margin:0;padding:15px 16px;border:1px solid rgba(255,255,255,.2)}
+.nz-net li svg{flex:none;width:24px;height:24px;margin-top:2px;stroke:#f2d21b;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nz-net b{display:block;font:800 18px/1.2 var(--hero-copy,var(--b))}
+.nz-net span{display:block;margin-top:3px;color:#d6dcde;font-size:15.5px}
+.nz-net em{display:inline-block;margin-top:8px;padding:3px 8px;background:#0a1012;color:#f2d21b;font:800 12.5px/1.2 var(--hero-copy,var(--b));font-style:normal}
+.nz-net li.is-here{background:#f2d21b;border-color:#f2d21b;color:#0a1012}
+.nz-net li.is-here svg{stroke:#0a1012}
+.nz-net li.is-here span{color:#2b2500}
+@media(max-width:900px){.nz-w{grid-template-columns:minmax(0,1fr)}.nz-big{min-height:320px}.nz-stats li{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0}.nz-stats li:first-child{border-top:0}}
+
+/* ── 5 · Coordiná tu visita ── */
+#visita.vz{position:relative;padding-block:clamp(56px,7vw,104px);background:radial-gradient(ellipse 62% 62% at 50% 118%,rgba(242,210,27,.24),transparent 66%),#0a1012;border-top:4px solid #f2d21b}
+#visita.vz .vis-w{display:block;text-align:left}
+.vz .w{width:min(1280px,100% - 40px)}
+.vz-head{max-width:760px;margin-bottom:clamp(24px,3vw,40px)}
+.vz .ey{margin:0 0 14px}
+#visita.vz h2{max-width:none;margin:0;color:#fff;font:800 clamp(44px,6vw,84px)/.94 var(--hero-title,var(--b));letter-spacing:-.045em}
+#visita.vz h2 em{display:inline;padding:0;background:none;color:#f2d21b;font-style:normal}
+#visita.vz h2::after{content:none}
+.vz-head .sec-p{max-width:46ch;margin:16px 0 0;color:#e8ecec;font-size:clamp(17px,1.6vw,20px);line-height:1.55}
+.vz-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);align-items:stretch}
+.vz-main{padding:clamp(22px,3vw,40px);background:#f8f8f8;color:#0a1012;border-top:6px solid #f2d21b;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,0 100%)}
+#visita .vz-main h3{margin:0;color:#0a1012;font:800 clamp(26px,3.2vw,40px)/1.05 var(--hero-title,var(--b));letter-spacing:-.03em}
+.vz-steps{display:grid;gap:16px;margin:22px 0 26px;padding:0;list-style:none;counter-reset:vz}
+.vz-steps li{counter-increment:vz;display:grid;grid-template-columns:46px minmax(0,1fr);gap:2px 16px;align-items:start;margin:0}
+.vz-steps li::before{content:counter(vz);grid-row:1/3;display:grid;place-items:center;width:46px;height:46px;background:#f2d21b;color:#0a1012;font:800 22px/1 var(--hero-title,var(--b));clip-path:var(--cut)}
+.vz-steps b{color:#0a1012;font:800 20px/1.2 var(--hero-title,var(--b))}
+.vz-steps span{color:#3d4a4f;font-size:16.5px;line-height:1.45}
+.vz-cta{display:flex;flex-wrap:wrap;gap:10px}
+.vz-main .btn{min-height:50px;border-color:#0a1012;color:#0a1012}
+.vz-main .btn:hover{background:#0a1012;color:#f2d21b}
+.vz-main .btn.p.vz-go{min-height:56px;padding-inline:28px;background:#0a1012;border-color:#0a1012;color:#f2d21b;font-size:16px}
+.vz-main .btn.p.vz-go:hover{background:#f2d21b;color:#0a1012;border-color:#0a1012}
+.vz-side{display:flex;flex-direction:column;gap:16px;padding:clamp(20px,2.6vw,32px);background:#10181a;color:#fff;border:1px solid rgba(242,210,27,.4);border-top:6px solid #f2d21b}
+.vz-side-k{margin:0;color:#f2d21b;font:800 15px/1.2 var(--hero-copy,var(--b))}
+.vz-live{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#0a1012;border:1px solid rgba(255,255,255,.18)}
+.vz-live[data-abierto="1"]{background:#f2d21b;border-color:#f2d21b;color:#0a1012}
+.vz-live .hz-dot{flex:none;width:14px;height:14px;border-radius:50%;background:#ff6a55;animation:none;box-shadow:none}
+.vz-live[data-abierto="1"] .hz-dot{background:#0a1012}
+.vz-live p{margin:0}
+.vz-live-t{font:800 clamp(20px,2.2vw,26px)/1.1 var(--hero-title,var(--b))}
+.vz-live-c{margin-top:4px!important;font:700 16px/1.3 var(--hero-copy,var(--b));font-variant-numeric:tabular-nums}
+.vz-hrs{margin:0;padding:0;list-style:none}
+.vz-hrs li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;margin:0;padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.14);font-size:16.5px}
+.vz-hrs li span{color:#d6dcde}
+.vz-hrs li b{color:#fff;font-weight:800;text-align:right}
+.vz-hrs li.hoy{background:rgba(242,210,27,.13);box-shadow:inset 4px 0 0 #f2d21b}
+.vz-hrs li.hoy span{color:#f2d21b;font-weight:800}
+.vz-addr{display:flex;align-items:flex-start;gap:10px;margin:0;color:#fff;font:700 17px/1.35 var(--hero-copy,var(--b))}
+.vz-addr svg{flex:none;width:24px;height:24px;stroke:#f2d21b;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.vz-side .btn{margin-top:auto;width:100%;min-height:48px}
+@media(max-width:900px){.vz-grid{grid-template-columns:minmax(0,1fr)}.vz-main .btn{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.hz-cd-u b{transition:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Horizonte Automotores","address":{"@type":"PostalAddress","streetAddress":"Avenida Argentina 2021","postalCode":"3133","addressLocality":"María Grande","addressRegion":"Entre Ríos","addressCountry":"AR"},"sameAs":["https://www.facebook.com/horizonteautos/","https://www.instagram.com/horizonte_automotores/"],"telephone":"+543434618388","email":"snicolas540@hotmail.com","hasMap":"https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:30","closes":"13:00"}]}</script>
 <script defer src="js/secciones.js"></script>
@@ -1771,22 +2013,26 @@ dialog.cmp-lux .cmp-ft{padding:10px clamp(18px,3vw,38px) 28px;color:#9ba8ac}
 </div>
 </div>
 
-<section id="horarios" class="hz-hr hz-lux" aria-labelledby="hor-t" data-semana="[{&quot;etiqueta&quot;:&quot;Lunes a viernes&quot;,&quot;dias&quot;:[1,2,3,4,5],&quot;rangos&quot;:[[&quot;08:30&quot;,&quot;12:30&quot;],[&quot;15:30&quot;,&quot;19:30&quot;]]},{&quot;etiqueta&quot;:&quot;Sábados&quot;,&quot;dias&quot;:[6],&quot;rangos&quot;:[[&quot;08:30&quot;,&quot;13:00&quot;]]}]"><div class="w">
-<div class="hz-hr-head"><div><p class="ey">Horarios y ubicación</p><h2 id="hor-t">Cuándo y dónde <em>visitarnos</em></h2></div>
-<div class="hz-live" data-live data-abierto="0"><span class="hz-dot" aria-hidden="true"></span><div><p class="hz-live-t" data-estado-t>Horario de atención</p><p class="hz-live-d" data-estado-d>L-V 8:30–12:30 y 15:30–19:30 · S 8:30–13:00</p></div></div></div>
+<section id="horarios" class="hz-hr hz-lux hz-v71" aria-labelledby="hor-t" data-semana="[{&quot;etiqueta&quot;:&quot;Lunes a viernes&quot;,&quot;dias&quot;:[1,2,3,4,5],&quot;rangos&quot;:[[&quot;08:30&quot;,&quot;12:30&quot;],[&quot;15:30&quot;,&quot;19:30&quot;]]},{&quot;etiqueta&quot;:&quot;Sábados&quot;,&quot;dias&quot;:[6],&quot;rangos&quot;:[[&quot;08:30&quot;,&quot;13:00&quot;]]}]"><div class="w">
+<div class="hz-hr-head"><p class="ey">Horarios y ubicación</p><h2 id="hor-t">Cuándo y dónde <em>visitarnos</em></h2></div>
 <div class="hz-stage">
 <div class="hz-panel">
-<div class="hz-dial" data-dial aria-hidden="true"></div>
-<div class="hz-wk"><p class="hz-wk-t">La semana en un vistazo</p>
-<table class="hz-tbl"><caption class="sr">Horario de atención</caption><tbody><tr data-dias="1,2,3,4,5"><th scope="row">Lunes a viernes</th><td><span class="hz-rg">8:30 a 12:30</span><span class="hz-rg">15:30 a 19:30</span></td></tr><tr data-dias="6"><th scope="row">Sábados</th><td><span class="hz-rg">8:30 a 13:00</span></td></tr><tr data-dias="0"><th scope="row">Domingos</th><td><span class="hz-rg hz-rg--x">Cerrado</span></td></tr></tbody></table></div>
-<p class="hz-tz">Hora de Argentina · el sol marca dónde está el día ahora.</p>
+<div class="hz-now" data-live data-abierto="0">
+<p class="hz-now-st"><span class="hz-dot" aria-hidden="true"></span><span data-estado-t>Horario de atención</span></p>
+<p class="hz-now-lbl" data-cd-lbl></p>
+<div class="hz-cd" role="timer" aria-label="Tiempo que falta"><span class="hz-cd-u"><b data-cd-h>--</b><i>horas</i></span><span class="hz-cd-u"><b data-cd-m>--</b><i>minutos</i></span><span class="hz-cd-u"><b data-cd-s>--</b><i>segundos</i></span></div>
+<p class="hz-now-d" data-estado-d>L-V 8:30–12:30 y 15:30–19:30 · S 8:30–13:00</p>
+</div>
+<div class="hz-wk"><p class="hz-wk-t">Días y horarios de atención</p>
+<table class="hz-tbl"><caption class="sr">Horario de atención</caption><tbody><tr data-dias="1,2,3,4,5"><th scope="row"><span class="hz-dn">Lunes a viernes</span><span class="hz-hoy">Hoy</span></th><td><span class="hz-rg">8:30 a 12:30</span><span class="hz-rg">15:30 a 19:30</span></td></tr><tr data-dias="6"><th scope="row"><span class="hz-dn">Sábados</span><span class="hz-hoy">Hoy</span></th><td><span class="hz-rg">8:30 a 13:00</span></td></tr><tr data-dias="0"><th scope="row"><span class="hz-dn">Domingos</span><span class="hz-hoy">Hoy</span></th><td><span class="hz-rg hz-rg--x">Cerrado</span></td></tr></tbody></table></div>
+<p class="hz-tz">Hora de Argentina: ahora son las <b data-reloj>--:--:--</b></p>
 </div>
 <div class="hz-mapwrap">
 <div class="hz-map" id="mapa" data-lat="-31.6579811" data-lng="-59.9246037" data-nombre="Horizonte Automotores" data-dir="Avenida Argentina 2021, María Grande, Entre Ríos" data-gmaps="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" data-leaflet="js/vendor/leaflet.js" data-css="js/vendor/leaflet.css">
 <div class="hz-map-v" role="region" aria-label="Mapa con la ubicación de Horizonte Automotores"></div>
-<div class="hz-map-ph" data-mapa-ph><span class="hz-map-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><p>Mapa interactivo de María Grande</p><div class="row"><button class="btn p sm" type="button" data-mapa-abrir hidden>Ver mapa</button><a class="btn sm" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a></div><p class="map-m src" role="status" aria-live="polite"></p></div>
+<div class="hz-map-ph" data-mapa-ph><span class="hz-map-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><p>Mapa de María Grande</p><div class="row"><button class="btn p sm" type="button" data-mapa-abrir hidden>Ver mapa</button><a class="btn sm" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a></div><p class="map-m src" role="status" aria-live="polite"></p></div>
 </div>
-<div class="hz-addr"><p class="hz-k">Estamos en</p><p class="hz-a">Avenida Argentina 2021, María Grande, Entre Ríos</p><p class="hz-ant">Antes: Av. Argentina 536</p>
+<div class="hz-addr"><div class="hz-addr-t"><span class="hz-addr-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><p class="hz-k">Dónde estamos</p><p class="hz-a">Avenida Argentina 2021, María Grande, Entre Ríos</p><p class="hz-ant">Antes: Av. Argentina 536</p></div></div>
 <div class="row"><a class="btn p sm" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Cómo llegar</a><a class="btn sm" href="https://waze.com/ul?ll=-31.6579811,-59.9246037&amp;navigate=yes" target="_blank" rel="noopener noreferrer">Abrir en Waze</a><button class="btn sm" type="button" data-copiar="Avenida Argentina 2021, María Grande, Entre Ríos" hidden>Copiar dirección</button></div></div>
 </div>
 </div>
@@ -1998,22 +2244,52 @@ dialog.cmp-lux .cmp-ft{padding:10px clamp(18px,3vw,38px) 28px;color:#9ba8ac}
 <details class="dd"><summary>Parte de pago</summary><p>Entregar tu usado como parte del precio de otra unidad.</p></details></div></div>
 </div></section>
 
-<section id="visita" class="visita-s" aria-labelledby="vis-t"><div class="w vis-w">
-<p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
-<div class="visit-card">
-<div class="visit-main"><h3>Agendá una visita y prueba de manejo</h3>
-<p>Elegí día y franja en la página de reserva y se arma la consulta para la agencia. Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</p>
-<div class="row"><a class="btn p" href="reserva.html">Agendar visita</a><a class="btn" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20coordinar%20una%20visita%20y%20prueba%20de%20manejo." target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="btn" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Cómo llegar</a><a class="btn" href="tel:+543434618388">Llamar</a></div></div>
-<div class="vis-hrs"><p class="vis-k">Antes de venir</p><p class="vis-t">Mirá los días y franjas de atención y cómo llegar.</p><a class="btn sm" href="#horarios">Ver horarios y mapa</a></div>
+<section id="visita" class="visita-s vz" aria-labelledby="vis-t"><div class="w vis-w">
+<div class="vz-head"><p class="ey">Visita</p><h2 id="vis-t">Coordiná tu <em>visita</em></h2>
+<p class="sec-p">Pasá a conocer las unidades. Armá la consulta en un minuto y la agencia acuerda con vos el día y la hora.</p></div>
+<div class="vz-grid">
+<div class="vz-main"><h3>Agendá una visita y prueba de manejo</h3>
+<ol class="vz-steps"><li><b>Elegí día y franja</b><span>En la página de reserva, desde el celular o la computadora.</span></li><li><b>Se arma tu consulta</b><span>Queda lista para enviarla a la agencia por WhatsApp.</span></li><li><b>La agencia te confirma</b><span>Es una consulta, no un turno: el día y la hora se acuerdan con la agencia.</span></li></ol>
+<div class="vz-cta"><a class="btn p vz-go" href="reserva.html">Agendar visita</a><a class="btn" href="https://wa.me/5493436109949?text=Hola!%20Quiero%20coordinar%20una%20visita%20y%20prueba%20de%20manejo." target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="btn" href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Cómo llegar</a><a class="btn" href="tel:+543434618388">Llamar</a></div></div>
+<aside class="vz-side" aria-label="Antes de venir"><p class="vz-side-k">Antes de venir</p>
+<div class="vz-live" data-live data-abierto="0"><span class="hz-dot" aria-hidden="true"></span><div><p class="vz-live-t" data-estado-t>Horario de atención</p><p class="vz-live-c" data-cd-full></p></div></div>
+<ul class="vz-hrs"><li data-dias="1,2,3,4,5"><span>Lunes a viernes</span><b>8:30 a 12:30 y 15:30 a 19:30</b></li><li data-dias="6"><span>Sábados</span><b>8:30 a 13:00</b></li><li data-dias="0"><span>Domingos</span><b>Cerrado</b></li></ul>
+<p class="vz-addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Avenida Argentina 2021, María Grande, Entre Ríos</span></p>
+<a class="btn sm" href="#horarios">Ver horarios y mapa</a></aside>
 </div>
 </div></section>
 
-<section class="lt" id="nosotros" aria-labelledby="nos-t"><div class="w">
-<p class="ey">Nosotros</p><img class="lg-sec" src="images/logo-sm.png" width="360" height="144" alt=""><h2 id="nos-t">Quiénes <em>somos</em></h2>
-<p class="sec-p">Horizonte Automotores es un concesionario de María Grande que forma parte del Grupo Almafuerte. En su página de Facebook se presenta con diez años de respaldo en el mercado regional.</p>
-<div class="stats"><div class="stat"><b>Trayectoria</b><span>Diez años de respaldo en el mercado regional, según su página de Facebook.</span></div><div class="stat"><b>Unidades</b><span>10 publicadas en esta web, relevadas el 13/10/2026</span></div><div class="stat"><b>Atención</b><span>5 puntos de atención que lista el Grupo Almafuerte, uno de ellos en María Grande</span></div></div>
-<div class="cards"><div class="card"><h3>Autos y motos</h3><p>Usados publicados para María Grande y financiación para llevarlos.</p></div><div class="card"><h3>Tu usado cuenta</h3><p>Se reciben usados como parte de pago y la tasación es sin cargo, según informa Grupo Almafuerte.</p></div><div class="card"><h3>Respaldo del grupo</h3><p>Forma parte del Grupo Almafuerte, con sucursales en Paraná y Santa Fe.</p></div></div>
-</div></section>
+
+<section class="nz" id="nosotros" aria-labelledby="nos-t">
+<div class="nz-top"><div class="w nz-w">
+<div class="nz-intro">
+<p class="ey">Nosotros</p>
+<span class="nz-logo"><img src="images/logo-sm.png" width="360" height="144" alt=""></span>
+<h2 id="nos-t">Quiénes <em>somos</em></h2>
+<p class="nz-lead">Horizonte Automotores es un concesionario de María Grande que forma parte del Grupo Almafuerte.</p>
+<p class="nz-p">En su página de Facebook se presenta con diez años de respaldo en el mercado regional.</p>
+<div class="row nz-cta"><a class="btn p" href="#unidades">Ver unidades</a><a class="btn" href="#contacto">Hablar con un asesor</a></div>
+</div>
+<div class="nz-big"><span class="nz-sun" aria-hidden="true"></span><p class="nz-num">10</p><p class="nz-num-l">años de respaldo</p><p class="nz-num-s">en el mercado regional, según su página de Facebook</p></div>
+</div></div>
+<div class="nz-stats"><ul>
+<li><b>10</b><span>unidades publicadas en esta web, relevadas el 13/10/2026</span></li>
+<li><b>5</b><span>puntos de atención que lista el Grupo Almafuerte, uno de ellos en María Grande</span></li>
+<li><b>3</b><span>localidades con atención: Paraná, María Grande y Santa Fe</span></li>
+</ul></div>
+<div class="nz-body"><div class="w">
+<h3 class="nz-h">Qué podés resolver con nosotros</h3>
+<ul class="nz-tiles">
+<li class="nz-tile"><span class="nz-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 15.5v-3l2-5h13l2 5v3M3.5 15.5h17M3.5 15.5v2.5M20.5 15.5v2.5"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></svg></span><h4>Autos y motos</h4><p>Usados publicados para María Grande y financiación para llevarlos.</p><a href="#unidades">Ver unidades</a></li>
+<li class="nz-tile"><span class="nz-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.2c-.6-.8-1.6-1.2-2.8-1.2-1.6 0-2.7.8-2.7 2s1 1.7 2.7 2c1.7.3 2.7.8 2.7 2s-1.1 2-2.7 2c-1.2 0-2.2-.4-2.8-1.2M12 6.5V8M12 16v1.5"/></svg></span><h4>Financiación</h4><p>Ofrecemos financiación para autos y motos. Los montos y las condiciones dependen de la unidad y de cada solicitante.</p><a href="#financiacion">Ver cómo financiar</a></li>
+<li class="nz-tile"><span class="nz-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h13l-3.5-3.5M19 15H6l3.5 3.5"/></svg></span><h4>Tu usado cuenta</h4><p>Se reciben usados como parte de pago y la tasación es sin cargo, según informa Grupo Almafuerte.</p><a href="#tu-usado">Armar mi consulta</a></li>
+<li class="nz-tile"><span class="nz-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6v5.5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></span><h4>Revisión y garantía</h4><p>Los usados pasan por revisión técnica y se entregan con garantía, según informa Grupo Almafuerte. Las condiciones dependen de cada vehículo.</p><a href="#preguntas">Ver preguntas</a></li>
+<li class="nz-tile"><span class="nz-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M12 8.5v3.5M12 12 6.5 15.2M12 12l5.5 3.2"/></svg></span><h4>Respaldo del grupo</h4><p>Forma parte del Grupo Almafuerte, con sucursales en Paraná y Santa Fe.</p><a href="#sucursales">Ver sucursales</a></li>
+</ul>
+<div class="nz-net"><h3 class="nz-h">Dónde encontrarnos</h3><p class="nz-net-p">Estos son los puntos de atención que lista el Grupo Almafuerte.</p>
+<ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Casa central</b><span>Av. Almafuerte 960, Paraná</span></div></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Predio</b><span>Av. Almafuerte 3408, Paraná</span></div></li><li class="is-here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Horizonte Automotores</b><span>Av. Argentina 2021, María Grande</span><em>Estás en esta sucursal web</em></div></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Sucursal Santa Fe</b><span>Urquiza 2809, Santa Fe</span></div></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Nueva sucursal Paraná</b><span>Av. Almafuerte 1504, Paraná</span></div></li></ul></div>
+</div></div>
+</section>
 
 <section id="contacto" class="ct hz-ct" aria-labelledby="contacto-t"><div class="w">
 <div class="hz-ct-head"><p class="ey">Contacto</p><h2 id="contacto-t">Hablá con <em>un asesor</em></h2><p class="sec-p">Escribinos o llamanos y te contamos disponibilidad, precio y formas de pago de la unidad que te interese.</p></div>
@@ -2023,10 +2299,11 @@ dialog.cmp-lux .cmp-ft{padding:10px clamp(18px,3vw,38px) 28px;color:#9ba8ac}
 <div class="hz-soc"><p class="hz-k">En la web</p><ul><li><a href="https://www.facebook.com/horizonteautos/" target="_blank" rel="noopener noreferrer">Facebook</a></li><li><a href="https://www.instagram.com/horizonte_automotores/" target="_blank" rel="noopener noreferrer">Instagram @horizonte_automotores</a></li><li><a href="https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.9246037,17z/data=!4m8!3m7!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!9m1!1b1!16s%2Fg%2F1tf7hvyq" target="_blank" rel="noopener noreferrer">Ficha de Google</a></li><li><a href="https://grupoalmafuerte.com/contacto/" target="_blank" rel="noopener noreferrer">Grupo Almafuerte</a></li></ul></div></aside>
 </div>
 
-<div class="hz-grp"><div class="hz-grp-head"><h3>Sucursales del Grupo Almafuerte</h3>
-<p class="sec-p">Cada sucursal tiene su mapa. Los números los publica el grupo en su material de contacto; algunas comparten el mismo WhatsApp.</p></div>
-<ul class="hz-br-l"><li class="hz-br"><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Av.%20Almafuerte%20960%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Casa central: Av. Almafuerte 960, Paraná" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><h4>Casa central</h4><p class="hz-br-a">Av. Almafuerte 960, Paraná</p><div class="hz-br-act"><a class="btn p sm" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Almafuerte%20960%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina" target="_blank" rel="noopener noreferrer">Cómo llegar</a><a class="btn sm" href="tel:+543434242921">Tel. 343-4242921</a><a class="btn sm" href="https://wa.me/5493436220915" target="_blank" rel="noopener noreferrer">WhatsApp 343-6220915</a></div></div></li><li class="hz-br"><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Av.%20Almafuerte%203408%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Predio: Av. Almafuerte 3408, Paraná" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><h4>Predio</h4><p class="hz-br-a">Av. Almafuerte 3408, Paraná</p><div class="hz-br-act"><a class="btn p sm" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Almafuerte%203408%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina" target="_blank" rel="noopener noreferrer">Cómo llegar</a><a class="btn sm" href="tel:+543434618392">Tel. 343-4618392</a><a class="btn sm" href="https://wa.me/5493436220915" target="_blank" rel="noopener noreferrer">WhatsApp 343-6220915</a></div></div></li><li class="hz-br"><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Urquiza%202809%2C%20Santa%20Fe%2C%20Santa%20Fe%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Sucursal Santa Fe: Urquiza 2809, Santa Fe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><h4>Sucursal Santa Fe</h4><p class="hz-br-a">Urquiza 2809, Santa Fe</p><div class="hz-br-act"><a class="btn p sm" href="https://www.google.com/maps/search/?api=1&amp;query=Urquiza%202809%2C%20Santa%20Fe%2C%20Santa%20Fe%2C%20Argentina" target="_blank" rel="noopener noreferrer">Cómo llegar</a><a class="btn sm" href="tel:+543426108942">Tel. 342-6108942</a></div></div></li><li class="hz-br"><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Av.%20Almafuerte%201504%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Nueva sucursal Paraná: Av. Almafuerte 1504, Paraná" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><h4>Nueva sucursal Paraná</h4><p class="hz-br-a">Av. Almafuerte 1504, Paraná</p><div class="hz-br-act"><a class="btn p sm" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Almafuerte%201504%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina" target="_blank" rel="noopener noreferrer">Cómo llegar</a></div></div></li></ul>
-<p class="src">Fuente: material de contacto del Grupo Almafuerte.</p></div>
+<div class="hz-grp sb" id="sucursales"><div class="sb-head"><div><p class="sb-k">5 puntos de atención</p><h3>Sucursales del Grupo Almafuerte</h3>
+<p class="sec-p">Elegí la sucursal que te quede más cerca. Cada tarjeta tiene su mapa, el botón para llegar y cómo contactarla.</p></div>
+<ul class="sb-how" aria-label="Cómo usar esta sección"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Mirá dónde queda</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/></svg><span>Tocá «Cómo llegar»</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamá o escribí</span></li></ul></div>
+<ul class="hz-br-l"><li class="hz-br"><div class="hz-br-top"><span class="hz-br-pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Casa central</h4><p class="hz-br-city">Paraná</p></div></div><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Av.%20Almafuerte%20960%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Casa central: Av. Almafuerte 960, Paraná" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><p class="hz-br-a">Av. Almafuerte 960, Paraná</p><div class="hz-br-act"><a class="sb-b sb-b--p" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Almafuerte%20960%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/></svg><span>Cómo llegar</span></a><a class="sb-b" href="tel:+543434242921"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamar<small>343-4242921</small></span></a><a class="sb-b" href="https://wa.me/5493436220915" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg><span>WhatsApp<small>343-6220915</small></span></a></div></div></li><li class="hz-br"><div class="hz-br-top"><span class="hz-br-pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Predio</h4><p class="hz-br-city">Paraná</p></div></div><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Av.%20Almafuerte%203408%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Predio: Av. Almafuerte 3408, Paraná" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><p class="hz-br-a">Av. Almafuerte 3408, Paraná</p><div class="hz-br-act"><a class="sb-b sb-b--p" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Almafuerte%203408%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/></svg><span>Cómo llegar</span></a><a class="sb-b" href="tel:+543434618392"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamar<small>343-4618392</small></span></a><a class="sb-b" href="https://wa.me/5493436220915" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg><span>WhatsApp<small>343-6220915</small></span></a></div></div></li><li class="hz-br"><div class="hz-br-top"><span class="hz-br-pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Sucursal Santa Fe</h4><p class="hz-br-city">Santa Fe</p></div></div><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Urquiza%202809%2C%20Santa%20Fe%2C%20Santa%20Fe%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Sucursal Santa Fe: Urquiza 2809, Santa Fe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><p class="hz-br-a">Urquiza 2809, Santa Fe</p><div class="hz-br-act"><a class="sb-b sb-b--p" href="https://www.google.com/maps/search/?api=1&amp;query=Urquiza%202809%2C%20Santa%20Fe%2C%20Santa%20Fe%2C%20Argentina" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/></svg><span>Cómo llegar</span></a><a class="sb-b" href="tel:+543426108942"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamar<small>342-6108942</small></span></a></div></div></li><li class="hz-br"><div class="hz-br-top"><span class="hz-br-pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Nueva sucursal Paraná</h4><p class="hz-br-city">Paraná</p></div></div><div class="hz-br-map"><iframe src="https://maps.google.com/maps?q=Av.%20Almafuerte%201504%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina&amp;hl=es&amp;z=16&amp;output=embed" title="Mapa de Nueva sucursal Paraná: Av. Almafuerte 1504, Paraná" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="hz-br-b"><p class="hz-br-a">Av. Almafuerte 1504, Paraná</p><div class="hz-br-act"><a class="sb-b sb-b--p" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Almafuerte%201504%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos%2C%20Argentina" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6H16"/></svg><span>Cómo llegar</span></a></div></div></li></ul>
+<p class="src">Fuente: material de contacto del Grupo Almafuerte. Los números los publica el grupo; algunas sucursales comparten el mismo WhatsApp.</p></div>
 </div></section>
 </main>
 <footer><div class="w">
