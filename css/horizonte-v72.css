@@ -16,15 +16,10 @@ html body .hz-v71 .hz-addr .btn{flex:1 1 auto}
 @keyframes hzKen{from{transform:scale(1.15)}to{transform:scale(1.05)}}
 @keyframes hzFade{from{filter:brightness(.6)}to{filter:brightness(1)}}
 .hero-slide img{transform:scale(1.05);transition:none!important}
-.hero-slide.is-active img,.hero-slide.is-leaving img{animation:hzKen 9s cubic-bezier(.22,.61,.36,1) both,hzFade 1.4s ease-out both}
+.hero-slide.is-active img,.hero-slide.is-leaving img{animation:hzKen 4.5s cubic-bezier(.22,.61,.36,1) both,hzFade 1.4s ease-out both}
 .hero-slide.is-leaving img{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.hero-slide.is-active img,.hero-slide.is-leaving img{animation:none}}
-.hero-dots{position:absolute;right:clamp(18px,3vw,48px);bottom:clamp(20px,3vw,40px);z-index:5;display:flex;gap:10px}
-.hero-dots button{width:34px;height:6px;padding:0;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:background .3s,width .3s}
-.hero-dots button[aria-current="true"]{background:#f2d21b;width:52px}
-.hero-dots button:hover{background:#fff}
-.hero-dots button:focus-visible{outline:3px solid #f2d21b;outline-offset:3px}
-@media(max-width:700px){.hero-dots{right:18px;bottom:14px}.hero-dots button{width:24px}.hero-dots button[aria-current="true"]{width:38px}}
+
 
 /* 3 · Nosotros: isotipo */
 .nz-big .nz-iso{position:absolute;top:clamp(20px,3vw,36px);right:clamp(20px,3vw,36px);width:clamp(104px,11vw,150px);height:auto;overflow:visible}
@@ -79,3 +74,9 @@ html body .hz-v71 .hz-addr .btn{flex:1 1 auto}
 .rz-dis{margin:12px 0 0;color:#aeb9bd;font:500 13px/1.4 var(--hero-copy,var(--b))}
 @media(max-width:860px){.rz-step{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.rz,.rz-step{transition:none;animation:none}}
+
+/* 5 · Fondos con imagen en secciones oscuras (se cargan al acercarse, sin fixed ni blur: no pesan al scrollear) */
+.hz-bgh{position:relative;isolation:isolate}
+.hz-bgimg{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;background-position:center;background-size:cover;background-repeat:no-repeat;transition:opacity 1s ease}
+.hz-bgimg.is-on{opacity:1}
+@media(prefers-reduced-motion:reduce){.hz-bgimg{transition:none}}

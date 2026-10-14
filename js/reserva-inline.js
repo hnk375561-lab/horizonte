@@ -83,7 +83,8 @@
   function abrir() {
     var dl = document.querySelector('dialog[open]'); if (dl && dl.close) dl.close();
     box.classList.add('is-open');
-    sec.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    var hh = document.querySelector('header'), off = (hh ? hh.offsetHeight : 68) + 16;
+    window.scrollTo({ top: Math.max(0, box.getBoundingClientRect().top + window.pageYOffset - off), behavior: reduce ? 'auto' : 'smooth' });
     setTimeout(function () { var f = q('.rz-d:not(:disabled)'); if (f) { try { f.focus({ preventScroll: true }); } catch (e) { f.focus(); } } }, reduce ? 0 : 450);
   }
   function cerrar() { box.classList.remove('is-open'); reset(); var go = sec.querySelector('.vz-go'); if (go) { try { go.focus({ preventScroll: true }); } catch (e) {} } }
