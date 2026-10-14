@@ -1,4 +1,4 @@
-/* Horizonte Automotores · carrusel del hero: cambia de foto cada 3 segundos, de forma permanente.
+/* Horizonte Automotores · carrusel del hero: cambia de foto cada 2 segundos, de forma permanente.
    Solo se detiene con la pestaña oculta o si el sistema pide reducir movimiento. */
 (function () {
   'use strict';
@@ -22,8 +22,8 @@
     });
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
-  function start() { if (reduce || paused || timer || document.hidden) return; timer = setInterval(function () { go(i + 1); }, 3000); }
-  setTimeout(start, 3000);
+  function start() { if (reduce || paused || timer || document.hidden) return; timer = setInterval(function () { go(i + 1); }, 2000); }
+  setTimeout(start, 2000);
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
   /* las fotos 2 a 4 se bajan y decodifican de a una, después de la carga, para no trabar el arranque */
   function precargar() {

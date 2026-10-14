@@ -10,6 +10,7 @@ const live = $("#live");
 const EMBED = new URLSearchParams(location.search).get("embed") === "1";
 const cerrarEmbed = () => { try { window.parent.postMessage({ hz: "cerrar-reserva" }, location.origin); } catch (e) {} };
 const startOfToday = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
+const esDiaElegible = (date) => date >= startOfToday() && date.getDay() !== 0;
 const announce = (text) => { if (live) live.textContent = text; };
 const monthTitle = (date) => `${months[date.getMonth()]} ${date.getFullYear()}`;
 const formatDate = (date) => date.toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "long" });
@@ -20,7 +21,7 @@ function renderCalendar() {
   const calendar = $("#calendar"); if (!calendar) return; calendar.textContent = ""; $("#month-label").textContent = monthTitle(state.month); $("#month-status").textContent = CONFIG.slotsNote;
   for (let i = 0; i < firstDay(state.month); i += 1) { const empty = document.createElement("span"); empty.className = "day-cell day-cell--empty"; empty.setAttribute("aria-hidden", "true"); calendar.appendChild(empty); }
   for (let day = 1; day <= daysInMonth(state.month); day += 1) {
-    const date = new Date(state.month.getFullYear(), state.month.getMonth(), day), enabled = date >= startOfToday(), button = document.createElement("button");
+    const date = new Date(state.month.getFullYear(), state.month.getMonth(), day), enabled = esDiaElegible(date), button = document.createElement("button");
     button.className = "day-cell"; button.type = "button"; button.dataset.day = day; button.disabled = !enabled; button.setAttribute("aria-disabled", String(!enabled)); button.setAttribute("aria-pressed", String(state.day?.getTime() === date.getTime())); if (state.day?.getTime() === date.getTime()) button.setAttribute("aria-current", "true");
     button.innerHTML = `<span>${String(day).padStart(2, "0")}</span><small>${date.getTime() === startOfToday().getTime() ? "hoy" : ""}</small>`; calendar.appendChild(button);
   }
@@ -38,7 +39,7 @@ function animateScene(show) {
   if (wipe) { if (show === "confirm") { gsap.set(wipe, { autoAlpha: 1 }); tl.fromTo(wipe, { xPercent: -100 }, { xPercent: 100, duration: 0.8, ease: "expo.inOut", onComplete: () => gsap.set(wipe, { autoAlpha: 0 }) }, 0); } else gsap.set(wipe, { autoAlpha: 0 }); }
   state.control = tl;
 }
-function selectDay(day) { const date = new Date(state.month.getFullYear(), state.month.getMonth(), day); if (date < startOfToday()) return; state.day = date; state.slot = null; $("#day-number").textContent = String(day).padStart(2, "0"); $("#day-month").textContent = `${months[date.getMonth()]} ${date.getFullYear()}`; $("#day-weekday").textContent = date.toLocaleDateString("es-AR", { weekday: "long" }); $("#day-status").textContent = formatDate(date); $("#to-time").disabled = false; renderCalendar(); announce(`Día seleccionado: ${formatDate(date)}`); animateScene("day"); }
+function selectDay(day) { const date = new Date(state.month.getFullYear(), state.month.getMonth(), day); if (!esDiaElegible(date)) return; state.day = date; state.slot = null; $("#day-number").textContent = String(day).padStart(2, "0"); $("#day-month").textContent = `${months[date.getMonth()]} ${date.getFullYear()}`; $("#day-weekday").textContent = date.toLocaleDateString("es-AR", { weekday: "long" }); $("#day-status").textContent = formatDate(date); $("#to-time").disabled = false; renderCalendar(); announce(`Día seleccionado: ${formatDate(date)}`); animateScene("day"); }
 function renderSlots() { const box = $("#slots"); box.textContent = ""; CONFIG.slots.forEach((slot) => { const button = document.createElement("button"); button.type = "button"; button.className = "slot"; button.dataset.slot = slot; button.setAttribute("role", "option"); button.setAttribute("aria-selected", String(state.slot === slot)); button.innerHTML = `<b>${slot}</b><small>a coordinar</small>`; box.appendChild(button); }); }
 function selectSlot(slot) { state.slot = slot; $$(".slot").forEach((button) => button.setAttribute("aria-selected", String(button.dataset.slot === slot))); $("#time-status").textContent = slot; $("#to-confirm").disabled = false; announce(`Franja seleccionada: ${slot}`); }
 function waNumber() { const b = $("#whatsapp"); return b ? (b.dataset.wa || "") : ""; }

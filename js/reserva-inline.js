@@ -34,6 +34,7 @@
   var live = q('[data-live]');
   function say(t) { live.textContent = t; }
   function today() { var t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); }
+  function esDiaElegible(date) { return date >= today() && date.getDay() !== 0; }
   function fmt(d) { return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' }); }
 
   function cal() {
@@ -42,7 +43,7 @@
     c.textContent = '';
     for (var e = 0; e < first; e++) { var s = document.createElement('span'); s.className = 'rz-d rz-d--e'; s.setAttribute('aria-hidden', 'true'); c.appendChild(s); }
     for (var d = 1; d <= n; d++) {
-      var date = new Date(m.getFullYear(), m.getMonth(), d), b = document.createElement('button'), ok = date >= today(), sel = st.day && st.day.getTime() === date.getTime();
+      var date = new Date(m.getFullYear(), m.getMonth(), d), b = document.createElement('button'), ok = esDiaElegible(date), sel = st.day && st.day.getTime() === date.getTime();
       b.type = 'button'; b.className = 'rz-d'; b.dataset.day = d; b.disabled = !ok; b.setAttribute('aria-pressed', String(!!sel));
       b.innerHTML = '<span>' + (d < 10 ? '0' + d : d) + '</span><small>' + (date.getTime() === today().getTime() ? 'hoy' : '') + '</small>';
       c.appendChild(b);
@@ -61,7 +62,7 @@
     q('[data-back]').hidden = step === 'month';
   }
   function pickDay(d) {
-    var date = new Date(st.month.getFullYear(), st.month.getMonth(), d); if (date < today()) return;
+    var date = new Date(st.month.getFullYear(), st.month.getMonth(), d); if (!esDiaElegible(date)) return;
     st.day = date; st.slot = null;
     q('[data-dn]').textContent = d < 10 ? '0' + d : String(d);
     q('[data-dm]').textContent = MES[date.getMonth()] + ' ' + date.getFullYear();
