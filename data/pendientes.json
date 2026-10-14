@@ -4,23 +4,23 @@
     {
       "id": "P1",
       "tema": "Teléfono y WhatsApp oficiales",
-      "bloqueante": false,
-      "estado": "resuelto",
-      "como": "Resuelto el 12/10/2026 por el responsable del proyecto: teléfono 343 461-8388 y WhatsApp 3436 10-9949 (chequeado como funcional). Cada número del Grupo se muestra en su sucursal (video «Teléfonos & sucursales»). Los demás candidatos no se publican. Falta, antes de producción, que el dueño del negocio ratifique estos datos."
+      "bloqueante": true,
+      "estado": "abierto",
+      "como": "Pedir al dueño cuál es el teléfono fijo y cuál el WhatsApp. Candidatos en data/dealership.json → contact.conflicto. El WhatsApp 3436 10-9949 es el que el sitio oficial de Grupo Almafuerte publica para usados (Nosotros y Contacto); la página Contacto da además el fijo 3434 62-2671 y Nosotros da 3434 61-8388. Cargar contact.phone, phoneTel (+54...), whatsApp (549...) y confirmadoPorDueno=true; npm run build."
     },
     {
       "id": "P2",
       "tema": "Horario de atención",
       "bloqueante": false,
-      "estado": "resuelto",
-      "como": "Resuelto el 12/10/2026: vale el horario del sitio del Grupo (L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00); domingo cerrado según Google Maps. Cargado en hours.semana; el sitio muestra la tabla y «Abierto ahora»."
+      "estado": "abierto",
+      "como": "Confirmar con el operador cuál es el horario vigente (el del sitio oficial del grupo: L-V 8:30–12:30 y 15:30–19:30, S 8:30–13:00; o el de los directorios) y cargar hours.display. V2 suma GTM: L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30."
     },
     {
       "id": "P3",
       "tema": "Logotipo y paleta de marca",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Paleta y estilo ya aplicados desde el logotipo entregado (ver docs/IDENTIDAD.md). Falta el archivo del logo (SVG o PNG transparente) con autorización escrita para usarlo como imagen (P4); hoy el isotipo es un sol y un nombre armados con CSS y favicon.svg."
+      "como": "Pedir isologotipo SVG o PNG transparente. Hoy hay un isotipo tipográfico provisorio (favicon.svg)."
     },
     {
       "id": "P4",
@@ -41,14 +41,14 @@
       "tema": "Correo institucional",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Se publica el correo de la ficha de Facebook (snicolas540@hotmail.com) por pedido expreso del responsable del proyecto (12/10/2026). Es una casilla de aspecto personal: reemplazarla por un correo comercial cuando exista."
+      "como": "Definir un correo comercial. No usar la casilla hotmail de Facebook."
     },
     {
       "id": "P7",
       "tema": "Nombre y mención del Grupo Almafuerte",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "El sitio dice «forma parte del Grupo Almafuerte» (nombre de la web oficial). La biografía de Instagram dice «Grupo Automóviles Almafuerte». El dueño confirma cuál usar y con qué texto. Dato nuevo: los listados del Banco Nación incluyen «Automóviles Almafuerte» (Paraná, Av. Almafuerte 960); no resuelve el nombre del grupo."
+      "como": "El sitio dice «forma parte del Grupo Almafuerte» (nombre de la web oficial). La biografía de Instagram dice «Grupo Automóviles Almafuerte». El dueño confirma cuál usar y con qué texto."
     },
     {
       "id": "P8",
@@ -69,7 +69,7 @@
       "tema": "Reseñas y valoración",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman. V4: las 15 opiniones de Cylex se declaran de una sola fuente; no promediar con Yably ni GTM sin revisar las reseñas originales. 12/10/2026: la ficha de Google Maps (Av. Argentina 2021) corresponde a la agencia actual; el sitio enlaza a sus reseñas sin publicar puntaje. Falta leer el puntaje real y pedir permiso para citar comentarios. 12/10/2026: el responsable confirmó que el enlace a Google es el correcto; el sitio solo enlaza."
+      "como": "Abrir la ficha de Google Maps, confirmar a qué nombre corresponde y el puntaje real (Yably 4,20/5 con 17 reseñas; GTM 8.4 con 27). Pedir permiso antes de publicar comentarios. V2 suma Cylex 4,1/5 con 15 opiniones; Cylex y Yably parecen compartir fuente, no se suman."
     },
     {
       "id": "P11",
@@ -89,15 +89,15 @@
       "id": "P13",
       "tema": "Vigencia del listado del Banco Nación",
       "bloqueante": false,
-      "estado": "resuelto",
-      "como": "Resuelto el 12/10/2026: el sitio cita el listado del 19/05/2026 (https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf), que contiene la fila de Horizonte (verificado en el texto indexado del PDF). La V3 suma una nota de Vorterix del 07/09/2026 y un PDF sin fecha. Antes de producción, reabrir el listado vigente en bna.com.ar/home/masautos y actualizar `periodo` en services.published (clave bna) si hay una versión más nueva. No publicar tasas ni plazos del programa como oferta de la agencia."
+      "estado": "abierto",
+      "como": "El sitio cita el listado del 16/07/2025. El expediente OSINT textual V2 (12/10/2026) reporta la misma fila en listados de agosto y septiembre de 2025 y en el del 19/05/2026 (https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf), y en notas de prensa del 17/07/2025 y 09/07/2026. Abrir ese PDF; si la fila está, actualizar la fecha y el enlace en scripts/build-index.mjs (hoy fijos a 16/07/2025). No publicar tasas ni plazos del programa como oferta de la agencia."
     },
     {
       "id": "P14",
       "tema": "Afiliación a la CCA Entre Ríos",
       "bloqueante": false,
       "estado": "abierto",
-      "como": "Horizonte figura en https://ccaentrerios.org/agencias/ (con otro teléfono: 343 405-0787). Confirmar con el dueño que sigue afiliado y, si quiere, sumar el dato al sitio. La V3 reporta que la página de la CCA dice mostrar a «algunos» de sus socios: apoya la afiliación, pero no la prueba."
+      "como": "Horizonte figura en https://ccaentrerios.org/agencias/ (con otro teléfono: 343 405-0787). Confirmar con el dueño que sigue afiliado y, si quiere, sumar el dato al sitio."
     },
     {
       "id": "P15",
@@ -117,29 +117,8 @@
       "id": "P17",
       "tema": "Domicilio alternativo Av. Argentina 536",
       "bloqueante": false,
-      "estado": "resuelto",
-      "como": "Resuelto el 12/10/2026: el 536 era el domicilio anterior (confirmado por el responsable). El sitio muestra «Antes: Av. Argentina 536» junto a la dirección actual (2021). No escribir «se mudó» ni «tiene dos sucursales»."
-    },
-    {
-      "id": "P18",
-      "tema": "Revisión profesional de la guía «Antes de comprar un usado»",
-      "bloqueante": false,
       "estado": "abierto",
-      "como": "La sección #guia es información general de octubre de 2026 (qué mirar en el auto y papeles que suelen pedirse). Los requisitos y costos del Registro del Automotor cambian: que la revise un gestor o escribano antes de producción y fecharla de nuevo."
-    },
-    {
-      "id": "P19",
-      "tema": "Coordenadas del mapa",
-      "bloqueante": false,
-      "estado": "resuelto",
-      "como": "Resuelto el 12/10/2026: el mapa usa -31.6579811, -59.9246037 de la ficha de Google Maps. Si el dueño corrige el punto, actualizar location.coordenadas. Chequeado por el responsable del proyecto el 12/10/2026."
-    },
-    {
-      "id": "P20",
-      "tema": "Secciones que faltan por no haber datos",
-      "bloqueante": false,
-      "estado": "abierto",
-      "como": "No hay datos ni autorización para: entregas con prueba social, reseñas (P10), horarios (P2), conocé el local y el equipo (fotos y videos, P4), historia (P9), próximos ingresos. Ver golive/SECCIONES-PENDIENTES.md."
+      "como": "Aparece en Entre Ríos Total, Guía Clarín y una ficha de TodosNegocios (nombre «Horizonte Automotores Usados y 0 Km.», tel. 0343 494-1092). Una verificación previa leyó Paraná en Entre Ríos Total; el expediente V2 lo lee como María Grande: abrir esa ficha y resolver. Preguntar al dueño si el 536 fue un domicilio anterior. Mientras tanto no se publica; el sitio usa solo Av. Argentina 2021."
     }
   ]
 }

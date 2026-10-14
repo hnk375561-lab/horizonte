@@ -40,17 +40,13 @@
         "nombre": "Casa central",
         "direccion": "Av. Almafuerte 960, Paraná",
         "tel": "343-4242921",
-        "telTel": "+543434242921",
-        "wa": "343-6220915",
-        "waNum": "5493436220915"
+        "telTel": "+543434242921"
       },
       {
         "nombre": "Predio",
         "direccion": "Av. Almafuerte 3408, Paraná",
         "tel": "343-4618392",
-        "telTel": "+543434618392",
-        "wa": "343-6220915",
-        "waNum": "5493436220915"
+        "telTel": "+543434618392"
       },
       {
         "nombre": "Horizonte Automotores",

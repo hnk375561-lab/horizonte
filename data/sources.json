@@ -4,19 +4,19 @@
     {
       "id": "bna",
       "url": "https://www.bna.com.ar/Downloads/Home_MasAutos_Listado%20concesionarias%2020250716.pdf",
-      "aporta": "Dirección Avda Argentina 2021 y adhesión a Créditos Más Autos (listado del 16/07/2025; el nombre figura escrito «Horizonte Automores»). Versión anterior; el sitio cita ahora la de mayo de 2026 (bna-2026).",
+      "aporta": "Dirección Avda Argentina 2021 y adhesión a Créditos Más Autos (listado del 16/07/2025; el nombre figura escrito «Horizonte Automores»).",
       "confianza": "alta"
     },
     {
       "id": "facebook",
       "url": "https://www.facebook.com/horizonteautos/",
-      "aporta": "Dirección, introducción de la página (autos y motos, financiación, diez años), teléfono +54 343 494-7176 y un correo personal. Sin calificar (0 reseñas). Aviso Hyundai Tucson 2WD 2.0 2018 'Nuevo ingreso', sin fecha. Captura del 12/10/2026: teléfono móvil 343 494-7176, Messenger «Horizonte Automotores - Maria Grande», horario sin cargar («Cerrado ahora»).",
+      "aporta": "Dirección, introducción de la página (autos y motos, financiación, diez años), teléfono +54 343 494-7176 y un correo personal. Sin calificar (0 reseñas). Aviso Hyundai Tucson 2WD 2.0 2018 'Nuevo ingreso', sin fecha.",
       "confianza": "alta (es la página de la propia agencia)"
     },
     {
       "id": "instagram",
       "url": "https://www.instagram.com/horizonte_automotores/",
-      "aporta": "Perfil propio que la investigación OSINT no incluía. Biografía: concesionario en María Grande del Grupo Automóviles Almafuerte. Captura del 12/10/2026: 167 publicaciones, 1774 seguidores; la biografía remite a @almafuerte_usados.",
+      "aporta": "Perfil propio que la investigación OSINT no incluía. Biografía: concesionario en María Grande del Grupo Automóviles Almafuerte.",
       "confianza": "alta"
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": "cca",
       "url": "https://ccaentrerios.org/agencias/",
-      "aporta": "Listado de agencias: Horizonte Automotores, Av Argentina 2021, 343 4050787. Según la V3, la página dice mostrar a «algunos» de sus socios y ofrece un correo para pedir figurar: apoya, sin probar, la afiliación (P14).",
+      "aporta": "Listado de agencias: Horizonte Automotores, Av Argentina 2021, 343 4050787.",
       "confianza": "media (no certifica por sí solo que el dato esté actualizado)"
     },
     {
@@ -76,13 +76,13 @@
     {
       "id": "bna-2026",
       "url": "https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias19052026.pdf",
-      "aporta": "Listado fechado 19/05/2026 en el nombre del archivo: fila «Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021». Verificado el 12/10/2026 en el texto indexado del PDF (búsqueda propia). Hay otras versiones del mismo listado de 2025 (22-7-25, 28-7-25, 18/08/2025, etc.): son copias de una lista, no verificaciones independientes. El sitio cita esta versión.",
-      "confianza": "alta (documento del propio Banco Nación)"
+      "aporta": "Expediente V2: el listado fechado 19/05/2026 repite la fila «Entre Ríos | María Grande | Horizonte Automores | Av. Argentina 2021». También hay copias de agosto y septiembre de 2025. Son versiones de un mismo listado, no verificaciones independientes. No se recontrastó en vivo.",
+      "confianza": "alta como documento oficial; pendiente de recontraste (P13)"
     },
     {
       "id": "quesabes",
       "url": "https://quesabesdigital.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/",
-      "aporta": "Expediente V2: nota del 09/07/2026 que incluye «Horizonte Automotores — Av. Argentina 2021» entre las concesionarias adheridas de María Grande. Las tasas y plazos de la nota son del programa en general: no se publican como oferta de la agencia. Discrepancia de fecha: la V3 atribuye el mismo título («las 45 concesionarias adheridas en Entre Ríos») a Vorterix Litoral del 07/09/2026; 09/07 y 07/09 podrían ser el mismo día mal leído. No se pudo abrir ninguna de las dos.",
+      "aporta": "Expediente V2: nota del 09/07/2026 que incluye «Horizonte Automotores — Av. Argentina 2021» entre las concesionarias adheridas de María Grande. Las tasas y plazos de la nota son del programa en general: no se publican como oferta de la agencia.",
       "confianza": "media (prensa regional; no recontrastada)"
     },
     {
@@ -100,7 +100,7 @@
     {
       "id": "entreriostotal",
       "url": "https://www.entreriostotal.com.ar/empresas/empresasxrubro.php?code=130",
-      "aporta": "Expediente V2: «Horizonte Automotores, María Grande — Avda. Argentina 536 — 0343 4941092». Contradice la verificación previa que la ubicaba en Paraná. La V3 suma una segunda categoría del mismo sitio con los mismos datos: no es otra fuente.",
+      "aporta": "Expediente V2: «Horizonte Automotores, María Grande — Avda. Argentina 536 — 0343 4941092». Contradice la verificación previa que la ubicaba en Paraná.",
       "confianza": "baja (ficha antigua o duplicada; discrepancia abierta)"
     },
     {
@@ -114,48 +114,6 @@
       "url": "https://ar.tellows.net/num/03434618388",
       "aporta": "Expediente V2: Tellows asocia 0343 461-8388 con el nombre y lo marca como comercial, sin denuncias recuperadas. WorldOrgs repite Av. Argentina 2021 (E3133). Datos de directorio.",
       "confianza": "baja"
-    },
-    {
-      "id": "vorterix",
-      "url": "https://vorterixlitoral.com/creditos-para-comprar-autos-las-45-concesionarias-adheridas-en-entre-rios/",
-      "aporta": "Expediente V3: nota del 07/09/2026 con 45 concesionarias adheridas en Entre Ríos; «María Grande — 1 concesionaria: Horizonte Automotores — Av. Argentina 2021». No es el banco. Las tasas y plazos que cita son del programa, no de la agencia. No se pudo abrir en la verificación propia.",
-      "confianza": "media (prensa regional; no recontrastada)"
-    },
-    {
-      "id": "bna-pdf-sin-fecha",
-      "url": "https://www.bna.com.ar/Downloads/Home_MasAutos_concesionarias.pdf",
-      "aporta": "Expediente V3: PDF descargable de 9 páginas con «Horizonte Automores Avda Argentina 2021 Maria Grande Entre Ríos» en la página 5. Sin fecha de emisión visible; no se cita en el sitio.",
-      "confianza": "alta como contenido; fecha desconocida"
-    },
-    {
-      "id": "bna-2025-copias",
-      "url": "https://bna.com.ar/Downloads/Home_MasAutos_Listado_concesionarias_22-7-25.pdf",
-      "aporta": "Verificación propia (12/10/2026): otra versión de 2025 con la misma fila («Maria Grande | Horizonte Automores | Av. Argentina 2021»). En listados del banco figura también «Automóviles Almafuerte» en Paraná (Av. Almafuerte 960).",
-      "confianza": "alta; copia del mismo listado"
-    },
-    {
-      "id": "google-maps",
-      "url": "https://www.google.com/maps/place/Horizonte+Automotores/@-31.6579811,-59.927184,17z/data=!3m1!4b1!4m6!3m5!1s0x95b45273501b1f37:0x93976f85e6dd10f5!8m2!3d-31.6579811!4d-59.9246037!16s%2Fg%2F1tf7hvyq",
-      "aporta": "Ficha de Google Maps (captura y enlaces del 12/10/2026): Avenida Argentina 2021, E3133 María Grande; coordenadas -31.6579811, -59.9246037; teléfono 0343 461-8388; horario L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30, domingo cerrado (Google avisa que puede variar). El enlace a las reseñas de esa ficha se usa en el sitio sin copiar puntaje.",
-      "confianza": "alta (ficha del propio negocio en Google)"
-    },
-    {
-      "id": "almafuerte-video",
-      "url": null,
-      "aporta": "Video «Teléfonos & sucursales» del Grupo Automóviles Almafuerte (capturas del 12/10/2026): Horizonte Automotores, Av. Argentina 2021, tel. 343-4618388, WhatsApp 342-6108942 (este último sin resolver, ver P1); publicación «Nueva sucursal» en Av. Almafuerte 1504, Paraná. Se usan los teléfonos y WhatsApp de Casa central, Predio y Santa Fe en la sección Contacto; el WhatsApp 342-6108942 de Horizonte no se usa (el responsable indicó 3436 10-9949).",
-      "confianza": "alta (material del grupo; sin URL, es una captura aportada por el responsable del proyecto)"
-    },
-    {
-      "id": "cca-captura",
-      "url": "https://ccaentrerios.org/agencias/",
-      "aporta": "Captura 12/10/2026 de la fila «María Grande · Horizonte Automotores · Av Argentina 2021 · 343 4050787».",
-      "confianza": "media (listado de agencias)"
-    },
-    {
-      "id": "responsable-2026-10-12",
-      "url": null,
-      "aporta": "Indicaciones del responsable del proyecto (12/10/2026): teléfono 343 461-8388; WhatsApp 3436 10-9949 chequeado; horario del sitio del Grupo; punto del mapa y enlace de reseñas correctos; correo de Facebook publicable; Av. Argentina 536 como domicilio anterior.",
-      "confianza": "alta (decisión del responsable; falta ratificación del dueño del negocio)"
     }
   ],
   "contradiccionesConLaInvestigacionOriginal": [
@@ -173,9 +131,6 @@
     "Expediente OSINT textual V2: la dirección Av. Argentina 536 aparece también en la Guía de Empresas de Clarín y Entre Ríos Total la lista como «María Grande», no Paraná. La verificación previa decía Paraná. Se mantiene 2021 y se deja la discrepancia abierta.",
     "Expediente OSINT textual V2: GTM publica un tercer horario (L-V 8:30–12:30 y 16:00–20:00, S 8:30–12:30), distinto del de directorios y del del grupo.",
     "Expediente OSINT textual V2: no menciona a Grupo Almafuerte, Instagram ni el teléfono 343 494-7176 de Facebook (no pudo abrir Facebook). No contradice lo ya verificado; es una laguna de ese expediente.",
-    "Expediente OSINT textual V2: el listado del Banco Nación persiste en versiones de agosto y septiembre de 2025 y del 19/05/2026, y en prensa del 17/07/2025 y 09/07/2026. El sitio sigue citando el del 16/07/2025 hasta recontrastar (P13).",
-    "V3: afirma que no identificó una cuenta oficial de Instagram ni leyó Facebook; este proyecto ya verificó @horizonte_automotores y la ficha de Facebook. Es una laguna de esa investigación.",
-    "V3: la nota «las 45 concesionarias» se fecha el 07/09/2026 (Vorterix); la V2 la fechaba el 09/07/2026 (¿Qué Sabes?). Mismo título: posible inversión día/mes. Sin resolver.",
-    "V3: las condiciones del programa de 2025 (TNA fija del 38 %, hasta 72 meses) y las de 2026 (UVA y tasa fija con otros valores) no son simultáneas. Ninguna se publica como oferta de la agencia."
+    "Expediente OSINT textual V2: el listado del Banco Nación persiste en versiones de agosto y septiembre de 2025 y del 19/05/2026, y en prensa del 17/07/2025 y 09/07/2026. El sitio sigue citando el del 16/07/2025 hasta recontrastar (P13)."
   ]
 }
