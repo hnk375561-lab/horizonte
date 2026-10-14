@@ -37,6 +37,7 @@ const LEYENDA = `Demo ilustrativa construida a partir de información pública. 
 const FONTS = '@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/bricolage-grotesque-latin.woff2) format("woff2")}\n@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2")}\n';
 const CSS = read('scripts/estilos.css').trim();
 
+const OG = `<meta property="og:image" content="https://hnk375561-lab.github.io/horizonte/images/og-horizonte.jpg">\n<meta property="og:image:type" content="image/jpeg">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Horizonte Automotores · Autos y motos en María Grande, Entre Ríos">\n<meta name="twitter:card" content="summary_large_image">\n`;
 const robotsMeta = demo ? '<meta name="robots" content="noindex, nofollow">\n' : '';
 const canon = (p) => (siteUrl ? `<link rel="canonical" href="${siteUrl}${p}">\n<meta property="og:url" content="${siteUrl}${p}">\n` : '');
 
@@ -53,7 +54,7 @@ ${robotsMeta}<title>${esc(title)}</title>
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:locale" content="es_AR">
-${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
+${OG}${canon(file === 'index.html' ? '' : file)}${withFonts ? '<link rel="manifest" href="site.webmanifest">\n<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">\n<link rel="apple-touch-icon" href="images/icon-180.png">\n<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>\n' : ''}<style>
 ${withFonts ? FONTS : ''}${CSS}
 </style>
 ${extraHead}</head>
@@ -549,7 +550,7 @@ ${robotsMeta}<title>Coordiná tu visita · ${esc(NAME)}</title>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Coordiná tu visita · ${esc(NAME)}">
 <meta property="og:locale" content="es_AR">
-${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
+${OG}${canon('reserva.html')}<link rel="manifest" href="site.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="stylesheet" href="css/reserva.css"><link rel="stylesheet" href="css/motion.css">

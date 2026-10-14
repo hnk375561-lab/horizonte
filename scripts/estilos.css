@@ -1763,6 +1763,8 @@ html body .hz-v71 .hz-map{flex:1 1 auto;min-height:clamp(380px,46vw,560px);backg
 html body .hz-v71 .hz-map-v .leaflet-tile-pane{filter:none}
 html body .hz-v71 .hz-map-v .leaflet-container{background:#e8eef0;font-family:var(--b)}
 html body .hz-v71 .hz-map-ph{background:#eef2f3;background-image:none;color:#0a1012}
+html body .hz-v71 .hz-map-ph .btn:not(.p){color:#0a1012;border-color:#0a1012;background:transparent}
+html body .hz-v71 .hz-map-ph .btn:not(.p):hover{background:#0a1012;color:#fff}
 html body .hz-v71 .hz-map-ic{border-color:#0a1012}
 html body .hz-v71 .hz-map-ic svg{stroke:#0a1012}
 html body .hz-v71 .hz-map-v .leaflet-bar{border:0;border-radius:2px;box-shadow:0 2px 10px rgba(10,16,18,.3)}
