@@ -1,10 +1,6 @@
-/* Horizonte Automotores · v72
-   1) Horarios: logo en el espacio libre del panel y dirección sin párrafos verticales
-   2) Hero: entrada + zoom de la foto
-   3) Nosotros: isotipo chico en lugar del círculo (los contadores se quitaron del HTML)
-   4) Reserva dentro del index (diálogo a pantalla completa) */
+/* Horizonte Automotores · v72 */
 
-/* 1 · Horarios */
+/* 1 · Horarios: logo en el espacio libre y dirección sin párrafos verticales */
 html body .hz-v71 .hz-stage{align-items:stretch}
 html body .hz-v71 .hz-panel{height:100%}
 html body .hz-v71 .hz-tz{margin:0}
@@ -16,30 +12,70 @@ html body .hz-v71 .hz-a{max-width:none;font-size:clamp(18px,1.7vw,22px);line-hei
 html body .hz-v71 .hz-addr .row{display:flex;flex-wrap:wrap;gap:8px;margin:0}
 html body .hz-v71 .hz-addr .btn{flex:1 1 auto}
 
-/* 2 · Hero: entrada y zoom */
-@keyframes hzHeroIn{from{opacity:0;transform:scale(1.2);filter:brightness(.55)}to{opacity:1;transform:scale(1.045);filter:brightness(1)}}
-.hero-slide--01.is-active img{animation:hzHeroIn 1.9s cubic-bezier(.2,.7,.2,1) backwards}
-.hero-slide img{transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
-@media(hover:hover) and (pointer:fine){.hero:hover .hero-slide.is-active img{transform:scale(1.085)}}
-@media(prefers-reduced-motion:reduce){.hero-slide--01.is-active img{animation:none}.hero:hover .hero-slide.is-active img{transform:none}}
-
-/* 3 · Nosotros: isotipo */
-.nz-big .nz-iso{position:absolute;top:clamp(20px,3vw,36px);right:clamp(20px,3vw,36px);width:clamp(104px,11vw,150px);height:auto;overflow:visible}
-
-/* 4 · Reserva embebida */
-.rs-dlg{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#0a1012;color:#fff;overflow:hidden}
-.rs-dlg:not([open]){display:none}
-.rs-dlg[open]{display:block;animation:rsIn .5s cubic-bezier(.2,.7,.2,1) both}
-.rs-dlg::backdrop{background:rgba(10,16,18,.92)}
-.rs-dlg iframe{display:block;width:100%;height:100%;border:0;background:#0a1012}
-html.rs-open,html.rs-open body{overflow:hidden}
-@keyframes rsIn{from{opacity:0;transform:translateY(24px) scale(.985)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.rs-dlg[open]{animation:none}}
-
-/* Carrusel del hero: puntos */
+/* 2 · Hero: entrada + zoom lento en un solo sentido (sin transiciones que vayan y vuelvan) */
+@keyframes hzKen{from{transform:scale(1.15)}to{transform:scale(1.05)}}
+@keyframes hzFade{from{filter:brightness(.6)}to{filter:brightness(1)}}
+.hero-slide img{transform:scale(1.05);transition:none!important}
+.hero-slide.is-active img,.hero-slide.is-leaving img{animation:hzKen 9s cubic-bezier(.22,.61,.36,1) both,hzFade 1.4s ease-out both}
+.hero-slide.is-leaving img{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.hero-slide.is-active img,.hero-slide.is-leaving img{animation:none}}
 .hero-dots{position:absolute;right:clamp(18px,3vw,48px);bottom:clamp(20px,3vw,40px);z-index:5;display:flex;gap:10px}
 .hero-dots button{width:34px;height:6px;padding:0;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:background .3s,width .3s}
 .hero-dots button[aria-current="true"]{background:#f2d21b;width:52px}
 .hero-dots button:hover{background:#fff}
 .hero-dots button:focus-visible{outline:3px solid #f2d21b;outline-offset:3px}
 @media(max-width:700px){.hero-dots{right:18px;bottom:14px}.hero-dots button{width:24px}.hero-dots button[aria-current="true"]{width:38px}}
+
+/* 3 · Nosotros: isotipo */
+.nz-big .nz-iso{position:absolute;top:clamp(20px,3vw,36px);right:clamp(20px,3vw,36px);width:clamp(104px,11vw,150px);height:auto;overflow:visible}
+
+/* 4 · Reserva expandida dentro de «Visita» */
+.rz{display:grid;grid-template-rows:0fr;margin-top:0;transition:grid-template-rows .6s cubic-bezier(.2,.7,.2,1),margin-top .6s cubic-bezier(.2,.7,.2,1)}
+.rz.is-open{grid-template-rows:1fr;margin-top:clamp(20px,3vw,36px)}
+.rz-clip{min-height:0;overflow:hidden}
+.rz:not(.is-open) .rz-clip{visibility:hidden;transition:visibility 0s .6s}
+.rz-box{position:relative;padding:clamp(18px,3vw,40px);background:#0a1012;border:1px solid rgba(242,210,27,.5);border-top:5px solid #f2d21b;color:#fff}
+.rz-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(14px,2vw,24px);font:800 12px/1.3 var(--hero-copy,var(--b));letter-spacing:.14em;text-transform:uppercase}
+.rz-bar b{color:#f2d21b}
+.rz-bar .rz-acts{display:flex;gap:18px}
+.rz-bar button{padding:8px 0;border:0;background:none;color:#fff;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+.rz-bar button:hover,.rz-bar button:focus-visible{color:#f2d21b}
+.rz-bar button[hidden]{display:none}
+.rz-step[hidden]{display:none}
+.rz-step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,56px);align-items:center;animation:rzIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rzIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rz-k{display:inline-block;margin:0 0 14px;padding:7px 14px;background:#f2d21b;color:#0a1012;font:800 12px/1.3 var(--hero-copy,var(--b));letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+.rz h3{margin:0;font:800 clamp(40px,6.4vw,86px)/.92 var(--hero-title,var(--b));letter-spacing:-.03em;text-transform:uppercase;color:#fff}
+.rz h3 em{display:block;width:fit-content;margin-top:.05em;padding:0 .1em .03em;background:#f2d21b;color:#0a1012;font-style:normal}
+.rz-p{margin:18px 0 0;max-width:38ch;color:#e6e9ea;font:500 16px/1.5 var(--hero-copy,var(--b))}
+.rz-cal{padding:clamp(14px,2vw,26px);background:#f8f8f8;color:#0a1012}
+.rz-ch{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding-bottom:10px;border-bottom:3px solid #0a1012}
+.rz-ch strong{text-align:center;font:800 clamp(22px,3vw,36px)/1 var(--hero-title,var(--b));letter-spacing:-.02em;text-transform:uppercase}
+.rz-ch button{height:44px;border:0;background:none;font-size:26px;font-weight:800;color:#0a1012;cursor:pointer}
+.rz-ch button:hover{background:#f2d21b}
+.rz-wd,.rz-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.rz-wd{padding:10px 0 6px;font:700 11px var(--hero-copy,var(--b));letter-spacing:.08em;color:rgba(10,16,18,.75)}
+.rz-wd span{padding-left:6px}
+.rz-days{border-left:1px solid rgba(10,16,18,.28);border-top:1px solid rgba(10,16,18,.28)}
+.rz-d{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:clamp(46px,6vw,70px);padding:6px;border:0;border-right:1px solid rgba(10,16,18,.28);border-bottom:1px solid rgba(10,16,18,.28);background:transparent;color:#0a1012;text-align:left;font:800 clamp(16px,2vw,24px)/1 var(--hero-title,var(--b));cursor:pointer;transition:background .2s,color .2s}
+.rz-d small{font:800 10px/1 var(--hero-copy,var(--b));letter-spacing:.06em;text-transform:uppercase;color:#6e5d00}
+.rz-d:disabled{color:rgba(10,16,18,.28);cursor:not-allowed}
+.rz-d:not(:disabled):hover,.rz-d:not(:disabled):focus-visible{background:#f2d21b}
+.rz-d[aria-pressed="true"]{background:#f2d21b}
+.rz-d--e{background:rgba(10,16,18,.05);pointer-events:none}
+.rz-cal :focus-visible{outline-color:#0a1012}
+.rz-big{font:800 clamp(90px,16vw,200px)/.8 var(--hero-title,var(--b));letter-spacing:-.06em;color:#f2d21b}
+.rz-big small{display:block;margin-bottom:10px;font:800 14px/1 var(--hero-copy,var(--b));letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.rz-big strong{display:block;margin-top:12px;font:800 clamp(22px,3vw,34px)/1 var(--hero-title,var(--b));letter-spacing:-.02em;text-transform:uppercase;color:#fff}
+.rz-slots{display:grid;gap:12px;margin-top:20px}
+.rz-slot{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 22px;border:2px solid rgba(255,255,255,.4);background:transparent;color:#fff;text-align:left;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.rz-slot b{font:800 24px/1 var(--hero-title,var(--b));text-transform:uppercase}
+.rz-slot small{font:600 13px var(--hero-copy,var(--b));letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.rz-slot:hover,.rz-slot[aria-selected="true"]{background:#f2d21b;border-color:#f2d21b;color:#0a1012}
+.rz-go{margin-top:20px;display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:54px;padding:0 24px;border:0;background:#f2d21b;color:#0a1012;font:800 14px var(--hero-copy,var(--b));letter-spacing:.08em;text-transform:uppercase;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)}
+.rz-go:disabled{opacity:.4;cursor:not-allowed}
+.rz-acts2{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rz-st{margin:18px 0 0;padding:12px 14px;border-left:3px solid #f2d21b;background:rgba(242,210,27,.08);font:600 14px/1.4 var(--hero-copy,var(--b))}
+.rz-dis{margin:12px 0 0;color:#aeb9bd;font:500 13px/1.4 var(--hero-copy,var(--b))}
+@media(max-width:860px){.rz-step{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.rz,.rz-step{transition:none;animation:none}}
