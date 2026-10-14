@@ -23,7 +23,13 @@
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
   function start() { if (reduce || paused || timer || document.hidden) return; timer = setInterval(function () { go(i + 1); }, 3000); }
-  start();
+  setTimeout(start, 3000);
   document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-  slides.forEach(function (s) { var m = s.querySelector('img'); if (m) { m.loading = 'eager'; if (m.decode) m.decode().catch(function () {}); } });
+  /* las fotos 2 a 4 se bajan y decodifican de a una, después de la carga, para no trabar el arranque */
+  function precargar() {
+    slides.slice(1).forEach(function (s, k) {
+      setTimeout(function () { var m = s.querySelector('img'); if (!m) return; m.loading = 'eager'; if (m.decode) m.decode().catch(function () {}); }, 900 * (k + 1));
+    });
+  }
+  if (document.readyState === 'complete') precargar(); else window.addEventListener('load', precargar);
 })();

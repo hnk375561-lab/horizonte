@@ -10,24 +10,35 @@
     ['footer', 'images/stock/fox-1440.webp', 'images/stock/fox-1080.webp', 'linear-gradient(rgba(10,16,18,.84),rgba(10,16,18,.92))']
   ];
   var movil = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
-  function cargar(el, cfg) {
-    var url = movil ? cfg[2] : cfg[1], im = new Image();
+  var cola = [], ocupado = false;
+  function idle(f) { (window.requestIdleCallback || function (g) { setTimeout(g, 120); })(f, { timeout: 1500 }); }
+  function siguiente() {
+    if (ocupado || !cola.length) return;
+    ocupado = true;
+    var it = cola.shift(), el = it[0], cfg = it[1], url = movil ? cfg[2] : cfg[1], im = new Image();
     im.decoding = 'async';
-    im.onload = function () {
-      var poner = function () { var d = el.querySelector(':scope > .hz-bgimg'); if (d) { d.style.backgroundImage = cfg[3] + ',url("' + url + '")'; requestAnimationFrame(function () { d.classList.add('is-on'); }); } };
-      (im.decode ? im.decode().then(poner, poner) : poner());
-    };
+    function listo() {
+      var d = el.querySelector(':scope > .hz-bgimg');
+      if (d) { d.style.backgroundImage = cfg[3] + ',url("' + url + '")'; d.classList.add('is-on'); }
+      ocupado = false; setTimeout(function () { idle(siguiente); }, 400);
+    }
+    im.onload = function () { im.decode ? im.decode().then(listo, listo) : listo(); };
+    im.onerror = function () { ocupado = false; idle(siguiente); };
     im.src = url;
   }
+  function encolar(el) { cola.push([el, el.__hzbg]); idle(siguiente); }
   var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); cargar(e.target, e.target.__hzbg); } });
-  }, { rootMargin: '900px 0px' }) : null;
-  MAPA.forEach(function (cfg) {
-    var el = document.querySelector(cfg[0]); if (!el) return;
-    el.classList.add('hz-bgh');
-    var d = document.createElement('div'); d.className = 'hz-bgimg'; d.setAttribute('aria-hidden', 'true');
-    el.insertBefore(d, el.firstChild);
-    el.__hzbg = cfg;
-    io ? io.observe(el) : cargar(el, cfg);
-  });
+    es.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); encolar(e.target); } });
+  }, { rootMargin: '1200px 0px' }) : null;
+  function armar() {
+    MAPA.forEach(function (cfg) {
+      var el = document.querySelector(cfg[0]); if (!el) return;
+      el.classList.add('hz-bgh');
+      var d = document.createElement('div'); d.className = 'hz-bgimg'; d.setAttribute('aria-hidden', 'true');
+      el.insertBefore(d, el.firstChild);
+      el.__hzbg = cfg;
+      io ? io.observe(el) : encolar(el);
+    });
+  }
+  if (document.readyState === 'complete') setTimeout(armar, 1500); else window.addEventListener('load', function () { setTimeout(armar, 1500); });
 })();

@@ -12,17 +12,6 @@
       revealObserver.observe(node);
     });
   }
-  /* Parallax contenido: solo hero, solo puntero fino y nunca en móvil/reduced motion. */
-  if (!saveData && window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine) and (min-width: 701px)').matches && !(window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-    var parallaxHero = document.querySelector('.hero');
-    if (parallaxHero) {
-      var parallaxTick = false;
-      window.addEventListener('scroll', function () {
-        if (parallaxTick) return; parallaxTick = true;
-        window.requestAnimationFrame(function () { var y = Math.min(12, window.scrollY * .035); parallaxHero.style.setProperty('--hero-parallax', y + 'px'); parallaxTick = false; });
-      }, { passive: true });
-    }
-  }
   /* Guía: acordeones. Arranca plegada; botón para expandir o plegar todo. */
   (function () {
     var gds = Array.prototype.slice.call(document.querySelectorAll('details.gd')), all = document.querySelector('[data-guia-all]');
