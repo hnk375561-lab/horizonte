@@ -75,7 +75,7 @@
 
     var icono = L.divIcon({
       className: 'hz-pin',
-      html: '<span class="hz-pin-b"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h16M7 17a5 5 0 0 1 10 0M12 6v2.5M5.6 9.6l1.8 1.8M18.4 9.6l-1.8 1.8"/></svg></span>',
+      html: '<span class="hz-pin-r" aria-hidden="true"></span><span class="hz-pin-b"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17h16M7 17a5 5 0 0 1 10 0M12 6v2.5M5.6 9.6l1.8 1.8M18.4 9.6l-1.8 1.8"/></svg></span>',
       iconSize: [44, 44], iconAnchor: [22, 53], popupAnchor: [0, -50]
     });
     var marca = L.marker([lat, lng], { icon: icono, title: nombre, keyboard: true, alt: nombre }).addTo(mapa);
@@ -93,6 +93,21 @@
       }
     });
     mapa.addControl(new Centrar());
+
+    /* botón «Claro / Oscuro»: el mapa arranca en el estilo oscuro de la marca */
+    var Tema = L.Control.extend({
+      options: { position: 'topright' },
+      onAdd: function () {
+        var b = L.DomUtil.create('button', 'hz-ctr hz-ctr--t'); b.type = 'button'; b.textContent = 'Mapa claro'; b.setAttribute('aria-pressed', 'false');
+        L.DomEvent.disableClickPropagation(b);
+        L.DomEvent.on(b, 'click', function () {
+          var claro = root.classList.toggle('is-claro');
+          b.textContent = claro ? 'Mapa oscuro' : 'Mapa claro'; b.setAttribute('aria-pressed', claro ? 'true' : 'false');
+        });
+        return b;
+      }
+    });
+    mapa.addControl(new Tema());
 
     /* rueda del mouse: se activa al hacer clic en el mapa; en el celular, un toque habilita mover el mapa con un dedo */
     if (movil) {

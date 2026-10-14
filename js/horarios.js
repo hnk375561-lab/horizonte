@@ -46,30 +46,65 @@
   }
   window.hzEstado = estado;
 
-  /* ---- línea de tiempo del día: franjas abiertas y marca de «ahora» ---- */
-  var tl = document.querySelector('[data-tl]');
+  /* ---- dial del día: el sol recorre el arco de atención; fuera de horario se oculta tras el horizonte ---- */
+  var dial = document.querySelector('[data-dial]');
   var lo = 24 * 60, hi = 0;
   semana.forEach(function (g) { g.rangos.forEach(function (r) { lo = Math.min(lo, min(r[0])); hi = Math.max(hi, min(r[1])); }); });
   lo = Math.floor(lo / 60) * 60; hi = Math.ceil(hi / 60) * 60;
-  function div(cls, txt) { var d = document.createElement('div'); if (cls) d.className = cls; if (txt != null) d.textContent = txt; return d; }
-  function pct(m) { return Math.max(0, Math.min(100, (m - lo) / (hi - lo) * 100)); }
-  function lineaDelDia(a) {
-    if (!tl || hi <= lo) return;
-    var dia = a.getDay(), m = a.getHours() * 60 + a.getMinutes(), r = rangos(dia), i;
-    tl.textContent = '';
-    tl.appendChild(div('hz-tl-c', 'Hoy, ' + DIAS[dia].toLowerCase()));
-    var pista = div('hz-tl-p');
-    if (!r.length) pista.appendChild(div('hz-tl-x', 'Hoy no atendemos'));
-    r.forEach(function (x) {
-      var s = div('hz-tl-s'); s.style.left = pct(min(x[0])) + '%'; s.style.width = (pct(min(x[1])) - pct(min(x[0]))) + '%';
-      s.appendChild(div('hz-tl-h', hora(x[0]) + ' – ' + hora(x[1]))); pista.appendChild(s);
-    });
-    if (m >= lo && m <= hi) { var n = div('hz-tl-n'); n.style.left = pct(m) + '%'; pista.appendChild(n); }
-    tl.appendChild(pista);
-    var esc = div('hz-tl-e');
-    for (var h = lo; h <= hi; h += 120) { var t = div('hz-tl-t', Math.floor(h / 60) + ' h'); t.style.left = pct(h) + '%'; esc.appendChild(t); }
-    tl.appendChild(esc);
+  var CX = 210, CY = 196, R = 158;
+  function pct(m) { return Math.max(0, Math.min(1, (m - lo) / (hi - lo))); }
+  function pt(m, r) { var th = Math.PI * (1 - pct(m)); return [CX + (r || R) * Math.cos(th), CY - (r || R) * Math.sin(th)]; }
+  function f1(n) { return n.toFixed(1); }
+  function arco(m1, m2) {
+    var p1 = pt(m1), p2 = pt(m2);
+    return 'M' + f1(p1[0]) + ' ' + f1(p1[1]) + ' A' + R + ' ' + R + ' 0 0 1 ' + f1(p2[0]) + ' ' + f1(p2[1]);
   }
+  function hhmm(a) { var h = a.getHours(), m = a.getMinutes(); return h + ':' + (m < 10 ? '0' : '') + m; }
+  function lineaDelDia(a) {
+    if (!dial || hi <= lo) return;
+    var dia = a.getDay(), m = a.getHours() * 60 + a.getMinutes(), r = rangos(dia), h, i;
+    var s = '<svg viewBox="0 0 420 262" focusable="false" role="presentation"><defs><clipPath id="hzCielo"><rect x="0" y="0" width="420" height="' + CY + '"/></clipPath>' +
+      '<radialGradient id="hzGlow"><stop offset="0" stop-color="#f2d21b" stop-opacity=".55"/><stop offset="1" stop-color="#f2d21b" stop-opacity="0"/></radialGradient></defs>';
+    s += '<path class="hz-d-base" d="' + arco(lo, hi) + '"/>';
+    for (h = lo; h <= hi; h += 60) {
+      var a1 = pt(h, R + 12), a2 = pt(h, R - 12);
+      s += '<path class="hz-d-tick' + (h % 120 ? ' hz-d-tick--s' : '') + '" d="M' + f1(a1[0]) + ' ' + f1(a1[1]) + 'L' + f1(a2[0]) + ' ' + f1(a2[1]) + '"/>';
+      if (h % 120 === 0) { var lb = pt(h, R - 30); s += '<text class="hz-d-lbl" x="' + f1(lb[0]) + '" y="' + f1(lb[1] + 4) + '" text-anchor="middle">' + (h / 60) + '</text>'; }
+    }
+    r.forEach(function (x) { s += '<path class="hz-d-open" d="' + arco(min(x[0]), min(x[1])) + '"/>'; });
+    s += '<path class="hz-d-hz" d="M18 ' + CY + 'H402"/>';
+    s += '<path class="hz-d-hz2" d="M64 ' + (CY + 9) + 'H356M116 ' + (CY + 18) + 'H304"/>';
+    var hoyAbre = r.length ? min(r[0][0]) : null, hoyCierra = r.length ? min(r[r.length - 1][1]) : null;
+    var dentro = false; r.forEach(function (x) { if (m >= min(x[0]) && m < min(x[1])) dentro = true; });
+    var sp;
+    if (m >= lo && m <= hi) sp = pt(m); else if (m < lo) sp = [CX - R, CY]; else sp = [CX + R, CY];
+    var vis = r.length > 0 && (m >= lo && m <= hi);
+    var cls = 'hz-d-sun' + (dentro ? ' is-open' : '') + (vis ? '' : ' is-set');
+    if (r.length || m >= lo) {
+      s += '<g clip-path="' + (vis ? '' : 'url(#hzCielo)') + '" class="' + cls + '"><circle class="hz-d-glow" cx="' + f1(sp[0]) + '" cy="' + f1(sp[1]) + '" r="44"/><circle class="hz-d-orb" cx="' + f1(sp[0]) + '" cy="' + f1(sp[1]) + '" r="13"/></g>';
+    }
+    s += '<text class="hz-d-clock" x="' + CX + '" y="' + (CY - 52) + '" text-anchor="middle">' + hhmm(a) + '</text>';
+    s += '<text class="hz-d-cap" x="' + CX + '" y="' + (CY - 28) + '" text-anchor="middle">' + (r.length ? (dentro ? 'DENTRO DEL HORARIO' : 'FUERA DE HORARIO') : 'HOY NO ATENDEMOS') + '</text>';
+    s += '<text class="hz-d-end" x="' + (CX - R) + '" y="' + (CY + 40) + '" text-anchor="middle">' + (hoyAbre != null ? 'abre ' + hora(r[0][0]) : '') + '</text>';
+    s += '<text class="hz-d-end" x="' + (CX + R) + '" y="' + (CY + 40) + '" text-anchor="middle">' + (hoyCierra != null ? 'cierra ' + hora(r[r.length - 1][1]) : '') + '</text>';
+    s += '</svg>';
+    dial.innerHTML = s;
+    dial.classList.toggle('is-open', dentro);
+  }
+
+  /* ---- barras de la semana: una pista por fila, con las franjas abiertas ---- */
+  function barras() {
+    var filas = document.querySelectorAll('tr[data-dias]');
+    for (var i = 0; i < filas.length; i++) {
+      if (filas[i].querySelector('.hz-bar')) continue;
+      var d = +filas[i].getAttribute('data-dias').split(',')[0], rr = rangos(d);
+      var td = document.createElement('td'); td.className = 'hz-bar-c'; td.setAttribute('aria-hidden', 'true');
+      var b = div('hz-bar');
+      rr.forEach(function (x) { var s = div('hz-bar-s'); s.style.left = (pct(min(x[0])) * 100) + '%'; s.style.width = ((pct(min(x[1])) - pct(min(x[0]))) * 100) + '%'; b.appendChild(s); });
+      td.appendChild(b); filas[i].appendChild(td);
+    }
+  }
+  function div(cls, txt) { var d = document.createElement('div'); if (cls) d.className = cls; if (txt != null) d.textContent = txt; return d; }
 
   function pintar() {
     var a = ahora(), e = estado(), dia = String(a.getDay()), i;
@@ -90,6 +125,7 @@
     }
     lineaDelDia(a);
   }
+  barras();
   pintar();
   setInterval(pintar, 30000);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) pintar(); });

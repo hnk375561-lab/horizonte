@@ -201,29 +201,61 @@ const openSpec = semana.flatMap((g) => g.rangos.map((r) => ({ '@type': 'OpeningH
 
 // ---- secciones nuevas: comparador, cómo comprar, tu usado, búsqueda, guía, visita, mapa ----
 const COORD = L.coordenadas;
+const CVI = {
+  wa: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.7 8.7 0 0 0-7.4 13.2L3.4 20.8l4.5-1.2A8.7 8.7 0 1 0 12 3.2z"/><path d="M8.9 8.6c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .6.4.7 1.4 1.8 2.6 2.3.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.2-.8 1.6-.6.4-1.4.5-2.4.2-1.6-.5-3-1.6-4-3-.7-1-1.3-2.2-1-3.3.1-.4.3-.8.7-1.1z"/></svg>',
+  copy: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M5 15V5.5A1.5 1.5 0 0 1 6.5 4H15"/></svg>',
+  spark: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg>',
+  clear: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13"/></svg>',
+  km: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-5M7 17h2M15 17h2"/></svg>',
+};
+const cvSun = '<div class="cv-sun" data-sun aria-hidden="true"><svg viewBox="0 0 96 54" focusable="false"><defs><clipPath id="cvc-ID"><rect x="0" y="0" width="96" height="40"/></clipPath></defs><g class="cv-rays"><path d="M48 3v7M22 12l5 5M74 12l-5 5M9 27h7M80 27h7"/></g><g clip-path="url(#cvc-ID)"><circle class="cv-orb" cx="48" cy="40" r="17"/></g><path class="cv-hz" d="M4 40h88"/><path class="cv-hz2" d="M18 47h60M30 53h36"/></svg></div>';
+const cvChips = (id, lbl, opts, multi) => `<div class="cv-chips" role="group" aria-label="${esc(lbl)}" data-chips${multi ? ' data-multi' : ''} data-target="${id}">${opts.map((o) => `<button type="button" class="cv-chip" aria-pressed="false" data-v="${esc(o)}">${esc(o)}</button>`).join('')}</div><input type="hidden" id="${id}" data-lbl="${esc(lbl)}" data-p>`;
+const cvL = (txt, forId, hint) => `<label class="cv-l"${forId ? ` for="${forId}"` : ''}>${txt}${hint ? `<small>${hint}</small>` : ''}</label>`;
+const cvT = (txt, hint) => `<span class="cv-l" role="presentation">${txt}${hint ? `<small>${hint}</small>` : ''}</span>`;
+const cvForm = ({ uid, intro, aria, ey, h3, body, nota, extra = '', busca = false, ejemplo }) => `
+<form class="cv-form${busca ? ' cv-form--busca' : ''}" data-msg${busca ? ' data-busca' : ''} data-intro="${esc(intro)}" aria-label="${esc(aria)}">
+<header class="cv-head">${cvSun.replace(/ID/g, uid)}<div class="cv-ht"><p class="cv-ey">${ey}</p><h3>${h3}</h3></div><div class="cv-prog" aria-live="polite"><span class="cv-prog-t" data-prog-t>Sin datos todavía</span><span class="cv-prog-b" aria-hidden="true"><i data-prog-b></i></span></div></header>
+<div class="cv-grid">${body}</div>
+${extra}
+<div class="cv-bub" data-burbuja><p class="cv-bub-h"><span>Así llega tu mensaje</span><em>Se arma solo</em></p><div class="cv-bub-b" data-bub-b></div></div>
+<textarea class="msg-v cv-msgv" readonly hidden aria-label="Mensaje armado"></textarea>
+<div class="cv-acts">${C.whatsApp ? `<a class="cv-btn cv-btn--wa" data-wa-msg data-wa="${C.whatsApp}" href="https://wa.me/${C.whatsApp}" ${EXT}>${CVI.wa}<span>Enviar por WhatsApp</span></a>` : ''}
+<div class="cv-tools"><button class="cv-btn cv-btn--g${C.whatsApp ? '' : ' cv-btn--main'}" type="submit" data-copiar-msg hidden>${CVI.copy}<span>Copiar mensaje</span></button><button class="cv-btn cv-btn--g" type="button" data-ejemplo="${esc(JSON.stringify(ejemplo))}" hidden>${CVI.spark}<span>Completar con un ejemplo</span></button><button class="cv-btn cv-btn--g" type="button" data-limpiar hidden>${CVI.clear}<span>Limpiar</span></button></div>
+<p class="cv-soc">También podés escribirle a la agencia por <a href="${FB}" ${EXT}>Facebook</a> o <a href="${IG}" ${EXT}>Instagram</a>.</p></div>
+<p class="msg-s" role="status" aria-live="polite"></p>
+</form>
+<p class="src conversion-note cv-note">${nota}</p>`;
+
 const secUsado = hasSvc('permuta') ? `
 <section class="conversion conversion--trade" id="tu-usado" aria-labelledby="usado-t"><div class="w">
 <div class="conversion-layout">
 <div class="conversion-story">
 <p class="ey">Tu próximo paso</p><h2 id="usado-t">Entregá tu usado como <em>parte de pago</em></h2>
 <p class="sec-p">${hasSvc('tasacion') ? 'Recibimos vehículos usados como parte de pago y la tasación es sin cargo, según informa ' + esc(GNAME) + '. ' : 'Recibimos vehículos usados como parte de pago, según informa ' + esc(GNAME) + '. '}Contanos cuál es y armá el mensaje para enviárselo a la agencia.</p>
+<ol class="cv-steps"><li><b>Contanos qué tenés</b><span>Marca, modelo, año y kilometraje alcanzan para empezar.</span></li><li><b>Mirá tu mensaje armarse</b><span>Se escribe solo a medida que completás los datos.</span></li><li><b>Envialo a la agencia</b><span>Por WhatsApp. Las condiciones se acuerdan con ellos.</span></li></ol>
+<ul class="cv-pills"><li>Parte de pago</li>${hasSvc('tasacion') ? '<li>Tasación sin cargo</li>' : ''}<li>Autos y motos</li></ul>
 </div>
-<div class="conversion-panel">
-<form class="fm conversion-form" data-msg data-intro="Hola! Quiero consultar por entregar mi usado como parte de pago." aria-label="Datos de tu usado">
-<div class="conversion-form-head"><div><p class="ey">Empezá por acá</p><h3>Datos de tu usado</h3></div><span class="conversion-form-tag">TU VEHÍCULO</span></div>
-<div class="f"><label for="u-mm">Marca y modelo</label><input id="u-mm" data-lbl="Marca y modelo" autocomplete="off" required></div>
-<div class="f"><label for="u-an">Año</label><input id="u-an" data-lbl="Año" inputmode="numeric" autocomplete="off"></div>
-<div class="f"><label for="u-km">Kilometraje</label><input id="u-km" data-lbl="Kilometraje" inputmode="numeric" autocomplete="off"></div>
-<div class="f"><label for="u-co">Combustible</label><select id="u-co" data-lbl="Combustible"><option value="">Sin indicar</option><option>Nafta</option><option>Diésel</option><option>GNC</option><option>Otro</option></select></div>
-<div class="f full"><label for="u-no">Algo más que quieras contar</label><textarea id="u-no" data-lbl="Comentarios"></textarea></div>
-<textarea class="msg-v" readonly hidden aria-label="Mensaje armado"></textarea>
-<div class="acts">${WAFORM}${CPBTN}<a class="btn" href="${FB}" ${EXT}>Ir a Facebook</a><a class="btn" href="${IG}" ${EXT}>Ir a Instagram</a></div>
-<p class="msg-s" role="status" aria-live="polite"></p>
-</form>
-<p class="src conversion-note">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. La tasación y las condiciones se acuerdan con la agencia.</p>
+<div class="conversion-panel cv-panel">
+${cvForm({
+  uid: 'u', intro: 'Hola! Quiero consultar por entregar mi usado como parte de pago.', aria: 'Datos de tu usado', ey: 'Empezá por acá', h3: 'Datos de tu usado',
+  ejemplo: { 'u-mm': 'Chevrolet Corsa Classic 1.4', 'u-an': '2014', 'u-km': '118.000', 'u-co': 'Nafta', 'u-tr': 'Manual', 'u-es': 'Papeles al día, Services al día', 'u-in': 'Que me lo tasen', 'u-no': 'Lo puedo llevar a la agencia cuando quieran verlo.' },
+  body: `
+<div class="cv-f cv-f--wide">${cvL('Marca y modelo', 'u-mm')}<input id="u-mm" data-lbl="Marca y modelo" data-p list="dl-marcas" autocomplete="off" placeholder="Ej: Chevrolet Corsa Classic 1.4" required></div>
+<div class="cv-f">${cvL('Año', 'u-an')}<input id="u-an" data-lbl="Año" data-p data-anio inputmode="numeric" maxlength="4" autocomplete="off" placeholder="Ej: 2014"></div>
+<div class="cv-f">${cvL('Kilometraje', 'u-km')}<span class="cv-sfx" data-sfx="km"><input id="u-km" data-lbl="Kilometraje" data-p data-fmt="miles" inputmode="numeric" autocomplete="off" placeholder="Ej: 120.000"></span></div>
+<div class="cv-f">${cvT('Combustible')}${cvChips('u-co', 'Combustible', ['Nafta', 'Diésel', 'GNC', 'Otro'])}</div>
+<div class="cv-f">${cvT('Caja')}${cvChips('u-tr', 'Caja', ['Manual', 'Automática'])}</div>
+<div class="cv-f cv-f--wide">${cvT('Cómo está', 'Podés marcar varias')}${cvChips('u-es', 'Estado', ['Papeles al día', 'Services al día', 'Un solo dueño', 'Sin choques importantes', 'Con GNC'], true)}</div>
+<div class="cv-f cv-f--wide">${cvT('Qué querés hacer')}${cvChips('u-in', 'Quiero', ['Que me lo tasen', 'Entregarlo y llevarme otro'])}</div>
+<div class="cv-f cv-f--wide">${cvL('¿Alguna unidad te interesa?', 'u-un', 'Opcional')}<select id="u-un" data-lbl="Unidad que me interesa" data-stock><option value="">Todavía no sé</option></select></div>
+<div class="cv-f cv-f--wide">${cvL('Algo más que quieras contar', 'u-no', 'Opcional')}<textarea id="u-no" data-lbl="Comentarios" maxlength="280" placeholder="Ej: tiene GNC de quinta generación, cubiertas nuevas…"></textarea><span class="cv-cnt" data-cnt aria-hidden="true">0 / 280</span></div>`,
+  nota: 'Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. La tasación y las condiciones se acuerdan con la agencia.',
+})}
 </div>
 </div>
 </div></section>` : '';
+
+const MARCAS = [...new Set([...A.autos.map((a) => a.marca), 'Chevrolet', 'Volkswagen', 'Peugeot', 'Renault', 'Ford', 'Fiat', 'Toyota', 'Citroën', 'Honda', 'Nissan', 'Hyundai', 'Kia', 'Jeep', 'Audi', 'BMW', 'Mercedes-Benz', 'Suzuki', 'Yamaha'])].sort((x, y) => x.localeCompare(y, 'es'));
 
 const secBusqueda = `
 <section class="conversion conversion--search lt" id="busqueda" aria-labelledby="bus-t"><div class="w">
@@ -231,20 +263,26 @@ const secBusqueda = `
 <div class="conversion-story">
 <p class="ey">Del otro lado del volante</p><h2 id="bus-t">Contanos qué auto <em>buscás</em></h2>
 <p class="sec-p">Armá un mensaje con lo que tenés en mente y enviáselo a la agencia por el canal que prefieras.</p>
+<ol class="cv-steps"><li><b>Decinos qué buscás</b><span>Una marca o un modelo alcanza; el resto afina la búsqueda.</span></li><li><b>Mirá qué hay publicado</b><span>Mientras escribís, te mostramos las unidades del catálogo que encajan.</span></li><li><b>Enviá la consulta</b><span>Por WhatsApp, sin registrarte ni dejar datos en el sitio.</span></li></ol>
+<ul class="cv-pills"><li>Sin compromiso</li><li>Financiación</li><li>Tu usado como parte de pago</li></ul>
 </div>
-<div class="conversion-panel">
-<form class="fm conversion-form" data-msg data-intro="Hola! Estoy buscando un auto." aria-label="Qué auto buscás">
-<div class="conversion-form-head"><div><p class="ey">Armá tu consulta</p><h3>El auto que tenés en mente</h3></div><span class="conversion-form-tag">TU BÚSQUEDA</span></div>
-<div class="f"><label for="b-mm">Marca o modelo</label><input id="b-mm" data-lbl="Marca o modelo" autocomplete="off" required></div>
-<div class="f"><label for="b-an">Año mínimo</label><input id="b-an" data-lbl="Año mínimo" inputmode="numeric" autocomplete="off"></div>
-<div class="f"><label for="b-tr">Transmisión</label><select id="b-tr" data-lbl="Transmisión"><option value="">Indistinto</option><option>Manual</option><option>Automática</option></select></div>
-<div class="f"><label for="b-pr">Presupuesto aproximado</label><input id="b-pr" data-lbl="Presupuesto" autocomplete="off"></div>
-<div class="f full"><label for="b-no">Algo más que quieras contar</label><textarea id="b-no" data-lbl="Comentarios"></textarea></div>
-<textarea class="msg-v" readonly hidden aria-label="Mensaje armado"></textarea>
-<div class="acts">${WAFORM}${CPBTN}<a class="btn" href="${FB}" ${EXT}>Ir a Facebook</a><a class="btn" href="${IG}" ${EXT}>Ir a Instagram</a></div>
-<p class="msg-s" role="status" aria-live="polite"></p>
-</form>
-<p class="src conversion-note">Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. No confirma disponibilidad ni precios.</p>
+<div class="conversion-panel cv-panel">
+<datalist id="dl-marcas">${MARCAS.map((m) => `<option value="${esc(m)}">`).join('')}</datalist>
+${cvForm({
+  uid: 'b', busca: true, intro: 'Hola! Estoy buscando un auto.', aria: 'Qué auto buscás', ey: 'Armá tu consulta', h3: 'El auto que tenés en mente',
+  ejemplo: { 'b-mm': 'Volkswagen Amarok', 'b-ca': 'Pick-up', 'b-an': '2010', 'b-tr': 'Manual', 'b-co': 'Diésel', 'b-mo': 'US$', 'b-pr': '25.000', 'b-us': 'Trabajo, Ruta', 'b-pa': 'Financiado', 'b-no': 'Me interesa que sea 4x4.' },
+  body: `
+<div class="cv-f cv-f--wide">${cvL('Marca o modelo', 'b-mm')}<input id="b-mm" data-lbl="Marca o modelo" data-p list="dl-marcas" autocomplete="off" placeholder="Ej: Peugeot 208, Chevrolet Cruze…" required></div>
+<div class="cv-f cv-f--wide">${cvT('Tipo de vehículo', 'Podés marcar varios')}${cvChips('b-ca', 'Carrocería', ['Sedán', 'Hatchback', 'Pick-up', 'SUV', 'Utilitario', 'Monovolumen'], true)}</div>
+<div class="cv-f">${cvL('Año mínimo', 'b-an')}<input id="b-an" data-lbl="Año mínimo" data-p data-anio inputmode="numeric" maxlength="4" autocomplete="off" placeholder="Ej: 2015"><div class="cv-quick" aria-label="Años sugeridos">${[2010, 2015, 2018, 2020].map((y) => `<button type="button" class="cv-q" data-set="b-an" data-v="${y}">${y}+</button>`).join('')}</div></div>
+<div class="cv-f">${cvT('Caja', 'Indistinto si no elegís')}${cvChips('b-tr', 'Transmisión', ['Manual', 'Automática'])}${cvT('Combustible', 'Podés marcar varios')}${cvChips('b-co', 'Combustible', ['Nafta', 'Diésel', 'GNC', 'Híbrido'], true)}</div>
+<div class="cv-f cv-f--wide cv-money">${cvL('Presupuesto aproximado', 'b-pr', 'Opcional')}<div class="cv-money-r"><div class="cv-cur" role="group" aria-label="Moneda"><button type="button" class="cv-chip is-on" aria-pressed="true" data-cur="$">$</button><button type="button" class="cv-chip" aria-pressed="false" data-cur="US$">US$</button></div><input id="b-pr" data-lbl="Presupuesto" data-p data-fmt="miles" data-pre="#b-mo" inputmode="numeric" autocomplete="off" placeholder="Ej: 12.000.000"><input type="hidden" id="b-mo" value="$"></div></div>
+<div class="cv-f cv-f--wide">${cvT('Para qué lo vas a usar', 'Podés marcar varios')}${cvChips('b-us', 'Uso', ['Trabajo', 'Familia', 'Ciudad', 'Ruta', 'Primer auto'], true)}</div>
+<div class="cv-f cv-f--wide">${cvT('Cómo pensás pagarlo', 'Podés marcar varios')}${cvChips('b-pa', 'Forma de pago', ['Contado', 'Financiado', 'Con mi usado'], true)}</div>
+<div class="cv-f cv-f--wide">${cvL('Algo más que quieras contar', 'b-no', 'Opcional')}<textarea id="b-no" data-lbl="Comentarios" maxlength="280" placeholder="Ej: busco algo económico en consumo y con aire acondicionado…"></textarea><span class="cv-cnt" data-cnt aria-hidden="true">0 / 280</span></div>`,
+  extra: '<div class="cv-match" data-match aria-live="polite"><p class="cv-match-h" data-match-h>Escribí una marca o modelo para ver qué hay publicado</p><ul class="cv-match-l" data-match-l></ul></div>',
+  nota: 'Es un mensaje que armás vos: no se envía ni se guarda nada desde este sitio. No confirma disponibilidad ni precios.',
+})}
 </div>
 </div>
 </div></section>`;
@@ -295,19 +333,23 @@ const mapaHr = COORD ? `<div class="hz-map" id="mapa" data-lat="${COORD.lat}" da
 <div class="hz-map-v" role="region" aria-label="Mapa con la ubicación de ${esc(NAME)}"></div>
 <div class="hz-map-ph" data-mapa-ph><span class="hz-map-ic">${ICX.pin}</span><p>Mapa interactivo de ${esc(L.city)}</p><div class="row"><button class="btn p sm" type="button" data-mapa-abrir hidden>Ver mapa</button><a class="btn sm" href="${L.mapsUrl}" ${EXT}>Abrir en Google Maps</a></div><p class="map-m src" role="status" aria-live="polite"></p></div>
 </div>` : '';
+const hrAddr = H.display ? `<div class="hz-addr"><p class="hz-k">Estamos en</p><p class="hz-a">${esc(DIR_COMPLETA)}</p>${L.direccionAnterior ? `<p class="hz-ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}
+<div class="row"><a class="btn p sm" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a>${COORD ? `<a class="btn sm" href="https://waze.com/ul?ll=${COORD.lat},${COORD.lng}&amp;navigate=yes" ${EXT}>Abrir en Waze</a>` : ''}<button class="btn sm" type="button" data-copiar="${esc(DIR_COMPLETA)}" hidden>Copiar dirección</button></div></div>` : '';
 const secHorarios = H.display ? `
-<section id="horarios" class="hz-hr" aria-labelledby="hor-t" data-semana="${esc(JSON.stringify(H.semana))}"><div class="w">
-<div class="hz-hr-head"><p class="ey">Horarios y ubicación</p><h2 id="hor-t">Cuándo y dónde <em>visitarnos</em></h2></div>
-<div class="hz-hr-grid">
-<div class="hz-hr-info">
-<div class="hz-live" data-live data-abierto="0"><span class="hz-dot" aria-hidden="true"></span><div><p class="hz-live-t" data-estado-t>Horario de atención</p><p class="hz-live-d" data-estado-d>${esc(H.corto)}</p></div></div>
-<div class="hz-tl" data-tl aria-hidden="true"></div>
-<table class="hz-tbl"><caption class="sr">Horario de atención</caption><tbody>${hrFilas}</tbody></table>
-<p class="hz-tz">Hora de Argentina</p>
-<div class="hz-addr"><p class="hz-k">Dirección</p><p class="hz-a">${esc(DIR_COMPLETA)}</p>${L.direccionAnterior ? `<p class="hz-ant">Antes: ${esc(L.direccionAnterior)}</p>` : ''}
-<div class="row"><a class="btn p sm" href="${L.mapsUrl}" ${EXT}>Cómo llegar</a>${COORD ? `<a class="btn sm" href="https://waze.com/ul?ll=${COORD.lat},${COORD.lng}&amp;navigate=yes" ${EXT}>Abrir en Waze</a>` : ''}<button class="btn sm" type="button" data-copiar="${esc(DIR_COMPLETA)}" hidden>Copiar dirección</button></div></div>
+<section id="horarios" class="hz-hr hz-lux" aria-labelledby="hor-t" data-semana="${esc(JSON.stringify(H.semana))}"><div class="w">
+<div class="hz-hr-head"><div><p class="ey">Horarios y ubicación</p><h2 id="hor-t">Cuándo y dónde <em>visitarnos</em></h2></div>
+<div class="hz-live" data-live data-abierto="0"><span class="hz-dot" aria-hidden="true"></span><div><p class="hz-live-t" data-estado-t>Horario de atención</p><p class="hz-live-d" data-estado-d>${esc(H.corto)}</p></div></div></div>
+<div class="hz-stage">
+<div class="hz-panel">
+<div class="hz-dial" data-dial aria-hidden="true"></div>
+<div class="hz-wk"><p class="hz-wk-t">La semana en un vistazo</p>
+<table class="hz-tbl"><caption class="sr">Horario de atención</caption><tbody>${hrFilas}</tbody></table></div>
+<p class="hz-tz">Hora de Argentina · el sol marca dónde está el día ahora.</p>
 </div>
+<div class="hz-mapwrap">
 ${mapaHr}
+${hrAddr}
+</div>
 </div>
 <p class="src hz-src">Ubicación según la ficha de Google Maps. Horario según el sitio del ${esc(GNAME)}; puede variar, confirmalo antes de ir.</p>
 </div></section>` : '';

@@ -1,39 +1,26 @@
-// Genera variantes responsive para fotos propias/autorizadas de una unidad o del hero.
-// Unidad: node scripts/make-images.mjs <id> [directorio]
-// Hero:   node scripts/make-images.mjs --hero <archivo-o-directorio>
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-let sharp;
-try { sharp = (await import('sharp')).default; } catch { console.error('Falta sharp: correr "npm install" primero.'); process.exit(1); }
+// Convierte las fotos originales de una unidad en las variantes que usa el sitio.
+// Uso:   npm install            (una vez: instala sharp)
+//        node scripts/make-images.mjs <slug> <carpeta-con-fotos> [--ratio 4:3|original]
+// Ej.:   node scripts/make-images.mjs gol-2018 ./fotos-brutas/gol
+// Salida: images/<slug>-N.webp (1280 px), <slug>-N-800.webp y <slug>-N-480.webp  (+ el fragmento listo para pegar en STOCK).
+// Las fotos se ordenan por nombre de archivo: la primera es la portada.
+import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
+let sharp; try { sharp = (await import('sharp')).default; } catch { console.error('Falta sharp: correr "npm install" primero.'); process.exit(1); }
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const args = process.argv.slice(2);
-const isHero = args[0] === '--hero';
-const sourceArg = isHero ? args[1] : args[1];
-const id = isHero ? null : args[0];
-if (!sourceArg && !isHero) { console.error('Uso: node scripts/make-images.mjs <id> [directorio] | --hero <archivo-o-directorio>'); process.exit(1); }
-const source = sourceArg ? path.resolve(sourceArg) : path.join(root, 'images', 'autos', id);
-const sourceFiles = fs.existsSync(source) && fs.statSync(source).isDirectory()
-  ? fs.readdirSync(source).filter((f) => /\.(jpe?g|png|tiff?)$/i.test(f)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).map((f) => path.join(source, f))
-  : fs.existsSync(source) ? [source] : [];
-if (!sourceFiles.length) { console.error('No hay fotos JPG/PNG/TIFF en ' + source); process.exit(1); }
-const outDir = isHero ? path.join(root, 'images') : (fs.mkdirSync(path.join(root, 'images', 'autos', id), { recursive: true }), path.join(root, 'images', 'autos', id));
-const widths = isHero ? [1280, 800] : [1280, 800, 480];
-const cleanBase = (file) => path.basename(file, path.extname(file)).replace(/-(?:480|800|1280)$/, '');
-const fitFor = (w) => isHero ? { width: w, withoutEnlargement: true } : { width: w, withoutEnlargement: true, fit: 'inside' };
-const outputs = [];
-for (const file of sourceFiles) {
-  const base = cleanBase(file);
-  const meta = await sharp(file, { failOn: 'none' }).rotate().metadata();
-  const ratio = (meta.width && meta.height) ? meta.height / meta.width : 2 / 3;
-  const height = Math.round((isHero ? Math.min(1280, meta.width || 1280) : 1280) * ratio);
-  for (const width of widths) {
-    const stem = isHero ? `hero-${width}` : `${base}-${width}`;
-    const pipeline = sharp(file, { failOn: 'none' }).rotate().resize(fitFor(width));
-    await pipeline.clone().webp({ quality: isHero && width === 800 ? 68 : 78 }).toFile(path.join(outDir, `${stem}.webp`));
-    await pipeline.clone().avif({ quality: 50 }).toFile(path.join(outDir, `${stem}.avif`));
-  }
-  if (!isHero) outputs.push({ src: `images/autos/${id}/${base}-800.webp`, srcset: `images/autos/${id}/${base}-480.webp 480w, images/autos/${id}/${base}-800.webp 800w, images/autos/${id}/${base}-1280.webp 1280w`, alt: '', width: Math.min(1280, meta.width || 1280), height: Math.round(Math.min(1280, meta.width || 1280) * ratio) });
+const [slug, dir, ...rest] = process.argv.slice(2);
+if (!slug || !dir || !/^[a-z0-9-]+$/.test(slug)) { console.error('Uso: node scripts/make-images.mjs <slug-en-minusculas> <carpeta> [--ratio 4:3|original]'); process.exit(1); }
+const original = rest.join(' ').includes('original');
+const files = fs.readdirSync(dir).filter((f) => /\.(jpe?g|png|webp|avif|tiff?)$/i.test(f)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+if (!files.length) { console.error('No hay fotos en ' + dir); process.exit(1); }
+const out = path.join(root, 'images'); fs.mkdirSync(out, { recursive: true });
+let n = 0;
+for (const f of files) {
+  n++; const src = sharp(path.join(dir, f), { failOn: 'none' }).rotate();  // respeta la orientación EXIF
+  const big = original ? src.clone().resize({ width: 1280, withoutEnlargement: true }) : src.clone().resize(1280, 960, { fit: 'cover', position: 'attention' });
+  await big.webp({ quality: 78 }).toFile(path.join(out, `${slug}-${n}.webp`));
+  for (const w of [800, 480]) await sharp(path.join(out, `${slug}-${n}.webp`)).resize({ width: w }).webp({ quality: 74 }).toFile(path.join(out, `${slug}-${n}-${w}.webp`));
+  console.log(`  ${f} -> ${slug}-${n}.webp (+800, +480)`);
 }
-if (isHero) console.log('Hero generado: images/hero-1280.webp, images/hero-800.webp y variantes AVIF.');
-else console.log(JSON.stringify({ id, fotos: outputs }, null, 2));
+console.log(`\nListo: ${n} fotos. Pegar en STOCK (index.html), completar solo con datos de la publicación:\n`);
+console.log(`  { foto:"images/${slug}-1.webp", fotos:[${Array.from({ length: n }, (_, i) => i + 1)}].map(function(n){return "images/${slug}-"+n+".webp"}), titulo:"Marca Modelo Versión", corto:"Modelo", anio:0000, km:"000.000 km", combustible:"Nafta", precio:"Consultar", nota:"Texto de la publicación." },\n`);
+console.log('Después: npm run prerender && npm test');

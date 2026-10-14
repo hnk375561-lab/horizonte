@@ -407,6 +407,7 @@
       var w = el('div', null, 'w'), lst = el('ul', null, 'tray-l');
       cmp.forEach(function (i) {
         var a = list[i], li = el('li', null, 'tray-i'), b = el('button', '×'); b.type = 'button'; b.setAttribute('aria-label', 'Quitar de la comparación: ' + a.titulo);
+        if (a.media && a.media[0]) { var th = el('img', null, 'tray-th'); th.src = a.media[0].src; th.alt = ''; th.decoding = 'async'; li.appendChild(th); }
         li.appendChild(el('span', a.marca + ' ' + a.modeloTxt)); li.appendChild(b); lst.appendChild(li);
         b.addEventListener('click', function () { cmp.splice(cmp.indexOf(i), 1); pintarBandeja(); });
       });
@@ -435,72 +436,140 @@
       var sel = cmp.map(function (i) { return list[i]; });
       if (sel.length < 2) return;
       if (!dlg) {
-        dlg = el('dialog', null, 'cmp'); dlg.setAttribute('aria-labelledby', 'cmp-ttl');
+        dlg = el('dialog', null, 'cmp cmp-lux'); dlg.setAttribute('aria-labelledby', 'cmp-ttl');
         dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
         dlg.addEventListener('close', function () { document.documentElement.classList.remove('has-dlg'); });
         document.body.appendChild(dlg);
       }
+      var soloDif = dlg.classList.contains('solo-dif');
       dlg.textContent = '';
-      var hd = el('div', null, 'cmp-hd'), h = el('h2', 'Comparación'); h.id = 'cmp-ttl';
+      dlg.style.setProperty('--n', sel.length);
+
+      /* ----- encabezado: sol sobre el horizonte, título y controles ----- */
+      var hd = el('div', null, 'cmp-hd'), tt = el('div', null, 'cmp-tt');
+      var sun = el('span', null, 'cmp-sun'); sun.setAttribute('aria-hidden', 'true'); sun.innerHTML = '<svg viewBox="0 0 64 36" focusable="false"><path d="M6 30a26 26 0 0 1 52 0"/><path d="M2 30h60"/><path d="M32 4v5M12 11l3 3M52 11l-3 3"/></svg>';
+      tt.appendChild(sun);
+      var tx = el('div', null, 'cmp-tx');
+      tx.appendChild(el('p', 'Horizonte Automotores', 'cmp-ey'));
+      var h = el('h2', 'Comparador'); h.id = 'cmp-ttl'; tx.appendChild(h);
+      tx.appendChild(el('p', sel.length + ' unidades, lado a lado', 'cmp-sub'));
+      tt.appendChild(tx); hd.appendChild(tt);
+      var ct = el('div', null, 'cmp-ct');
+      var sw = el('label', null, 'cmp-sw'), ck = el('input'); ck.type = 'checkbox'; ck.checked = soloDif;
+      sw.appendChild(ck); sw.appendChild(el('span', null, 'cmp-sw-k')); sw.appendChild(el('span', 'Solo diferencias'));
+      ck.addEventListener('change', function () { dlg.classList.toggle('solo-dif', ck.checked); });
       var x = el('button', 'Cerrar', 'btn sm'); x.type = 'button'; x.addEventListener('click', function () { dlg.close(); });
-      hd.appendChild(h); hd.appendChild(x); dlg.appendChild(hd);
+      ct.appendChild(sw); ct.appendChild(x); hd.appendChild(ct); dlg.appendChild(hd);
+      dlg.appendChild(el('div', null, 'cmp-hz'));
 
       var minP = mejor(sel, function (a) { return a.monto; }, -1), maxP = Math.max.apply(null, sel.map(function (a) { return a.monto || 0; }));
       var maxA = mejor(sel, function (a) { return a.anio; }, 1);
       var minK = mejor(sel, function (a) { return a.km; }, -1), maxK = Math.max.apply(null, sel.map(function (a) { return a.km || 0; }));
       var base = Math.min.apply(null, sel.map(function (a) { return a.monto; }).filter(function (v) { return v != null; }));
+      var esP = function (a) { return a.monto != null && minP != null && a.monto === minP; };
+      var esA = function (a) { return a.anio != null && maxA != null && a.anio === maxA; };
+      var esK = function (a) { return a.km != null && minK != null && a.km === minK; };
 
-      var t = el('table', null, 'cmpt'), cap = el('caption', 'Comparación de unidades'); cap.className = 'sr'; t.appendChild(cap);
+      /* ----- resumen: quién gana en cada cosa ----- */
+      var ganan = [];
+      [['Menor precio', esP], ['Más nuevo', esA], ['Menos kilómetros', esK]].forEach(function (g) {
+        var a = sel.filter(g[1])[0]; if (a) ganan.push([g[0], a]);
+      });
+      if (ganan.length) {
+        var rs = el('ul', null, 'cmp-win');
+        ganan.forEach(function (g) {
+          var li = el('li'), im = el('span', null, 'cmp-win-p');
+          if (g[1].media && g[1].media[0]) { var i = el('img'); i.src = g[1].media[0].src; i.alt = ''; i.decoding = 'async'; im.appendChild(i); }
+          li.appendChild(im);
+          var t = el('span', null, 'cmp-win-t'); t.appendChild(el('small', g[0])); t.appendChild(el('b', g[1].marca + ' ' + g[1].modeloTxt)); li.appendChild(t);
+          rs.appendChild(li);
+        });
+        dlg.appendChild(rs);
+      }
+
+      var t = el('table', null, 'cmpt cmpx'), cap = el('caption', 'Comparación de unidades'); cap.className = 'sr'; t.appendChild(cap);
       var hr = el('tr'), c0 = el('th'); c0.scope = 'col'; c0.appendChild(el('span', 'Dato', 'sr')); hr.appendChild(c0);
-      sel.forEach(function (a) {
-        var th = el('th'); th.scope = 'col';
+      sel.forEach(function (a, k) {
+        var th = el('th', null, 'cmp-u'); th.scope = 'col';
+        var ph = el('div', null, 'cmp-ph');
+        if (a.media && a.media[0]) {
+          var im = el('img'); im.src = a.media[0].src; if (a.media[0].srcset) im.srcset = a.media[0].srcset;
+          im.sizes = '(max-width: 700px) 150px, 300px'; im.alt = a.media[0].alt || a.titulo; im.decoding = 'async'; if (k > 1) im.loading = 'lazy';
+          ph.appendChild(im);
+        }
+        var md = el('span', null, 'cmp-md');
+        [['Menor precio', esP(a)], ['Más nuevo', esA(a)], ['Menos km', esK(a)]].forEach(function (m) { if (m[1]) md.appendChild(el('span', m[0], 'cmp-medal')); });
+        ph.appendChild(md);
+        var rm = el('button', '×', 'cmp-rm'); rm.type = 'button'; rm.setAttribute('aria-label', 'Quitar de la comparación: ' + a.titulo);
+        rm.addEventListener('click', function () {
+          var j = cmp.indexOf(a.i); if (j > -1) cmp.splice(j, 1); pintarBandeja();
+          if (cmp.length < 2) dlg.close(); else abrirComparacion();
+        });
+        ph.appendChild(rm);
+        th.appendChild(ph);
         th.appendChild(el('span', a.marca, 'cb')); th.appendChild(el('span', sinMarca(a), 'cn'));
+        th.appendChild(el('span', [a.anio, a.version].filter(Boolean).join(' · '), 'cv'));
         hr.appendChild(th);
       });
       var thead = el('thead'); thead.appendChild(hr); t.appendChild(thead);
       var tb = el('tbody');
-      function fila(rotulo, celda) {
+      function grupo(txt) {
+        var r = el('tr', null, 'cmp-g'), th = el('th', txt); th.scope = 'rowgroup'; th.colSpan = sel.length + 1; r.appendChild(th); tb.appendChild(r);
+      }
+      function fila(rotulo, celda, clave) {
         var r = el('tr'), th = el('th', rotulo); th.scope = 'row'; r.appendChild(th);
         sel.forEach(function (a) { var td = el('td'); celda(td, a); r.appendChild(td); });
+        if (clave) { var ks = sel.map(function (a) { return String(clave(a)); }); if (ks.every(function (v) { return v === ks[0]; })) r.className = 'same'; }
         tb.appendChild(r);
       }
       function badge(td, txt) { td.appendChild(el('span', txt, 'bd')); }
       function barra(td, v, max, es) { if (v == null || !max) return; var b = el('span', null, 'mb' + (es ? ' best' : '')), i = el('i'); i.style.width = Math.max(4, Math.round(v / max * 100)) + '%'; b.appendChild(i); td.appendChild(b); }
+      function gana(td, si) { if (si) td.className = 'win'; }
+
+      grupo('Lo esencial');
       fila('Precio publicado', function (td, a) {
         td.appendChild(el('strong', a.precio ? peso(a) : 'Consultar', 'big' + (a.precio ? '' : ' nd')));
-        if (a.monto != null && minP != null && a.monto === minP) badge(td, 'Menor precio');
-        barra(td, a.monto, maxP, a.monto != null && a.monto === minP);
-      });
+        if (esP(a)) badge(td, 'Menor precio');
+        barra(td, a.monto, maxP, esP(a)); gana(td, esP(a));
+      }, function (a) { return a.monto; });
       fila('Diferencia de precio', function (td, a) {
         if (a.monto == null) { td.textContent = 'Sin dato'; return; }
         td.textContent = a.monto === base ? (sel.length > 1 && minP != null ? 'La más económica' : '—') : '+ $ ' + fmt(a.monto - base);
-      });
+      }, function (a) { return a.monto; });
       fila('Año', function (td, a) {
         td.appendChild(el('strong', a.anio != null ? String(a.anio) : 'Sin dato', 'big' + (a.anio != null ? '' : ' nd')));
-        if (a.anio != null && maxA != null && a.anio === maxA) badge(td, 'Más nuevo');
-      });
+        if (esA(a)) badge(td, 'Más nuevo'); gana(td, esA(a));
+      }, function (a) { return a.anio; });
       fila('Kilómetros', function (td, a) {
         td.appendChild(el('strong', a.km != null ? fmt(a.km) + ' km' : 'No publicado', 'big' + (a.km != null ? '' : ' nd')));
-        if (a.km != null && minK != null && a.km === minK) badge(td, 'Menos km');
-        barra(td, a.km, maxK, a.km != null && a.km === minK);
+        if (esK(a)) badge(td, 'Menos km');
+        barra(td, a.km, maxK, esK(a)); gana(td, esK(a));
+      }, function (a) { return a.km; });
+      grupo('Mecánica');
+      [['Caja', 'transmision'], ['Combustible', 'combustible'], ['Cilindrada', 'cilindrada']].forEach(function (p) {
+        fila(p[0], function (td, a) { td.appendChild(el('span', a[p[1]] || 'Sin dato', a[p[1]] ? 'val' : 'val nd')); }, function (a) { return a[p[1]]; });
       });
-      [['Caja', 'transmision'], ['Combustible', 'combustible'], ['Color', 'color'], ['Cilindrada', 'cilindrada'], ['Versión', 'version']].forEach(function (p) {
-        fila(p[0], function (td, a) {
-          if (p[1] === 'color' && a.color && a.sw) { var d = el('i', null, 'sw'); d.style.setProperty('--sw', a.sw); td.appendChild(d); }
-          td.appendChild(document.createTextNode(a[p[1]] || 'Sin dato'));
-        });
-      });
-      fila('Ficha', function (td, a) {
-        var c = el('a', 'Consultar', 'btn p sm'); c.href = a.href; c.target = '_blank'; c.rel = 'noopener noreferrer';
+      grupo('Detalle');
+      fila('Color', function (td, a) {
+        if (a.color && a.sw) { var d = el('i', null, 'sw'); d.style.setProperty('--sw', a.sw); td.appendChild(d); }
+        td.appendChild(el('span', a.color || 'Sin dato', a.color ? 'val' : 'val nd'));
+      }, function (a) { return a.color; });
+      fila('Versión', function (td, a) { td.appendChild(el('span', a.version || 'Sin dato', a.version ? 'val' : 'val nd')); }, function (a) { return a.version; });
+      fila('Carrocería', function (td, a) { td.appendChild(el('span', a.carroceria || 'Sin dato', a.carroceria ? 'val' : 'val nd')); }, function (a) { return a.carroceria; });
+      var fr = el('tr', null, 'cmp-fr'), fth = el('th', 'Ficha'); fth.scope = 'row'; fr.appendChild(fth);
+      sel.forEach(function (a) {
+        var td = el('td');
+        var c = el('a', 'Consultar esta unidad', 'btn p sm'); c.href = a.href; c.target = '_blank'; c.rel = 'noopener noreferrer';
         var v = el('a', 'Ver publicación', 'vp'); v.href = a.url; v.target = '_blank'; v.rel = 'noopener noreferrer';
-        td.appendChild(c); td.appendChild(v);
+        td.appendChild(c); td.appendChild(v); fr.appendChild(td);
       });
+      tb.appendChild(fr);
       t.appendChild(tb);
       var sc = el('div', null, 'cmp-sc'); sc.appendChild(t); dlg.appendChild(sc);
       var f = sel.map(function (a) { return a.precio && a.precio.fecha; }).filter(Boolean);
       dlg.appendChild(el('p', 'Precios y kilometrajes tal como figuran en cada ficha pública' + (f.length ? ' (relevados el ' + fecha(f[0]) + ')' : '') + '. Pueden haber cambiado: consultalos antes de ir.', 'src cmp-ft'));
       document.documentElement.classList.add('has-dlg');
-      if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+      if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
       x.focus();
     }
 
@@ -677,29 +746,205 @@
     io.observe(r);
   })();
 
-  /* ---------- 2) formularios que arman un mensaje ---------- */
-  $$('form[data-msg]').forEach(function (f) {
-    var vista = $('.msg-v', f), estado = $('.msg-s', f), btn = $('[data-copiar-msg]', f);
-    function texto() {
-      var lineas = [f.getAttribute('data-intro') || 'Hola!'];
-      $$('[data-lbl]', f).forEach(function (c) {
-        var v = (c.value || '').replace(/\s+/g, ' ').trim();
-        if (v) lineas.push(c.getAttribute('data-lbl') + ': ' + v);
+  /* ---------- 2) formularios que arman un mensaje ----------
+     Tu usado y Tu búsqueda: campos con ejemplos, chips, formato de miles, progreso (el sol sale a medida que completás),
+     vista previa del mensaje como burbuja, envío por WhatsApp con el texto ya armado y, en la búsqueda,
+     coincidencias en vivo con el catálogo publicado (lee #cat-data). Nada se envía ni se guarda desde el sitio. */
+  (function () {
+    var CAT = [];
+    try { CAT = JSON.parse(($('#cat-data') || {}).textContent || '[]'); } catch (e) {}
+    var norm = function (t) { return String(t == null ? '' : t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); };
+    var miles = function (v) { var d = String(v).replace(/\D/g, '').slice(0, 10); return d ? Number(d).toLocaleString('es-AR') : ''; };
+    var soloNum = function (v) { return parseInt(String(v).replace(/\D/g, ''), 10) || 0; };
+
+    $$('form[data-msg]').forEach(function (f) {
+      var vista = $('.msg-v', f), estado = $('.msg-s', f), btnCopiar = $('[data-copiar-msg]', f), wa = $('[data-wa-msg]', f);
+      var bub = $('[data-bub-b]', f), progT = $('[data-prog-t]', f), progB = $('[data-prog-b]', f), sol = $('[data-sun]', f);
+      var panel = $('[data-match]', f), mH = $('[data-match-h]', f), mL = $('[data-match-l]', f);
+      var byId = function (id) { return f.querySelector('#' + id); };
+      var val = function (id) { var c = byId(id); return c ? (c.value || '').trim() : ''; };
+
+      /* select de unidades del catálogo */
+      $$('select[data-stock]', f).forEach(function (s) {
+        CAT.forEach(function (a) { var o = el('option', a.titulo + (a.anio ? ' · ' + a.anio : '')); o.value = a.titulo + (a.anio ? ' ' + a.anio : ''); s.appendChild(o); });
       });
-      return lineas.join('\n');
-    }
-    function actualizar() { if (vista) vista.value = texto(); }
-    f.addEventListener('input', actualizar);
-    f.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var t = texto(); actualizar();
-      copiar(t, function (ok) {
-        estado.textContent = ok ? 'Mensaje copiado. Pegalo en una conversación con la agencia (Facebook o Instagram).' : 'No se pudo copiar solo: seleccioná el mensaje de arriba, copialo y pegalo en una conversación con la agencia.';
+
+      /* ----- texto del mensaje ----- */
+      function lineas() {
+        var out = [];
+        $$('[data-lbl]', f).forEach(function (c) {
+          var v = (c.value || '').replace(/\s+/g, ' ').trim();
+          if (!v) return;
+          var pre = c.getAttribute('data-pre');
+          if (pre) { var p = $(pre, f); if (p && p.value) v = p.value + ' ' + v; }
+          out.push([c.getAttribute('data-lbl'), v]);
+        });
+        return out;
+      }
+      function texto() {
+        return [f.getAttribute('data-intro') || 'Hola!'].concat(lineas().map(function (l) { return '• ' + l[0] + ': ' + l[1]; })).join('\n');
+      }
+
+      /* ----- burbuja de vista previa ----- */
+      function pintarBurbuja() {
+        if (!bub) return;
+        bub.textContent = '';
+        bub.appendChild(el('p', f.getAttribute('data-intro') || 'Hola!', 'cv-b-i'));
+        var ls = lineas();
+        if (!ls.length) bub.appendChild(el('p', 'Completá los datos y tu mensaje aparece acá.', 'cv-b-v'));
+        ls.forEach(function (l) { var d = el('p', null, 'cv-b-l'); d.appendChild(el('b', l[0])); d.appendChild(document.createTextNode(' ' + l[1])); bub.appendChild(d); });
+        bub.appendChild(el('span', 'ahora ✓✓', 'cv-b-h'));
+      }
+
+      /* ----- progreso: el sol sale a medida que completás ----- */
+      var trk = $$('[data-p]', f);
+      function progreso() {
+        var n = trk.filter(function (c) { return (c.value || '').trim() !== ''; }).length, p = trk.length ? n / trk.length : 0;
+        if (sol) sol.style.setProperty('--p', p.toFixed(3));
+        if (progB) progB.style.width = Math.round(p * 100) + '%';
+        if (progT) progT.textContent = !n ? 'Sin datos todavía' : n === trk.length ? 'Ficha completa' : n + ' de ' + trk.length + ' datos';
+        if (sol) sol.classList.toggle('is-full', n === trk.length && n > 0);
+      }
+
+      /* ----- WhatsApp con el mensaje ya armado ----- */
+      function actualizarWa() {
+        if (!wa) return;
+        var num = wa.getAttribute('data-wa');
+        wa.href = 'https://wa.me/' + num + '?text=' + encodeURIComponent(texto());
+      }
+
+      /* ----- coincidencias con el catálogo (solo en la búsqueda) ----- */
+      function coincidencias() {
+        var q = norm(val('b-mm')).split(/\s+/).filter(Boolean), an = soloNum(val('b-an')), tr = norm(val('b-tr'));
+        var co = val('b-co').split(', ').filter(Boolean).map(norm), ca = val('b-ca').split(', ').filter(Boolean).map(norm);
+        var pr = soloNum(val('b-pr')), mo = val('b-mo') === 'US$' ? 'USD' : 'ARS';
+        var hay = q.length || an || tr || co.length || ca.length || pr;
+        if (!hay) return null;
+        return CAT.filter(function (a) {
+          var t = norm([a.marca, a.modelo, a.version, a.titulo].join(' '));
+          if (q.length && !q.every(function (w) { return t.indexOf(w) > -1; })) return false;
+          if (an && (a.anio == null || a.anio < an)) return false;
+          if (tr && norm(a.transmision) !== tr) return false;
+          if (co.length && co.indexOf(norm(a.combustible)) < 0) return false;
+          if (ca.length && ca.indexOf(norm(a.carroceria)) < 0) return false;
+          if (pr && a.monto != null && a.precio && a.precio.moneda === mo && a.monto > pr) return false;
+          return true;
+        });
+      }
+      function pintarMatch() {
+        if (!panel) return;
+        var r = coincidencias();
+        mL.textContent = '';
+        panel.classList.toggle('has-r', !!(r && r.length));
+        if (r === null) { mH.textContent = 'Escribí una marca o modelo para ver qué hay publicado'; return; }
+        if (!r.length) { mH.textContent = 'Hoy no hay una coincidencia publicada en esta web. Podés enviar la consulta igual.'; return; }
+        mH.textContent = r.length === 1 ? '1 unidad publicada coincide con lo que buscás' : r.length + ' unidades publicadas coinciden con lo que buscás';
+        r.slice(0, 3).forEach(function (a) {
+          var li = el('li', null, 'cv-m'), ph = el('span', null, 'cv-m-p');
+          if (a.media && a.media[0]) { var im = el('img'); im.src = a.media[0].src; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async'; ph.appendChild(im); }
+          var tx = el('span', null, 'cv-m-t');
+          tx.appendChild(el('b', a.titulo));
+          tx.appendChild(el('small', [a.anio, a.km != null ? a.km.toLocaleString('es-AR') + ' km' : null, a.transmision, a.combustible].filter(Boolean).join(' · ')));
+          var ln = el('a', 'Consultar', 'cv-m-a'); ln.href = a.href; ln.target = '_blank'; ln.rel = 'noopener noreferrer'; ln.setAttribute('aria-label', 'Consultar por ' + a.titulo);
+          li.appendChild(ph); li.appendChild(tx); li.appendChild(ln); mL.appendChild(li);
+        });
+        if (r.length > 3) mL.appendChild(el('li', 'y ' + (r.length - 3) + ' más en «Nuestras unidades»', 'cv-m-more'));
+      }
+
+      function todo() {
+        if (vista) vista.value = texto();
+        pintarBurbuja(); progreso(); actualizarWa(); pintarMatch();
+      }
+
+      /* ----- chips (selección simple o múltiple) ----- */
+      function chipsDe(g) { return $$('.cv-chip', g); }
+      function syncChips(hid) {
+        var g = $('[data-chips][data-target="' + hid.id + '"]', f); if (!g) return;
+        var vs = (hid.value || '').split(', ').filter(Boolean);
+        chipsDe(g).forEach(function (c) { var on = vs.indexOf(c.getAttribute('data-v')) > -1; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      }
+      $$('[data-chips]', f).forEach(function (g) {
+        var hid = byId(g.getAttribute('data-target')), multi = g.hasAttribute('data-multi');
+        chipsDe(g).forEach(function (c) {
+          c.addEventListener('click', function () {
+            var v = c.getAttribute('data-v'), vs = (hid.value || '').split(', ').filter(Boolean), k = vs.indexOf(v);
+            if (multi) { if (k > -1) vs.splice(k, 1); else vs.push(v); } else vs = k > -1 ? [] : [v];
+            hid.value = vs.join(', '); syncChips(hid); todo();
+          });
+        });
       });
+      /* moneda del presupuesto */
+      $$('[data-cur]', f).forEach(function (b) {
+        b.addEventListener('click', function () {
+          $$('[data-cur]', f).forEach(function (x) { var on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+          var h = byId('b-mo'); if (h) h.value = b.getAttribute('data-cur'); todo();
+        });
+      });
+      /* sugerencias rápidas (años) */
+      $$('[data-set]', f).forEach(function (b) {
+        b.addEventListener('click', function () { var c = byId(b.getAttribute('data-set')); if (c) { c.value = b.getAttribute('data-v'); c.dispatchEvent(new Event('input', { bubbles: true })); } });
+      });
+      /* formatos */
+      $$('[data-fmt="miles"]', f).forEach(function (c) { c.addEventListener('input', function () { var n = miles(c.value); if (c.value !== n) c.value = n; }); });
+      $$('[data-anio]', f).forEach(function (c) { c.addEventListener('input', function () { var n = c.value.replace(/\D/g, '').slice(0, 4); if (c.value !== n) c.value = n; }); });
+      $$('textarea[maxlength]', f).forEach(function (t) {
+        var n = t.parentNode.querySelector('[data-cnt]');
+        var u = function () { if (n) n.textContent = t.value.length + ' / ' + t.getAttribute('maxlength'); };
+        t.addEventListener('input', u); u();
+      });
+
+      f.addEventListener('input', todo);
+      f.addEventListener('change', todo);
+
+      /* ----- ejemplo y limpiar ----- */
+      var bEj = $('[data-ejemplo]', f), bLi = $('[data-limpiar]', f);
+      function poner(id, v) {
+        var c = byId(id); if (!c) return;
+        c.value = v;
+        if (c.type === 'hidden') { syncChips(c); if (id === 'b-mo') $$('[data-cur]', f).forEach(function (x) { var on = x.getAttribute('data-cur') === v; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); }); }
+        c.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      if (bEj) {
+        bEj.hidden = false;
+        bEj.addEventListener('click', function () {
+          var d = {}; try { d = JSON.parse(bEj.getAttribute('data-ejemplo')); } catch (e) {}
+          Object.keys(d).forEach(function (k) { poner(k, d[k]); });
+          estado.textContent = 'Es un ejemplo para que veas cómo queda: cambiá los datos por los tuyos.';
+        });
+      }
+      if (bLi) {
+        bLi.hidden = false;
+        bLi.addEventListener('click', function () {
+          f.reset();
+          $$('[data-chips] input, input[type="hidden"]', f).forEach(function (h) { if (h.id !== 'b-mo') h.value = ''; });
+          $$('[data-chips]', f).forEach(function (g) { chipsDe(g).forEach(function (c) { c.classList.remove('is-on'); c.setAttribute('aria-pressed', 'false'); }); });
+          $$('[data-cur]', f).forEach(function (x) { var on = x.getAttribute('data-cur') === '$'; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+          var mo = byId('b-mo'); if (mo) mo.value = '$';
+          $$('textarea[maxlength]', f).forEach(function (t) { var n = t.parentNode.querySelector('[data-cnt]'); if (n) n.textContent = '0 / ' + t.getAttribute('maxlength'); });
+          estado.textContent = '';
+          todo();
+        });
+      }
+
+      /* ----- enviar por WhatsApp (valida el campo obligatorio) ----- */
+      if (wa) wa.addEventListener('click', function (e) {
+        actualizarWa();
+        if (f.checkValidity && !f.checkValidity()) { e.preventDefault(); f.reportValidity(); estado.textContent = 'Completá el campo obligatorio para armar el mensaje.'; return; }
+        estado.textContent = 'Se abre WhatsApp con tu mensaje listo para enviar.';
+      });
+
+      /* ----- copiar ----- */
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var t = texto(); if (vista) vista.value = t;
+        copiar(t, function (ok) {
+          estado.textContent = ok ? 'Mensaje copiado. Pegalo en una conversación con la agencia (WhatsApp, Facebook o Instagram).' : 'No se pudo copiar solo: seleccioná el mensaje de arriba, copialo y pegalo en una conversación con la agencia.';
+        });
+      });
+      if (btnCopiar) btnCopiar.hidden = false;
+      todo();
     });
-    if (btn) btn.hidden = false;
-    if (vista) { vista.hidden = false; actualizar(); }
-  });
+  })();
 
   /* ---------- copiar dirección ---------- */
   $$('[data-copiar]').forEach(function (b) {
