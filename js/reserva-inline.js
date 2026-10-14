@@ -24,7 +24,7 @@
     '<div class="rz-step" data-s="time" hidden><div class="rz-big" aria-hidden="true"><small data-dm></small><span data-dn></span><strong data-dw></strong></div>' +
     '<div><p class="rz-k">Franja del día</p><h3>¿Mañana<em>o tarde?</em></h3><p class="rz-p">La hora exacta se acuerda con el negocio.</p><div class="rz-slots" data-slots role="listbox" aria-label="Franja del día"></div><button type="button" class="rz-go" data-confirm disabled>Ver resumen <span aria-hidden="true">→</span></button></div></div>' +
     '<div class="rz-step" data-s="confirm" hidden><div><p class="rz-k">Tu visita</p><h3><span data-sd>DÍA</span><em data-sf>FRANJA</em></h3><p class="rz-p">' + addr + '</p></div>' +
-    '<div><div class="rz-acts2"><a class="btn p" data-wa target="_blank" rel="noopener noreferrer" href="#">Escribir por WhatsApp ↗</a>' + (maps ? '<a class="btn" target="_blank" rel="noopener noreferrer" href="' + maps + '">Abrir Maps</a>' : '') + '<button type="button" class="btn" data-restart>Elegir otro día</button></div>' +
+    '<div><div class="rz-acts2"><a class="btn p" data-wa target="_blank" rel="noopener noreferrer" href="' + (wa ? 'https://wa.me/' + wa : '#') + '">Escribir por WhatsApp ↗</a>' + (maps ? '<a class="btn" target="_blank" rel="noopener noreferrer" href="' + maps + '">Abrir Maps</a>' : '') + '<button type="button" class="btn" data-restart>Elegir otro día</button></div>' +
     '<p class="rz-st" role="status" aria-live="polite" data-send></p>' +
     '<p class="rz-dis">Con este mensaje consultás por una visita. El día y la hora se acuerdan con Horizonte Automotores.</p></div></div>' +
     '</div></div></div><div class="sr" aria-live="polite" data-live></div>';
@@ -79,7 +79,7 @@
     sendState(false); show('confirm'); say('Resumen listo: ' + fmt(st.day) + ', por la ' + st.slot.toLowerCase());
   }
   function back() { show(st.step === 'confirm' ? 'time' : 'month'); }
-  function reset() { st.day = null; st.slot = null; cal(); slots(); show('month'); }
+  function reset() { st.day = null; st.slot = null; var a = q('[data-wa]'); if (a) { delete a.dataset.msg; if (wa) a.href = 'https://wa.me/' + wa; } cal(); slots(); show('month'); }
   function abrir() {
     var dl = document.querySelector('dialog[open]'); if (dl && dl.close) dl.close();
     box.classList.add('is-open');
